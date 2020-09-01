@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FloatingLabelTextFieldSwiftUI",
+        "repositoryURL": "https://github.com/kishanraja/FloatingLabelTextFieldSwiftUI",
+        "state": {
+          "branch": null,
+          "revision": "6db864905f6f10c38d0491499108e8fc8e231049",
+          "version": "4.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
