@@ -13,7 +13,7 @@ struct TransferenceView: View {
        
         
         NavigationLink(destination: LoginView()) {
-            
+            //prueba de cambio
             Text("salir")
         }
     }
