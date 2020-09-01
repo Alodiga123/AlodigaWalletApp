@@ -14,7 +14,9 @@ struct TransferenceView: View {
         
         NavigationLink(destination: LoginView()) {
             //prueba de cambio
+            // pruba de cambios
             Text("salir")
+            // pruba de cambios
         }
     }
 }
