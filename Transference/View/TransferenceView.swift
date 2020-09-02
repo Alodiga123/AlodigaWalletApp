@@ -17,6 +17,7 @@ struct TransferenceView: View {
             // pruba de cambios
             Text("salir")
             // pruba de cambios
+            //testing
         }
     }
 }
@@ -27,8 +28,6 @@ struct TransferenceView_Previews: PreviewProvider {
     }
 }
 
-
- 
  func Ejecutar(){
      DispatchQueue.main.asyncAfter(deadline: .now() ){
      }
