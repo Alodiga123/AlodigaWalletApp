@@ -88,9 +88,7 @@ struct TopImageAlodigaLogo: View {
     var devicemodel = UIDevice.modelName
     var body: some View {
         GeometryReader { geo in
-
             Image("logo_alodiga")
-            
         }
     }
 }
@@ -105,23 +103,18 @@ struct BackgroundImageAlodiga: View {
     }
 }
 
-
 struct CardButtonViewAccess: View {
     @State var username: String = ""
     @State var password: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
-    
     @State var isLoggedIn: Bool = false
-    
     func login(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.isLoggedIn = true
         }
     }
-    
     var body: some View{
-      
         ZStack{
             VStack{
                 Rectangle()
@@ -154,7 +147,6 @@ struct CardButtonViewAccess: View {
                 .shadow(radius: 20).padding(.bottom,-20)
         }
     }
- 
 }
 
 
@@ -175,11 +167,9 @@ struct RegisterLabel: View {
     }
 }
 
-
 struct UsernameTextField: View {
     @Binding var username: String
     var body: some View {
-       
         FloatingLabelTextField($username, placeholder: "Correo electronico", editingChanged: { (isChanged) in
         }) {
         }
@@ -233,7 +223,6 @@ struct PasswordSecureField: View {
         FloatingLabelTextField($password, placeholder: "Contraseña", editingChanged: { (isChanged) in
             
         }) {
-            
         }
         .isSecureTextEntry(!self.isPasswordShow)
             .leftView({ // Add left view.
@@ -255,8 +244,10 @@ struct PasswordSecureField: View {
 
 
 struct TextLabelBeginingSession1: View {
-    
     var body: some View {
+        
+        //Comentario gitHub
+        
         Text("Iniciar sesión").font(.title).foregroundColor(Color.fontBlackColor)
     }
 }
@@ -264,9 +255,6 @@ struct TextLabelBeginingSession1: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        
-        
         LoginView().environment(\.locale, .init(identifier: "en"))
     }
 }
