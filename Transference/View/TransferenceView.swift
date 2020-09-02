@@ -16,8 +16,7 @@ struct TransferenceView: View {
             //prueba de cambio
             // pruba de cambios
             Text("salir")
-            // pruba de cambios
-            //testing
+            
         }
     }
 }
