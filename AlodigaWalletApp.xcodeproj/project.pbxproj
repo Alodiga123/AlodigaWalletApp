@@ -17,7 +17,6 @@
 		46870D5724FD96A600984049 /* TransferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46870D5624FD96A600984049 /* TransferenceView.swift */; };
 		46870D62250281AF00984049 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46870D61250281AF00984049 /* Constans.swift */; };
 		46870D642502825400984049 /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46870D632502825400984049 /* ExtensionColor.swift */; };
-		46870D66250282E600984049 /* Util in Resources */ = {isa = PBXBuildFile; fileRef = 46870D65250282E600984049 /* Util */; };
 		46B2713D24DB22B4005DB0C1 /* FloatingLabelTextFieldSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 46B2713C24DB22B4005DB0C1 /* FloatingLabelTextFieldSwiftUI */; };
 		46B2714124DDABEE005DB0C1 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B2714024DDABEE005DB0C1 /* main.storyboard */; };
 		46B271BC24E463D5005DB0C1 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271BB24E463D5005DB0C1 /* UIDevice.swift */; };
@@ -46,17 +45,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		467C04B624D857F30021F472 /* IOSAlodigaWalletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAlodigaWalletApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		467C04B624D857F30021F472 /* AlodigaWalletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = AlodigaWalletApp.app; path = "/Users/kerwingomez/Desktop/AlodigaWalletApp/build/Debug-iphoneos/AlodigaWalletApp.app"; sourceTree = "<absolute>"; };
 		467C04B924D857F30021F472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		467C04BB24D857F30021F472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		467C04BF24D857F40021F472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		467C04C224D857F40021F472 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		467C04C524D857F40021F472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		467C04C724D857F40021F472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		467C04CC24D857F40021F472 /* IOSAlodigaWalletAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAlodigaWalletAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		467C04CC24D857F40021F472 /* IOSAlodigaWalletAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = IOSAlodigaWalletAppTests.xctest; path = "/Users/kerwingomez/Desktop/AlodigaWalletApp/build/Debug-iphoneos/IOSAlodigaWalletAppTests.xctest"; sourceTree = "<absolute>"; };
 		467C04D024D857F40021F472 /* AlodigaWalletAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlodigaWalletAppTests.swift; sourceTree = "<group>"; };
 		467C04D224D857F40021F472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		467C04D724D857F40021F472 /* IOSAlodigaWalletAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAlodigaWalletAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		467C04D724D857F40021F472 /* IOSAlodigaWalletAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = IOSAlodigaWalletAppUITests.xctest; path = "/Users/kerwingomez/Desktop/AlodigaWalletApp/build/Debug-iphoneos/IOSAlodigaWalletAppUITests.xctest"; sourceTree = "<absolute>"; };
 		467C04DB24D857F40021F472 /* AlodigaWalletAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlodigaWalletAppUITests.swift; sourceTree = "<group>"; };
 		467C04DD24D857F40021F472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46870D5624FD96A600984049 /* TransferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferenceView.swift; sourceTree = "<group>"; };
@@ -64,7 +63,6 @@
 		46870D5924FD9B4700984049 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		46870D61250281AF00984049 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		46870D632502825400984049 /* ExtensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
-		46870D65250282E600984049 /* Util */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Util; sourceTree = "<group>"; };
 		46B2714024DDABEE005DB0C1 /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		46B271BB24E463D5005DB0C1 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		46B271BD24EAE225005DB0C1 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -113,18 +111,7 @@
 				467C04B824D857F30021F472 /* AlodigaWalletApp */,
 				467C04CF24D857F40021F472 /* AlodigaWalletAppTests */,
 				467C04DA24D857F40021F472 /* AlodigaWalletAppUITests */,
-				467C04B724D857F30021F472 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		467C04B724D857F30021F472 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				467C04B624D857F30021F472 /* IOSAlodigaWalletApp.app */,
-				467C04CC24D857F40021F472 /* IOSAlodigaWalletAppTests.xctest */,
-				467C04D724D857F40021F472 /* IOSAlodigaWalletAppUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		467C04B824D857F30021F472 /* AlodigaWalletApp */ = {
@@ -175,7 +162,6 @@
 				46870D632502825400984049 /* ExtensionColor.swift */,
 				46B271BB24E463D5005DB0C1 /* UIDevice.swift */,
 				46870D61250281AF00984049 /* Constans.swift */,
-				46870D65250282E600984049 /* Util */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -296,7 +282,7 @@
 				46B2713C24DB22B4005DB0C1 /* FloatingLabelTextFieldSwiftUI */,
 			);
 			productName = AlodigaWalletApp;
-			productReference = 467C04B624D857F30021F472 /* IOSAlodigaWalletApp.app */;
+			productReference = 467C04B624D857F30021F472 /* AlodigaWalletApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		467C04CB24D857F40021F472 /* IOSAlodigaWalletAppTests */ = {
@@ -372,7 +358,7 @@
 			packageReferences = (
 				46B2713B24DB22B4005DB0C1 /* XCRemoteSwiftPackageReference "FloatingLabelTextFieldSwiftUI" */,
 			);
-			productRefGroup = 467C04B724D857F30021F472 /* Products */;
+			productRefGroup = 467C04AD24D857F20021F472;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -390,7 +376,6 @@
 			files = (
 				467C04C624D857F40021F472 /* LaunchScreen.storyboard in Resources */,
 				46B2721024FD8280005DB0C1 /* Localizable.strings in Resources */,
-				46870D66250282E600984049 /* Util in Resources */,
 				467C04C324D857F40021F472 /* Preview Assets.xcassets in Resources */,
 				46B271BE24EAE225005DB0C1 /* Color.xcassets in Resources */,
 				467C04C024D857F40021F472 /* Assets.xcassets in Resources */,
@@ -615,7 +600,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Alodiga.AlodigaWalletApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AlodigaWalletApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -634,7 +619,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Alodiga.AlodigaWalletApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AlodigaWalletApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
