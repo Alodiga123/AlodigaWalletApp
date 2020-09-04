@@ -15,6 +15,9 @@
 		467C04D124D857F40021F472 /* AlodigaWalletAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04D024D857F40021F472 /* AlodigaWalletAppTests.swift */; };
 		467C04DC24D857F40021F472 /* AlodigaWalletAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04DB24D857F40021F472 /* AlodigaWalletAppUITests.swift */; };
 		46870D5724FD96A600984049 /* TransferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46870D5624FD96A600984049 /* TransferenceView.swift */; };
+		46870D5B250280EC00984049 /* Utilities in Resources */ = {isa = PBXBuildFile; fileRef = 46870D5A250280EC00984049 /* Utilities */; };
+		46870D5D250280FD00984049 /* Utilities in Resources */ = {isa = PBXBuildFile; fileRef = 46870D5C250280FD00984049 /* Utilities */; };
+		46870D5F2502811300984049 /* Utilities in Resources */ = {isa = PBXBuildFile; fileRef = 46870D5E2502811300984049 /* Utilities */; };
 		46B2713D24DB22B4005DB0C1 /* FloatingLabelTextFieldSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 46B2713C24DB22B4005DB0C1 /* FloatingLabelTextFieldSwiftUI */; };
 		46B2714124DDABEE005DB0C1 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B2714024DDABEE005DB0C1 /* main.storyboard */; };
 		46B271BC24E463D5005DB0C1 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271BB24E463D5005DB0C1 /* UIDevice.swift */; };
@@ -61,6 +64,9 @@
 		46870D5624FD96A600984049 /* TransferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferenceView.swift; sourceTree = "<group>"; };
 		46870D5824FD9B4700984049 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		46870D5924FD9B4700984049 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		46870D5A250280EC00984049 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; sourceTree = "<group>"; };
+		46870D5C250280FD00984049 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; sourceTree = "<group>"; };
+		46870D5E2502811300984049 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; sourceTree = "<group>"; };
 		46B2714024DDABEE005DB0C1 /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		46B271BB24E463D5005DB0C1 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		46B271BD24EAE225005DB0C1 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -172,7 +178,10 @@
 			children = (
 				46B271C124EAF5F5005DB0C1 /* ExtensionColor.swift */,
 				46B271BB24E463D5005DB0C1 /* UIDevice.swift */,
+				46870D5A250280EC00984049 /* Utilities */,
+				46870D5C250280FD00984049 /* Utilities */,
 				46B271CB24EFFF61005DB0C1 /* Constans.swift */,
+				46870D5E2502811300984049 /* Utilities */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -389,6 +398,9 @@
 				46B2721024FD8280005DB0C1 /* Localizable.strings in Resources */,
 				467C04C324D857F40021F472 /* Preview Assets.xcassets in Resources */,
 				46B271BE24EAE225005DB0C1 /* Color.xcassets in Resources */,
+				46870D5F2502811300984049 /* Utilities in Resources */,
+				46870D5B250280EC00984049 /* Utilities in Resources */,
+				46870D5D250280FD00984049 /* Utilities in Resources */,
 				467C04C024D857F40021F472 /* Assets.xcassets in Resources */,
 				46B2714124DDABEE005DB0C1 /* main.storyboard in Resources */,
 			);
