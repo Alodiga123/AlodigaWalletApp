@@ -172,10 +172,10 @@
 		46870D602502818B00984049 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				46870D65250282E600984049 /* Util */,
-				46870D61250281AF00984049 /* Constans.swift */,
-				46B271BB24E463D5005DB0C1 /* UIDevice.swift */,
 				46870D632502825400984049 /* ExtensionColor.swift */,
+				46B271BB24E463D5005DB0C1 /* UIDevice.swift */,
+				46870D61250281AF00984049 /* Constans.swift */,
+				46870D65250282E600984049 /* Util */,
 			);
 			path = Util;
 			sourceTree = "<group>";
