@@ -15,15 +15,13 @@
 		467C04D124D857F40021F472 /* AlodigaWalletAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04D024D857F40021F472 /* AlodigaWalletAppTests.swift */; };
 		467C04DC24D857F40021F472 /* AlodigaWalletAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04DB24D857F40021F472 /* AlodigaWalletAppUITests.swift */; };
 		46870D5724FD96A600984049 /* TransferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46870D5624FD96A600984049 /* TransferenceView.swift */; };
-		46870D5B250280EC00984049 /* Utilities in Resources */ = {isa = PBXBuildFile; fileRef = 46870D5A250280EC00984049 /* Utilities */; };
-		46870D5D250280FD00984049 /* Utilities in Resources */ = {isa = PBXBuildFile; fileRef = 46870D5C250280FD00984049 /* Utilities */; };
-		46870D5F2502811300984049 /* Utilities in Resources */ = {isa = PBXBuildFile; fileRef = 46870D5E2502811300984049 /* Utilities */; };
+		46870D62250281AF00984049 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46870D61250281AF00984049 /* Constans.swift */; };
+		46870D642502825400984049 /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46870D632502825400984049 /* ExtensionColor.swift */; };
+		46870D66250282E600984049 /* Util in Resources */ = {isa = PBXBuildFile; fileRef = 46870D65250282E600984049 /* Util */; };
 		46B2713D24DB22B4005DB0C1 /* FloatingLabelTextFieldSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 46B2713C24DB22B4005DB0C1 /* FloatingLabelTextFieldSwiftUI */; };
 		46B2714124DDABEE005DB0C1 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B2714024DDABEE005DB0C1 /* main.storyboard */; };
 		46B271BC24E463D5005DB0C1 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271BB24E463D5005DB0C1 /* UIDevice.swift */; };
 		46B271BE24EAE225005DB0C1 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B271BD24EAE225005DB0C1 /* Color.xcassets */; };
-		46B271C224EAF5F5005DB0C1 /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271C124EAF5F5005DB0C1 /* ExtensionColor.swift */; };
-		46B271CC24EFFF61005DB0C1 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271CB24EFFF61005DB0C1 /* Constans.swift */; };
 		46B271F624FA7903005DB0C1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271F524FA7903005DB0C1 /* MenuView.swift */; };
 		46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271F724FD2830005DB0C1 /* LoginView.swift */; };
 		46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271F924FD626B005DB0C1 /* MainViewLogged.swift */; };
@@ -64,14 +62,12 @@
 		46870D5624FD96A600984049 /* TransferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferenceView.swift; sourceTree = "<group>"; };
 		46870D5824FD9B4700984049 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		46870D5924FD9B4700984049 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		46870D5A250280EC00984049 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; sourceTree = "<group>"; };
-		46870D5C250280FD00984049 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; sourceTree = "<group>"; };
-		46870D5E2502811300984049 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; sourceTree = "<group>"; };
+		46870D61250281AF00984049 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		46870D632502825400984049 /* ExtensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
+		46870D65250282E600984049 /* Util */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Util; sourceTree = "<group>"; };
 		46B2714024DDABEE005DB0C1 /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		46B271BB24E463D5005DB0C1 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		46B271BD24EAE225005DB0C1 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
-		46B271C124EAF5F5005DB0C1 /* ExtensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
-		46B271CB24EFFF61005DB0C1 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		46B271F524FA7903005DB0C1 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		46B271F724FD2830005DB0C1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		46B271F924FD626B005DB0C1 /* MainViewLogged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewLogged.swift; sourceTree = "<group>"; };
@@ -109,11 +105,11 @@
 		467C04AD24D857F20021F472 = {
 			isa = PBXGroup;
 			children = (
+				46870D602502818B00984049 /* Util */,
 				46B2720624FD7AD4005DB0C1 /* Transference */,
 				46B2720124FD733B005DB0C1 /* Main */,
 				46B271FE24FD7098005DB0C1 /* Menu */,
 				46B271FB24FD6FE5005DB0C1 /* Login */,
-				46B271BA24E463B0005DB0C1 /* Utilities */,
 				467C04B824D857F30021F472 /* AlodigaWalletApp */,
 				467C04CF24D857F40021F472 /* AlodigaWalletAppTests */,
 				467C04DA24D857F40021F472 /* AlodigaWalletAppUITests */,
@@ -173,17 +169,15 @@
 			path = AlodigaWalletAppUITests;
 			sourceTree = "<group>";
 		};
-		46B271BA24E463B0005DB0C1 /* Utilities */ = {
+		46870D602502818B00984049 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				46B271C124EAF5F5005DB0C1 /* ExtensionColor.swift */,
+				46870D65250282E600984049 /* Util */,
+				46870D61250281AF00984049 /* Constans.swift */,
 				46B271BB24E463D5005DB0C1 /* UIDevice.swift */,
-				46870D5A250280EC00984049 /* Utilities */,
-				46870D5C250280FD00984049 /* Utilities */,
-				46B271CB24EFFF61005DB0C1 /* Constans.swift */,
-				46870D5E2502811300984049 /* Utilities */,
+				46870D632502825400984049 /* ExtensionColor.swift */,
 			);
-			path = Utilities;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		46B271FB24FD6FE5005DB0C1 /* Login */ = {
@@ -396,11 +390,9 @@
 			files = (
 				467C04C624D857F40021F472 /* LaunchScreen.storyboard in Resources */,
 				46B2721024FD8280005DB0C1 /* Localizable.strings in Resources */,
+				46870D66250282E600984049 /* Util in Resources */,
 				467C04C324D857F40021F472 /* Preview Assets.xcassets in Resources */,
 				46B271BE24EAE225005DB0C1 /* Color.xcassets in Resources */,
-				46870D5F2502811300984049 /* Utilities in Resources */,
-				46870D5B250280EC00984049 /* Utilities in Resources */,
-				46870D5D250280FD00984049 /* Utilities in Resources */,
 				467C04C024D857F40021F472 /* Assets.xcassets in Resources */,
 				46B2714124DDABEE005DB0C1 /* main.storyboard in Resources */,
 			);
@@ -429,13 +421,13 @@
 			files = (
 				46B271BC24E463D5005DB0C1 /* UIDevice.swift in Sources */,
 				46B271F624FA7903005DB0C1 /* MenuView.swift in Sources */,
+				46870D642502825400984049 /* ExtensionColor.swift in Sources */,
+				46870D62250281AF00984049 /* Constans.swift in Sources */,
 				46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */,
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
 				46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */,
-				46B271CC24EFFF61005DB0C1 /* Constans.swift in Sources */,
-				46B271C224EAF5F5005DB0C1 /* ExtensionColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

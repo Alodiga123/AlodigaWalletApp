@@ -1,10 +1,11 @@
 //
 //  ExtensionColor.swift
-//  AlodigaWalletApp
+//  IOSAlodigaWalletApp
 //
-//  Created by Kerwin Gomez on 8/17/20.
+//  Created by Kerwin Gomez on 9/4/20.
 //  Copyright © 2020 Kerwin Gomez. All rights reserved.
 //
+
 
 import SwiftUI
 
@@ -25,6 +26,3 @@ extension Color {
     
     
 }
-
-
-
