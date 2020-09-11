@@ -125,10 +125,13 @@ struct CardButtonViewAccess: View {
                 VStack(alignment: .leading) {
                     TextLabelBeginingSession1()
                 }.padding(.leading,20).padding(.trailing,20)
-                UsernameTextField(username: self.$username)
-                PasswordSecureField(password: self.$password)
-                RecoverPassord()
-                Button(action: {
+               UsernameTextField(username: self.$username)
+               PasswordSecureField(password: self.$password)
+               
+               NavigationLink(destination: RecoverPasswordByTokenView()){
+                      ForgotPassword()
+               }
+            Button(action: {
                     self.login()
                 }) {
                     LoginButtonContent()
@@ -158,6 +161,15 @@ struct ValueRegister: View {
     }
 }
 
+struct ForgotPassword: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Olvido su contraseña")
+                .foregroundColor(Color.fontOrangeColor)
+        }.frame(width: 380, alignment: .leading).padding(.leading,17)
+    }
+}
+
 struct RegisterLabel: View {
     var body: some View {
         Text("No eres miembro todavía?")
@@ -181,24 +193,6 @@ struct UsernameTextField: View {
 }
 
 
-struct RecoverPassord: View {
-    var body: some View {
-        GeometryReader{ geo in
-            if (UIDevice.current.userInterfaceIdiom == .pad){
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Olvido su contraseña")
-                        .foregroundColor(Color.fontOrangeColor)
-                }.frame(width: 380, alignment: .leading).padding(.leading,17)
-                
-            }else{
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Olvido su contraseña")
-                        .foregroundColor(Color.fontOrangeColor)
-                }.frame(width: 380, alignment: .leading).padding(.leading,20)
-            }
-        }
-    }
-}
 
 
 struct LoginButtonContent: View {

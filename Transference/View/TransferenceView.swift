@@ -11,12 +11,16 @@ import SwiftUI
 struct TransferenceView: View {
     var body: some View {
        
-        
-        NavigationLink(destination: LoginView()) {
+        NavigationView {
+       
+
+
+        NavigationLink(destination: Transference2View()) {
             //prueba de cambio
             // pruba de cambios
-            Text("salir")
+            Text("proxima pantalla")
             
+        }
         }
     }
 }

@@ -23,6 +23,4 @@ extension Color {
   static let screemWhiteColor = Color("screemWhiteColor")
     
   static let cardButtonViewGray = Color("cardButtonViewGray")
-    
-    
 }

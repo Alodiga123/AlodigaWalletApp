@@ -25,6 +25,8 @@
 		46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271F724FD2830005DB0C1 /* LoginView.swift */; };
 		46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271F924FD626B005DB0C1 /* MainViewLogged.swift */; };
 		46B2721024FD8280005DB0C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46B2720D24FD820A005DB0C1 /* Localizable.strings */; };
+		46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC46A250BC236008D42B3 /* RecoverPasswordByTokenView.swift */; };
+		46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC46C250BF506008D42B3 /* Transference2View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,19 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		467C04B624D857F30021F472 /* AlodigaWalletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = AlodigaWalletApp.app; path = "/Users/kerwingomez/Desktop/AlodigaWalletApp/build/Debug-iphoneos/AlodigaWalletApp.app"; sourceTree = "<absolute>"; };
 		467C04B924D857F30021F472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		467C04BB24D857F30021F472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		467C04BF24D857F40021F472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		467C04C224D857F40021F472 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		467C04C524D857F40021F472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		467C04C724D857F40021F472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		467C04CC24D857F40021F472 /* IOSAlodigaWalletAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = IOSAlodigaWalletAppTests.xctest; path = "/Users/kerwingomez/Desktop/AlodigaWalletApp/build/Debug-iphoneos/IOSAlodigaWalletAppTests.xctest"; sourceTree = "<absolute>"; };
 		467C04D024D857F40021F472 /* AlodigaWalletAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlodigaWalletAppTests.swift; sourceTree = "<group>"; };
 		467C04D224D857F40021F472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		467C04D724D857F40021F472 /* IOSAlodigaWalletAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = IOSAlodigaWalletAppUITests.xctest; path = "/Users/kerwingomez/Desktop/AlodigaWalletApp/build/Debug-iphoneos/IOSAlodigaWalletAppUITests.xctest"; sourceTree = "<absolute>"; };
 		467C04DB24D857F40021F472 /* AlodigaWalletAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlodigaWalletAppUITests.swift; sourceTree = "<group>"; };
 		467C04DD24D857F40021F472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46838CC6250BB2AF00D9A97A /* AlodigaWalletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlodigaWalletApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46838CC7250BB2AF00D9A97A /* IOSAlodigaWalletAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAlodigaWalletAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46838CC8250BB2AF00D9A97A /* IOSAlodigaWalletAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAlodigaWalletAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46870D5624FD96A600984049 /* TransferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferenceView.swift; sourceTree = "<group>"; };
 		46870D5824FD9B4700984049 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		46870D5924FD9B4700984049 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		46B2720C24FD820A005DB0C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		46B2721324FD83C5005DB0C1 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		46B2721424FD83C5005DB0C1 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		46DBC46A250BC236008D42B3 /* RecoverPasswordByTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordByTokenView.swift; sourceTree = "<group>"; };
+		46DBC46C250BF506008D42B3 /* Transference2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transference2View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		467C04AD24D857F20021F472 = {
 			isa = PBXGroup;
 			children = (
+				46838CC9250BB2D300D9A97A /* RecoverPassword */,
 				46870D602502818B00984049 /* Util */,
 				46B2720624FD7AD4005DB0C1 /* Transference */,
 				46B2720124FD733B005DB0C1 /* Main */,
@@ -111,6 +116,9 @@
 				467C04B824D857F30021F472 /* AlodigaWalletApp */,
 				467C04CF24D857F40021F472 /* AlodigaWalletAppTests */,
 				467C04DA24D857F40021F472 /* AlodigaWalletAppUITests */,
+				46838CC6250BB2AF00D9A97A /* AlodigaWalletApp.app */,
+				46838CC7250BB2AF00D9A97A /* IOSAlodigaWalletAppTests.xctest */,
+				46838CC8250BB2AF00D9A97A /* IOSAlodigaWalletAppUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +162,22 @@
 				467C04DD24D857F40021F472 /* Info.plist */,
 			);
 			path = AlodigaWalletAppUITests;
+			sourceTree = "<group>";
+		};
+		46838CC9250BB2D300D9A97A /* RecoverPassword */ = {
+			isa = PBXGroup;
+			children = (
+				46838CCA250BB2F700D9A97A /* View */,
+			);
+			path = RecoverPassword;
+			sourceTree = "<group>";
+		};
+		46838CCA250BB2F700D9A97A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46DBC46A250BC236008D42B3 /* RecoverPasswordByTokenView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		46870D602502818B00984049 /* Util */ = {
@@ -251,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				46870D5624FD96A600984049 /* TransferenceView.swift */,
+				46DBC46C250BF506008D42B3 /* Transference2View.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,7 +307,7 @@
 				46B2713C24DB22B4005DB0C1 /* FloatingLabelTextFieldSwiftUI */,
 			);
 			productName = AlodigaWalletApp;
-			productReference = 467C04B624D857F30021F472 /* AlodigaWalletApp.app */;
+			productReference = 46838CC6250BB2AF00D9A97A /* AlodigaWalletApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		467C04CB24D857F40021F472 /* IOSAlodigaWalletAppTests */ = {
@@ -300,7 +325,7 @@
 			);
 			name = IOSAlodigaWalletAppTests;
 			productName = AlodigaWalletAppTests;
-			productReference = 467C04CC24D857F40021F472 /* IOSAlodigaWalletAppTests.xctest */;
+			productReference = 46838CC7250BB2AF00D9A97A /* IOSAlodigaWalletAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		467C04D624D857F40021F472 /* IOSAlodigaWalletAppUITests */ = {
@@ -318,7 +343,7 @@
 			);
 			name = IOSAlodigaWalletAppUITests;
 			productName = AlodigaWalletAppUITests;
-			productReference = 467C04D724D857F40021F472 /* IOSAlodigaWalletAppUITests.xctest */;
+			productReference = 46838CC8250BB2AF00D9A97A /* IOSAlodigaWalletAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -407,9 +432,11 @@
 				46B271BC24E463D5005DB0C1 /* UIDevice.swift in Sources */,
 				46B271F624FA7903005DB0C1 /* MenuView.swift in Sources */,
 				46870D642502825400984049 /* ExtensionColor.swift in Sources */,
+				46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */,
 				46870D62250281AF00984049 /* Constans.swift in Sources */,
 				46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */,
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
+				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
 				46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */,

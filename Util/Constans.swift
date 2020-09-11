@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 class Cconstant {
     
  static let IsModeSimulator: Bool = true
