@@ -2,13 +2,13 @@
 //  TransferenceView.swift
 //  AlodigaWalletApp
 //
-//  Created by Kerwin Gomez on 8/31/20.
-//  Copyright © 2020 Kerwin Gomez. All rights reserved.
+//  Created by Lulymar Gutierrez on 9/14/20.
+//  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct TransferenceView: View {
+struct PaymentBusinessesQRView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -16,15 +16,15 @@ struct TransferenceView: View {
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
-                    TransferenceViewAccess()
+                    PaymentBusinessesQRViewAccess()
                 }
             }.navigationBarTitle("Volver", displayMode: .inline)
         }
     }
 }
 
-struct TransferenceViewAccess: View {
-    @State var user: String = ""
+struct PaymentBusinessesQRViewAccess: View {
+    @State var currency: String = ""
     @State var isLoggedIn: Bool = false
     
     var body: some View {
@@ -39,15 +39,15 @@ struct TransferenceViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .leading) {
                         Spacer()
-                        TextLabelTransference()
+                        TextLabelPayment()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
                     Spacer()
-                    TextLabelCurrency()
-                    TextLabelUserR()
-                    UsernameTextField(username: self.$user)
-                    NavigationLink(destination: TargetCustomerView()) {
-                        SerchButtonContent()
+                    CurrencyKeyTextField(currency: self.$currency)
+                    TextLabelCodeQR()
+                    
+                    NavigationLink(destination: TargetCustomerQRView()) {
+                        ScannerQRButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
                         BackButtonContent()
@@ -61,46 +61,16 @@ struct TransferenceViewAccess: View {
     }
 }
 
-
-
-struct TextLabelTransference: View {
+struct CurrencyKeyTextField: View {
+    @Binding var currency: String
     var body: some View {
-        Text("TRANSFERENCIA")
-            .font(.title)
-            .foregroundColor(Color.fontBlackColor)
-    }
-}
-
-struct TextLabelCurrency: View {
-    var body: some View {
-        Text("Seleccione la moneda a transferir")
-            .font(.caption)
-            .fontWeight(.bold)
-            .foregroundColor(.gray)
-            .padding()
-    }
-}
-
-struct TextLabelUserR: View {
-    var body: some View {
-        Text("Seleccione el criterio de busqueda del usuario receptor")
-            .font(.caption)
-            .fontWeight(.bold)
-            .foregroundColor(.gray)
-            .padding()
-    }
-}
-
-
-struct EmailTextField: View {
-    @Binding var user: String
-    var body: some View {
-        FloatingLabelTextField($user, placeholder: "Introducir Email", editingChanged: { (isChanged) in
+        FloatingLabelTextField($currency, placeholder: "Seleccione la moneda a transferir", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
                 Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
+            })
+            .placeholderColor(Color.placeholderGrayColor)
             .frame(height: 50)
             .padding(.leading,20)
             .padding(.trailing,20)
@@ -109,10 +79,29 @@ struct EmailTextField: View {
     }
 }
 
-struct SerchButtonContent: View {
+struct TextLabelPayment: View {
+    var body: some View {
+        Text("Pago QR Comercios")
+            .font(.title)
+            .foregroundColor(Color.fontBlackColor)
+    }
+}
+
+struct TextLabelCodeQR: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 50) {
+            Text("Escanee el Codigo QR del comercio")
+                .foregroundColor(Color.fontOrangeColor)
+                .padding(.top,60)
+                .padding(.bottom,10)
+        }
+    }
+}
+
+struct ScannerQRButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Buscar")
+        Text("Escanear QR")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -122,27 +111,14 @@ struct SerchButtonContent: View {
     }
 }
 
-struct BackButtonContent: View {
-    let co = Color.black.opacity(0.1)
-    var body: some View {
-        Text("Atras")
-            .font(.headline)
-            .foregroundColor(.black)
-            .frame(width: 220, height: 60)
-            .background(co)
-            .cornerRadius(35.0)
-            .padding(.top,10)
-    }
-}
-
-
-struct TransferenceView_Previews: PreviewProvider {
+struct PaymentBusinessesQR_Previews: PreviewProvider {
     static var previews: some View {
-        TransferenceView()
+        PaymentBusinessesQRView()
     }
 }
-
+/*
  func Ejecutar(){
      DispatchQueue.main.asyncAfter(deadline: .now() ){
      }
  }
+ */

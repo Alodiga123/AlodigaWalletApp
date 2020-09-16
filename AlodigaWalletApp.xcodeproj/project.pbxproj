@@ -27,6 +27,19 @@
 		46B2721024FD8280005DB0C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46B2720D24FD820A005DB0C1 /* Localizable.strings */; };
 		46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC46A250BC236008D42B3 /* RecoverPasswordByTokenView.swift */; };
 		46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC46C250BF506008D42B3 /* Transference2View.swift */; };
+		46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC471251284B9008D42B3 /* ConfirmationQRView.swift */; };
+		46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC4732512851E008D42B3 /* OperationsKeyQRView.swift */; };
+		46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC4752512852E008D42B3 /* PaymentBusinessesQRView.swift */; };
+		46DBC47825128547008D42B3 /* SuccesfulPaymentQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC47725128546008D42B3 /* SuccesfulPaymentQRView.swift */; };
+		46DBC47A2512855A008D42B3 /* TargetCustomerQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC4792512855A008D42B3 /* TargetCustomerQRView.swift */; };
+		46DBC47C2512866C008D42B3 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC47B2512866C008D42B3 /* ConfirmationView.swift */; };
+		46DBC47E2512869E008D42B3 /* OperationsKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC47D2512869E008D42B3 /* OperationsKeyView.swift */; };
+		46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC47F251286C4008D42B3 /* SuccesfulTransactionView.swift */; };
+		46DBC482251286E6008D42B3 /* TargetCustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC481251286E6008D42B3 /* TargetCustomerView.swift */; };
+		46DBC4862512879B008D42B3 /* FormSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC4852512879B008D42B3 /* FormSignUpView.swift */; };
+		46DBC488251287C4008D42B3 /* PassByTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC487251287C4008D42B3 /* PassByTokenView.swift */; };
+		46DBC48A251287DF008D42B3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC489251287DF008D42B3 /* SignUpView.swift */; };
+		46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC48B25128804008D42B3 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +89,19 @@
 		46B2721424FD83C5005DB0C1 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		46DBC46A250BC236008D42B3 /* RecoverPasswordByTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordByTokenView.swift; sourceTree = "<group>"; };
 		46DBC46C250BF506008D42B3 /* Transference2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transference2View.swift; sourceTree = "<group>"; };
+		46DBC471251284B9008D42B3 /* ConfirmationQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationQRView.swift; sourceTree = "<group>"; };
+		46DBC4732512851E008D42B3 /* OperationsKeyQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsKeyQRView.swift; sourceTree = "<group>"; };
+		46DBC4752512852E008D42B3 /* PaymentBusinessesQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentBusinessesQRView.swift; sourceTree = "<group>"; };
+		46DBC47725128546008D42B3 /* SuccesfulPaymentQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesfulPaymentQRView.swift; sourceTree = "<group>"; };
+		46DBC4792512855A008D42B3 /* TargetCustomerQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCustomerQRView.swift; sourceTree = "<group>"; };
+		46DBC47B2512866C008D42B3 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		46DBC47D2512869E008D42B3 /* OperationsKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsKeyView.swift; sourceTree = "<group>"; };
+		46DBC47F251286C4008D42B3 /* SuccesfulTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesfulTransactionView.swift; sourceTree = "<group>"; };
+		46DBC481251286E6008D42B3 /* TargetCustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCustomerView.swift; sourceTree = "<group>"; };
+		46DBC4852512879B008D42B3 /* FormSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSignUpView.swift; sourceTree = "<group>"; };
+		46DBC487251287C4008D42B3 /* PassByTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassByTokenView.swift; sourceTree = "<group>"; };
+		46DBC489251287DF008D42B3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		46DBC48B25128804008D42B3 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +133,8 @@
 		467C04AD24D857F20021F472 = {
 			isa = PBXGroup;
 			children = (
+				46DBC48325128773008D42B3 /* Register */,
+				46DBC46F25128425008D42B3 /* PaymentQR */,
 				46838CC9250BB2D300D9A97A /* RecoverPassword */,
 				46870D602502818B00984049 /* Util */,
 				46B2720624FD7AD4005DB0C1 /* Transference */,
@@ -276,6 +304,10 @@
 			children = (
 				46870D5624FD96A600984049 /* TransferenceView.swift */,
 				46DBC46C250BF506008D42B3 /* Transference2View.swift */,
+				46DBC47B2512866C008D42B3 /* ConfirmationView.swift */,
+				46DBC47D2512869E008D42B3 /* OperationsKeyView.swift */,
+				46DBC47F251286C4008D42B3 /* SuccesfulTransactionView.swift */,
+				46DBC481251286E6008D42B3 /* TargetCustomerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,6 +317,45 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		46DBC46F25128425008D42B3 /* PaymentQR */ = {
+			isa = PBXGroup;
+			children = (
+				46DBC47025128442008D42B3 /* View */,
+			);
+			path = PaymentQR;
+			sourceTree = "<group>";
+		};
+		46DBC47025128442008D42B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46DBC471251284B9008D42B3 /* ConfirmationQRView.swift */,
+				46DBC4732512851E008D42B3 /* OperationsKeyQRView.swift */,
+				46DBC4752512852E008D42B3 /* PaymentBusinessesQRView.swift */,
+				46DBC47725128546008D42B3 /* SuccesfulPaymentQRView.swift */,
+				46DBC4792512855A008D42B3 /* TargetCustomerQRView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46DBC48325128773008D42B3 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				46DBC4842512877D008D42B3 /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		46DBC4842512877D008D42B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46DBC4852512879B008D42B3 /* FormSignUpView.swift */,
+				46DBC487251287C4008D42B3 /* PassByTokenView.swift */,
+				46DBC489251287DF008D42B3 /* SignUpView.swift */,
+				46DBC48B25128804008D42B3 /* WelcomeView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,11 +505,24 @@
 				46870D642502825400984049 /* ExtensionColor.swift in Sources */,
 				46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */,
 				46870D62250281AF00984049 /* Constans.swift in Sources */,
+				46DBC48A251287DF008D42B3 /* SignUpView.swift in Sources */,
 				46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */,
+				46DBC47825128547008D42B3 /* SuccesfulPaymentQRView.swift in Sources */,
+				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
+				46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */,
+				46DBC488251287C4008D42B3 /* PassByTokenView.swift in Sources */,
 				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
+				46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */,
+				46DBC47C2512866C008D42B3 /* ConfirmationView.swift in Sources */,
+				46DBC47A2512855A008D42B3 /* TargetCustomerQRView.swift in Sources */,
+				46DBC4862512879B008D42B3 /* FormSignUpView.swift in Sources */,
+				46DBC482251286E6008D42B3 /* TargetCustomerView.swift in Sources */,
+				46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
+				46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */,
+				46DBC47E2512869E008D42B3 /* OperationsKeyView.swift in Sources */,
 				46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -164,7 +164,7 @@ struct TimerCounterValue: View {
        }
    }
    
-   struct BackImg: View {
+   struct BackImg3: View {
        var body: some View {
           
                Image("back_login")
@@ -176,7 +176,7 @@ struct TimerCounterValue: View {
    
    
    
-   struct RecoverTokenTextField: View {
+   struct RecoverTokenTextField2: View {
        @Binding var username: String
        var body: some View {
            FloatingLabelTextField($username, placeholder: "Introduzca la clave recibida", editingChanged: { (isChanged) in
