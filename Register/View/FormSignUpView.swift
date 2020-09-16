@@ -24,6 +24,8 @@ struct FormSignUpView: View {
 }
 
 struct FormSignUpViewAccess: View {
+    
+    //coment
     @State var name: String = ""
     @State var lastName: String = ""
     @State var email: String = ""
