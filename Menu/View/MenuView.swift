@@ -14,11 +14,25 @@ struct MenuView: View {
                 Image(systemName: "person")
                     .foregroundColor(.gray)
                     .imageScale(.large)
-                Text("Transferir")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+                NavigationLink(destination: TransferenceView()) {
+                    Text("Transferencia")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
             }
             .padding(.top, 100)
+            HStack {
+                Image(systemName: "person")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
+                NavigationLink(destination: PaymentBusinessesQRView()) {
+                    Text("Pago Comercio QR")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
+            }
+            .padding(.top, 30)
+            
             HStack {
                 Image(systemName: "envelope")
                     .foregroundColor(.gray)
@@ -27,25 +41,36 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .font(.headline)
             }
-                .padding(.top, 30)
+            .padding(.top, 30)
             HStack {
                 Image(systemName: "gear")
                     .foregroundColor(.gray)
                     .imageScale(.large)
                 NavigationLink(destination: TransferenceView()) {
                     Text("Recargar")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+                        .foregroundColor(.gray)
+                        .font(.headline)
                 }
                 
             }
             .padding(.top, 30)
+            HStack {
+                Image(systemName: "faceid")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
+                NavigationLink(destination: SignUpView()) {
+                    Text("Registrate")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
+            }
+            .padding(.top, 30)
             Spacer()
         }
-            .padding()
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color(red: 32/255, green: 32/255, blue: 32/255))
-            .edgesIgnoringSafeArea(.all)
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(red: 32/255, green: 32/255, blue: 32/255))
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

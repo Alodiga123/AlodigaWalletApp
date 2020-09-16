@@ -12,7 +12,7 @@ struct SuccesfulTransactionView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
-                Image("back_login")
+                Image("backScream")
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
@@ -40,8 +40,8 @@ struct SuccesfulTransactionViewAccess: View {
                         Spacer()
                         TextLabelSuccesfulTransaction()
                     }.padding(.leading,20)
-                        .padding(.trailing,20)
-                    Spacer()
+                     .padding(.trailing,20)
+                    CheckImagine()
                     ForEach(self.labels, id: \.self) { label in
                         HStack {
                             Text(label)
@@ -64,7 +64,7 @@ struct SuccesfulTransactionViewAccess: View {
                     Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.2)
+            }.padding(.top).padding(.bottom,geometry.size.height/8.2)
         }
     }
 }
@@ -114,6 +114,15 @@ struct ShareButtonContents: View {
             .background(co)
             .cornerRadius(35.0)
             .padding(.top,10)
+    }
+}
+
+struct CheckImagine: View {
+    var body: some View {
+        Image(systemName: "checkmark")
+            .foregroundColor(Color.fontOrangeColor)
+            .font(.system(size: 120.0, weight: .light, design: .monospaced))
+            .frame(width: 150, height: 120)
     }
 }
 

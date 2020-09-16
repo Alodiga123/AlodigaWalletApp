@@ -12,7 +12,7 @@ struct ConfirmationQRView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
-                Image("back_login")
+                Image("backScream")
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {

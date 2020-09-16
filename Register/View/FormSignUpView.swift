@@ -12,7 +12,7 @@ struct FormSignUpView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
-                Image("back_login")
+                Image("backScream")
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
@@ -24,8 +24,6 @@ struct FormSignUpView: View {
 }
 
 struct FormSignUpViewAccess: View {
-    
-    //coment
     @State var name: String = ""
     @State var lastName: String = ""
     @State var email: String = ""
@@ -69,7 +67,7 @@ struct FormSignUpViewAccess: View {
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/6.3)
+            }.padding(.bottom,geometry.size.height/4.3)
         }
     }
 }
@@ -192,7 +190,7 @@ struct RegisterButtonContent: View {
         Text("Regístrate")
             .font(.headline)
             .foregroundColor(.white)
-            .padding()
+            //.padding()
             .frame(width: 220, height: 60)
             .background(co)
             .cornerRadius(35.0)
@@ -206,7 +204,7 @@ struct PassInfLabel: View {
             .font(.caption)
             .multilineTextAlignment(.leading)
             .foregroundColor(Color.fontOrangeColor)
-            .padding(.top,0)
+            //.padding(.top,0)
     }
 }
 
@@ -226,25 +224,6 @@ struct CondicionsLabel: View {
             .multilineTextAlignment(.leading)
             .foregroundColor(Color.fontOrangeColor)
             .padding(.top,0)
-    }
-}
-
-struct CondicionsImagine: View {
-    var body: some View {
-        HStack(alignment: .top, spacing: 240) {
-            Image(systemName: "house")
-                .foregroundColor(.gray)
-                .imageScale(.large)
-                .padding(.leading,20)
-                .padding(.trailing,20)
-                .padding(.bottom,10)
-            Image(systemName: "circle")
-                .foregroundColor(.gray)
-                .imageScale(.large)
-                .padding(.leading,20)
-                .padding(.trailing,20)
-                .padding(.bottom,10)
-        }
     }
 }
 

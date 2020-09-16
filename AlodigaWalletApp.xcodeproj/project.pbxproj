@@ -303,11 +303,11 @@
 			isa = PBXGroup;
 			children = (
 				46870D5624FD96A600984049 /* TransferenceView.swift */,
-				46DBC46C250BF506008D42B3 /* Transference2View.swift */,
-				46DBC47B2512866C008D42B3 /* ConfirmationView.swift */,
-				46DBC47D2512869E008D42B3 /* OperationsKeyView.swift */,
-				46DBC47F251286C4008D42B3 /* SuccesfulTransactionView.swift */,
 				46DBC481251286E6008D42B3 /* TargetCustomerView.swift */,
+				46DBC47D2512869E008D42B3 /* OperationsKeyView.swift */,
+				46DBC47B2512866C008D42B3 /* ConfirmationView.swift */,
+				46DBC47F251286C4008D42B3 /* SuccesfulTransactionView.swift */,
+				46DBC46C250BF506008D42B3 /* Transference2View.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,11 +330,11 @@
 		46DBC47025128442008D42B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				46DBC471251284B9008D42B3 /* ConfirmationQRView.swift */,
-				46DBC4732512851E008D42B3 /* OperationsKeyQRView.swift */,
 				46DBC4752512852E008D42B3 /* PaymentBusinessesQRView.swift */,
-				46DBC47725128546008D42B3 /* SuccesfulPaymentQRView.swift */,
 				46DBC4792512855A008D42B3 /* TargetCustomerQRView.swift */,
+				46DBC4732512851E008D42B3 /* OperationsKeyQRView.swift */,
+				46DBC471251284B9008D42B3 /* ConfirmationQRView.swift */,
+				46DBC47725128546008D42B3 /* SuccesfulPaymentQRView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,9 +350,9 @@
 		46DBC4842512877D008D42B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				46DBC4852512879B008D42B3 /* FormSignUpView.swift */,
-				46DBC487251287C4008D42B3 /* PassByTokenView.swift */,
 				46DBC489251287DF008D42B3 /* SignUpView.swift */,
+				46DBC487251287C4008D42B3 /* PassByTokenView.swift */,
+				46DBC4852512879B008D42B3 /* FormSignUpView.swift */,
 				46DBC48B25128804008D42B3 /* WelcomeView.swift */,
 			);
 			path = View;

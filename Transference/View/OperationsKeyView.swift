@@ -12,7 +12,7 @@ struct OperationsKeyView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
-                Image("back_login")
+                Image("backScream")
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
@@ -36,7 +36,7 @@ struct OperationsKeyViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .leading) {
                         Spacer()
-                        TextLabelPayment()
+                        TextLabelTransference()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
                     Spacer()

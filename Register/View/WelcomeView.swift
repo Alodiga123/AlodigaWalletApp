@@ -12,7 +12,7 @@ struct WelcomeView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
-                Image("back_login")
+                Image("backScream")
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
@@ -75,9 +75,9 @@ struct TextLabelStart: View {
             .font(.body)
             .fontWeight(.bold)
             .foregroundColor(.gray)
-            //.padding(.leading,20)
-           // .padding(.trailing,28)
-           // .padding(.bottom,0)
+            .padding(.leading,20)
+            .padding(.trailing,28)
+            .padding(.bottom,0)
             //.padding(.top,18)
     }
 }
@@ -95,20 +95,15 @@ struct MainButtonContent: View {
             .padding(.top,8)
     }
 }
-
+/*
 struct CheckImagine: View {
     var body: some View {
         Image(systemName: "checkmark")
             .foregroundColor(Color.fontOrangeColor)
-        //.font(.system(size: 200.0, weight: .light))
-            .font(.system(size: 200.0, weight: .light, design: .monospaced))
-            .frame(width: 250, height: 180)
-      //      .padding(.leading,20)
-      //      .padding(.trailing,28)
-      //      .padding(.bottom,0)
-        
+            .font(.system(size: 150.0, weight: .light, design: .monospaced))
+            .frame(width: 200, height: 150)
     }
-}
+}*/
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
