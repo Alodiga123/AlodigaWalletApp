@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */; };
 		0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */; };
+		0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422338125140EC300AEB65F /* WithdrawalView.swift */; };
+		042233842514121C00AEB65F /* WithdrawalConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042233832514121C00AEB65F /* WithdrawalConfirmationView.swift */; };
+		042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042233852514134B00AEB65F /* SucesfullWithdrawalView.swift */; };
 		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
 		467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04B924D857F30021F472 /* AppDelegate.swift */; };
 		467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04BB24D857F30021F472 /* SceneDelegate.swift */; };
@@ -65,6 +68,9 @@
 /* Begin PBXFileReference section */
 		0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeConfirmationView.swift; sourceTree = "<group>"; };
 		0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucesfullRechargeView.swift; sourceTree = "<group>"; };
+		0422338125140EC300AEB65F /* WithdrawalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalView.swift; sourceTree = "<group>"; };
+		042233832514121C00AEB65F /* WithdrawalConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalConfirmationView.swift; sourceTree = "<group>"; };
+		042233852514134B00AEB65F /* SucesfullWithdrawalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucesfullWithdrawalView.swift; sourceTree = "<group>"; };
 		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
 		467C04B924D857F30021F472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		467C04BB24D857F30021F472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +142,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0422337E25140DBE00AEB65F /* Withdrawal */ = {
+			isa = PBXGroup;
+			children = (
+				0422338025140EA300AEB65F /* Controller */,
+				0422337F25140E8B00AEB65F /* View */,
+			);
+			path = Withdrawal;
+			sourceTree = "<group>";
+		};
+		0422337F25140E8B00AEB65F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0422338125140EC300AEB65F /* WithdrawalView.swift */,
+				042233832514121C00AEB65F /* WithdrawalConfirmationView.swift */,
+				042233852514134B00AEB65F /* SucesfullWithdrawalView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0422338025140EA300AEB65F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		04B2F42F2513A7E700DBDA03 /* Recharge */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +197,7 @@
 		467C04AD24D857F20021F472 = {
 			isa = PBXGroup;
 			children = (
+				0422337E25140DBE00AEB65F /* Withdrawal */,
 				04B2F42F2513A7E700DBDA03 /* Recharge */,
 				46DBC48325128773008D42B3 /* Register */,
 				46DBC46F25128425008D42B3 /* PaymentQR */,
@@ -548,13 +581,16 @@
 				0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */,
 				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
+				042233842514121C00AEB65F /* WithdrawalConfirmationView.swift in Sources */,
 				0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */,
 				04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */,
+				0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */,
 				46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */,
 				46DBC47C2512866C008D42B3 /* ConfirmationView.swift in Sources */,
 				46DBC47A2512855A008D42B3 /* TargetCustomerQRView.swift in Sources */,
 				46DBC4862512879B008D42B3 /* FormSignUpView.swift in Sources */,
 				46DBC482251286E6008D42B3 /* TargetCustomerView.swift in Sources */,
+				042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */,
 				46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
 				46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */,

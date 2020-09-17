@@ -84,7 +84,7 @@ extension UIColor{
 
 struct TextLabelSuccesfulTransaction: View {
     var body: some View {
-        Text("Transaccion Exitosa")
+        Text("Transacción Exitosa")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }

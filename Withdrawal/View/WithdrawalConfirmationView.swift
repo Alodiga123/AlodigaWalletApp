@@ -2,13 +2,13 @@
 //  TransferenceView.swift
 //  AlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 9/14/20.
+//  Created by Lulymar Gutierrez on 9/17/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct SucesfullRechargeView: View {
+struct WithdrawalConfirmationView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -16,31 +16,32 @@ struct SucesfullRechargeView: View {
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
-                    SucesfullRechargeViewAccess()
+                    WithdrawalConfirmationViewAccess()
                 }
-            }.navigationBarTitle("Resumen", displayMode: .inline)
+            }.navigationBarTitle("Confimación", displayMode: .inline)
         }
     }
 }
 
-struct SucesfullRechargeViewAccess: View {
+struct WithdrawalConfirmationViewAccess: View {
     @State var text = ""
-    let labels = ["Pais", "Banco", "Producto", "Concepto", "Transf No", "Monto"]
+    let labels = ["Pais", "Banco", "Producto", "Cuenta", "Monto", "Descripción"]
     
     var body: some View {
         GeometryReader { geometry in
             ZStack{
-                VStack (alignment: .center, spacing: 5) {
+                VStack{
                     Rectangle()
                         .frame(width:50, height: 6)
                         .cornerRadius(3.0)
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        TextLabelSucesfullRecharge()
+                        Spacer()
+                        TextLabelConfirmnation()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
-                    CheckImagine()
+                    TextLabelInfWithdrawal()
                     ForEach(self.labels, id: \.self) { label in
                         HStack {
                             Text(label)
@@ -53,30 +54,35 @@ struct SucesfullRechargeViewAccess: View {
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    NavigationLink(destination: MainViewLogged()) {
-                        EndButtonContents()
+                    NavigationLink(destination: SucesfullWithdrawalView()) {
+                        ProcessButtonContents()
+                        
                     }
-                    
-                    NavigationLink(destination: MainViewLogged()) {
-                        ShareButtonContents()
+                    NavigationLink(destination: WithdrawalView()) {
+                        BackButtonContent()
                     }
+                    Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/8.2)
+            }.padding(.bottom,geometry.size.height/4.2)
         }
     }
 }
 
-struct TextLabelSucesfullRecharge: View {
+
+struct TextLabelInfWithdrawal: View {
     var body: some View {
-        Text("Recarga Exitosa")
-            .font(.title)
-            .foregroundColor(Color.fontBlackColor)
+        VStack(alignment: .center, spacing: 5) {
+            Text("Información del Retiro")
+                .font(.callout)
+                .foregroundColor(Color.fontOrangeColor)
+                .padding()
+        }
     }
 }
 
-struct SucesfullRechargeView_Previews: PreviewProvider {
+struct WithdrawalConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        SucesfullRechargeView()
+        WithdrawalConfirmationView()
     }
 }

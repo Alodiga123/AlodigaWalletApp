@@ -2,13 +2,13 @@
 //  TransferenceView.swift
 //  AlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 9/14/20.
+//  Created by Lulymar Gutierrez on 9/17/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct SucesfullRechargeView: View {
+struct SucesfullWithdrawalView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -16,16 +16,16 @@ struct SucesfullRechargeView: View {
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
-                    SucesfullRechargeViewAccess()
+                    SucesfullWithdrawalViewAccess()
                 }
             }.navigationBarTitle("Resumen", displayMode: .inline)
         }
     }
 }
 
-struct SucesfullRechargeViewAccess: View {
+struct SucesfullWithdrawalViewAccess: View {
     @State var text = ""
-    let labels = ["Pais", "Banco", "Producto", "Concepto", "Transf No", "Monto"]
+    let labels = ["Pais", "Banco", "Producto", "Cuenta", "Monto", "Descripción"]
     
     var body: some View {
         GeometryReader { geometry in
@@ -37,7 +37,7 @@ struct SucesfullRechargeViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        TextLabelSucesfullRecharge()
+                        TextLabelSucesfullWithdrawal()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
                     CheckImagine()
@@ -67,16 +67,16 @@ struct SucesfullRechargeViewAccess: View {
     }
 }
 
-struct TextLabelSucesfullRecharge: View {
+struct TextLabelSucesfullWithdrawal: View {
     var body: some View {
-        Text("Recarga Exitosa")
+        Text("Retiro Exitoso")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
 }
 
-struct SucesfullRechargeView_Previews: PreviewProvider {
+struct SucesfullWithdrawalView_Previews: PreviewProvider {
     static var previews: some View {
-        SucesfullRechargeView()
+        SucesfullWithdrawalView()
     }
 }
