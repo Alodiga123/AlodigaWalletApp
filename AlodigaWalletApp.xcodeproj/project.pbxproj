@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */; };
+		0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */; };
+		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
 		467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04B924D857F30021F472 /* AppDelegate.swift */; };
 		467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04BB24D857F30021F472 /* SceneDelegate.swift */; };
 		467C04C024D857F40021F472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467C04BF24D857F40021F472 /* Assets.xcassets */; };
@@ -60,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeConfirmationView.swift; sourceTree = "<group>"; };
+		0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucesfullRechargeView.swift; sourceTree = "<group>"; };
+		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
 		467C04B924D857F30021F472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		467C04BB24D857F30021F472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		467C04BF24D857F40021F472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,9 +136,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04B2F42F2513A7E700DBDA03 /* Recharge */ = {
+			isa = PBXGroup;
+			children = (
+				04B2F4312513A80500DBDA03 /* Controller */,
+				04B2F4302513A7F900DBDA03 /* View */,
+			);
+			path = Recharge;
+			sourceTree = "<group>";
+		};
+		04B2F4302513A7F900DBDA03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04B2F4322513A82800DBDA03 /* RechargeView.swift */,
+				0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */,
+				0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04B2F4312513A80500DBDA03 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		467C04AD24D857F20021F472 = {
 			isa = PBXGroup;
 			children = (
+				04B2F42F2513A7E700DBDA03 /* Recharge */,
 				46DBC48325128773008D42B3 /* Register */,
 				46DBC46F25128425008D42B3 /* PaymentQR */,
 				46838CC9250BB2D300D9A97A /* RecoverPassword */,
@@ -512,8 +545,11 @@
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
 				46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */,
 				46DBC488251287C4008D42B3 /* PassByTokenView.swift in Sources */,
+				0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */,
 				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
+				0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */,
+				04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */,
 				46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */,
 				46DBC47C2512866C008D42B3 /* ConfirmationView.swift in Sources */,
 				46DBC47A2512855A008D42B3 /* TargetCustomerQRView.swift in Sources */,

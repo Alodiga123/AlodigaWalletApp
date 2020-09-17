@@ -2,13 +2,13 @@
 //  TransferenceView.swift
 //  AlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 9/11/20.
+//  Created by Lulymar Gutierrez on 9/17/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct ConfirmationView: View {
+struct RechargeConfirmationView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -16,16 +16,16 @@ struct ConfirmationView: View {
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
-                    ConfirmationViewAccess()
+                    RechargeConfirmationViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Confimación", displayMode: .inline)
         }
     }
 }
 
-struct ConfirmationViewAccess: View {
+struct RechargeConfirmationViewAccess: View {
     @State var text = ""
-    let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Monto", "Concepto", "Origen"]
+    let labels = ["Pais", "Banco", "Producto", "Concepto", "Transf No", "Monto"]
     
     var body: some View {
         GeometryReader { geometry in
@@ -41,11 +41,11 @@ struct ConfirmationViewAccess: View {
                         TextLabelConfirmnation()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
-                    TextLabelInformation()
+                    TextLabelInfRecharge()
                     ForEach(self.labels, id: \.self) { label in
                         HStack {
                             Text(label)
-                                .frame(width: 60, alignment: .leading)
+                                .frame(width: 80, alignment: .leading)
                                 .font(.caption)
                             TextField(label, text: self.$text)
                                 .font(.caption)
@@ -54,11 +54,11 @@ struct ConfirmationViewAccess: View {
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    NavigationLink(destination: SuccesfulTransactionView()) {
+                    NavigationLink(destination: SucesfullRechargeView()) {
                         ProcessButtonContents()
                         
                     }
-                    NavigationLink(destination: OperationsKeyView()) {
+                    NavigationLink(destination: RechargeView()) {
                         BackButtonContent()
                     }
                     Spacer()
@@ -69,34 +69,20 @@ struct ConfirmationViewAccess: View {
     }
 }
 
-struct TextLabelConfirmnation: View {
+
+struct TextLabelInfRecharge: View {
     var body: some View {
-        Text("Confirmación")
-            .font(.title)
-            .foregroundColor(Color.fontBlackColor)
+        VStack(alignment: .center, spacing: 5) {
+            Text("Información de la Recarga")
+                .font(.callout)
+                .foregroundColor(Color.fontOrangeColor)
+                .padding()
+        }
     }
 }
 
-struct ProcessButtonContents: View {
-    let co = Color.black.opacity(0.7)
-    var body: some View {
-        Text("Procesar")
-            .font(.headline)
-            .foregroundColor(.white)
-            .frame(width: 220, height: 60)
-            .background(co)
-            .cornerRadius(35.0)
-            .padding(.top,10)
-    }
-}
-
-struct ConfirmationView_Previews: PreviewProvider {
+struct RechargeConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationView()
+        RechargeConfirmationView()
     }
 }
-
- func Ejecutar3(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }

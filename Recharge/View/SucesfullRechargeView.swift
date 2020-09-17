@@ -2,13 +2,13 @@
 //  TransferenceView.swift
 //  AlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 9/11/20.
+//  Created by Lulymar Gutierrez on 9/14/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct ConfirmationView: View {
+struct SucesfullRechargeView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -16,36 +16,35 @@ struct ConfirmationView: View {
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
-                    ConfirmationViewAccess()
+                    SucesfullRechargeViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Resumen", displayMode: .inline)
         }
     }
 }
 
-struct ConfirmationViewAccess: View {
+struct SucesfullRechargeViewAccess: View {
     @State var text = ""
-    let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Monto", "Concepto", "Origen"]
+    let labels = ["Pais", "Banco", "Producto", "Concepto", "Transf No", "Monto"]
     
     var body: some View {
         GeometryReader { geometry in
             ZStack{
-                VStack{
+                VStack (alignment: .center, spacing: 5) {
                     Rectangle()
                         .frame(width:50, height: 6)
                         .cornerRadius(3.0)
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        Spacer()
-                        TextLabelConfirmnation()
+                        TextLabelSucesfullRecharge()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
-                    TextLabelInformation()
+                    CheckImagine()
                     ForEach(self.labels, id: \.self) { label in
                         HStack {
                             Text(label)
-                                .frame(width: 60, alignment: .leading)
+                                .frame(width: 80, alignment: .leading)
                                 .font(.caption)
                             TextField(label, text: self.$text)
                                 .font(.caption)
@@ -54,49 +53,30 @@ struct ConfirmationViewAccess: View {
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    NavigationLink(destination: SuccesfulTransactionView()) {
-                        ProcessButtonContents()
-                        
+                    NavigationLink(destination: MainViewLogged()) {
+                        EndButtonContents()
                     }
-                    NavigationLink(destination: OperationsKeyView()) {
-                        BackButtonContent()
+                    
+                    NavigationLink(destination: MainViewLogged()) {
+                        ShareButtonContents()
                     }
-                    Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.2)
+            }.padding(.bottom,geometry.size.height/8.2)
         }
     }
 }
 
-struct TextLabelConfirmnation: View {
+struct TextLabelSucesfullRecharge: View {
     var body: some View {
-        Text("Confirmación")
+        Text("Recarga Existosa")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
 }
 
-struct ProcessButtonContents: View {
-    let co = Color.black.opacity(0.7)
-    var body: some View {
-        Text("Procesar")
-            .font(.headline)
-            .foregroundColor(.white)
-            .frame(width: 220, height: 60)
-            .background(co)
-            .cornerRadius(35.0)
-            .padding(.top,10)
-    }
-}
-
-struct ConfirmationView_Previews: PreviewProvider {
+struct SucesfullRechargeView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationView()
+        SucesfullRechargeView()
     }
 }
-
- func Ejecutar3(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }

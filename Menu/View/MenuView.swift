@@ -46,7 +46,7 @@ struct MenuView: View {
                 Image(systemName: "gear")
                     .foregroundColor(.gray)
                     .imageScale(.large)
-                NavigationLink(destination: TransferenceView()) {
+                NavigationLink(destination: RechargeView()) {
                     Text("Recargar")
                         .foregroundColor(.gray)
                         .font(.headline)

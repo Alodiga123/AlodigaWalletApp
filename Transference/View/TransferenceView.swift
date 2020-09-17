@@ -45,7 +45,7 @@ struct TransferenceViewAccess: View {
                     Spacer()
                     TextLabelCurrency()
                     TextLabelUserR()
-                    UsernameTextField(username: self.$user)
+                    EmailTextField(user: self.$user)
                     NavigationLink(destination: TargetCustomerView()) {
                         SerchButtonContent()
                     }
@@ -65,7 +65,7 @@ struct TransferenceViewAccess: View {
 
 struct TextLabelTransference: View {
     var body: some View {
-        Text("TRANSFERENCIA")
+        Text("Transferencia")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -99,7 +99,7 @@ struct EmailTextField: View {
         }) {
         }
             .leftView({ // Add left view.
-                Image("")
+                Image("email")
             }).placeholderColor(Color.placeholderGrayColor)
             .frame(height: 50)
             .padding(.leading,20)
