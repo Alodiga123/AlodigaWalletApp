@@ -141,7 +141,9 @@ struct CardButtonViewAccess: View {
                              }
                 HStack{
                     RegisterLabel()
-                    ValueRegister()
+                    NavigationLink(destination: SignUpView()){
+                        ValueRegister()
+                    }
                 }
                 .padding()
                  Spacer()
