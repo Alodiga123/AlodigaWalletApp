@@ -49,6 +49,18 @@ struct MenuView: View {
                 Image(systemName: "person")
                     .foregroundColor(.gray)
                     .imageScale(.large)
+                NavigationLink(destination: TopUpView()) {
+                    Text("TopUp")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
+            }
+            .padding(.top, 30)
+            
+            HStack {
+                Image(systemName: "person")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
                 NavigationLink(destination: PaymentBusinessesQRView()) {
                     Text("Pago Comercio QR")
                         .foregroundColor(.gray)

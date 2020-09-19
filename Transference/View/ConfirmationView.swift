@@ -28,44 +28,46 @@ struct ConfirmationViewAccess: View {
     let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Monto", "Concepto", "Origen"]
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack{
-                VStack{
-                    Rectangle()
-                        .frame(width:50, height: 6)
-                        .cornerRadius(3.0)
-                        .opacity(0.3)
-                        .padding(.top,16)
-                    VStack(alignment: .leading) {
-                        Spacer()
-                        TextLabelConfirmnation()
-                    }.padding(.leading,20)
-                        .padding(.trailing,20)
-                    TextLabelInformation()
-                    ForEach(self.labels, id: \.self) { label in
-                        HStack {
-                            Text(label)
-                                .frame(width: 60, alignment: .leading)
-                                .font(.caption)
-                            TextField(label, text: self.$text)
-                                .font(.caption)
+        //ScrollView{
+            GeometryReader { geometry in
+                ZStack{
+                    VStack{
+                        Rectangle()
+                            .frame(width:50, height: 6)
+                            .cornerRadius(3.0)
+                            .opacity(0.3)
+                            .padding(.top,16)
+                        VStack(alignment: .leading) {
+                            Spacer()
+                            TextLabelConfirmnation()
+                        }.padding(.leading,20)
+                            .padding(.trailing,20)
+                        TextLabelInformation()
+                        ForEach(self.labels, id: \.self) { label in
+                            HStack {
+                                Text(label)
+                                    .frame(width: 60, alignment: .leading)
+                                    .font(.caption)
+                                TextField(label, text: self.$text)
+                                    .font(.caption)
+                            }
                         }
-                    }
-                    .padding(.horizontal)
-                    .fixedSize(horizontal: false, vertical: true)
-                    
-                    NavigationLink(destination: SuccesfulTransactionView()) {
-                        ProcessButtonContents()
+                        .padding(.horizontal)
+                        .fixedSize(horizontal: false, vertical: true)
                         
-                    }
-                    NavigationLink(destination: OperationsKeyView()) {
-                        BackButtonContent()
-                    }
-                    Spacer()
-                }.background(Color.cardButtonViewGray)
-                    .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.2)
-        }
+                        NavigationLink(destination: SuccesfulTransactionView()) {
+                            ProcessButtonContents()
+                            
+                        }
+                        NavigationLink(destination: OperationsKeyView()) {
+                            BackButtonContent()
+                        }
+                        Spacer()
+                    }.background(Color.cardButtonViewGray)
+                        .cornerRadius(40)
+                }.padding(.bottom,geometry.size.height/4.2)
+            }
+        //}
     }
 }
 

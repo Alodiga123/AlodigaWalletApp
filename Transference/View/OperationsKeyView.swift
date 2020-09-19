@@ -26,37 +26,39 @@ struct OperationsKeyView: View {
 struct OperationsKeyViewAccess: View {
     @State var key: String = ""
     var body: some View {
-        GeometryReader { geometry in
-            ZStack{
-                VStack {
-                    Rectangle()
-                        .frame(width:50, height: 6)
-                        .cornerRadius(3.0)
-                        .opacity(0.3)
-                        .padding(.top,16)
-                    VStack(alignment: .leading) {
+        //ScrollView{
+            GeometryReader { geometry in
+                ZStack{
+                    VStack {
+                        Rectangle()
+                            .frame(width:50, height: 6)
+                            .cornerRadius(3.0)
+                            .opacity(0.3)
+                            .padding(.top,16)
+                        VStack(alignment: .leading) {
+                            Spacer()
+                            TextLabelTransference()
+                        }.padding(.leading,20)
+                            .padding(.trailing,20)
                         Spacer()
-                        TextLabelTransference()
-                    }.padding(.leading,20)
-                        .padding(.trailing,20)
-                    Spacer()
-                        .frame(height: 10)
-                    TextLabelOperationKey()
-                    OperationKeyTextField(key: self.$key)
-                    
-                    NavigationLink(destination: ConfirmationView()) {
-                        SendButtonContents()
-                    }
-                    
-                    NavigationLink(destination: TargetCustomerView()) {
-                        BackButtonContent()
-                    }
-                    
-                    Spacer()
-                }.background(Color.cardButtonViewGray)
-                    .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/2.2)
-        }
+                            .frame(height: 10)
+                        TextLabelOperationKey()
+                        OperationKeyTextField(key: self.$key)
+                        
+                        NavigationLink(destination: ConfirmationView()) {
+                            SendButtonContents()
+                        }
+                        
+                        NavigationLink(destination: TargetCustomerView()) {
+                            BackButtonContent()
+                        }
+                        
+                        Spacer()
+                    }.background(Color.cardButtonViewGray)
+                        .cornerRadius(40)
+                }.padding(.bottom,geometry.size.height/2.2)
+            }
+        //}
     }
 }
 

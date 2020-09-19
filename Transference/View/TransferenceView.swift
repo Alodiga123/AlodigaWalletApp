@@ -28,36 +28,37 @@ struct TransferenceViewAccess: View {
     @State var isLoggedIn: Bool = false
     
     var body: some View {
-        
-        GeometryReader { geometry in
-            ZStack{
-                VStack{
-                    Rectangle()
-                        .frame(width:50, height: 6)
-                        .cornerRadius(3.0)
-                        .opacity(0.3)
-                        .padding(.top,16)
-                    VStack(alignment: .leading) {
+        //ScrollView{
+            GeometryReader { geometry in
+                ZStack{
+                    VStack{
+                        Rectangle()
+                            .frame(width:50, height: 6)
+                            .cornerRadius(3.0)
+                            .opacity(0.3)
+                            .padding(.top,16)
+                        VStack(alignment: .leading) {
+                            Spacer()
+                            TextLabelTransference()
+                        }.padding(.leading,20)
+                            .padding(.trailing,20)
                         Spacer()
-                        TextLabelTransference()
-                    }.padding(.leading,20)
-                        .padding(.trailing,20)
-                    Spacer()
-                    TextLabelCurrency()
-                    TextLabelUserR()
-                    EmailTextField(user: self.$user)
-                    NavigationLink(destination: TargetCustomerView()) {
-                        SerchButtonContent()
-                    }
-                    NavigationLink(destination: MainViewLogged()) {
-                        BackButtonContent()
-                    }
-                    .padding()
-                    Spacer()
-                }.background(Color.cardButtonViewGray)
-                    .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/3.2)
-        }
+                        TextLabelCurrency()
+                        TextLabelUserR()
+                        EmailTextField(user: self.$user)
+                        NavigationLink(destination: TargetCustomerView()) {
+                            SerchButtonContent()
+                        }
+                        NavigationLink(destination: MainViewLogged()) {
+                            BackButtonContent()
+                        }
+                        .padding()
+                        Spacer()
+                    }.background(Color.cardButtonViewGray)
+                        .cornerRadius(40)
+                }.padding(.bottom,geometry.size.height/3.2)
+            }
+        //}
     }
 }
 
