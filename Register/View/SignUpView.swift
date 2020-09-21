@@ -1,5 +1,5 @@
 //
-//  TransferenceView.swift
+//  SignUpView.swift
 //  AlodigaWalletApp
 //
 //  Created by Lulymar Gutierrez on 9/15/20.

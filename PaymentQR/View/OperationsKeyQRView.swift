@@ -1,5 +1,5 @@
 //
-//  OperationsKey.swift
+//  OperationsKeyQRView.swift
 //  IOSAlodigaWalletApp
 //
 //  Created by Lulymar Gutierrez on 9/14/20.

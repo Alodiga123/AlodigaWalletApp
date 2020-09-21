@@ -1,5 +1,5 @@
 //
-//  TransferenceView.swift
+//  TargetCustomerView.swift
 //  AlodigaWalletApp
 //
 //  Created by Lulymar Gutierrez on 9/9/20.

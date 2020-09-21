@@ -1,5 +1,5 @@
 //
-//  RecoverPasswordByTokenView.swift
+//  PassByTokenView.swift
 //  IOSAlodigaWalletApp
 //
 //  Created by Lulymar Gutierrez on 9/15/20.

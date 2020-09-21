@@ -1,5 +1,5 @@
 //
-//  TransferenceView.swift
+//  TopUpView.swift
 //  AlodigaWalletApp
 //
 //  Created by Lulymar Gutierrez on 9/17/20.
@@ -55,7 +55,7 @@ struct TopUpViewAccess: View {
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.3)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
@@ -94,7 +94,7 @@ struct SenderPhoneTextField: View {
         }) {
         }
             .leftView({ // Add left view.
-                Image("")
+                Image(systemName: "candybarphone")
             }).placeholderColor(Color.placeholderGrayColor)
             .frame(height: 40)
             .padding(.leading,20)

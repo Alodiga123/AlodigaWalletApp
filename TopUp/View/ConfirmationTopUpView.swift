@@ -1,14 +1,14 @@
 //
-//  SucesfullRechargeView.swift
+//  ConfirmationTopUpView.swift
 //  AlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 9/14/20.
+//  Created by Lulymar Gutierrez on 9/19/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct SucesfullRechargeView: View {
+struct ConfirmationTopUpView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -16,16 +16,16 @@ struct SucesfullRechargeView: View {
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
-                    SucesfullRechargeViewAccess()
+                    ConfirmationTopUpViewAccess()
                 }
-            }.navigationBarTitle("Resumen", displayMode: .inline)
+            }.navigationBarTitle("Exito", displayMode: .inline)
         }
     }
 }
 
-struct SucesfullRechargeViewAccess: View {
+struct ConfirmationTopUpViewAccess: View {
     @State var text = ""
-    let labels = ["Pais", "Banco", "Producto", "Concepto", "Transf No", "Monto"]
+    let labels = ["Pais", "Operadora","Teléfono Remitente", "Teléfono Destino", "Monto", "Fecha", "Transacción", ]
     
     var body: some View {
         GeometryReader { geometry in
@@ -37,14 +37,14 @@ struct SucesfullRechargeViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        TextLabelSucesfullRecharge()
+                        TextLabelConfirmnation()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
-                    CheckImagine()
+                    TextLabelInformationTopUp()
                     ForEach(self.labels, id: \.self) { label in
                         HStack {
                             Text(label)
-                                .frame(width: 80, alignment: .leading)
+                                .frame(width: 115, alignment: .leading)
                                 .font(.caption)
                             TextField(label, text: self.$text)
                                 .font(.caption)
@@ -53,12 +53,12 @@ struct SucesfullRechargeViewAccess: View {
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    NavigationLink(destination: MainViewLogged()) {
-                        EndButtonContents()
+                    NavigationLink(destination: SuccessTopUpView()) {
+                        ProcessButtonContents()
                     }
                     
-                    NavigationLink(destination: MainViewLogged()) {
-                        ShareButtonContents()
+                    NavigationLink(destination: OperationKeyTopUpView()) {
+                        BackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
@@ -67,16 +67,19 @@ struct SucesfullRechargeViewAccess: View {
     }
 }
 
-struct TextLabelSucesfullRecharge: View {
+struct TextLabelInformationTopUp: View {
     var body: some View {
-        Text("Recarga Exitosa")
-            .font(.title)
-            .foregroundColor(Color.fontBlackColor)
+        VStack(alignment: .center, spacing: 5) {
+            Text("Información de la recarga")
+                .font(.callout)
+                .foregroundColor(Color.fontOrangeColor)
+                .padding()
+        }
     }
 }
 
-struct SucesfullRechargeView_Previews: PreviewProvider {
+struct ConfirmationTopUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SucesfullRechargeView()
+        ConfirmationTopUpView()
     }
 }

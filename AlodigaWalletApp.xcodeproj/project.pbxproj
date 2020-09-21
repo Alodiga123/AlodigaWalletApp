@@ -16,6 +16,12 @@
 		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
 		04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC3025157E0700960B9F /* ProductTopUpView.swift */; };
 		04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC322515829600960B9F /* SuccessTopUpView.swift */; };
+		04D322C52518E54C00F3F38C /* ConfirmationTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D322C42518E54C00F3F38C /* ConfirmationTopUpView.swift */; };
+		04D322D52518EA4E00F3F38C /* OperationKeyTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D322D42518EA4E00F3F38C /* OperationKeyTopUpView.swift */; };
+		04D6DA41251913210053125C /* ConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6DA40251913210053125C /* ConvertView.swift */; };
+		04D6DA49251946650053125C /* CommissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6DA48251946650053125C /* CommissionView.swift */; };
+		04D6DA51251953B00053125C /* OperationKeyConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6DA50251953B00053125C /* OperationKeyConvertView.swift */; };
+		04D6DA562519551E0053125C /* ConfirmationConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6DA552519551E0053125C /* ConfirmationConvertView.swift */; };
 		467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04B924D857F30021F472 /* AppDelegate.swift */; };
 		467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04BB24D857F30021F472 /* SceneDelegate.swift */; };
 		467C04C024D857F40021F472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467C04BF24D857F40021F472 /* Assets.xcassets */; };
@@ -78,6 +84,12 @@
 		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
 		04BEBC3025157E0700960B9F /* ProductTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTopUpView.swift; sourceTree = "<group>"; };
 		04BEBC322515829600960B9F /* SuccessTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessTopUpView.swift; sourceTree = "<group>"; };
+		04D322C42518E54C00F3F38C /* ConfirmationTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTopUpView.swift; sourceTree = "<group>"; };
+		04D322D42518EA4E00F3F38C /* OperationKeyTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationKeyTopUpView.swift; sourceTree = "<group>"; };
+		04D6DA40251913210053125C /* ConvertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		04D6DA48251946650053125C /* CommissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommissionView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		04D6DA50251953B00053125C /* OperationKeyConvertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationKeyConvertView.swift; sourceTree = "<group>"; };
+		04D6DA552519551E0053125C /* ConfirmationConvertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationConvertView.swift; sourceTree = "<group>"; };
 		467C04B924D857F30021F472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		467C04BB24D857F30021F472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		467C04BF24D857F40021F472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +200,8 @@
 			children = (
 				0422338A251551F600AEB65F /* TopUpView.swift */,
 				04BEBC3025157E0700960B9F /* ProductTopUpView.swift */,
+				04D322D42518EA4E00F3F38C /* OperationKeyTopUpView.swift */,
+				04D322C42518E54C00F3F38C /* ConfirmationTopUpView.swift */,
 				04BEBC322515829600960B9F /* SuccessTopUpView.swift */,
 			);
 			path = View;
@@ -226,9 +240,45 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		04BB53E32516F7810036F94F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04D322DF2518F78300F3F38C /* Convert */ = {
+			isa = PBXGroup;
+			children = (
+				04D322E42518FC4500F3F38C /* Controller */,
+				04D322E32518FC3600F3F38C /* View */,
+			);
+			path = Convert;
+			sourceTree = "<group>";
+		};
+		04D322E32518FC3600F3F38C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04D6DA40251913210053125C /* ConvertView.swift */,
+				04D6DA48251946650053125C /* CommissionView.swift */,
+				04D6DA50251953B00053125C /* OperationKeyConvertView.swift */,
+				04D6DA552519551E0053125C /* ConfirmationConvertView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04D322E42518FC4500F3F38C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
 		467C04AD24D857F20021F472 = {
 			isa = PBXGroup;
 			children = (
+				04D322DF2518F78300F3F38C /* Convert */,
 				042233872515519B00AEB65F /* TopUp */,
 				0422337E25140DBE00AEB65F /* Withdrawal */,
 				04B2F42F2513A7E700DBDA03 /* Recharge */,
@@ -392,7 +442,7 @@
 		46B2720624FD7AD4005DB0C1 /* Transference */ = {
 			isa = PBXGroup;
 			children = (
-				46B2720824FD7AEF005DB0C1 /* Controller */,
+				04BB53E32516F7810036F94F /* Controller */,
 				46B2720724FD7AE5005DB0C1 /* View */,
 			);
 			path = Transference;
@@ -409,13 +459,6 @@
 				46DBC46C250BF506008D42B3 /* Transference2View.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		46B2720824FD7AEF005DB0C1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		46DBC46F25128425008D42B3 /* PaymentQR */ = {
@@ -523,7 +566,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Kerwin Gomez";
 				TargetAttributes = {
 					467C04B524D857F20021F472 = {
@@ -605,10 +648,13 @@
 				46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */,
 				46870D62250281AF00984049 /* Constans.swift in Sources */,
 				04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */,
+				04D322D52518EA4E00F3F38C /* OperationKeyTopUpView.swift in Sources */,
 				46DBC48A251287DF008D42B3 /* SignUpView.swift in Sources */,
 				46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */,
 				46DBC47825128547008D42B3 /* SuccesfulPaymentQRView.swift in Sources */,
 				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
+				04D322C52518E54C00F3F38C /* ConfirmationTopUpView.swift in Sources */,
+				04D6DA562519551E0053125C /* ConfirmationConvertView.swift in Sources */,
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
 				46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */,
 				46DBC488251287C4008D42B3 /* PassByTokenView.swift in Sources */,
@@ -621,6 +667,8 @@
 				0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */,
 				04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */,
 				0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */,
+				04D6DA51251953B00053125C /* OperationKeyConvertView.swift in Sources */,
+				04D6DA49251946650053125C /* CommissionView.swift in Sources */,
 				46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */,
 				46DBC47C2512866C008D42B3 /* ConfirmationView.swift in Sources */,
 				46DBC47A2512855A008D42B3 /* TargetCustomerQRView.swift in Sources */,
@@ -629,6 +677,7 @@
 				042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */,
 				46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
+				04D6DA41251913210053125C /* ConvertView.swift in Sources */,
 				46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */,
 				46DBC47E2512869E008D42B3 /* OperationsKeyView.swift in Sources */,
 				46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */,
@@ -717,6 +766,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -778,6 +828,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

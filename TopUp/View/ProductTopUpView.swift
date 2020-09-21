@@ -1,5 +1,5 @@
 //
-//  TransferenceView.swift
+//  ProductTopUpView.swift
 //  AlodigaWalletApp
 //
 //  Created by Lulymar Gutierrez on 9/17/20.
@@ -45,7 +45,7 @@ struct ProductTopUpViewAccess: View {
                     ProductDebitTextField(productDebit: self.$productDebit)
                     OperatorTextField(operatorPhone: self.$operatorPhone)
                     ProductRechargerTextField(productRecharger: self.$productRecharger)
-                    NavigationLink(destination: SuccessTopUpView()) {
+                    NavigationLink(destination: OperationKeyTopUpView()) {
                         BuyButtonContent()
                     }
                     NavigationLink(destination: TopUpView()) {

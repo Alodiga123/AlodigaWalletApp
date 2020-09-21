@@ -1,14 +1,14 @@
 //
-//  WithdrawalView.swift
+//  ConvertView.swift
 //  AlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 9/17/20.
+//  Created by Lulymar Gutierrez on 9/21/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct WithdrawalView: View {
+struct ConvertView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -16,20 +16,19 @@ struct WithdrawalView: View {
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
-                    WithdrawalViewAccess()
+                    ConvertViewAccess()
                 }
-            }.navigationBarTitle("Retiro", displayMode: .inline)
+            }.navigationBarTitle("Convertir", displayMode: .inline)
         }
     }
 }
 
-struct WithdrawalViewAccess: View {
-    @State var country: String = ""
-    @State var bank: String = ""
-    @State var product: String = ""
-    @State var acount: String = ""
+struct ConvertViewAccess: View {
+    @State var isChecked:Bool = false
+    @State var productOrigin: String = ""
+    @State var productTarget: String = ""
     @State var amount: String = ""
-    @State var description: String = ""
+    func toggle(){isChecked = !isChecked}
     
     var body: some View {
         
@@ -43,41 +42,46 @@ struct WithdrawalViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .leading) {
                         Spacer()
-                        TextLabelWithdrawal()
+                        TextLabelConvert()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
-                    CountryTextField(country: self.$country)
-                    BankTextField(bank: self.$bank)
-                    ProductTextField(product: self.$product)
-                    AcountNumberTextField(acount: self.$acount)
+                    ProductOriTextField(productOrigin: self.$productOrigin)
+                    ProductTarTextField(productTarget: self.$productTarget)
                     AmountTextField(amount: self.$amount)
-                    DescriptionTextField(description: self.$description)
-                    
-                    NavigationLink(destination: WithdrawalConfirmationView()) {
-                        WithdrawalButtonContent()
+                    HStack{
+                        Button(action: toggle) {
+                            Image(systemName: isChecked ? "checkmark.square" : "square")
+                                .padding(.leading)
+                        }
+                        TextLabelCommission()
+                        .padding()
+                        Spacer()
+                    }
+                    NavigationLink(destination: CommissionView()) {
+                        NextButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
                         BackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.3)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
 
-struct TextLabelWithdrawal: View {
+struct TextLabelConvert: View {
     var body: some View {
-        Text("Retiro Manual")
+        Text("Convertir")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
 }
 
-struct AcountNumberTextField: View {
-    @Binding var acount: String
+struct ProductOriTextField: View {
+    @Binding var productOrigin: String
     var body: some View {
-        FloatingLabelTextField($acount, placeholder: "Número de Cuenta", editingChanged: { (isChanged) in
+        FloatingLabelTextField($productOrigin, placeholder: "Seleccione el Producto de Origen", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -90,10 +94,10 @@ struct AcountNumberTextField: View {
     }
 }
 
-struct DescriptionTextField: View {
-    @Binding var description: String
+struct ProductTarTextField: View {
+    @Binding var productTarget: String
     var body: some View {
-        FloatingLabelTextField($description, placeholder: "Descripción", editingChanged: { (isChanged) in
+        FloatingLabelTextField($productTarget, placeholder: "Seleccione el Producto de Destino", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -106,21 +110,30 @@ struct DescriptionTextField: View {
     }
 }
 
-struct WithdrawalButtonContent: View {
+struct TextLabelCommission: View {
+    var body: some View {
+        Text("Incluir comisión en monto")
+            .font(.callout)
+            //.fontWeight(.bold)
+            .foregroundColor(.gray)
+    }
+}
+
+struct NextButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Procesar Retiro")
+        Text("Siguiente")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
             .background(co)
             .cornerRadius(35.0)
-            .padding(.top,5)
+            .padding(.top,10)
     }
 }
 
-struct WithdrawalView_Previews: PreviewProvider {
+struct ConvertView_Previews: PreviewProvider {
     static var previews: some View {
-        WithdrawalView()
+        ConvertView()
     }
 }

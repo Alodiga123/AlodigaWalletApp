@@ -1,5 +1,5 @@
 //
-//  TransferenceView.swift
+//  PaymentBusinessesQRView.swift
 //  AlodigaWalletApp
 //
 //  Created by Lulymar Gutierrez on 9/14/20.

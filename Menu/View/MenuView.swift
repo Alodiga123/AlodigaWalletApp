@@ -35,6 +35,18 @@ struct MenuView: View {
             }
             .padding(.top, 30)
             HStack {
+                Image(systemName: "gear")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
+                NavigationLink(destination: ConvertView()) {
+                    Text("Convertir")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
+                
+            }
+            .padding(.top, 30)
+            HStack {
                 Image(systemName: "person")
                     .foregroundColor(.gray)
                     .imageScale(.large)

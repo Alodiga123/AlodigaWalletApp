@@ -1,14 +1,14 @@
 //
-//  OperationsKeyView.swift
+//  OperationKeyTopUpView.swift
 //  IOSAlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 9/10/20.
+//  Created by Lulymar Gutierrez on 9/19/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct OperationsKeyView: View {
+struct OperationKeyTopUpView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -16,14 +16,14 @@ struct OperationsKeyView: View {
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
-                    OperationsKeyViewAccess()
+                    OperationKeyTopUpViewAccess()
                 }
             }.navigationBarTitle("Volver", displayMode: .inline)
         }
     }
 }
 
-struct OperationsKeyViewAccess: View {
+struct OperationKeyTopUpViewAccess: View {
     @State var key: String = ""
     var body: some View {
         //ScrollView{
@@ -36,8 +36,8 @@ struct OperationsKeyViewAccess: View {
                             .opacity(0.3)
                             .padding(.top,16)
                         VStack(alignment: .leading) {
+                            TextLabelTopUp()
                             Spacer()
-                            TextLabelTransference()
                         }.padding(.leading,20)
                             .padding(.trailing,20)
                         Spacer()
@@ -49,11 +49,10 @@ struct OperationsKeyViewAccess: View {
                             SendButtonContents()
                         }
                         
-                        NavigationLink(destination: TargetCustomerView()) {
+                        NavigationLink(destination: ProductTopUpView()) {
                             BackButtonContent()
                         }
                         
-                        Spacer()
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/2.2)
@@ -61,13 +60,14 @@ struct OperationsKeyViewAccess: View {
         //}
     }
 }
-
+/*
 struct TextLabelOperationKey: View {
     var body: some View {
         VStack(alignment: .center, spacing: 6) {
             Text("Introduzca la clave de Operaciones")
                 .font(.callout)
                 .foregroundColor(Color.fontOrangeColor)
+                .padding()
         }
     }
 }
@@ -80,14 +80,14 @@ struct OperationKeyTextField: View {
         }) {
         }
             .leftView({ // Add left view.
-                Image("password")
+                Image("")
             })
             .placeholderColor(Color.placeholderGrayColor)
             .frame(height: 50)
             .padding(.leading,20)
             .padding(.trailing,20)
-            //.padding(.top)
-            //.padding(.bottom,0)
+            .padding(.top)
+            .padding(.bottom,0)
     }
 }
 
@@ -103,15 +103,9 @@ struct SendButtonContents: View {
             .padding(.top,10)
     }
 }
-
-struct OperationsKeyView_Previews: PreviewProvider {
+*/
+struct OperationKeyTopUpView_Previews: PreviewProvider {
     static var previews: some View {
-        OperationsKeyView()
+        OperationKeyTopUpView()
     }
 }
-/*
- func Ejecutar3(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }
-*/

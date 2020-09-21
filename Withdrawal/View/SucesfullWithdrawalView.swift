@@ -1,5 +1,5 @@
 //
-//  TransferenceView.swift
+//  SucesfullWithdrawalView.swift
 //  AlodigaWalletApp
 //
 //  Created by Lulymar Gutierrez on 9/17/20.

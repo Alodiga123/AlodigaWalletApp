@@ -1,5 +1,5 @@
 //
-//  TransferenceView.swift
+//  TargetCustomerQRView.swift
 //  AlodigaWalletApp
 //
 //  Created by Lulymar Gutierrez on 9/14/20.
@@ -80,9 +80,3 @@ struct TargetCustomerQRView_Previews: PreviewProvider {
         TargetCustomerQRView()
     }
 }
-/*
- func Ejecutar2(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }
-*/
