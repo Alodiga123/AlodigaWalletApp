@@ -11,7 +11,7 @@ struct MenuView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: "gear")
+                Image(systemName: "arrowtriangle.right.square.fill")
                     .foregroundColor(.gray)
                     .imageScale(.large)
                 NavigationLink(destination: RechargeView()) {
@@ -33,7 +33,7 @@ struct MenuView: View {
                 }
                 
             }
-            .padding(.top, 30)
+            .padding(.top, 20)
             HStack {
                 Image(systemName: "gear")
                     .foregroundColor(.gray)
@@ -45,7 +45,7 @@ struct MenuView: View {
                 }
                 
             }
-            .padding(.top, 30)
+            .padding(.top, 20)
             HStack {
                 Image(systemName: "person")
                     .foregroundColor(.gray)
@@ -56,7 +56,7 @@ struct MenuView: View {
                         .font(.headline)
                 }
             }
-            .padding(.top, 30)
+            .padding(.top, 20)
             HStack {
                 Image(systemName: "person")
                     .foregroundColor(.gray)
@@ -67,7 +67,7 @@ struct MenuView: View {
                         .font(.headline)
                 }
             }
-            .padding(.top, 30)
+            .padding(.top, 20)
             
             HStack {
                 Image(systemName: "person")
@@ -79,29 +79,40 @@ struct MenuView: View {
                         .font(.headline)
                 }
             }
-            .padding(.top, 30)
+            .padding(.top, 20)
             
-            HStack {
-                Image(systemName: "envelope")
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text("Pagar")
-                    .foregroundColor(.gray)
-                    .font(.headline)
-            }
-            .padding(.top, 30)
+//            HStack {
+//                Image(systemName: "envelope")
+//                    .foregroundColor(.gray)
+//                    .imageScale(.large)
+//                Text("Pagar")
+//                    .foregroundColor(.gray)
+//                    .font(.headline)
+//            }
+//            .padding(.top, 20)
             
+//            HStack {
+//                Image(systemName: "faceid")
+//                    .foregroundColor(.gray)
+//                    .imageScale(.large)
+//                NavigationLink(destination: SignUpView()) {
+//                    Text("Registrate")
+//                        .foregroundColor(.gray)
+//                        .font(.headline)
+//                }
+//            }
+            //.padding(.top, 20)
             HStack {
                 Image(systemName: "faceid")
                     .foregroundColor(.gray)
                     .imageScale(.large)
-                NavigationLink(destination: SignUpView()) {
-                    Text("Registrate")
+                NavigationLink(destination: ValidateAccountFirstView()) {
+                    Text("Validar Cuenta")
                         .foregroundColor(.gray)
                         .font(.headline)
                 }
             }
-            .padding(.top, 30)
+            .padding(.top, 20)
             Spacer()
         }
         .padding()

@@ -57,6 +57,7 @@ struct FormSignUpViewAccess: View {
                     OperationsKeyTextField(operationsKey: self.$operationsKey)
                     VStack{
                         PassInfLabel()
+                            .frame(width: 360, height: 35)
                         NavigationLink(destination: WelcomeView()) {
                             RegisterButtonContent()
                         }
@@ -64,6 +65,7 @@ struct FormSignUpViewAccess: View {
                             SignInLabel()
                         }
                         CondicionsLabel()
+                            .frame(width: 360, height: 35)
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
@@ -200,7 +202,7 @@ struct RegisterButtonContent: View {
 
 struct PassInfLabel: View {
     var body: some View {
-        Text("La contraseña debe tener 8 caractéres. Poseer\n+ mayuscula, minuscula, numeros y caracteres especiales")
+        Text("La contraseña debe tener 8 caractéres. Poseer\n mayúscula, minúscula, números y caractéres especiales")
             .font(.caption)
             .multilineTextAlignment(.leading)
             .foregroundColor(Color.fontOrangeColor)
@@ -219,7 +221,7 @@ struct SignInLabel: View {
 
 struct CondicionsLabel: View {
     var body: some View {
-        Text("Al hacer clic en Regístrate, Usted acepta todos los Términos\n+ y Condiciones Alodiga")
+        Text("Al hacer clic en Regístrate, Usted acepta todos los Términos\n y Condiciones Alodiga")
             .font(.caption)
             .multilineTextAlignment(.leading)
             .foregroundColor(Color.fontOrangeColor)

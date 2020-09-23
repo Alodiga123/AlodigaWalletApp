@@ -28,7 +28,7 @@ struct ConfirmationViewAccess: View {
     let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Monto", "Concepto", "Origen"]
     
     var body: some View {
-        //ScrollView{
+        ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack{
@@ -67,7 +67,7 @@ struct ConfirmationViewAccess: View {
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/4.2)
             }
-        //}
+        }
     }
 }
 

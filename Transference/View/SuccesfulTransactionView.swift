@@ -28,7 +28,7 @@ struct SuccesfulTransactionViewAccess: View {
     let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Monto", "Concepto", "Origen", "Fecha", "Transaccion"]
     
     var body: some View {
-        //ScrollView{
+        ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack (alignment: .center, spacing: 5) {
@@ -67,7 +67,7 @@ struct SuccesfulTransactionViewAccess: View {
                         .cornerRadius(40)
                 }.padding(.top).padding(.bottom,geometry.size.height/8.2)
             }
-        //}
+        }
     }
 }
 

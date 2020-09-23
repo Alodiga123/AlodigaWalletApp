@@ -88,15 +88,6 @@ struct ConfirmationConvertAccess: View {
         //}
     }
 }
-//
-//struct CheckImagine: View {
-//    var body: some View {
-//        Image(systemName: "checkmark")
-//            .foregroundColor(Color.fontOrangeColor)
-//            .font(.system(size: 120.0, weight: .light, design: .monospaced))
-//            .frame(width: 150, height: 120)
-//    }
-//}
 
 struct ConfirmationConvertView_Previews: PreviewProvider {
     static var previews: some View {

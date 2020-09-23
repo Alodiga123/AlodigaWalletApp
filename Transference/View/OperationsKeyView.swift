@@ -26,7 +26,7 @@ struct OperationsKeyView: View {
 struct OperationsKeyViewAccess: View {
     @State var key: String = ""
     var body: some View {
-        //ScrollView{
+        ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack {
@@ -58,7 +58,7 @@ struct OperationsKeyViewAccess: View {
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/2.2)
             }
-        //}
+        }
     }
 }
 

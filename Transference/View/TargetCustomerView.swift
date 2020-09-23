@@ -32,7 +32,7 @@ struct TargetCustomerViewAccess: View {
     let label2 = ["Monto", "Concepto"]
     
     var body: some View {
-        //ScrollView{
+        ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack (alignment: .center, spacing: 5) {
@@ -53,7 +53,6 @@ struct TargetCustomerViewAccess: View {
                                     .frame(width: 50, alignment: .leading)
                                     .font(.caption)
                                 TextField(label, text: self.$text)
-                                    //.textFieldStyle(RoundedBorderTextFieldStyle())
                                     .font(.caption)
                             }
                         }
@@ -75,7 +74,7 @@ struct TargetCustomerViewAccess: View {
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/8.2)
             }
-        //}
+        }
     }
 }
 

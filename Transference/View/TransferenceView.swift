@@ -28,7 +28,7 @@ struct TransferenceViewAccess: View {
     @State var isLoggedIn: Bool = false
     
     var body: some View {
-        //ScrollView{
+        ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack{
@@ -58,7 +58,7 @@ struct TransferenceViewAccess: View {
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/3.2)
             }
-        //}
+        }
     }
 }
 
