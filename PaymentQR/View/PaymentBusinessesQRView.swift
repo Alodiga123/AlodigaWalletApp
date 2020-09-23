@@ -56,7 +56,7 @@ struct PaymentBusinessesQRViewAccess: View {
                     Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/3.2)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }

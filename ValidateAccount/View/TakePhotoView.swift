@@ -114,5 +114,6 @@ struct TakePhotoButtonContent: View {
 struct TakePhotoView_Previews: PreviewProvider {
     static var previews: some View {
         TakePhotoView()
+            .padding(.horizontal)
     }
 }

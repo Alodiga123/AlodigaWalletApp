@@ -59,5 +59,6 @@ struct PhotoViewAccess: View {
 struct PhotoView_Previews: PreviewProvider {
     static var previews: some View {
         PhotoView()
+            .padding(.horizontal)
     }
 }

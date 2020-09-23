@@ -41,6 +41,7 @@ struct TopUpViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .center) {
                         TextLabelTopUp()
+                            .frame(width: 370, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     CountryTextField(country: self.$country)

@@ -1,14 +1,14 @@
 //
-//  TransferenceView.swift
+//  RecoverPasswordView.swift
 //  AlodigaWalletApp
 //
-//  Created by Kerwin Gomez on 8/31/20.
-//  Copyright © 2020 Kerwin Gomez. All rights reserved.
+//  Created by Lulymar Gutierrez on 9/23/20.
+//  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
-struct TransferenceView: View {
+struct RecoverPasswordView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -16,15 +16,15 @@ struct TransferenceView: View {
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
                 VStack() {
-                    TransferenceViewAccess()
+                    RecoverPasswordViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Recuperar Contraseña", displayMode: .inline)
         }
     }
 }
 
-struct TransferenceViewAccess: View {
-    @State var user: String = ""
+struct RecoverPasswordViewAccess: View {
+    @State var mail: String = ""
     @State var isLoggedIn: Bool = false
     
     var body: some View {
@@ -38,21 +38,19 @@ struct TransferenceViewAccess: View {
                             .opacity(0.3)
                             .padding(.top,16)
                         VStack(alignment: .leading) {
-                            Spacer()
-                            TextLabelTransference()
+                            TextLabelRecuverPassword()
                         }.padding(.leading,20)
                             .padding(.trailing,20)
+                        TextLabelRecover()
+                        EmailRecorTextField(mail: self.$mail)
                         Spacer()
-                        TextLabelCurrency()
-                        TextLabelUserR()
-                        EmailTextField(user: self.$user)
-                        NavigationLink(destination: TargetCustomerView()) {
-                            SerchButtonContent()
+                        NavigationLink(destination: RecoverPasswordByTokenView()) {
+                            ContinueRecoButtonContent()
                         }
                         NavigationLink(destination: MainViewLogged()) {
-                            BackButtonContent()
+                            CancelRecorButtonContent()
                         }
-                        Spacer()
+                        
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/3.2)
@@ -61,41 +59,20 @@ struct TransferenceViewAccess: View {
     }
 }
 
-
-
-struct TextLabelTransference: View {
+struct TextLabelRecover: View {
     var body: some View {
-        Text("Transferencia")
-            .font(.title)
-            .foregroundColor(Color.fontBlackColor)
-    }
-}
-
-struct TextLabelCurrency: View {
-    var body: some View {
-        Text("Seleccione la moneda a transferir")
-            .font(.caption)
-            .fontWeight(.bold)
+        Text("Por favor ingrese su correo electrónico registrado")
+            .font(.body)
             .foregroundColor(.gray)
+            .frame(width: 320, height: 45)
             .padding()
     }
 }
 
-struct TextLabelUserR: View {
+struct EmailRecorTextField: View {
+    @Binding var mail: String
     var body: some View {
-        Text("Seleccione el criterio de busqueda del usuario receptor")
-            .font(.caption)
-            .fontWeight(.bold)
-            .foregroundColor(.gray)
-            .padding()
-    }
-}
-
-
-struct EmailTextField: View {
-    @Binding var user: String
-    var body: some View {
-        FloatingLabelTextField($user, placeholder: "Introducir Email", editingChanged: { (isChanged) in
+        FloatingLabelTextField($mail, placeholder: "Correo electrónico", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -104,15 +81,15 @@ struct EmailTextField: View {
             .frame(height: 50)
             .padding(.leading,20)
             .padding(.trailing,20)
-            .padding(.top)
-            .padding(.bottom,0)
+            //.padding(.top)
+            .padding(.bottom,5)
     }
 }
 
-struct SerchButtonContent: View {
+struct ContinueRecoButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Buscar")
+        Text("Continuar")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -122,26 +99,22 @@ struct SerchButtonContent: View {
     }
 }
 
-struct BackButtonContent: View {
+struct CancelRecorButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Atras")
+        Text("Cancelar")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)
             .background(co)
             .cornerRadius(35.0)
-            .padding(.top,10)
+            .padding(.top,5)
+            .padding(.bottom,18)
     }
 }
 
-struct TransferenceView_Previews: PreviewProvider {
+struct RecoverPasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        TransferenceView()
+        RecoverPasswordView()
     }
 }
-
- func Ejecutar(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }

@@ -44,7 +44,7 @@ struct SuccesfullValidateViewAccess: View {
                     TextLabelValidateAccountSuccesfull()
                     ClockImagine()
                     NavigationLink(destination: MainViewLogged()) {
-                        EndButtonContent()
+                        EndValidateButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)

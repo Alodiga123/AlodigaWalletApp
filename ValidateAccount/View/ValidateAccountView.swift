@@ -37,18 +37,17 @@ struct ValidateAccountViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .center) {
                         TextLabelValidate()
-                            .frame(width: 300, height: 100)
                     }.padding(.leading,40)
                      .padding(.trailing,40)
                     Spacer()
-                    CheckImagine()
+                    ValidateAccountCheckImagine()
                     Spacer()
                     NavigationLink(destination: MainViewLogged()) {
-                        EndButtonContent()
+                        EndValidateButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/2.2)
+            }.padding(.bottom,geometry.size.height/2.4)
         }
     }
 }
@@ -57,11 +56,14 @@ struct TextLabelValidate: View {
     var body: some View {
         Text("Su cuenta se encuentra validada")
             .font(.title)
+            .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
+            .frame(width: 300, height: 100)
+        
     }
 }
 
-struct EndButtonContent: View {
+struct EndValidateButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
         Text("Finalizar")
@@ -74,8 +76,17 @@ struct EndButtonContent: View {
     }
 }
 
+struct ValidateAccountCheckImagine: View {
+    var body: some View {
+        Image(systemName: "checkmark")
+            .foregroundColor(Color.fontOrangeColor)
+            .font(.system(size: 120.0, weight: .light, design: .monospaced))
+    }
+}
+
 struct ValidateAccountView_Previews: PreviewProvider {
     static var previews: some View {
         ValidateAccountView()
+            .padding(.horizontal)
     }
 }

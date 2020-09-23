@@ -13,6 +13,9 @@
 		042233842514121C00AEB65F /* WithdrawalConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042233832514121C00AEB65F /* WithdrawalConfirmationView.swift */; };
 		042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042233852514134B00AEB65F /* SucesfullWithdrawalView.swift */; };
 		0422338B251551F600AEB65F /* TopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422338A251551F600AEB65F /* TopUpView.swift */; };
+		043FEC86251BE2EE005C518B /* RecoverPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FEC85251BE2EE005C518B /* RecoverPasswordView.swift */; };
+		043FEC8E251BF601005C518B /* SecurityLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FEC8D251BF601005C518B /* SecurityLevelView.swift */; };
+		043FEC93251BFD5B005C518B /* SuccesfulRecoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FEC92251BFD5B005C518B /* SuccesfulRecoverView.swift */; };
 		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
 		04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC3025157E0700960B9F /* ProductTopUpView.swift */; };
 		04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC322515829600960B9F /* SuccessTopUpView.swift */; };
@@ -90,6 +93,9 @@
 		042233832514121C00AEB65F /* WithdrawalConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalConfirmationView.swift; sourceTree = "<group>"; };
 		042233852514134B00AEB65F /* SucesfullWithdrawalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucesfullWithdrawalView.swift; sourceTree = "<group>"; };
 		0422338A251551F600AEB65F /* TopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpView.swift; sourceTree = "<group>"; };
+		043FEC85251BE2EE005C518B /* RecoverPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordView.swift; sourceTree = "<group>"; };
+		043FEC8D251BF601005C518B /* SecurityLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelView.swift; sourceTree = "<group>"; };
+		043FEC92251BFD5B005C518B /* SuccesfulRecoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesfulRecoverView.swift; sourceTree = "<group>"; };
 		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
 		04BEBC3025157E0700960B9F /* ProductTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTopUpView.swift; sourceTree = "<group>"; };
 		04BEBC322515829600960B9F /* SuccessTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessTopUpView.swift; sourceTree = "<group>"; };
@@ -403,7 +409,10 @@
 		46838CCA250BB2F700D9A97A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				043FEC85251BE2EE005C518B /* RecoverPasswordView.swift */,
 				46DBC46A250BC236008D42B3 /* RecoverPasswordByTokenView.swift */,
+				043FEC8D251BF601005C518B /* SecurityLevelView.swift */,
+				043FEC92251BFD5B005C518B /* SuccesfulRecoverView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -699,6 +708,7 @@
 				46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */,
 				46870D62250281AF00984049 /* Constans.swift in Sources */,
 				04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */,
+				043FEC93251BFD5B005C518B /* SuccesfulRecoverView.swift in Sources */,
 				04D6DA62251A4A9B0053125C /* ValidateAccountView.swift in Sources */,
 				04D6DA93251AAC880053125C /* ValidateAdressView.swift in Sources */,
 				04D322D52518EA4E00F3F38C /* OperationKeyTopUpView.swift in Sources */,
@@ -706,6 +716,7 @@
 				46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */,
 				46DBC47825128547008D42B3 /* SuccesfulPaymentQRView.swift in Sources */,
 				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
+				043FEC86251BE2EE005C518B /* RecoverPasswordView.swift in Sources */,
 				04D322C52518E54C00F3F38C /* ConfirmationTopUpView.swift in Sources */,
 				04D6DA562519551E0053125C /* ConfirmationConvertView.swift in Sources */,
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
@@ -737,6 +748,7 @@
 				042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */,
 				46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
+				043FEC8E251BF601005C518B /* SecurityLevelView.swift in Sources */,
 				04D6DA41251913210053125C /* ConvertView.swift in Sources */,
 				46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */,
 				46DBC47E2512869E008D42B3 /* OperationsKeyView.swift in Sources */,

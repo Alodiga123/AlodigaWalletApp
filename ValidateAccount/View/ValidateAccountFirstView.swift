@@ -37,7 +37,6 @@ struct ValidateAccountFirstViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .center) {
                         TextLabelValidateAccountFirst()
-                            .frame(width: 300, height: 100)
                     }.padding(.leading,40)
                      .padding(.trailing,40)
                     Spacer(minLength: 30)
@@ -46,9 +45,9 @@ struct ValidateAccountFirstViewAccess: View {
                     NavigationLink(destination: TakePhotoView()) {
                         ValidateAccountButtonContent()
                     }
-                    NavigationLink(destination: MainViewLogged()) {
-                        BackButtonContent()
-                    }
+//                    NavigationLink(destination: MainViewLogged()) {
+//                        BackButtonContent()
+//                    }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
@@ -60,12 +59,29 @@ struct TextLabelValidateAccountFirst: View {
     var body: some View {
         Text("Para poder desfrutar de los servicios que brinda la billetera Alodiga debe validar su cuenta")
             .font(.body)
+            .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
+            .frame(width: 300, height: 100)
+
+    }
+}
+
+struct ValidateBackButtonContent: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Atras")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
     }
 }
 
 struct ValidateAccountFirstView_Previews: PreviewProvider {
     static var previews: some View {
         ValidateAccountFirstView()
+            .padding(.horizontal)
     }
 }

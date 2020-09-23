@@ -29,19 +29,17 @@ struct AccountExpiredViewAccess: View {
         
         GeometryReader { geometry in
             ZStack{
-                VStack{
+                VStack(alignment: .center){
                     Rectangle()
                         .frame(width:50, height: 6)
                         .cornerRadius(3.0)
                         .opacity(0.3)
                         .padding(.top,16)
-                    VStack(alignment: .center) {
+                    VStack{
                         TextLabelValidateAccount()
-                            .frame(width: 300, height: 100)
-                        TextLabelValidateAccountAgain()
-                            .frame(width: 300, height: 100)
-                    }.padding(.leading,40)
-                     .padding(.trailing,40)
+                    }.padding(.leading,20)
+                     .padding(.trailing,20)
+                    TextLabelValidateAccountAgain()
                     Spacer(minLength: 30)
                     CircleImagine()
                     Spacer(minLength: 30)
@@ -49,10 +47,12 @@ struct AccountExpiredViewAccess: View {
                         ValidateAccountButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
-                        BackButtonContent()
+                        ValiBackButtonContent()
                     }
-                }.background(Color.cardButtonViewGray)
+                }
+                .background(Color.cardButtonViewGray)
                     .cornerRadius(40)
+                .padding(.horizontal)
             }.padding(.bottom,geometry.size.height/2.2)
         }
     }
@@ -63,6 +63,8 @@ struct TextLabelValidateAccount: View {
         Text("La validación de cuenta se encuentra vencida")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
+            .multilineTextAlignment(.center)
+            .frame(width: 300, height: 100)
     }
 }
 
@@ -70,7 +72,8 @@ struct TextLabelValidateAccountAgain: View {
     var body: some View {
         Text("Para poder desfrutar de los servicios que brinda la billetera Alodiga debe validar su cuenta nuevamente")
             .font(.body)
-            .foregroundColor(Color.fontBlackColor)
+            .foregroundColor(Color.fontOrangeColor)
+            .frame(width: 300, height: 100)
     }
 }
 
@@ -96,8 +99,22 @@ struct CircleImagine: View {
     }
 }
 
+struct ValiBackButtonContent: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Atras")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
+    }
+}
+
 struct AccountExpiredView_Previews: PreviewProvider {
     static var previews: some View {
         AccountExpiredView()
+            //.padding(.horizontal)
     }
 }

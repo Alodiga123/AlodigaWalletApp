@@ -125,20 +125,20 @@ struct CardButtonViewAccess: View {
                 VStack(alignment: .leading) {
                     TextLabelBeginingSession1()
                 }.padding(.leading,20).padding(.trailing,20)
-               UsernameTextField(username: self.$username)
-               PasswordSecureField(password: self.$password)
-               
-               NavigationLink(destination: RecoverPasswordByTokenView()){
-                      ForgotPassword()
-               }
-            Button(action: {
+                UsernameTextField(username: self.$username)
+                PasswordSecureField(password: self.$password)
+                
+                NavigationLink(destination: RecoverPasswordView()){
+                    ForgotPassword()
+                }
+                Button(action: {
                     self.login()
                 }) {
                     LoginButtonContent()
                 }
                 NavigationLink(destination: MainViewLogged(), isActive:self.$isLoggedIn){
-                                 EmptyView()
-                             }
+                    EmptyView()
+                }
                 HStack{
                     RegisterLabel()
                     NavigationLink(destination: SignUpView()){
@@ -146,10 +146,10 @@ struct CardButtonViewAccess: View {
                     }
                 }
                 .padding()
-                 Spacer()
+                Spacer()
             }.background(Color.cardButtonViewGray)
-                .cornerRadius(20)
-                .shadow(radius: 20).padding(.bottom,-20)
+            .cornerRadius(20)
+            .shadow(radius: 20).padding(.bottom,-20)
         }
     }
 }

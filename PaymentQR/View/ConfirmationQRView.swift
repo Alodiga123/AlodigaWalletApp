@@ -37,7 +37,6 @@ struct ConfirmationQRViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,20)
                     VStack(alignment: .leading) {
-                        Spacer()
                         TextLabelConfirmnation()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
@@ -63,7 +62,7 @@ struct ConfirmationQRViewAccess: View {
                     Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.2)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }

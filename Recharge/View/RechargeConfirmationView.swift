@@ -37,7 +37,6 @@ struct RechargeConfirmationViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        Spacer()
                         TextLabelConfirmnation()
                     }.padding(.leading,20)
                         .padding(.trailing,20)

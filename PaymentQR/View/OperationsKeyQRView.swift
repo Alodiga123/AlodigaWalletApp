@@ -35,13 +35,12 @@ struct OperationsKeyQRViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        Spacer()
                         TextLabelPayment()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
                     Spacer()
-                        .frame(height: 10)
                     TextLabelOperationKey()
+                        .frame(height: 10)
                     OperationKeyTextField(key: self.$key)
                     
                     NavigationLink(destination: ConfirmationQRView()) {

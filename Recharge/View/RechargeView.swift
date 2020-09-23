@@ -42,7 +42,6 @@ struct RechargeViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        Spacer()
                         TextLabelRecharge()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
@@ -60,7 +59,7 @@ struct RechargeViewAccess: View {
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.3)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
