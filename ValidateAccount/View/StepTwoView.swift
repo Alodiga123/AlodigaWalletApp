@@ -47,7 +47,7 @@ struct StepTwoViewAccess: View {
                         TakePhotoButtonContent()
                     }
                     NavigationLink(destination: PhotoView()) {
-                        BackButtonContent()
+                        ValidateBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)

@@ -26,42 +26,38 @@ struct OperationKeyTopUpView: View {
 struct OperationKeyTopUpViewAccess: View {
     @State var key: String = ""
     var body: some View {
-        //ScrollView{
-            GeometryReader { geometry in
-                ZStack{
-                    VStack {
-                        Rectangle()
-                            .frame(width:50, height: 6)
-                            .cornerRadius(3.0)
-                            .opacity(0.3)
-                            .padding(.top,16)
-                        VStack(alignment: .leading) {
-                            TextLabelTopUp()
-                            Spacer()
-                        }.padding(.leading,20)
-                            .padding(.trailing,20)
+        GeometryReader { geometry in
+            ZStack{
+                VStack {
+                    Rectangle()
+                        .frame(width:50, height: 6)
+                        .cornerRadius(3.0)
+                        .opacity(0.3)
+                        .padding(.top,16)
+                    VStack(alignment: .leading) {
+                        TextLabelTopUp()
                         Spacer()
-                            .frame(height: 10)
-                        TextLabelOperationKey()
-                        OperationKeyTextField(key: self.$key)
-                        
-                        NavigationLink(destination: ConfirmationView()) {
-                            SendButtonContents()
-                        }
-                        
-                        NavigationLink(destination: ProductTopUpView()) {
-                            BackButtonContent()
-                        }
-                        
-                    }.background(Color.cardButtonViewGray)
-                        .cornerRadius(40)
-                }.padding(.bottom,geometry.size.height/2.2)
-            }
-        //}
+                    }
+                    Spacer()
+                    TextLabelOperationKeyTopUp()
+                    TopUpOKTextField(key: self.$key)
+                    
+                    NavigationLink(destination: ConfirmationView()) {
+                        TopUpSendButtonContents()
+                    }
+                    
+                    NavigationLink(destination: ProductTopUpView()) {
+                        TopUpBackButtonContent()
+                    }
+                    
+                }.background(Color.cardButtonViewGray)
+                .cornerRadius(40)
+            }.padding(.bottom,geometry.size.height/2.2)
+        }
     }
 }
-/*
-struct TextLabelOperationKey: View {
+
+struct TextLabelOperationKeyTopUp: View {
     var body: some View {
         VStack(alignment: .center, spacing: 6) {
             Text("Introduzca la clave de Operaciones")
@@ -73,25 +69,25 @@ struct TextLabelOperationKey: View {
 }
 
 
-struct OperationKeyTextField: View {
+struct TopUpOKTextField: View {
     @Binding var key: String
     var body: some View {
         FloatingLabelTextField($key, placeholder: "Clave de Operaciones Especiales", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
-                Image("")
+                Image("password")
             })
             .placeholderColor(Color.placeholderGrayColor)
             .frame(height: 50)
             .padding(.leading,20)
             .padding(.trailing,20)
             .padding(.top)
-            .padding(.bottom,0)
+            .padding(.bottom,10)
     }
 }
 
-struct SendButtonContents: View {
+struct TopUpSendButtonContents: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
         Text("Enviar")
@@ -103,7 +99,7 @@ struct SendButtonContents: View {
             .padding(.top,10)
     }
 }
-*/
+
 struct OperationKeyTopUpView_Previews: PreviewProvider {
     static var previews: some View {
         OperationKeyTopUpView()

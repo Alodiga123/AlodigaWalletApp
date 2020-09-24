@@ -18,7 +18,7 @@ struct SignUpView: View {
                 VStack() {
                     SignUpViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Registro", displayMode: .inline)
         }
     }
 }
@@ -39,29 +39,24 @@ struct SignUpViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        Spacer()
                         TextLabelSignUp()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
-                    TextLabelCountry()
-                    CountryTextField(country: self.$country)
-                    TextLabelPhone()
-                    PhoneTextField(phone: self.$phone)
+                    Spacer()
+                    CountryRegisterTextField(country: self.$country)
+                    PhoneRegisterTextField(phone: self.$phone)
                     NavigationLink(destination: PassByTokenView()) {
-                        ContinueButtonContents()
+                        RegisterContinueButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
-                        CancelButtonContent33()
+                        RegisterCancelButtonContent()
                     }
-                    Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/3.2)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
-
-
 
 struct TextLabelSignUp: View {
     var body: some View {
@@ -83,7 +78,7 @@ struct TextLabelCountry: View {
 
 struct TextLabelPhone: View {
     var body: some View {
-        Text("Ingrese el numero de Telefono")
+        Text("Ingrese el número de Teléfono")
             .font(.body)
             .fontWeight(.bold)
             .foregroundColor(.gray)
@@ -92,10 +87,10 @@ struct TextLabelPhone: View {
 }
 
 
-struct CountryTextField: View {
+struct CountryRegisterTextField: View {
     @Binding var country: String
     var body: some View {
-        FloatingLabelTextField($country, placeholder: "Pais", editingChanged: { (isChanged) in
+        FloatingLabelTextField($country, placeholder: "Seleccione el Pais", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -108,10 +103,10 @@ struct CountryTextField: View {
     }
 }
 
-struct PhoneTextField: View {
+struct PhoneRegisterTextField: View {
     @Binding var phone: String
     var body: some View {
-        FloatingLabelTextField($phone, placeholder: "Telefono", editingChanged: { (isChanged) in
+        FloatingLabelTextField($phone, placeholder: "Ingrese el número de Teléfono", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -124,7 +119,21 @@ struct PhoneTextField: View {
     }
 }
 
-struct CancelButtonContent33: View {
+struct RegisterContinueButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Continuar")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,15)
+    }
+}
+
+
+struct RegisterCancelButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
         Text("Cancelar")
@@ -133,7 +142,8 @@ struct CancelButtonContent33: View {
             .frame(width: 220, height: 60)
             .background(co)
             .cornerRadius(35.0)
-            .padding(.top,8)
+            .padding(.top,5)
+            .padding(.bottom)
     }
 }
 

@@ -45,9 +45,9 @@ struct ValidateAccountFirstViewAccess: View {
                     NavigationLink(destination: TakePhotoView()) {
                         ValidateAccountButtonContent()
                     }
-//                    NavigationLink(destination: MainViewLogged()) {
-//                        BackButtonContent()
-//                    }
+                    NavigationLink(destination: MainViewLogged()) {
+                        ValidateBackButtonContent()
+                    }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
@@ -66,22 +66,8 @@ struct TextLabelValidateAccountFirst: View {
     }
 }
 
-struct ValidateBackButtonContent: View {
-    let co = Color.black.opacity(0.1)
-    var body: some View {
-        Text("Atras")
-            .font(.headline)
-            .foregroundColor(.black)
-            .frame(width: 220, height: 60)
-            .background(co)
-            .cornerRadius(35.0)
-            .padding(.top,10)
-    }
-}
-
 struct ValidateAccountFirstView_Previews: PreviewProvider {
     static var previews: some View {
         ValidateAccountFirstView()
-            .padding(.horizontal)
     }
 }

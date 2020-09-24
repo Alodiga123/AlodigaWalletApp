@@ -65,8 +65,11 @@ struct TextLabelValidateAccountSuccesfull: View {
     var body: some View {
         Text("En las proximas 24 horas le estaremos notificando.\n Una vez validado ud podrá hacer todas las funcionalidades que le brinda la Billetera Alogida")
             .font(.callout)
+            .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
-            .frame(width: 370, height: 80, alignment: .center)
+            .frame(width: 368, height: 80, alignment: .center)
+            .padding(.leading,0)
+             .padding(.trailing,0)
     }
 }
 

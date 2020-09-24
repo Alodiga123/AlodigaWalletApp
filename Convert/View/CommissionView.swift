@@ -23,7 +23,6 @@ struct CommissionView: View {
     }
 }
 
-
 struct CommissionViewAccess: View {
     @State var text = ""
     @State var amount: String = ""
@@ -32,59 +31,53 @@ struct CommissionViewAccess: View {
     let exchange = ["Alocoins", "Saldo NV"]
     
     var body: some View {
-        //ScrollView{
-            GeometryReader { geometry in
-                ZStack{
-                    VStack (alignment: .center, spacing: 5) {
-                        Rectangle()
-                            .frame(width:50, height: 6)
-                            .cornerRadius(3.0)
-                            .opacity(0.3)
-                            .padding(.top,30)
-                        VStack(alignment: .leading) {
-                            Spacer()
-                            TextLabelConvert()
-                        }.padding(.leading,20)
-                            .padding(.trailing,20)
-                        TextLabelDetail()
-                        ForEach(self.detail, id: \.self) { label in
-                            HStack {
-                                Text(label)
-                                    .frame(width: 120, alignment: .leading)
-                                    .font(.caption)
-                                TextField(label, text: self.$text)
-                                    //.textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .font(.caption)
-                            }
-                        }
-                        .padding(.horizontal)
-                        .fixedSize(horizontal: false, vertical: true)
-                        TextLabelExchange()
-                            .padding(.horizontal)
-                            .fixedSize(horizontal: false, vertical: true)
-                        ForEach(self.exchange, id: \.self) { label in
-                            HStack {
-                                Text(label)
-                                    .frame(width: 120, alignment: .leading)
-                                    .font(.caption)
-                                TextField(label, text: self.$text)
-                                    .font(.caption)
-                            }
-                        }
-                        .padding(.horizontal)
-                        .fixedSize(horizontal: false, vertical: true)
-                        NavigationLink(destination: OperationKeyConvertView()) {
-                            NextButtonContent()
-                        }
-                        NavigationLink(destination: ConvertView()) {
-                            BackButtonContent()
-                        }
+        GeometryReader { geometry in
+            ZStack{
+                VStack {
+                    Rectangle()
+                        .frame(width:50, height: 6)
+                        .cornerRadius(3.0)
+                        .opacity(0.3)
+                        .padding(.top,16)
+                    VStack(alignment: .center) {
                         Spacer()
-                    }.background(Color.cardButtonViewGray)
-                        .cornerRadius(40)
-                }.padding(.bottom,geometry.size.height/2.2)
-            }
-        //}
+                        TextLabelConvert()
+                    }.padding(.leading,20)
+                    .padding(.trailing,20)
+                    TextLabelDetail()
+                    ForEach(self.detail, id: \.self) { label in
+                        HStack {
+                            Text(label)
+                                .frame(width: 120, alignment: .leading)
+                                .font(.caption)
+                            TextField(label, text: self.$text)
+                                .font(.caption)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .fixedSize(horizontal: false, vertical: true)
+                    TextLabelExchange()
+                    ForEach(self.exchange, id: \.self) { label in
+                        HStack {
+                            Text(label)
+                                .frame(width: 120, alignment: .leading)
+                                .font(.caption)
+                            TextField(label, text: self.$text)
+                                .font(.caption)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .fixedSize(horizontal: false, vertical: true)
+                    NavigationLink(destination: OperationKeyConvertView()) {
+                        ConvertNextButtonContent()
+                    }
+                    NavigationLink(destination: ConvertView()) {
+                        ConvertBackButtonContent()
+                    }
+                }.background(Color.cardButtonViewGray)
+                .cornerRadius(40)
+            }.padding(.bottom,geometry.size.height/2.2)
+        }
     }
 }
 
@@ -93,6 +86,7 @@ struct TextLabelDetail: View {
         VStack(alignment: .leading, spacing: 5) {
             Text("Detalles")
                 .font(.callout)
+                .frame(width: 340, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
         }
@@ -104,6 +98,7 @@ struct TextLabelExchange: View {
         VStack(alignment: .center, spacing: 5) {
             Text("Tasa de Cambio")
                 .font(.callout)
+                .frame(width: 340, height: 5, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
         }

@@ -41,13 +41,13 @@ struct PhotoViewAccess: View {
                      .padding(.trailing,40)
                     Rectangle()
                         .frame(width:300, height: 300)
-                        .cornerRadius(3.0)
+                        .cornerRadius(50)
                         .opacity(0.1)
                     NavigationLink(destination: StepTwoView()) {
-                        NextButtonContent()
+                        NextValidateButtonContent()
                     }
                     NavigationLink(destination: TakePhotoView()) {
-                        BackButtonContent()
+                        ValidateBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
@@ -56,9 +56,21 @@ struct PhotoViewAccess: View {
     }
 }
 
+struct NextValidateButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Siguiente")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
+    }
+}
+
 struct PhotoView_Previews: PreviewProvider {
     static var previews: some View {
         PhotoView()
-            .padding(.horizontal)
     }
 }

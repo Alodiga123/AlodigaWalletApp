@@ -18,7 +18,7 @@ struct OperationsKeyQRView: View {
                 VStack() {
                     OperationsKeyQRViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Clave de operaciones", displayMode: .inline)
         }
     }
 }
@@ -44,14 +44,11 @@ struct OperationsKeyQRViewAccess: View {
                     OperationKeyTextField(key: self.$key)
                     
                     NavigationLink(destination: ConfirmationQRView()) {
-                        SendButtonContents()
-                    }
-                    
+                        PaymentSendButtonContent()
+                    }                    
                     NavigationLink(destination: TargetCustomerQRView()) {
-                        BackButtonContent()
+                        PaymentBackButtonContent()
                     }
-                    
-                    Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
@@ -59,15 +56,8 @@ struct OperationsKeyQRViewAccess: View {
     }
 }
 
-
 struct OperationsKeyQRView_Previews: PreviewProvider {
     static var previews: some View {
         OperationsKeyQRView()
     }
 }
-/*
- func Ejecutar3(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }
-*/

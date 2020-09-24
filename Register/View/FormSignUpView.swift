@@ -18,7 +18,7 @@ struct FormSignUpView: View {
                 VStack() {
                     FormSignUpViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Datos de Registro", displayMode: .inline)
         }
     }
 }
@@ -44,7 +44,6 @@ struct FormSignUpViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        Spacer()
                         TextLabelSignUp()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
@@ -69,7 +68,7 @@ struct FormSignUpViewAccess: View {
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.3)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
@@ -109,7 +108,7 @@ struct LastNameTextField: View {
 struct MailTextField: View {
     @Binding var email: String
     var body: some View {
-        FloatingLabelTextField($email, placeholder: "Correo Electronico", editingChanged: { (isChanged) in
+        FloatingLabelTextField($email, placeholder: "Correo Electrónico", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -173,7 +172,7 @@ struct PassTextField: View {
 struct OperationsKeyTextField: View {
     @Binding var operationsKey: String
     var body: some View {
-        FloatingLabelTextField($operationsKey, placeholder: "Clave de Operaciones", editingChanged: { (isChanged) in
+        FloatingLabelTextField($operationsKey, placeholder: "Clave de operaciones", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -183,20 +182,6 @@ struct OperationsKeyTextField: View {
             .padding(.leading,20)
             .padding(.trailing,20)
             .padding(.bottom,-1)
-    }
-}
-
-struct RegisterButtonContent: View {
-    let co = Color.black.opacity(0.7)
-    var body: some View {
-        Text("Regístrate")
-            .font(.headline)
-            .foregroundColor(.white)
-            //.padding()
-            .frame(width: 220, height: 60)
-            .background(co)
-            .cornerRadius(35.0)
-            .padding(.top,5)
     }
 }
 
@@ -226,6 +211,19 @@ struct CondicionsLabel: View {
             .multilineTextAlignment(.leading)
             .foregroundColor(Color.fontOrangeColor)
             .padding(.top,0)
+    }
+}
+
+struct RegisterButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Regístrate")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,5)
     }
 }
 

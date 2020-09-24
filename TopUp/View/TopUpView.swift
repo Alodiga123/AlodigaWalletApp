@@ -18,7 +18,7 @@ struct TopUpView: View {
                 VStack() {
                     TopUpViewAccess()
                 }
-            }.navigationBarTitle("TopUp", displayMode: .inline)
+            }.navigationBarTitle("Recarga de Móviles", displayMode: .inline)
         }
     }
 }
@@ -41,18 +41,16 @@ struct TopUpViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .center) {
                         TextLabelTopUp()
-                            .frame(width: 370, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    }.padding(.leading,20)
-                     .padding(.trailing,20)
-                    CountryTextField(country: self.$country)
+                    }
+                    CountryTopUpTextField(country: self.$country)
                     DestinationPhoneTextField(destinPhone: self.$destinPhone)
                     SenderPhoneTextField(senderPhone: self.$senderPhone)
                     LanguageTextField(language: self.$language)
                     NavigationLink(destination: ProductTopUpView()) {
-                        SerchButtonContent()
+                        TopUpSerchButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
-                        BackButtonContent()
+                        TopUpBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
@@ -64,11 +62,29 @@ struct TopUpViewAccess: View {
 struct TextLabelTopUp: View {
     var body: some View {
         VStack(alignment: .center) {
-            Text("Recarga de Moviles Nacionales e Internacionales")
+            Text("Recarga de Móviles Nacionales e Internacionales")
                 .font(.title)
                 .foregroundColor(Color.fontBlackColor)
                 .multilineTextAlignment(.center)
+                .frame(width: 345, height: 70)
+                .padding()
         }
+    }
+}
+
+struct CountryTopUpTextField: View {
+    @Binding var country: String
+    var body: some View {
+        FloatingLabelTextField($country, placeholder: "País", editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("")
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,-1)
     }
 }
 
@@ -117,6 +133,33 @@ struct LanguageTextField: View {
             .padding(.leading,20)
             .padding(.trailing,20)
             .padding(.bottom,-1)
+    }
+}
+
+struct TopUpSerchButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Buscar")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
+    }
+}
+
+struct TopUpBackButtonContent: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Atras")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
+            .padding(.bottom,5)
     }
 }
 

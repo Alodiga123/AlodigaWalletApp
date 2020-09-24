@@ -24,9 +24,7 @@ struct TakePhotoView: View {
 }
 
 struct TakePhotoViewAccess: View {
-        
     var body: some View {
-        
         GeometryReader { geometry in
             ZStack{
                 VStack{
@@ -48,7 +46,7 @@ struct TakePhotoViewAccess: View {
                         TakePhotoButtonContent()
                     }
                     NavigationLink(destination: ValidateAccountFirstView()) {
-                        BackButtonContent()
+                        ValidateBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
@@ -114,6 +112,5 @@ struct TakePhotoButtonContent: View {
 struct TakePhotoView_Previews: PreviewProvider {
     static var previews: some View {
         TakePhotoView()
-            .padding(.horizontal)
     }
 }

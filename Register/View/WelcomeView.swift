@@ -18,7 +18,7 @@ struct WelcomeView: View {
                 VStack() {
                     WelcomeViewViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Usuario creado", displayMode: .inline)
         }
     }
 }
@@ -40,25 +40,20 @@ struct WelcomeViewViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .leading) {
                         TextLabelWelcome()
-                            .padding()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     
-                    CheckImagine()
+                    RegisterCheckImagine()
                     TextLabelStart()
-                                           //.padding(.bottom,60)
                     NavigationLink(destination: MainViewLogged()) {
                         MainButtonContent()
                     }
-                    Spacer()
                 }.background(Color.cardButtonViewGray)
                  .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/3.2)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
-
-
 
 struct TextLabelWelcome: View {
     var body: some View {
@@ -68,42 +63,40 @@ struct TextLabelWelcome: View {
     }
 }
 
+struct RegisterCheckImagine: View {
+    var body: some View {
+        Image(systemName: "checkmark")
+            .foregroundColor(Color.fontOrangeColor)
+            .font(.system(size: 100.0, weight: .light, design: .monospaced))
+            .frame(width: 180, height: 100)
+    }
+}
 
 struct TextLabelStart: View {
     var body: some View {
         Text("Gracias! Su registro a sido completado de forma exitosa. Ya puede comenzar a utilizar nuestros servicios")
             .font(.body)
-            .fontWeight(.bold)
             .foregroundColor(.gray)
-            .padding(.leading,20)
+            .padding(.leading,28)
             .padding(.trailing,28)
             .padding(.bottom,0)
-            //.padding(.top,18)
+            .padding(.top,18)
     }
 }
 
-
 struct MainButtonContent: View {
-    let co = Color.black.opacity(0.1)
+    let co = Color.black.opacity(0.7)
     var body: some View {
         Text("Ingresar")
             .font(.headline)
-            .foregroundColor(.black)
+            .foregroundColor(.white)
             .frame(width: 220, height: 60)
             .background(co)
             .cornerRadius(35.0)
-            .padding(.top,8)
+            .padding(.top,10)
+            .padding(.bottom,10)
     }
 }
-/*
-struct CheckImagine: View {
-    var body: some View {
-        Image(systemName: "checkmark")
-            .foregroundColor(Color.fontOrangeColor)
-            .font(.system(size: 150.0, weight: .light, design: .monospaced))
-            .frame(width: 200, height: 150)
-    }
-}*/
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {

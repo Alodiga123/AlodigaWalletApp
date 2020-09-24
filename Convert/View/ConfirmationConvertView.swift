@@ -32,7 +32,6 @@ struct ConfirmationConvertAccess: View {
     let exchange = ["Alocoins", "Saldo NV"]
     
     var body: some View {
-        //ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack (alignment: .center, spacing: 5) {
@@ -46,24 +45,20 @@ struct ConfirmationConvertAccess: View {
                             TextLabelConvert()
                         }.padding(.leading,20)
                          .padding(.trailing,20)
-                        CheckImagine()
-                            .frame(width: 100, height: 100)
-                        TextLabelDetail()
+                        ConvertCheckImagine()
+                        //TextLabelDetail()
                         ForEach(self.detail, id: \.self) { label in
                             HStack {
                                 Text(label)
                                     .frame(width: 120, alignment: .leading)
                                     .font(.caption)
                                 TextField(label, text: self.$text)
-                                    //.textFieldStyle(RoundedBorderTextFieldStyle())
                                     .font(.caption)
                             }
                         }
                         .padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
                         TextLabelExchange()
-                            .padding(.horizontal)
-                            .fixedSize(horizontal: false, vertical: true)
                         ForEach(self.exchange, id: \.self) { label in
                             HStack {
                                 Text(label)
@@ -76,16 +71,52 @@ struct ConfirmationConvertAccess: View {
                         .padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
                         NavigationLink(destination: MainViewLogged()) {
-                            EndButtonContents()
+                            ConvertEndButtonContent()
                         }
                         NavigationLink(destination: MainViewLogged()) {
-                            ShareButtonContents()
+                            ConvertShareButtonContent()
                         }
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/2.2)
             }
-        //}
+    }
+}
+
+struct ConvertCheckImagine: View {
+    var body: some View {
+        Image(systemName: "checkmark")
+            .foregroundColor(Color.fontOrangeColor)
+            .font(.system(size: 100.0, weight: .light, design: .monospaced))
+            .frame(width: 180, height: 100)
+    }
+}
+
+
+struct ConvertEndButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Finalizar")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
+    }
+}
+
+struct ConvertShareButtonContent: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Compartir")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
+            .padding(.bottom,10)
     }
 }
 

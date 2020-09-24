@@ -41,13 +41,13 @@ struct PhotoViewStepTwoViewAccess: View {
                      .padding(.trailing,40)
                     Rectangle()
                         .frame(width:300, height: 300)
-                        .cornerRadius(3.0)
+                        .cornerRadius(50)
                         .opacity(0.1)
                     NavigationLink(destination: ValidateAdressView()) {
-                        NextButtonContent()
+                        NextValidateButtonContent()
                     }
                     NavigationLink(destination: StepTwoView()) {
-                        BackButtonContent()
+                        ValidateBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)

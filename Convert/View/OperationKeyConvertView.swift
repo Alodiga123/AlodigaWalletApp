@@ -26,38 +26,64 @@ struct OperationKeyConvertView: View {
 struct OperationKeyConvertViewAccess: View {
     @State var key: String = ""
     var body: some View {
-        //ScrollView{
-            GeometryReader { geometry in
-                ZStack{
-                    VStack {
-                        Rectangle()
-                            .frame(width:50, height: 6)
-                            .cornerRadius(3.0)
-                            .opacity(0.3)
-                            .padding(.top,16)
-                        VStack(alignment: .leading) {
-                            TextLabelConvert()
-                        }.padding(.leading,20)
-                         .padding(.trailing,20)
-                        .frame(height: 10)
-                        Spacer()
-                        TextLabelOperationKey()
-                        OperationKeyTextField(key: self.$key)
-                        
-                        NavigationLink(destination: ConfirmationConvertView()) {
-                            ProcessButtonContents()
-                        }
-                        
-                        NavigationLink(destination: CommissionView()) {
-                            BackButtonContent()
-                        }
-                        
-                        Spacer()
-                    }.background(Color.cardButtonViewGray)
-                        .cornerRadius(40)
-                }.padding(.bottom,geometry.size.height/2.2)
-            }
-        //}
+        GeometryReader { geometry in
+            ZStack{
+                VStack {
+                    Rectangle()
+                        .frame(width:50, height: 6)
+                        .cornerRadius(3.0)
+                        .opacity(0.3)
+                        .padding(.top,16)
+                    VStack(alignment: .leading) {
+                        TextLabelConvert()
+                    }.padding(.leading,20)
+                    .padding(.trailing,20)
+                    .frame(height: 10)
+                    Spacer()
+                    TextLabelOperationKey()
+                    OKConvertTextField(key: self.$key)
+                    
+                    NavigationLink(destination: ConfirmationConvertView()) {
+                        ConvertProcessButtonContent()
+                    }
+                    
+                    NavigationLink(destination: CommissionView()) {
+                        ConvertBackButtonContent()
+                    }
+                }.background(Color.cardButtonViewGray)
+                .cornerRadius(40)
+            }.padding(.bottom,geometry.size.height/2.2)
+        }
+    }
+}
+
+struct OKConvertTextField: View {
+    @Binding var key: String
+    var body: some View {
+        FloatingLabelTextField($key, placeholder: "Clave de Operaciones Especiales", editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("password")
+            })
+            .placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 50)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,0)
+    }
+}
+
+struct ConvertProcessButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Procesar")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
     }
 }
 

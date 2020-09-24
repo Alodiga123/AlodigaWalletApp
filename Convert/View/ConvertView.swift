@@ -41,13 +41,12 @@ struct ConvertViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        Spacer()
                         TextLabelConvert()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     ProductOriTextField(productOrigin: self.$productOrigin)
                     ProductTarTextField(productTarget: self.$productTarget)
-                    AmountTextField(amount: self.$amount)
+                    AmountConvertTextField(amount: self.$amount)
                     HStack{
                         Button(action: toggle) {
                             Image(systemName: isChecked ? "checkmark.square" : "square")
@@ -58,10 +57,10 @@ struct ConvertViewAccess: View {
                         Spacer()
                     }
                     NavigationLink(destination: CommissionView()) {
-                        NextButtonContent()
+                        ConvertNextButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
-                        BackButtonContent()
+                        ConvertBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
@@ -110,6 +109,22 @@ struct ProductTarTextField: View {
     }
 }
 
+struct AmountConvertTextField: View {
+    @Binding var amount: String
+    var body: some View {
+        FloatingLabelTextField($amount, placeholder: "Monto", editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("")
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,-1)
+    }
+}
+
 struct TextLabelCommission: View {
     var body: some View {
         Text("Incluir comisión en monto")
@@ -119,7 +134,7 @@ struct TextLabelCommission: View {
     }
 }
 
-struct NextButtonContent: View {
+struct ConvertNextButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
         Text("Siguiente")
@@ -129,6 +144,20 @@ struct NextButtonContent: View {
             .background(co)
             .cornerRadius(35.0)
             .padding(.top,10)
+    }
+}
+
+struct ConvertBackButtonContent: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Atras")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
+            .padding(.bottom,10)
     }
 }
 

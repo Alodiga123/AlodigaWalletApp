@@ -18,24 +18,7 @@ struct PassByTokenView: View {
                 VStack() {
                     PassByTokenViewAccess ()
                 }
-            } .navigationBarTitle("Volver", displayMode: .inline)
-        }
-    }
-}
-
-
-struct TimerView2: View {
-    @State var secondsElapsed = 150
-    var timer = Timer.publish (every: 1, on: .main, in: .common).autoconnect()
-    var body: some View {
-        VStack {
-            Text("\(self.secondsElapsed) seconds")
-            Button("Stop timer",
-                   action: {
-                    self.timer.upstream.connect().cancel()
-            })
-        }.onReceive(timer) { _ in
-            self.secondsElapsed -= 1
+            } .navigationBarTitle("Clave recibida", displayMode: .inline)
         }
     }
 }
@@ -62,23 +45,36 @@ struct PassByTokenViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .leading) {
                         TextLabelSignUp()
-                    }.padding(.leading,20).padding(.trailing,20)
-                    Spacer()
+                    }.padding(.leading,20)
+                    .padding(.trailing,20)
                     TimerCounter2()
                     TimerCounterValue2()
-                    RecoverTokenTextField(username: self.$token)
-                  
+                    RegisterTokenTextField(token: self.$token)
                     NavigationLink(destination: FormSignUpView()) {
-                        ValidateButtonContent()
+                        RegisterContinueButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
-                        CancelButtonContent()
+                        RegisterCancelButtonContent()
                     }
-                    .padding()
-                    Spacer()
                 }.background(Color.cardButtonViewGray)
                  .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.2)
+            }.padding(.bottom,geometry.size.height/2.2)
+        }
+    }
+}
+
+struct TimerView2: View {
+    @State var secondsElapsed = 150
+    var timer = Timer.publish (every: 1, on: .main, in: .common).autoconnect()
+    var body: some View {
+        VStack {
+            Text("\(self.secondsElapsed) seconds")
+            Button("Stop timer",
+                   action: {
+                    self.timer.upstream.connect().cancel()
+            })
+        }.onReceive(timer) { _ in
+            self.secondsElapsed -= 1
         }
     }
 }
@@ -88,6 +84,7 @@ struct TimerCounter2: View {
         VStack(alignment: .center, spacing: 6) {
             Text("Tiempo Restante")
                 .foregroundColor(Color.fontOrangeColor)
+                .padding(.top)
         }
     }
 }
@@ -113,35 +110,25 @@ struct TimerCounterValue2: View {
     }
 }
 
-struct ValidateButtonContent2: View {
-    let co = Color.black.opacity(0.7)
-    var body: some View {
-        Text("Continuar")
-            .font(.headline)
-            .foregroundColor(.white)
-            .padding()
-            .frame(width: 220, height: 60)
-            .background(co)
-            .cornerRadius(35.0)
-            .padding(.top,18)
-    }
-}
+//struct BackImg2: View {
+//    var body: some View {
+//        Image("back_login")
+//            .resizable().padding(.top,-80).padding(.bottom,-20)
+//    }
+//}
 
-struct BackImg2: View {
+struct RegisterTokenTextField: View {
+    @Binding var token: String
     var body: some View {
-        Image("back_login")
-            .resizable().padding(.top,-80).padding(.bottom,-20)
-    }
-}
-
-struct RecoverTokenTextField: View {
-    @Binding var username: String
-    var body: some View {
-        FloatingLabelTextField($username, placeholder: "Introduzca la clave recibida", editingChanged: { (isChanged) in
+        FloatingLabelTextField($token, placeholder: "Introduzca la clave recibida", editingChanged: { (isChanged) in
         }) {
         }
         .placeholderColor(Color.placeholderGrayColor)
-        .frame(height: 50).padding(.leading,20).padding(.trailing,20).padding(.top).padding(.bottom,0)
+        .frame(height:50)
+        .padding(.leading,20)
+        .padding(.trailing,20)
+        .padding(.top)
+        .padding(.bottom,0)
     }
 }
 

@@ -18,7 +18,7 @@ struct PaymentBusinessesQRView: View {
                 VStack() {
                     PaymentBusinessesQRViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Pago Comercios", displayMode: .inline)
         }
     }
 }
@@ -38,10 +38,9 @@ struct PaymentBusinessesQRViewAccess: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        Spacer()
                         TextLabelPayment()
                     }.padding(.leading,20)
-                        .padding(.trailing,20)
+                     .padding(.trailing,20)
                     Spacer()
                     CurrencyKeyTextField(currency: self.$currency)
                     TextLabelCodeQR()
@@ -50,10 +49,8 @@ struct PaymentBusinessesQRViewAccess: View {
                         ScannerQRButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
-                        BackButtonContent()
+                        PaymentBackButtonContent()
                     }
-                    .padding()
-                    Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
@@ -92,7 +89,7 @@ struct TextLabelCodeQR: View {
         VStack(alignment: .center, spacing: 50) {
             Text("Escanee el Codigo QR del comercio")
                 .foregroundColor(Color.fontOrangeColor)
-                .padding(.top,60)
+                .padding(.top,40)
                 .padding(.bottom,10)
         }
     }
@@ -111,14 +108,22 @@ struct ScannerQRButtonContent: View {
     }
 }
 
+struct PaymentBackButtonContent: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Atrás")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,5)
+            .padding(.bottom,5)
+    }
+}
+
 struct PaymentBusinessesQR_Previews: PreviewProvider {
     static var previews: some View {
         PaymentBusinessesQRView()
     }
 }
-/*
- func Ejecutar(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }
- */

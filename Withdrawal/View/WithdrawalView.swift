@@ -43,24 +43,22 @@ struct WithdrawalViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .leading) {
                         TextLabelWithdrawal()
-                    }.padding(.leading,20)
-                     .padding(.trailing,20)
-                    CountryTextField(country: self.$country)
-                    BankTextField(bank: self.$bank)
-                    ProductTextField(product: self.$product)
+                    }
+                    CountryWithdrawalTextField(country: self.$country)
+                    BankWithdrawalTextField(bank: self.$bank)
+                    ProductWithdrawalTextField(product: self.$product)
                     AcountNumberTextField(acount: self.$acount)
-                    AmountTextField(amount: self.$amount)
+                    AmountWithdrawalTextField(amount: self.$amount)
                     DescriptionTextField(description: self.$description)
-                    
                     NavigationLink(destination: WithdrawalConfirmationView()) {
                         WithdrawalButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
-                        BackButtonContent()
+                        WithdrawallBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.3)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
@@ -70,6 +68,56 @@ struct TextLabelWithdrawal: View {
         Text("Retiro Manual")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+    }
+}
+
+struct CountryWithdrawalTextField: View {
+    @Binding var country: String
+    var body: some View {
+        FloatingLabelTextField($country, placeholder: "País", editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("")
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,-1)
+    }
+}
+
+struct BankWithdrawalTextField: View {
+    @Binding var bank: String
+    var body: some View {
+        FloatingLabelTextField($bank, placeholder: "Banco", editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("")
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,-1)
+    }
+}
+
+struct ProductWithdrawalTextField: View {
+    @Binding var product: String
+    var body: some View {
+        FloatingLabelTextField($product, placeholder: "Producto", editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("")
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,-1)
     }
 }
 
@@ -77,6 +125,22 @@ struct AcountNumberTextField: View {
     @Binding var acount: String
     var body: some View {
         FloatingLabelTextField($acount, placeholder: "Número de Cuenta", editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("")
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,-1)
+    }
+}
+
+struct AmountWithdrawalTextField: View {
+    @Binding var amount: String
+    var body: some View {
+        FloatingLabelTextField($amount, placeholder: "Número de Cuenta", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -101,7 +165,7 @@ struct DescriptionTextField: View {
             .frame(height: 40)
             .padding(.leading,20)
             .padding(.trailing,20)
-            .padding(.bottom,-1)
+            .padding(.bottom,0)
     }
 }
 
@@ -114,7 +178,21 @@ struct WithdrawalButtonContent: View {
             .frame(width: 220, height: 60)
             .background(co)
             .cornerRadius(35.0)
+            .padding(.top)
+    }
+}
+
+struct WithdrawallBackButtonContent: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Atras")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
             .padding(.top,5)
+            .padding(.bottom,10)
     }
 }
 

@@ -45,17 +45,17 @@ struct RechargeViewAccess: View {
                         TextLabelRecharge()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
-                    CountryTextField(country: self.$country)
-                    BankTextField(bank: self.$bank)
-                    ProductTextField(product: self.$product)
-                    ConceptoTextField(concept: self.$concept)
-                    TransferTextField(transfer: self.$transfer)
-                    AmountTextField(amount: self.$amount)
+                    CountryRechargeTextField(country: self.$country)
+                    BankRechargeTextField(bank: self.$bank)
+                    ProductRechargeTextField(product: self.$product)
+                    ConceptoRechargeTextField(concept: self.$concept)
+                    TransferRechargeTextField(transfer: self.$transfer)
+                    AmountRechargeTextField(amount: self.$amount)
                     NavigationLink(destination: RechargeConfirmationView()) {
                         RechargeButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
-                        BackButtonContent()
+                        RechargeBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
@@ -72,7 +72,23 @@ struct TextLabelRecharge: View {
     }
 }
 
-struct BankTextField: View {
+struct CountryRechargeTextField: View {
+    @Binding var country: String
+    var body: some View {
+        FloatingLabelTextField($country, placeholder: "País", editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("")
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,-1)
+    }
+}
+
+struct BankRechargeTextField: View {
     @Binding var bank: String
     var body: some View {
         FloatingLabelTextField($bank, placeholder: "Banco", editingChanged: { (isChanged) in
@@ -88,7 +104,7 @@ struct BankTextField: View {
     }
 }
 
-struct ProductTextField: View {
+struct ProductRechargeTextField: View {
     @Binding var product: String
     var body: some View {
         FloatingLabelTextField($product, placeholder: "Producto", editingChanged: { (isChanged) in
@@ -104,7 +120,7 @@ struct ProductTextField: View {
     }
 }
 
-struct ConceptoTextField: View {
+struct ConceptoRechargeTextField: View {
     @Binding var concept: String
     var body: some View {
         FloatingLabelTextField($concept, placeholder: "Concepto", editingChanged: { (isChanged) in
@@ -120,7 +136,7 @@ struct ConceptoTextField: View {
     }
 }
 
-struct TransferTextField: View {
+struct TransferRechargeTextField: View {
     @Binding var transfer: String
     var body: some View {
         FloatingLabelTextField($transfer, placeholder: "Número de Transferencia", editingChanged: { (isChanged) in
@@ -136,7 +152,7 @@ struct TransferTextField: View {
     }
 }
 
-struct AmountTextField: View {
+struct AmountRechargeTextField: View {
     @Binding var amount: String
     var body: some View {
         FloatingLabelTextField($amount, placeholder: "Monto", editingChanged: { (isChanged) in
@@ -162,6 +178,20 @@ struct RechargeButtonContent: View {
             .background(co)
             .cornerRadius(35.0)
             .padding(.top,5)
+    }
+}
+
+struct RechargeBackButtonContent: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Atras")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,5)
+            .padding(.bottom)
     }
 }
 

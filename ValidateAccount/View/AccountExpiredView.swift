@@ -47,12 +47,11 @@ struct AccountExpiredViewAccess: View {
                         ValidateAccountButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
-                        ValiBackButtonContent()
+                        ValidateBackButtonContent()
                     }
                 }
                 .background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-                .padding(.horizontal)
             }.padding(.bottom,geometry.size.height/2.2)
         }
     }
@@ -70,10 +69,13 @@ struct TextLabelValidateAccount: View {
 
 struct TextLabelValidateAccountAgain: View {
     var body: some View {
-        Text("Para poder desfrutar de los servicios que brinda la billetera Alodiga debe validar su cuenta nuevamente")
-            .font(.body)
-            .foregroundColor(Color.fontOrangeColor)
-            .frame(width: 300, height: 100)
+        VStack(alignment: .center){
+            Text("Para poder desfrutar de los servicios que brinda la billetera Alodiga debe validar su cuenta nuevamente")
+                .font(.body)
+                .foregroundColor(Color.fontOrangeColor)
+                .frame(width: 360, height: 100)
+                .padding(.leading,17)
+        }
     }
 }
 
@@ -99,7 +101,7 @@ struct CircleImagine: View {
     }
 }
 
-struct ValiBackButtonContent: View {
+struct ValidateBackButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
         Text("Atras")
@@ -109,12 +111,12 @@ struct ValiBackButtonContent: View {
             .background(co)
             .cornerRadius(35.0)
             .padding(.top,10)
+            .padding(.bottom,10)
     }
 }
 
 struct AccountExpiredView_Previews: PreviewProvider {
     static var previews: some View {
         AccountExpiredView()
-            //.padding(.horizontal)
     }
 }

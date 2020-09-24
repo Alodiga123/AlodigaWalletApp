@@ -49,10 +49,10 @@ struct ValidateAdressViewAccess: View {
                     ZipZoneTextField(zipZone: self.$zipZone)
                     StreetTextField(street: self.$street)
                     NavigationLink(destination: SuccesfullValidateView()) {
-                        NextButtonContent()
+                        NextValidateButtonContent()
                     }
                     NavigationLink(destination: PhotoViewStepTwoView()) {
-                        BackButtonContent()
+                        ValidateBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)

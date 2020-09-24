@@ -69,7 +69,7 @@ struct TopButtonViewAccess: View {
                     Spacer()
                     TimerCounter()
                     TimerCounterValue()
-                    RecoverTokenTextField(username: self.$token)
+                    RecoverTokenTextField2(username: self.$token)
                     NavigationLink(destination: SecurityLevelView()) {
                         ContinueRecoButtonContent()
                     }

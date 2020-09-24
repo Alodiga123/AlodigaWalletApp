@@ -18,7 +18,7 @@ struct ConfirmationQRView: View {
                 VStack() {
                     ConfirmationQRViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Confirmación", displayMode: .inline)
         }
     }
 }
@@ -40,7 +40,7 @@ struct ConfirmationQRViewAccess: View {
                         TextLabelConfirmnation()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
-                    TextLabelInformation()
+                    TextLabelPaymentInfAcount()
                     ForEach(self.labels, id: \.self) { label in
                         HStack {
                             Text(label)
@@ -54,10 +54,10 @@ struct ConfirmationQRViewAccess: View {
                     .fixedSize(horizontal: false, vertical: true)
                     
                     NavigationLink(destination: SuccesfulPaymentQRView()) {
-                        ProcessButtonContents()
+                        PaymentProcessButtonContent()
                     }
                     NavigationLink(destination: OperationsKeyQRView()) {
-                        BackButtonContent()
+                        PaymentBackButtonContent()
                     }
                     Spacer()
                 }.background(Color.cardButtonViewGray)
@@ -67,6 +67,18 @@ struct ConfirmationQRViewAccess: View {
     }
 }
 
+struct PaymentProcessButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Procesar")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,15)
+    }
+}
 
 struct ConfirmationQRView_Previews: PreviewProvider {
     static var previews: some View {

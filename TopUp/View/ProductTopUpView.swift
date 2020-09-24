@@ -40,16 +40,15 @@ struct ProductTopUpViewAccess: View {
                         .padding(.top,16)
                     VStack(alignment: .center) {
                         TextLabelTopUp()
-                    }.padding(.leading,20)
-                     .padding(.trailing,20)
+                    }
                     ProductDebitTextField(productDebit: self.$productDebit)
                     OperatorTextField(operatorPhone: self.$operatorPhone)
                     ProductRechargerTextField(productRecharger: self.$productRecharger)
                     NavigationLink(destination: OperationKeyTopUpView()) {
-                        BuyButtonContent()
+                        TopUpBuyButtonContent()
                     }
                     NavigationLink(destination: TopUpView()) {
-                        BackButtonContent()
+                        TopUpBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
@@ -106,7 +105,7 @@ struct OperatorTextField: View {
     }
 }
 
-struct BuyButtonContent: View {
+struct TopUpBuyButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
         Text("Comprar")
@@ -115,7 +114,7 @@ struct BuyButtonContent: View {
             .frame(width: 220, height: 60)
             .background(co)
             .cornerRadius(35.0)
-            .padding(.top,5)
+            .padding(.top,10)
     }
 }
 

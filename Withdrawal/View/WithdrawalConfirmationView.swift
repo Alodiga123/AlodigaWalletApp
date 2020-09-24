@@ -54,16 +54,15 @@ struct WithdrawalConfirmationViewAccess: View {
                     .fixedSize(horizontal: false, vertical: true)
                     
                     NavigationLink(destination: SucesfullWithdrawalView()) {
-                        ProcessButtonContents()
-                        
+                        WithdrawalProcessButtonContent()
+                            .padding(.top)
                     }
                     NavigationLink(destination: WithdrawalView()) {
-                        BackButtonContent()
+                        WithdrawallBackButtonContent()
                     }
-                    Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/4.2)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
@@ -77,6 +76,19 @@ struct TextLabelInfWithdrawal: View {
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
         }
+    }
+}
+
+struct WithdrawalProcessButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Procesar")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,5)
     }
 }
 

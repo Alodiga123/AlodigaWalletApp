@@ -54,11 +54,11 @@ struct ConfirmationTopUpViewAccess: View {
                     .fixedSize(horizontal: false, vertical: true)
                     
                     NavigationLink(destination: SuccessTopUpView()) {
-                        ProcessButtonContents()
+                        TopUpProcessButtonContents()
                     }
                     
                     NavigationLink(destination: OperationKeyTopUpView()) {
-                        BackButtonContent()
+                        TopUpBackButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
@@ -75,6 +75,19 @@ struct TextLabelInformationTopUp: View {
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
         }
+    }
+}
+
+struct TopUpProcessButtonContents: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Procesar")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,18)
     }
 }
 

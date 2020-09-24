@@ -73,6 +73,7 @@ struct EndValidateButtonContent: View {
             .background(co)
             .cornerRadius(35.0)
             .padding(.top,10)
+            .padding(.bottom,10)
     }
 }
 
@@ -87,6 +88,5 @@ struct ValidateAccountCheckImagine: View {
 struct ValidateAccountView_Previews: PreviewProvider {
     static var previews: some View {
         ValidateAccountView()
-            .padding(.horizontal)
     }
 }

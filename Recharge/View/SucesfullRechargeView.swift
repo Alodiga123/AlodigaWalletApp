@@ -40,7 +40,7 @@ struct SucesfullRechargeViewAccess: View {
                         TextLabelSucesfullRecharge()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
-                    CheckImagine()
+                    RechargeCheckImagine()
                     ForEach(self.labels, id: \.self) { label in
                         HStack {
                             Text(label)
@@ -54,15 +54,14 @@ struct SucesfullRechargeViewAccess: View {
                     .fixedSize(horizontal: false, vertical: true)
                     
                     NavigationLink(destination: MainViewLogged()) {
-                        EndButtonContents()
+                        RechangeEndButtonContent()
                     }
-                    
                     NavigationLink(destination: MainViewLogged()) {
-                        ShareButtonContents()
+                        RechangeShareButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/8.2)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
@@ -72,6 +71,42 @@ struct TextLabelSucesfullRecharge: View {
         Text("Recarga Exitosa")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
+    }
+}
+
+struct RechargeCheckImagine: View {
+    var body: some View {
+        Image(systemName: "checkmark")
+            .foregroundColor(Color.fontOrangeColor)
+            .font(.system(size: 100.0, weight: .light, design: .monospaced))
+            .frame(width: 180, height: 100)
+    }
+}
+
+struct RechangeEndButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("Finalizar")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top)
+    }
+}
+
+struct RechangeShareButtonContent: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Compartir")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,5)
+            .padding(.bottom,10)
     }
 }
 
