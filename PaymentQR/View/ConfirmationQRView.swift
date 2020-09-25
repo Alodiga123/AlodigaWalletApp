@@ -59,7 +59,6 @@ struct ConfirmationQRViewAccess: View {
                     NavigationLink(destination: OperationsKeyQRView()) {
                         PaymentBackButtonContent()
                     }
-                    Spacer()
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)

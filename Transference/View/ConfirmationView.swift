@@ -38,7 +38,6 @@ struct ConfirmationViewAccess: View {
                             .opacity(0.3)
                             .padding(.top,16)
                         VStack(alignment: .leading) {
-                            Spacer()
                             TextLabelConfirmnation()
                         }.padding(.leading,20)
                             .padding(.trailing,20)
@@ -54,18 +53,15 @@ struct ConfirmationViewAccess: View {
                         }
                         .padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
-                        
                         NavigationLink(destination: SuccesfulTransactionView()) {
                             ProcessButtonContents()
-                            
                         }
                         NavigationLink(destination: OperationsKeyView()) {
-                            BackButtonContent()
+                            TransferenceBackButtonContent()
                         }
-                        Spacer()
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
-                }.padding(.bottom,geometry.size.height/4.2)
+                }.padding(.bottom,geometry.size.height/2.2)
             }
         }
     }
@@ -88,7 +84,7 @@ struct ProcessButtonContents: View {
             .frame(width: 220, height: 60)
             .background(co)
             .cornerRadius(35.0)
-            .padding(.top,10)
+            .padding(.top,18)
     }
 }
 
@@ -98,7 +94,3 @@ struct ConfirmationView_Previews: PreviewProvider {
     }
 }
 
- func Ejecutar3(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }

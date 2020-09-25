@@ -43,7 +43,7 @@ struct SuccesfulRecoverViewAccess: View {
                         }.padding(.leading,20)
                             .padding(.trailing,20)
                         Spacer()
-                        CheckRecoverImagine()
+                        RecoverCheckImagine()
                         Spacer()
                         NavigationLink(destination: MainViewLogged()) {
                             EndRecoverButtonContents()
@@ -51,7 +51,6 @@ struct SuccesfulRecoverViewAccess: View {
                         NavigationLink(destination: MainViewLogged()) {
                             LoginButtonContents()
                         }
-                        
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/3.2)
@@ -67,7 +66,16 @@ struct TextLabelSuccesfulRecover: View {
             .font(.title)
             .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
-            .frame(width: 335, height: 80)
+            .frame(width: 345, height: 80)
+    }
+}
+
+struct RecoverCheckImagine: View {
+    var body: some View {
+        Image(systemName: "checkmark")
+            .foregroundColor(Color.fontOrangeColor)
+            .font(.system(size: 150.0, weight: .light, design: .monospaced))
+            .frame(width: 180, height: 160)
     }
 }
 
@@ -95,20 +103,7 @@ struct LoginButtonContents: View {
             .background(co)
             .cornerRadius(35.0)
             .padding(.top,5)
-            .padding(.bottom,18)
-    }
-}
-
-struct CheckRecoverImagine: View {
-    var body: some View {
-        Image(systemName: "checkmark")
-            .foregroundColor(Color.fontOrangeColor)
-            .font(.system(size: 120.0, weight: .light, design: .monospaced))
-            .frame(width: 150, height: 120)
-            .padding(.leading,20)
-            .padding(.trailing,20)
             .padding(.bottom,10)
-            .padding(.top,10)
     }
 }
 

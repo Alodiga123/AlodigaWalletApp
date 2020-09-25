@@ -46,17 +46,15 @@ struct SecurityLevelViewAccess: View {
                         NewPassTextField(pass: self.$pass)
                         RepeatNewPassTextField(repeatPass: self.$repeatPass)
                         TextLabelRecoverPass()
-                        Spacer()
                         NavigationLink(destination: SuccesfulRecoverView()) {
                             ContinueRecoButtonContent()
                         }
                         NavigationLink(destination: MainViewLogged()) {
                             CancelRecorButtonContent()
                         }
-                        
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
-                }.padding(.bottom,geometry.size.height/3.2)
+                }.padding(.bottom,geometry.size.height/2.2)
             }
         }
     }

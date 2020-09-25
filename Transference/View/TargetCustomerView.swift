@@ -42,10 +42,9 @@ struct TargetCustomerViewAccess: View {
                             .opacity(0.3)
                             .padding(.top,30)
                         VStack(alignment: .leading) {
-                            Spacer()
                             TextLabelTransference()
                         }.padding(.leading,20)
-                            .padding(.trailing,20)
+                         .padding(.trailing,20)
                         TextLabelInformation()
                         ForEach(self.labels, id: \.self) { label in
                             HStack {
@@ -59,20 +58,17 @@ struct TargetCustomerViewAccess: View {
                         .padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
                         TextLabelInfomationPaymen()
-                            .padding(.horizontal)
-                            .fixedSize(horizontal: false, vertical: true)
-                        TaxAmountTextField(amount: self.$amount)
-                        ConceptTextField(concept: self.$concept)
+                        TransferenceAmountTextField(amount: self.$amount)
+                        TransferenceConceptTextField(concept: self.$concept)
                         NavigationLink(destination: OperationsKeyView()) {
-                            ContinueButtonContents()
+                            TransferenceSerchButtonContent()
                         }
                         NavigationLink(destination: TransferenceView()) {
-                            BackButtonContent()
+                            TransferenceBackButtonContent()
                         }
-                        Spacer()
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
-                }.padding(.bottom,geometry.size.height/8.2)
+                }.padding(.bottom,geometry.size.height/2.2)
             }
         }
     }
@@ -83,65 +79,54 @@ struct TextLabelInformation: View {
         VStack(alignment: .center, spacing: 5) {
             Text("Información de la cuenta de destino")
                 .font(.callout)
+                .frame(width: 340, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
         }
     }
 }
-
-
 
 struct TextLabelInfomationPaymen: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
             Text("Complete la informacion del pago")
                 .font(.callout)
+                .frame(width: 340, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
         }
     }
 }
 
-struct TaxAmountTextField: View {
+struct TransferenceAmountTextField: View {
     @Binding var amount: String
     var body: some View {
         FloatingLabelTextField($amount, placeholder: "Monto", editingChanged: { (isChanged) in
-        }) {}
+        }) {
+        }
             .leftView({ // Add left view.
                 Image("")
-            })
-            .placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 50)
-            .padding(.leading,20)
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,10)
             .padding(.trailing,20)
+            .padding(.bottom,-1)
     }
 }
 
-struct ConceptTextField: View {
+struct TransferenceConceptTextField: View {
     @Binding var concept: String
     var body: some View {
         FloatingLabelTextField($concept, placeholder: "Concepto", editingChanged: { (isChanged) in
-        }) {}
+        }) {
+        }
             .leftView({ // Add left view.
                 Image("")
-            })
-            .placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 50)
-            .padding(.leading,20)
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,10)
             .padding(.trailing,20)
-    }
-}
-
-struct ContinueButtonContents: View {
-    let co = Color.black.opacity(0.7)
-    var body: some View {
-        Text("Continuar")
-            .font(.headline)
-            .foregroundColor(.white)
-            .frame(width: 220, height: 60)
-            .background(co)
-            .cornerRadius(35.0)
-            .padding(.top,10)
+            .padding(.bottom,-1)
     }
 }
 
@@ -150,8 +135,3 @@ struct TargetCustomerView_Previews: PreviewProvider {
         TargetCustomerView()
     }
 }
-
- func Ejecutar2(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }

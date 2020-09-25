@@ -38,10 +38,8 @@ struct OperationsKeyQRViewAccess: View {
                         TextLabelPayment()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
-                    Spacer()
-                    TextLabelOperationKey()
-                        .frame(height: 10)
-                    OperationKeyTextField(key: self.$key)
+                    TextLabelOperKeyPay()
+                    PayOperationKeyTextField(key: self.$key)
                     
                     NavigationLink(destination: ConfirmationQRView()) {
                         PaymentSendButtonContent()
@@ -53,6 +51,33 @@ struct OperationsKeyQRViewAccess: View {
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
         }
+    }
+}
+
+struct TextLabelOperKeyPay: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 6) {
+            Text("Introduzca la clave de Operaciones")
+                .font(.callout)
+                .foregroundColor(Color.fontOrangeColor)
+                .padding(.top,25)
+        }
+    }
+}
+
+struct PayOperationKeyTextField: View {
+    @Binding var key: String
+    var body: some View {
+        FloatingLabelTextField($key, placeholder: "Clave de Operaciones Especiales", editingChanged: { (isChanged) in
+        }) {
+        }
+        .leftView({ // Add left view.
+            Image("password")
+        })
+        .placeholderColor(Color.placeholderGrayColor)
+        .frame(height: 50)
+        .padding(.leading,20)
+        .padding(.trailing,20)
     }
 }
 

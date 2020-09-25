@@ -38,11 +38,10 @@ struct SuccesfulTransactionViewAccess: View {
                             .opacity(0.3)
                             .padding(.top,16)
                         VStack(alignment: .leading) {
-                            Spacer()
                             TextLabelSuccesfulTransaction()
                         }.padding(.leading,20)
                             .padding(.trailing,20)
-                        CheckImagine()
+                        TransferenceCheckImagine()
                         ForEach(self.labels, id: \.self) { label in
                             HStack {
                                 Text(label)
@@ -58,28 +57,13 @@ struct SuccesfulTransactionViewAccess: View {
                         NavigationLink(destination: MainViewLogged()) {
                             EndButtonContents()
                         }
-                        
                         NavigationLink(destination: MainViewLogged()) {
                             ShareButtonContents()
                         }
-                        Spacer()
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
-                }.padding(.top).padding(.bottom,geometry.size.height/8.2)
+                }.padding(.bottom,geometry.size.height/2.2)
             }
-        }
-    }
-}
-
-extension UIColor{
-    struct Custom {
-        static var black: UIColor{
-            if #available(iOS 13, *) {
-                return UIColor.init { (trait) -> UIColor in
-                    return trait.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
-                }
-            }
-            return UIColor.black
         }
     }
 }
@@ -119,12 +103,12 @@ struct ShareButtonContents: View {
     }
 }
 
-struct CheckImagine: View {
+struct TransferenceCheckImagine: View {
     var body: some View {
         Image(systemName: "checkmark")
             .foregroundColor(Color.fontOrangeColor)
-            .font(.system(size: 120.0, weight: .light, design: .monospaced))
-            .frame(width: 150, height: 120)
+            .font(.system(size: 100.0, weight: .light, design: .monospaced))
+            .frame(width: 180, height: 100)
     }
 }
 
@@ -135,7 +119,3 @@ struct SuccesfulTransactionView_Previews: PreviewProvider {
     }
 }
 
- func Ejecutar4(){
-     DispatchQueue.main.asyncAfter(deadline: .now() ){
-     }
- }

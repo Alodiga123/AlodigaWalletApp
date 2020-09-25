@@ -43,17 +43,15 @@ struct RecoverPasswordViewAccess: View {
                             .padding(.trailing,20)
                         TextLabelRecover()
                         EmailRecorTextField(mail: self.$mail)
-                        Spacer()
                         NavigationLink(destination: RecoverPasswordByTokenView()) {
                             ContinueRecoButtonContent()
                         }
                         NavigationLink(destination: MainViewLogged()) {
                             CancelRecorButtonContent()
                         }
-                        
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
-                }.padding(.bottom,geometry.size.height/3.2)
+                }.padding(.bottom,geometry.size.height/2.2)
             }
         }
     }
@@ -79,12 +77,13 @@ struct EmailRecorTextField: View {
                 Image("email")
             }).placeholderColor(Color.placeholderGrayColor)
             .frame(height: 50)
-            .padding(.leading,20)
+            .padding(.leading,30)
             .padding(.trailing,20)
-            //.padding(.top)
             .padding(.bottom,5)
     }
 }
+
+
 
 struct ContinueRecoButtonContent: View {
     let co = Color.black.opacity(0.7)
@@ -109,7 +108,7 @@ struct CancelRecorButtonContent: View {
             .background(co)
             .cornerRadius(35.0)
             .padding(.top,5)
-            .padding(.bottom,18)
+            .padding(.bottom,10)
     }
 }
 
