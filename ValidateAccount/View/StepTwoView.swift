@@ -39,7 +39,7 @@ struct StepTwoViewAccess: View {
                         TextLabelAccount()
                     }.padding(.leading,40)
                      .padding(.trailing,40)
-                    Spacer(minLength: 20)
+                    //Spacer(minLength: 20)
                     TextLabelValidateAccountInstrucction2()
                     Spacer(minLength: 150)
                     TextLabelValidateResolution()
@@ -49,7 +49,9 @@ struct StepTwoViewAccess: View {
                     NavigationLink(destination: PhotoView()) {
                         ValidateBackButtonContent()
                     }
-                }.background(Color.cardButtonViewGray)
+                }.padding(.horizontal)
+                .background(Color.cardButtonViewGray)
+                .frame(width: geometry.size.width, height: geometry.size.height/1.1, alignment: .top)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
         }

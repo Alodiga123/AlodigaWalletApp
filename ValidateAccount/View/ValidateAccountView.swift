@@ -45,9 +45,12 @@ struct ValidateAccountViewAccess: View {
                     NavigationLink(destination: MainViewLogged()) {
                         EndValidateButtonContent()
                     }
-                }.background(Color.cardButtonViewGray)
+                }
+                .padding(.horizontal)
+                .background(Color.cardButtonViewGray)
+                .frame(width: geometry.size.width, height: geometry.size.height/1.7)
                     .cornerRadius(40)
-            }.padding(.bottom,geometry.size.height/2.4)
+            }.padding(.bottom,geometry.size.height/3.2)
         }
     }
 }
@@ -59,7 +62,7 @@ struct TextLabelValidate: View {
             .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
             .frame(width: 300, height: 100)
-        
+            
     }
 }
 

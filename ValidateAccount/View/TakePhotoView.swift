@@ -37,18 +37,20 @@ struct TakePhotoViewAccess: View {
                         TextLabelAccount()
                     }.padding(.leading,40)
                      .padding(.trailing,40)
-                    Spacer(minLength: 30)
+                    //Spacer(minLength: 30)
                     TextLabelValidateAccountInstrucction()
                     TextLabelValidateDocuments()
                     TextLabelValidateResolution()
-                    Spacer(minLength: 30)
+                    //Spacer(minLength: 30)
                     NavigationLink(destination: PhotoView()) {
                         TakePhotoButtonContent()
                     }
                     NavigationLink(destination: ValidateAccountFirstView()) {
                         ValidateBackButtonContent()
                     }
-                }.background(Color.cardButtonViewGray)
+                }.padding(.horizontal)
+                .background(Color.cardButtonViewGray)
+                .frame(width: geometry.size.width, height: geometry.size.height/1.3, alignment: .top)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
         }
@@ -91,7 +93,7 @@ struct TextLabelValidateResolution: View {
             .foregroundColor(Color.fontOrangeColor)
             .frame(width: 360, height: 60, alignment: .leading)
             .padding(.top,0)
-            .padding(.bottom,0)
+            .padding(.bottom,10)
     }
 }
 

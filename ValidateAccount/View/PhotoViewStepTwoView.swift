@@ -49,7 +49,9 @@ struct PhotoViewStepTwoViewAccess: View {
                     NavigationLink(destination: StepTwoView()) {
                         ValidateBackButtonContent()
                     }
-                }.background(Color.cardButtonViewGray)
+                }.padding(.horizontal)
+                .background(Color.cardButtonViewGray)
+                .frame(width: geometry.size.width, height: geometry.size.height/1.1, alignment: .top)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
         }

@@ -40,13 +40,15 @@ struct SuccesfullValidateViewAccess: View {
                     }.padding(.leading,40)
                      .padding(.trailing,40)
                     TextLabelValidateProcess()
-                    Spacer(minLength: 10)
+                    //Spacer(minLength: 10)
                     TextLabelValidateAccountSuccesfull()
                     ClockImagine()
                     NavigationLink(destination: MainViewLogged()) {
                         EndValidateButtonContent()
                     }
-                }.background(Color.cardButtonViewGray)
+                }.padding(.horizontal)
+                .background(Color.cardButtonViewGray)
+                .frame(width: geometry.size.width, height: geometry.size.height/1.4, alignment: .top)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
         }

@@ -40,9 +40,9 @@ struct AccountExpiredViewAccess: View {
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     TextLabelValidateAccountAgain()
-                    Spacer(minLength: 30)
+                    //Spacer(minLength: 30)
                     CircleImagine()
-                    Spacer(minLength: 30)
+                    //Spacer(minLength: 30)
                     NavigationLink(destination: MainViewLogged()) {
                         ValidateAccountButtonContent()
                     }
@@ -50,7 +50,9 @@ struct AccountExpiredViewAccess: View {
                         ValidateBackButtonContent()
                     }
                 }
+                .padding(.horizontal)
                 .background(Color.cardButtonViewGray)
+                .frame(width: geometry.size.width, height: geometry.size.height/1.3, alignment: .top)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
         }
@@ -64,6 +66,7 @@ struct TextLabelValidateAccount: View {
             .foregroundColor(Color.fontBlackColor)
             .multilineTextAlignment(.center)
             .frame(width: 300, height: 100)
+            .padding(.bottom)
     }
 }
 
@@ -98,6 +101,7 @@ struct CircleImagine: View {
             .foregroundColor(Color.fontOrangeColor)
             .font(.system(size: 120.0, weight: .light, design: .monospaced))
             .frame(width: 150, height: 120)
+            .padding(.bottom)
     }
 }
 

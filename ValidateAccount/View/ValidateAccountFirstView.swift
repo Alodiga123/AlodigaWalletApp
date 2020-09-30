@@ -29,7 +29,7 @@ struct ValidateAccountFirstViewAccess: View {
         
         GeometryReader { geometry in
             ZStack{
-                VStack{
+                VStack(alignment: .center){
                     Rectangle()
                         .frame(width:50, height: 6)
                         .cornerRadius(3.0)
@@ -39,16 +39,17 @@ struct ValidateAccountFirstViewAccess: View {
                         TextLabelValidateAccountFirst()
                     }.padding(.leading,40)
                      .padding(.trailing,40)
-                    Spacer(minLength: 30)
                     CircleImagine()
-                    Spacer(minLength: 30)
                     NavigationLink(destination: TakePhotoView()) {
                         ValidateAccountButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {
                         ValidateBackButtonContent()
                     }
-                }.background(Color.cardButtonViewGray)
+                }
+                .padding(.horizontal)
+                .background(Color.cardButtonViewGray)
+                .frame(width: geometry.size.width, height: geometry.size.height/1.3, alignment: .top)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
         }
@@ -62,7 +63,7 @@ struct TextLabelValidateAccountFirst: View {
             .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
             .frame(width: 300, height: 100)
-
+            .padding(.bottom,30)
     }
 }
 
