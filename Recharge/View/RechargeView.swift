@@ -51,9 +51,22 @@ struct RechargeViewAccess: View {
                     ConceptoRechargeTextField(concept: self.$concept)
                     TransferRechargeTextField(transfer: self.$transfer)
                     AmountRechargeTextField(amount: self.$amount)
-                    NavigationLink(destination: RechargeConfirmationView()) {
-                        RechargeButtonContent()
+                    //NavigationLink(destination: RechargeConfirmationView()) {
+                    Button(action: {
+                         
+                         let responseController = ResponseController()
+                        
+                         responseController.parseResponse { (response) in
+                             print("+++++++++++ OBJETO +++++++++++++++++")
+                             print(response)
+                         }
+                 
+                                     }) {
+                            RechargeButtonContent()
                     }
+                   // }
+                    
+                    
                     NavigationLink(destination: MainViewLogged()) {
                         RechargeBackButtonContent()
                     }

@@ -48,8 +48,8 @@ struct ConvertViewAccess: View {
                     ProductTarTextField(productTarget: self.$productTarget)
                     AmountConvertTextField(amount: self.$amount)
                     HStack{
-                        Button(action: toggle) {
-                            Image(systemName: isChecked ? "checkmark.square" : "square")
+                        Button(action: self.toggle) {
+                            Image(systemName: self.isChecked ? "checkmark.square" : "square")
                                 .padding(.leading)
                         }
                         TextLabelCommission()
