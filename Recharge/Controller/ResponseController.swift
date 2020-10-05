@@ -13,7 +13,7 @@ public class ResponseController{
      func parseResponse(completion: @escaping (ObjectError) -> Void) {
         
         
-        let client_RU = RegistoUnificadoClient()
+        let client_RU = SyedAbsarClient()
         
         //Cambiar por los parametros del servicio a utilizar
         let cambiarCredencialAplicacionMovilEmailOrPhone = CambiarCredencialAplicacionMovilEmailOrPhone()
