@@ -48,7 +48,7 @@ struct SuccesfullValidateViewAccess: View {
                     }
                 }.padding(.horizontal)
                 .background(Color.cardButtonViewGray)
-                .frame(width: geometry.size.width, height: geometry.size.height/1.4, alignment: .top)
+                .frame(width: geometry.size.width, height: geometry.size.height/1.2, alignment: .top)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
         }
@@ -70,8 +70,8 @@ struct TextLabelValidateAccountSuccesfull: View {
             .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
             .frame(width: 368, height: 80, alignment: .center)
-            .padding(.leading,0)
-             .padding(.trailing,0)
+            .padding(.leading,5)
+             .padding(.trailing,5)
     }
 }
 
