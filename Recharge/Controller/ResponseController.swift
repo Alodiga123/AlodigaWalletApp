@@ -12,12 +12,10 @@ public class ResponseController{
     //Cambiar el retorno por el Struct a devolver
      func parseResponse(completion: @escaping (ObjectError) -> Void) {
         
-        
-        let client_RU = SyedAbsarClient()
+        let client_RU = RegistroUnificadoClient()
         
         //Cambiar por los parametros del servicio a utilizar
         let cambiarCredencialAplicacionMovilEmailOrPhone = CambiarCredencialAplicacionMovilEmailOrPhone()
-        
         
         //Seteo de parametros
         cambiarCredencialAplicacionMovilEmailOrPhone.cpUsuarioApi = "usuarioWS"
@@ -27,6 +25,11 @@ public class ResponseController{
         
         //Llamada del servicio a utilizar
         client_RU.opCambiarCredencialAplicacionMovilEmailOrPhone(cambiarCredencialAplicacionMovilEmailOrPhone: cambiarCredencialAplicacionMovilEmailOrPhone) {(data,error) in
+            
+            if error != nil {
+                print("error=\(String(describing: error))")
+                return
+            }
             
             do{
                 var objetResponse: ObjectError

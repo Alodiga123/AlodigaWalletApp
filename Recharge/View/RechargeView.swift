@@ -56,9 +56,13 @@ struct RechargeViewAccess: View {
                          
                          let responseController = ResponseController()
                         
-                         responseController.parseResponse { (response) in
-                             print("+++++++++++ OBJETO +++++++++++++++++")
-                             print(response)
+                         responseController.parseResponse{ (response) in
+                            
+                            if response != nil {
+                                print("+++++++++++ OBJETO +++++++++++++++++")
+                                print(response)
+                            }
+                         
                          }
                  
                                      }) {
