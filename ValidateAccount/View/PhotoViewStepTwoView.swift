@@ -40,7 +40,7 @@ struct PhotoViewStepTwoViewAccess: View {
                     }.padding(.leading,40)
                      .padding(.trailing,40)
                     Rectangle()
-                        .frame(width:300, height: 300)
+                        .frame(width:250, height: 250)
                         .cornerRadius(50)
                         .opacity(0.1)
                     NavigationLink(destination: ValidateAdressView()) {
