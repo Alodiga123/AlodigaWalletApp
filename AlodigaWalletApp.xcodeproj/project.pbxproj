@@ -210,6 +210,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040E43DD252D1E150014FAE4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		0422337E25140DBE00AEB65F /* Withdrawal */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +574,7 @@
 		46DBC48325128773008D42B3 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				040E43DD252D1E150014FAE4 /* Controller */,
 				46DBC4842512877D008D42B3 /* View */,
 			);
 			path = Register;
