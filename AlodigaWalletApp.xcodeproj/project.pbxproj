@@ -72,7 +72,10 @@
 		BAE1E9BB252BA9EB007F9CD6 /* WebServicesCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */; };
 		BAE1E9E6252BC13E007F9CD6 /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9E5252BC13E007F9CD6 /* ResponseController.swift */; };
 		BAE1E9F1252BC687007F9CD6 /* ParseXMLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9F0252BC687007F9CD6 /* ParseXMLData.swift */; };
-		BAE1E9F6252BE894007F9CD6 /* ObjetosRegistroUnificado.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9F5252BE894007F9CD6 /* ObjetosRegistroUnificado.swift */; };
+		BAE1E9F6252BE894007F9CD6 /* ObjectRegistroUnificado.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9F5252BE894007F9CD6 /* ObjectRegistroUnificado.swift */; };
+		BAE1EA50252E04B2007F9CD6 /* ObjectAlodiga.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */; };
+		BAE1EA55252E04EF007F9CD6 /* ObjectBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA54252E04EF007F9CD6 /* ObjectBase.swift */; };
+		BAE1EA5A252E0545007F9CD6 /* AlodigaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA59252E0545007F9CD6 /* AlodigaClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,7 +170,10 @@
 		BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesCall.swift; sourceTree = "<group>"; };
 		BAE1E9E5252BC13E007F9CD6 /* ResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
 		BAE1E9F0252BC687007F9CD6 /* ParseXMLData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseXMLData.swift; sourceTree = "<group>"; };
-		BAE1E9F5252BE894007F9CD6 /* ObjetosRegistroUnificado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetosRegistroUnificado.swift; sourceTree = "<group>"; };
+		BAE1E9F5252BE894007F9CD6 /* ObjectRegistroUnificado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRegistroUnificado.swift; sourceTree = "<group>"; };
+		BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAlodiga.swift; sourceTree = "<group>"; };
+		BAE1EA54252E04EF007F9CD6 /* ObjectBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectBase.swift; sourceTree = "<group>"; };
+		BAE1EA59252E0545007F9CD6 /* AlodigaClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlodigaClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,7 +587,7 @@
 				BAE1E9F0252BC687007F9CD6 /* ParseXMLData.swift */,
 				BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */,
 				BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */,
-				BAE1E9F5252BE894007F9CD6 /* ObjetosRegistroUnificado.swift */,
+				BAE1EA59252E0545007F9CD6 /* AlodigaClient.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -590,6 +596,9 @@
 			isa = PBXGroup;
 			children = (
 				BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */,
+				BAE1E9F5252BE894007F9CD6 /* ObjectRegistroUnificado.swift */,
+				BAE1EA54252E04EF007F9CD6 /* ObjectBase.swift */,
+				BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -762,6 +771,7 @@
 				04D6DA7F251A98630053125C /* TakePhotoView.swift in Sources */,
 				04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */,
 				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
+				BAE1EA5A252E0545007F9CD6 /* AlodigaClient.swift in Sources */,
 				0422338B251551F600AEB65F /* TopUpView.swift in Sources */,
 				BAE1E9F1252BC687007F9CD6 /* ParseXMLData.swift in Sources */,
 				BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */,
@@ -772,13 +782,15 @@
 				04D6DA6D251A5C3F0053125C /* AccountExpiredView.swift in Sources */,
 				04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */,
 				04D6DA84251AA2C70053125C /* PhotoView.swift in Sources */,
+				BAE1EA50252E04B2007F9CD6 /* ObjectAlodiga.swift in Sources */,
+				BAE1EA55252E04EF007F9CD6 /* ObjectBase.swift in Sources */,
 				0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */,
 				04D6DA51251953B00053125C /* OperationKeyConvertView.swift in Sources */,
 				BAE1E9E6252BC13E007F9CD6 /* ResponseController.swift in Sources */,
 				04D6DA49251946650053125C /* CommissionView.swift in Sources */,
 				46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */,
 				46DBC47C2512866C008D42B3 /* ConfirmationView.swift in Sources */,
-				BAE1E9F6252BE894007F9CD6 /* ObjetosRegistroUnificado.swift in Sources */,
+				BAE1E9F6252BE894007F9CD6 /* ObjectRegistroUnificado.swift in Sources */,
 				46DBC47A2512855A008D42B3 /* TargetCustomerQRView.swift in Sources */,
 				04D6DA77251A968D0053125C /* ValidateAccountFirstView.swift in Sources */,
 				04E3D09E251AB9D700DA1B31 /* SuccesfullValidateView.swift in Sources */,

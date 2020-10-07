@@ -551,7 +551,7 @@ public class RegistroUnificadoClient {
 
         - returns: Void.
     */
-    public func opGenerarCodigoMovilSMS(generarCodigoMovilSMS : GenerarCodigoMovilSMS , completionHandler:  @escaping (Data?, NSError?) -> Void) {
+    public func opGenerarCodigoMovilSMS(generarCodigoMovilSMS : RU_GenerarCodigoMovilSMS , completionHandler:  @escaping (Data?, NSError?) -> Void) {
 
     let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:generarCodigoMovilSMS><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><movil>%@</movil></ns1:generarCodigoMovilSMS></SOAP-ENV:Body></SOAP-ENV:Envelope>",generarCodigoMovilSMS.cpUsuarioApi!,generarCodigoMovilSMS.cpPasswordApi!,generarCodigoMovilSMS.cpMovil!)
 
@@ -867,7 +867,7 @@ public class RegistroUnificadoClient {
 
         - returns: Void.
     */
-    public func opSendSmsSimbox(sendSmsSimbox : SendSmsSimbox , completionHandler:  @escaping (Data?, NSError?) -> Void) {
+    public func opSendSmsSimbox(sendSmsSimbox : RU_SendSmsSimbox , completionHandler:  @escaping (Data?, NSError?) -> Void) {
 
     let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:sendSmsSimbox><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><number>%@</number><text>%@</text></ns1:sendSmsSimbox></SOAP-ENV:Body></SOAP-ENV:Envelope>",sendSmsSimbox.cpUsuarioApi!,sendSmsSimbox.cpPasswordApi!,sendSmsSimbox.cpNumber!,sendSmsSimbox.cpText!)
 

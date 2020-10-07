@@ -2428,21 +2428,6 @@ return ["Return"]
 }
 
 /**
-  Exception.
-*/
-@objc(Exception)
-public class Exception : SyedAbsarObjectBase {
-
-
-/// Message
-var cpMessage: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Message"]
-}
-}
-
-/**
   Afiliar Tarjeta.
 */
 @objc(AfiliarTarjeta)
@@ -2598,8 +2583,8 @@ return ["Return"]
 /**
   Send Sms Simbox.
 */
-@objc(SendSmsSimbox)
-public class SendSmsSimbox : SyedAbsarObjectBase {
+@objc(RU_SendSmsSimbox)
+public class RU_SendSmsSimbox : SyedAbsarObjectBase {
 
 
 /// Usuario Api
@@ -2622,8 +2607,8 @@ return ["UsuarioApi","PasswordApi","Number","Text"]
 /**
   Send Sms Simbox Response.
 */
-@objc(SendSmsSimboxResponse)
-public class SendSmsSimboxResponse : SyedAbsarObjectBase {
+@objc(RU_SendSmsSimboxResponse)
+public class RU_SendSmsSimboxResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -3495,8 +3480,8 @@ return ["Usuarios"]
 /**
   Generar Codigo Movil S M S.
 */
-@objc(GenerarCodigoMovilSMS)
-public class GenerarCodigoMovilSMS : SyedAbsarObjectBase {
+@objc(RU_GenerarCodigoMovilSMS)
+public class RU_GenerarCodigoMovilSMS : SyedAbsarObjectBase {
 
 
 /// Usuario Api
@@ -3516,8 +3501,8 @@ return ["UsuarioApi","PasswordApi","Movil"]
 /**
   Generar Codigo Movil S M S Response.
 */
-@objc(GenerarCodigoMovilSMSResponse)
-public class GenerarCodigoMovilSMSResponse : SyedAbsarObjectBase {
+@objc(RU_GenerarCodigoMovilSMSResponse)
+public class RU_GenerarCodigoMovilSMSResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -3543,8 +3528,8 @@ return []
 /**
   Send Mail Test Response.
 */
-@objc(SendMailTestResponse)
-public class SendMailTestResponse : SyedAbsarObjectBase {
+@objc(RU_SendMailTestResponse)
+public class RU_SendMailTestResponse : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -3706,23 +3691,3 @@ return ["DatosRespuesta"]
 }
 
 
-/**
-    A generic base class for all Objects.
-*/
-public class SyedAbsarObjectBase : NSObject
-{
-    var xmlResponseString: String?
-
-    class func cpKeys() -> Array <String>
-    {
-        return []
-    }
-    
-    required override public init(){}
-  
-    class func newInstance() -> Self {
-        return self.init()
-    }
-
-
-}
