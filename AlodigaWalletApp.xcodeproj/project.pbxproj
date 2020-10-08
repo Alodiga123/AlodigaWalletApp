@@ -76,6 +76,9 @@
 		BAE1EA50252E04B2007F9CD6 /* ObjectAlodiga.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */; };
 		BAE1EA55252E04EF007F9CD6 /* ObjectBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA54252E04EF007F9CD6 /* ObjectBase.swift */; };
 		BAE1EA5A252E0545007F9CD6 /* AlodigaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA59252E0545007F9CD6 /* AlodigaClient.swift */; };
+		BAE1EA65252E8DCB007F9CD6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA64252E8DCB007F9CD6 /* LoginController.swift */; };
+		BAE1EA6A252EAEB4007F9CD6 /* ObjectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA69252EAEB4007F9CD6 /* ObjectLogin.swift */; };
+		BAE1EA6F252EC9EA007F9CD6 /* ObjectErrorLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA6E252EC9EA007F9CD6 /* ObjectErrorLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +177,9 @@
 		BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAlodiga.swift; sourceTree = "<group>"; };
 		BAE1EA54252E04EF007F9CD6 /* ObjectBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectBase.swift; sourceTree = "<group>"; };
 		BAE1EA59252E0545007F9CD6 /* AlodigaClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlodigaClient.swift; sourceTree = "<group>"; };
+		BAE1EA64252E8DCB007F9CD6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = WebServices/LoginController.swift; sourceTree = SOURCE_ROOT; };
+		BAE1EA69252EAEB4007F9CD6 /* ObjectLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectLogin.swift; sourceTree = "<group>"; };
+		BAE1EA6E252EC9EA007F9CD6 /* ObjectErrorLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorLogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,6 +474,7 @@
 		46B271FD24FD704B005DB0C1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BAE1EA64252E8DCB007F9CD6 /* LoginController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -599,6 +606,8 @@
 				BAE1E9F5252BE894007F9CD6 /* ObjectRegistroUnificado.swift */,
 				BAE1EA54252E04EF007F9CD6 /* ObjectBase.swift */,
 				BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */,
+				BAE1EA69252EAEB4007F9CD6 /* ObjectLogin.swift */,
+				BAE1EA6E252EC9EA007F9CD6 /* ObjectErrorLogin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -762,6 +771,7 @@
 				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
 				043FEC86251BE2EE005C518B /* RecoverPasswordView.swift in Sources */,
 				04D322C52518E54C00F3F38C /* ConfirmationTopUpView.swift in Sources */,
+				BAE1EA65252E8DCB007F9CD6 /* LoginController.swift in Sources */,
 				04D6DA562519551E0053125C /* ConfirmationConvertView.swift in Sources */,
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
 				46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */,
@@ -778,6 +788,7 @@
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
 				04D6DA8E251AABC10053125C /* PhotoViewStepTwoView.swift in Sources */,
 				042233842514121C00AEB65F /* WithdrawalConfirmationView.swift in Sources */,
+				BAE1EA6A252EAEB4007F9CD6 /* ObjectLogin.swift in Sources */,
 				0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */,
 				04D6DA6D251A5C3F0053125C /* AccountExpiredView.swift in Sources */,
 				04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */,
@@ -802,6 +813,7 @@
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
 				043FEC8E251BF601005C518B /* SecurityLevelView.swift in Sources */,
 				04D6DA41251913210053125C /* ConvertView.swift in Sources */,
+				BAE1EA6F252EC9EA007F9CD6 /* ObjectErrorLogin.swift in Sources */,
 				46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */,
 				46DBC47E2512869E008D42B3 /* OperationsKeyView.swift in Sources */,
 				46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */,

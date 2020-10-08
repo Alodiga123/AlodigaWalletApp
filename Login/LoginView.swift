@@ -132,6 +132,19 @@ struct CardButtonViewAccess: View {
                     ForgotPassword()
                 }
                 Button(action: {
+                    
+                    let loginController = LoginController()
+                    let loginAplicacionMovil = LoginAplicacionMovil()
+                    loginController.getLogin(generarCodigoMovilSMS: loginAplicacionMovil) { (res,error) in
+                        print("objeto========================")
+                        
+                        if error! != nil {print("entro")
+                            print(res)}
+                        print("objeto error========================")
+                        
+                        if error != nil {print(error)}
+                        
+                    }
                     self.login()
                 }) {
                     LoginButtonContent()
