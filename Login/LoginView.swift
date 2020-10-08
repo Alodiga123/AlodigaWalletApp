@@ -141,7 +141,7 @@ struct CardButtonViewAccess: View {
                             self.login()
                         }
                         
-                        if let error = error {
+                        if error != nil {
                             print(error)
                         }
                     }
