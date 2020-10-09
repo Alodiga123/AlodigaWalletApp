@@ -137,12 +137,13 @@ struct CardButtonViewAccess: View {
                     let loginAplicacionMovil = LoginAplicacionMovil()
                     loginController.getLogin(generarCodigoMovilSMS: loginAplicacionMovil) { (res,error) in
                         
-                        if let res = res  {
+                        if res != nil  {
+                            print(res)
                             self.login()
                         }
                         
                         if error != nil {
-                            print(error)
+                            print(error!)
                         }
                     }
                 }) {
