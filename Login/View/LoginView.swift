@@ -145,6 +145,11 @@ struct CardButtonViewAccess: View {
                         }
                         
                         if error != nil {
+                           
+                            let alert = ShowAlert()
+                            alert.showPaymentModeActionSheet(title: "error", message: loginController.getMessageErrorLogin(code: error!))
+                            
+                            //alert.showPaymentModeActionSheet()
                             print(error!)
                         }
                     }

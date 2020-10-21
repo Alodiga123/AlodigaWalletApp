@@ -41,9 +41,12 @@ class WebServicesCall{
         
         let task = session.dataTask(with: request) {dataresponse, response, errorresponse in
 
+            DispatchQueue.main.async {
             if errorresponse != nil {
                 print("error=\(String(describing: errorresponse))")
+                completionHandler(nil, errorresponse as NSError?)
                 return
+            }
             }
             
             //print("response = \(String(describing: response))")
