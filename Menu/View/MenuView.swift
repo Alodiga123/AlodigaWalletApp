@@ -15,7 +15,7 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .imageScale(.large)
                 NavigationLink(destination: RechargeView()) {
-                    Text("Recargar")
+                    Text("Recharge")
                         .foregroundColor(.gray)
                         .font(.headline)
                 }
@@ -27,7 +27,7 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .imageScale(.large)
                 NavigationLink(destination: WithdrawalView()) {
-                    Text("Retiro")
+                    Text("Withdrawal")
                         .foregroundColor(.gray)
                         .font(.headline)
                 }
@@ -39,7 +39,7 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .imageScale(.large)
                 NavigationLink(destination: ConvertView()) {
-                    Text("Convertir")
+                    Text("Convert")
                         .foregroundColor(.gray)
                         .font(.headline)
                 }
@@ -51,7 +51,7 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .imageScale(.large)
                 NavigationLink(destination: TransferenceView()) {
-                    Text("Transferencia")
+                    Text("Transference")
                         .foregroundColor(.gray)
                         .font(.headline)
                 }
@@ -74,7 +74,7 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .imageScale(.large)
                 NavigationLink(destination: PaymentBusinessesQRView()) {
-                    Text("Pago Comercio QR")
+                    Text("PaymentBusinessesQR")
                         .foregroundColor(.gray)
                         .font(.headline)
                 }
@@ -107,7 +107,7 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .imageScale(.large)
                 NavigationLink(destination: ValidateAccountFirstView()) {
-                    Text("Validar Cuenta")
+                    Text("ValidateAccount")
                         .foregroundColor(.gray)
                         .font(.headline)
                 }

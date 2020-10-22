@@ -14,11 +14,22 @@
 "TakePhoto" = "Tomar Fotografía";
 "Next" = "Siguiente";
 "Return" = "Volver";
+"Process" = "Procesar";
+"Share" = "Compartir";
 
 //Comunes
+"OperationsKey" = "Clave de Operaciones";
+"SpecialOperationsCode" = "Clave de Operaciones Especiales";
+
+//Menu
+"Recharge" = "Recargar";
+"Withdrawal" = "Retiro";
+"Convert" = "Convertir";
+"Transference" = "Transferencia";
+"PaymentBusinessesQR" = "Pago Comercio QR";
+"ValidateAccount" = "Validar Cuenta";
 
 //Validar Cuenta
-"ValidateAccount" = "Validar Cuenta";
 "AccountValidated" = "Su cuenta se encuentra validada";
 "OverdueAccount" = "Cuenta Vencida";
 "ValidationExpired" = "La validación de cuenta se encuentra vencida";
@@ -35,6 +46,17 @@
 "Street" = "Ingrese su calle, Av, casa";
 "ValidationInProcess" = "Su validación esta en proceso";
 "Validation24Hours" = "En las proximas 24 horas le estaremos notificando.\n Una vez validado ud podrá hacer todas las funcionalidades que le brinda la Billetera Alogida";
+
+//Convertir
+"ProductOrigin" = "Seleccione el Producto de Origen";
+"ProductDestination" = "Seleccione el Producto de Destino";
+"Amount" = "Monto";
+"IncludeCommission" = "Incluir comisión en monto";
+"Commission" = "Comisión";
+"Details" = "Detalles";
+"OperationPass" = "Introduzca la clave de Operaciones";
+"ExchangeRate" = "Tasa de Cambio";
+"Confirmation" = "Confirmación";
 
 //Recuperar contraseña
 "RecoverPassword" = "Recuperar Contraseña";

@@ -18,7 +18,7 @@ struct CommissionView: View {
                 VStack() {
                     CommissionViewAccess()
                 }
-            }.navigationBarTitle("Comisión", displayMode: .inline)
+            }.navigationBarTitle("Commission", displayMode: .inline)
         }
     }
 }
@@ -84,7 +84,7 @@ struct CommissionViewAccess: View {
 struct TextLabelDetail: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Detalles")
+            Text("Details")
                 .font(.callout)
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)
@@ -96,7 +96,7 @@ struct TextLabelDetail: View {
 struct TextLabelExchange: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Tasa de Cambio")
+            Text("ExchangeRate")
                 .font(.callout)
                 .frame(width: 340, height: 5, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)

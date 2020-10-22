@@ -18,7 +18,7 @@ struct OperationKeyConvertView: View {
                 VStack() {
                     OperationKeyConvertViewAccess()
                 }
-            }.navigationBarTitle("Clave de Operaciones", displayMode: .inline)
+            }.navigationBarTitle("OperationsKey", displayMode: .inline)
         }
     }
 }
@@ -40,7 +40,7 @@ struct OperationKeyConvertViewAccess: View {
                     .padding(.trailing,20)
                     .frame(height: 10)
                     Spacer()
-                    TextLabelOperationKey()
+                    TextLabelOperationKeyConvert()
                     OKConvertTextField(key: self.$key)
                     
                     NavigationLink(destination: ConfirmationConvertView()) {
@@ -53,6 +53,17 @@ struct OperationKeyConvertViewAccess: View {
                 }.background(Color.cardButtonViewGray)
                 .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
+        }
+    }
+}
+
+struct TextLabelOperationKeyConvert: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 6) {
+            Text("OperationPass")
+                .font(.callout)
+                .foregroundColor(Color.fontOrangeColor)
+                .padding(.top,25)
         }
     }
 }
@@ -77,7 +88,7 @@ struct OKConvertTextField: View {
 struct ConvertProcessButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Procesar")
+        Text("Process")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

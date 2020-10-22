@@ -18,7 +18,7 @@ struct ConvertView: View {
                 VStack() {
                     ConvertViewAccess()
                 }
-            }.navigationBarTitle("Convertir", displayMode: .inline)
+            }.navigationBarTitle("Convert", displayMode: .inline)
         }
     }
 }
@@ -71,7 +71,7 @@ struct ConvertViewAccess: View {
 
 struct TextLabelConvert: View {
     var body: some View {
-        Text("Convertir")
+        Text("Convert")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -127,7 +127,7 @@ struct AmountConvertTextField: View {
 
 struct TextLabelCommission: View {
     var body: some View {
-        Text("Incluir comisión en monto")
+        Text("IncludeCommission")
             .font(.callout)
             //.fontWeight(.bold)
             .foregroundColor(.gray)
@@ -137,7 +137,7 @@ struct TextLabelCommission: View {
 struct ConvertNextButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Siguiente")
+        Text("Next")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -150,7 +150,7 @@ struct ConvertNextButtonContent: View {
 struct ConvertBackButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Atras")
+        Text("Back")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

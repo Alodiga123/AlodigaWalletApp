@@ -18,7 +18,7 @@ struct ConfirmationConvertView: View {
                 VStack() {
                     ConfirmationConvertAccess()
                 }
-            }.navigationBarTitle("Confirmación", displayMode: .inline)
+            }.navigationBarTitle("Confirmation", displayMode: .inline)
         }
     }
 }
@@ -28,7 +28,7 @@ struct ConfirmationConvertAccess: View {
     @State var text = ""
     @State var amount: String = ""
     @State var concept: String = ""
-    let detail = ["Comisión en monto", "Comisión", "Tasa de comisión", "Monto a convertir", "Total a debitar","Monto convertido"]
+    let detail = ["Comisión en monto", "Comisiòn", "Tasa de comisión", "Monto a convertir", "Total a debitar","Monto convertido"]
     let exchange = ["Alocoins", "Saldo NV"]
     
     var body: some View {
@@ -96,7 +96,7 @@ struct ConvertCheckImagine: View {
 struct ConvertEndButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Finalizar")
+        Text("Finalize")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -109,7 +109,7 @@ struct ConvertEndButtonContent: View {
 struct ConvertShareButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Compartir")
+        Text("Share")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

@@ -14,11 +14,22 @@
 "TakePhoto" = "Take a photo";
 "Next" = "Next";
 "Return" = "Return";
+"Process" = "Process";
+"Share" = "Share";
 
 //Common
+"OperationsKey" = "Operations Key";
+"SpecialOperationsCode" = "Special Operations Code";
+
+//Menu
+"Recharge" = "Recharge";
+"Withdrawal" = "Withdrawal";
+"Convert" = "Convert";
+"Transference" = "Transference";
+"PaymentBusinessesQR" = "Payment Businesses QR";
+"ValidateAccount" = "Validate Account";
 
 //Validate Account
-"ValidateAccount" = "Validate Account";
 "AccountValidated" = "Your account is validated";
 "OverdueAccount" = "Overdue Account";
 "ValidationExpired" = "Account validation has expired";
@@ -35,6 +46,17 @@
 "Street" = "Enter your street, Av, house";
 "ValidationInProcess" = "Its validation is in process";
 "Validation24Hours" = "In the next 24 hours we will notify you.\n Once validated you will be able to do all the functionalities that the Alogida Wallet offers";
+
+//Convert
+"ProductOrigin" = "Select the Product of Origin";
+"ProductDestination" = "Select Destination Product";
+"Amount" = "Amount";
+"IncludeCommission" = "Include commission in amount";
+"Commission" = "Commission";
+"Details" = "Details";
+"OperationPass" = "Enter the Operations password";
+"ExchangeRate" = "Exchange rate";
+"Confirmation" = "Confirmation";
 
 //Recover Password
 "RecoverPassword" = "Recover Password";
