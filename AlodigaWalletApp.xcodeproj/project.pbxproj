@@ -34,6 +34,9 @@
 		04D6DA8E251AABC10053125C /* PhotoViewStepTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6DA8D251AABC10053125C /* PhotoViewStepTwoView.swift */; };
 		04D6DA93251AAC880053125C /* ValidateAdressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6DA92251AAC880053125C /* ValidateAdressView.swift */; };
 		04E3D09E251AB9D700DA1B31 /* SuccesfullValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3D09D251AB9D700DA1B31 /* SuccesfullValidateView.swift */; };
+		04ECA1212537CC7600A77BA1 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECA1202537CC7600A77BA1 /* RegisterController.swift */; };
+		04ECA1292537D6A900A77BA1 /* ObjetCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECA1282537D6A900A77BA1 /* ObjetCountry.swift */; };
+		04ECA12E2537DEA500A77BA1 /* ObjetErrorCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECA12D2537DEA500A77BA1 /* ObjetErrorCountry.swift */; };
 		467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04B924D857F30021F472 /* AppDelegate.swift */; };
 		467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C04BB24D857F30021F472 /* SceneDelegate.swift */; };
 		467C04C024D857F40021F472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467C04BF24D857F40021F472 /* Assets.xcassets */; };
@@ -127,6 +130,9 @@
 		04D6DA8D251AABC10053125C /* PhotoViewStepTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewStepTwoView.swift; sourceTree = "<group>"; };
 		04D6DA92251AAC880053125C /* ValidateAdressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateAdressView.swift; sourceTree = "<group>"; };
 		04E3D09D251AB9D700DA1B31 /* SuccesfullValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesfullValidateView.swift; sourceTree = "<group>"; };
+		04ECA1202537CC7600A77BA1 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		04ECA1282537D6A900A77BA1 /* ObjetCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetCountry.swift; sourceTree = "<group>"; };
+		04ECA12D2537DEA500A77BA1 /* ObjetErrorCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetErrorCountry.swift; sourceTree = "<group>"; };
 		467C04B924D857F30021F472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		467C04BB24D857F30021F472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		467C04BF24D857F40021F472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 		040E43DD252D1E150014FAE4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				04ECA1202537CC7600A77BA1 /* RegisterController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -619,6 +626,8 @@
 				BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */,
 				BAE1EA69252EAEB4007F9CD6 /* ObjectLogin.swift */,
 				BAE1EA6E252EC9EA007F9CD6 /* ObjectErrorLogin.swift */,
+				04ECA1282537D6A900A77BA1 /* ObjetCountry.swift */,
+				04ECA12D2537DEA500A77BA1 /* ObjetErrorCountry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -774,6 +783,7 @@
 				04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */,
 				043FEC93251BFD5B005C518B /* SuccesfulRecoverView.swift in Sources */,
 				04D6DA62251A4A9B0053125C /* ValidateAccountView.swift in Sources */,
+				04ECA12E2537DEA500A77BA1 /* ObjetErrorCountry.swift in Sources */,
 				04D6DA93251AAC880053125C /* ValidateAdressView.swift in Sources */,
 				04D322D52518EA4E00F3F38C /* OperationKeyTopUpView.swift in Sources */,
 				BAE1E9BB252BA9EB007F9CD6 /* WebServicesCall.swift in Sources */,
@@ -806,6 +816,7 @@
 				04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */,
 				04D6DA84251AA2C70053125C /* PhotoView.swift in Sources */,
 				BAE1EA50252E04B2007F9CD6 /* ObjectAlodiga.swift in Sources */,
+				04ECA1212537CC7600A77BA1 /* RegisterController.swift in Sources */,
 				BAE1EA55252E04EF007F9CD6 /* ObjectBase.swift in Sources */,
 				0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */,
 				04D6DA51251953B00053125C /* OperationKeyConvertView.swift in Sources */,
@@ -814,6 +825,7 @@
 				46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */,
 				46DBC47C2512866C008D42B3 /* ConfirmationView.swift in Sources */,
 				BAE1E9F6252BE894007F9CD6 /* ObjectRegistroUnificado.swift in Sources */,
+				04ECA1292537D6A900A77BA1 /* ObjetCountry.swift in Sources */,
 				46DBC47A2512855A008D42B3 /* TargetCustomerQRView.swift in Sources */,
 				04D6DA77251A968D0053125C /* ValidateAccountFirstView.swift in Sources */,
 				04E3D09E251AB9D700DA1B31 /* SuccesfullValidateView.swift in Sources */,
