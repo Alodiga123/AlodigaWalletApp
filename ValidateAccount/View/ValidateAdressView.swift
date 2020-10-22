@@ -18,7 +18,7 @@ struct ValidateAdressView: View {
                 VStack() {
                     ValidateAdressViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Return", displayMode: .inline)
         }
     }
 }
@@ -65,7 +65,7 @@ struct ValidateAdressViewAccess: View {
 
 struct TextLabelValidateDirecction: View {
     var body: some View {
-        Text("Introduzca su dirección")
+        Text("Address")
             .font(.body)
             .foregroundColor(Color.fontOrangeColor)
             .frame(width: 370, height: 50)

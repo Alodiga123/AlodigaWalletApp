@@ -18,7 +18,7 @@ struct PhotoView: View {
                 VStack() {
                     PhotoViewAccess()
                 }
-            }.navigationBarTitle("Validar Cuenta", displayMode: .inline)
+            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
         }
     }
 }
@@ -61,7 +61,7 @@ struct PhotoViewAccess: View {
 struct NextValidateButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Siguiente")
+        Text("Next")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

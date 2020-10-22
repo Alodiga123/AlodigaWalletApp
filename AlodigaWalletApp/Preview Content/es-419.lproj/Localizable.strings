@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   AlodigaWalletApp
 
@@ -6,5 +6,37 @@
   Copyright © 2020 Kerwin Gomez. All rights reserved.
 */
 
+//Botones
 "Continue" = "Continuar";
-"RecoverPassword" = "Recuperar Password";
+"Cancel" = "Cancelar";
+"Finalize" = "Finalizar";
+"Back" = "Atrás";
+"TakePhoto" = "Tomar Fotografía";
+"Next" = "Siguiente";
+"Return" = "Volver";
+
+//Comunes
+
+//Validar Cuenta
+"ValidateAccount" = "Validar Cuenta";
+"AccountValidated" = "Su cuenta se encuentra validada";
+"OverdueAccount" = "Cuenta Vencida";
+"ValidationExpired" = "La validación de cuenta se encuentra vencida";
+"ValidateAgain" = "Para poder desfrutar de los servicios que brinda la billetera Alodiga debe validar su cuenta nuevamente";
+"ValidateAccountAlodiga" = "Para poder desfrutar de los servicios que brinda la billetera Alodiga debe validar su cuenta";
+"AttachPhoto1" = "1. Adjunta una fotografia de la cara principal de\n un documento de identidad válido. Puede ser:";
+"IdentityCardLicense" = "- Cédula de Identidad\n- Licencia de Conducir";
+"PhotoResolution" = "La fotografía debe estar legible y con una resolución superior a 240ppx";
+"ImproveYourLife" = "2. Por favor toma una foto sosteniendo un cartel que diga Mejora Tu Vida, con la fecha de hoy.";
+"Address" = "Introduzca su dirección";
+"State" = "Introduzca el estado";
+"City" = "Introduzca la ciudad";
+"ZipCode" = "Introduzca el código postal";
+"Street" = "Ingrese su calle, Av, casa";
+"ValidationInProcess" = "Su validación esta en proceso";
+"Validation24Hours" = "En las proximas 24 horas le estaremos notificando.\n Una vez validado ud podrá hacer todas las funcionalidades que le brinda la Billetera Alogida";
+
+//Recuperar contraseña
+"RecoverPassword" = "Recuperar Contraseña";
+"EmailRegister" = "Por favor ingrese su correo electrónico registrado";
+"Email" = "Correo electrónico";

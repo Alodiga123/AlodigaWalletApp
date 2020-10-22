@@ -18,7 +18,7 @@ struct SuccesfullValidateView: View {
                 VStack() {
                     SuccesfullValidateViewAccess()
                 }
-            }.navigationBarTitle("Validar Cuenta", displayMode: .inline)
+            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
         }
     }
 }
@@ -57,7 +57,7 @@ struct SuccesfullValidateViewAccess: View {
 
 struct TextLabelValidateProcess: View {
     var body: some View {
-        Text("Su validación esta en proceso")
+        Text("ValidationInProcess")
             .font(.body)
             .foregroundColor(Color.fontOrangeColor)
     }
@@ -65,7 +65,7 @@ struct TextLabelValidateProcess: View {
 
 struct TextLabelValidateAccountSuccesfull: View {
     var body: some View {
-        Text("En las proximas 24 horas le estaremos notificando.\n Una vez validado ud podrá hacer todas las funcionalidades que le brinda la Billetera Alogida")
+        Text("Validation24Hours")
             .font(.callout)
             .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)

@@ -18,7 +18,7 @@ struct ValidateAccountView: View {
                 VStack() {
                     ValidateAccountViewAccess()
                 }
-            }.navigationBarTitle("Validar Cuenta", displayMode: .inline)
+            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
         }
     }
 }
@@ -57,7 +57,7 @@ struct ValidateAccountViewAccess: View {
 
 struct TextLabelValidate: View {
     var body: some View {
-        Text("Su cuenta se encuentra validada")
+        Text("AccountValidated")
             .font(.title)
             .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
@@ -69,7 +69,7 @@ struct TextLabelValidate: View {
 struct EndValidateButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Finalizar")
+        Text("Finalize")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

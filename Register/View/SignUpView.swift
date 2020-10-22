@@ -91,7 +91,7 @@ class prueba {
 func paises (completion: @escaping ([Country]) -> Void) {
     let registerController = RegisterController()
     let pais = AL_GetCountries()
-    let pa: [Country]
+    //let pa: [Country]
     
         registerController.getCountry(generarCodigoCountry: pais) { (res,error) in
             print("EN LA VISTA!!!!")
@@ -204,6 +204,7 @@ struct RegisterCancelButtonContent: View {
 
 struct ListaPaises: View {
     let co = Color.black.opacity(0.1)
+    var listCountries = ["VENEZUELA", "AFGANISTAN", "ALBANIA"]
     let registerController = RegisterController()
     let pais = AL_GetCountries()
     let prueba2 = prueba()
@@ -222,11 +223,11 @@ struct ListaPaises: View {
 //    }
     
     @State private var isExpanded = false
-    @State private var selectNumber = 1
+    @State private var selectCountry = "Pais"
     @State private var countries = {let prueba2 = prueba()
-        prueba2.paises(completion: { co in
+        prueba2.paises(completion: { pc in
             print ("en listar paises")
-            print(co)
+            print(pc)
     })}
     //@Binding var countries: String
     var body: some View {
@@ -236,7 +237,7 @@ struct ListaPaises: View {
             //Text($countries)
                 .font(.callout)
                 .foregroundColor(.gray)
-                .padding(.top,18)
+                .padding(.top,10)
 //                .onAppear{
 //                    let prueba2 = prueba()
 //                        prueba2.paises(completion: { co in
@@ -245,26 +246,33 @@ struct ListaPaises: View {
 //                        }}
                 
             if #available(iOS 14.0, *) {
-                DisclosureGroup("\(selectNumber)", isExpanded:$isExpanded){
-                    VStack {
-                        //Picker(selection: $selectNumber, label:Text("Pais")){
-                            ForEach(1...3,id: \.self){num in
-                                Text("\(num)")
-                                    .font(.callout)
-                                    .padding(.all)
+                DisclosureGroup("\(selectCountry)", isExpanded:$isExpanded){
+                    VStack(alignment: .leading) {
+                        //Picker(selection: $selectCountry, label:Text("Pais")){
+                        ForEach(self.listCountries, id: \.self) { listCountries in
+                        //ForEach(0 ..< listCountries.count) {_ in
+                            //ForEach(1...3,id: \.self){num in
+                                //Text("\(num)")
+                            Text(listCountries)
+                                .font(.callout)
+                                .frame(width: 300, alignment: .leading)
+                                .padding(.top,10)
+                                .padding(.bottom,5)
+                                .padding(.leading,0)
+                                .foregroundColor(.blue)
                                     .onTapGesture{
-                                        print (num)
-                                        self.selectNumber = num
+                                        print (listCountries)
+                                        self.selectCountry = ("\(listCountries)")
                                         withAnimation{
                                             self.isExpanded.toggle()
                                         }
                                     }
-                            }
-                        //}
+                            //}
+                        }
                     }
                 }.accentColor(.white)
                 .font(.callout)
-                .foregroundColor(.black)
+                .foregroundColor(.blue)
                 .padding(.all)
                 .background(co)
                 .cornerRadius(8)

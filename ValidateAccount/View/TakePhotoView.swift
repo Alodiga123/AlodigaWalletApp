@@ -18,7 +18,7 @@ struct TakePhotoView: View {
                 VStack() {
                     TakePhotoViewAccess()
                 }
-            }.navigationBarTitle("Validar Cuenta", displayMode: .inline)
+            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
         }
     }
 }
@@ -59,7 +59,7 @@ struct TakePhotoViewAccess: View {
 
 struct TextLabelAccount: View {
     var body: some View {
-        Text("Validar Cuenta")
+        Text("ValidateAccount")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
             .frame(width: 300, height: 60)
@@ -68,7 +68,7 @@ struct TextLabelAccount: View {
 
 struct TextLabelValidateAccountInstrucction: View {
     var body: some View {
-        Text("1. Adjunta una fotografia de la cara principal de\n un documento de identidad válido. Puede ser:")
+        Text("AttachPhoto1")
             .font(.body)
             .foregroundColor(Color.fontBlackColor)
             .frame(width: 370, height: 60)
@@ -77,7 +77,7 @@ struct TextLabelValidateAccountInstrucction: View {
 
 struct TextLabelValidateDocuments: View {
     var body: some View {
-        Text("- Cédula de Identidad\n- Licencia de Conducir")
+        Text("IdentityCardLicense")
             .font(.body)
             .foregroundColor(Color.fontBlackColor)
             .frame(width: 340, height: 60, alignment: .leading)
@@ -88,7 +88,7 @@ struct TextLabelValidateDocuments: View {
 
 struct TextLabelValidateResolution: View {
     var body: some View {
-        Text("La fotografía debe estar legible y con una resolución superior a 240ppx")
+        Text("PhotoResolution")
             .font(.body)
             .foregroundColor(Color.fontOrangeColor)
             .frame(width: 360, height: 60, alignment: .leading)
@@ -101,7 +101,7 @@ struct TextLabelValidateResolution: View {
 struct TakePhotoButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Tomar Fotografía")
+        Text("TakePhoto")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

@@ -5,5 +5,40 @@
   Created by Kerwin Gomez on 8/31/20.
   Copyright © 2020 Kerwin Gomez. All rights reserved.
 */
+
+//Button
 "Continue" = "Continue";
+"Cancel" = "Cancel";
+"Finalize" = "Finalize";
+"Back" = "Back";
+"TakePhoto" = "Take a photo";
+"Next" = "Next";
+"Return" = "Return";
+
+//Common
+
+//Validate Account
+"ValidateAccount" = "Validate Account";
+"AccountValidated" = "Your account is validated";
+"OverdueAccount" = "Overdue Account";
+"ValidationExpired" = "Account validation has expired";
+"ValidateAgain" = "In order to enjoy the services provided by the Alodiga wallet, you must validate your account again";
+"ValidateAccountAlodiga" = "In order to enjoy the services offered by the Alodiga wallet, you must validate your account";
+"AttachPhoto1" = "1. Attach a photograph of the main face of\n a valid identity document. Can be:";
+"IdentityCardLicense" = "- Identity Card\n- Driver's License";
+"PhotoResolution" = "The photograph must be legible and with a resolution greater than 240ppx";
+"ImproveYourLife" = "2. Please take a picture holding a sign that says Improve Your Life with today's date.";
+"Address" = "Enter your address";
+"State" = "Enter the state";
+"City" = "Enter the city";
+"ZipCode" = "Enter zip code";
+"Street" = "Enter your street, Av, house";
+"ValidationInProcess" = "Its validation is in process";
+"Validation24Hours" = "In the next 24 hours we will notify you.\n Once validated you will be able to do all the functionalities that the Alogida Wallet offers";
+
+//Recover Password
 "RecoverPassword" = "Recover Password";
+"EmailRegister" = "Please enter your registered email";
+"Email" = "Email";
+
+

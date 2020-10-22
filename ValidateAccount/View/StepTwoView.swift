@@ -18,7 +18,7 @@ struct StepTwoView: View {
                 VStack() {
                     StepTwoViewAccess()
                 }
-            }.navigationBarTitle("Validar Cuenta", displayMode: .inline)
+            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
         }
     }
 }
@@ -60,7 +60,7 @@ struct StepTwoViewAccess: View {
 
 struct TextLabelValidateAccountInstrucction2: View {
     var body: some View {
-        Text("2. Por favor toma una foto sosteniendo un cartel que diga Mejora Tu Vida, con la fecha de hoy.")
+        Text("ImproveYourLife")
             .font(.body)
             .foregroundColor(Color.fontBlackColor)
             .frame(width: 370, height: 60)

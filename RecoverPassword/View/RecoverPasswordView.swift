@@ -18,7 +18,7 @@ struct RecoverPasswordView: View {
                 VStack() {
                     RecoverPasswordViewAccess()
                 }
-            }.navigationBarTitle("Recuperar Contraseña", displayMode: .inline)
+            }.navigationBarTitle("RecoverPassword", displayMode: .inline)
         }
     }
 }
@@ -59,7 +59,7 @@ struct RecoverPasswordViewAccess: View {
 
 struct TextLabelRecover: View {
     var body: some View {
-        Text("Por favor ingrese su correo electrónico registrado")
+        Text("EmailRegister")
             .font(.body)
             .foregroundColor(.gray)
             .frame(width: 320, height: 45)
@@ -70,7 +70,7 @@ struct TextLabelRecover: View {
 struct EmailRecorTextField: View {
     @Binding var mail: String
     var body: some View {
-        FloatingLabelTextField($mail, placeholder: "Correo electrónico", editingChanged: { (isChanged) in
+        FloatingLabelTextField($mail, placeholder: "Email", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -88,7 +88,7 @@ struct EmailRecorTextField: View {
 struct ContinueRecoButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Continuar")
+        Text("Continue")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -101,7 +101,7 @@ struct ContinueRecoButtonContent: View {
 struct CancelRecorButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Cancelar")
+        Text("Cancel")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

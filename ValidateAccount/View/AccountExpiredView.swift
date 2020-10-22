@@ -18,7 +18,7 @@ struct AccountExpiredView: View {
                 VStack() {
                     AccountExpiredViewAccess()
                 }
-            }.navigationBarTitle("Cuenta Vencida", displayMode: .inline)
+            }.navigationBarTitle("OverdueAccount", displayMode: .inline)
         }
     }
 }
@@ -61,7 +61,7 @@ struct AccountExpiredViewAccess: View {
 
 struct TextLabelValidateAccount: View {
     var body: some View {
-        Text("La validación de cuenta se encuentra vencida")
+        Text("ValidationExpired")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
             .multilineTextAlignment(.center)
@@ -73,7 +73,7 @@ struct TextLabelValidateAccount: View {
 struct TextLabelValidateAccountAgain: View {
     var body: some View {
         VStack(alignment: .center){
-            Text("Para poder desfrutar de los servicios que brinda la billetera Alodiga debe validar su cuenta nuevamente")
+            Text("ValidateAgain")
                 .font(.body)
                 .foregroundColor(Color.fontOrangeColor)
                 .frame(width: 360, height: 100)
@@ -85,7 +85,7 @@ struct TextLabelValidateAccountAgain: View {
 struct ValidateAccountButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Validar Cuenta")
+        Text("ValidateAccount")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -108,7 +108,7 @@ struct CircleImagine: View {
 struct ValidateBackButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Atras")
+        Text("Back")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

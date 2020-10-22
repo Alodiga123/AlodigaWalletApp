@@ -18,7 +18,7 @@ struct ValidateAccountFirstView: View {
                 VStack() {
                     ValidateAccountFirstViewAccess()
                 }
-            }.navigationBarTitle("Validar Cuenta", displayMode: .inline)
+            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
         }
     }
 }
@@ -58,7 +58,7 @@ struct ValidateAccountFirstViewAccess: View {
 
 struct TextLabelValidateAccountFirst: View {
     var body: some View {
-        Text("Para poder desfrutar de los servicios que brinda la billetera Alodiga debe validar su cuenta")
+        Text("ValidateAccountAlodiga")
             .font(.body)
             .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
