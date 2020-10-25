@@ -16,10 +16,37 @@
 "Return" = "Return";
 "Process" = "Process";
 "Share" = "Share";
+"Search" = "Search";
+"Buy" = "Comprar";
+"Send" = "Send";
+"ProcessWithdrawal" = "Process Withdrawal";
+"ProcessRecharge" = "Process Recharge";
+"ScanQr" = "Scan QR";
 
 //Common
 "OperationsKey" = "Operations Key";
 "SpecialOperationsCode" = "Special Operations Code";
+"TimeRemaining" = "Time remaining";
+"RechargeInformation" = "Recharge Information";
+"OperationPass" = "Enter the Operations password";
+"Email" = "Email";
+"Country" = "Country";
+"Bank" = "Bank";
+"Product" = "Product";
+"Account" = "Account";
+"Amount" = "Amount";
+"Description" = "Description";
+"Concept" = "Concept";
+"Transf" = "Transf No";
+"Name" = "Name";
+"LastName" = "Last Name";
+"Phone" = "Phone";
+"Destination" = "Destination";
+"Origin" = "Origin";
+"Success" = "Success";
+"Summary" = "Resumen";
+"Confirmation" = "Confirmation";
+"LogIn" = "Log In";
 
 //Menu
 "Recharge" = "Recharge";
@@ -28,6 +55,24 @@
 "Transference" = "Transference";
 "PaymentBusinessesQR" = "Payment Businesses QR";
 "ValidateAccount" = "Validate Account";
+
+//Register
+"Register" = "Register";
+"SignUp" = "Sign Up";
+"SelectCountry" = "Select country";
+"EnterPhone" = "Enter phone number";
+"KeyReceived" = "Key received";
+"RegistrationData" = "Registration Data";
+"Pass" = "Password";
+"ConfirmPass" = "Confirm Password";
+"4DigitPass" = "Enter a 4-digit password";
+"PassMustBe" = "The password must be 8 characters long. Have\n uppercase, lowercase, numbers and special characters";
+"YouHaveAccount" = "Do you already have an account? Enter here";
+"TermsAndConditions" = "By clicking Register, you accept all Alodiga Terms\n and Conditions";
+"UserCreated" = "User created";
+"Welcome" = "Welcome";
+"RegisterCompleted" = "Thank you! Your registration has been completed successfully. You can now start using our services";
+"Enter" = "Enter";
 
 //Validate Account
 "AccountValidated" = "Your account is validated";
@@ -50,17 +95,65 @@
 //Convert
 "ProductOrigin" = "Select the Product of Origin";
 "ProductDestination" = "Select Destination Product";
-"Amount" = "Amount";
 "IncludeCommission" = "Include commission in amount";
 "Commission" = "Commission";
 "Details" = "Details";
-"OperationPass" = "Enter the Operations password";
 "ExchangeRate" = "Exchange rate";
 "Confirmation" = "Confirmation";
+
+//TopUp
+"MobileRecharge" = "Mobile Recharge";
+"NationalAndInter" = "National and International Mobile Recharge";
+"PhoneDestination" = "Phone (Destination)";
+"PhoneSender" = "Phone (Sender)";
+"Language" = "Language";
+"ProductToDebt" = "Product to Debt";
+"ProductToRefill" = "Product to Refill";
+"SelectOperator" = "Select the Operator";
+"EnterOperationsKey" = "Enter the Operations password";
+
+//Withdrawal
+"Retirement" = "Retiro";
+"ManualWithdrawal" = "Manual Withdrawal";
+"AccountNumber" = "Account Number";
+"Description" = "Description";
+"Confirmation" = "Confirmación";
+"WithdrawalInformation" = "Withdrawal Information";
+"SuccessfulWithdrawal" = "Successful Withdrawal";
 
 //Recover Password
 "RecoverPassword" = "Recover Password";
 "EmailRegister" = "Please enter your registered email";
-"Email" = "Email";
+"PassReceived" = "Enter the password received";
+"SecurityLevel" = "Security level";
+"NewPassword" = "New Password";
+"RepeatNewPass" = "Repeat the new password";
+"PassMustBe8" = "The password must be 8 characters long. Have uppercase, lowercase, numbers and special characters";
+"SuccessfulRecovery" = "Successful Recovery";
+"SuccessfulPassRecovery" = "Successful password recovery";
 
+//Recharge
+"ManualRecharge" = "Manual Recharge";
+"TransferNumber" = "Transfer Number";
+"SuccessfulRecharge" = "Successful Recharge";
 
+//Payment Businesses
+"PaymentBusinesses" = "Payment Businesses";
+"CurrencyTransfer" = "Select the currency to transfer";
+"PaymentQr" = "Payment QR Shops";
+"ScanStoreQr" = "Scan the store's QR Code";
+"PaymentDetails" = "Payment details";
+"DestinationAccount" = "Destination account information";
+"PaymentInformation" = "Fill in the payment information";
+"SuccessfulPayment" = "Successful payment";
+"Date" = "Date";
+"Transaction" = "Transaction";
+
+//Transference
+"SearchCriteria" = "Select the search criteria of the receiving user";
+"SuccesfulTransaction" = "Succesful Transaction";
+
+//Login
+"SignUpHere" = "Sign Up Here";
+"ForgotPassword" = "Forgot your password";
+"NotMember" = "Not a member yet?";

@@ -18,7 +18,7 @@ struct TargetCustomerView: View {
                 VStack() {
                     TargetCustomerViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Back", displayMode: .inline)
         }
     }
 }
@@ -77,7 +77,7 @@ struct TargetCustomerViewAccess: View {
 struct TextLabelInformation: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Información de la cuenta de destino")
+            Text("DestinationAccount")
                 .font(.callout)
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)
@@ -89,7 +89,7 @@ struct TextLabelInformation: View {
 struct TextLabelInfomationPaymen: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Complete la informacion del pago")
+            Text("PaymentInformation")
                 .font(.callout)
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)

@@ -18,7 +18,7 @@ struct PassByTokenView: View {
                 VStack() {
                     PassByTokenViewAccess ()
                 }
-            } .navigationBarTitle("Clave recibida", displayMode: .inline)
+            } .navigationBarTitle("KeyReceived", displayMode: .inline)
         }
     }
 }
@@ -82,7 +82,7 @@ struct TimerView2: View {
 struct TimerCounter2: View {
     var body: some View {
         VStack(alignment: .center, spacing: 6) {
-            Text("Tiempo Restante")
+            Text("TimeRemaining")
                 .foregroundColor(Color.fontOrangeColor)
                 .padding(.top)
         }

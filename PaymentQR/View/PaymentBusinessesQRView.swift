@@ -18,7 +18,7 @@ struct PaymentBusinessesQRView: View {
                 VStack() {
                     PaymentBusinessesQRViewAccess()
                 }
-            }.navigationBarTitle("Pago Comercios", displayMode: .inline)
+            }.navigationBarTitle("PaymentBusinesses", displayMode: .inline)
         }
     }
 }
@@ -78,7 +78,7 @@ struct CurrencyKeyTextField: View {
 
 struct TextLabelPayment: View {
     var body: some View {
-        Text("Pago QR Comercios")
+        Text("PaymentQr")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -87,7 +87,7 @@ struct TextLabelPayment: View {
 struct TextLabelCodeQR: View {
     var body: some View {
         VStack(alignment: .center, spacing: 50) {
-            Text("Escanee el Codigo QR del comercio")
+            Text("ScanStoreQr")
                 .foregroundColor(Color.fontOrangeColor)
                 .padding(.top,40)
                 .padding(.bottom,10)
@@ -98,7 +98,7 @@ struct TextLabelCodeQR: View {
 struct ScannerQRButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Escanear QR")
+        Text("ScanQr")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -111,7 +111,7 @@ struct ScannerQRButtonContent: View {
 struct PaymentBackButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Atrás")
+        Text("Back")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

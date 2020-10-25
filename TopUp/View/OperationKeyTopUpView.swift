@@ -18,7 +18,7 @@ struct OperationKeyTopUpView: View {
                 VStack() {
                     OperationKeyTopUpViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Return", displayMode: .inline)
         }
     }
 }
@@ -60,7 +60,7 @@ struct OperationKeyTopUpViewAccess: View {
 struct TextLabelOperationKeyTopUp: View {
     var body: some View {
         VStack(alignment: .center, spacing: 6) {
-            Text("Introduzca la clave de Operaciones")
+            Text("EnterOperationsKey")
                 .font(.callout)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
@@ -90,7 +90,7 @@ struct TopUpOKTextField: View {
 struct TopUpSendButtonContents: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Enviar")
+        Text("Send")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

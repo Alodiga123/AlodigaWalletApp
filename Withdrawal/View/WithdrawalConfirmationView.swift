@@ -18,7 +18,7 @@ struct WithdrawalConfirmationView: View {
                 VStack() {
                     WithdrawalConfirmationViewAccess()
                 }
-            }.navigationBarTitle("Confimación", displayMode: .inline)
+            }.navigationBarTitle("Confirmation", displayMode: .inline)
         }
     }
 }
@@ -71,7 +71,7 @@ struct WithdrawalConfirmationViewAccess: View {
 struct TextLabelInfWithdrawal: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Información del Retiro")
+            Text("WithdrawalInformation")
                 .font(.callout)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
@@ -82,7 +82,7 @@ struct TextLabelInfWithdrawal: View {
 struct WithdrawalProcessButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Procesar")
+        Text("Process")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

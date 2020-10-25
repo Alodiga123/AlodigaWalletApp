@@ -18,7 +18,7 @@ struct ConfirmationTopUpView: View {
                 VStack() {
                     ConfirmationTopUpViewAccess()
                 }
-            }.navigationBarTitle("Exito", displayMode: .inline)
+            }.navigationBarTitle("Success", displayMode: .inline)
         }
     }
 }
@@ -70,7 +70,7 @@ struct ConfirmationTopUpViewAccess: View {
 struct TextLabelInformationTopUp: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Información de la recarga")
+            Text("RechargeInformation")
                 .font(.callout)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
@@ -81,7 +81,7 @@ struct TextLabelInformationTopUp: View {
 struct TopUpProcessButtonContents: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Procesar")
+        Text("Process")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

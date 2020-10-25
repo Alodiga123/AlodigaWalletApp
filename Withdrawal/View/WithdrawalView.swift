@@ -18,7 +18,7 @@ struct WithdrawalView: View {
                 VStack() {
                     WithdrawalViewAccess()
                 }
-            }.navigationBarTitle("Retiro", displayMode: .inline)
+            }.navigationBarTitle("Retirement", displayMode: .inline)
         }
     }
 }
@@ -65,7 +65,7 @@ struct WithdrawalViewAccess: View {
 
 struct TextLabelWithdrawal: View {
     var body: some View {
-        Text("Retiro Manual")
+        Text("ManualWithdrawal")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
             .padding(.leading,20)
@@ -172,7 +172,7 @@ struct DescriptionTextField: View {
 struct WithdrawalButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Procesar Retiro")
+        Text("ProcessWithdrawal")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -185,7 +185,7 @@ struct WithdrawalButtonContent: View {
 struct WithdrawallBackButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Atras")
+        Text("Back")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

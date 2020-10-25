@@ -18,7 +18,7 @@ struct ProductTopUpView: View {
                 VStack() {
                     ProductTopUpViewAccess()
                 }
-            }.navigationBarTitle("Producto", displayMode: .inline)
+            }.navigationBarTitle("Product", displayMode: .inline)
         }
     }
 }
@@ -108,7 +108,7 @@ struct OperatorTextField: View {
 struct TopUpBuyButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Comprar")
+        Text("Buy")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

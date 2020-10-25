@@ -18,7 +18,7 @@ struct ConfirmationQRView: View {
                 VStack() {
                     ConfirmationQRViewAccess()
                 }
-            }.navigationBarTitle("Confirmación", displayMode: .inline)
+            }.navigationBarTitle("Confirmation", displayMode: .inline)
         }
     }
 }
@@ -69,7 +69,7 @@ struct ConfirmationQRViewAccess: View {
 struct PaymentProcessButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Procesar")
+        Text("Process")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

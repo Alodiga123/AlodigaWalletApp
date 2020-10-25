@@ -18,7 +18,7 @@ struct OperationsKeyView: View {
                 VStack() {
                     OperationsKeyViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Back", displayMode: .inline)
         }
     }
 }
@@ -58,7 +58,7 @@ struct OperationsKeyViewAccess: View {
 struct TextLabelOperationKey: View {
     var body: some View {
         VStack(alignment: .center, spacing: 6) {
-            Text("Introduzca la clave de Operaciones")
+            Text("OperationPass")
                 .font(.callout)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding(.top,25)
@@ -85,7 +85,7 @@ struct TransOperKeyTextField: View {
 struct TransferenceSendButtonContents: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Enviar")
+        Text("Send")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

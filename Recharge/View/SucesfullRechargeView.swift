@@ -18,7 +18,7 @@ struct SucesfullRechargeView: View {
                 VStack() {
                     SucesfullRechargeViewAccess()
                 }
-            }.navigationBarTitle("Resumen", displayMode: .inline)
+            }.navigationBarTitle("Summary", displayMode: .inline)
         }
     }
 }
@@ -68,7 +68,7 @@ struct SucesfullRechargeViewAccess: View {
 
 struct TextLabelSucesfullRecharge: View {
     var body: some View {
-        Text("Recarga Exitosa")
+        Text("SuccessfulRecharge")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -86,7 +86,7 @@ struct RechargeCheckImagine: View {
 struct RechangeEndButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Finalizar")
+        Text("Finalize")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -99,7 +99,7 @@ struct RechangeEndButtonContent: View {
 struct RechangeShareButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Compartir")
+        Text("Share")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

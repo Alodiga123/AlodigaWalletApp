@@ -18,7 +18,7 @@ struct WelcomeView: View {
                 VStack() {
                     WelcomeViewViewAccess()
                 }
-            }.navigationBarTitle("Usuario creado", displayMode: .inline)
+            }.navigationBarTitle("UserCreated", displayMode: .inline)
         }
     }
 }
@@ -57,7 +57,7 @@ struct WelcomeViewViewAccess: View {
 
 struct TextLabelWelcome: View {
     var body: some View {
-        Text("Bienvenido")
+        Text("Welcome")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -74,7 +74,7 @@ struct RegisterCheckImagine: View {
 
 struct TextLabelStart: View {
     var body: some View {
-        Text("Gracias! Su registro a sido completado de forma exitosa. Ya puede comenzar a utilizar nuestros servicios")
+        Text("RegisterCompleted")
             .font(.body)
             .foregroundColor(.gray)
             .padding(.leading,28)
@@ -87,7 +87,7 @@ struct TextLabelStart: View {
 struct MainButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Ingresar")
+        Text("Enter")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

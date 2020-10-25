@@ -18,7 +18,7 @@ struct TopUpView: View {
                 VStack() {
                     TopUpViewAccess()
                 }
-            }.navigationBarTitle("Recarga de Móviles", displayMode: .inline)
+            }.navigationBarTitle("MobileRecharge", displayMode: .inline)
         }
     }
 }
@@ -62,7 +62,7 @@ struct TopUpViewAccess: View {
 struct TextLabelTopUp: View {
     var body: some View {
         VStack(alignment: .center) {
-            Text("Recarga de Móviles Nacionales e Internacionales")
+            Text("NationalAndInter")
                 .font(.title)
                 .foregroundColor(Color.fontBlackColor)
                 .multilineTextAlignment(.center)
@@ -139,7 +139,7 @@ struct LanguageTextField: View {
 struct TopUpSerchButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Buscar")
+        Text("Search")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -152,7 +152,7 @@ struct TopUpSerchButtonContent: View {
 struct TopUpBackButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Atras")
+        Text("Back")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

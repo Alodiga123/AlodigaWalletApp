@@ -177,7 +177,7 @@ struct CardButtonViewAccess: View {
 
 struct ValueRegister: View {
     var body: some View {
-        Text("Registrate aqui")
+        Text("SignUpHere")
             .font(.headline)
             .foregroundColor(Color.fontOrangeColor).frame(width: 130, height: 25, alignment: .leading).padding(.top,5).padding(.bottom,30)
     }
@@ -186,7 +186,7 @@ struct ValueRegister: View {
 struct ForgotPassword: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("Olvido su contraseña")
+            Text("ForgotPassword")
                 .foregroundColor(Color.fontOrangeColor)
         }.frame(width: 380, alignment: .leading).padding(.leading,17)
     }
@@ -194,7 +194,7 @@ struct ForgotPassword: View {
 
 struct RegisterLabel: View {
     var body: some View {
-        Text("No eres miembro todavía?")
+        Text("NotMember")
             .padding(.leading)
             .font(.headline)
             .foregroundColor(Color.fontBlackColor).frame(width: 230, height: 25, alignment: .leading).padding(.top,5).padding(.bottom,30)
@@ -204,7 +204,7 @@ struct RegisterLabel: View {
 struct UsernameTextField: View {
     @Binding var username: String
     var body: some View {
-        FloatingLabelTextField($username, placeholder: "Correo electronico", editingChanged: { (isChanged) in
+        FloatingLabelTextField($username, placeholder: "Correo electrónico", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -264,7 +264,7 @@ struct TextLabelBeginingSession1: View {
         
         //Comentario gitHub
         
-        Text("Iniciar sesión").font(.title).foregroundColor(Color.fontBlackColor)
+        Text("LogIn").font(.title).foregroundColor(Color.fontBlackColor)
     }
 }
 

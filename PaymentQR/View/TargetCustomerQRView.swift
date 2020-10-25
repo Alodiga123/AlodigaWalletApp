@@ -18,7 +18,7 @@ struct TargetCustomerQRView: View {
                 VStack() {
                     TargetCustomerQRViewAccess()
                 }
-            }.navigationBarTitle("Datos de pago", displayMode: .inline)
+            }.navigationBarTitle("PaymentDetails", displayMode: .inline)
         }
     }
 }
@@ -75,7 +75,7 @@ struct TargetCustomerQRViewAccess: View {
 struct TextLabelPaymentInfAcount: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Información de la cuenta de destino")
+            Text("DestinationAccount")
                 .font(.callout)
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)
@@ -87,7 +87,7 @@ struct TextLabelPaymentInfAcount: View {
 struct TextLabelPaymentInf: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Complete la información del pago")
+            Text("PaymentInformation")
                 .font(.callout)
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(Color.fontOrangeColor)
@@ -131,7 +131,7 @@ struct PaymentConceptTextField: View {
 struct PaymentSendButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Enviar")
+        Text("Send")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

@@ -18,7 +18,7 @@ struct OperationsKeyQRView: View {
                 VStack() {
                     OperationsKeyQRViewAccess()
                 }
-            }.navigationBarTitle("Clave de operaciones", displayMode: .inline)
+            }.navigationBarTitle("OperationsKey", displayMode: .inline)
         }
     }
 }
@@ -57,7 +57,7 @@ struct OperationsKeyQRViewAccess: View {
 struct TextLabelOperKeyPay: View {
     var body: some View {
         VStack(alignment: .center, spacing: 6) {
-            Text("Introduzca la clave de Operaciones")
+            Text("OperationPass")
                 .font(.callout)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding(.top,25)

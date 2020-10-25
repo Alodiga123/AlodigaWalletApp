@@ -18,7 +18,7 @@ struct SucesfullWithdrawalView: View {
                 VStack() {
                     SucesfullWithdrawalViewAccess()
                 }
-            }.navigationBarTitle("Resumen", displayMode: .inline)
+            }.navigationBarTitle("Summary", displayMode: .inline)
         }
     }
 }
@@ -69,7 +69,7 @@ struct SucesfullWithdrawalViewAccess: View {
 
 struct TextLabelSucesfullWithdrawal: View {
     var body: some View {
-        Text("Retiro Exitoso")
+        Text("SuccessfulWithdrawal")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -87,7 +87,7 @@ struct WithdrawalCheckImagine: View {
 struct WithdrawalEndButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Finalizar")
+        Text("Finalize")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -100,7 +100,7 @@ struct WithdrawalEndButtonContent: View {
 struct WithdrawalShareButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Compartir")
+        Text("Share")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

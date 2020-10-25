@@ -18,7 +18,7 @@ struct TransferenceView: View {
                 VStack() {
                     TransferenceViewAccess()
                 }
-            }.navigationBarTitle("Transferencia", displayMode: .inline)
+            }.navigationBarTitle("Transference", displayMode: .inline)
         }
     }
 }
@@ -60,7 +60,7 @@ struct TransferenceViewAccess: View {
 
 struct TextLabelTransference: View {
     var body: some View {
-        Text("Transferencia")
+        Text("Transference")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -69,7 +69,7 @@ struct TextLabelTransference: View {
 struct TextLabelCurrency: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Seleccione la moneda a transferir")
+            Text("CurrencyTransfer")
                 .font(.callout)
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(.gray)
@@ -80,7 +80,7 @@ struct TextLabelCurrency: View {
 
 struct TextLabelUserR: View {
     var body: some View {
-        Text("Seleccione el criterio de busqueda del usuario receptor")
+        Text("SearchCriteria")
             .font(.callout)
             .frame(width: 340, height: 50, alignment: .leading)
             .foregroundColor(.gray)
@@ -107,7 +107,7 @@ struct EmailTextField: View {
 struct TransferenceSerchButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Buscar")
+        Text("Search")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -120,7 +120,7 @@ struct TransferenceSerchButtonContent: View {
 struct TransferenceBackButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Atras")
+        Text("Back")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

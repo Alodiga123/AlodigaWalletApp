@@ -18,7 +18,7 @@ struct FormSignUpView: View {
                 VStack() {
                     FormSignUpViewAccess()
                 }
-            }.navigationBarTitle("Datos de Registro", displayMode: .inline)
+            }.navigationBarTitle("RegistrationData", displayMode: .inline)
         }
     }
 }
@@ -187,7 +187,7 @@ struct OperationsKeyTextField: View {
 
 struct PassInfLabel: View {
     var body: some View {
-        Text("La contraseña debe tener 8 caractéres. Poseer\n mayúscula, minúscula, números y caractéres especiales")
+        Text("PassMustBe")
             .font(.caption)
             .multilineTextAlignment(.leading)
             .foregroundColor(Color.fontOrangeColor)
@@ -197,7 +197,7 @@ struct PassInfLabel: View {
 
 struct SignInLabel: View {
     var body: some View {
-        Text("¿Ya tienes cuenta? Entra aquí")
+        Text("YouHaveAccount")
             .font(.caption)
             .foregroundColor(Color.fontOrangeColor)
             .padding(.top,0)
@@ -206,7 +206,7 @@ struct SignInLabel: View {
 
 struct CondicionsLabel: View {
     var body: some View {
-        Text("Al hacer clic en Regístrate, Usted acepta todos los Términos\n y Condiciones Alodiga")
+        Text("TermsAndConditions")
             .font(.caption)
             .multilineTextAlignment(.leading)
             .foregroundColor(Color.fontOrangeColor)
@@ -217,7 +217,7 @@ struct CondicionsLabel: View {
 struct RegisterButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Regístrate")
+        Text("SignUp")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

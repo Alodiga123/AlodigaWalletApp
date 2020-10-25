@@ -18,7 +18,7 @@ struct ConfirmationView: View {
                 VStack() {
                     ConfirmationViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Back", displayMode: .inline)
         }
     }
 }
@@ -69,7 +69,7 @@ struct ConfirmationViewAccess: View {
 
 struct TextLabelConfirmnation: View {
     var body: some View {
-        Text("Confirmación")
+        Text("Confirmation")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -78,7 +78,7 @@ struct TextLabelConfirmnation: View {
 struct ProcessButtonContents: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Procesar")
+        Text("Process")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

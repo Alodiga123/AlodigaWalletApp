@@ -18,7 +18,7 @@ struct RechargeView: View {
                 VStack() {
                     RechargeViewAccess()
                 }
-            }.navigationBarTitle("Recarga", displayMode: .inline)
+            }.navigationBarTitle("Recharge", displayMode: .inline)
         }
     }
 }
@@ -83,7 +83,7 @@ struct RechargeViewAccess: View {
 
 struct TextLabelRecharge: View {
     var body: some View {
-        Text("Recarga Manual")
+        Text("ManualRecharge")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -188,7 +188,7 @@ struct AmountRechargeTextField: View {
 struct RechargeButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Procesar Recarga")
+        Text("ProcessRecharge")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -201,7 +201,7 @@ struct RechargeButtonContent: View {
 struct RechargeBackButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Atras")
+        Text("Back")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

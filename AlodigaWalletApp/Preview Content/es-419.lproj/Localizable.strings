@@ -16,10 +16,37 @@
 "Return" = "Volver";
 "Process" = "Procesar";
 "Share" = "Compartir";
+"Search" = "Buscar";
+"Buy" = "Comprar";
+"Send" = "Enviar";
+"ProcessWithdrawal" = "Procesar Retiro";
+"ProcessRecharge" = "Procesar Recarga";
+"ScanQr" = "Escanear QR";
 
 //Comunes
 "OperationsKey" = "Clave de Operaciones";
 "SpecialOperationsCode" = "Clave de Operaciones Especiales";
+"TimeRemaining" = "Tiempo Restante";
+"RechargeInformation" = "Información de la Recarga";
+"OperationPass" = "Introduzca la clave de Operaciones";
+"Email" = "Correo Electrónico";
+"Country" = "País";
+"Bank" = "Banco";
+"Product" = "Producto";
+"Account" = "Cuenta";
+"Amount" = "Monto";
+"Description" = "Descripción";
+"Concept" = "Concepto";
+"Transf" = "Transf No";
+"Name" = "Nombre";
+"LastName" = "Apellido";
+"Phone" = "Telefono";
+"Destination" = "Destino";
+"Origin" = "Origen";
+"Success" = "Exito";
+"Summary" = "Resumen";
+"Confirmation" = "Confirmación";
+"LogIn" = "Iniciar sesión";
 
 //Menu
 "Recharge" = "Recargar";
@@ -28,6 +55,24 @@
 "Transference" = "Transferencia";
 "PaymentBusinessesQR" = "Pago Comercio QR";
 "ValidateAccount" = "Validar Cuenta";
+
+//Registrar
+"Register" = "Registro";
+"SignUp" = "Registrate";
+"SelectCountry" = "Seleccione el país";
+"EnterPhone" = "Ingrese el número de Teléfono";
+"KeyReceived" = "Clave recibida";
+"RegistrationData" = "Datos de Registro";
+"Pass" = "Contraseña";
+"ConfirmPass" = "Confirme la Contraseña";
+"4DigitPass" = "Introduzca una clave de 4 digitos";
+"PassMustBe" = "La contraseña debe tener 8 caractéres. Poseer\n mayúscula, minúscula, números y caractéres especiales";
+"YouHaveAccount" = "¿Ya tienes cuenta? Entra aquí";
+"TermsAndConditions" = "Al hacer clic en Regístrate, Usted acepta todos los Términos\n y Condiciones Alodiga";
+"UserCreated" = "Usuario creado";
+"Welcome" = "Bienvenido";
+"RegisterCompleted" = "Gracias! Su registro a sido completado de forma exitosa. Ya puede comenzar a utilizar nuestros servicios";
+"Enter" = "Ingresar";
 
 //Validar Cuenta
 "AccountValidated" = "Su cuenta se encuentra validada";
@@ -50,15 +95,65 @@
 //Convertir
 "ProductOrigin" = "Seleccione el Producto de Origen";
 "ProductDestination" = "Seleccione el Producto de Destino";
-"Amount" = "Monto";
 "IncludeCommission" = "Incluir comisión en monto";
 "Commission" = "Comisión";
 "Details" = "Detalles";
-"OperationPass" = "Introduzca la clave de Operaciones";
 "ExchangeRate" = "Tasa de Cambio";
 "Confirmation" = "Confirmación";
+
+//TopUp
+"MobileRecharge" = "Recarga de Móviles";
+"NationalAndInter" = "Recarga de Móviles Nacionales e Internacionales";
+"PhoneDestination" = "Teléfono (Destino)";
+"PhoneSender" = "Teléfono (Remitente)";
+"Language" = "Idioma";
+"ProductToDebt" = "Producto a Debitar";
+"ProductToRefill" = "Producto a Recargar";
+"SelectOperator" = "Seleccione la Operadora";
+"EnterOperationsKey" = "Introduzca la clave de Operaciones";
+
+//Retiro
+"Retirement" = "Retiro";
+"ManualWithdrawal" = "Retiro Manual";
+"AccountNumber" = "Número de Cuenta";
+"Description" = "Descripción";
+"Confirmation" = "Confirmación";
+"WithdrawalInformation" = "Información del Retiro";
+"SuccessfulWithdrawal" = "Retiro Exitoso";
 
 //Recuperar contraseña
 "RecoverPassword" = "Recuperar Contraseña";
 "EmailRegister" = "Por favor ingrese su correo electrónico registrado";
-"Email" = "Correo electrónico";
+"PassReceived" = "Introduzca la clave recibida";
+"SecurityLevel" = "Nivel de seguridad";
+"NewPassword" = "Nueva contraseña";
+"RepeatNewPass" = "Repita la nueva contraseña";
+"PassMustBe8" = "La contraseña debe tener 8 caracteres. Poseer mayúscula, minúscula, números y caracteres especiales";
+"SuccessfulRecovery" = "Recuperación exitosa";
+"SuccessfulPassRecovery" = "Recuperación de contraseña exitoso";
+
+//Recarga
+"ManualRecharge" = "Recarga Manual";
+"TransferNumber" = "Número de Transferencia";
+"SuccessfulRecharge" = "Recarga Exitosa";
+
+//Pago Comercios
+"PaymentBusinesses" = "Pago Comercios";
+"CurrencyTransfer" = "Seleccione la moneda a transferir";
+"PaymentQr" = "Pago QR Comercios";
+"ScanStoreQr" = "Escanee el Codigo QR del comercio";
+"PaymentDetails" = "Datos de pago";
+"DestinationAccount" = "Información de la cuenta de destino";
+"PaymentInformation" = "Complete la información del pago";
+"SuccessfulPayment" = "Pago exitoso";
+"Date" = "Fecha";
+"Transaction" = "Transacción";
+
+//Tranferencias
+"SearchCriteria" = "Seleccione el criterio de busqueda del usuario receptor";
+"SuccesfulTransaction" = "Transacción Exitosa";
+
+//Login
+"SignUpHere" = "Registrate aqui";
+"ForgotPassword" = "Olvido su contraseña";
+"NotMember" = "No eres miembro todavía?";

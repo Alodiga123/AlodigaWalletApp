@@ -18,7 +18,7 @@ struct RechargeConfirmationView: View {
                 VStack() {
                     RechargeConfirmationViewAccess()
                 }
-            }.navigationBarTitle("Confimación", displayMode: .inline)
+            }.navigationBarTitle("Confirmation", displayMode: .inline)
         }
     }
 }
@@ -70,7 +70,7 @@ struct RechargeConfirmationViewAccess: View {
 struct TextLabelInfRecharge: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Información de la Recarga")
+            Text("RechargeInformation")
                 .font(.callout)
                 .foregroundColor(Color.fontOrangeColor)
                 .padding()
@@ -81,7 +81,7 @@ struct TextLabelInfRecharge: View {
 struct RechargeProcessButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Procesar")
+        Text("Process")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

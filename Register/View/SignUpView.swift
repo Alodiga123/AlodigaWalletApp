@@ -19,7 +19,7 @@ struct SignUpView: View {
                 VStack() {
                     SignUpViewAccess()
                 }
-            }.navigationBarTitle("Registro", displayMode: .inline)
+            }.navigationBarTitle("Register", displayMode: .inline)
         }
     }
 }
@@ -46,7 +46,8 @@ struct SignUpViewAccess: View {
 //                    paises { paises in
 //
 //                    }
-                    ListaPaises()
+                    //ListaPaises()
+                    otraDePicker()
                     //OtraListaDePaises()
                     //DropDown()
                     //CountryRegisterTextField(country: self.$country)
@@ -87,35 +88,34 @@ struct SignUpViewAccess: View {
 }
 
 class prueba {
-
-func paises (completion: @escaping ([Country]) -> Void) {
-    let registerController = RegisterController()
-    let pais = AL_GetCountries()
-    //let pa: [Country]
-    
-        registerController.getCountry(generarCodigoCountry: pais) { (res,error) in
-            print("EN LA VISTA!!!!")
-            if res != nil  {
-                print(res as Any)
-                let country: ObjectCountry
-                country = res! as ObjectCountry
-                let pa: [Country]
-                pa = country.envelope.body.countryResponse._return.countries as Array<Country>
-                completion (pa)
+    func paises (completion: @escaping ([Country]) -> Void) {
+        let registerController = RegisterController()
+        let pais = AL_GetCountries()
+        //let pa: [Country]
+        
+            registerController.getCountry(generarCodigoCountry: pais) { (res,error) in
+                print("EN LA VISTA!!!!")
+                if res != nil  {
+                    print(res as Any)
+                    let country: ObjectCountry
+                    country = res! as ObjectCountry
+                    let pa: [Country]
+                    pa = country.envelope.body.countryResponse._return.countries as Array<Country>
+                    completion (pa)
+                }
+                //completion (pa)
+                
+        //        if error != nil {
+        //            print("EN EL ERROR!!!!")
+        //            print(error!)
+        //        }
             }
-            //completion (pa)
-            
-    //        if error != nil {
-    //            print("EN EL ERROR!!!!")
-    //            print(error!)
-    //        }
-        }
-}
+    }
 }
 
 struct TextLabelSignUp: View {
     var body: some View {
-        Text("Registrate")
+        Text("SignUp")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -123,7 +123,7 @@ struct TextLabelSignUp: View {
 
 struct TextLabelCountry: View {
     var body: some View {
-        Text("Seleccione el país")
+        Text("SelectCountry")
             .font(.body)
             .fontWeight(.bold)
             .foregroundColor(.gray)
@@ -133,7 +133,7 @@ struct TextLabelCountry: View {
 
 struct TextLabelPhone: View {
     var body: some View {
-        Text("Ingrese el número de Teléfono")
+        Text("EnterPhone")
             .font(.body)
             .fontWeight(.bold)
             .foregroundColor(.gray)
@@ -177,7 +177,7 @@ struct PhoneRegisterTextField: View {
 struct RegisterContinueButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Continuar")
+        Text("Continue")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -191,7 +191,7 @@ struct RegisterContinueButtonContent: View {
 struct RegisterCancelButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Cancelar")
+        Text("Cancel")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)
@@ -328,6 +328,23 @@ struct DropDown : View {
     }
 }
 
+
+struct otraDePicker: View {
+    var frameworks = ["UIKit", "Core Data", "CloudKit", "SwiftUI"]
+    @State private var selectedFrameworkIndex = 0
+    
+    var body: some View {
+           // Form {
+                Section {
+                    Picker(selection: $selectedFrameworkIndex, label: Text("Favorite Framework")) {
+                        ForEach(0 ..< frameworks.count) {
+                            Text(self.frameworks[$0])
+                        }
+                    }
+                }
+            //}
+    }
+}
 
 struct OtraListaDePaises: View {
    var frameworks = ["UIKit", "Core Data", "CloudKit", "SwiftUI"]

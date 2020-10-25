@@ -20,7 +20,7 @@ struct RecoverPasswordByTokenView: View {
                     TopButtonViewAccess()
                     
                 }
-            } .navigationBarTitle("Volver", displayMode: .inline)
+            } .navigationBarTitle("Return", displayMode: .inline)
             
         }
     }
@@ -86,7 +86,7 @@ struct TopButtonViewAccess: View {
 struct TimerCounter: View {
     var body: some View {
         VStack(alignment: .center, spacing: 6) {
-            Text("Tiempo Restante")
+            Text("TimeRemaining")
                 .foregroundColor(Color.fontOrangeColor)
         }
     }
@@ -134,7 +134,7 @@ struct ValidateButtonContent: View {
 struct CancelButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Cancelar")
+        Text("Cancel")
             .font(.headline)
             .foregroundColor(.black)
             .padding()

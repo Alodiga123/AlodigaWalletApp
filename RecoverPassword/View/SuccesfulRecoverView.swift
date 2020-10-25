@@ -18,7 +18,7 @@ struct SuccesfulRecoverView: View {
                 VStack() {
                     SuccesfulRecoverViewAccess()
                 }
-            }.navigationBarTitle("Recuperación exitosa", displayMode: .inline)
+            }.navigationBarTitle("SuccessfulRecovery", displayMode: .inline)
         }
     }
 }
@@ -62,7 +62,7 @@ struct SuccesfulRecoverViewAccess: View {
 
 struct TextLabelSuccesfulRecover: View {
     var body: some View {
-        Text("Recuperación de contraseña exitoso")
+        Text("SuccessfulPassRecovery")
             .font(.title)
             .multilineTextAlignment(.center)
             .foregroundColor(Color.fontBlackColor)
@@ -82,7 +82,7 @@ struct RecoverCheckImagine: View {
 struct EndRecoverButtonContents: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Finalizar")
+        Text("Finalize")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -96,7 +96,7 @@ struct EndRecoverButtonContents: View {
 struct LoginButtonContents: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Iniciar sesión")
+        Text("LogIn")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)

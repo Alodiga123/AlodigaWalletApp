@@ -18,7 +18,7 @@ struct SecurityLevelView: View {
                 VStack() {
                     SecurityLevelViewAccess()
                 }
-            }.navigationBarTitle("Recuperar Contraseña", displayMode: .inline)
+            }.navigationBarTitle("RecoverPassword", displayMode: .inline)
         }
     }
 }
@@ -62,7 +62,7 @@ struct SecurityLevelViewAccess: View {
 
 struct TextLabelSecurity: View {
     var body: some View {
-        Text("Nivel de seguridad")
+        Text("SecurityLevel")
             .font(.body)
             .foregroundColor(.gray)
             .frame(width: 320, height: 10)
@@ -104,7 +104,7 @@ struct RepeatNewPassTextField: View {
 
 struct TextLabelRecoverPass: View {
     var body: some View {
-        Text("La contraseña debe tener 8 caracteres. Poseer mayúscula, minúscula, números y caracteres especiales")
+        Text("PassMustBe8")
             .font(.caption)
             .foregroundColor(Color.fontOrangeColor)
             .frame(width: 340, height: 60, alignment: .leading)

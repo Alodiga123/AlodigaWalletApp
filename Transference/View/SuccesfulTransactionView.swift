@@ -18,7 +18,7 @@ struct SuccesfulTransactionView: View {
                 VStack() {
                     SuccesfulTransactionViewAccess()
                 }
-            }.navigationBarTitle("Volver", displayMode: .inline)
+            }.navigationBarTitle("Back", displayMode: .inline)
         }
     }
 }
@@ -70,7 +70,7 @@ struct SuccesfulTransactionViewAccess: View {
 
 struct TextLabelSuccesfulTransaction: View {
     var body: some View {
-        Text("Transacción Exitosa")
+        Text("SuccesfulTransaction")
             .font(.title)
             .foregroundColor(Color.fontBlackColor)
     }
@@ -79,7 +79,7 @@ struct TextLabelSuccesfulTransaction: View {
 struct EndButtonContents: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Finalizar")
+        Text("Finalize")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -93,7 +93,7 @@ struct EndButtonContents: View {
 struct ShareButtonContents: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Compartir")
+        Text("Share")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)
