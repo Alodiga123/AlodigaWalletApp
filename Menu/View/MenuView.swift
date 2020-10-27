@@ -81,6 +81,18 @@ struct MenuView: View {
             }
             .padding(.top, 20)
             
+            HStack {
+                Image(systemName: "person")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
+                NavigationLink(destination: SecurityQuestionsView()) {
+                    Text("SecurityQuestions")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
+            }
+            .padding(.top, 20)
+            
 //            HStack {
 //                Image(systemName: "envelope")
 //                    .foregroundColor(.gray)

@@ -16,6 +16,12 @@
 		043FEC86251BE2EE005C518B /* RecoverPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FEC85251BE2EE005C518B /* RecoverPasswordView.swift */; };
 		043FEC8E251BF601005C518B /* SecurityLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FEC8D251BF601005C518B /* SecurityLevelView.swift */; };
 		043FEC93251BFD5B005C518B /* SuccesfulRecoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FEC92251BFD5B005C518B /* SuccesfulRecoverView.swift */; };
+		044BD0B12548AEF5005A6754 /* SecurityQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD0B02548AEF5005A6754 /* SecurityQuestionsView.swift */; };
+		044BD0BB2548CEBE005A6754 /* SuccessfulQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */; };
+		045375A725475CF400D12D77 /* ObjectRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375A625475CF400D12D77 /* ObjectRegisterUser.swift */; };
+		045375B9254790F600D12D77 /* ObjectErrorRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */; };
+		04740404254632C9000E7097 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04740403254632C9000E7097 /* Country.swift */; };
+		04740409254635EA000E7097 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04740408254635EA000E7097 /* Bundle.swift */; };
 		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
 		04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC3025157E0700960B9F /* ProductTopUpView.swift */; };
 		04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC322515829600960B9F /* SuccessTopUpView.swift */; };
@@ -113,6 +119,12 @@
 		043FEC85251BE2EE005C518B /* RecoverPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordView.swift; sourceTree = "<group>"; };
 		043FEC8D251BF601005C518B /* SecurityLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityLevelView.swift; sourceTree = "<group>"; };
 		043FEC92251BFD5B005C518B /* SuccesfulRecoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesfulRecoverView.swift; sourceTree = "<group>"; };
+		044BD0B02548AEF5005A6754 /* SecurityQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityQuestionsView.swift; sourceTree = "<group>"; };
+		044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulQuestionsView.swift; sourceTree = "<group>"; };
+		045375A625475CF400D12D77 /* ObjectRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRegisterUser.swift; sourceTree = "<group>"; };
+		045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorRegisterUser.swift; sourceTree = "<group>"; };
+		04740403254632C9000E7097 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		04740408254635EA000E7097 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
 		04BEBC3025157E0700960B9F /* ProductTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTopUpView.swift; sourceTree = "<group>"; };
 		04BEBC322515829600960B9F /* SuccessTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessTopUpView.swift; sourceTree = "<group>"; };
@@ -280,6 +292,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		044BD0AD2548AE1E005A6754 /* SecurityQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				044BD0AE2548AEA0005A6754 /* Controller */,
+				044BD0AF2548AEAF005A6754 /* View */,
+			);
+			path = SecurityQuestions;
+			sourceTree = "<group>";
+		};
+		044BD0AE2548AEA0005A6754 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		044BD0AF2548AEAF005A6754 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				044BD0B02548AEF5005A6754 /* SecurityQuestionsView.swift */,
+				044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04B2F42F2513A7E700DBDA03 /* Recharge */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +414,7 @@
 		467C04AD24D857F20021F472 = {
 			isa = PBXGroup;
 			children = (
+				044BD0AD2548AE1E005A6754 /* SecurityQuestions */,
 				BA6BCDDD254883D700536CA7 /* securityQuestion */,
 				BAE1E9B4252BA993007F9CD6 /* Model */,
 				BAE1E9AE252BA83D007F9CD6 /* WebServices */,
@@ -652,9 +690,13 @@
 				BAE1EA54252E04EF007F9CD6 /* ObjectBase.swift */,
 				BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */,
 				BAE1EA69252EAEB4007F9CD6 /* ObjectLogin.swift */,
+				045375A625475CF400D12D77 /* ObjectRegisterUser.swift */,
 				BAE1EA6E252EC9EA007F9CD6 /* ObjectErrorLogin.swift */,
+				045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */,
 				04ECA1282537D6A900A77BA1 /* ObjetCountry.swift */,
 				04ECA12D2537DEA500A77BA1 /* ObjetErrorCountry.swift */,
+				04740403254632C9000E7097 /* Country.swift */,
+				04740408254635EA000E7097 /* Bundle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -813,6 +855,7 @@
 				04ECA12E2537DEA500A77BA1 /* ObjetErrorCountry.swift in Sources */,
 				04D6DA93251AAC880053125C /* ValidateAdressView.swift in Sources */,
 				04D322D52518EA4E00F3F38C /* OperationKeyTopUpView.swift in Sources */,
+				045375B9254790F600D12D77 /* ObjectErrorRegisterUser.swift in Sources */,
 				BAE1E9BB252BA9EB007F9CD6 /* WebServicesCall.swift in Sources */,
 				46DBC48A251287DF008D42B3 /* SignUpView.swift in Sources */,
 				46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */,
@@ -827,6 +870,7 @@
 				46DBC488251287C4008D42B3 /* PassByTokenView.swift in Sources */,
 				0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */,
 				BAE1E9B6252BA9D5007F9CD6 /* ObjetError.swift in Sources */,
+				045375A725475CF400D12D77 /* ObjectRegisterUser.swift in Sources */,
 				04D6DA7F251A98630053125C /* TakePhotoView.swift in Sources */,
 				04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */,
 				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
@@ -836,6 +880,7 @@
 				BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */,
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
 				04D6DA8E251AABC10053125C /* PhotoViewStepTwoView.swift in Sources */,
+				044BD0BB2548CEBE005A6754 /* SuccessfulQuestionsView.swift in Sources */,
 				042233842514121C00AEB65F /* WithdrawalConfirmationView.swift in Sources */,
 				BAE1EA6A252EAEB4007F9CD6 /* ObjectLogin.swift in Sources */,
 				0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */,
@@ -860,12 +905,15 @@
 				46DBC4862512879B008D42B3 /* FormSignUpView.swift in Sources */,
 				04D6DA89251AA5690053125C /* StepTwoView.swift in Sources */,
 				46DBC482251286E6008D42B3 /* TargetCustomerView.swift in Sources */,
+				04740409254635EA000E7097 /* Bundle.swift in Sources */,
 				042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */,
 				46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */,
+				04740404254632C9000E7097 /* Country.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
 				043FEC8E251BF601005C518B /* SecurityLevelView.swift in Sources */,
 				04D6DA41251913210053125C /* ConvertView.swift in Sources */,
 				BAE1EA6F252EC9EA007F9CD6 /* ObjectErrorLogin.swift in Sources */,
+				044BD0B12548AEF5005A6754 /* SecurityQuestionsView.swift in Sources */,
 				46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */,
 				46DBC47E2512869E008D42B3 /* OperationsKeyView.swift in Sources */,
 				46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */,

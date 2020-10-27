@@ -46,8 +46,8 @@ struct SignUpViewAccess: View {
 //                    paises { paises in
 //
 //                    }
-                    //ListaPaises()
-                    otraDePicker()
+                    ListaPaises()
+                    //otraDePicker()
                     //OtraListaDePaises()
                     //DropDown()
                     //CountryRegisterTextField(country: self.$country)
@@ -59,6 +59,8 @@ struct SignUpViewAccess: View {
                         
                         let registerController = RegisterController()
                         let pais = AL_GetCountries()
+                        let registro = GuardarUsuarioAplicacionMovil()
+                        let loginController = LoginController()
                         
                         registerController.getCountry(generarCodigoCountry: pais) { (res,error) in
                             print("EN LA VISTA!!!!")
@@ -68,9 +70,26 @@ struct SignUpViewAccess: View {
                                 country = res! as ObjectCountry
                                 print(country.envelope.body.countryResponse._return.countries)
                             }
+
+                            if error != nil {
+                                print("EN EL ERROR!!!!")
+                                print(error!)
+                            }
+                        }
+                       
+                        registerController.getGuardarUsuario(generarRegistro: registro){ (res,error) in
+                            print("EN LA VISTA CON EL REGISTRO!!!!")
+                            if res != nil  {
+                                print(res as Any)
+                                let registro: ObjectRegisterUser
+                                registro = res! as ObjectRegisterUser
+                                print(registro.envelope.body.registerMovilResponse._return.fechaHora)
+                                //print(registro.envelope.body.countryResponse._return.countries)
+                            }
                             
                             if error != nil {
                                 print("EN EL ERROR!!!!")
+                                loginController.getMessageErrorLogin(code: error!)
                                 print(error!)
                             }
                         }
@@ -203,6 +222,7 @@ struct RegisterCancelButtonContent: View {
 }
 
 struct ListaPaises: View {
+    
     let co = Color.black.opacity(0.1)
     var listCountries = ["VENEZUELA", "AFGANISTAN", "ALBANIA"]
     let registerController = RegisterController()
@@ -224,11 +244,11 @@ struct ListaPaises: View {
     
     @State private var isExpanded = false
     @State private var selectCountry = "Pais"
-    @State private var countries = {let prueba2 = prueba()
-        prueba2.paises(completion: { pc in
-            print ("en listar paises")
-            print(pc)
-    })}
+//    @State private var countries = {let prueba2 = prueba()
+//        prueba2.paises(completion: { pc in
+//            print ("en listar paises")
+//            print(pc)
+//    })}
     //@Binding var countries: String
     var body: some View {
         
@@ -280,6 +300,7 @@ struct ListaPaises: View {
                 // Fallback on earlier versions
             }
         }.padding(.all)
+        //.onAppear(perform: prueba)
 //        .onAppear{let prueba2 = prueba()
 //            prueba2.paises(completion: { co in
 //                print ("en listar paises")

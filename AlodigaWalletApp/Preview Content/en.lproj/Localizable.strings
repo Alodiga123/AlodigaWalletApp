@@ -160,3 +160,8 @@
 "enter_both_credentials" = "Enter both credentials.";
 "email_invalid" = "E-mail is not valid ";
 "error" = "Error";
+
+//Security Questions
+"SecurityQuestions" = "Security Questions";
+"EnterSQ" = "Please enter the Security Questions";
+"SuccesfulQuestions" = "Security Questions have been successfully logged";

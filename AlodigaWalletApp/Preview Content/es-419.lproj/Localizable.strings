@@ -161,3 +161,7 @@
 "email_invalid" = "E-mail no es valido";
 "error" = "Error";
 
+//Preguntas de Seguridad
+"SecurityQuestions" = "Preguntas de Seguridad";
+"EnterSQ" = "Por Favor ingrese la Preguntas de Seguridad";
+"SuccesfulQuestions" = "Las Preguntas de Seguridad han sido registradas satisfactoriamente";
