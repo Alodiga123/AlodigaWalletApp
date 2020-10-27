@@ -157,3 +157,6 @@
 "SignUpHere" = "Sign Up Here";
 "ForgotPassword" = "Forgot your password";
 "NotMember" = "Not a member yet?";
+"enter_both_credentials" = "Enter both credentials.";
+"email_invalid" = "E-mail is not valid ";
+"error" = "Error";

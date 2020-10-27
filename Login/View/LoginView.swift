@@ -57,11 +57,11 @@ struct LoginView: View {
                                     BackgroundImageAlodiga()
                                     CardButtonViewAccess().padding(.bottom,20).padding(.top,-100)
                                 } else {
-                                    if(self.devicemodel == ((Cconstant.IsModeSimulator) ?  Cconstant.SIMULATOR + Cconstant.MODEL_IPHONE_8: Cconstant.MODEL_IPHONE_8)){
+                                    if(self.devicemodel == ((Constant.IsModeSimulator) ?  Constant.SIMULATOR + Constant.MODEL_IPHONE_8: Constant.MODEL_IPHONE_8)){
                                         
                                         TopImageAlodigaLogo().frame(width: 100, height: 100).padding(.top,-50).padding(.bottom,90)
                                         
-                                    } else if(self.devicemodel == ((Cconstant.IsModeSimulator) ?  Cconstant.SIMULATOR + Cconstant.MODEL_IPHONE_SE_2_GENERATION: Cconstant.MODEL_IPHONE_SE_2_GENERATION)){
+                                    } else if(self.devicemodel == ((Constant.IsModeSimulator) ?  Constant.SIMULATOR + Constant.MODEL_IPHONE_SE_2_GENERATION: Constant.MODEL_IPHONE_SE_2_GENERATION)){
                                         
                                         TopImageAlodigaLogo().frame(width: 100, height: 100).padding(.top,-70).padding(.bottom,60)
                                         
@@ -81,8 +81,6 @@ struct LoginView: View {
         }
     }
 }
-
-
 
 struct TopImageAlodigaLogo: View {
     var devicemodel = UIDevice.modelName
@@ -109,9 +107,16 @@ struct CardButtonViewAccess: View {
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @State var isLoggedIn: Bool = false
+    @State var isSecurityQuestion: Bool = false
+
     func login(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.isLoggedIn = true
+        }
+    }
+    func securityQuestion(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isSecurityQuestion = true
         }
     }
     var body: some View{
@@ -132,31 +137,53 @@ struct CardButtonViewAccess: View {
                     ForgotPassword()
                 }
                 Button(action: {
-                    
                     let loginController = LoginController()
+                    let alert = ShowAlert()
+
+                    //FALTA validar la encriptacion de la clave
+                    if(username.isEmpty || password.isEmpty){
+                        alert.showPaymentModeActionSheet(title: "error", message: "enter_both_credentials")
+                    }else if(!loginController.isValidEmail(testStr: username)){
+                        alert.showPaymentModeActionSheet(title: "error", message: "email_invalid")
+                    }else{
+                    
                     let loginAplicacionMovil = LoginAplicacionMovil()
-                    loginController.getLogin(generarCodigoMovilSMS: loginAplicacionMovil) { (res,error) in
+                    loginAplicacionMovil.cpMovil = username
+                    loginAplicacionMovil.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+                    loginAplicacionMovil.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
+                    loginAplicacionMovil.cpIp = "192.168.3.20"
+                    loginAplicacionMovil.cpEmail = username
+                    //Falta desencriptar
+                    loginAplicacionMovil.cpCredencial = password
+                    loginController.getLogin(dataUser: loginAplicacionMovil) { (res,error) in
                         if res != nil  {
                             //print(res as Any)
                             let login: ObjectLogin
                             login = res! as ObjectLogin
-                            print(login.envelope.body.aplicacionMovilResponse._return.fechaHora)
-                            self.login()
+                            
+                            if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "00" || login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "0" ){
+                                self.login()
+                            }else if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "12"){
+                                self.securityQuestion()
+                            }
                         }
                         
                         if error != nil {
-                           
                             let alert = ShowAlert()
                             alert.showPaymentModeActionSheet(title: "error", message: loginController.getMessageErrorLogin(code: error!))
-                            
-                            //alert.showPaymentModeActionSheet()
                             print(error!)
                         }
                     }
+                }
+                    
+                    
                 }) {
                     LoginButtonContent()
                 }
                 NavigationLink(destination: MainViewLogged(), isActive:self.$isLoggedIn){
+                    EmptyView()
+                }
+                NavigationLink(destination: securityQuestionView(), isActive:self.$isSecurityQuestion){
                     EmptyView()
                 }
                 HStack{

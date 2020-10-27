@@ -157,3 +157,7 @@
 "SignUpHere" = "Registrate aqui";
 "ForgotPassword" = "Olvido su contraseña";
 "NotMember" = "No eres miembro todavía?";
+"enter_both_credentials" = "Ingrese ambas credenciales.";
+"email_invalid" = "E-mail no es valido";
+"error" = "Error";
+

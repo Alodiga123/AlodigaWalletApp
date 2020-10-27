@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Cconstant {
+class  Constant {
     
  static let IsModeSimulator: Bool = true
  static let SIMULATOR : String = "Simulator "     
@@ -26,6 +26,21 @@ class Cconstant {
  static let MODEL_IPAD_PRO_11_INCH_2_GENERATION = "iPad Pro (11-inch) (2nd generation)"
  static let MODEL_IPAD_PRO_12_INCH_4_GENERATION = "iPad Pro (12.9-inch) (4th generation)"
  static let MODEL_IPHONE_SE_2_GENERATION = "iPhone SE (2nd generation)"
+ 
+   
+    
+ static let WEB_SERVICES_USUARIOWS = "usuarioWS"
+ static let WEB_SERVICES_USUARIOWS_ = "userWS"
+ static let WEB_SERVICES_PASSWORDWS = "passwordWS"
+ static let WEB_SERVICES_RESPONSE_CODE_EXITO = "00"
+ static let WEB_SERVICES_RESPONSE_CODE_EXITO_ = "0"
+ static let WEB_SERVICES_RESPONSE_CODE_PRIMER_INGRESO = "12"
+    
+ static let WEB_SERVICES_RESPONSE_VALIDATE_0 = "<codigoRespuesta>0</codigoRespuesta>"
+ static let WEB_SERVICES_RESPONSE_VALIDATE_00 = "<codigoRespuesta>00</codigoRespuesta>"
+ static let WEB_SERVICES_RESPONSE_VALIDATE_12 = "<codigoRespuesta>12</codigoRespuesta>"
+
+    
 }
 
 
