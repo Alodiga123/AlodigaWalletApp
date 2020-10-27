@@ -67,6 +67,7 @@ public class LoginController{
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
                     || datastring.contains("<codigoRespuesta>12</codigoRespuesta>")
                 {
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonLogin")
                     objetResponse = try JSONDecoder().decode(ObjectLogin.self, from: jsonStr.data(using: .utf8)!)
                     completion(objetResponse, nil)
                 }else{

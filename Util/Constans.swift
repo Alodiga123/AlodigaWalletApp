@@ -10,6 +10,9 @@ import Foundation
 
 class  Constant {
     
+ static let defaults = UserDefaults.standard
+
+    
  static let IsModeSimulator: Bool = true
  static let SIMULATOR : String = "Simulator "     
     

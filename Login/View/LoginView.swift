@@ -162,8 +162,22 @@ struct CardButtonViewAccess: View {
                             login = res! as ObjectLogin
                             
                             if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "00" || login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "0" ){
+                                
+                                //defaults.set(login, forKey: "ObjectLogin")
+                                Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.cumplimient, forKey: "cumplimient")
+
+                                Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.prepayCardAsociate, forKey: "prepayCardAsociate")
+                                Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.prepayCard, forKey: "prepayCard")
+                                
+                                if(Constant.defaults.bool(forKey: "prepayCard")){
+                                    Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.numberCard, forKey: "numberCard")
+                                }
+                                
                                 self.login()
                             }else if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "12"){
+                                Constant.defaults.set("4", forKey: "cumplimient")
+                                Constant.defaults.set(false, forKey: "prepayCardAsociate")
+                                Constant.defaults.set(false, forKey: "prepayCard")
                                 self.securityQuestion()
                             }
                         }
