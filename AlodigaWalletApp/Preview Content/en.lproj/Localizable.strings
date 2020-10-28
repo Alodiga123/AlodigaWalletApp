@@ -165,3 +165,16 @@
 "SecurityQuestions" = "Security Questions";
 "EnterSQ" = "Please enter the Security Questions";
 "SuccesfulQuestions" = "Security Questions have been successfully logged";
+
+
+//Errores
+"web_services_response_01" = "Invalid data. ";
+"web_services_response_03" = "Password Expired ";
+"web_services_response_04" = "IP is not trusted ";
+"web_services_response_05" = "The credentials are invalid ";
+"web_services_response_06" = "User blocked ";
+"web_services_response_95" = "User I suspect ";
+"web_services_response_96" = "Pending User ";
+"web_services_response_97" = "Username does not exist ";
+"web_services_response_98" = "Credential Error ";
+"web_services_response_99" = "Internal error ";

@@ -142,9 +142,9 @@ struct CardButtonViewAccess: View {
 
                     //FALTA validar la encriptacion de la clave
                     if(username.isEmpty || password.isEmpty){
-                        alert.showPaymentModeActionSheet(title: "error", message: "enter_both_credentials")
+                        alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("enter_both_credentials", comment: ""))
                     }else if(!loginController.isValidEmail(testStr: username)){
-                        alert.showPaymentModeActionSheet(title: "error", message: "email_invalid")
+                        alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
                     }else{
                     
                     let loginAplicacionMovil = LoginAplicacionMovil()
@@ -197,7 +197,7 @@ struct CardButtonViewAccess: View {
                 NavigationLink(destination: MainViewLogged(), isActive:self.$isLoggedIn){
                     EmptyView()
                 }
-                NavigationLink(destination: securityQuestionView(), isActive:self.$isSecurityQuestion){
+                NavigationLink(destination: SecurityQuestionsView(), isActive:self.$isSecurityQuestion){
                     EmptyView()
                 }
                 HStack{

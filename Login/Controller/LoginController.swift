@@ -10,20 +10,42 @@ import Foundation
 
 public class LoginController{
     func getMessageErrorLogin(code: String) -> String {
-        let msj : String
         
         switch code {
-        case "90":
-            return "Error Interno"
+        case Constant.WEB_SERVICES_RESPONSE_CODE_DATOS_INVALIDOS:
+            return NSLocalizedString("web_services_response_01", comment: "")
         
-        case "98":
-            return "Error en credenciales"
+        case Constant.WEB_SERVICES_RESPONSE_CODE_CONTRASENIA_EXPIRADA:
+            return NSLocalizedString("web_services_response_03", comment: "")
             
-        default:
-            return "Error Interno general"
-        }
+        case Constant.WEB_SERVICES_RESPONSE_CODE_IP_NO_CONFIANZA:
+            return NSLocalizedString("web_services_response_04", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_CREDENCIALES_INVALIDAS:
+            return NSLocalizedString("web_services_response_05", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_BLOQUEADO:
+            return NSLocalizedString("web_services_response_06", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_SOSPECHOSO:
+            return NSLocalizedString("web_services_response_95", comment: "")
+         
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_PENDIENTE:
+            return NSLocalizedString("web_services_response_96", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_NO_EXISTE:
+            return NSLocalizedString("web_services_response_97", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_ERROR_CREDENCIALES:
+            print(NSLocalizedString("web_services_response_98", comment: ""))
+            return NSLocalizedString("web_services_response_98", comment: "")
         
-        return msj
+        case Constant.WEB_SERVICES_RESPONSE_CODE_ERROR_INTERNO:
+            return NSLocalizedString("web_services_response_99", comment: "")
+
+        default:
+            return NSLocalizedString("web_services_response_99", comment: "")
+        }
 
     }
     

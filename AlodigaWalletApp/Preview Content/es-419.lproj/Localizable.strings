@@ -165,3 +165,17 @@
 "SecurityQuestions" = "Preguntas de Seguridad";
 "EnterSQ" = "Por Favor ingrese la Preguntas de Seguridad";
 "SuccesfulQuestions" = "Las Preguntas de Seguridad han sido registradas satisfactoriamente";
+
+//Errores
+"web_services_response_01" = "Datos invalidos";
+"web_services_response_03" = "Contraseña expirada";
+"web_services_response_03_Remittence" = "Cuenta Inactiva";
+"web_services_response_04" = "La IP no es de confianza";
+"web_services_response_05" = "Las credenciales son inválidas";
+"web_services_response_06" = "Usuario bloqueado";
+"web_services_response_95" = "Usuario sospecho";
+"web_services_response_96" = "Usuario pendiente";
+"web_services_response_97" = "El usuario no existe";
+"web_services_response_98" = "Error de credenciales";
+"web_services_response_99" = "Error interno";
+
