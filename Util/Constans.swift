@@ -32,7 +32,7 @@ static let MODEL_IPHONE_SE_2_GENERATION = "iPhone SE (2nd generation)"
 
 
 
-static let WEB_SERVICES_USUARIOWS = "usuarioWS999"
+static let WEB_SERVICES_USUARIOWS = "usuarioWS"
 static let WEB_SERVICES_USUARIOWS_ = "userWS"
 static let WEB_SERVICES_PASSWORDWS = "passwordWS"
 static let WEB_SERVICES_RESPONSE_CODE_EXITO = "00"

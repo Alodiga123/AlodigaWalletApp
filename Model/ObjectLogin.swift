@@ -137,7 +137,7 @@ struct AplicacionesLogin: Decodable{
      }
 }
 
-struct ListadoProductos: Decodable{
+struct ListadoProductos: Identifiable, Decodable{
    var id : String
    var isPayTopUP : String
     var nombreProducto : String
