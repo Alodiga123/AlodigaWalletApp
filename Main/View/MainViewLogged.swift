@@ -11,16 +11,17 @@ import SwiftUI
 struct MainViewLogged: View {
     @State var showMenu = false
     var json : ObjectLogin? = nil
+    
     var body: some View {
-        ZStack{
-            lista( jsonLogin: json)
-            
-        }
-        
-        
+        mainHead()
+
+        lista( jsonLogin: json)
         
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
+         
+                Spacer()
+                
                 
                 ShowMainView(showMenu: self.$showMenu)
                     .frame(width: geometry.size.width, height: geometry.size.height/2)
@@ -32,7 +33,6 @@ struct MainViewLogged: View {
                         .transition(.move(edge: .leading))
                 }
                 }
-            
             .gesture(
                     DragGesture()
                         .onEnded {
@@ -61,13 +61,88 @@ struct MainViewLogged: View {
                                 
                                
             )
-            
-        }
-        
+        }.background(Color.cardButtonViewGray)
+      
     }
 }
 
 
+struct mainHead : View {
+    var line: some View {
+        VStack { Divider().background(Color.black) }.padding()
+       }
+    var body : some View {
+        line
+
+        ZStack{
+      
+            HStack{
+                
+                VStack{
+                    Image("logo_alodiga")
+                        .resizable()
+                        .clipShape(Rectangle())
+                        .shadow(radius: 5)
+                        .frame(width: 80, height: 80, alignment: Alignment.top)                }
+                VStack (alignment: .leading, spacing: 6){
+                    Text(Constant.defaults.value(forKey: "user") as! String)
+                    Text(Constant.defaults.value(forKey: "movil") as! String )
+                    Text(Constant.defaults.value(forKey: "email") as! String)
+
+                }
+                
+            }
+            
+        }
+        
+        line
+        Spacer()
+        
+        ZStack{
+            HStack{
+                VStack{
+                    Image("logo_alodiga")
+                        .resizable()
+                        .clipShape(Rectangle())
+                        .shadow(radius: 5)
+                        .frame(width: 60, height: 80, alignment: Alignment.top)
+                    Text("Prueba").font(.caption)
+                        .foregroundColor(Color.fontOrangeColor)
+                }
+         
+                VStack{
+                    Image("logo_alodiga")
+                        .resizable()
+                        .clipShape(Rectangle())
+                        .shadow(radius: 5)
+                        .frame(width: 60, height: 80, alignment: Alignment.top)
+                    Text("Prueba")
+                }
+                VStack{
+                    Image("logo_alodiga")
+                        .resizable()
+                        .clipShape(Rectangle())
+                        .shadow(radius: 5)
+                        .frame(width: 60, height: 80, alignment: Alignment.top)
+                    Text("Prueba")
+                }
+                VStack{
+                    Image("logo_alodiga")
+                        .resizable()
+                        .clipShape(Rectangle())
+                        .shadow(radius: 5)
+                        .frame(width: 60, height: 80, alignment: Alignment.top)
+                    Text("Prueba")
+                }
+            }
+            
+        }
+        
+        line
+        Spacer()
+        
+    }
+}
 
 struct lista: View{
     @State var products : [ListadoProductos] = []
@@ -105,7 +180,6 @@ struct lista: View{
         } catch  {
             print("Error: decodificando json")
         }
-        
     }
     
     
@@ -127,20 +201,46 @@ struct lista: View{
     
 }
 
-
-
 struct rowView : View{
     var user : ListadoProductos
+    var imageURL:UIImageView!
+
     var body: some View {
-        
+ 
+        VStack{
+            
+            HStack{
+                Image("email")
+                    .resizable()
+                    .clipShape(Rectangle())
+                    .shadow(radius: 5)
+                    .frame(width: 50, height: 50, alignment: Alignment.top)
+                
+                
         Text(user.nombreProducto)
-        Text(user.saldoActual)
-        Text(user.simbolo)
+            }
+            
+            HStack{
+                Text(user.saldoActual)
+                Text(user.simbolo)
+            }
+         
+                
+     
+        }.onAppear(perform: getImage)
+        
+    }
+    
+    func getImage(){
+        let url = NSURL(string:"http://cdn.businessoffashion.com/site/uploads/2014/09/Karl-Lagerfeld-Self-Portrait-Courtesy.jpg")
+        let data = NSData(contentsOf:url! as URL)
+        if data! == nil {
+            self.imageURL.image = UIImage(data:data! as Data)
+        }
         
     }
     
 }
-
 
 struct ShowMainView: View {
     @Binding var showMenu: Bool

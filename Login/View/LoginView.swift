@@ -160,6 +160,8 @@ struct CardButtonViewAccess: View {
                             //print(res as Any)
                             let login: ObjectLogin
                             login = res! as ObjectLogin
+                         
+                           
                             
                             if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "00" || login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "0" ){
                                 
@@ -173,13 +175,29 @@ struct CardButtonViewAccess: View {
                                     Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.numberCard, forKey: "numberCard")
                                 }
                                 
+                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.nombre + " " + login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.apellido, forKey: "user")
+                                
+                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.email, forKey: "email")
+                                
+                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.movil, forKey: "movil")
+                         
+                                
                                 self.login()
                             }else if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "12"){
                                 Constant.defaults.set("4", forKey: "cumplimient")
                                 Constant.defaults.set(false, forKey: "prepayCardAsociate")
                                 Constant.defaults.set(false, forKey: "prepayCard")
+                                
+                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.nombre + " " + login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.apellido, forKey: "user")
+                                
+                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.email, forKey: "email")
+                                
+                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.movil, forKey: "movil")
                                 self.securityQuestion()
                             }
+                            
+                   
+                            
                         }
                         
                         if error != nil {
