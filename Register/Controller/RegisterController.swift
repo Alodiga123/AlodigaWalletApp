@@ -11,7 +11,7 @@ import Foundation
 public class RegisterController{
 //public extension RegisterController{
     
-    func getContryData(url: String, completion: @escaping([JSONData])->()){
+    func getContryData(url: String, completion: @escaping([Country])->()){
         let session = URLSession(configuration: .default)
     
         session.dataTask(with: URL(string: url)!){(data, _, err) in
@@ -22,7 +22,7 @@ public class RegisterController{
             }
     
             do{
-                let countries = try JSONDecoder().decode(JSONData.self, from: data!)
+                let countries = try JSONDecoder().decode(Country.self, from: data!)
                 //completion (countries,nil)
             }catch{
                 print(error)

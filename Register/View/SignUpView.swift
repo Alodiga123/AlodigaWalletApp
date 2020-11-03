@@ -47,10 +47,14 @@ struct SignUpViewAccess: View {
 //
 //                    }
                     ListaPaises()
-                    //otraDePicker()
-                    OtraListaDePaises()
-                    //DropDown()
-                    //CountryRegisterTextField(country: self.$country)
+                    if #available(iOS 14.0, *) {
+                        otraDePicker()
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                    //OtraListaDePaises()
+                    ////DropDown()
+                    ////CountryRegisterTextField(country: self.$country)
                     PhoneRegisterTextField(phone: self.$phone)
                     NavigationLink(destination: PassByTokenView()) {
                         RegisterContinueButtonContent()
@@ -223,80 +227,68 @@ struct RegisterCancelButtonContent: View {
 
 struct ListaPaises: View {
     let co = Color.black.opacity(0.1)
-    var listCountries = ["VENEZUELA", "AFGANISTAN", "ALBANIA"]
+    //var listCountries = ["VENEZUELA", "AFGANISTAN", "ALBANIA"]
     let registerController = RegisterController()
     let pais = AL_GetCountries()
-    //let prueba2 = prueba()
-//    init(){
-//        prueba2.paises(completion: { co in
-//                    print ("en listar paises")
-//                    print(co)
-//    }
-//    let countries = {let prueba2 = prueba()
-//        prueba2.paises(completion: { co in
-//            print ("en listar paises")
-//            print(co)
-//    })}
-//    prueba2.paises { countr in
-//        Text("\(num)")
-//    }
     
-    @State var contr : [Country] = []
+    @State var countries : [Country] = []
+    @State var jsonCountry : ObjectCountry?
+    @State var searchText = ""
     @State private var isExpanded = false
     @State private var selectCountry = "Pais"
-//    @State private var countries = {let prueba2 = prueba()
-//        prueba2.paises(completion: { pc in
-//            print ("en listar paises")
-//            print(pc)
-//    })}
-    //@Binding var countries: String
+    
+    @State private var selectedCountry: Int = 0
     var body: some View {
+        Color.blue
+            .edgesIgnoringSafeArea(.all)
         
         VStack(alignment: .leading){
-//            if contr.isEmpty{
-//                Spacer()
-//            }else{
-//                List(contr){Country in
-//
-//                }
-//            }
-            
             Text("Seleccione el Pais")
             //Text($countries)
                 .font(.callout)
                 .foregroundColor(.gray)
                 .padding(.top,10)
-//                .onAppear{
-//                    let prueba2 = prueba()
-//                        prueba2.paises(completion: { co in
-//                            print ("en listar paises")
-//                            print(co)
-//                        }}
-                
             if #available(iOS 14.0, *) {
                 DisclosureGroup("\(selectCountry)", isExpanded:$isExpanded){
                     VStack(alignment: .leading) {
+                        //Picker(selection: $selectedCountry, label: Text("Pais")) {
+                        //Picker("Pais", selection: $selectedCountry) {
                         //Picker(selection: $selectCountry, label:Text("Pais")){
-                        ForEach(self.listCountries, id: \.self) { listCountries in
-                        //ForEach(0 ..< listCountries.count) {_ in
-                            //ForEach(1...3,id: \.self){num in
-                                //Text("\(num)")
-                            Text(listCountries)
-                                .font(.callout)
-                                .frame(width: 300, alignment: .leading)
-                                .padding(.top,10)
-                                .padding(.bottom,5)
-                                .padding(.leading,0)
-                                .foregroundColor(.blue)
-                                    .onTapGesture{
-                                        print (listCountries)
-                                        self.selectCountry = ("\(listCountries)")
-                                        withAnimation{
-                                            self.isExpanded.toggle()
-                                        }
-                                    }
-                            //}
-                        }
+                        //ForEach(self.countries, id: \.self) { country in
+                        ForEach(0..<countries.count, id: \.self) {country in
+                                Text(self.countries[country].alternativeName3)
+                                    .font(.callout)
+                                    .frame(width: 300, alignment: .leading)
+                                    .padding(.top,10)
+                                    .padding(.bottom,5)
+                                    .padding(.leading,0)
+                                    .foregroundColor(.blue)
+                            //ForEach(countries, id: \.self) { countries in
+                            //ForEach(0 ..< listCountries.count) {_ in
+                                //ForEach(1...3,id: \.self){num in
+                                    //Text("\(num)")
+                                //Text(countries[countries])
+                                //litado(country: country)
+                                 
+    //                            Text(country.description)
+    //                                .font(.callout)
+    //                                .frame(width: 300, alignment: .leading)
+    //                                .padding(.top,10)
+    //                                .padding(.bottom,5)
+    //                                .padding(.leading,0)
+    //                                .foregroundColor(.blue)
+    ////                                    .onTapGesture{
+    ////                                        print (listCountries)
+    ////                                        self.selectCountry = ("\(listCountries)")
+    ////                                        withAnimation{
+    ////                                            self.isExpanded.toggle()
+    ////                                        }
+    ////                                    }
+                               // }
+                            //
+                                
+                            }
+                        //}
                     }
                 }.accentColor(.white)
                 .font(.callout)
@@ -308,60 +300,28 @@ struct ListaPaises: View {
                 // Fallback on earlier versions
             }
         }.padding(.all)
-        //.onAppear(perform: prueba)
-//        .onAppear{let prueba2 = prueba()
-//            prueba2.paises(completion: { co in
-//                print ("en listar paises")
-//                print(co)
-//        }}
+        .onAppear(
+            perform: getJSONCountry
+        )
     }
-}
-
-struct DropDown : View {
-      @State var expand = false
-    var body : some  View {
     
-        VStack(alignment: .leading,spacing: 15, content:  {
-            HStack {
-                Text("Home").fontWeight(.heavy).foregroundColor(.white)
-                Image(systemName: expand ? "chevron.up" :  "chevron.down").resizable().frame(width: 13, height: 6).foregroundColor(.white)
-            }.onTapGesture {
-                self.expand.toggle()
-            }
-            if expand {
-                Button(action: {
-                        print("1")
-                        self.expand.toggle()
-                               }) {
-                                   Text("1")
-                               }.foregroundColor(.white)
-                Button(action: {
-                        print("2")
-                        self.expand.toggle()
-                               }) {
-                                   Text("2")
-                               }.foregroundColor(.white)
-                Button(action: {
-                        print("3")
-                        self.expand.toggle()
-                               }) {
-                                   Text("3")
-                               }.foregroundColor(.white)
-                }
-            })
-       
-        .padding()
-        .background(LinearGradient(gradient: .init(colors: [.red,.orange]), startPoint: .top, endPoint: .bottom))
-         .cornerRadius(20)
-        .animation(.spring())
+    func getJSONCountry() {
+        let registerController = RegisterController()
+        let countryMovil = AL_GetCountries()
+        
+        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
+            print("EN LA FUNCION!!!!")
+            self.jsonCountry = res! as ObjectCountry
+            self.countries = res!.envelope.body.countryResponse._return.countries
+            //self.countries = res!.envelope.body.countryResponse._return.countries
+        }
     }
 }
-
 
 @available(iOS 14.0, *)
 struct otraDePicker: View {
     var frameworks = ["UIKit", "Core Data", "CloudKit", "SwiftUI"]
-    @State var objetResponseCountry: [JSONData] = []
+    @State var objetResponseCountry: [Country] = []
     @State private var selectedFrameworkIndex = 0
     
     var body: some View {
@@ -381,7 +341,7 @@ struct otraDePicker: View {
 }
 
 struct RowView: View {
-    var countries : JSONData
+    var countries : Country
     
     var body: some View {
         HStack (spacing: 15) {
@@ -415,13 +375,13 @@ struct OtraListaDePaises: View {
 
    var body: some View {
       VStack {
-        Form{
+        //Form{
         Picker(selection: $selectedFrameworkIndex, label: Text("")) {
             ForEach(0 ..< frameworks.count) {
                Text(self.frameworks[$0])
             }
          }
-        }
+       // }
          Text("Your favorite framework: \(frameworks[selectedFrameworkIndex])")
       }.padding()
    }
@@ -432,44 +392,3 @@ struct SignUpView_Previews: PreviewProvider {
         SignUpView()
     }
 }
-
-
-
-
-
-
-struct Home: View {
-    var body: some View {
-        VStack  {
-        
-        }
-    }
-}
-
-
-//struct JSONDatas: Identifiable, Decodable{
-//    var alternativeName3 : String
-//    var code : String
-//    var id : String
-//    var name : String
-//    var shortName : String
-//}
-//
-//func getContryData(url: String, completion: @escaping([JSONDatas])->()){
-//    let session = URLSession(configuration: .default)
-//
-//    session.dataTask(with: URL(string: url)!){(data, _, err) in
-//        if err != nil{
-//            print(err?.localizedDescription)
-//            print("error=\(String(describing: err))")
-//            return
-//        }
-//
-//        do{
-//            let countries = try JSONDecoder().decode(JSONDatas.self, from: data!)
-//            completion (countries,nil)
-//        }catch{
-//            print(error)
-//        }
-//    }
-//}

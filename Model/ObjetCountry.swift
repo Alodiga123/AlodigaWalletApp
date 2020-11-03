@@ -17,15 +17,15 @@ struct ObjectCountry: Decodable{
     
 }
 
-    struct EnvelopeCountry : Decodable{
-       var xmlns : String
-       var body : BodyCountry
-       
-       enum CodingKeys: String, CodingKey {
-            case xmlns = "_xmlns:S"
-            case body = "S:Body"
-        }
+struct EnvelopeCountry : Decodable{
+   var xmlns : String
+   var body : BodyCountry
+   
+   enum CodingKeys: String, CodingKey {
+        case xmlns = "_xmlns:S"
+        case body = "S:Body"
     }
+}
 
 struct BodyCountry : Decodable{
     var countryResponse: CountryMovilResponse
@@ -76,25 +76,6 @@ struct Country: Identifiable, Decodable{
         case shortName = "shortName"
      }
 }
-//
-//struct JSONData: Identifiable, Decodable{
-//    var alternativeName3 : String
-//    var code : String
-//    var id : String
-//    var name : String
-//    var shortName : String
-//}
-
-//func getContryData(url: String, completion:@escaping([JSONData])->()){
-//    let session = URLSession(configuration: .default)
-//
-//    session.dataTask(with: URL(string: url)!){(data, _, err) in
-//        if url != nil{
-//            print(err?.localizedDescription)
-//            return
-//        }
-//    }
-//}
 
 struct MensajeRespuesta: Decodable{
     
