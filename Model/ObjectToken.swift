@@ -1,15 +1,15 @@
 //
-//  ObjectCountry.swift
+//  ObjectToken.swift
 //  IOSAlodigaWalletApp
 //
-//  Created by Lulymar Guiterrez on 10/7/20.
+//  Created by Lulymar Guiterrez on 28/10/20.
 //  Copyright © 2020 Lulymar Guiterrez. All rights reserved.
 //
 
 import Foundation
 
-struct ObjectCountry: Decodable{
-    var envelope: EnvelopeCountry
+struct ObjectToken: Decodable{
+    var envelope: EnvelopeToken
     
     enum CodingKeys: String, CodingKey {
          case envelope = "S:Envelope"
@@ -17,9 +17,9 @@ struct ObjectCountry: Decodable{
     
 }
 
-    struct EnvelopeCountry : Decodable{
+    struct EnvelopeToken : Decodable{
        var xmlns : String
-       var body : BodyCountry
+       var body : BodyToken
        
        enum CodingKeys: String, CodingKey {
             case xmlns = "_xmlns:S"
@@ -27,17 +27,17 @@ struct ObjectCountry: Decodable{
         }
     }
 
-struct BodyCountry : Decodable{
-    var countryResponse: CountryMovilResponse
+struct BodyToken : Decodable{
+    var tokenResponse: TokenResponse
     
     enum CodingKeys: String, CodingKey {
-         case countryResponse = "ns2:getCountriesResponse"
+         case tokenResponse = "ns2:getCountriesResponse"
      }
 }
 
-struct CountryMovilResponse: Decodable{
+struct TokenResponse: Decodable{
    var _xmlns : String
-   var _return : ReturnCountry
+   var _return : ReturnToken
     
     enum CodingKeys: String, CodingKey {
          case _xmlns = "_xmlns:ns2"
@@ -46,22 +46,22 @@ struct CountryMovilResponse: Decodable{
 }
 
 
-struct ReturnCountry : Decodable{
+struct ReturnToken : Decodable{
    var fechaHora : String
    var codigoRespuesta : String
-   var mensajeRespuesta : MensajeRespuesta
+   //var mensajeRespuesta : MensajeRespuesta
     var countries : [Country]
     
     enum CodingKeys: String, CodingKey {
          case fechaHora = "fechaHora"
          case codigoRespuesta = "codigoRespuesta"
-         case mensajeRespuesta = "mensajeRespuesta"
+         //case mensajeRespuesta = "mensajeRespuesta"
          case countries = "countries"
      }
 }
 
 
-struct Country: Identifiable, Decodable{
+struct Token: Decodable{
     var alternativeName3 : String
     var code : String
     var id : String
@@ -76,14 +76,6 @@ struct Country: Identifiable, Decodable{
         case shortName = "shortName"
      }
 }
-//
-//struct JSONData: Identifiable, Decodable{
-//    var alternativeName3 : String
-//    var code : String
-//    var id : String
-//    var name : String
-//    var shortName : String
-//}
 
 //func getContryData(url: String, completion:@escaping([JSONData])->()){
 //    let session = URLSession(configuration: .default)
@@ -95,17 +87,3 @@ struct Country: Identifiable, Decodable{
 //        }
 //    }
 //}
-
-struct MensajeRespuesta: Decodable{
-    
-}
-
-struct AlternativeName1: Decodable{
-    
-}
-
-struct AlternativeName2: Decodable{
-    
-}
-
-

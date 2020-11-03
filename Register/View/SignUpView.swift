@@ -48,7 +48,7 @@ struct SignUpViewAccess: View {
 //                    }
                     ListaPaises()
                     //otraDePicker()
-                    //OtraListaDePaises()
+                    OtraListaDePaises()
                     //DropDown()
                     //CountryRegisterTextField(country: self.$country)
                     PhoneRegisterTextField(phone: self.$phone)
@@ -93,6 +93,7 @@ struct SignUpViewAccess: View {
                                 print(error!)
                             }
                         }
+                        
                     }) {
                         RegisterContinueButtonContent()
                     }
@@ -106,7 +107,7 @@ struct SignUpViewAccess: View {
     }
 }
 
-class prueba {
+//class prueba {
     func paises (completion: @escaping ([Country]) -> Void) {
         let registerController = RegisterController()
         let pais = AL_GetCountries()
@@ -122,7 +123,6 @@ class prueba {
                     pa = country.envelope.body.countryResponse._return.countries as Array<Country>
                     completion (pa)
                 }
-                //completion (pa)
                 
         //        if error != nil {
         //            print("EN EL ERROR!!!!")
@@ -130,7 +130,7 @@ class prueba {
         //        }
             }
     }
-}
+//}
 
 struct TextLabelSignUp: View {
     var body: some View {
@@ -222,12 +222,11 @@ struct RegisterCancelButtonContent: View {
 }
 
 struct ListaPaises: View {
-    
     let co = Color.black.opacity(0.1)
     var listCountries = ["VENEZUELA", "AFGANISTAN", "ALBANIA"]
     let registerController = RegisterController()
     let pais = AL_GetCountries()
-    let prueba2 = prueba()
+    //let prueba2 = prueba()
 //    init(){
 //        prueba2.paises(completion: { co in
 //                    print ("en listar paises")
@@ -242,6 +241,7 @@ struct ListaPaises: View {
 //        Text("\(num)")
 //    }
     
+    @State var contr : [Country] = []
     @State private var isExpanded = false
     @State private var selectCountry = "Pais"
 //    @State private var countries = {let prueba2 = prueba()
@@ -253,6 +253,14 @@ struct ListaPaises: View {
     var body: some View {
         
         VStack(alignment: .leading){
+//            if contr.isEmpty{
+//                Spacer()
+//            }else{
+//                List(contr){Country in
+//
+//                }
+//            }
+            
             Text("Seleccione el Pais")
             //Text($countries)
                 .font(.callout)
@@ -350,22 +358,41 @@ struct DropDown : View {
 }
 
 
+@available(iOS 14.0, *)
 struct otraDePicker: View {
     var frameworks = ["UIKit", "Core Data", "CloudKit", "SwiftUI"]
+    @State var objetResponseCountry: [JSONData] = []
     @State private var selectedFrameworkIndex = 0
     
     var body: some View {
-           // Form {
-                Section {
-                    Picker(selection: $selectedFrameworkIndex, label: Text("Favorite Framework")) {
-                        ForEach(0 ..< frameworks.count) {
-                            Text(self.frameworks[$0])
-                        }
-                    }
-                }
-            //}
+        VStack  {
+            if objetResponseCountry.isEmpty{
+                OtraListaDePaises()
+            }else{
+                List(objetResponseCountry){countries in
+                    RowView(countries: countries)
+                }.listStyle(InsetGroupedListStyle())
+            }
+        }
+        .onAppear () {
+            
+        }
     }
 }
+
+struct RowView: View {
+    var countries : JSONData
+    
+    var body: some View {
+        HStack (spacing: 15) {
+            //Text(countries.envelope.body.countryResponse._return.countries.description)
+            Text(countries.name)
+        }
+    }
+}
+
+
+
 
 struct OtraListaDePaises: View {
    var frameworks = ["UIKit", "Core Data", "CloudKit", "SwiftUI"]
@@ -388,11 +415,13 @@ struct OtraListaDePaises: View {
 
    var body: some View {
       VStack {
+        Form{
         Picker(selection: $selectedFrameworkIndex, label: Text("")) {
             ForEach(0 ..< frameworks.count) {
                Text(self.frameworks[$0])
             }
          }
+        }
          Text("Your favorite framework: \(frameworks[selectedFrameworkIndex])")
       }.padding()
    }
@@ -404,3 +433,43 @@ struct SignUpView_Previews: PreviewProvider {
     }
 }
 
+
+
+
+
+
+struct Home: View {
+    var body: some View {
+        VStack  {
+        
+        }
+    }
+}
+
+
+//struct JSONDatas: Identifiable, Decodable{
+//    var alternativeName3 : String
+//    var code : String
+//    var id : String
+//    var name : String
+//    var shortName : String
+//}
+//
+//func getContryData(url: String, completion: @escaping([JSONDatas])->()){
+//    let session = URLSession(configuration: .default)
+//
+//    session.dataTask(with: URL(string: url)!){(data, _, err) in
+//        if err != nil{
+//            print(err?.localizedDescription)
+//            print("error=\(String(describing: err))")
+//            return
+//        }
+//
+//        do{
+//            let countries = try JSONDecoder().decode(JSONDatas.self, from: data!)
+//            completion (countries,nil)
+//        }catch{
+//            print(error)
+//        }
+//    }
+//}

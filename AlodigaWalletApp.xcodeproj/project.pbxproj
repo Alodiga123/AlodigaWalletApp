@@ -20,8 +20,8 @@
 		044BD0BB2548CEBE005A6754 /* SuccessfulQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */; };
 		045375A725475CF400D12D77 /* ObjectRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375A625475CF400D12D77 /* ObjectRegisterUser.swift */; };
 		045375B9254790F600D12D77 /* ObjectErrorRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */; };
-		04740404254632C9000E7097 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04740403254632C9000E7097 /* Country.swift */; };
-		04740409254635EA000E7097 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04740408254635EA000E7097 /* Bundle.swift */; };
+		048612212549A799008E51CE /* ObjectToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048612202549A799008E51CE /* ObjectToken.swift */; };
+		048612262549AA5F008E51CE /* ObjectErrorToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048612252549AA5F008E51CE /* ObjectErrorToken.swift */; };
 		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
 		04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC3025157E0700960B9F /* ProductTopUpView.swift */; };
 		04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC322515829600960B9F /* SuccessTopUpView.swift */; };
@@ -122,8 +122,8 @@
 		044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulQuestionsView.swift; sourceTree = "<group>"; };
 		045375A625475CF400D12D77 /* ObjectRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRegisterUser.swift; sourceTree = "<group>"; };
 		045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorRegisterUser.swift; sourceTree = "<group>"; };
-		04740403254632C9000E7097 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		04740408254635EA000E7097 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		048612202549A799008E51CE /* ObjectToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectToken.swift; sourceTree = "<group>"; };
+		048612252549AA5F008E51CE /* ObjectErrorToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorToken.swift; sourceTree = "<group>"; };
 		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
 		04BEBC3025157E0700960B9F /* ProductTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTopUpView.swift; sourceTree = "<group>"; };
 		04BEBC322515829600960B9F /* SuccessTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessTopUpView.swift; sourceTree = "<group>"; };
@@ -668,8 +668,8 @@
 				045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */,
 				04ECA1282537D6A900A77BA1 /* ObjetCountry.swift */,
 				04ECA12D2537DEA500A77BA1 /* ObjetErrorCountry.swift */,
-				04740403254632C9000E7097 /* Country.swift */,
-				04740408254635EA000E7097 /* Bundle.swift */,
+				048612202549A799008E51CE /* ObjectToken.swift */,
+				048612252549AA5F008E51CE /* ObjectErrorToken.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -833,6 +833,7 @@
 				46DBC48A251287DF008D42B3 /* SignUpView.swift in Sources */,
 				46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */,
 				46DBC47825128547008D42B3 /* SuccesfulPaymentQRView.swift in Sources */,
+				048612262549AA5F008E51CE /* ObjectErrorToken.swift in Sources */,
 				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
 				043FEC86251BE2EE005C518B /* RecoverPasswordView.swift in Sources */,
 				04D322C52518E54C00F3F38C /* ConfirmationTopUpView.swift in Sources */,
@@ -877,10 +878,8 @@
 				46DBC4862512879B008D42B3 /* FormSignUpView.swift in Sources */,
 				04D6DA89251AA5690053125C /* StepTwoView.swift in Sources */,
 				46DBC482251286E6008D42B3 /* TargetCustomerView.swift in Sources */,
-				04740409254635EA000E7097 /* Bundle.swift in Sources */,
 				042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */,
 				46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */,
-				04740404254632C9000E7097 /* Country.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
 				043FEC8E251BF601005C518B /* SecurityLevelView.swift in Sources */,
 				04D6DA41251913210053125C /* ConvertView.swift in Sources */,
@@ -888,6 +887,7 @@
 				044BD0B12548AEF5005A6754 /* SecurityQuestionsView.swift in Sources */,
 				46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */,
 				46DBC47E2512869E008D42B3 /* OperationsKeyView.swift in Sources */,
+				048612212549A799008E51CE /* ObjectToken.swift in Sources */,
 				46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
