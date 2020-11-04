@@ -13,25 +13,22 @@ struct MainViewLogged: View {
     var json : ObjectLogin? = nil
     
     var body: some View {
-        mainHead()
+        //mainHead()
 
-        lista( jsonLogin: json)
+        //lista( jsonLogin: json)
         
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
-         
                 Spacer()
-                
-                
                 ShowMainView(showMenu: self.$showMenu)
                     .frame(width: geometry.size.width, height: geometry.size.height/2)
                     .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                     .disabled(self.showMenu ? true : false)
-                if self.showMenu {
-                    MenuView()
-                        .frame(width: geometry.size.width/2)
-                        .transition(.move(edge: .leading))
-                }
+                    if self.showMenu {
+                        MenuView()
+                            .frame(width: geometry.size.width/2)
+                            .transition(.move(edge: .leading))
+                    }
                 }
             .gesture(
                     DragGesture()
@@ -43,7 +40,7 @@ struct MainViewLogged: View {
                             }
                         }
                 )
-            .navigationBarTitle("Second View", displayMode: .inline)
+            .navigationBarTitle("Menu Principal", displayMode: .inline)
             .navigationBarItems(leading:
                 HStack {
                     Text("")
@@ -58,26 +55,22 @@ struct MainViewLogged: View {
                             Text("...")
                         }
                 }
-                                
-                               
             )
         }.background(Color.cardButtonViewGray)
-      
     }
 }
 
 
 struct mainHead : View {
+    var json : ObjectLogin? = nil
+    
     var line: some View {
         VStack { Divider().background(Color.black) }.padding()
        }
     var body : some View {
         line
-
         ZStack{
-      
             HStack{
-                
                 VStack{
                     Image("logo_alodiga")
                         .resizable()
@@ -90,14 +83,10 @@ struct mainHead : View {
                     Text(Constant.defaults.value(forKey: "email") as! String)
 
                 }
-                
             }
-            
         }
-        
         line
         Spacer()
-        
         ZStack{
             HStack{
                 VStack{
@@ -109,7 +98,6 @@ struct mainHead : View {
                     Text("Prueba").font(.caption)
                         .foregroundColor(Color.fontOrangeColor)
                 }
-         
                 VStack{
                     Image("logo_alodiga")
                         .resizable()
@@ -135,12 +123,9 @@ struct mainHead : View {
                     Text("Prueba")
                 }
             }
-            
         }
-        
         line
         Spacer()
-        
     }
 }
 
@@ -151,20 +136,18 @@ struct lista: View{
     
     var body: some View{
         VStack{
-        if (products.isEmpty){
-            EmptyView()
-            Text("Esta vacia llamar al cargando")
-        }else{
-            List(products){product in
-                rowView(user: product)
-            }
-            
-        }
-        
-        }.onAppear(
-        perform: getJSONLogin
-        )
+            if (products.isEmpty){
+                EmptyView()
+                Text("Esta vacia llamar al cargando")
+            }else{
+                List(products){product in
+                    rowView(user: product)
+                }
                 
+            }
+        }.onAppear(
+            perform: getJSONLogin
+        )
     }
     
     func getJSONLogin() {
@@ -196,9 +179,7 @@ struct lista: View{
             self.jsonLogin = res! as ObjectLogin
             self.products = res!.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos
         }
-        
     }
-    
 }
 
 struct rowView : View{
@@ -206,27 +187,21 @@ struct rowView : View{
     var imageURL:UIImageView!
 
     var body: some View {
- 
         VStack{
-            
             HStack{
                 Image("email")
                     .resizable()
                     .clipShape(Rectangle())
                     .shadow(radius: 5)
                     .frame(width: 50, height: 50, alignment: Alignment.top)
-                
-                
-        Text(user.nombreProducto)
+                    
+                Text(user.nombreProducto)
             }
             
             HStack{
                 Text(user.saldoActual)
                 Text(user.simbolo)
             }
-         
-                
-     
         }.onAppear(perform: getImage)
         
     }
@@ -237,21 +212,18 @@ struct rowView : View{
         if data! == nil {
             self.imageURL.image = UIImage(data:data! as Data)
         }
-        
     }
-    
 }
 
 struct ShowMainView: View {
     @Binding var showMenu: Bool
+    var json : ObjectLogin? = nil
+
     var body: some View {
-        Button(action: {
-            withAnimation {
-                self.showMenu = true
-            }
-     }) {
-         Text("Show Menu")
-     }
+        VStack{
+            mainHead()
+            lista( jsonLogin: json)
+        }
    }
 }
 
