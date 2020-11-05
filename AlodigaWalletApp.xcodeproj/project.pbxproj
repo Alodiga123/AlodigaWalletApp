@@ -76,6 +76,7 @@
 		46DBC488251287C4008D42B3 /* PassByTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC487251287C4008D42B3 /* PassByTokenView.swift */; };
 		46DBC48A251287DF008D42B3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC489251287DF008D42B3 /* SignUpView.swift */; };
 		46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC48B25128804008D42B3 /* WelcomeView.swift */; };
+		BA1B8B8325545277002A6892 /* remittancesStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B8B8225545277002A6892 /* remittancesStep1.swift */; };
 		BA647E1925406E0200598944 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA647E1825406E0200598944 /* ShowAlert.swift */; };
 		BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */; };
 		BAE1E9B6252BA9D5007F9CD6 /* ObjetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */; };
@@ -187,6 +188,7 @@
 		46DBC487251287C4008D42B3 /* PassByTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassByTokenView.swift; sourceTree = "<group>"; };
 		46DBC489251287DF008D42B3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		46DBC48B25128804008D42B3 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		BA1B8B8225545277002A6892 /* remittancesStep1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remittancesStep1.swift; sourceTree = "<group>"; };
 		BA647E1825406E0200598944 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroUnificadoClient.swift; sourceTree = "<group>"; };
 		BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjetError.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 		467C04AD24D857F20021F472 = {
 			isa = PBXGroup;
 			children = (
+				BA1B8B7F2554524B002A6892 /* remittances */,
 				044BD0AD2548AE1E005A6754 /* SecurityQuestions */,
 				BAE1E9B4252BA993007F9CD6 /* Model */,
 				BAE1E9AE252BA83D007F9CD6 /* WebServices */,
@@ -632,6 +635,30 @@
 				46DBC487251287C4008D42B3 /* PassByTokenView.swift */,
 				46DBC4852512879B008D42B3 /* FormSignUpView.swift */,
 				46DBC48B25128804008D42B3 /* WelcomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA1B8B7F2554524B002A6892 /* remittances */ = {
+			isa = PBXGroup;
+			children = (
+				BA1B8B8125545262002A6892 /* View */,
+				BA1B8B8025545254002A6892 /* Controller */,
+			);
+			path = remittances;
+			sourceTree = "<group>";
+		};
+		BA1B8B8025545254002A6892 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA1B8B8125545262002A6892 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA1B8B8225545277002A6892 /* remittancesStep1.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -883,6 +910,7 @@
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
 				043FEC8E251BF601005C518B /* SecurityLevelView.swift in Sources */,
 				04D6DA41251913210053125C /* ConvertView.swift in Sources */,
+				BA1B8B8325545277002A6892 /* remittancesStep1.swift in Sources */,
 				BAE1EA6F252EC9EA007F9CD6 /* ObjectErrorLogin.swift in Sources */,
 				044BD0B12548AEF5005A6754 /* SecurityQuestionsView.swift in Sources */,
 				46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */,

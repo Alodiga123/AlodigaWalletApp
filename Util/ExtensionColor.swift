@@ -23,4 +23,16 @@ extension Color {
   static let screemWhiteColor = Color("screemWhiteColor")
     
   static let cardButtonViewGray = Color("cardButtonViewGray")
+    
+  static let violetMenu = Color("violetMenu")
+    
+  static let yellowMenu = Color("yellowMenu")
+    
+  static let orangeMenu = Color("orangeMenu")
+    
+  static let greenMenu = Color("greenMenu")
+
+
+
+
 }

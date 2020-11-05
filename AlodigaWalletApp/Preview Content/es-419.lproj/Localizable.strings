@@ -179,3 +179,11 @@
 "web_services_response_98" = "Error de credenciales";
 "web_services_response_99" = "Error interno";
 
+//Main
+"menu_send_money" = "Enviar Dinero";
+"aoutMoney" = "Retirar";
+"menu_transfer" = "Transferir";
+"reload" ="Recargar";
+
+
+

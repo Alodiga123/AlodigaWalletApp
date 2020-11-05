@@ -178,3 +178,9 @@
 "web_services_response_97" = "Username does not exist ";
 "web_services_response_98" = "Credential Error ";
 "web_services_response_99" = "Internal error ";
+
+//Main
+"menu_send_money" = "Send money";
+"aoutMoney" = "Remove";
+"menu_transfer" = "To transfer";
+"reload" ="Reload";
