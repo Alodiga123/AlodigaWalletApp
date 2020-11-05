@@ -22,12 +22,13 @@ struct MainViewLogged: View {
             ZStack(alignment: .leading) {
                 VStack{
                 ShowMainView(showMenu: self.$showMenu)
-                    .frame(width: geometry.size.width, height: geometry.size.height/2)
+                    .frame(width: geometry.size.width, height: geometry.size.height/2.5)
                     .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                     .disabled(self.showMenu ? true : false)
-                lista( jsonLogin: json).frame(width: geometry.size.width, height: geometry.size.height/3).offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                    .disabled(self.showMenu ? true : false)
-            }
+                    lista( jsonLogin: json).frame(width: geometry.size.width, height: geometry.size.height/2).offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                        .disabled(self.showMenu ? true : false)
+                  
+                }.background(Color.cardButtonViewGray)
             if self.showMenu {
                 MenuView()
                     .frame(width: geometry.size.width/2)
@@ -35,7 +36,7 @@ struct MainViewLogged: View {
             }
                 
             }
-          
+            
             .gesture(
                     DragGesture()
                         .onEnded {
@@ -80,7 +81,7 @@ struct mainHead : View {
     @State var isWithdrawal: Bool = false
 
     var line: some View {
-        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(5)
+        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding()
        }
     
     func isPaymentIn(){
@@ -109,6 +110,11 @@ struct mainHead : View {
 
     var body : some View {
         ZStack{
+            VStack{
+                Rectangle()
+                    .frame(width:50, height: 6, alignment: .center)
+                    .cornerRadius(3.0)
+                    .opacity(0.3)
             HStack{
                 VStack{
                     Image("logo_alodiga")
@@ -116,7 +122,7 @@ struct mainHead : View {
                         .clipShape(Rectangle())
                         .shadow(radius: 5)
                         .frame(width: 80, height: 80, alignment: Alignment.top)
-                }.animation(Animation.easeInOut)
+                }.transition(.move(edge: .top))
                 VStack (alignment: .leading, spacing: 6){
                     Text(Constant.defaults.value(forKey: "user") as! String)
                     Text(Constant.defaults.value(forKey: "movil") as! String )
@@ -124,7 +130,7 @@ struct mainHead : View {
 
                 }
             }
-        }
+            }}
         line
         ZStack{
             HStack{
@@ -267,14 +273,22 @@ struct lista: View{
                 Text("Esta vacia llamar al cargando")
             }else{
                 List(products){product in
-                    rowView(user: product)
+                  
+                    Button(action: {
+                        let alert = ShowAlert()
+                        alert.showAlert(title: "", message: "En proceso")
+                    }) {
+                        rowView(user: product).background(Color.cardButtonViewGray)
+                    }
+                    
                 }
+
                 
             }
-        }.background(Color.cardButtonViewGray)
+        }.background(Color.red)
         .onAppear(
             perform: getJSONLogin
-        ).lineSpacing(3)
+        )
     }
     
     func getJSONLogin() {
@@ -304,16 +318,16 @@ struct rowView : View{
                     .resizable()
                     .clipShape(Rectangle())
                     .shadow(radius: 5)
-                    .frame(width: 50, height: 50, alignment: Alignment.top)
-                    
-                Text(user.nombreProducto)
+                    .frame(width: 50, height: 50, alignment: .leading)
+                Text(user.nombreProducto).foregroundColor(Color.gray)
+                
             }
             
             HStack{
-                Text(user.saldoActual)
-                Text(user.simbolo)
+                Text(user.saldoActual).foregroundColor(Color.gray)
+                Text(user.simbolo).foregroundColor(Color.gray)
             }
-        }.onAppear(perform: getImage)
+        }.frame(width: UIScreen.main.bounds.size.width - 40, height: 70, alignment: Alignment.center).padding(.bottom,2).padding(.leading, 1).background(Color.white).cornerRadius(10)
         
     }
     
@@ -332,13 +346,7 @@ struct ShowMainView: View {
 
     var body: some View {
         VStack{
-            Rectangle()
-                .frame(width:50, height: 6)
-                .cornerRadius(3.0)
-                .opacity(0.3)
-                .padding(.top,0)
             mainHead()
-            
         }
    }
 }
