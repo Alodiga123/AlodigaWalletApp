@@ -169,7 +169,11 @@ struct CardButtonViewAccess: View {
                                 Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.cumplimient, forKey: "cumplimient")
 
                                 Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.prepayCardAsociate, forKey: "prepayCardAsociate")
+                                
                                 Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.prepayCard, forKey: "prepayCard")
+                                
+                                Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.cuenta.numeroCuenta, forKey: "numeroCuenta")
+                                
                                 
                                 if(Constant.defaults.bool(forKey: "prepayCard")){
                                     Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.numberCard, forKey: "numberCard")

@@ -356,22 +356,47 @@ struct rowView : View{
     var imageURL:UIImageView!
 
     var body: some View {
-        VStack{
-            HStack{
+        HStack{
+            VStack(alignment: .leading){
                 Image("email")
                     .resizable()
                     .clipShape(Rectangle())
                     .shadow(radius: 5)
-                    .frame(width: 50, height: 50, alignment: .leading)
-                Text(user.nombreProducto).foregroundColor(Color.gray)
-                
-            }
+                    .frame(width: 50, height: 50)
+            }.padding(.trailing,30).padding(.leading,5)
             
-            HStack{
-                Text(user.saldoActual).foregroundColor(Color.gray)
-                Text(user.simbolo).foregroundColor(Color.gray)
+            VStack(alignment: .leading){
+                HStack{
+                    Spacer().overlay(VStack(alignment: .leading){                    Text(user.nombreProducto).foregroundColor(Color.gray)
+                        
+                        if (user.nombreProducto == "Tarjeta Prepagada" || user.nombreProducto == "Prepaid Card") {
+                            Text(Constant.defaults.value(forKey: "numberCard") as! String).foregroundColor(Color.gray).font(.caption)
+                        }else{
+                            Text(Constant.defaults.value(forKey: "numeroCuenta") as! String).foregroundColor(Color.gray).font(.caption)
+                        }
+                        
+                        
+                    })
+                    
+                    Spacer().overlay(VStack(alignment: .leading){
+                        
+                        if (user.nombreProducto == "Tarjeta Prepagada" || user.nombreProducto == "Prepaid Card") {
+                            Spacer()
+                        }else{
+                            Text(user.simbolo + " " + user.saldoActual).foregroundColor(Color.gray)
+                            Text("Alodiga").foregroundColor(Color.gray)
+                        }
+                       
+                      
+                        
+                    })
+                }
+            
             }
-        }.frame(width: UIScreen.main.bounds.size.width - 40, height: 70, alignment: Alignment.center).padding(.bottom,2).padding(.leading, 1).background(Color.white).cornerRadius(10)
+           
+                
+          
+        }.frame(width: UIScreen.main.bounds.size.width - 40, height: 70).background(Color.white).cornerRadius(10)
         
     }
     
