@@ -193,12 +193,21 @@ struct mainHead : View {
 }
 
 struct icon_qrView : View {
+    
+    @State var isQrButton: Bool = false
+
+    
+    func isQrButtonIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isQrButton = true
+        }
+    }
     var body: some View{
         VStack {
                         HStack {
                             Spacer()
                             Button(action: {
-                                //self.items.append(Item(value: "Item"))
+                                self.isQrButtonIn()
                             }, label: {
                                 Image("icon_qr")
                                     .resizable()
@@ -218,7 +227,9 @@ struct icon_qrView : View {
                         }
             
         }
-        
+        NavigationLink(destination: PaymentBusinessesQRView(), isActive:self.$isQrButton){
+            EmptyView()
+        }
     }
 }
 
