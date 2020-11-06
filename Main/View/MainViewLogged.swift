@@ -14,9 +14,6 @@ struct MainViewLogged: View {
 
     
     var body: some View {
-        //mainHead()
-
-        //lista( jsonLogin: json)
         
         GeometryReader { geometry in
             Spacer()
@@ -28,7 +25,7 @@ struct MainViewLogged: View {
                     .disabled(self.showMenu ? true : false)
                     
                     lista( jsonLogin: json).frame(width: geometry.size.width, height: geometry.size.height/2.4).offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                        .disabled(self.showMenu ? true : false).padding(.top,10)
+                        .disabled(self.showMenu ? true : false).padding(.top,10).background(Color.colorMain)
                     
                     icon_qrView().frame(width: geometry.size.width, height: geometry.size.height/9.5).offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
@@ -306,30 +303,36 @@ struct send_withdrawal_button : View {
 }
 
 struct lista: View{
+    
+    
     @State var products : [ListadoProductos] = []
     var loginController = LoginController()
     @State var jsonLogin : ObjectLogin?
     
+
     var body: some View{
         ZStack{
+            
             if (products.isEmpty){
                 EmptyView()
                 Text("Esta vacia llamar al cargando")
             }else{
+                
                 List(products){product in
                   
                     Button(action: {
                         let alert = ShowAlert()
                         alert.showAlert(title: "", message: "En proceso")
                     }) {
-                        rowView(user: product).background(Color.colorMain)
+                        rowView(user: product)
                     }
                     
                 }
 
                 
             }
-        }.background(Color.red)
+        }
+        .colorMultiply(Color.colorMain)
         .onAppear(
             perform: getJSONLogin
         )
@@ -358,7 +361,7 @@ struct rowView : View{
     var body: some View {
         HStack{
             VStack(alignment: .leading){
-                Image("email")
+                Image("tp")
                     .resizable()
                     .clipShape(Rectangle())
                     .shadow(radius: 5)
