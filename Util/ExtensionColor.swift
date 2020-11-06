@@ -32,7 +32,8 @@ extension Color {
     
   static let greenMenu = Color("greenMenu")
 
+  static let colorMain = Color("colorMain")
 
-
+    
 
 }

@@ -6,7 +6,29 @@
       "scale" : "1x"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "img_app_logo.png",
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
       "filename" : "logo_alodiga@1x.png",
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "img_app_logo-1.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
@@ -16,12 +38,45 @@
       "scale" : "3x"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "img_app_logo-2.png",
+      "idiom" : "iphone",
+      "scale" : "3x"
+    },
+    {
       "filename" : "logo_alodiga@0x-1.png",
       "idiom" : "ipad",
       "scale" : "1x"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "img_app_logo-3.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
       "filename" : "logo_alodiga@1x-2.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "img_app_logo-4.png",
       "idiom" : "ipad",
       "scale" : "2x"
     }

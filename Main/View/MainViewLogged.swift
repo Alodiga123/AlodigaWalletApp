@@ -19,15 +19,20 @@ struct MainViewLogged: View {
         //lista( jsonLogin: json)
         
         GeometryReader { geometry in
+            Spacer()
             ZStack(alignment: .leading) {
                 VStack{
                 ShowMainView(showMenu: self.$showMenu)
-                    .frame(width: geometry.size.width, height: geometry.size.height/2.5)
+                    .frame(width: geometry.size.width, height: geometry.size.height/2.3)
                     .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                     .disabled(self.showMenu ? true : false)
-                    lista( jsonLogin: json).frame(width: geometry.size.width, height: geometry.size.height/2).offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                    
+                    lista( jsonLogin: json).frame(width: geometry.size.width, height: geometry.size.height/2.4).offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                        .disabled(self.showMenu ? true : false).padding(.top,10)
+                    
+                    icon_qrView().frame(width: geometry.size.width, height: geometry.size.height/9.5).offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
-                  
+                    
                 }.background(Color.cardButtonViewGray)
             if self.showMenu {
                 MenuView()
@@ -35,7 +40,7 @@ struct MainViewLogged: View {
                     .transition(.move(edge: .leading))
             }
                 
-            }
+            }.padding(.bottom,5)
             
             .gesture(
                     DragGesture()
@@ -69,9 +74,6 @@ struct MainViewLogged: View {
     }
 }
 
-
-
-
 struct mainHead : View {
     var json : ObjectLogin? = nil
     @State private var animationStarted = false
@@ -81,7 +83,7 @@ struct mainHead : View {
     @State var isWithdrawal: Bool = false
 
     var line: some View {
-        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding()
+        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,5)
        }
     
     func isPaymentIn(){
@@ -124,14 +126,14 @@ struct mainHead : View {
                         .frame(width: 80, height: 80, alignment: Alignment.top)
                 }.transition(.move(edge: .top))
                 VStack (alignment: .leading, spacing: 6){
-                    Text(Constant.defaults.value(forKey: "user") as! String)
-                    Text(Constant.defaults.value(forKey: "movil") as! String )
-                    Text(Constant.defaults.value(forKey: "email") as! String)
-
+                    Text(Constant.defaults.value(forKey: "user") as! String).foregroundColor(Color.gray)
+                    Text(Constant.defaults.value(forKey: "movil") as! String ).foregroundColor(Color.gray)
+                    Text(Constant.defaults.value(forKey: "email") as! String).foregroundColor(Color.gray)
                 }
             }
-            }}
+            }}.padding(.top,20)
         line
+   
         ZStack{
             HStack{
                 
@@ -186,6 +188,37 @@ struct mainHead : View {
  
             }
         }
+       
+    }
+}
+
+struct icon_qrView : View {
+    var body: some View{
+        VStack {
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                //self.items.append(Item(value: "Item"))
+                            }, label: {
+                                Image("icon_qr")
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .shadow(radius: 5)
+                                    .frame(width: 70, height: 70, alignment: Alignment.top)
+                            })
+                            .background(Color.blue)
+                            .cornerRadius(38.5)
+                            .padding(.trailing, 7)
+                            .padding(.top, 1)
+                            .padding(.bottom, 2)
+                            .shadow(color: Color.black.opacity(0.3),
+                                    radius: 3,
+                                    x: 3,
+                                    y: 3)
+                        }
+            
+        }
+        
     }
 }
 
@@ -202,7 +235,7 @@ struct send_money_button : View {
             .cornerRadius(20)
             Text("menu_send_money").font(.caption)
                 .foregroundColor(Color.greenMenu)
-        }
+        }.padding(.bottom,20)
     }
     
 }
@@ -220,7 +253,7 @@ struct send_recharge_button : View {
             .cornerRadius(20)
             Text("reload").font(.caption)
                 .foregroundColor(Color.yellowMenu)
-        }
+        }.padding(.bottom,20)
     }
     
 }
@@ -238,7 +271,7 @@ struct send_transference_button : View {
             .cornerRadius(20)
             Text("menu_transfer").font(.caption)
                 .foregroundColor(Color.orangeMenu)
-        }
+        }.padding(.bottom,20)
     }
     
 }
@@ -256,7 +289,7 @@ struct send_withdrawal_button : View {
             .cornerRadius(20)
             Text("aoutMoney").font(.caption)
                 .foregroundColor(Color.violetMenu)
-        }
+        }.padding(.bottom,20)
     }
     
 }
@@ -278,7 +311,7 @@ struct lista: View{
                         let alert = ShowAlert()
                         alert.showAlert(title: "", message: "En proceso")
                     }) {
-                        rowView(user: product).background(Color.cardButtonViewGray)
+                        rowView(user: product).background(Color.colorMain)
                     }
                     
                 }
@@ -346,7 +379,7 @@ struct ShowMainView: View {
 
     var body: some View {
         VStack{
-            mainHead()
+            mainHead().padding(.top, 5)
         }
    }
 }
