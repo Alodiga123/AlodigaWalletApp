@@ -363,18 +363,23 @@ struct rowView : View{
                     .clipShape(Rectangle())
                     .shadow(radius: 5)
                     .frame(width: 50, height: 50)
-            }.padding(.trailing,30).padding(.leading,5)
+            }.padding(.trailing,20).padding(.leading,5)
             
             VStack(alignment: .leading){
                 HStack{
-                    Spacer().overlay(VStack(alignment: .leading){                    Text(user.nombreProducto).foregroundColor(Color.gray)
+                    Spacer().overlay(VStack(alignment: .leading){
+                        
+                        Text(user.nombreProducto).foregroundColor(Color.gray)
                         
                         if (user.nombreProducto == "Tarjeta Prepagada" || user.nombreProducto == "Prepaid Card") {
-                            Text(Constant.defaults.value(forKey: "numberCard") as! String).foregroundColor(Color.gray).font(.caption)
+                       
+                            Text(getCuenta(cuenta: Constant.defaults.value(forKey: "numberCard") as! String)).foregroundColor(Color.gray).font(.caption)
                         }else{
-                            Text(Constant.defaults.value(forKey: "numeroCuenta") as! String).foregroundColor(Color.gray).font(.caption)
+                      
+
+                            Text(getCuenta(cuenta: Constant.defaults.value(forKey: "numeroCuenta") as! String)).foregroundColor(Color.gray).font(.caption)
                         }
-                        
+                     
                         
                     })
                     
@@ -382,13 +387,12 @@ struct rowView : View{
                         
                         if (user.nombreProducto == "Tarjeta Prepagada" || user.nombreProducto == "Prepaid Card") {
                             Spacer()
+                            Spacer()
+
                         }else{
                             Text(user.simbolo + " " + user.saldoActual).foregroundColor(Color.gray)
-                            Text("Alodiga").foregroundColor(Color.gray)
+                            Text("Alodiga").foregroundColor(Color.gray).font(.caption)
                         }
-                       
-                      
-                        
                     })
                 }
             
@@ -399,6 +403,11 @@ struct rowView : View{
         }.frame(width: UIScreen.main.bounds.size.width - 40, height: 70).background(Color.white).cornerRadius(10)
         
     }
+
+    func getCuenta(cuenta : String) -> String {
+     
+        return cuenta.prefix(4) + "*********" + String(cuenta.dropFirst(cuenta.count - 4))
+    }
     
     func getImage(){
         let url = NSURL(string:"http://cdn.businessoffashion.com/site/uploads/2014/09/Karl-Lagerfeld-Self-Portrait-Courtesy.jpg")
@@ -408,6 +417,7 @@ struct rowView : View{
         }
     }
 }
+
 
 struct ShowMainView: View {
     @Binding var showMenu: Bool
