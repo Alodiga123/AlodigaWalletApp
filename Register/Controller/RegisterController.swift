@@ -9,27 +9,36 @@
 import Foundation
 
 public class RegisterController{
-//public extension RegisterController{
     
-    func getContryData(url: String, completion: @escaping([Country])->()){
-        let session = URLSession(configuration: .default)
-    
-        session.dataTask(with: URL(string: url)!){(data, _, err) in
-            if err != nil{
-                print(err?.localizedDescription)
-                print("error=\(String(describing: err))")
-                return
-            }
-    
-            do{
-                let countries = try JSONDecoder().decode(Country.self, from: data!)
-                //completion (countries,nil)
-            }catch{
-                print(error)
-            }
+    func getMessageError(code: String) -> String {
+        switch code {
+        case Constant.WEB_SERVICES_RESPONSE_CODE_DATOS_INVALIDOS:
+            return NSLocalizedString("web_services_response_01", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_CONTRASENIA_EXPIRADA:
+            return NSLocalizedString("web_services_response_03", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_IP_NO_CONFIANZA:
+            return NSLocalizedString("web_services_response_04", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_CREDENCIALES_INVALIDAS:
+            return NSLocalizedString("web_services_response_05", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_BLOQUEADO:
+            return NSLocalizedString("web_services_response_06", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_VALIDACION_INVALIDO:
+            return NSLocalizedString("web_services_response_07", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_SOSPECHOSO:
+            return NSLocalizedString("web_services_response_95", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_PENDIENTE:
+            return NSLocalizedString("web_services_response_96", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_NO_EXISTE:
+            return NSLocalizedString("web_services_response_97", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_ERROR_CREDENCIALES:
+            return NSLocalizedString("web_services_response_98", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_ERROR_INTERNO:
+            return NSLocalizedString("web_services_response_99", comment: "")
+        default:
+            return NSLocalizedString("web_services_response_99", comment: "")
         }
-    }
 
+    }
 
     func getCountry(generarCodigoCountry: AL_GetCountries ,completion: @escaping (_ res:ObjectCountry?, String?) -> Void) {
         
@@ -37,25 +46,13 @@ public class RegisterController{
     
         let countryMovil = AL_GetCountries()
         
-        //Llamada del servicio a utilizar
+        //Llamada del servicio de Paises
         client_RU.opGetCountries(getCountries: countryMovil) { (data, error) in
             
             if error != nil {
                 print("error=\(String(describing: error))")
                 return
             }
-            
-//            func getContryData(url: String, completion:@escaping([JSONData])->()){
-//                let session = URLSession(configuration: .default)
-//
-//                session.dataTask(with: URL(string: url)!){(data, _, err) in
-//                    if err != nil{
-//                        print(err?.localizedDescription)
-//                        print("error=\(String(describing: err))")
-//                        return
-//                    }
-//                }
-//            }
             
             do{
                 var objetResponseCountry: ObjectCountry
@@ -70,6 +67,7 @@ public class RegisterController{
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
                     objetResponseCountry = try JSONDecoder().decode(ObjectCountry.self, from: jsonStr.data(using: .utf8)!)
                     completion(objetResponseCountry, nil)
                 }else{
@@ -83,80 +81,51 @@ public class RegisterController{
         }
     }
     
-    
-//    func getToken(generarCodigoToken:  ,completion: @escaping (_ res:ObjectToken?, String?) -> Void) {
-//
-//        let client_RU = RegistroUnificadoClient()
-//        let tokenMovil = RespuestaNuevoToken()
-//
-//        //Llamada del servicio a utilizar
-//        client_RU.opGetEstadoToken(getEstadoToken: tokenMovil, completionHandler: <#(Data?, NSError?) -> Void#>)
-//        //client_RU.opGetCountries(getCountries: tokenMovil) { (data, error) in
-//
-//            if error != nil {
-//                print("error=\(String(describing: error))")
-//                return
-//            }
-//
-//            do{
-//                var objetResponse: ObjectCountry
-//                var objetResponseError: ObjectErrorCountry
-//
-//                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
-//                print("datastring " + datastring)
-//                let parser = ParseXMLData(xml: datastring)
-//                let jsonStr = parser.parseXML()
-//                print("JSON ---- > ")
-//                print(jsonStr)
-//
-//                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
-//                {
-//                    objetResponse = try JSONDecoder().decode(ObjectCountry.self, from: jsonStr.data(using: .utf8)!)
-//                    completion(objetResponse, nil)
-//                }else{
-//                    objetResponseError = try JSONDecoder().decode(ObjectErrorCountry.self, from: jsonStr.data(using: .utf8)!)
-//                    completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
-//                }
-//
-//            }catch{
-//                print("Error: ")
-//                print(error)
-//            }
-//        }
-//    }
-//
-    
+
+    func getToken(dataToken: RU_GenerarCodigoMovilSMS ,completion: @escaping (_ res:ObjectToken?, String?) -> Void) {
+
+        let client_RU = RegistroUnificadoClient()
+        
+        //Llamada del servicio TOKEN
+        client_RU.opGenerarCodigoMovilSMS(generarCodigoMovilSMS: dataToken) {(data,error) in
+            if error != nil {
+                print("error=\(String(describing: error))")
+                return
+            }
+
+            do{
+                var objetResponse: ObjectToken
+                var objetResponseError: ObjectErrorToken
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON TOKEN ---- > ")
+                print(jsonStr)
+
+                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                {
+                    objetResponse = try JSONDecoder().decode(ObjectToken.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objetResponse, nil)
+                }else{
+                    objetResponseError = try JSONDecoder().decode(ObjectErrorToken.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
+                }
+
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+        }
+    }
     
     func getGuardarUsuario(generarRegistro: GuardarUsuarioAplicacionMovil ,completion: @escaping (_ res:ObjectRegisterUser?, String?) -> Void) {
         
-        let client_RU = RegistroUnificadoClient()
-        let registerAplicacionMovil = GuardarUsuarioAplicacionMovil()
+        let client_RU = RegistroUnificadoClient()    
         
-        registerAplicacionMovil.cpUsuarioApi = "usuarioWS"
-        registerAplicacionMovil.cpPasswordApi = "passwordWS"
-        registerAplicacionMovil.cpUsuarioId = ""
-        registerAplicacionMovil.cpNombre = ""
-        registerAplicacionMovil.cpApellido = ""
-        registerAplicacionMovil.cpCredencial = ""
-        registerAplicacionMovil.cpEmail = "kerwin2821@gmail.com"
-        registerAplicacionMovil.cpMovil = "04142748070"
-        registerAplicacionMovil.cpFechaNacimiento = ""
-        registerAplicacionMovil.cpDireccion = ""
-        registerAplicacionMovil.cpPaisId = ""
-        registerAplicacionMovil.cpEstadoId = ""
-        registerAplicacionMovil.cpCiudadId = ""
-        registerAplicacionMovil.cpCondadoId = ""
-        registerAplicacionMovil.cpCodigoPostal = ""
-        registerAplicacionMovil.cpCodigoValidacionMovil = ""
-        registerAplicacionMovil.cpNombreImagen = ""
-        registerAplicacionMovil.cpImagenBytes = ""
-        registerAplicacionMovil.cpLink = ""
-        registerAplicacionMovil.cpPin = ""
-        
-        //registerAplicacionMovil.cpIp = "192.168.3.20"
-        
-        //Llamada del servicio a utilizar
-        client_RU.opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil: registerAplicacionMovil) {(data,error) in
+        //Llamada del servicio de Guardar Usuarios
+        client_RU.opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil: generarRegistro) {(data,error) in
             
             if error != nil {
                 completion(nil,"90")

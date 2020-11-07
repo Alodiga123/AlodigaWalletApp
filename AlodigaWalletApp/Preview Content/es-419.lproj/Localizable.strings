@@ -73,6 +73,7 @@
 "Welcome" = "Bienvenido";
 "RegisterCompleted" = "Gracias! Su registro a sido completado de forma exitosa. Ya puede comenzar a utilizar nuestros servicios";
 "Enter" = "Ingresar";
+"EnterPhone" = "Introduzca el Teléfono";
 
 //Validar Cuenta
 "AccountValidated" = "Su cuenta se encuentra validada";

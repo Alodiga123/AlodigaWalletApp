@@ -31,7 +31,7 @@ struct BodyToken : Decodable{
     var tokenResponse: TokenResponse
     
     enum CodingKeys: String, CodingKey {
-         case tokenResponse = "ns2:getCountriesResponse"
+         case tokenResponse = "ns2:generarCodigoMovilSMSResponse"
      }
 }
 
@@ -47,43 +47,13 @@ struct TokenResponse: Decodable{
 
 
 struct ReturnToken : Decodable{
-   var fechaHora : String
-   var codigoRespuesta : String
-   //var mensajeRespuesta : MensajeRespuesta
-    var countries : [Country]
+    var fechaHora : String
+    var codigoRespuesta : String
+    var mensajeRespuesta : MensajeRespuesta
     
     enum CodingKeys: String, CodingKey {
          case fechaHora = "fechaHora"
          case codigoRespuesta = "codigoRespuesta"
-         //case mensajeRespuesta = "mensajeRespuesta"
-         case countries = "countries"
+         case mensajeRespuesta = "mensajeRespuesta"
      }
 }
-
-
-struct Token: Decodable{
-    var alternativeName3 : String
-    var code : String
-    var id : String
-    var name : String
-    var shortName : String
-
-    enum CodingKeys: String, CodingKey {
-        case alternativeName3 = "alternativeName3"
-        case code = "code"
-        case id = "id"
-        case name = "name"
-        case shortName = "shortName"
-     }
-}
-
-//func getContryData(url: String, completion:@escaping([JSONData])->()){
-//    let session = URLSession(configuration: .default)
-//
-//    session.dataTask(with: URL(string: url)!){(data, _, err) in
-//        if url != nil{
-//            print(err?.localizedDescription)
-//            return
-//        }
-//    }
-//}

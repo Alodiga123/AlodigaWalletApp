@@ -26,8 +26,15 @@ struct SignUpView: View {
 
 struct SignUpViewAccess: View {
     @State var country: String = ""
-    @State var phone: String = ""
-    @State var isLoggedIn: Bool = false
+    @State var phone: String = "58  "
+    @State var code: String = ""
+    @State var steptwo: Bool = false
+    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.steptwo = true
+        }
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -43,63 +50,63 @@ struct SignUpViewAccess: View {
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     Spacer()
-//                    paises { paises in
-//
-//                    }
                     ListaPaises()
-                    if #available(iOS 14.0, *) {
-                        otraDePicker()
-                    } else {
-                        // Fallback on earlier versions
-                    }
+//                    if #available(iOS 14.0, *) {
+//                        otraDePicker()
+//                    } else {
+//                        // Fallback on earlier versions
+//                    }
                     //OtraListaDePaises()
-                    ////DropDown()
-                    ////CountryRegisterTextField(country: self.$country)
+                    //DropDown()
+                    //CountryRegisterTextField(country: self.$country)
                     PhoneRegisterTextField(phone: self.$phone)
                     NavigationLink(destination: PassByTokenView()) {
                         RegisterContinueButtonContent()
                     }
-                    Button(action: {
-                        
-                        let registerController = RegisterController()
-                        let pais = AL_GetCountries()
-                        let registro = GuardarUsuarioAplicacionMovil()
-                        let loginController = LoginController()
-                        
-                        registerController.getCountry(generarCodigoCountry: pais) { (res,error) in
-                            print("EN LA VISTA!!!!")
-                            if res != nil  {
-                                print(res as Any)
-                                let country: ObjectCountry
-                                country = res! as ObjectCountry
-                                print(country.envelope.body.countryResponse._return.countries)
-                            }
 
-                            if error != nil {
-                                print("EN EL ERROR!!!!")
-                                print(error!)
-                            }
-                        }
-                       
-                        registerController.getGuardarUsuario(generarRegistro: registro){ (res,error) in
-                            print("EN LA VISTA CON EL REGISTRO!!!!")
+                    Button(action: {
+                        let registerController = RegisterController()
+                        let alert = ShowAlert()
+                        let token = RU_GenerarCodigoMovilSMS()
+                        
+                        token.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+                        token.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
+                        token.cpMovil = phone
+                        
+                        print (phone)
+                        
+                        if(phone.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EnterPhone", comment: ""))
+                        }//else{
+//
+//                        }
+                        
+                        //let registro = GuardarUsuarioAplicacionMovil()
+                        //let loginController = LoginController()
+
+                        registerController.getToken(dataToken: token) { (res,error) in
+                            print("EN EL TOKEN!!!!")
                             if res != nil  {
                                 print(res as Any)
-                                let registro: ObjectRegisterUser
-                                registro = res! as ObjectRegisterUser
-                                print(registro.envelope.body.registerMovilResponse._return.fechaHora)
-                                //print(registro.envelope.body.countryResponse._return.countries)
+                                let tokens: ObjectToken
+                                tokens = res! as ObjectToken
+                                print(tokens.envelope.body.tokenResponse._return.mensajeRespuesta)
+                                stepNex()
                             }
                             
                             if error != nil {
-                                print("EN EL ERROR!!!!")
-                                loginController.getMessageErrorLogin(code: error!)
+                                let alert = ShowAlert()
+                                alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
                                 print(error!)
                             }
                         }
-                        
                     }) {
                         RegisterContinueButtonContent()
+                    }
+                    
+                    NavigationLink(destination: PassByTokenView(), isActive:self.$steptwo){
+                    //NavigationLink(destination: PassByTokenView()){
+                        EmptyView()
                     }
                     NavigationLink(destination: MainViewLogged()) {
                         RegisterCancelButtonContent()
@@ -112,28 +119,28 @@ struct SignUpViewAccess: View {
 }
 
 //class prueba {
-    func paises (completion: @escaping ([Country]) -> Void) {
-        let registerController = RegisterController()
-        let pais = AL_GetCountries()
-        //let pa: [Country]
-        
-            registerController.getCountry(generarCodigoCountry: pais) { (res,error) in
-                print("EN LA VISTA!!!!")
-                if res != nil  {
-                    print(res as Any)
-                    let country: ObjectCountry
-                    country = res! as ObjectCountry
-                    let pa: [Country]
-                    pa = country.envelope.body.countryResponse._return.countries as Array<Country>
-                    completion (pa)
-                }
-                
-        //        if error != nil {
-        //            print("EN EL ERROR!!!!")
-        //            print(error!)
-        //        }
-            }
-    }
+//    func paises (completion: @escaping ([Country]) -> Void) {
+//        let registerController = RegisterController()
+//        let pais = AL_GetCountries()
+//        //let pa: [Country]
+//
+//            registerController.getCountry(generarCodigoCountry: pais) { (res,error) in
+//                print("EN LA VISTA!!!!")
+//                if res != nil  {
+//                    print(res as Any)
+//                    let country: ObjectCountry
+//                    country = res! as ObjectCountry
+//                    let pa: [Country]
+//                    pa = country.envelope.body.countryResponse._return.countries as Array<Country>
+//                    completion (pa)
+//                }
+//
+//        //        if error != nil {
+//        //            print("EN EL ERROR!!!!")
+//        //            print(error!)
+//        //        }
+//            }
+//    }
 //}
 
 struct TextLabelSignUp: View {
@@ -182,6 +189,8 @@ struct CountryRegisterTextField: View {
 }
 
 struct PhoneRegisterTextField: View {
+    var json : ObjectCountry? = nil
+    //@Binding var code : String
     @Binding var phone: String
     var body: some View {
         FloatingLabelTextField($phone, placeholder: "Ingrese el número de Teléfono", editingChanged: { (isChanged) in
@@ -237,6 +246,8 @@ struct ListaPaises: View {
     @State private var isExpanded = false
     @State private var selectCountry = "Pais"
     
+    
+
     @State private var selectedCountry: Int = 0
     var body: some View {
         Color.blue
@@ -248,15 +259,25 @@ struct ListaPaises: View {
                 .font(.callout)
                 .foregroundColor(.gray)
                 .padding(.top,10)
+                .padding(.bottom,0)
+            
+           
             if #available(iOS 14.0, *) {
                 DisclosureGroup("\(selectCountry)", isExpanded:$isExpanded){
                     VStack(alignment: .leading) {
                         //Picker(selection: $selectedCountry, label: Text("Pais")) {
                         //Picker("Pais", selection: $selectedCountry) {
-                        //Picker(selection: $selectCountry, label:Text("Pais")){
-                        //ForEach(self.countries, id: \.self) { country in
+                        Picker(selection: self.$selectCountry, label:Text("Pais")){
+
+                        //ForEach(self.countries.sorted(by: >), id: \.self) { country in
+                        //Picker(selection: $countries.indices, label: Text("Country")) {
+                        //ForEach(self.countries.indices, id: \.self) { country in
+
                         ForEach(0..<countries.count, id: \.self) {country in
-                                Text(self.countries[country].alternativeName3)
+                          //  ForEach(0..<countries.count) {country in
+                            Text(self.countries[country].alternativeName3)
+                                .id(country)
+                                .tag(country)
                                     .font(.callout)
                                     .frame(width: 300, alignment: .leading)
                                     .padding(.top,10)
@@ -269,7 +290,7 @@ struct ListaPaises: View {
                                     //Text("\(num)")
                                 //Text(countries[countries])
                                 //litado(country: country)
-                                 
+
     //                            Text(country.description)
     //                                .font(.callout)
     //                                .frame(width: 300, alignment: .leading)
@@ -286,9 +307,9 @@ struct ListaPaises: View {
     ////                                    }
                                // }
                             //
-                                
-                            }
-                        //}
+
+                        }
+                      }
                     }
                 }.accentColor(.white)
                 .font(.callout)
@@ -310,10 +331,8 @@ struct ListaPaises: View {
         let countryMovil = AL_GetCountries()
         
         registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
-            print("EN LA FUNCION!!!!")
             self.jsonCountry = res! as ObjectCountry
             self.countries = res!.envelope.body.countryResponse._return.countries
-            //self.countries = res!.envelope.body.countryResponse._return.countries
         }
     }
 }
@@ -375,13 +394,13 @@ struct OtraListaDePaises: View {
 
    var body: some View {
       VStack {
-        //Form{
+        Section{
         Picker(selection: $selectedFrameworkIndex, label: Text("")) {
             ForEach(0 ..< frameworks.count) {
                Text(self.frameworks[$0])
             }
          }
-       // }
+        }
          Text("Your favorite framework: \(frameworks[selectedFrameworkIndex])")
       }.padding()
    }
