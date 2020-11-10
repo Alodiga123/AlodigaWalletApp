@@ -66,6 +66,66 @@ struct TextLabelTransference: View {
     }
 }
 
+
+struct dropDown : View {
+    @State var expand = false
+    @State var select = "Selecione una opcion"
+    var body: some View{
+        VStack{
+            Spacer()
+            VStack(spacing: 30){
+                HStack{
+                    Text(select).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                        .foregroundColor(.gray)
+                    Spacer()
+                    Image(systemName: expand ? "chevron.up" : "chevron.down")
+                        .resizable()
+                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
+                        .foregroundColor(.gray)
+                        
+                
+                }.frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+                .onTapGesture{
+                    self.expand.toggle()
+                }
+                if expand {
+                    Button(action: {
+                        print("1")
+                        select = "Profile"
+                        self.expand.toggle()
+                    }) {
+                        Text("Profile").padding(10)
+                    }.foregroundColor(.gray)
+                    .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+                 
+                    Button(action: {
+                        print("2")
+                        select = "Profile2"
+                        self.expand.toggle()
+                    }) {
+                        Text("Profile2").padding(10)
+                    }.foregroundColor(.gray)
+                    .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+                    
+                    Button(action: {
+                        print("3")
+                        select = "Profile3"
+                        self.expand.toggle()
+                    }) {
+                        Text("Profile3").padding(10)
+                    }.foregroundColor(.gray)
+                    .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+                }
+            }.padding()
+            //.background(LinearGradient(gradient: .init(colors: [.blue, .purple]), startPoint: .top, endPoint: .bottom))
+            .background(Color.colorMain)
+            .cornerRadius(15)
+            .shadow(color: .gray, radius: 5)
+            .animation(.spring())
+        }
+    }
+}
+
 struct TextLabelCurrency: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
@@ -74,6 +134,8 @@ struct TextLabelCurrency: View {
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(.gray)
                 .padding()
+            
+            dropDown()
         }
     }
 }
