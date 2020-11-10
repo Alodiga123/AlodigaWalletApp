@@ -155,15 +155,19 @@ struct FirstView: View {
     //var products = Manager()
     @State var products : [ListadoProductos] = []
     @State var expand = false
-
+    @State var separador: String = ""
     var body: some View {
 
         VStack {
             Button(action: {
                 self.isSheetOpened.toggle()
+                
+                if (selectedProduct.simbolo != nil){separador = " - " }
             }) {
                 //Text("Add item from sheet")
-                Text("\(selectedProduct.nombreProducto + " " + selectedProduct.simbolo + " - " + selectedProduct.saldoActual )").fontWeight(.bold)
+              
+                
+                Text("\(selectedProduct.nombreProducto + " " + selectedProduct.simbolo + separador + selectedProduct.saldoActual )").fontWeight(.bold)
                         .foregroundColor(.gray)
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
