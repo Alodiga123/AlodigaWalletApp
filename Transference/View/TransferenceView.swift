@@ -69,86 +69,6 @@ struct TextLabelTransference: View {
     }
 }
 
-
-struct dropDown : View {
-    @State var products : [ListadoProductos]
-    @State var expand = false
-    @State var select = "Selecione una opcion"
-    var body: some View{
-        VStack{
-            Spacer()
-            VStack(spacing: 30){
-                HStack{
-                    Text(select).fontWeight(.bold)
-                        .foregroundColor(.gray)
-                    Spacer()
-                    Image(systemName: expand ? "chevron.up" : "chevron.down")
-                        .resizable()
-                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
-                        .foregroundColor(.gray)
-                        
-                
-                }.frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-                .onTapGesture{
-                    self.expand.toggle()
-                }
-                if expand {
-                    ForEach(0..<self.products.count, id: \.self) {index in
-                        
-                        let texto = self.products[index].nombreProducto.trimmingCharacters(in: .whitespacesAndNewlines) + " " + self.products[index].simbolo.trimmingCharacters(in: .whitespacesAndNewlines) + " - " + self.products[index].saldoActual.trimmingCharacters(in: .whitespacesAndNewlines)
-                        
-                        Button(action: {
-                            print(self.products[index].nombreProducto)
-                            select = texto
-                            Constant.defaults.set(index, forKey: "IndexProductSelectedTransference")
-                            self.expand.toggle()
-                        }) {
-                            
-                            Text(texto).padding(10)
-                        }.foregroundColor(.gray)
-                        .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-                    }
-                    
-                }
-            }.padding()
-            //.background(LinearGradient(gradient: .init(colors: [.blue, .purple]), startPoint: .top, endPoint: .bottom))
-            .background(Color.colorMain)
-            .cornerRadius(15)
-            .shadow(color: .gray, radius: 5)
-            .animation(.spring())
-        }
-    }
-}
-
-struct Product : Hashable {
-
-  var name : String
-    
-  init(name: String) {
-    self.name = name
-  }
-
-  func hash(into hasher: inout Hasher) {
-    hasher.combine(name)
-  }
-}
-
-
-class Manager {
-
-  var product : [Product] = []
-
-  init() {
-
-
-    let pencil = Product(name: "Pencil")
-    let eraser = Product(name: "Eraser")
-    let ruler = Product(name: "Notebook")
-
-    product = [pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler]
-
-  }
-}
 struct FirstView: View {
     @State var isSheetOpened = false
     @State var selectedProduct = ListadoProductos()
@@ -162,13 +82,12 @@ struct FirstView: View {
             Button(action: {
                 self.isSheetOpened.toggle()
                 
-                if (selectedProduct.simbolo != nil){separador = " - " }
+                if (selectedProduct.simbolo != nil){ separador = " - " }
             }) {
-                //Text("Add item from sheet")
-              
                 
                 Text("\(selectedProduct.nombreProducto + " " + selectedProduct.simbolo + separador + selectedProduct.saldoActual )").fontWeight(.bold)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.gray).font(.callout)                .frame(width: 340, alignment: .leading)
+                
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
                         .resizable()
@@ -176,7 +95,12 @@ struct FirstView: View {
                         .foregroundColor(.gray)
                         
                 
-                }.frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+            }
+            .padding(10)
+            .cornerRadius(10)
+            .clipShape(Rectangle())
+            
+            .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
            
             .sheet(isPresented: self.$isSheetOpened) {
                 Sheet(products: self.products, isSheetOpened: self.isSheetOpened, selectedProduct: self.$selectedProduct)
@@ -215,10 +139,13 @@ struct Sheet: View {
                         self.selectedProduct = index
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Text(index.nombreProducto + " " + index.simbolo + " - " + index.saldoActual)
+                        Text(index.nombreProducto + " " + index.simbolo + " - " + index.saldoActual).fontWeight(.bold)
+                            .foregroundColor(.gray).font(.callout)                .frame(width: 340, alignment: .leading)
+
+                        
                     }
                 }
-            }
+            }.colorMultiply(Color.cardButtonViewGray)
         }
     }
 }
@@ -236,8 +163,6 @@ struct TextLabelCurrency: View {
                 .foregroundColor(.gray)
                 .padding()
             FirstView()
-            //dropDown(products: products).onAppear(
-            //)
         }
     }
     
