@@ -137,12 +137,20 @@ struct AplicacionesLogin: Decodable{
      }
 }
 
-struct ListadoProductos: Identifiable, Decodable{
+struct ListadoProductos: Identifiable, Decodable, Hashable {
    var id : String
    var isPayTopUP : String
     var nombreProducto : String
     var saldoActual : String
     var simbolo : String
+    
+    init( ) {
+      self.nombreProducto = "Seleccione una opcion"
+        self.id = ""
+        self.isPayTopUP  = ""
+        self.saldoActual  = ""
+        self.simbolo  = ""
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -151,6 +159,14 @@ struct ListadoProductos: Identifiable, Decodable{
         case saldoActual = "saldoActual"
         case simbolo = "simbolo"
      }
+    
+    func hash(into hasher: inout Hasher) {
+      hasher.combine(id)
+     hasher.combine(isPayTopUP)
+        hasher.combine(nombreProducto)
+        hasher.combine(saldoActual)
+        hasher.combine(simbolo)
+    }
 }
 
 

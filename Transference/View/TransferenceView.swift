@@ -123,7 +123,7 @@ struct dropDown : View {
 struct Product : Hashable {
 
   var name : String
-
+    
   init(name: String) {
     self.name = name
   }
@@ -151,8 +151,9 @@ class Manager {
 }
 struct FirstView: View {
     @State var isSheetOpened = false
-    @State var selectedProduct: String = "Selecione una opcion"
-    var products = Manager()
+    @State var selectedProduct = ListadoProductos()
+    //var products = Manager()
+    @State var products : [ListadoProductos] = []
     @State var expand = false
 
     var body: some View {
@@ -162,7 +163,7 @@ struct FirstView: View {
                 self.isSheetOpened.toggle()
             }) {
                 //Text("Add item from sheet")
-                Text("\(selectedProduct)").fontWeight(.bold)
+                Text("\(selectedProduct.nombreProducto + " " + selectedProduct.simbolo + " - " + selectedProduct.saldoActual )").fontWeight(.bold)
                         .foregroundColor(.gray)
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
@@ -178,25 +179,39 @@ struct FirstView: View {
             }
             
             //Text("\(selectedProduct)")
+        }.onAppear(
+            perform: getJSONLogin
+        )
+    }
+    func getJSONLogin() {
+        var objetResponse: ObjectLogin
+        let str: String = Constant.defaults.value(forKey: "jsonLogin") as! String
+        do {
+            objetResponse = try JSONDecoder().decode(ObjectLogin.self, from: str.data(using: .utf8)!)
+            print("OBJETO DECODE")
+            print(objetResponse)
+            self.products = objetResponse.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos
+        } catch  {
+            print("Error: decodificando json")
         }
     }
 }
 
 struct Sheet: View {
-    var products : Manager
+    var products : [ListadoProductos]
     var isSheetOpened : Bool
-    @Binding var selectedProduct: String
+    @Binding var selectedProduct: ListadoProductos
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
             List {
-                ForEach(self.products.product, id: \.self) { index in
+                ForEach(self.products, id: \.self) { index in
                     Button(action: {
-                        self.selectedProduct = index.name
+                        self.selectedProduct = index
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Text(index.name)
+                        Text(index.nombreProducto + " " + index.simbolo + " - " + index.saldoActual)
                     }
                 }
             }
