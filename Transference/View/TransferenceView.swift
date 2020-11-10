@@ -42,6 +42,9 @@ struct TransferenceViewAccess: View {
                         }.padding(.leading,20)
                          .padding(.trailing,20)
                         TextLabelCurrency()
+                        
+                        
+                        
                         TextLabelUserR()
                         EmailTextField(user: self.$user)
                         NavigationLink(destination: TargetCustomerView()) {
@@ -68,6 +71,7 @@ struct TextLabelTransference: View {
 
 
 struct dropDown : View {
+    @State var products : [ListadoProductos]
     @State var expand = false
     @State var select = "Selecione una opcion"
     var body: some View{
@@ -75,8 +79,8 @@ struct dropDown : View {
             Spacer()
             VStack(spacing: 30){
                 HStack{
-                    Text(select).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                        .foregroundColor(.gray)
+                    Text(select).fontWeight(.bold)
+                        .foregroundColor(.gray)
                     Spacer()
                     Image(systemName: expand ? "chevron.up" : "chevron.down")
                         .resizable()
@@ -89,32 +93,22 @@ struct dropDown : View {
                     self.expand.toggle()
                 }
                 if expand {
-                    Button(action: {
-                        print("1")
-                        select = "Profile"
-                        self.expand.toggle()
-                    }) {
-                        Text("Profile").padding(10)
-                    }.foregroundColor(.gray)
-                    .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-                 
-                    Button(action: {
-                        print("2")
-                        select = "Profile2"
-                        self.expand.toggle()
-                    }) {
-                        Text("Profile2").padding(10)
-                    }.foregroundColor(.gray)
-                    .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+                    ForEach(0..<self.products.count, id: \.self) {index in
+                        
+                        let texto = self.products[index].nombreProducto.trimmingCharacters(in: .whitespacesAndNewlines) + " " + self.products[index].simbolo.trimmingCharacters(in: .whitespacesAndNewlines) + " - " + self.products[index].saldoActual.trimmingCharacters(in: .whitespacesAndNewlines)
+                        
+                        Button(action: {
+                            print(self.products[index].nombreProducto)
+                            select = texto
+                            Constant.defaults.set(index, forKey: "IndexProductSelectedTransference")
+                            self.expand.toggle()
+                        }) {
+                            
+                            Text(texto).padding(10)
+                        }.foregroundColor(.gray)
+                        .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+                    }
                     
-                    Button(action: {
-                        print("3")
-                        select = "Profile3"
-                        self.expand.toggle()
-                    }) {
-                        Text("Profile3").padding(10)
-                    }.foregroundColor(.gray)
-                    .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
                 }
             }.padding()
             //.background(LinearGradient(gradient: .init(colors: [.blue, .purple]), startPoint: .top, endPoint: .bottom))
@@ -126,7 +120,95 @@ struct dropDown : View {
     }
 }
 
+struct Product : Hashable {
+
+  var name : String
+
+  init(name: String) {
+    self.name = name
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(name)
+  }
+}
+
+
+class Manager {
+
+  var product : [Product] = []
+
+  init() {
+
+
+    let pencil = Product(name: "Pencil")
+    let eraser = Product(name: "Eraser")
+    let ruler = Product(name: "Notebook")
+
+    product = [pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler, pencil, eraser, ruler]
+
+  }
+}
+struct FirstView: View {
+    @State var isSheetOpened = false
+    @State var selectedProduct: String = "Selecione una opcion"
+    var products = Manager()
+    @State var expand = false
+
+    var body: some View {
+
+        VStack {
+            Button(action: {
+                self.isSheetOpened.toggle()
+            }) {
+                //Text("Add item from sheet")
+                Text("\(selectedProduct)").fontWeight(.bold)
+                        .foregroundColor(.gray)
+                    Spacer()
+                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
+                        .resizable()
+                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
+                        .foregroundColor(.gray)
+                        
+                
+                }.frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+           
+            .sheet(isPresented: self.$isSheetOpened) {
+                Sheet(products: self.products, isSheetOpened: self.isSheetOpened, selectedProduct: self.$selectedProduct)
+            }
+            
+            //Text("\(selectedProduct)")
+        }
+    }
+}
+
+struct Sheet: View {
+    var products : Manager
+    var isSheetOpened : Bool
+    @Binding var selectedProduct: String
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack {
+            List {
+                ForEach(self.products.product, id: \.self) { index in
+                    Button(action: {
+                        self.selectedProduct = index.name
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text(index.name)
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 struct TextLabelCurrency: View {
+    @State var products : [ListadoProductos] = []
+    @State var jsonLogin : ObjectLogin?
+    
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
             Text("CurrencyTransfer")
@@ -134,8 +216,24 @@ struct TextLabelCurrency: View {
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(.gray)
                 .padding()
-            
-            dropDown()
+            FirstView()
+            //dropDown(products: products).onAppear(
+            //)
+        }
+    }
+    
+    func getJSONLogin() {
+        var objetResponse: ObjectLogin
+        let str: String = Constant.defaults.value(forKey: "jsonLogin") as! String
+        do {
+            objetResponse = try JSONDecoder().decode(ObjectLogin.self, from: str.data(using: .utf8)!)
+            print("OBJETO DECODE")
+            print(objetResponse)
+
+            self.jsonLogin = objetResponse
+            self.products = objetResponse.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos
+        } catch  {
+            print("Error: decodificando json")
         }
     }
 }
