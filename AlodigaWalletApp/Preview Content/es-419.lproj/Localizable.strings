@@ -47,6 +47,8 @@
 "Summary" = "Resumen";
 "Confirmation" = "Confirmación";
 "LogIn" = "Iniciar sesión";
+"PassSent" = "Debe Ingresar la clave enviada";
+"KeyNotMatch" = "La clave no coincide con la enviada";
 
 //Menu
 "Recharge" = "Recargar";
@@ -74,6 +76,7 @@
 "RegisterCompleted" = "Gracias! Su registro a sido completado de forma exitosa. Ya puede comenzar a utilizar nuestros servicios";
 "Enter" = "Ingresar";
 "EnterPhone" = "Introduzca el Teléfono";
+"EmptyFields" = "Existen campos vacios";
 
 //Validar Cuenta
 "AccountValidated" = "Su cuenta se encuentra validada";
@@ -174,6 +177,7 @@
 "web_services_response_04" = "La IP no es de confianza";
 "web_services_response_05" = "Las credenciales son inválidas";
 "web_services_response_06" = "Usuario bloqueado";
+"web_services_response_07" = "Error interno usuario";
 "web_services_response_95" = "Usuario sospecho";
 "web_services_response_96" = "Usuario pendiente";
 "web_services_response_97" = "El usuario no existe";

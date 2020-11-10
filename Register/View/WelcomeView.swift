@@ -76,6 +76,7 @@ struct TextLabelStart: View {
     var body: some View {
         Text("RegisterCompleted")
             .font(.body)
+            //.font(.system(size: 100.0, weight: .light, design: .monospaced))
             .foregroundColor(.gray)
             .padding(.leading,28)
             .padding(.trailing,28)

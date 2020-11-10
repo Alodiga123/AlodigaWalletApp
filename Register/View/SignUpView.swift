@@ -26,7 +26,7 @@ struct SignUpView: View {
 
 struct SignUpViewAccess: View {
     @State var country: String = ""
-    @State var phone: String = "58  "
+    @State var phone: String = "58"
     @State var code: String = ""
     @State var steptwo: Bool = false
     
@@ -60,9 +60,9 @@ struct SignUpViewAccess: View {
                     //DropDown()
                     //CountryRegisterTextField(country: self.$country)
                     PhoneRegisterTextField(phone: self.$phone)
-                    NavigationLink(destination: PassByTokenView()) {
-                        RegisterContinueButtonContent()
-                    }
+//                    NavigationLink(destination: PassByTokenView()) {
+//                        RegisterContinueButtonContent()
+//                    }
 
                     Button(action: {
                         let registerController = RegisterController()
@@ -77,27 +77,24 @@ struct SignUpViewAccess: View {
                         
                         if(phone.isEmpty){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EnterPhone", comment: ""))
-                        }//else{
-//
-//                        }
-                        
-                        //let registro = GuardarUsuarioAplicacionMovil()
-                        //let loginController = LoginController()
-
-                        registerController.getToken(dataToken: token) { (res,error) in
-                            print("EN EL TOKEN!!!!")
-                            if res != nil  {
-                                print(res as Any)
-                                let tokens: ObjectToken
-                                tokens = res! as ObjectToken
-                                print(tokens.envelope.body.tokenResponse._return.mensajeRespuesta)
-                                stepNex()
-                            }
-                            
-                            if error != nil {
-                                let alert = ShowAlert()
-                                alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
-                                print(error!)
+                        }else{
+                            registerController.getToken(dataToken: token) { (res,error) in
+                                print("EN EL TOKEN!!!!")
+                                if res != nil  {
+                                    print(res as Any)
+                                    let tokens: ObjectToken
+                                    tokens = res! as ObjectToken
+                                    print(tokens.envelope.body.tokenResponse._return.datosRespuesta)
+                                    
+                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
+                                    stepNex()
+                                }
+                                
+                                if error != nil {
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
+                                    print(error!)
+                                }
                             }
                         }
                     }) {
@@ -117,31 +114,6 @@ struct SignUpViewAccess: View {
         }
     }
 }
-
-//class prueba {
-//    func paises (completion: @escaping ([Country]) -> Void) {
-//        let registerController = RegisterController()
-//        let pais = AL_GetCountries()
-//        //let pa: [Country]
-//
-//            registerController.getCountry(generarCodigoCountry: pais) { (res,error) in
-//                print("EN LA VISTA!!!!")
-//                if res != nil  {
-//                    print(res as Any)
-//                    let country: ObjectCountry
-//                    country = res! as ObjectCountry
-//                    let pa: [Country]
-//                    pa = country.envelope.body.countryResponse._return.countries as Array<Country>
-//                    completion (pa)
-//                }
-//
-//        //        if error != nil {
-//        //            print("EN EL ERROR!!!!")
-//        //            print(error!)
-//        //        }
-//            }
-//    }
-//}
 
 struct TextLabelSignUp: View {
     var body: some View {
@@ -238,7 +210,7 @@ struct ListaPaises: View {
     let co = Color.black.opacity(0.1)
     //var listCountries = ["VENEZUELA", "AFGANISTAN", "ALBANIA"]
     let registerController = RegisterController()
-    let pais = AL_GetCountries()
+    //let pais = AL_GetCountries()
     
     @State var countries : [Country] = []
     @State var jsonCountry : ObjectCountry?
@@ -284,6 +256,8 @@ struct ListaPaises: View {
                                     .padding(.bottom,5)
                                     .padding(.leading,0)
                                     .foregroundColor(.blue)
+                            
+                            //Constant.defaults.setValue(self.countries[country].code, forKey: "code")
                             //ForEach(countries, id: \.self) { countries in
                             //ForEach(0 ..< listCountries.count) {_ in
                                 //ForEach(1...3,id: \.self){num in

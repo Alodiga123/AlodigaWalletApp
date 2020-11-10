@@ -49,11 +49,17 @@ struct TokenResponse: Decodable{
 struct ReturnToken : Decodable{
     var fechaHora : String
     var codigoRespuesta : String
-    var mensajeRespuesta : MensajeRespuesta
+    var mensajeRespuesta : MensajeRespuestaToken
+    var datosRespuesta : String
     
     enum CodingKeys: String, CodingKey {
-         case fechaHora = "fechaHora"
-         case codigoRespuesta = "codigoRespuesta"
-         case mensajeRespuesta = "mensajeRespuesta"
+        case fechaHora = "fechaHora"
+        case codigoRespuesta = "codigoRespuesta"
+        case mensajeRespuesta = "mensajeRespuesta"
+        case datosRespuesta = "datosRespuesta"
      }
+}
+
+struct MensajeRespuestaToken: Decodable{
+    
 }

@@ -27,13 +27,14 @@ struct PassByTokenViewAccess: View {
     @State var token: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
-    @State var isLoggedIn: Bool = false
+    @State var stepThree: Bool = false
     
-    func login(){
+    func stepNex(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
-            self.isLoggedIn = true
+            self.stepThree = true
         }
     }
+    
     var body: some View{
         GeometryReader { geometry in
             ZStack{
@@ -50,9 +51,30 @@ struct PassByTokenViewAccess: View {
                     TimerCounter2()
                     TimerCounterValue2()
                     RegisterTokenTextField(token: self.$token)
-                    NavigationLink(destination: FormSignUpView()) {
+//                    NavigationLink(destination: FormSignUpView()) {
+//                        RegisterContinueButtonContent()
+//                    }
+                    
+                    Button(action: {
+                        let alert = ShowAlert()
+                        
+                        if(token.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("PassSent", comment: ""))
+                        }else{
+                            if ((Constant.defaults.value(forKey: "token") as! String) !=  token){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
+                            }else {
+                                stepNex()
+                            }
+                        }
+                    }) {
                         RegisterContinueButtonContent()
                     }
+                    
+                    NavigationLink(destination: FormSignUpView(), isActive:self.$stepThree){
+                        EmptyView()
+                    }
+                    
                     NavigationLink(destination: MainViewLogged()) {
                         RegisterCancelButtonContent()
                     }
