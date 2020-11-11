@@ -77,6 +77,8 @@
 		46DBC48A251287DF008D42B3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC489251287DF008D42B3 /* SignUpView.swift */; };
 		46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC48B25128804008D42B3 /* WelcomeView.swift */; };
 		BA1B8B8325545277002A6892 /* remittancesStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B8B8225545277002A6892 /* remittancesStep1.swift */; };
+		BA1B8B90255C1101002A6892 /* SpinnerCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B8B8F255C1101002A6892 /* SpinnerCurrency.swift */; };
+		BA1B8B95255C11B2002A6892 /* SpinnerOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B8B94255C11B2002A6892 /* SpinnerOption.swift */; };
 		BA647E1925406E0200598944 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA647E1825406E0200598944 /* ShowAlert.swift */; };
 		BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */; };
 		BAE1E9B6252BA9D5007F9CD6 /* ObjetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */; };
@@ -189,6 +191,8 @@
 		46DBC489251287DF008D42B3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		46DBC48B25128804008D42B3 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BA1B8B8225545277002A6892 /* remittancesStep1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remittancesStep1.swift; sourceTree = "<group>"; };
+		BA1B8B8F255C1101002A6892 /* SpinnerCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCurrency.swift; sourceTree = "<group>"; };
+		BA1B8B94255C11B2002A6892 /* SpinnerOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerOption.swift; sourceTree = "<group>"; };
 		BA647E1825406E0200598944 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroUnificadoClient.swift; sourceTree = "<group>"; };
 		BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjetError.swift; sourceTree = "<group>"; };
@@ -595,6 +599,8 @@
 				46DBC47B2512866C008D42B3 /* ConfirmationView.swift */,
 				46DBC47F251286C4008D42B3 /* SuccesfulTransactionView.swift */,
 				46DBC46C250BF506008D42B3 /* Transference2View.swift */,
+				BA1B8B8F255C1101002A6892 /* SpinnerCurrency.swift */,
+				BA1B8B94255C11B2002A6892 /* SpinnerOption.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -848,6 +854,7 @@
 				46870D642502825400984049 /* ExtensionColor.swift in Sources */,
 				BA647E1925406E0200598944 /* ShowAlert.swift in Sources */,
 				46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */,
+				BA1B8B90255C1101002A6892 /* SpinnerCurrency.swift in Sources */,
 				46870D62250281AF00984049 /* Constans.swift in Sources */,
 				04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */,
 				043FEC93251BFD5B005C518B /* SuccesfulRecoverView.swift in Sources */,
@@ -875,6 +882,7 @@
 				04D6DA7F251A98630053125C /* TakePhotoView.swift in Sources */,
 				04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */,
 				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
+				BA1B8B95255C11B2002A6892 /* SpinnerOption.swift in Sources */,
 				BAE1EA5A252E0545007F9CD6 /* AlodigaClient.swift in Sources */,
 				0422338B251551F600AEB65F /* TopUpView.swift in Sources */,
 				BAE1E9F1252BC687007F9CD6 /* ParseXMLData.swift in Sources */,
