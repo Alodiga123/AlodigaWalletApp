@@ -30,12 +30,21 @@ struct TargetCustomerViewAccess: View {
     @State var concept: String = ""
     let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Origen"]
     let label2 = ["Monto", "Concepto"]
+   
+    
     
     var body: some View {
         ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack (alignment: .center, spacing: 5) {
+                    
+                        
+                        let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
+
+                        
+                        Text("Prueba OJOOO  " + currencySelect["nombreProducto"]!)
+                        
                         Rectangle()
                             .frame(width:50, height: 6)
                             .cornerRadius(3.0)

@@ -137,6 +137,15 @@ struct Sheet: View {
                 ForEach(self.products, id: \.self) { index in
                     Button(action: {
                         self.selectedProduct = index
+                        
+                        let currencySelected = ["id" : index.id,
+                                    "isPayTopUP" : index.isPayTopUP,
+                                    "nombreProducto" : index.nombreProducto,
+                                    "saldoActual" : index.saldoActual,
+                                    "simbolo" : index.simbolo]
+                        Constant.defaults.set(currencySelected, forKey: "currencySelected")
+
+                      
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Text(index.nombreProducto + " " + index.simbolo + " - " + index.saldoActual).fontWeight(.bold)
@@ -154,7 +163,9 @@ struct Sheet: View {
 struct TextLabelCurrency: View {
     @State var products : [ListadoProductos] = []
     @State var jsonLogin : ObjectLogin?
-    
+    var line: some View {
+        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,5).frame(width: 340, alignment: .center)
+       }
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
             Text("CurrencyTransfer")
@@ -163,6 +174,7 @@ struct TextLabelCurrency: View {
                 .foregroundColor(.gray)
                 .padding()
             FirstView()
+            line
         }
     }
     
