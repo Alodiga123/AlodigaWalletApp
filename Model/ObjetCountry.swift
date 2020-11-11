@@ -61,12 +61,36 @@ struct ReturnCountry : Decodable{
 }
 
 
-struct Country: Identifiable, Decodable{
+//struct Country: Identifiable, Decodable{
+//    var alternativeName3 : String
+//    var code : String
+//    var id : String
+//    var name : String
+//    var shortName : String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case alternativeName3 = "alternativeName3"
+//        case code = "code"
+//        case id = "id"
+//        case name = "name"
+//        case shortName = "shortName"
+//     }
+//}
+
+struct Country: Identifiable, Decodable, Hashable{
     var alternativeName3 : String
     var code : String
     var id : String
     var name : String
     var shortName : String
+    
+    init( ) {
+        self.alternativeName3 = "Seleccione una opcion"
+        self.code  = ""
+        self.id  = ""
+        self.name  = ""
+        self.shortName = ""
+    }
 
     enum CodingKeys: String, CodingKey {
         case alternativeName3 = "alternativeName3"
@@ -75,7 +99,49 @@ struct Country: Identifiable, Decodable{
         case name = "name"
         case shortName = "shortName"
      }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(alternativeName3)
+        hasher.combine(code)
+        hasher.combine(id)
+        hasher.combine(name)
+        hasher.combine(shortName)
+    }
 }
+
+/*
+ struct ListadoProductos: Identifiable, Decodable, Hashable {
+    var id : String
+    var isPayTopUP : String
+     var nombreProducto : String
+     var saldoActual : String
+     var simbolo : String
+     
+     init( ) {
+         self.nombreProducto = "Seleccione una opcion"
+         self.id = ""
+         self.isPayTopUP  = ""
+         self.saldoActual  = ""
+         self.simbolo  = ""
+     }
+     
+     enum CodingKeys: String, CodingKey {
+         case id = "id"
+         case isPayTopUP = "isPayTopUP"
+         case nombreProducto = "nombreProducto"
+         case saldoActual = "saldoActual"
+         case simbolo = "simbolo"
+      }
+     
+     func hash(into hasher: inout Hasher) {
+       hasher.combine(id)
+      hasher.combine(isPayTopUP)
+         hasher.combine(nombreProducto)
+         hasher.combine(saldoActual)
+         hasher.combine(simbolo)
+     }
+ }
+ */
 
 struct MensajeRespuesta: Decodable{
     

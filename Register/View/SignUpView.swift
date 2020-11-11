@@ -50,7 +50,8 @@ struct SignUpViewAccess: View {
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     Spacer()
-                    ListaPaises()
+                    TextLabelPais()
+                    //ListaPaises()
 //                    if #available(iOS 14.0, *) {
 //                        otraDePicker()
 //                    } else {
@@ -205,6 +206,105 @@ struct RegisterCancelButtonContent: View {
             .padding(.bottom)
     }
 }
+
+
+struct CountryList: View {
+    @State var isSheetOpened = false
+    @State var selectedCountry = Country()
+    @State var countries : [Country] = []
+    @State var expand = false
+    @State var separador: String = ""
+    @State var jsonCountry : ObjectCountry?
+    var body: some View {
+
+        VStack {
+            Button(action: {
+                self.isSheetOpened.toggle()
+                if (selectedCountry.code != nil){
+                    separador = " - "
+                }
+                //if (selectedProduct.simbolo != nil){separador = " - " }
+            }) {
+                Text("\(selectedCountry.alternativeName3)")
+                    .fontWeight(.bold)
+                    .foregroundColor(.gray)
+                
+                    Spacer()
+                
+                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
+                        .resizable()
+                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
+                        .foregroundColor(.gray)
+                }.frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+           
+            .sheet(isPresented: self.$isSheetOpened) {
+                paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
+                //paises(products: self.products, isSheetOpened: self.isSheetOpened, selectedProduct: self.$selectedProduct)
+            }
+        }.onAppear(
+            perform: getJSONCountry
+        )
+    }
+    
+    func getJSONCountry() {
+        let registerController = RegisterController()
+        let countryMovil = AL_GetCountries()
+        
+        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
+            self.jsonCountry = res! as ObjectCountry
+            self.countries = res!.envelope.body.countryResponse._return.countries
+        }
+    }
+}
+
+struct paises: View {
+    var countries : [Country]
+    var isSheetOpened : Bool
+    @Binding var selectedCountry: Country
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack {
+            List {
+                ForEach(self.countries, id: \.self) { index in
+                    Button(action: {
+                        self.selectedCountry = index
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text(index.alternativeName3)
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct TextLabelPais: View {
+    @State var countries : [Country] = []
+    @State var jsonCountry : ObjectCountry?
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text("SelectCountry")
+                .font(.callout)
+                .frame(width: 340, alignment: .leading)
+                .foregroundColor(.gray)
+                .padding()
+            CountryList()
+        }
+    }
+    
+    func getJSONCountry() {
+        let registerController = RegisterController()
+        let countryMovil = AL_GetCountries()
+        
+        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
+            self.jsonCountry = res! as ObjectCountry
+            self.countries = res!.envelope.body.countryResponse._return.countries
+        }
+    }
+}
+
 
 struct ListaPaises: View {
     let co = Color.black.opacity(0.1)
