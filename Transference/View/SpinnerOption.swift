@@ -34,9 +34,9 @@ class Manager {
   init() {
 
 
-    let cel = optionTransference(name: "forEmail", id: "1")
-    let qr = optionTransference(name: "forPhone", id: "2")
-    let email = optionTransference(name: "forQr", id: "3")
+    let cel = optionTransference(name: NSLocalizedString("forEmail", comment: ""), id: "0")
+    let qr = optionTransference(name: NSLocalizedString("forPhone", comment: ""), id: "1")
+    let email = optionTransference(name: NSLocalizedString("forQr", comment: ""), id: "2")
 
     option = [cel, qr, email]
 
@@ -45,7 +45,7 @@ class Manager {
 
 struct FirstViewSpinnerOption: View {
     @State var isSheetOpened = false
-    @State var selectedProduct = optionTransference(name: "Seleccione una opcion", id: "0")
+    @State var selectedProduct = optionTransference(name: NSLocalizedString("forEmail", comment: ""), id: "0")
     //var products = Manager()
     @State var options = Manager()
     @State var expand = false

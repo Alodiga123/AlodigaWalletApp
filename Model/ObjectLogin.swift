@@ -144,8 +144,8 @@ struct ListadoProductos: Identifiable, Decodable, Hashable {
     var saldoActual : String
     var simbolo : String
     
-    init( ) {
-      self.nombreProducto = "Seleccione una opcion"
+    init() {
+      self.nombreProducto = ""
         self.id = ""
         self.isPayTopUP  = ""
         self.saldoActual  = ""

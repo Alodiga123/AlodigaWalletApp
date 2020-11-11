@@ -74,7 +74,7 @@ struct TextLabelCurrency: View {
     @State var products : [ListadoProductos] = []
     @State var jsonLogin : ObjectLogin?
     var line: some View {
-        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,5).frame(width: 340, alignment: .center)
+        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,10).frame(width: 380, alignment: .center)
        }
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
@@ -92,7 +92,7 @@ struct TextLabelCurrency: View {
 
 struct TextLabelUserR: View {
     var line: some View {
-        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,5).frame(width: 340, alignment: .center)
+        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,10).frame(width: 380, alignment: .center)
        }
     var body: some View {
         Text("SearchCriteria")

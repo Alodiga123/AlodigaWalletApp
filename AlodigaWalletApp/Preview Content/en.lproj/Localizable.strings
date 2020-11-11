@@ -189,3 +189,10 @@
 "aoutMoney" = "Remove";
 "menu_transfer" = "To transfer";
 "reload" ="Reload";
+
+//Transference
+"forEmail" = "By email";
+"forPhone" = "By phone number";
+"forQr" = "By QR code";
+"scanQr" = "QR Scan";
+

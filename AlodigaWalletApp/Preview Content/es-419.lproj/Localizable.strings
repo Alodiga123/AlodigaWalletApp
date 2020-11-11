@@ -191,4 +191,11 @@
 "reload" ="Recargar";
 
 
+//Transference
+"forEmail" = "Por email";
+"forPhone" = "Por número Teléfono";
+"forQr" = "Por codigo QR";
+"scanQr" = "Escanear QR";
+
+
 

@@ -13,19 +13,17 @@ import SwiftUI
 
 struct FirstView: View {
     @State var isSheetOpened = false
-    @State var selectedProduct = ListadoProductos()
     //var products = Manager()
     @State var products : [ListadoProductos] = []
+    @State var selectedProduct = ListadoProductos()
     @State var expand = false
-    @State var separador: String = ""
+    @State var separador: String = " - "
     var body: some View {
 
         VStack {
             Button(action: {
                 self.isSheetOpened.toggle()
-                
-                if (selectedProduct.simbolo != nil){ separador = " - " }
-            }) {
+                }) {
                 
                 Text("\(selectedProduct.nombreProducto + " " + selectedProduct.simbolo + separador + selectedProduct.saldoActual )").fontWeight(.bold)
                         .foregroundColor(.gray).font(.callout)                .frame(width: 340, alignment: .leading)
@@ -61,6 +59,7 @@ struct FirstView: View {
             print("OBJETO DECODE")
             print(objetResponse)
             self.products = objetResponse.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos
+            self.selectedProduct = products[0]
         } catch  {
             print("Error: decodificando json")
         }
