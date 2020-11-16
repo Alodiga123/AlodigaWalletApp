@@ -46,10 +46,10 @@ struct TransferenceViewAccess: View {
                         
                         
                         TextLabelUserR()
-                        EmailTextField(user: self.$user)
-                        NavigationLink(destination: TargetCustomerView()) {
-                            TransferenceSerchButtonContent()
-                        }
+                    
+                       // NavigationLink(destination: TargetCustomerView()) {
+                         //   TransferenceSerchButtonContent()
+                       // }
                         NavigationLink(destination: MainViewLogged()) {
                             TransferenceBackButtonContent()
                         }
@@ -91,16 +91,14 @@ struct TextLabelCurrency: View {
 }
 
 struct TextLabelUserR: View {
-    var line: some View {
-        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,10).frame(width: 380, alignment: .center)
-       }
+
     var body: some View {
         Text("SearchCriteria")
             .font(.callout)
             .frame(width: 340, height: 50, alignment: .leading)
             .foregroundColor(.gray)
         FirstViewSpinnerOption()
-        line
+        
     }
 }
 
@@ -118,13 +116,49 @@ struct EmailTextField: View {
             .padding(.leading,20)
             .padding(.trailing,20)
             .padding(.bottom,0)
+        
+        //let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
+        //Text("Prueba OJOOO  " + currencySelect["nombreProducto"]!)
+
     }
 }
+
+struct PhoneTextField: View {
+    @Binding var user: String
+    var body: some View {
+        FloatingLabelTextField($user, placeholder: "Numero de Telefono", editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("phone")
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,0)
+        
+    }
+}
+
 
 struct TransferenceSerchButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
         Text("Search")
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,10)
+    }
+}
+
+
+struct TransferenceQrButtonContent: View {
+    let co = Color.black.opacity(0.7)
+    var body: some View {
+        Text("scanQr")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

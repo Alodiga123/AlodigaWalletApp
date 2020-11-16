@@ -32,8 +32,7 @@ class Manager {
   var option : [optionTransference] = []
 
   init() {
-
-
+    
     let cel = optionTransference(name: NSLocalizedString("forEmail", comment: ""), id: "0")
     let qr = optionTransference(name: NSLocalizedString("forPhone", comment: ""), id: "1")
     let email = optionTransference(name: NSLocalizedString("forQr", comment: ""), id: "2")
@@ -50,6 +49,12 @@ struct FirstViewSpinnerOption: View {
     @State var options = Manager()
     @State var expand = false
     @State var separador: String = ""
+    @State var user: String = ""
+    
+    var line: some View {
+        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,10).frame(width: 380, alignment: .center)
+       }
+    
     var body: some View {
 
         VStack {
@@ -79,7 +84,28 @@ struct FirstViewSpinnerOption: View {
                 SheetSpinnerOption(products: self.options, isSheetOpened: self.isSheetOpened, selectedProduct: self.$selectedProduct)
             }
             
-            //Text("\(selectedProduct)")
+            line
+            
+            if(selectedProduct.id == "0"){
+                EmailTextField(user: self.$user)
+                
+                 NavigationLink(destination: TargetCustomerView()) {
+                        TransferenceSerchButtonContent()
+                    }
+            }else if(selectedProduct.id == "1"){
+                PhoneTextField(user: self.$user)
+                
+                NavigationLink(destination: TargetCustomerView()) {
+                       TransferenceSerchButtonContent()
+                   }
+                
+            }else if(selectedProduct.id == "2"){
+                
+                NavigationLink(destination: TargetCustomerView()) {
+                    TransferenceQrButtonContent()
+                   }
+            }
+            
         }
     }
 }
@@ -97,19 +123,16 @@ struct SheetSpinnerOption: View {
                     Button(action: {
                         self.selectedProduct = index
                         
-                        /*let currencySelected = ["id" : index.id,
-                                    "isPayTopUP" : index.isPayTopUP,
-                                    "nombreProducto" : index.nombreProducto,
-                                    "saldoActual" : index.saldoActual,
-                                    "simbolo" : index.simbolo]
-                        Constant.defaults.set(currencySelected, forKey: "currencySelected")
-*/
-                      
+                        //let optionSelected = ["id" : index.id,
+                          //          "name" : index.name]
+                        
+                        
+                        Constant.defaults.set(index.id, forKey: "optionSelected")
+                        
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Text(index.name).fontWeight(.bold)
                             .foregroundColor(.gray).font(.callout)                .frame(width: 340, alignment: .leading)
-
                         
                     }
                 }
