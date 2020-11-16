@@ -26,7 +26,7 @@ struct SignUpView: View {
 
 struct SignUpViewAccess: View {
     @State var country: String = ""
-    @State var phone: String = "58"
+    @State var phone: String = "" //Constant.defaults.object(forKey: "code") as! String
     @State var code: String = ""
     @State var steptwo: Bool = false
     
@@ -50,7 +50,7 @@ struct SignUpViewAccess: View {
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     Spacer()
-                    TextLabelPais()
+                    TextLabelCountry()
                     //ListaPaises()
 //                    if #available(iOS 14.0, *) {
 //                        otraDePicker()
@@ -60,6 +60,7 @@ struct SignUpViewAccess: View {
                     //OtraListaDePaises()
                     //DropDown()
                     //CountryRegisterTextField(country: self.$country)
+                    //let phoneString = Constant.defaults.value(forKey: "code") as? [String: String] ?? [String: String]()
                     PhoneRegisterTextField(phone: self.$phone)
 //                    NavigationLink(destination: PassByTokenView()) {
 //                        RegisterContinueButtonContent()
@@ -79,24 +80,26 @@ struct SignUpViewAccess: View {
                         if(phone.isEmpty){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EnterPhone", comment: ""))
                         }else{
-                            registerController.getToken(dataToken: token) { (res,error) in
-                                print("EN EL TOKEN!!!!")
-                                if res != nil  {
-                                    print(res as Any)
-                                    let tokens: ObjectToken
-                                    tokens = res! as ObjectToken
-                                    print(tokens.envelope.body.tokenResponse._return.datosRespuesta)
-                                    
-                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
-                                    stepNex()
-                                }
-                                
-                                if error != nil {
-                                    let alert = ShowAlert()
-                                    alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
-                                    print(error!)
-                                }
-                            }
+                            Constant.defaults.setValue("123456", forKey: "token")
+                            stepNex()
+//                            registerController.getToken(dataToken: token) { (res,error) in
+//                                print("EN EL TOKEN!!!!")
+//                                if res != nil  {
+//                                    print(res as Any)
+//                                    let tokens: ObjectToken
+//                                    tokens = res! as ObjectToken
+//                                    print(tokens.envelope.body.tokenResponse._return.datosRespuesta)
+//
+//                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
+//                                    stepNex()
+//                                }
+//
+//                                if error != nil {
+//                                    let alert = ShowAlert()
+//                                    alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
+//                                    print(error!)
+//                                }
+//                            }
                         }
                     }) {
                         RegisterContinueButtonContent()
@@ -124,59 +127,69 @@ struct TextLabelSignUp: View {
     }
 }
 
-struct TextLabelCountry: View {
-    var body: some View {
-        Text("SelectCountry")
-            .font(.body)
-            .fontWeight(.bold)
-            .foregroundColor(.gray)
-            .padding(.top,20)
-    }
-}
+//struct TextLabelCountry: View {
+//    var body: some View {
+//        Text("SelectCountry")
+//            .font(.body)
+//            .fontWeight(.bold)
+//            .foregroundColor(.gray)
+//            .padding(.top,20)
+//    }
+//}
 
 struct TextLabelPhone: View {
     var body: some View {
         Text("EnterPhone")
-            .font(.body)
+            .font(.callout)
             .fontWeight(.bold)
             .foregroundColor(.gray)
             .padding(.top,18)
     }
 }
 
-
-struct CountryRegisterTextField: View {
-    @Binding var country: String
-    var body: some View {
-        FloatingLabelTextField($country, placeholder: "Seleccione el Pais", editingChanged: { (isChanged) in
-        }) {
-        }
-            .leftView({ // Add left view.
-                Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 50)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,0)
-    }
-}
-
 struct PhoneRegisterTextField: View {
-    var json : ObjectCountry? = nil
-    //@Binding var code : String
+    //@Binding var phone: String
     @Binding var phone: String
+    @State var codePhone: String = ""
+    
     var body: some View {
-        FloatingLabelTextField($phone, placeholder: "Ingrese el número de Teléfono", editingChanged: { (isChanged) in
-        }) {
+//        HStack {
+//            TextField("", text: $codePhone)
+//                          //  .border(Color.black)
+//                        //Text("codigo ingresado:")
+//                        // 3.
+//                        Text("\(codePhone)")
+            
+//            TextField(text: Constant.defaults.object(forKey: "code") as! String, onEditingChanged: { (changed) in
+//
+//               if changed {
+//                   print("text edit has begun")
+//               } else {
+//                   print("committed the change")
+//                   //saveSongs(self.userData.songs)
+//               }
+            
+////            Text(phone)
+////                .font(.callout)
+////                .padding(.leading,20)
+////                .padding(.trailing,20)
+////                .padding(.bottom,0)
+////                .frame(height: 50)
+////                .on
+            //}
+            
+            FloatingLabelTextField($phone, placeholder: "Ingrese el número de Teléfono", editingChanged: { (isChanged) in
+            }) {
+            }
+                .leftView({ // Add left view.
+                    Image("")
+                }).placeholderColor(Color.placeholderGrayColor)
+                .frame(height: 50)
+                .padding(.leading,20)
+                .padding(.trailing,20)
+                .padding(.bottom,0)
         }
-            .leftView({ // Add left view.
-                Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 50)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,0)
-    }
+    //}
 }
 
 struct RegisterContinueButtonContent: View {
@@ -223,10 +236,9 @@ struct CountryList: View {
                 if (selectedCountry.code != nil){
                     separador = " - "
                 }
-                //if (selectedProduct.simbolo != nil){separador = " - " }
             }) {
                 Text("\(selectedCountry.alternativeName3)")
-                    .fontWeight(.bold)
+                    //.fontWeight(.bold)
                     .foregroundColor(.gray)
                 
                     Spacer()
@@ -235,11 +247,13 @@ struct CountryList: View {
                         .resizable()
                         .frame(width: 13, height: 6, alignment: .bottomTrailing)
                         .foregroundColor(.gray)
-                }.frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+                }.padding(10)
+                .cornerRadius(10)
+                .clipShape(Rectangle())
+                .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
            
             .sheet(isPresented: self.$isSheetOpened) {
                 paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
-                //paises(products: self.products, isSheetOpened: self.isSheetOpened, selectedProduct: self.$selectedProduct)
             }
         }.onAppear(
             perform: getJSONCountry
@@ -270,8 +284,16 @@ struct paises: View {
                     Button(action: {
                         self.selectedCountry = index
                         self.presentationMode.wrappedValue.dismiss()
+                        
+                        Constant.defaults.setValue(index.code, forKey: "code")
+                        print("codigo")
+                        print(index.code)
                     }) {
                         Text(index.alternativeName3)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                            .frame(width: 340, alignment: .leading)
+                            .foregroundColor(.gray)
                     }
                 }
             }
@@ -279,7 +301,7 @@ struct paises: View {
     }
 }
 
-struct TextLabelPais: View {
+struct TextLabelCountry: View {
     @State var countries : [Country] = []
     @State var jsonCountry : ObjectCountry?
     
@@ -290,6 +312,11 @@ struct TextLabelPais: View {
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(.gray)
                 .padding()
+            
+//                .font(.body)
+                //            .fontWeight(.bold)
+                //            .foregroundColor(.gray)
+                //            .padding(.top,20)
             CountryList()
         }
     }

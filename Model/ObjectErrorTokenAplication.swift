@@ -1,15 +1,15 @@
 //
-//  ObjectErrorToken.swift
+//  ObjectErrorTokenAplication.swift
 //  IOSAlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 28/10/20.
+//  Created by Lulymar Gutierrez on 12/11/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 
 import Foundation
 
-struct ObjectErrorToken: Decodable{
-    var envelope: EnvelopeTokenError
+struct ObjectErrorTokenAplication: Decodable{
+    var envelope: EnvelopeTokenErrorAplication
     
     enum CodingKeys: String, CodingKey {
          case envelope = "S:Envelope"
@@ -17,9 +17,10 @@ struct ObjectErrorToken: Decodable{
     
 }
 
-struct EnvelopeTokenError : Decodable{
+
+struct EnvelopeTokenErrorAplication : Decodable{
    var xmlns : String
-   var body : BodyTokenError
+   var body : BodyTokenErrorAplication
    
    enum CodingKeys: String, CodingKey {
         case xmlns = "_xmlns:S"
@@ -27,11 +28,11 @@ struct EnvelopeTokenError : Decodable{
     }
 }
 
-struct BodyTokenError : Decodable{
+
+struct BodyTokenErrorAplication : Decodable{
     var cambiar: Credencial
     
     enum CodingKeys: String, CodingKey {
-         case cambiar = "ns2:generarCodigoMovilSMSResponse"
+         case cambiar = "ns2:generarCodigoMovilSMSAplicacionMovilResponse"
      }
 }
-
