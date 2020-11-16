@@ -79,6 +79,8 @@
 		BA1B8B8325545277002A6892 /* remittancesStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B8B8225545277002A6892 /* remittancesStep1.swift */; };
 		BA1B8B95255C11B2002A6892 /* SpinnerOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B8B94255C11B2002A6892 /* SpinnerOption.swift */; };
 		BA1B8BA0255C1985002A6892 /* SpinnerCurrencyTransference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B8B9F255C1985002A6892 /* SpinnerCurrencyTransference.swift */; };
+		BA1B8BA82562DD27002A6892 /* TransferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B8BA72562DD27002A6892 /* TransferenceController.swift */; };
+		BA1B8BB62562F5C5002A6892 /* ObjectGetUsuarioByEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B8BB52562F5C5002A6892 /* ObjectGetUsuarioByEmail.swift */; };
 		BA647E1925406E0200598944 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA647E1825406E0200598944 /* ShowAlert.swift */; };
 		BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */; };
 		BAE1E9B6252BA9D5007F9CD6 /* ObjetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */; };
@@ -193,6 +195,8 @@
 		BA1B8B8225545277002A6892 /* remittancesStep1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remittancesStep1.swift; sourceTree = "<group>"; };
 		BA1B8B94255C11B2002A6892 /* SpinnerOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerOption.swift; sourceTree = "<group>"; };
 		BA1B8B9F255C1985002A6892 /* SpinnerCurrencyTransference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCurrencyTransference.swift; sourceTree = "<group>"; };
+		BA1B8BA72562DD27002A6892 /* TransferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransferenceController.swift; path = Transference/View/TransferenceController.swift; sourceTree = SOURCE_ROOT; };
+		BA1B8BB52562F5C5002A6892 /* ObjectGetUsuarioByEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectGetUsuarioByEmail.swift; sourceTree = "<group>"; };
 		BA647E1825406E0200598944 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroUnificadoClient.swift; sourceTree = "<group>"; };
 		BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjetError.swift; sourceTree = "<group>"; };
@@ -351,6 +355,7 @@
 		04BB53E32516F7810036F94F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BA1B8BA72562DD27002A6892 /* TransferenceController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -703,6 +708,7 @@
 				04ECA12D2537DEA500A77BA1 /* ObjetErrorCountry.swift */,
 				048612202549A799008E51CE /* ObjectToken.swift */,
 				048612252549AA5F008E51CE /* ObjectErrorToken.swift */,
+				BA1B8BB52562F5C5002A6892 /* ObjectGetUsuarioByEmail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -858,6 +864,7 @@
 				04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */,
 				043FEC93251BFD5B005C518B /* SuccesfulRecoverView.swift in Sources */,
 				04D6DA62251A4A9B0053125C /* ValidateAccountView.swift in Sources */,
+				BA1B8BA82562DD27002A6892 /* TransferenceController.swift in Sources */,
 				04ECA12E2537DEA500A77BA1 /* ObjetErrorCountry.swift in Sources */,
 				04D6DA93251AAC880053125C /* ValidateAdressView.swift in Sources */,
 				04D322D52518EA4E00F3F38C /* OperationKeyTopUpView.swift in Sources */,
@@ -886,6 +893,7 @@
 				0422338B251551F600AEB65F /* TopUpView.swift in Sources */,
 				BAE1E9F1252BC687007F9CD6 /* ParseXMLData.swift in Sources */,
 				BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */,
+				BA1B8BB62562F5C5002A6892 /* ObjectGetUsuarioByEmail.swift in Sources */,
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
 				04D6DA8E251AABC10053125C /* PhotoViewStepTwoView.swift in Sources */,
 				044BD0BB2548CEBE005A6754 /* SuccessfulQuestionsView.swift in Sources */,

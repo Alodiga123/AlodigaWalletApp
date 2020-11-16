@@ -8,6 +8,8 @@
 
 import Foundation
 import SwiftUI
+import FloatingLabelTextFieldSwiftUI
+
 
 struct optionTransference : Hashable {
     var id: String
@@ -88,22 +90,27 @@ struct FirstViewSpinnerOption: View {
             
             if(selectedProduct.id == "0"){
                 EmailTextField(user: self.$user)
-                
-                 NavigationLink(destination: TargetCustomerView()) {
-                        TransferenceSerchButtonContent()
-                    }
             }else if(selectedProduct.id == "1"){
                 PhoneTextField(user: self.$user)
-                
-                NavigationLink(destination: TargetCustomerView()) {
-                       TransferenceSerchButtonContent()
-                   }
-                
             }else if(selectedProduct.id == "2"){
-                
                 NavigationLink(destination: TargetCustomerView()) {
                     TransferenceQrButtonContent()
                    }
+            }
+
+            if(selectedProduct.id == "0" || selectedProduct.id == "1"){
+                Button(action: {
+                    let controller = TransferenceController()
+
+                    controller.getUserByEmailOrPhone(option: selectedProduct.id, data: user) { (res, error) in
+                        print(res)
+                    }
+                    
+                
+                
+                }){
+                    TransferenceSerchButtonContent()
+                    }
             }
             
         }

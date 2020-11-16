@@ -160,8 +160,6 @@ struct CardButtonViewAccess: View {
                             //print(res as Any)
                             let login: ObjectLogin
                             login = res! as ObjectLogin
-                         
-                           
                             
                             if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "00" || login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "0" ){
                                 
@@ -211,8 +209,7 @@ struct CardButtonViewAccess: View {
                         }
                     }
                 }
-                    
-                    
+    
                 }) {
                     LoginButtonContent()
                 }
