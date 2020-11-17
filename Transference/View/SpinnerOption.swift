@@ -52,6 +52,14 @@ struct FirstViewSpinnerOption: View {
     @State var expand = false
     @State var separador: String = ""
     @State var user: String = ""
+    @State var isgetUserSuccesIn: Bool = false
+
+    
+    func getUserSucces(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isgetUserSuccesIn = true
+        }
+    }
     
     var line: some View {
         VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,10).frame(width: 380, alignment: .center)
@@ -105,6 +113,10 @@ struct FirstViewSpinnerOption: View {
                     if(selectedProduct.id == "0"){
                     controller.getUserByEmail(data: user) { (res, error) in
                         print(res)
+                        
+                        if(res != nil){
+                            self.getUserSucces()
+                        }
                     }
                         
                     }
@@ -112,6 +124,10 @@ struct FirstViewSpinnerOption: View {
                     if(selectedProduct.id == "1"){
                     controller.getUserByMovil(data: user) { (res, error) in
                         print(res)
+                        if(res != nil){
+                            self.getUserSucces()
+
+                        }
                     }
                         
                     }
@@ -119,8 +135,19 @@ struct FirstViewSpinnerOption: View {
                 }){
                     TransferenceSerchButtonContent()
                     }
+                
+               
+                
+                
+               
             }
             
+          
+            
+        }
+        
+        NavigationLink(destination: TargetCustomerView(), isActive:self.$isgetUserSuccesIn){
+            EmptyView()
         }
     }
 }

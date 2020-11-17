@@ -18,7 +18,7 @@ public class TransferenceController {
     let client_RU = RegistroUnificadoClient()
 
             let getUsuarioporemail = GetUsuarioporemail()
-            getUsuarioporemail.cpEmail = "kerwin2821@gmail.com999"
+            getUsuarioporemail.cpEmail = "kerwin2821@gmail.com"
             getUsuarioporemail.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
             getUsuarioporemail.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
             
@@ -67,7 +67,7 @@ public class TransferenceController {
     let client_RU = RegistroUnificadoClient()
                 
             let getUsuariopormovil = GetUsuariopormovil()
-            getUsuariopormovil.cpMovil = "584241934005zzz"
+            getUsuariopormovil.cpMovil = "584241934005"
             getUsuariopormovil.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
             getUsuariopormovil.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
             
