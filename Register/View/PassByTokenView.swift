@@ -51,9 +51,6 @@ struct PassByTokenViewAccess: View {
                     TimerCounter2()
                     TimerCounterValue2()
                     RegisterTokenTextField(token: self.$token)
-//                    NavigationLink(destination: FormSignUpView()) {
-//                        RegisterContinueButtonContent()
-//                    }
                     
                     Button(action: {
                         let alert = ShowAlert()
@@ -61,7 +58,7 @@ struct PassByTokenViewAccess: View {
                         if(token.isEmpty){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("PassSent", comment: ""))
                         }else{
-                            if ((Constant.defaults.value(forKey: "token") as! String) !=  token){
+                            if ((Constant.defaults.value(forKey: "tokenAplication") as! String) !=  token){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
                             }else {
                                 stepNex()

@@ -26,6 +26,8 @@
 		048612212549A799008E51CE /* ObjectToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048612202549A799008E51CE /* ObjectToken.swift */; };
 		048612262549AA5F008E51CE /* ObjectErrorToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048612252549AA5F008E51CE /* ObjectErrorToken.swift */; };
 		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
+		04B6828125632D3000834E95 /* ObjectChangePassForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6828025632D3000834E95 /* ObjectChangePassForgot.swift */; };
+		04B6828625632F8D00834E95 /* ObjectErrorPassForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */; };
 		04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC3025157E0700960B9F /* ProductTopUpView.swift */; };
 		04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC322515829600960B9F /* SuccessTopUpView.swift */; };
 		04D322C52518E54C00F3F38C /* ConfirmationTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D322C42518E54C00F3F38C /* ConfirmationTopUpView.swift */; };
@@ -139,6 +141,8 @@
 		048612202549A799008E51CE /* ObjectToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectToken.swift; sourceTree = "<group>"; };
 		048612252549AA5F008E51CE /* ObjectErrorToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorToken.swift; sourceTree = "<group>"; };
 		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
+		04B6828025632D3000834E95 /* ObjectChangePassForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectChangePassForgot.swift; sourceTree = "<group>"; };
+		04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorPassForgot.swift; sourceTree = "<group>"; };
 		04BEBC3025157E0700960B9F /* ProductTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTopUpView.swift; sourceTree = "<group>"; };
 		04BEBC322515829600960B9F /* SuccessTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessTopUpView.swift; sourceTree = "<group>"; };
 		04D322C42518E54C00F3F38C /* ConfirmationTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTopUpView.swift; sourceTree = "<group>"; };
@@ -735,6 +739,8 @@
 				BA1B8BBD256351C6002A6892 /* ObjectGetUsuarioByMovil.swift */,
 				BA1B8BC225636672002A6892 /* ObjectGetUsuarioByMovilError.swift */,
 				BA1B8BC72563668B002A6892 /* ObjectGetUsuarioByEmailError.swift */,
+				04B6828025632D3000834E95 /* ObjectChangePassForgot.swift */,
+				04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -912,6 +918,7 @@
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
 				BA1B8BC82563668B002A6892 /* ObjectGetUsuarioByEmailError.swift in Sources */,
 				46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */,
+				04B6828125632D3000834E95 /* ObjectChangePassForgot.swift in Sources */,
 				46DBC488251287C4008D42B3 /* PassByTokenView.swift in Sources */,
 				0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */,
 				BAE1E9B6252BA9D5007F9CD6 /* ObjetError.swift in Sources */,
@@ -941,6 +948,7 @@
 				BAE1EA55252E04EF007F9CD6 /* ObjectBase.swift in Sources */,
 				0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */,
 				04D6DA51251953B00053125C /* OperationKeyConvertView.swift in Sources */,
+				04B6828625632F8D00834E95 /* ObjectErrorPassForgot.swift in Sources */,
 				BAE1E9E6252BC13E007F9CD6 /* ResponseController.swift in Sources */,
 				04D6DA49251946650053125C /* CommissionView.swift in Sources */,
 				46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */,

@@ -7,6 +7,8 @@
 //
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
+import Foundation
+import UIKit
 
 struct RecoverPasswordView: View {
     var body: some View {
@@ -24,7 +26,7 @@ struct RecoverPasswordView: View {
 }
 
 struct RecoverPasswordViewAccess: View {
-    @State var mail: String = "ll@noposee.com"
+    @State var email: String = "no@posee.com"
     @State var isLoggedIn: Bool = false
     @State var steptwo: Bool = false
     
@@ -49,10 +51,7 @@ struct RecoverPasswordViewAccess: View {
                         }.padding(.leading,20)
                             .padding(.trailing,20)
                         TextLabelRecover()
-                        EmailRecorTextField(mail: self.$mail)
-//                        NavigationLink(destination: RecoverPasswordByTokenView()) {
-//                            ContinueRecoButtonContent()
-//                        }
+                        EmailRecorTextField(email: self.$email)
                         
                         Button(action: {
                             let recoverController = RecoverController()
@@ -61,18 +60,20 @@ struct RecoverPasswordViewAccess: View {
 
                             tokenAplication.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
                             tokenAplication.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-                            tokenAplication.cpEmail = mail
+                            tokenAplication.cpEmail = email
                             tokenAplication.cpMovil = " "
-                            
-                            print (mail)
-                            
-//                            if(mail.isEmpty){
-//                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EnterPhone", comment: ""))
-//                            }else{
-//                                Constant.defaults.setValue("123456", forKey: "token")
-//                                stepNex()
-                                
-                                
+
+                            print (email)
+                            //Constant.defaults.setValue("123456", forKey: "tokenAplication")
+                            stepNex()
+
+                            if(email.isEmpty){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EnterPhone", comment: ""))
+                            }else{
+                                //Constant.defaults.setValue("123456", forKey: "token")
+                                stepNex()
+
+
                                 recoverController.getTokenAplication(dataTokenApli: tokenAplication) { (res,error) in
                                     print("EN EL TOKEN DE LA APLICACION!!!!")
                                     if res != nil  {
@@ -80,26 +81,25 @@ struct RecoverPasswordViewAccess: View {
                                         let tokenApli: ObjectTokenAplication
                                         tokenApli = res! as ObjectTokenAplication
                                         print(tokenApli.envelope.body.tokenResponse._return.datosRespuesta)
-    
+
                                         //Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
                                         stepNex()
                                     }
-    
+
                                     if error != nil {
                                         let alert = ShowAlert()
                                         alert.showPaymentModeActionSheet(title: "error", message: recoverController.getMessageError(code: error!))
                                         print(error!)
                                     }
+                                    stepNex()
                                 }
-                                
-                                
-                                
-                                
-                            //}
+                            }
                         }) {
-                            RegisterContinueButtonContent()
+                            ContinueRecoButtonContent()
                         }
-//
+                        NavigationLink(destination: RecoverPasswordByTokenView(), isActive:self.$steptwo){
+                            EmptyView()
+                        }
                         NavigationLink(destination: MainViewLogged()) {
                             CancelRecorButtonContent()
                         }
@@ -122,10 +122,14 @@ struct TextLabelRecover: View {
 }
 
 struct EmailRecorTextField: View {
-    @Binding var mail: String
+    @Binding var email: String
+    @State private var isValidEmail: Bool = false
+    
     var body: some View {
-        FloatingLabelTextField($mail, placeholder: "Email", editingChanged: { (isChanged) in
+        FloatingLabelTextField($email, placeholder: "Correo Electrónico", editingChanged: { (isChanged) in
+            
         }) {
+            
         }
             .leftView({ // Add left view.
                 Image("email")
@@ -136,8 +140,6 @@ struct EmailRecorTextField: View {
             .padding(.bottom,5)
     }
 }
-
-
 
 struct ContinueRecoButtonContent: View {
     let co = Color.black.opacity(0.7)

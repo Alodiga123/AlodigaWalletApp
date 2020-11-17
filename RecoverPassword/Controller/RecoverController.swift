@@ -77,4 +77,45 @@ public class RecoverController{
             }
         }
     }
+    
+    func getRecoverPass(cambiarCredencialAplicacionMovil: CambiarCredencialAplicacionMovilEmailOrPhone ,completion: @escaping (_ res:ObjectChangePassForgot?, String?) -> Void) {
+        
+        let client_RU = RegistroUnificadoClient()
+        
+        //Llamada del servicio de Guardar Usuarios
+        client_RU.opCambiarCredencialAplicacionMovilEmailOrPhone(cambiarCredencialAplicacionMovilEmailOrPhone: cambiarCredencialAplicacionMovil){(data,error) in
+        
+            if error != nil {
+                completion(nil,"90")
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            do{
+                var objetResponseChange: ObjectChangePassForgot
+                var objetResponseErrorChange: ObjectErrorPassForgot
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON PARA CAMBIAR LA CLAVE---- > ")
+                print(jsonStr)
+                
+                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                {
+                    objetResponseChange = try JSONDecoder().decode(ObjectChangePassForgot.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objetResponseChange, nil)
+                }else{
+                    objetResponseErrorChange = try JSONDecoder().decode(ObjectErrorPassForgot.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objetResponseErrorChange.envelope.body.cambiar._return.codigoRespuesta)
+                }
+                
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+        }
+    }
+    
 }

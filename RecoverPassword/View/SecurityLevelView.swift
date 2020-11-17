@@ -24,9 +24,16 @@ struct SecurityLevelView: View {
 }
 
 struct SecurityLevelViewAccess: View {
-    @State var pass: String = ""
-    @State var repeatPass: String = ""
+    @State var pass: String = "1234"
+    @State var repeatPass: String = "1234"
     @State var isLoggedIn: Bool = false
+    @State var stepFour: Bool = false
+    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.stepFour = true
+        }
+    }
     
     var body: some View {
         ScrollView{
@@ -46,9 +53,48 @@ struct SecurityLevelViewAccess: View {
                         NewPassTextField(pass: self.$pass)
                         RepeatNewPassTextField(repeatPass: self.$repeatPass)
                         TextLabelRecoverPass()
-                        NavigationLink(destination: SuccesfulRecoverView()) {
+                        
+                         Button(action: {
+                             let recoverController = RecoverController()
+                             let recoverPass = CambiarCredencialAplicacionMovilEmailOrPhone()
+                             let alert = ShowAlert()
+                             
+                             if(pass.isEmpty || repeatPass.isEmpty){
+                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                             }else if (pass !=  repeatPass){
+                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
+                             }else{
+                                recoverPass.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+                                recoverPass.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
+                                recoverPass.cpPhoneOrEmail = ""
+                                recoverPass.cpCredencial = "";
+                                 
+                                recoverController.getRecoverPass(cambiarCredencialAplicacionMovil: recoverPass) { (res,error) in
+                                     print("EN LA VISTA CON EL CAMBIO DE CLAVE!!!!")
+                                     if res != nil  {
+                                         print(res as Any)
+     //                                    let registro: ObjectRegisterUser
+     //                                    registro = res! as ObjectRegisterUser
+     //                                    print(registro.envelope.body.registerMovilResponse._return.fechaHora)
+                                         //print(registro.envelope.body.countryResponse._return.countries)
+                                         //stepNex()
+                                     }
+
+                                     if error != nil {
+                                         let alert = ShowAlert()
+                                         alert.showPaymentModeActionSheet(title: "error", message: recoverController.getMessageError(code: error!))
+                                         print(error!)
+                                     }
+                                 }
+                                 stepNex()
+                             }
+                         }) {
                             ContinueRecoButtonContent()
-                        }
+                         }
+                         NavigationLink(destination: SuccesfulRecoverView(), isActive:self.$stepFour){
+                             EmptyView()
+                         }
+                         
                         NavigationLink(destination: MainViewLogged()) {
                             CancelRecorButtonContent()
                         }

@@ -48,6 +48,13 @@ struct TopButtonViewAccess: View {
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @State var isLoggedIn: Bool = false
+    @State var stepThree: Bool = false
+    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.stepThree = true
+        }
+    }
     
     func login(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -70,8 +77,27 @@ struct TopButtonViewAccess: View {
                     TimerCounter()
                     TimerCounterValue()
                     RecoverTokenTextField2(username: self.$token)
-                    NavigationLink(destination: SecurityLevelView()) {
+//                    NavigationLink(destination: SecurityLevelView()) {
+//                        ContinueRecoButtonContent()
+//                    }
+                    Button(action: {
+                        let alert = ShowAlert()
+                        
+                        if(token.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("PassSent", comment: ""))
+                        }else{
+                            if ((Constant.defaults.value(forKey: "token") as! String) !=  token){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
+                            }else {
+                                stepNex()
+                            }
+                        }
+                    }) {
                         ContinueRecoButtonContent()
+                    }
+                    
+                    NavigationLink(destination: SecurityLevelView(), isActive:self.$stepThree){
+                        EmptyView()
                     }
                     NavigationLink(destination: MainViewLogged()) {
                         CancelRecorButtonContent()

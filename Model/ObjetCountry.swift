@@ -109,40 +109,6 @@ struct Country: Identifiable, Decodable, Hashable{
     }
 }
 
-/*
- struct ListadoProductos: Identifiable, Decodable, Hashable {
-    var id : String
-    var isPayTopUP : String
-     var nombreProducto : String
-     var saldoActual : String
-     var simbolo : String
-     
-     init( ) {
-         self.nombreProducto = "Seleccione una opcion"
-         self.id = ""
-         self.isPayTopUP  = ""
-         self.saldoActual  = ""
-         self.simbolo  = ""
-     }
-     
-     enum CodingKeys: String, CodingKey {
-         case id = "id"
-         case isPayTopUP = "isPayTopUP"
-         case nombreProducto = "nombreProducto"
-         case saldoActual = "saldoActual"
-         case simbolo = "simbolo"
-      }
-     
-     func hash(into hasher: inout Hasher) {
-       hasher.combine(id)
-      hasher.combine(isPayTopUP)
-         hasher.combine(nombreProducto)
-         hasher.combine(saldoActual)
-         hasher.combine(simbolo)
-     }
- }
- */
-
 struct MensajeRespuesta: Decodable{
     
 }
