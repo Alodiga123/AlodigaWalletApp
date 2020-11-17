@@ -138,6 +138,15 @@ public class TransferenceController {
         case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_BLOQUEADO:
             return NSLocalizedString("web_services_response_06", comment: "")
             
+        case Constant.WEB_SERVICES_RESPONSE_CODE_NUMERO_TELEFONO_YA_EXISTE:
+            return NSLocalizedString("web_services_response_08", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_PRIMER_INGRESO:
+            return NSLocalizedString("web_services_response_12", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USER_NOT_HAS_PHONE_NUMBER:
+            return NSLocalizedString("web_services_response_22", comment: "")
+            
         case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_SOSPECHOSO:
             return NSLocalizedString("web_services_response_95", comment: "")
          

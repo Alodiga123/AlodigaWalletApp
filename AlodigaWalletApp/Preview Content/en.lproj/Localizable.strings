@@ -178,6 +178,9 @@
 "web_services_response_05" = "The credentials are invalid ";
 "web_services_response_06" = "User blocked ";
 "web_services_response_07" = "Internal error user";
+"web_services_response_08" = "The phone number already exists, it is associated with anoyher account"
+"web_services_response_12" = "First entry"
+"web_services_response_22" = "User does not have a phone"
 "web_services_response_95" = "User I suspect ";
 "web_services_response_96" = "Pending User ";
 "web_services_response_97" = "Username does not exist ";
@@ -195,5 +198,6 @@
 "forPhone" = "By phone number";
 "forQr" = "By QR code";
 "scanQr" = "QR Scan";
+"invalidPhone" = "Invalid phone length";
 
 

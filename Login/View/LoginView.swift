@@ -138,12 +138,14 @@ struct CardButtonViewAccess: View {
                 }
                 Button(action: {
                     let loginController = LoginController()
+                    let util = Utils()
+                    
                     let alert = ShowAlert()
 
                     //FALTA validar la encriptacion de la clave
                     if(username.isEmpty || password.isEmpty){
                         alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("enter_both_credentials", comment: ""))
-                    }else if(!loginController.isValidEmail(testStr: username)){
+                    }else if(!util.isValidEmail(testStr: username)){
                         alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
                     }else{
                     
