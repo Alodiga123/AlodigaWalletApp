@@ -9,6 +9,7 @@ import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
 struct TargetCustomerView: View {
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -28,10 +29,52 @@ struct TargetCustomerViewAccess: View {
     @State var text = ""
     @State var amount: String = ""
     @State var concept: String = ""
-    let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Origen"]
+    var loginController = LoginController()
+    @State var jsonUserByEmail : ObjectGetUsuarioByEmail?
+    @State var jsonUserByMovil : ObjectGetUsuarioByMovil?
+    @State var option =  Constant.defaults.value(forKey: "optionTransference") as! String
+
+    
     let label2 = ["Monto", "Concepto"]
    
+    func getJSONUser() {
+        
+        let option = Constant.defaults.value(forKey: "optionTransference") as! String
+        
+        if option == "0" {
+            var objetResponse: ObjectGetUsuarioByEmail
+            let str: String = Constant.defaults.value(forKey: "jsonUserByEmail") as! String
+            do {
+                objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByEmail.self, from: str.data(using: .utf8)!)
+                print("OBJETO DECODE")
+                print(objetResponse)
+
+                self.jsonUserByEmail = objetResponse
+            } catch  {
+                print("Error: decodificando json")
+            }
+        }
+        
+        if option == "1" {
+            var objetResponse: ObjectGetUsuarioByMovil
+            let str: String = Constant.defaults.value(forKey: "jsonUserByMovil") as! String
+            do {
+                objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByMovil.self, from: str.data(using: .utf8)!)
+                print("OBJETO DECODE")
+                print(objetResponse)
+
+                self.jsonUserByMovil = objetResponse
+            } catch  {
+                print("Error: decodificando json")
+            }
+        }
+   
+    }
     
+    func getCuenta(cuenta : String) -> String {
+     
+        return cuenta.prefix(4) + "*********" + String(cuenta.dropFirst(cuenta.count - 4))
+    }
     
     var body: some View {
         ScrollView{
@@ -42,9 +85,6 @@ struct TargetCustomerViewAccess: View {
                         
                         let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
 
-                        
-                        Text("Prueba OJOOO  " + currencySelect["nombreProducto"]!)
-                        
                         Rectangle()
                             .frame(width:50, height: 6)
                             .cornerRadius(3.0)
@@ -55,15 +95,86 @@ struct TargetCustomerViewAccess: View {
                         }.padding(.leading,20)
                          .padding(.trailing,20)
                         TextLabelInformation()
-                        ForEach(self.labels, id: \.self) { label in
+                        //ForEach(self.labels, id: \.self) { label in
+                        VStack{
                             HStack {
-                                Text(label)
+                                Text("Name")
                                     .frame(width: 50, alignment: .leading)
                                     .font(.caption)
-                                TextField(label, text: self.$text)
+                                
+                                if (option == "0"){
+                                    
+                                    TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.nombre ??  "Name"), text: self.$text)
+                                        .font(.caption)
+                                }else{
+                                    TextField((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.nombre ??  "Name"), text: self.$text)
+                                        .font(.caption)
+                                }
+                            }
+                            
+                            
+                        HStack {
+                            Text("LastName")
+                                .frame(width: 50, alignment: .leading)
+                                .font(.caption)
+                            if (option == "0"){
+                                TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.apellido ?? "LastName"), text: self.$text)
+                                    .font(.caption)
+                            }else{
+                                TextField((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.apellido ?? "LastName"), text: self.$text)
                                     .font(.caption)
                             }
                         }
+                        
+                        HStack {
+                            Text("Phone")
+                                .frame(width: 50, alignment: .leading)
+                                .font(.caption)
+                            if (option == "0"){
+                                TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.movil ?? "Phone"), text: self.$text)
+                                    .font(.caption)
+                            }else{
+                                TextField((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.movil ?? "Phone"), text: self.$text)
+                                    .font(.caption)
+                            }
+                        }
+                        
+                        HStack {
+                            Text("Destination")
+                                .frame(width: 50, alignment: .leading)
+                                .font(.caption)
+                            if (option == "0"){
+                                
+                                if(jsonUserByEmail != nil){
+                                    TextField(getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
+                                        .font(.caption)
+                                }else{
+                                    TextField("Destination", text: self.$text)
+                                        .font(.caption)
+                                }
+                                
+                              
+                            }else{
+                                if(jsonUserByMovil != nil){
+                                    TextField(getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
+                                        .font(.caption)
+                                }else{
+                                    TextField("Destination", text: self.$text)
+                                        .font(.caption)
+                                }
+                            }
+                        }
+                        
+                        HStack {
+                            Text("Origin")
+                                .frame(width: 50, alignment: .leading)
+                                .font(.caption)
+                            TextField(currencySelect["nombreProducto"]!, text: self.$text)
+                                .font(.caption)
+                        }
+                        }.onAppear(
+                            perform: getJSONUser
+                        )
                         .padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
                         TextLabelInfomationPaymen()
@@ -141,6 +252,7 @@ struct TransferenceConceptTextField: View {
 
 struct TargetCustomerView_Previews: PreviewProvider {
     static var previews: some View {
+       
         TargetCustomerView()
     }
 }

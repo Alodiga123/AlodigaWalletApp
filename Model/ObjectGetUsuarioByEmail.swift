@@ -11,6 +11,7 @@ import Foundation
 
 
 struct ObjectGetUsuarioByEmail: Decodable{
+ 
     var envelope: EnvelopeGetUsuarioByEmail
     
     enum CodingKeys: String, CodingKey {

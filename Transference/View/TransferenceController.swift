@@ -13,7 +13,7 @@ public class TransferenceController {
     
 
 //Cambiar el retorno por el Struct a devolver
-    func getUserByEmail(data: String, completion: @escaping (_ res:ObjectGetUsuarioByEmail?, String?) -> Void) {
+    func getUserByEmail(data: String, completion: @escaping (_ res:String?, String?) -> Void) {
     
     let client_RU = RegistroUnificadoClient()
 
@@ -30,7 +30,7 @@ public class TransferenceController {
                 }
                 
                 do{
-                    var objetResponse: ObjectGetUsuarioByEmail
+                    //var objetResponse: ObjectGetUsuarioByEmail
                     var objetResponseError: ObjectErrorGetUsuarioByEmail
 
                     let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
@@ -42,10 +42,10 @@ public class TransferenceController {
                     
                     if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
                     {
-                        Constant.defaults.setValue(jsonStr, forKey: "jsonLogin")
-                        objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByEmail.self, from: jsonStr.data(using: .utf8)!)
-                        print(objetResponse)
-                        completion(objetResponse, nil)
+                        Constant.defaults.setValue(jsonStr, forKey: "jsonUserByEmail")
+                        //objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByEmail.self, from: jsonStr.data(using: .utf8)!)
+                        //print(objetResponse)
+                        completion(jsonStr, nil)
                     }else{
                         objetResponseError = try JSONDecoder().decode(ObjectErrorGetUsuarioByEmail.self, from: jsonStr.data(using: .utf8)!)
                         completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
@@ -62,7 +62,7 @@ public class TransferenceController {
 
     
     
-    func getUserByMovil(data: String, completion: @escaping (_ res:ObjectGetUsuarioByMovil?, String?) -> Void) {
+    func getUserByMovil(data: String, completion: @escaping (_ res:String?, String?) -> Void) {
     
     let client_RU = RegistroUnificadoClient()
                 
@@ -80,7 +80,7 @@ public class TransferenceController {
                 }
                 
                 do{
-                    var objetResponse: ObjectGetUsuarioByMovil
+                    //var objetResponse: ObjectGetUsuarioByMovil
                     var objetResponseError: ObjectErrorGetUsuarioByMovil
 
                     let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
@@ -93,9 +93,9 @@ public class TransferenceController {
                     if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
                         
                     {
-                        Constant.defaults.setValue(jsonStr, forKey: "jsonLogin")
-                        objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByMovil.self, from: jsonStr.data(using: .utf8)!)
-                        completion(objetResponse, nil)
+                        Constant.defaults.setValue(jsonStr, forKey: "jsonUserByMovil")
+                        //objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByMovil.self, from: jsonStr.data(using: .utf8)!)
+                        completion(jsonStr, nil)
                     }else{
                         objetResponseError = try JSONDecoder().decode(ObjectErrorGetUsuarioByMovil.self, from: jsonStr.data(using: .utf8)!)
                         completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
@@ -118,5 +118,47 @@ public class TransferenceController {
 
 }
 
+    
+    
+    func getMessageErrorTransference(code: String) -> String {
+        
+        switch code {
+        case Constant.WEB_SERVICES_RESPONSE_CODE_DATOS_INVALIDOS:
+            return NSLocalizedString("web_services_response_01", comment: "")
+        
+        case Constant.WEB_SERVICES_RESPONSE_CODE_CONTRASENIA_EXPIRADA:
+            return NSLocalizedString("web_services_response_03", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_IP_NO_CONFIANZA:
+            return NSLocalizedString("web_services_response_04", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_CREDENCIALES_INVALIDAS:
+            return NSLocalizedString("web_services_response_05", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_BLOQUEADO:
+            return NSLocalizedString("web_services_response_06", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_SOSPECHOSO:
+            return NSLocalizedString("web_services_response_95", comment: "")
+         
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_PENDIENTE:
+            return NSLocalizedString("web_services_response_96", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_NO_EXISTE:
+            return NSLocalizedString("web_services_response_97", comment: "")
+            
+        case Constant.WEB_SERVICES_RESPONSE_CODE_ERROR_CREDENCIALES:
+            print(NSLocalizedString("web_services_response_98", comment: ""))
+            return NSLocalizedString("web_services_response_98", comment: "")
+        
+        case Constant.WEB_SERVICES_RESPONSE_CODE_ERROR_INTERNO:
+            return NSLocalizedString("web_services_response_99", comment: "")
+
+        default:
+            return NSLocalizedString("web_services_response_99", comment: "")
+        }
+
+    }
+    
 
 }

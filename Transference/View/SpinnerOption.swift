@@ -109,13 +109,27 @@ struct FirstViewSpinnerOption: View {
             if(selectedProduct.id == "0" || selectedProduct.id == "1"){
                 Button(action: {
                     let controller = TransferenceController()
-
+                    
                     if(selectedProduct.id == "0"){
-                    controller.getUserByEmail(data: user) { (res, error) in
-                        print(res)
+                    
+                        controller.getUserByEmail(data: user) { (objectGetUsuarioByEmail, error) in
                         
-                        if(res != nil){
+                        if(objectGetUsuarioByEmail != nil){
+                            Constant.defaults.set("0", forKey: "optionTransference")
+                           // let currencySelected = ["UsuarioID" : user.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.UsuarioID,
+                            //                        "numeroDeCuenta" : ,
+                              //          "nombreProducto" : index.nombreProducto,
+                                //        "saldoActual" : index.saldoActual,
+                            //      "simbolo" : index.simbolo]
+                           // Constant.defaults.set(currencySelected, forKey: "currencySelected")
                             self.getUserSucces()
+                        }
+                        
+                        
+                        if error != nil {
+                            let alert = ShowAlert()
+                            alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageErrorTransference(code: error!))
+                            print(error!)
                         }
                     }
                         
@@ -125,8 +139,14 @@ struct FirstViewSpinnerOption: View {
                     controller.getUserByMovil(data: user) { (res, error) in
                         print(res)
                         if(res != nil){
+                            Constant.defaults.set("1", forKey: "optionTransference")
                             self.getUserSucces()
-
+                        }
+                        
+                        if error != nil {
+                            let alert = ShowAlert()
+                            alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageErrorTransference(code: error!))
+                            print(error!)
                         }
                     }
                         

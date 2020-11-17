@@ -9,7 +9,7 @@
 import Foundation
 
 struct ObjectErrorGetUsuarioByEmail: Decodable{
-    var envelope: GetUsuarioByMovilError
+    var envelope: GetUsuarioByEmailError
     
     enum CodingKeys: String, CodingKey {
          case envelope = "S:Envelope"
@@ -17,7 +17,7 @@ struct ObjectErrorGetUsuarioByEmail: Decodable{
     
 }
 
-    struct GetUsuarioByMovilError : Decodable{
+    struct GetUsuarioByEmailError : Decodable{
        var xmlns : String
        var body : BodyGetUsuarioByEmailError
        
