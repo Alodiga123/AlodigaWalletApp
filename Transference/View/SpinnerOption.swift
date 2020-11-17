@@ -102,11 +102,19 @@ struct FirstViewSpinnerOption: View {
                 Button(action: {
                     let controller = TransferenceController()
 
-                    controller.getUserByEmailOrPhone(option: selectedProduct.id, data: user) { (res, error) in
+                    if(selectedProduct.id == "0"){
+                    controller.getUserByEmail(data: user) { (res, error) in
                         print(res)
                     }
+                        
+                    }
                     
-                
+                    if(selectedProduct.id == "1"){
+                    controller.getUserByMovil(data: user) { (res, error) in
+                        print(res)
+                    }
+                        
+                    }
                 
                 }){
                     TransferenceSerchButtonContent()

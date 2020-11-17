@@ -13,11 +13,10 @@ public class TransferenceController {
     
 
 //Cambiar el retorno por el Struct a devolver
-    func getUserByEmailOrPhone(option: String, data: String, completion: @escaping (_ res:ObjectLogin?, String?) -> Void) {
+    func getUserByEmail(data: String, completion: @escaping (_ res:ObjectGetUsuarioByEmail?, String?) -> Void) {
     
     let client_RU = RegistroUnificadoClient()
 
-        if option == "0" {
             let getUsuarioporemail = GetUsuarioporemail()
             getUsuarioporemail.cpEmail = "kerwin2821@gmail.com999"
             getUsuarioporemail.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
@@ -31,8 +30,8 @@ public class TransferenceController {
                 }
                 
                 do{
-                    var objetResponse: ObjectLogin
-                    var objetResponseError: ObjectErrorLogin
+                    var objetResponse: ObjectGetUsuarioByEmail
+                    var objetResponseError: ObjectErrorGetUsuarioByEmail
 
                     let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
                     print("datastring " + datastring)
@@ -41,16 +40,16 @@ public class TransferenceController {
                     //print("JSON ---- > ")
                     print(jsonStr)
                     
-                    /*if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
-                        || datastring.contains("<codigoRespuesta>12</codigoRespuesta>")
+                    if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
                     {
                         Constant.defaults.setValue(jsonStr, forKey: "jsonLogin")
-                        objetResponse = try JSONDecoder().decode(ObjectLogin.self, from: jsonStr.data(using: .utf8)!)
+                        objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByEmail.self, from: jsonStr.data(using: .utf8)!)
+                        print(objetResponse)
                         completion(objetResponse, nil)
                     }else{
-                        objetResponseError = try JSONDecoder().decode(ObjectErrorLogin.self, from: jsonStr.data(using: .utf8)!)
+                        objetResponseError = try JSONDecoder().decode(ObjectErrorGetUsuarioByEmail.self, from: jsonStr.data(using: .utf8)!)
                         completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
-                    }*/
+                    }
                     
                 }catch{
                     print("Error: ")
@@ -58,11 +57,17 @@ public class TransferenceController {
                 }
 
             }
-            
-        }else{
-           
+}
+
+
+    
+    
+    func getUserByMovil(data: String, completion: @escaping (_ res:ObjectGetUsuarioByMovil?, String?) -> Void) {
+    
+    let client_RU = RegistroUnificadoClient()
+                
             let getUsuariopormovil = GetUsuariopormovil()
-            getUsuariopormovil.cpMovil = "584241934005"
+            getUsuariopormovil.cpMovil = "584241934005zzz"
             getUsuariopormovil.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
             getUsuariopormovil.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
             
@@ -75,8 +80,8 @@ public class TransferenceController {
                 }
                 
                 do{
-                    var objetResponse: ObjectLogin
-                    var objetResponseError: ObjectErrorLogin
+                    var objetResponse: ObjectGetUsuarioByMovil
+                    var objetResponseError: ObjectErrorGetUsuarioByMovil
 
                     let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
                     print("datastring " + datastring)
@@ -85,16 +90,16 @@ public class TransferenceController {
                     //print("JSON ---- > ")
                     print(jsonStr)
                     
-                   /* if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
-                        || datastring.contains("<codigoRespuesta>12</codigoRespuesta>")
+                    if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
+                        
                     {
                         Constant.defaults.setValue(jsonStr, forKey: "jsonLogin")
-                        objetResponse = try JSONDecoder().decode(ObjectLogin.self, from: jsonStr.data(using: .utf8)!)
+                        objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByMovil.self, from: jsonStr.data(using: .utf8)!)
                         completion(objetResponse, nil)
                     }else{
-                        objetResponseError = try JSONDecoder().decode(ObjectErrorLogin.self, from: jsonStr.data(using: .utf8)!)
+                        objetResponseError = try JSONDecoder().decode(ObjectErrorGetUsuarioByMovil.self, from: jsonStr.data(using: .utf8)!)
                         completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
-                    }*/
+                    }
                     
                 }catch{
                     print("Error: ")
@@ -102,7 +107,7 @@ public class TransferenceController {
                 }
             }
             
-        }
+        
         
   
     
@@ -112,7 +117,6 @@ public class TransferenceController {
     
 
 }
-
 
 
 }
