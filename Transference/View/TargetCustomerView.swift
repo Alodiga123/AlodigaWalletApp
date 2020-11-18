@@ -33,6 +33,8 @@ struct TargetCustomerViewAccess: View {
     @State var jsonUserByEmail : ObjectGetUsuarioByEmail?
     @State var jsonUserByMovil : ObjectGetUsuarioByMovil?
     @State var option =  Constant.defaults.value(forKey: "optionTransference") as! String
+    @State var isConfirmData: Bool = false
+
 
     
     let label2 = ["Monto", "Concepto"]
@@ -74,6 +76,12 @@ struct TargetCustomerViewAccess: View {
     func getCuenta(cuenta : String) -> String {
      
         return cuenta.prefix(4) + "*********" + String(cuenta.dropFirst(cuenta.count - 4))
+    }
+    
+    func isConfirmDataIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isConfirmData = true
+        }
     }
     
     var body: some View {
@@ -180,9 +188,35 @@ struct TargetCustomerViewAccess: View {
                         TextLabelInfomationPaymen()
                         TransferenceAmountTextField(amount: self.$amount)
                         TransferenceConceptTextField(concept: self.$concept)
-                        NavigationLink(destination: OperationsKeyView()) {
+                        
+                        Button(action: {
+                            let alert = ShowAlert()
+                            
+                            if(amount.isEmpty || concept.isEmpty){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                            }else if((amount as! Float) <= 0){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
+                            }else{
+                            
+                                self.isConfirmDataIn()
+                                
+                            }
+                            
+                        }) {
                             TransferenceSerchButtonContent()
+                            
+                        }.padding(3)
+                        
+                        
+                        NavigationLink(destination: WithdrawalView(), isActive:self.$isConfirmData){
+                            EmptyView()
                         }
+                        
+                        
+                        /*NavigationLink(destination: OperationsKeyView()) {
+                            TransferenceSerchButtonContent()
+                        }*/
+                        
                         NavigationLink(destination: TransferenceView()) {
                             TransferenceBackButtonContent()
                         }

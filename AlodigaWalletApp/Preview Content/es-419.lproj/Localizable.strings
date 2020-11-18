@@ -178,9 +178,9 @@
 "web_services_response_05" = "Las credenciales son inválidas";
 "web_services_response_06" = "Usuario bloqueado";
 "web_services_response_07" = "Error interno usuario";
-"web_services_response_08" = "El numero de telefono ya existe, se encuentra asociado a otra cuenta"
-"web_services_response_12" = "Primer ingreso"
-"web_services_response_22" = "Usuario no tiene telefono"
+"web_services_response_08" = "El numero de telefono ya existe, se encuentra asociado a otra cuenta";
+"web_services_response_12" = "Primer ingreso";
+"web_services_response_22" = "Usuario no tiene telefono";
 "web_services_response_95" = "Usuario sospecho";
 "web_services_response_96" = "Usuario pendiente";
 "web_services_response_97" = "El usuario no existe";
@@ -200,6 +200,7 @@
 "forQr" = "Por codigo QR";
 "scanQr" = "Escanear QR";
 "invalidPhone" = "La longitud del telefono es invelida";
+"invalidAmount" = "El monto es invalido";
 
 
 
