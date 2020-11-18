@@ -25,6 +25,20 @@ struct OperationsKeyView: View {
 
 struct OperationsKeyViewAccess: View {
     @State var key: String = ""
+    @State var isSuccesKey: Bool = false
+    @State static var count : Int = 0
+    @State var isFailKey: Bool = false
+
+    func isSuccesKeyIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isSuccesKey = true
+        }
+    }
+    func isFailKeyIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isFailKey = true
+        }
+    }
     var body: some View {
         ScrollView{
             GeometryReader { geometry in
@@ -41,9 +55,62 @@ struct OperationsKeyViewAccess: View {
                          .padding(.trailing,20)
                         TextLabelOperationKey()
                         TransOperKeyTextField(key: self.$key)
-                        NavigationLink(destination: ConfirmationView()) {
-                            TransferenceSendButtonContents()
+                        
+                        Button(action: {
+                            let alert = ShowAlert()
+
+                            if(key.isEmpty || key.count != 4){
+                                    alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinText", comment: ""))
+                            }else if(OperationsKeyViewAccess.count >= 3){
+                                
+                                self.isFailKeyIn()
+                                
+                            }else{
+                                let util = Utils()
+                                util.getCodeOperation(data: key) { (res, error) in
+                                    if(res != nil){
+                                        let clave : String
+                                        clave = res! as String
+                                        
+                                        if(clave == key){
+                                            self.isSuccesKeyIn()
+                                        }else{
+                                            OperationsKeyViewAccess.count = OperationsKeyViewAccess.count + 1
+                                        }
+                                        
+                                    }
+                                    if error != nil {
+                                        OperationsKeyViewAccess.count = OperationsKeyViewAccess.count + 1
+                                        let alert = ShowAlert()
+                                        alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
+                                        print(error!)
+                                    }
+                                    
+                                }
+                                
+                                
+                            }
+                            
+                            
+                        
+                        
+                        }) {
+                            
+                           TransferenceSendButtonContents()
+                        }.padding(3)
+                        
+                        
+                        NavigationLink(destination: RechargeView(), isActive:self.$isSuccesKey){
+                            EmptyView()
                         }
+                        
+                        NavigationLink(destination: FailCodeOperation(), isActive:self.$isFailKey){
+                            EmptyView()
+                        }
+                        
+                        /*NavigationLink(destination: ConfirmationView()) {
+                            TransferenceSendButtonContents()
+                        }*/
                         NavigationLink(destination: TargetCustomerView()) {
                             TransferenceBackButtonContent()
                         }

@@ -357,6 +357,7 @@ struct lista: View{
 struct rowView : View{
     var user : ListadoProductos
     var imageURL:UIImageView!
+    let util = Utils()
 
     var body: some View {
         HStack{
@@ -376,11 +377,11 @@ struct rowView : View{
                         
                         if (user.nombreProducto == "Tarjeta Prepagada" || user.nombreProducto == "Prepaid Card") {
                        
-                            Text(getCuenta(cuenta: Constant.defaults.value(forKey: "numberCard") as! String)).foregroundColor(Color.gray).font(.caption)
+                            Text(util.getCuenta(cuenta: Constant.defaults.value(forKey: "numberCard") as! String)).foregroundColor(Color.gray).font(.caption)
                         }else{
                       
 
-                            Text(getCuenta(cuenta: Constant.defaults.value(forKey: "numeroCuenta") as! String)).foregroundColor(Color.gray).font(.caption)
+                            Text(util.getCuenta(cuenta: Constant.defaults.value(forKey: "numeroCuenta") as! String)).foregroundColor(Color.gray).font(.caption)
                         }
                      
                         
@@ -407,10 +408,10 @@ struct rowView : View{
         
     }
 
-    func getCuenta(cuenta : String) -> String {
+   /* func getCuenta(cuenta : String) -> String {
      
         return cuenta.prefix(4) + "*********" + String(cuenta.dropFirst(cuenta.count - 4))
-    }
+    }*/
     
     func getImage(){
         let url = NSURL(string:"http://cdn.businessoffashion.com/site/uploads/2014/09/Karl-Lagerfeld-Self-Portrait-Courtesy.jpg")

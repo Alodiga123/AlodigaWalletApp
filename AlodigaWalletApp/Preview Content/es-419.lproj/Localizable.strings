@@ -181,6 +181,10 @@
 "web_services_response_08" = "El numero de telefono ya existe, se encuentra asociado a otra cuenta";
 "web_services_response_12" = "Primer ingreso";
 "web_services_response_22" = "Usuario no tiene telefono";
+"web_services_response_30" = "Ha excedido el monto maximo";
+"web_services_response_31" = "Ha excedido el numero maximo de transacciones por producto";
+"web_services_response_32" = "Ha excedido el numero maximo de transacciones por dia";
+"web_services_response_33" = "Saldo insuficiente para completar la transaccion";
 "web_services_response_95" = "Usuario sospecho";
 "web_services_response_96" = "Usuario pendiente";
 "web_services_response_97" = "El usuario no existe";
@@ -201,6 +205,6 @@
 "scanQr" = "Escanear QR";
 "invalidPhone" = "La longitud del telefono es invelida";
 "invalidAmount" = "El monto es invalido";
-
+"pinText" = "Introduzca una clave de 4 digitos";
 
 

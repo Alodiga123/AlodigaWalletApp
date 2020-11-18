@@ -41,9 +41,9 @@ struct TargetCustomerViewAccess: View {
    
     func getJSONUser() {
         
-        let option = Constant.defaults.value(forKey: "optionTransference") as! String
+        //let option = Constant.defaults.value(forKey: "optionTransference") as! String
         
-        if option == "0" {
+        if self.option == "0" {
             var objetResponse: ObjectGetUsuarioByEmail
             let str: String = Constant.defaults.value(forKey: "jsonUserByEmail") as! String
             do {
@@ -57,7 +57,7 @@ struct TargetCustomerViewAccess: View {
             }
         }
         
-        if option == "1" {
+        if self.option == "1" {
             var objetResponse: ObjectGetUsuarioByMovil
             let str: String = Constant.defaults.value(forKey: "jsonUserByMovil") as! String
             do {
@@ -72,11 +72,7 @@ struct TargetCustomerViewAccess: View {
         }
    
     }
-    
-    func getCuenta(cuenta : String) -> String {
-     
-        return cuenta.prefix(4) + "*********" + String(cuenta.dropFirst(cuenta.count - 4))
-    }
+
     
     func isConfirmDataIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -148,13 +144,14 @@ struct TargetCustomerViewAccess: View {
                         }
                         
                         HStack {
+                            let util = Utils()
                             Text("Destination")
                                 .frame(width: 50, alignment: .leading)
                                 .font(.caption)
                             if (option == "0"){
                                 
                                 if(jsonUserByEmail != nil){
-                                    TextField(getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
+                                    TextField(util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
                                         .font(.caption)
                                 }else{
                                     TextField("Destination", text: self.$text)
@@ -164,7 +161,7 @@ struct TargetCustomerViewAccess: View {
                               
                             }else{
                                 if(jsonUserByMovil != nil){
-                                    TextField(getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
+                                    TextField(util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
                                         .font(.caption)
                                 }else{
                                     TextField("Destination", text: self.$text)
@@ -197,7 +194,9 @@ struct TargetCustomerViewAccess: View {
                             }else if((amount as! Float) <= 0){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
                             }else{
-                            
+                                Constant.defaults.setValue(amount, forKey: "amount")
+                                Constant.defaults.setValue(concept, forKey: "concept")
+
                                 self.isConfirmDataIn()
                                 
                             }
