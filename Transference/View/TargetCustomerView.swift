@@ -34,10 +34,7 @@ struct TargetCustomerViewAccess: View {
     @State var jsonUserByMovil : ObjectGetUsuarioByMovil?
     @State var option =  Constant.defaults.value(forKey: "optionTransference") as! String
     @State var isConfirmData: Bool = false
-
-
-    
-    let label2 = ["Monto", "Concepto"]
+    let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
    
     func getJSONUser() {
         
@@ -87,7 +84,7 @@ struct TargetCustomerViewAccess: View {
                     VStack (alignment: .center, spacing: 5) {
                     
                         
-                        let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
+                      
 
                         Rectangle()
                             .frame(width:50, height: 6)
@@ -193,6 +190,9 @@ struct TargetCustomerViewAccess: View {
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
                             }else if((amount as! Float) <= 0){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
+                            }else if((currencySelect["saldoActual"] as! Float) < (amount as! Float) ){
+                                
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
                             }else{
                                 Constant.defaults.setValue(amount, forKey: "amount")
                                 Constant.defaults.setValue(concept, forKey: "concept")
