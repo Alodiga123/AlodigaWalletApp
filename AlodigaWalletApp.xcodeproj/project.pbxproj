@@ -28,7 +28,6 @@
 		0480419A255E1AB40025357E /* RecoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04804199255E1AB40025357E /* RecoverController.swift */; };
 		048612212549A799008E51CE /* ObjectToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048612202549A799008E51CE /* ObjectToken.swift */; };
 		048612262549AA5F008E51CE /* ObjectErrorToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048612252549AA5F008E51CE /* ObjectErrorToken.swift */; };
-		048EA27C25642DAD00AD90F1 /* RecoverPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EA27B25642DAD00AD90F1 /* RecoverPassword.swift */; };
 		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
 		04B6828125632D3000834E95 /* ObjectChangePassForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6828025632D3000834E95 /* ObjectChangePassForgot.swift */; };
 		04B6828625632F8D00834E95 /* ObjectErrorPassForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */; };
@@ -150,7 +149,6 @@
 		04804199255E1AB40025357E /* RecoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverController.swift; sourceTree = "<group>"; };
 		048612202549A799008E51CE /* ObjectToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectToken.swift; sourceTree = "<group>"; };
 		048612252549AA5F008E51CE /* ObjectErrorToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorToken.swift; sourceTree = "<group>"; };
-		048EA27B25642DAD00AD90F1 /* RecoverPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPassword.swift; sourceTree = "<group>"; };
 		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
 		04B6828025632D3000834E95 /* ObjectChangePassForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectChangePassForgot.swift; sourceTree = "<group>"; };
 		04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorPassForgot.swift; sourceTree = "<group>"; };
@@ -546,7 +544,6 @@
 				46DBC46A250BC236008D42B3 /* RecoverPasswordByTokenView.swift */,
 				043FEC8D251BF601005C518B /* SecurityLevelView.swift */,
 				043FEC92251BFD5B005C518B /* SuccesfulRecoverView.swift */,
-				048EA27B25642DAD00AD90F1 /* RecoverPassword.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -915,7 +912,6 @@
 				BA647E1925406E0200598944 /* ShowAlert.swift in Sources */,
 				46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */,
 				46870D62250281AF00984049 /* Constans.swift in Sources */,
-				048EA27C25642DAD00AD90F1 /* RecoverPassword.swift in Sources */,
 				04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */,
 				BA6AC2E825644DE00072E6C5 /* Utils.swift in Sources */,
 				043FEC93251BFD5B005C518B /* SuccesfulRecoverView.swift in Sources */,

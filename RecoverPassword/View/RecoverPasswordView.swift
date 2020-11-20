@@ -152,7 +152,7 @@ struct EmailRecorTextField: View {
     }
 }
 
-struct ContinueRecoButtonContent2: View {
+struct ContinueRecoButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
         Text("Continue")
@@ -165,7 +165,7 @@ struct ContinueRecoButtonContent2: View {
     }
 }
 
-struct CancelRecorButtonContent2: View {
+struct CancelRecorButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
         Text("Cancel")
