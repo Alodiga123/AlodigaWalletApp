@@ -6125,10 +6125,10 @@ var cpCryptogramUserSource: String?
 var cpEmailUser: String?
 
 /// Product Id
-var cpProductId: CLong?
+var cpProductId: String?
 
 /// Amount Transfer
-var cpAmountTransfer: Float?
+var cpAmountTransfer: String?
 
 /// Concept Transaction
 var cpConceptTransaction: String?
@@ -6137,7 +6137,7 @@ var cpConceptTransaction: String?
 var cpCryptogramUserDestination: String?
 
 /// Id User Destination
-var cpIdUserDestination: CLong?
+var cpIdUserDestination: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CryptogramUserSource","EmailUser","ProductId","AmountTransfer","ConceptTransaction","CryptogramUserDestination","IdUserDestination"]

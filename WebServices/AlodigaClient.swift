@@ -26,8 +26,10 @@ let webServiceCall = WebServicesCall()
     - returns: Void.
 */
 public func opSaveTransferBetweenAccount(saveTransferBetweenAccount : AL_SaveTransferBetweenAccount , completionHandler:  @escaping (Data?, NSError?) -> Void) {
-
-let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.wallet.alodiga.com/\"><SOAP-ENV:Body><ns1:saveTransferBetweenAccount><cryptogramUserSource>%@</cryptogramUserSource><emailUser>%@</emailUser><productId>0</productId><amountTransfer>0</amountTransfer><conceptTransaction>%@</conceptTransaction><cryptogramUserDestination>%@</cryptogramUserDestination><idUserDestination>0</idUserDestination></ns1:saveTransferBetweenAccount></SOAP-ENV:Body></SOAP-ENV:Envelope>",saveTransferBetweenAccount.cpCryptogramUserSource!,saveTransferBetweenAccount.cpEmailUser!,saveTransferBetweenAccount.cpProductId!,saveTransferBetweenAccount.cpAmountTransfer!,saveTransferBetweenAccount.cpConceptTransaction!,saveTransferBetweenAccount.cpCryptogramUserDestination!,saveTransferBetweenAccount.cpIdUserDestination!)
+        
+    let id = saveTransferBetweenAccount.cpIdUserDestination?.description
+    
+    let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.wallet.alodiga.com/\"><SOAP-ENV:Body><ns1:saveTransferBetweenAccount><cryptogramUserSource>%@</cryptogramUserSource><emailUser>%@</emailUser><productId>%@</productId><amountTransfer>%@</amountTransfer><conceptTransaction>%@</conceptTransaction><cryptogramUserDestination>%@</cryptogramUserDestination><idUserDestination>%@</idUserDestination></ns1:saveTransferBetweenAccount></SOAP-ENV:Body></SOAP-ENV:Envelope>",saveTransferBetweenAccount.cpCryptogramUserSource!,saveTransferBetweenAccount.cpEmailUser!,saveTransferBetweenAccount.cpProductId!,saveTransferBetweenAccount.cpAmountTransfer!,saveTransferBetweenAccount.cpConceptTransaction!,saveTransferBetweenAccount.cpCryptogramUserDestination!,id as! CVarArg)
 
     webServiceCall.makeSoapConnection(soapLocation: "http://34.211.97.207:8080/AlodigaWallet/APIAlodigaWalletService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SaveTransferBetweenAccountResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }

@@ -66,7 +66,7 @@ struct OperationsKeyViewAccess: View {
                         //        self.isFailKeyIn()
                                 
                          //   }else{
-                                let util = Utils()
+                               /* let util = Utils()
                                 util.getCodeOperation(data: "1234") { (res, error) in
                                     if(res != nil){
                                         let clave : String
@@ -89,10 +89,10 @@ struct OperationsKeyViewAccess: View {
                                 //}
                                 
                                 
-                            }
+                            }*/
                             
                             
-                        
+                            self.isSuccesKeyIn()
                         
                         }) {
                             
@@ -100,7 +100,7 @@ struct OperationsKeyViewAccess: View {
                         }.padding(3)
                         
                         
-                        NavigationLink(destination: RechargeView(), isActive:self.$isSuccesKey){
+                        NavigationLink(destination: ConfirmationView(), isActive:self.$isSuccesKey){
                             EmptyView()
                         }
                         

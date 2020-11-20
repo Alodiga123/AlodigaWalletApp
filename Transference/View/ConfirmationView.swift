@@ -30,7 +30,7 @@ struct ConfirmationViewAccess: View {
     @State var option =  Constant.defaults.value(forKey: "optionTransference") as! String
     @State var isTransfereceProcess: Bool = false
     let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
-    @State var userDestinationID : CLong = 0
+    @State var userDestinationID : String = ""
     
     
     func isTransfereceProcessIn(){
@@ -50,7 +50,7 @@ struct ConfirmationViewAccess: View {
                 objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByEmail.self, from: str.data(using: .utf8)!)
                 print("OBJETO DECODE")
                 print(objetResponse)
-                self.userDestinationID = objetResponse.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.UsuarioID as! CLong
+                self.userDestinationID = objetResponse.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.UsuarioID
                 self.jsonUserByEmail = objetResponse
             } catch  {
                 print("Error: decodificando json")
@@ -64,7 +64,7 @@ struct ConfirmationViewAccess: View {
                 objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByMovil.self, from: str.data(using: .utf8)!)
                 print("OBJETO DECODE")
                 print(objetResponse)
-                self.userDestinationID = objetResponse.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.UsuarioID as! CLong
+                self.userDestinationID = objetResponse.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.UsuarioID
                 self.jsonUserByMovil = objetResponse
             } catch  {
                 print("Error: decodificando json")
@@ -207,8 +207,8 @@ struct ConfirmationViewAccess: View {
                             let saveTransferBetweenAccount = AL_SaveTransferBetweenAccount()
                             saveTransferBetweenAccount.cpCryptogramUserSource = "1"
                             saveTransferBetweenAccount.cpEmailUser = Constant.defaults.value(forKey: "emailUser") as! String
-                            saveTransferBetweenAccount.cpProductId = currencySelect["id"] as! Int
-                            saveTransferBetweenAccount.cpAmountTransfer = Constant.defaults.value(forKey: "amount") as! Float
+                            saveTransferBetweenAccount.cpProductId = currencySelect["id"]
+                            saveTransferBetweenAccount.cpAmountTransfer = Constant.defaults.value(forKey: "amount") as! String
                             saveTransferBetweenAccount.cpConceptTransaction = Constant.defaults.value(forKey: "concept") as! String
                             saveTransferBetweenAccount.cpCryptogramUserDestination = "1"
                             saveTransferBetweenAccount.cpIdUserDestination = self.userDestinationID
@@ -235,7 +235,7 @@ struct ConfirmationViewAccess: View {
                         }.padding(3)
                         
                         
-                        NavigationLink(destination: TransferenceView(), isActive:self.$isTransfereceProcess){
+                        NavigationLink(destination: SuccesfulTransactionView(), isActive:self.$isTransfereceProcess){
                             EmptyView()
                         }
                         

@@ -161,7 +161,7 @@ public class TransferenceController {
     
     
     
-    func proccesTransference(saveTransferBetweenAccount: AL_SaveTransferBetweenAccount, completion: @escaping (_ res:String?, String?) -> Void) {
+    func proccesTransference(saveTransferBetweenAccount: AL_SaveTransferBetweenAccount, completion: @escaping (_ res:ObjectProcessTransference?, String?) -> Void) {
     
     let client_AL = AlodigaClient()
                 
@@ -178,8 +178,8 @@ public class TransferenceController {
                 }
                 
                 do{
-                    //var objetResponse: ObjectGetUsuarioByMovil
-                    var objetResponseError: ObjectErrorGetUsuarioByMovil
+                    var objetResponse: ObjectProcessTransference
+                    var objetResponseError: ObjectProcessTransferenceError
 
                     let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
                     print("datastring " + datastring)
@@ -192,10 +192,10 @@ public class TransferenceController {
                         
                     {
                         Constant.defaults.setValue(jsonStr, forKey: "jsonUserByMovil")
-                        //objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByMovil.self, from: jsonStr.data(using: .utf8)!)
-                        completion(jsonStr, nil)
+                        objetResponse = try JSONDecoder().decode(ObjectProcessTransference.self, from: jsonStr.data(using: .utf8)!)
+                        completion(objetResponse, nil)
                     }else{
-                        objetResponseError = try JSONDecoder().decode(ObjectErrorGetUsuarioByMovil.self, from: jsonStr.data(using: .utf8)!)
+                        objetResponseError = try JSONDecoder().decode(ObjectProcessTransferenceError.self, from: jsonStr.data(using: .utf8)!)
                         completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
                     }
                     
