@@ -59,15 +59,15 @@ struct OperationsKeyViewAccess: View {
                         Button(action: {
                             let alert = ShowAlert()
 
-                            if(key.isEmpty || key.count != 4){
-                                    alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinText", comment: ""))
-                            }else if(OperationsKeyViewAccess.count >= 3){
+                           // if(key.isEmpty || key.count != 4){
+                               //     alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinText", comment: ""))
+                        //    }else if(OperationsKeyViewAccess.count >= 3){
                                 
-                                self.isFailKeyIn()
+                        //        self.isFailKeyIn()
                                 
-                            }else{
+                         //   }else{
                                 let util = Utils()
-                                util.getCodeOperation(data: key) { (res, error) in
+                                util.getCodeOperation(data: "1234") { (res, error) in
                                     if(res != nil){
                                         let clave : String
                                         clave = res! as String
@@ -86,7 +86,7 @@ struct OperationsKeyViewAccess: View {
                                         print(error!)
                                     }
                                     
-                                }
+                                //}
                                 
                                 
                             }

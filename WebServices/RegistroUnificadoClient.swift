@@ -822,11 +822,12 @@ public class RegistroUnificadoClient {
 
         - returns: Void.
     */
-    public func opValidarPin(validarPin : ValidarPin , completionHandler:  @escaping (Data?, NSError?) -> Void) {
+    public func opValidarPin(pin: String, userId: String , completionHandler:  @escaping (Data?, NSError?) -> Void) {
 
-    let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:validarPin><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>0</usuarioId><pin>%@</pin></ns1:validarPin></SOAP-ENV:Body></SOAP-ENV:Envelope>",validarPin.cpUsuarioApi!,validarPin.cpPasswordApi!,validarPin.cpUsuarioId!,validarPin.cpPin!)
-
-    webService.makeSoapConnection(soapLocation:"http://ec2-52-42-63-64.us-west-2.compute.amazonaws.com:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ValidarPinResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+        let soap = String(format: "<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:validarPin><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><pin>%@</pin></ns1:validarPin></SOAP-ENV:Body></SOAP-ENV:Envelope>",Constant.WEB_SERVICES_USUARIOWS,Constant.WEB_SERVICES_PASSWORDWS,userId,pin)
+        
+       
+    webService.makeSoapConnection(soapLocation:"http://ec2-52-42-63-64.us-west-2.compute.amazonaws.com:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soap, soapVersion: "1", className:"ValidarPinResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
      }
 
     /**

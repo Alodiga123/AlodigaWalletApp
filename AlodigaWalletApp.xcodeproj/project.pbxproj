@@ -92,6 +92,7 @@
 		BA647E1925406E0200598944 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA647E1825406E0200598944 /* ShowAlert.swift */; };
 		BA6AC2E825644DE00072E6C5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC2E725644DE00072E6C5 /* Utils.swift */; };
 		BA6AC2ED2564AA790072E6C5 /* FailCodeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC2EC2564AA790072E6C5 /* FailCodeOperation.swift */; };
+		BA6AC2FB256752990072E6C5 /* ObjectCodeOprationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC2FA256752990072E6C5 /* ObjectCodeOprationError.swift */; };
 		BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */; };
 		BAE1E9B6252BA9D5007F9CD6 /* ObjetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */; };
 		BAE1E9BB252BA9EB007F9CD6 /* WebServicesCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */; };
@@ -218,6 +219,7 @@
 		BA647E1825406E0200598944 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		BA6AC2E725644DE00072E6C5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BA6AC2EC2564AA790072E6C5 /* FailCodeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailCodeOperation.swift; sourceTree = "<group>"; };
+		BA6AC2FA256752990072E6C5 /* ObjectCodeOprationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCodeOprationError.swift; sourceTree = "<group>"; };
 		BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroUnificadoClient.swift; sourceTree = "<group>"; };
 		BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjetError.swift; sourceTree = "<group>"; };
 		BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesCall.swift; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 				BA1B8BC72563668B002A6892 /* ObjectGetUsuarioByEmailError.swift */,
 				04B6828025632D3000834E95 /* ObjectChangePassForgot.swift */,
 				04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */,
+				BA6AC2FA256752990072E6C5 /* ObjectCodeOprationError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -955,6 +958,7 @@
 				04ECA1212537CC7600A77BA1 /* RegisterController.swift in Sources */,
 				BAE1EA55252E04EF007F9CD6 /* ObjectBase.swift in Sources */,
 				0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */,
+				BA6AC2FB256752990072E6C5 /* ObjectCodeOprationError.swift in Sources */,
 				04D6DA51251953B00053125C /* OperationKeyConvertView.swift in Sources */,
 				04B6828625632F8D00834E95 /* ObjectErrorPassForgot.swift in Sources */,
 				BAE1E9E6252BC13E007F9CD6 /* ResponseController.swift in Sources */,

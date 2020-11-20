@@ -114,11 +114,11 @@ struct FirstViewSpinnerOption: View {
                     let alert = ShowAlert()
                     
                     if(selectedProduct.id == "0"){
-                        if(user.isEmpty){
-                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-                        }else if(!util.isValidEmail(testStr: user)){
-                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
-                        }else{
+                       // if(user.isEmpty){
+                          //  alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                      //  }else if(!util.isValidEmail(testStr: user)){
+                         //   alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
+                     //   }else{
                             
                             
                             controller.getUserByEmail(data: user) { (objectGetUsuarioByEmail, error) in
@@ -132,7 +132,7 @@ struct FirstViewSpinnerOption: View {
                                     print(error!)
                                 }
                                 
-                            }
+                      //      }
                             
                             
                             
@@ -142,11 +142,11 @@ struct FirstViewSpinnerOption: View {
                     
                     if(selectedProduct.id == "1"){
                         
-                        if(user.isEmpty){
-                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-                        }else if(user.count <= 11){
-                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidPhone", comment: "") )
-                        }else{
+                       // if(user.isEmpty){
+                        //    alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                       //}else if(user.count <= 11){
+                          //  alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidPhone", comment: "") )
+                       // }else{
                         controller.getUserByMovil(data: user) { (res, error) in
                             print(res)
                             if(res != nil){
@@ -162,7 +162,7 @@ struct FirstViewSpinnerOption: View {
                         }
                         }
                         
-                    }
+                   // }
                     
                 }){
                     TransferenceSerchButtonContent()

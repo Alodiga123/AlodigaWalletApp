@@ -58,8 +58,6 @@ struct ReturnLogin : Decodable{
          case codigoRespuesta = "codigoRespuesta"
          case mensajeRespuesta = "mensajeRespuesta"
         case datosRespuesta = "datosRespuesta"
-        
-
      }
 }
 
@@ -210,7 +208,6 @@ struct ImagenLogin: Decodable{
         case imagen = "imagen"
         case imagenId = "imagenId"
         case nombre = "nombre"
-
      }
 }
 

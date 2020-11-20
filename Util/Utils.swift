@@ -33,9 +33,10 @@ public class Utils{
         validarPin.cpPin = data
         validarPin.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
         validarPin.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-        validarPin.cpUsuarioId = Constant.defaults.value(forKey: "usuarioID") as! Int
+        validarPin.cpUsuarioId = 379//Int(Constant.defaults.value(forKey: "usuarioID") as! String)
         
-            client_RU.opValidarPin(validarPin: validarPin) {(data,error) in
+        
+        client_RU.opValidarPin(pin: data, userId: "379") {(data,error) in
                 if error != nil {
                     print("error=\(String(describing: error))")
                     completion(nil,"90")
@@ -44,7 +45,7 @@ public class Utils{
                 
                 do{
                     //var objetResponse: ObjectGetUsuarioByEmail
-                    var objetResponseError: ObjectErrorGetUsuarioByEmail
+                    var objetResponseError: ObjectCodeOperationError
 
                     let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
                     print("datastring " + datastring)
@@ -60,7 +61,7 @@ public class Utils{
                         //print(objetResponse)
                         completion(jsonStr, nil)
                     }else{
-                        objetResponseError = try JSONDecoder().decode(ObjectErrorGetUsuarioByEmail.self, from: jsonStr.data(using: .utf8)!)
+                        objetResponseError = try JSONDecoder().decode(ObjectCodeOperationError.self, from: jsonStr.data(using: .utf8)!)
                         completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
                     }
                     

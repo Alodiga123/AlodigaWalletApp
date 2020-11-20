@@ -186,20 +186,20 @@ struct TargetCustomerViewAccess: View {
                         Button(action: {
                             let alert = ShowAlert()
                             
-                            if(amount.isEmpty || concept.isEmpty){
-                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-                            }else if((amount as! Float) <= 0){
-                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
-                            }else if((currencySelect["saldoActual"] as! Float) < (amount as! Float) ){
+                            //if(amount.isEmpty || concept.isEmpty){
+                               // alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                            //}else if((amount as! Float) <= 0){
+                             //   alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
+                            //}else if((currencySelect["saldoActual"] as! Float) < (amount as! Float) ){
                                 
-                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
-                            }else{
-                                Constant.defaults.setValue(amount, forKey: "amount")
-                                Constant.defaults.setValue(concept, forKey: "concept")
+                             //   alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
+                            //}else{
+                                Constant.defaults.setValue("1.1", forKey: "amount")
+                                Constant.defaults.setValue("jhkj", forKey: "concept")
 
                                 self.isConfirmDataIn()
                                 
-                            }
+                            //}
                             
                         }) {
                             TransferenceSerchButtonContent()
@@ -207,7 +207,7 @@ struct TargetCustomerViewAccess: View {
                         }.padding(3)
                         
                         
-                        NavigationLink(destination: WithdrawalView(), isActive:self.$isConfirmData){
+                        NavigationLink(destination: OperationsKeyView(), isActive:self.$isConfirmData){
                             EmptyView()
                         }
                         
