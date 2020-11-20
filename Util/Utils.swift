@@ -123,4 +123,57 @@ public class Utils{
         }
 
     }
+    
+    func updateProductsIninitial(products : [ListadoProductos]) {
+        var emptyDictionary : Array<Dictionary<String, String>>
+        emptyDictionary = []
+                for product in products {
+                    let currency = ["id" : product.id,
+                                            "isPayTopUP" : product.isPayTopUP,
+                                            "nombreProducto" : product.nombreProducto,
+                                            "saldoActual" : product.saldoActual,
+                                            "simbolo" : product.simbolo]
+                    
+                    emptyDictionary.append(currency)
+                }
+                
+                Constant.defaults.setValue(emptyDictionary, forKey: "ListadoProductos")
+    }
+    
+        
+    
+    func updateProducts(listProduct: [productTransference]) {
+        var emptyDictionary : Array<Dictionary<String, String>>
+        emptyDictionary = []
+                for product in listProduct {
+                    let currency = ["id" : product.id,
+                                    "isPayTopUP" : product.isPayTopUp,
+                                    "nombreProducto" : product.name,
+                                            "saldoActual" : product.currentBalance,
+                                            "simbolo" : product.symbol]
+                    emptyDictionary.append(currency)
+       
+                }
+        
+        Constant.defaults.setValue(emptyDictionary, forKey: "ListadoProductos")
+    }
+    
+    
+    func getProductSession() -> [ListadoProductos] {
+        var dictionary : [Dictionary<String, String>]
+        dictionary = Constant.defaults.value(forKey: "ListadoProductos") as! [Dictionary<String, String>]
+        var productArray : [ListadoProductos] = []
+        
+        for product in dictionary {
+            var aux = ListadoProductos()
+            aux.id = product["id"] ?? ""
+            aux.nombreProducto = product["nombreProducto"] ?? ""
+            aux.isPayTopUP = product["isPayTopUP"] ?? ""
+            aux.saldoActual = product["saldoActual"] ?? ""
+            aux.simbolo = product["simbolo"] ?? ""
+            productArray.append(aux)
+        }
+        return productArray
+    }
+    
 }

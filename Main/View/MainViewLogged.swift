@@ -319,7 +319,6 @@ struct lista: View{
             }else{
                 
                 List(products){product in
-                  
                     Button(action: {
                         let alert = ShowAlert()
                         alert.showAlert(title: "", message: "En proceso")
@@ -334,8 +333,13 @@ struct lista: View{
         }
         .colorMultiply(Color.colorMain)
         .onAppear(
-            perform: getJSONLogin
+            perform: getProduct
         )
+    }
+    
+    func getProduct()  {
+     let util = Utils()
+        self.products = util.getProductSession()
     }
     
     func getJSONLogin() {

@@ -188,7 +188,9 @@ struct CardButtonViewAccess: View {
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.email, forKey: "email")
                                 
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.movil, forKey: "movil")
-                         
+                                
+                                let util = Utils()
+                                util.updateProductsIninitial(products: login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos)
                                 
                                 self.login()
                             }else if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "12"){
