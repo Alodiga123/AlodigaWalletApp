@@ -1,15 +1,16 @@
 //
-//  ObjectCountry.swift
+//  ObjectSecretQuestions.swift
 //  IOSAlodigaWalletApp
 //
-//  Created by Lulymar Guiterrez on 10/7/20.
-//  Copyright © 2020 Lulymar Guiterrez. All rights reserved.
+//  Created by Lulymar Gutierrez on 29/11/20.
+//  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 
 import Foundation
 
-struct ObjectCountry: Decodable{
-    var envelope: EnvelopeCountry
+
+struct ObjectSecretQuestions: Decodable{
+    var envelope: EnvelopeSecretQuestions
     
     enum CodingKeys: String, CodingKey {
          case envelope = "S:Envelope"
@@ -17,27 +18,27 @@ struct ObjectCountry: Decodable{
     
 }
 
-struct EnvelopeCountry : Decodable{
-   var xmlns : String
-   var body : BodyCountry
-   
-   enum CodingKeys: String, CodingKey {
-        case xmlns = "_xmlns:S"
-        case body = "S:Body"
+    struct EnvelopeSecretQuestions : Decodable{
+       var xmlns : String
+       var body : BodySecretQuestions
+       
+       enum CodingKeys: String, CodingKey {
+            case xmlns = "_xmlns:S"
+            case body = "S:Body"
+        }
     }
-}
 
-struct BodyCountry : Decodable{
-    var countryResponse: CountryMovilResponse
+struct BodySecretQuestions : Decodable{
+    var registerMovilResponse: SecretQuestionsResponse
     
     enum CodingKeys: String, CodingKey {
-         case countryResponse = "ns2:getCountriesResponse"
+         case registerMovilResponse = "ns2:getPreguntasSecretasResponse"
      }
 }
 
-struct CountryMovilResponse: Decodable{
+struct SecretQuestionsResponse: Decodable{
    var _xmlns : String
-   var _return : ReturnCountry
+   var _return : ReturnSecretQuestions
     
     enum CodingKeys: String, CodingKey {
          case _xmlns = "_xmlns:ns2"
@@ -45,22 +46,19 @@ struct CountryMovilResponse: Decodable{
      }
 }
 
-
-struct ReturnCountry : Decodable{
+struct ReturnSecretQuestions : Decodable{
    var fechaHora : String
    var codigoRespuesta : String
-   var mensajeRespuesta : MensajeRespuesta
-    var countries : [Country]
+   //var mensajeRespuesta : String
     
     enum CodingKeys: String, CodingKey {
          case fechaHora = "fechaHora"
          case codigoRespuesta = "codigoRespuesta"
-         case mensajeRespuesta = "mensajeRespuesta"
-         case countries = "countries"
+         //case mensajeRespuesta = "mensajeRespuesta"
      }
 }
 
-struct Country: Identifiable, Decodable, Hashable{
+struct Questions: Identifiable, Decodable, Hashable{
     var alternativeName3 : String
     var code : String
     var id : String
@@ -91,17 +89,3 @@ struct Country: Identifiable, Decodable, Hashable{
         hasher.combine(shortName)
     }
 }
-
-struct MensajeRespuesta: Decodable{
-    
-}
-
-struct AlternativeName1: Decodable{
-    
-}
-
-struct AlternativeName2: Decodable{
-    
-}
-
-

@@ -46,11 +46,13 @@ struct SuccessfulQuestionsViewAccess: View {
                         TextLabelSuccesfulQ()
                         RecoverCheckImagine()
                         Spacer()
-                        NavigationLink(destination: SecurityQuestionsView()) {
-                            BackQuestionsButtonContents()
-                        }
+                        
+                        
                         NavigationLink(destination: MainViewLogged()) {
-                            QuestionsButtonContents()
+                            QuestionsContinueButtonContent()
+                        }
+                        NavigationLink(destination: SecurityQuestionsView()) {
+                            QuestionsBackButtonContent()
                         }
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
@@ -80,33 +82,33 @@ struct QuestionsCheckImagine: View {
     }
 }
 
-struct BackQuestionsButtonContents: View {
-    let co = Color.black.opacity(0.7)
-    var body: some View {
-        Text("Back")
-            .font(.headline)
-            .foregroundColor(.white)
-            .frame(width: 220, height: 60)
-            .background(co)
-            .cornerRadius(35.0)
-            .padding(.top,10)
-    }
-}
-
-
-struct QuestionsButtonContents: View {
-    let co = Color.black.opacity(0.1)
-    var body: some View {
-        Text("Continue")
-            .font(.headline)
-            .foregroundColor(.black)
-            .frame(width: 220, height: 60)
-            .background(co)
-            .cornerRadius(35.0)
-            .padding(.top,5)
-            .padding(.bottom,10)
-    }
-}
+//struct BackQuestionsButtonContents: View {
+//    let co = Color.black.opacity(0.7)
+//    var body: some View {
+//        Text("Back")
+//            .font(.headline)
+//            .foregroundColor(.white)
+//            .frame(width: 220, height: 60)
+//            .background(co)
+//            .cornerRadius(35.0)
+//            .padding(.top,10)
+//    }
+//}
+//
+//
+//struct QuestionsButtonContents: View {
+//    let co = Color.black.opacity(0.1)
+//    var body: some View {
+//        Text("Continue")
+//            .font(.headline)
+//            .foregroundColor(.black)
+//            .frame(width: 220, height: 60)
+//            .background(co)
+//            .cornerRadius(35.0)
+//            .padding(.top,5)
+//            .padding(.bottom,10)
+//    }
+//}
 
 struct SuccessfulQuestionsView_Previews: PreviewProvider {
     static var previews: some View {

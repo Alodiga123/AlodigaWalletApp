@@ -37,7 +37,7 @@ struct RecoverPasswordViewAccess: View {
     }
     
     var body: some View {
-        ScrollView{
+        //ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack{
@@ -108,7 +108,7 @@ struct RecoverPasswordViewAccess: View {
                 }.padding(.bottom,geometry.size.height/2.2)
             }
         }
-    }
+   // }
 }
 
 struct TextLabelRecover: View {
@@ -126,10 +126,21 @@ struct EmailRecorTextField: View {
     @State private var isValidEmail: Bool = false
     
     var body: some View {
+        
+//        TextField("Correo Electrónico", text: self.$email)
+//            //.font(.system(size: geometry.size.width/24))
+//            .textFieldStyle(PlainTextFieldStyle())
+//            .padding([.leading, .trailing], 6)
+//            .frame(height: 50)
+//            //.frame(width: geometry.size.width*0.75, height: geometry.size.width/20)
+//            .background(
+//                RoundedRectangle(cornerRadius: 8)
+//                    .fill(Color.init(white: 0.28))
+//            )
         FloatingLabelTextField($email, placeholder: "Correo Electrónico", editingChanged: { (isChanged) in
-            
+
         }) {
-            
+
         }
             .leftView({ // Add left view.
                 Image("email")
@@ -141,7 +152,7 @@ struct EmailRecorTextField: View {
     }
 }
 
-struct ContinueRecoButtonContent: View {
+struct ContinueRecoButtonContent2: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
         Text("Continue")
@@ -154,7 +165,7 @@ struct ContinueRecoButtonContent: View {
     }
 }
 
-struct CancelRecorButtonContent: View {
+struct CancelRecorButtonContent2: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
         Text("Cancel")

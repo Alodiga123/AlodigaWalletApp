@@ -28,6 +28,13 @@ struct SecurityQuestionsViewAccess: View {
     @State var question1: String = ""
     @State var question2: String = ""
     @State var question3: String = ""
+    @State var steptwo: Bool = false
+    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.steptwo = true
+        }
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -51,13 +58,53 @@ struct SecurityQuestionsViewAccess: View {
                         ListarPregunta()
                         Questions3RegisterTextField(question3: self.$question3)
                     }
+//                    NavigationLink(destination: SuccessfulQuestionsView()) {
+//                        QuestionsContinueButtonContent()
+//                    }
                     
-                    NavigationLink(destination: SuccessfulQuestionsView()) {
+                    Button(action: {
+                        let questionsController = SecretQuestionsController()
+                        //let alert = ShowAlert()
+                        let preguntaSeguridad = GetPreguntasSecretas()
+                        
+                        preguntaSeguridad.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+                        preguntaSeguridad.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
+                        preguntaSeguridad.cpIdIdioma = 4
+                     
+//                            Constant.defaults.setValue("123456", forKey: "token")
+//                            stepNex()
+                            questionsController.getSecretQuestions(preguntaSecreta: preguntaSeguridad) { (res,error) in
+                                print("EN LAS PREGUNTAS!!!!")
+                                if res != nil  {
+                                    print(res as Any)
+                                    let preguntaSeguridad: ObjectSecretQuestions
+                                    preguntaSeguridad = res! as ObjectSecretQuestions
+                                    print(preguntaSeguridad.envelope.body.registerMovilResponse._return.fechaHora)
+
+//                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
+                                    stepNex()
+                                }
+
+                                if error != nil {
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: questionsController.getMessageError(code: error!))
+                                    print(error!)
+                                }
+                            }
+                    }) {
+                        //QuestionsContinueButtonContent()
                         QuestionsBackButtonContent()
                     }
+                    
+//                    NavigationLink(destination: SuccessfulQuestionsView(), isActive:self.$steptwo){
+//                        EmptyView()
+//                    }
+                    
+                    
                     NavigationLink(destination: SuccessfulQuestionsView()) {
                         QuestionsContinueButtonContent()
                     }
+                    
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
@@ -195,7 +242,7 @@ struct ListarPregunta: View {
 struct QuestionsBackButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Back")
+        Text("Continue")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
@@ -209,7 +256,7 @@ struct QuestionsBackButtonContent: View {
 struct QuestionsContinueButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
-        Text("Continue")
+        Text("Back")
             .font(.headline)
             .foregroundColor(.black)
             .frame(width: 220, height: 60)
