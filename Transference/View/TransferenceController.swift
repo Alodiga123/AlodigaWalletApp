@@ -18,7 +18,7 @@ public class TransferenceController {
     let client_RU = RegistroUnificadoClient()
 
             let getUsuarioporemail = GetUsuarioporemail()
-            getUsuarioporemail.cpEmail = "kerwin2821@gmail.com"
+            getUsuarioporemail.cpEmail = data.trimmingCharacters(in: NSCharacterSet.whitespaces)
             getUsuarioporemail.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
             getUsuarioporemail.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
             
@@ -67,7 +67,7 @@ public class TransferenceController {
     let client_RU = RegistroUnificadoClient()
                 
             let getUsuariopormovil = GetUsuariopormovil()
-            getUsuariopormovil.cpMovil = "584241934005"
+        getUsuariopormovil.cpMovil =  data.trimmingCharacters(in: NSCharacterSet.whitespaces).trimmingCharacters(in: CharacterSet(charactersIn: "+"))//"584241934005"
             getUsuariopormovil.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
             getUsuariopormovil.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
             
@@ -193,6 +193,8 @@ public class TransferenceController {
                     {
                         Constant.defaults.setValue(jsonStr, forKey: "jsonUserByMovil")
                         objetResponse = try JSONDecoder().decode(ObjectProcessTransference.self, from: jsonStr.data(using: .utf8)!)
+                        let util = Utils()
+                        util.updateProducts(listProduct: objetResponse.envelope.body.cambiar._return.products)
                         completion(objetResponse, nil)
                     }else{
                         objetResponseError = try JSONDecoder().decode(ObjectProcessTransferenceError.self, from: jsonStr.data(using: .utf8)!)

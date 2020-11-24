@@ -325,7 +325,6 @@ struct lista: View{
                     }) {
                         rowView(user: product)
                     }
-                    
                 }
 
                 

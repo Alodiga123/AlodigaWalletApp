@@ -37,9 +37,7 @@ struct TargetCustomerViewAccess: View {
     let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
    
     func getJSONUser() {
-        
-        //let option = Constant.defaults.value(forKey: "optionTransference") as! String
-        
+                
         if self.option == "0" {
             var objetResponse: ObjectGetUsuarioByEmail
             let str: String = Constant.defaults.value(forKey: "jsonUserByEmail") as! String
@@ -50,7 +48,7 @@ struct TargetCustomerViewAccess: View {
 
                 self.jsonUserByEmail = objetResponse
             } catch  {
-                print("Error: decodificando json")
+                print("Error: decodificando json transference 1")
             }
         }
         
@@ -78,14 +76,11 @@ struct TargetCustomerViewAccess: View {
     }
     
     var body: some View {
-        ScrollView{
+        
             GeometryReader { geometry in
                 ZStack{
                     VStack (alignment: .center, spacing: 5) {
                     
-                        
-                      
-
                         Rectangle()
                             .frame(width:50, height: 6)
                             .cornerRadius(3.0)
@@ -148,7 +143,7 @@ struct TargetCustomerViewAccess: View {
                             if (option == "0"){
                                 
                                 if(jsonUserByEmail != nil){
-                                    TextField(util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
+                                    TextField(util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta?.numeroCuenta)!), text: self.$text)
                                         .font(.caption)
                                 }else{
                                     TextField("Destination", text: self.$text)
@@ -158,7 +153,7 @@ struct TargetCustomerViewAccess: View {
                               
                             }else{
                                 if(jsonUserByMovil != nil){
-                                    TextField(util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
+                                    TextField(util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta?.numeroCuenta)!), text: self.$text)
                                         .font(.caption)
                                 }else{
                                     TextField("Destination", text: self.$text)
@@ -171,7 +166,7 @@ struct TargetCustomerViewAccess: View {
                             Text("Origin")
                                 .frame(width: 50, alignment: .leading)
                                 .font(.caption)
-                            TextField(currencySelect["nombreProducto"]!, text: self.$text)
+                            TextField(currencySelect["nombreProducto"] ?? "", text: self.$text)
                                 .font(.caption)
                         }
                         }.onAppear(
@@ -183,23 +178,29 @@ struct TargetCustomerViewAccess: View {
                         TransferenceAmountTextField(amount: self.$amount)
                         TransferenceConceptTextField(concept: self.$concept)
                         
+                        let amount_aux : Float = Float(amount) ?? 0
+                        let saldo1 = currencySelect["saldoActual"]! as String
+                        let saldo : Float = Float(saldo1) ?? 0
+                                                  
+                        
                         Button(action: {
                             let alert = ShowAlert()
                             
-                            //if(amount.isEmpty || concept.isEmpty){
-                               // alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-                            //}else if((amount as! Float) <= 0){
-                             //   alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
-                            //}else if((currencySelect["saldoActual"] as! Float) < (amount as! Float) ){
+                            if(amount.isEmpty || concept.isEmpty){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                            }
+                            else if(amount_aux <= 0){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
+                            }else if(saldo < amount_aux ){
                                 
-                             //   alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
-                            //}else{
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
+                            }else{
                                 Constant.defaults.setValue("1.1", forKey: "amount")
                                 Constant.defaults.setValue("jhkj", forKey: "concept")
 
                                 self.isConfirmDataIn()
                                 
-                            //}
+                            }
                             
                         }) {
                             TransferenceSerchButtonContent()
@@ -223,7 +224,7 @@ struct TargetCustomerViewAccess: View {
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/2.2)
             }
-        }
+        
     }
 }
 
@@ -254,7 +255,10 @@ struct TextLabelInfomationPaymen: View {
 struct TransferenceAmountTextField: View {
     @Binding var amount: String
     var body: some View {
-        FloatingLabelTextField($amount, placeholder: "Monto", editingChanged: { (isChanged) in
+        
+  
+        FloatingLabelTextField($amount , placeholder: "Monto", editingChanged: { (isChanged) in
+            amount = Double(amount) as? String ??  amount
         }) {
         }
             .leftView({ // Add left view.
@@ -263,7 +267,8 @@ struct TransferenceAmountTextField: View {
             .frame(height: 40)
             .padding(.leading,10)
             .padding(.trailing,20)
-            .padding(.bottom,-1)
+        .padding(.bottom,-1).keyboardType(UIKeyboardType.decimalPad)
+        .keyboardType(.decimalPad)
     }
 }
 

@@ -50,10 +50,10 @@ struct ConfirmationViewAccess: View {
                 objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByEmail.self, from: str.data(using: .utf8)!)
                 print("OBJETO DECODE")
                 print(objetResponse)
-                self.userDestinationID = objetResponse.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.UsuarioID
+                self.userDestinationID = objetResponse.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.UsuarioID!
                 self.jsonUserByEmail = objetResponse
             } catch  {
-                print("Error: decodificando json")
+                print("Error: decodificando json Get usuario")
             }
         }
         
@@ -64,7 +64,7 @@ struct ConfirmationViewAccess: View {
                 objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByMovil.self, from: str.data(using: .utf8)!)
                 print("OBJETO DECODE")
                 print(objetResponse)
-                self.userDestinationID = objetResponse.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.UsuarioID
+                self.userDestinationID = objetResponse.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.UsuarioID ?? ""
                 self.jsonUserByMovil = objetResponse
             } catch  {
                 print("Error: decodificando json")
@@ -74,7 +74,6 @@ struct ConfirmationViewAccess: View {
     }
     
     var body: some View {
-        ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack{
@@ -149,7 +148,7 @@ struct ConfirmationViewAccess: View {
                                 if (option == "0"){
                                     
                                     if(jsonUserByEmail != nil){
-                                        TextField(util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
+                                        TextField(util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta?.numeroCuenta)!), text: self.$text)
                                             .font(.caption)
                                     }else{
                                         TextField("Destination", text: self.$text)
@@ -159,7 +158,7 @@ struct ConfirmationViewAccess: View {
                                     
                                 }else{
                                     if(jsonUserByMovil != nil){
-                                        TextField(util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta.numeroCuenta)!), text: self.$text)
+                                        TextField(util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta?.numeroCuenta)!), text: self.$text)
                                             .font(.caption)
                                     }else{
                                         TextField("Destination", text: self.$text)
@@ -252,7 +251,7 @@ struct ConfirmationViewAccess: View {
                     .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/2.2)
             }
-        }
+        
     }
 }
 

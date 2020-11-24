@@ -28,36 +28,35 @@ struct TransferenceViewAccess: View {
     @State var isLoggedIn: Bool = false
     
     var body: some View {
-        ScrollView{
-            GeometryReader { geometry in
-                ZStack{
-                    VStack{
-                        Rectangle()
-                            .frame(width:50, height: 6)
-                            .cornerRadius(3.0)
-                            .opacity(0.3)
-                            .padding(.top,16)
-                        VStack(alignment: .leading) {
-                            TextLabelTransference()
-                        }.padding(.leading,20)
-                         .padding(.trailing,20)
-                        TextLabelCurrency()
-                        
-                        
-                        
-                        TextLabelUserR()
+        GeometryReader { geometry in
+            ZStack{
+                VStack{
+                    Rectangle()
+                        .frame(width:50, height: 6)
+                        .cornerRadius(3.0)
+                        .opacity(0.3)
+                        .padding(.top,16)
+                    VStack(alignment: .leading) {
+                        TextLabelTransference()
+                    }.padding(.leading,20)
+                    .padding(.trailing,20)
+                    TextLabelCurrency()
                     
-                       // NavigationLink(destination: TargetCustomerView()) {
-                         //   TransferenceSerchButtonContent()
-                       // }
-                        NavigationLink(destination: MainViewLogged()) {
-                            TransferenceBackButtonContent()
-                        }
-                    }.background(Color.cardButtonViewGray)
-                        .cornerRadius(40)
-                }.padding(.bottom,geometry.size.height/2.2)
-            }
+                    
+                    
+                    TextLabelUserR()
+                    
+                    // NavigationLink(destination: TargetCustomerView()) {
+                    //   TransferenceSerchButtonContent()
+                    // }
+                    NavigationLink(destination: MainViewLogged()) {
+                        TransferenceBackButtonContent()
+                    }
+                }.background(Color.cardButtonViewGray)
+                .cornerRadius(40)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
+        
     }
 }
 
@@ -75,7 +74,7 @@ struct TextLabelCurrency: View {
     @State var jsonLogin : ObjectLogin?
     var line: some View {
         VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,10).frame(width: 380, alignment: .center)
-       }
+    }
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
             Text("CurrencyTransfer")
@@ -91,7 +90,7 @@ struct TextLabelCurrency: View {
 }
 
 struct TextLabelUserR: View {
-
+    
     var body: some View {
         Text("SearchCriteria")
             .font(.callout)
@@ -105,21 +104,20 @@ struct TextLabelUserR: View {
 
 struct EmailTextField: View {
     @Binding var user: String
+    
+    
     var body: some View {
         FloatingLabelTextField($user, placeholder: "", editingChanged: { (isChanged) in
         }) {
-        }
-            .leftView({ // Add left view.
-                Image("email")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 40)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,0)
+        }               
+        .leftView({ // Add left view.
+            Image("email")
+        }).placeholderColor(Color.placeholderGrayColor)
+        .frame(height: 40)
+        .padding(.leading,20)
+        .padding(.trailing,20)
+        .padding(.bottom,0)
         
-        //let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
-        //Text("Prueba OJOOO  " + currencySelect["nombreProducto"]!)
-
     }
 }
 
@@ -129,13 +127,13 @@ struct PhoneTextField: View {
         FloatingLabelTextField($user, placeholder: "Numero de Telefono", editingChanged: { (isChanged) in
         }) {
         }
-            .leftView({ // Add left view.
-                Image("phone")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 40)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,0)
+        .leftView({ // Add left view.
+            Image("phone")
+        }).placeholderColor(Color.placeholderGrayColor)
+        .frame(height: 40)
+        .padding(.leading,20)
+        .padding(.trailing,20)
+        .padding(.bottom,0)
         
     }
 }

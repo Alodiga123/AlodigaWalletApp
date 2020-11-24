@@ -30,8 +30,8 @@
             filePath = "Transference/View/SpinnerOption.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -55,113 +55,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F42D5B61-9E51-47E8-9787-44444A28DD15"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WebServices/RegistroUnificadoClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "831"
-            endingLineNumber = "831"
-            landmarkName = "opValidarPin(pin:userId:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F42D5B61-9E51-47E8-9787-44444A28DD15 - ebcbcd2e0fe3aae5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AlodigaWalletApp.RegistroUnificadoClient.opValidarPin(pin: Swift.String, userId: Swift.Optional&lt;Swift.String&gt;, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "AlodigaWalletApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/WebServices/RegistroUnificadoClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "831"
-                  endingLineNumber = "831"
-                  offsetFromSymbolStart = "929">
-               </Location>
-               <Location
-                  uuid = "F42D5B61-9E51-47E8-9787-44444A28DD15 - 83a815a95fa480c8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in AlodigaWalletApp.RegistroUnificadoClient.opValidarPin(pin: Swift.String, userId: Swift.Optional&lt;Swift.String&gt;, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "AlodigaWalletApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/WebServices/RegistroUnificadoClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "831"
-                  endingLineNumber = "831"
-                  offsetFromSymbolStart = "53">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D7F60018-07BF-477F-B243-71D6FA3251C2"
-            shouldBeEnabled = "Yes"
+            uuid = "5B57F544-E75D-4303-8268-066CC2C68F10"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Util/Utils.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "getCodeOperation(data:completion:)"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "getProductSession()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0B285A8B-A0D7-49A2-9F35-378C495165B2"
+            uuid = "2AB940FF-B210-463F-888E-0AC8CC5A3F93"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Util/Utils.swift"
+            filePath = "RecoverPassword/View/SuccesfulRecoverView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "getCodeOperation(data:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3D0331F8-822F-479B-AA38-828D7B845F68"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Util/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "getCodeOperation(data:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B9957AA2-0526-4F57-A912-44F951F286EA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Util/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "getCodeOperation(data:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

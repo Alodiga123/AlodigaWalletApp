@@ -70,7 +70,6 @@
 		46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B271F924FD626B005DB0C1 /* MainViewLogged.swift */; };
 		46B2721024FD8280005DB0C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46B2720D24FD820A005DB0C1 /* Localizable.strings */; };
 		46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC46A250BC236008D42B3 /* RecoverPasswordByTokenView.swift */; };
-		46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC46C250BF506008D42B3 /* Transference2View.swift */; };
 		46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC471251284B9008D42B3 /* ConfirmationQRView.swift */; };
 		46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC4732512851E008D42B3 /* OperationsKeyQRView.swift */; };
 		46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBC4752512852E008D42B3 /* PaymentBusinessesQRView.swift */; };
@@ -98,6 +97,7 @@
 		BA6AC2FB256752990072E6C5 /* ObjectCodeOprationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC2FA256752990072E6C5 /* ObjectCodeOprationError.swift */; };
 		BA6AC3002567FBA20072E6C5 /* ObjectProccesTransferenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC2FF2567FBA20072E6C5 /* ObjectProccesTransferenceError.swift */; };
 		BA6AC3052567FCD10072E6C5 /* ObjectProcessTransference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC3042567FCD10072E6C5 /* ObjectProcessTransference.swift */; };
+		BA6AC310256D5E5B0072E6C5 /* TransferenceQr.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC30F256D5E5B0072E6C5 /* TransferenceQr.swift */; };
 		BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */; };
 		BAE1E9B6252BA9D5007F9CD6 /* ObjetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */; };
 		BAE1E9BB252BA9EB007F9CD6 /* WebServicesCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */; };
@@ -202,7 +202,6 @@
 		46B2721324FD83C5005DB0C1 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		46B2721424FD83C5005DB0C1 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		46DBC46A250BC236008D42B3 /* RecoverPasswordByTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordByTokenView.swift; sourceTree = "<group>"; };
-		46DBC46C250BF506008D42B3 /* Transference2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transference2View.swift; sourceTree = "<group>"; };
 		46DBC471251284B9008D42B3 /* ConfirmationQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationQRView.swift; sourceTree = "<group>"; };
 		46DBC4732512851E008D42B3 /* OperationsKeyQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsKeyQRView.swift; sourceTree = "<group>"; };
 		46DBC4752512852E008D42B3 /* PaymentBusinessesQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentBusinessesQRView.swift; sourceTree = "<group>"; };
@@ -230,6 +229,7 @@
 		BA6AC2FA256752990072E6C5 /* ObjectCodeOprationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCodeOprationError.swift; sourceTree = "<group>"; };
 		BA6AC2FF2567FBA20072E6C5 /* ObjectProccesTransferenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectProccesTransferenceError.swift; sourceTree = "<group>"; };
 		BA6AC3042567FCD10072E6C5 /* ObjectProcessTransference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectProcessTransference.swift; sourceTree = "<group>"; };
+		BA6AC30F256D5E5B0072E6C5 /* TransferenceQr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferenceQr.swift; sourceTree = "<group>"; };
 		BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroUnificadoClient.swift; sourceTree = "<group>"; };
 		BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjetError.swift; sourceTree = "<group>"; };
 		BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesCall.swift; sourceTree = "<group>"; };
@@ -647,9 +647,9 @@
 				46DBC47D2512869E008D42B3 /* OperationsKeyView.swift */,
 				46DBC47B2512866C008D42B3 /* ConfirmationView.swift */,
 				46DBC47F251286C4008D42B3 /* SuccesfulTransactionView.swift */,
-				46DBC46C250BF506008D42B3 /* Transference2View.swift */,
 				BA1B8B94255C11B2002A6892 /* SpinnerOption.swift */,
 				BA1B8B9F255C1985002A6892 /* SpinnerCurrencyTransference.swift */,
+				BA6AC30F256D5E5B0072E6C5 /* TransferenceQr.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -916,7 +916,6 @@
 				0480418F255E19520025357E /* ObjectTokenAplication.swift in Sources */,
 				46870D642502825400984049 /* ExtensionColor.swift in Sources */,
 				BA647E1925406E0200598944 /* ShowAlert.swift in Sources */,
-				46DBC46D250BF506008D42B3 /* Transference2View.swift in Sources */,
 				46870D62250281AF00984049 /* Constans.swift in Sources */,
 				04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */,
 				BA6AC2E825644DE00072E6C5 /* Utils.swift in Sources */,
@@ -939,6 +938,7 @@
 				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
 				043FEC86251BE2EE005C518B /* RecoverPasswordView.swift in Sources */,
 				04D322C52518E54C00F3F38C /* ConfirmationTopUpView.swift in Sources */,
+				BA6AC310256D5E5B0072E6C5 /* TransferenceQr.swift in Sources */,
 				BAE1EA65252E8DCB007F9CD6 /* LoginController.swift in Sources */,
 				0480419A255E1AB40025357E /* RecoverController.swift in Sources */,
 				BA6AC3052567FCD10072E6C5 /* ObjectProcessTransference.swift in Sources */,

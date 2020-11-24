@@ -26,7 +26,7 @@ struct OperationsKeyView: View {
 struct OperationsKeyViewAccess: View {
     @State var key: String = ""
     @State var isSuccesKey: Bool = false
-    @State static var count : Int = 0
+    @State var count : Int = 0
     @State var isFailKey: Bool = false
 
     func isSuccesKeyIn(){
@@ -40,7 +40,6 @@ struct OperationsKeyViewAccess: View {
         }
     }
     var body: some View {
-        ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack {
@@ -59,15 +58,15 @@ struct OperationsKeyViewAccess: View {
                         Button(action: {
                             let alert = ShowAlert()
 
-                           // if(key.isEmpty || key.count != 4){
-                               //     alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinText", comment: ""))
-                        //    }else if(OperationsKeyViewAccess.count >= 3){
+                            if(key.isEmpty || key.count != 4){
+                                   alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinText", comment: ""))
+                            }else if(count >= 3){
                                 
-                        //        self.isFailKeyIn()
+                                self.isFailKeyIn()
                                 
-                         //   }else{
-                               /* let util = Utils()
-                                util.getCodeOperation(data: "1234") { (res, error) in
+                            }else{
+                                let util = Utils()
+                                util.getCodeOperation(data: key.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (res, error) in
                                     if(res != nil){
                                         let clave : String
                                         clave = res! as String
@@ -75,24 +74,24 @@ struct OperationsKeyViewAccess: View {
                                         if(clave == key){
                                             self.isSuccesKeyIn()
                                         }else{
-                                            OperationsKeyViewAccess.count = OperationsKeyViewAccess.count + 1
+                                           count = count + 1
                                         }
                                         
                                     }
                                     if error != nil {
-                                        OperationsKeyViewAccess.count = OperationsKeyViewAccess.count + 1
+                                        count = count + 1
                                         let alert = ShowAlert()
                                         alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
                                         print(error!)
                                     }
                                     
-                                //}
+                                }
                                 
                                 
-                            }*/
+                            }
                             
                             
-                            self.isSuccesKeyIn()
+                            //self.isSuccesKeyIn()
                         
                         }) {
                             
@@ -104,7 +103,7 @@ struct OperationsKeyViewAccess: View {
                             EmptyView()
                         }
                         
-                        NavigationLink(destination: FailCodeOperation(), isActive:self.$isFailKey){
+                        NavigationLink(destination: FailCodeOperationView(), isActive:self.$isFailKey){
                             EmptyView()
                         }
                         
@@ -118,7 +117,6 @@ struct OperationsKeyViewAccess: View {
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/2.2)
             }
-        }
     }
 }
 

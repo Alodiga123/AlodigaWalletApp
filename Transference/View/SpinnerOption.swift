@@ -51,7 +51,7 @@ struct FirstViewSpinnerOption: View {
     @State var options = Manager()
     @State var expand = false
     @State var separador: String = ""
-    @State var user: String = ""
+    @State var user: String = "kerwin2821@gmail.com"
     @State var isgetUserSuccesIn: Bool = false
     
     
@@ -97,12 +97,14 @@ struct FirstViewSpinnerOption: View {
             line
             
             if(selectedProduct.id == "0"){
+                //self.user =  "kerwin2821@gmail.com"
                 EmailTextField(user: self.$user)
                 
             }else if(selectedProduct.id == "1"){
+                //self.user = "584241934005"
                 PhoneTextField(user: self.$user)
             }else if(selectedProduct.id == "2"){
-                NavigationLink(destination: TargetCustomerView()) {
+                NavigationLink(destination: TransferenceQr()) {
                     TransferenceQrButtonContent()
                 }
             }
@@ -112,13 +114,16 @@ struct FirstViewSpinnerOption: View {
                     let controller = TransferenceController()
                     let util = Utils()
                     let alert = ShowAlert()
+                     
+                  
+                    
                     
                     if(selectedProduct.id == "0"){
-                       // if(user.isEmpty){
-                          //  alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-                      //  }else if(!util.isValidEmail(testStr: user)){
-                         //   alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
-                     //   }else{
+                        if(user.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                        }else if(!util.isValidEmail(testStr: user)){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
+                        }else{
                             
                             
                             controller.getUserByEmail(data: user) { (objectGetUsuarioByEmail, error) in
@@ -132,7 +137,7 @@ struct FirstViewSpinnerOption: View {
                                     print(error!)
                                 }
                                 
-                      //      }
+                            }
                             
                             
                             
@@ -142,12 +147,12 @@ struct FirstViewSpinnerOption: View {
                     
                     if(selectedProduct.id == "1"){
                         
-                       // if(user.isEmpty){
-                        //    alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-                       //}else if(user.count <= 11){
-                          //  alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidPhone", comment: "") )
-                       // }else{
-                        controller.getUserByMovil(data: user) { (res, error) in
+                        if(user.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                       }else if(user.count <= 11){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidPhone", comment: "") )
+                        }else{
+                            controller.getUserByMovil(data: user) { (res, error) in
                             print(res)
                             if(res != nil){
                                 Constant.defaults.set("1", forKey: "optionTransference")
@@ -162,7 +167,7 @@ struct FirstViewSpinnerOption: View {
                         }
                         }
                         
-                   // }
+                    }
                     
                 }){
                     TransferenceSerchButtonContent()

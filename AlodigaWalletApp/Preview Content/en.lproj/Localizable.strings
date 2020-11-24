@@ -205,6 +205,7 @@
 "invalidPhone" = "Invalid phone length";
 "invalidAmount" = "The amount is invalid";
 "pinText" = "Enter a 4-digit password";
-
+"Fail_code_info" = "La Clave deOperaciones ha sido bloqeada temporalmente";
+"Fail_code_title" = "Clave deOperaciones";
 
 

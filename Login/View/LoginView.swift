@@ -102,8 +102,8 @@ struct BackgroundImageAlodiga: View {
 }
 
 struct CardButtonViewAccess: View {
-    @State var username: String = ""
-    @State var password: String = ""
+    @State var username: String = "kerwin2821@gmail.com"
+    @State var password: String = "123456"
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @State var isLoggedIn: Bool = false
