@@ -222,7 +222,12 @@ struct SuccesfulTransactionViewAccess: View {
                         NavigationLink(destination: MainViewLogged()) {
                             EndButtonContents()
                         }
-                        NavigationLink(destination: MainViewLogged()) {
+                       // NavigationLink(destination: MainViewLogged()) {
+                         //   ShareButtonContents()
+                        //}
+                        Button(action: {
+                            share(items: ["Prueba"])
+                        }) {
                             ShareButtonContents()
                         }
                     }.background(Color.cardButtonViewGray)
@@ -232,9 +237,45 @@ struct SuccesfulTransactionViewAccess: View {
         
     }
 }
+func shareByWhatsapp(msg:String){
+        let urlWhats = "whatsapp://send?text=\(msg)"
+        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            if let whatsappURL = NSURL(string: urlString) {
+                if UIApplication.shared.canOpenURL(whatsappURL as URL) {
+                    UIApplication.shared.openURL(whatsappURL as URL)
+                } else {
 
+                    let alert = UIAlertController(title: NSLocalizedString("Whatsapp not found", comment: "Error message"),
+                                                  message: NSLocalizedString("Could not found a installed app 'Whatsapp' to proceed with sharing.", comment: "Error description"),
+                                                  preferredStyle: UIAlertController.Style.alert)
 
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Alert button"), style: UIAlertAction.Style.default, handler:{ (UIAlertAction)in
+                    }))
 
+                    UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion:nil)
+                    // Cannot open whatsapp
+                }
+            }
+        }
+}
+
+@discardableResult
+func share(
+    items: [Any],
+    excludedActivityTypes: [UIActivity.ActivityType]? = nil
+) -> Bool {
+    guard let source = UIApplication.shared.windows.last?.rootViewController else {
+        return false
+    }
+    let vc = UIActivityViewController(
+        activityItems: items,
+        applicationActivities: nil
+    )
+    vc.excludedActivityTypes = excludedActivityTypes
+    vc.popoverPresentationController?.sourceView = source.view
+    source.present(vc, animated: true)
+    return true
+}
 
 struct SuccesfulTransactionViewAccess2: View {
     @State var text = ""

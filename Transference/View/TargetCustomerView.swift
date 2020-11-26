@@ -195,8 +195,8 @@ struct TargetCustomerViewAccess: View {
                                 
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
                             }else{
-                                Constant.defaults.setValue("1.1", forKey: "amount")
-                                Constant.defaults.setValue("jhkj", forKey: "concept")
+                                Constant.defaults.setValue(amount, forKey: "amount")
+                                Constant.defaults.setValue(concept, forKey: "concept")
 
                                 self.isConfirmDataIn()
                                 
