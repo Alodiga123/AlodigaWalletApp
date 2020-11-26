@@ -51,7 +51,7 @@ struct SignUpViewAccess: View {
                      .padding(.trailing,20)
                     Spacer()
                     TextLabelCountry()
-                    PhoneRegisterTextField(phone: self.$phone)
+                    //PhoneRegisterTextField(phone: self.$phone)
                     Button(action: {
                         let registerController = RegisterController()
                         let alert = ShowAlert()
@@ -63,9 +63,9 @@ struct SignUpViewAccess: View {
                         
                         print (phone)
                         
-                        if(phone.isEmpty){
-                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EnterPhone", comment: ""))
-                        }else{
+//                        if(phone.isEmpty){
+//                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EnterPhone", comment: ""))
+//                        }else{
                             Constant.defaults.setValue("123456", forKey: "token")
                             stepNex()
 //                            registerController.getToken(dataToken: token) { (res,error) in
@@ -86,7 +86,7 @@ struct SignUpViewAccess: View {
 //                                    print(error!)
 //                                }
 //                            }
-                        }
+                        //}
                     }) {
                         RegisterContinueButtonContent()
                     }
@@ -134,6 +134,7 @@ struct PhoneRegisterTextField: View {
                 .leftView({ // Add left view.
                     Image("")
                 }).placeholderColor(Color.placeholderGrayColor)
+                .font(.callout)
                 .frame(height: 50)
                 .padding(.leading,20)
                 .padding(.trailing,20)
@@ -178,8 +179,8 @@ struct CountryList: View {
     @State var expand = false
     @State var separador: String = ""
     @State var jsonCountry : ObjectCountry?
+    @State var code: String = ""
     var body: some View {
-
         VStack {
             Button(action: {
                 self.isSheetOpened.toggle()
@@ -188,7 +189,6 @@ struct CountryList: View {
                 Text("\(selectedCountry.alternativeName3)")
                     //.fontWeight(.bold)
                     .foregroundColor(.gray)
-                
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
                         .resizable()
@@ -203,8 +203,7 @@ struct CountryList: View {
             .sheet(isPresented: self.$isSheetOpened) {
                 paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
             }
-            Text("\(selectedCountry.code)")
-            //                    PhoneRegisterTextField(phone: self.selectedCountry.code)
+              PhoneRegisterTextField(phone: $selectedCountry.code)
         }.onAppear(
             perform: getJSONCountry
         )
