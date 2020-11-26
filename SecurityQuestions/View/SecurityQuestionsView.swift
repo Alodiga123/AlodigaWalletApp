@@ -73,32 +73,33 @@ struct SecurityQuestionsViewAccess: View {
                      
 //                            Constant.defaults.setValue("123456", forKey: "token")
 //                            stepNex()
-                            questionsController.getSecretQuestions(preguntaSecreta: preguntaSeguridad) { (res,error) in
-                                print("EN LAS PREGUNTAS!!!!")
-                                if res != nil  {
-                                    print(res as Any)
-                                    let preguntaSeguridad: ObjectSecretQuestions
-                                    preguntaSeguridad = res! as ObjectSecretQuestions
-                                    print(preguntaSeguridad.envelope.body.registerMovilResponse._return.fechaHora)
-
-//                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
-                                    stepNex()
-                                }
-
-                                if error != nil {
-                                    let alert = ShowAlert()
-                                    alert.showPaymentModeActionSheet(title: "error", message: questionsController.getMessageError(code: error!))
-                                    print(error!)
-                                }
-                            }
+//                            questionsController.getSecretQuestions(preguntaSecreta: preguntaSeguridad) { (res,error) in
+//                                print("EN LAS PREGUNTAS!!!!")
+//                                if res != nil  {
+//                                    print(res as Any)
+//                                    let preguntaSeguridad: ObjectSecretQuestions
+//                                    preguntaSeguridad = res! as ObjectSecretQuestions
+//                                    print(preguntaSeguridad.envelope.body.registerMovilResponse._return.fechaHora)
+//
+////                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
+//                                    stepNex()
+//                                }
+//
+//                                if error != nil {
+//                                    let alert = ShowAlert()
+//                                    alert.showPaymentModeActionSheet(title: "error", message: questionsController.getMessageError(code: error!))
+//                                    print(error!)
+//                                }
+//                            }
+                        stepNex()
                     }) {
                         //QuestionsContinueButtonContent()
                         QuestionsBackButtonContent()
                     }
                     
-//                    NavigationLink(destination: SuccessfulQuestionsView(), isActive:self.$steptwo){
-//                        EmptyView()
-//                    }
+                    NavigationLink(destination: SuccessfulQuestionsView(), isActive:self.$steptwo){
+                        EmptyView()
+                    }
                     
                     
                     NavigationLink(destination: SuccessfulQuestionsView()) {
