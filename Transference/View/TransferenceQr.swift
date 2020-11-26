@@ -19,3 +19,6 @@ struct TransferenceQr_Previews: PreviewProvider {
         TransferenceQr()
     }
 }
+
+
+

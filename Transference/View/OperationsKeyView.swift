@@ -27,11 +27,19 @@ struct OperationsKeyViewAccess: View {
     @State var key: String = ""
     @State var isSuccesKey: Bool = false
     @State var count : Int = 0
+    @State var count_aux : Int = 3
     @State var isFailKey: Bool = false
-
+    @State var fail : Bool = false
+    
     func isSuccesKeyIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.isSuccesKey = true
+        }
+    }
+    
+    func isFailIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.fail = true
         }
     }
     func isFailKeyIn(){
@@ -52,16 +60,26 @@ struct OperationsKeyViewAccess: View {
                             TextLabelTransference()
                         }.padding(.leading,20)
                          .padding(.trailing,20)
+                      
+                        if(fail == true){
+                            TextFailView(count: $count_aux)
+                        }
                         TextLabelOperationKey()
                         TransOperKeyTextField(key: self.$key)
-                        
                         Button(action: {
+                            
+                            if(Constant.defaults.integer(forKey: "countKey") != nil){
+                               count = Constant.defaults.integer(forKey: "countKey")
+                            }
+                            
+                            Constant.defaults.setValue(count, forKey: "countKey")
+                           
                             let alert = ShowAlert()
 
                             if(key.isEmpty || key.count != 4){
                                    alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinText", comment: ""))
-                            }else if(count >= 3){
-                                
+                            }else if(Constant.defaults.integer(forKey: "countKey") >= 3){
+                                Constant.defaults.removeObject(forKey: "countKey")
                                 self.isFailKeyIn()
                                 
                             }else{
@@ -74,12 +92,19 @@ struct OperationsKeyViewAccess: View {
                                         if(clave == key){
                                             self.isSuccesKeyIn()
                                         }else{
+                                            fail = true
+                                            count_aux = count_aux - 1
                                            count = count + 1
+                                            Constant.defaults.setValue(count, forKey: "countKey")
                                         }
                                         
                                     }
                                     if error != nil {
-                                        count = count + 1
+                                        //comentar true
+                                        //fail = true
+                                        //count_aux = count_aux - 1
+                                        //count = count + 1
+                                        //Constant.defaults.setValue(count, forKey: "countKey")
                                         let alert = ShowAlert()
                                         alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
                                         print(error!)
@@ -120,12 +145,28 @@ struct OperationsKeyViewAccess: View {
     }
 }
 
+struct TextFailView: View {
+    @Binding var count : Int
+    var body: some View {
+        VStack(alignment: .center, spacing: 6) {
+            let text = NSLocalizedString("info_Fail_code", comment: "") + String(count)
+            Text(text)
+                .font(.callout)
+                .foregroundColor(Color.fontOrangeColor)
+                .padding(.top,25)
+                .multilineTextAlignment(.center)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
+                
+        }
+    }
+}
 struct TextLabelOperationKey: View {
     var body: some View {
         VStack(alignment: .center, spacing: 6) {
             Text("OperationPass")
                 .font(.callout)
-                .foregroundColor(Color.fontOrangeColor)
+                .foregroundColor(Color.placeholderGrayColor)
                 .padding(.top,25)
         }
     }
@@ -134,7 +175,7 @@ struct TextLabelOperationKey: View {
 struct TransOperKeyTextField: View {
     @Binding var key: String
     var body: some View {
-        FloatingLabelTextField($key, placeholder: "Clave de Operaciones Especiales", editingChanged: { (isChanged) in
+        FloatingLabelTextField($key, placeholder: NSLocalizedString("Fail_code_title", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
         .leftView({ // Add left view.
@@ -144,6 +185,7 @@ struct TransOperKeyTextField: View {
         .frame(height: 50)
         .padding(.leading,20)
         .padding(.trailing,20)
+        .keyboardType(.numberPad)
     }
 }
 
