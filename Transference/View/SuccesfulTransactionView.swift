@@ -101,7 +101,7 @@ struct SuccesfulTransactionViewAccess: View {
                         VStack{
                             HStack {
                                 Text("Name")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 
                                 if (option == "0"){
@@ -117,7 +117,7 @@ struct SuccesfulTransactionViewAccess: View {
                             
                             HStack {
                                 Text("LastName")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 if (option == "0"){
                                     TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.apellido ?? "LastName"), text: self.$text)
@@ -130,7 +130,7 @@ struct SuccesfulTransactionViewAccess: View {
                             
                             HStack {
                                 Text("Phone")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 if (option == "0"){
                                     TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.movil ?? "Phone"), text: self.$text)
@@ -144,7 +144,7 @@ struct SuccesfulTransactionViewAccess: View {
                             HStack {
                                 let util = Utils()
                                 Text("Destination")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 if (option == "0"){
                                     
@@ -170,7 +170,7 @@ struct SuccesfulTransactionViewAccess: View {
                             
                             HStack {
                                 Text("Monto")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 TextField( Constant.defaults.value(forKey: "amount") as! String, text: self.$text)
                                     .font(.caption)
@@ -178,7 +178,7 @@ struct SuccesfulTransactionViewAccess: View {
                             
                             HStack {
                                 Text("Concepto")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 TextField(Constant.defaults.value(forKey: "concept") as! String, text: self.$text)
                                     .font(.caption)
@@ -187,11 +187,29 @@ struct SuccesfulTransactionViewAccess: View {
                        
                             HStack {
                                 Text("Origin")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 TextField(currencySelect["nombreProducto"]!, text: self.$text)
                                     .font(.caption)
                             }
+                            
+                            
+                            HStack {
+                                Text("Date")
+                                    .frame(width: 80, alignment: .leading)
+                                    .font(.caption)
+                                TextField(Constant.defaults.value(forKey: "fechaHoraTransference") as! String, text: self.$text)
+                                    .font(.caption)
+                            }
+                            
+                            HStack {
+                                Text("Transaction")
+                                    .frame(width: 80, alignment: .leading)
+                                    .font(.caption)
+                                TextField(Constant.defaults.value(forKey: "idTransactionTransference") as! String, text: self.$text)
+                                    .font(.caption)
+                            }
+                            
                         }.onAppear(
                             perform: getJSONUser
                         )
@@ -200,54 +218,7 @@ struct SuccesfulTransactionViewAccess: View {
                         .padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
                         
-                        
-                     
-                        
-                       /* Button(action: {
-                            let saveTransferBetweenAccount = AL_SaveTransferBetweenAccount()
-                            saveTransferBetweenAccount.cpCryptogramUserSource = "1"
-                            saveTransferBetweenAccount.cpEmailUser = Constant.defaults.value(forKey: "emailUser") as! String
-                            saveTransferBetweenAccount.cpProductId = currencySelect["id"]
-                            saveTransferBetweenAccount.cpAmountTransfer = Constant.defaults.value(forKey: "amount") as! String
-                            saveTransferBetweenAccount.cpConceptTransaction = Constant.defaults.value(forKey: "concept") as! String
-                            saveTransferBetweenAccount.cpCryptogramUserDestination = "1"
-                            saveTransferBetweenAccount.cpIdUserDestination = self.userDestinationID
-                            
-                            let controller = TransferenceController()
-                        
-                            controller.proccesTransference(saveTransferBetweenAccount: saveTransferBetweenAccount) { (res, error) in
-                                
-                                if(res != nil){
-                                    self.isTransfereceProcessIn()
-                                }
-                                
-                                if error != nil {
-                                    let alert = ShowAlert()
-                                    alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageErrorProcessTransference(code: error!))
-                                    print(error!)
-                                }
-                                
-                            }
-                            
-                            
-                        }) {
-                            ProcessButtonContents()
-                        }.padding(3)
-                        */
-                        
-                        /*NavigationLink(destination: SuccesfulTransactionView(), isActive:self.$isTransfereceProcess){
-                            EmptyView()
-                        }*/
-                        
-                        /*NavigationLink(destination: SuccesfulTransactionView()) {
-                            ProcessButtonContents()
-                        }*/
-                        
-                        
-                        
-                        /*NavigationLink(destination: OperationsKeyView()) {
-                            TransferenceBackButtonContent()
-                        }*/
+            
                         NavigationLink(destination: MainViewLogged()) {
                             EndButtonContents()
                         }

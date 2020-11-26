@@ -67,7 +67,7 @@ struct OperationsKeyViewAccess: View {
                         TextLabelOperationKey()
                         TransOperKeyTextField(key: self.$key)
                         Button(action: {
-                            
+                            /*
                             if(Constant.defaults.integer(forKey: "countKey") != nil){
                                count = Constant.defaults.integer(forKey: "countKey")
                             }
@@ -113,10 +113,10 @@ struct OperationsKeyViewAccess: View {
                                 }
                                 
                                 
-                            }
+                            }*/
                             
                             
-                            //self.isSuccesKeyIn()
+                            self.isSuccesKeyIn()
                         
                         }) {
                             

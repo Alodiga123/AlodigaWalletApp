@@ -100,7 +100,7 @@ struct ConfirmationViewAccess: View {
                         VStack{
                             HStack {
                                 Text("Name")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 
                                 if (option == "0"){
@@ -116,7 +116,7 @@ struct ConfirmationViewAccess: View {
                             
                             HStack {
                                 Text("LastName")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 if (option == "0"){
                                     TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.apellido ?? "LastName"), text: self.$text)
@@ -129,7 +129,7 @@ struct ConfirmationViewAccess: View {
                             
                             HStack {
                                 Text("Phone")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 if (option == "0"){
                                     TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.movil ?? "Phone"), text: self.$text)
@@ -143,7 +143,7 @@ struct ConfirmationViewAccess: View {
                             HStack {
                                 let util = Utils()
                                 Text("Destination")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 if (option == "0"){
                                     
@@ -169,7 +169,7 @@ struct ConfirmationViewAccess: View {
                             
                             HStack {
                                 Text("Monto")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 TextField( Constant.defaults.value(forKey: "amount") as! String, text: self.$text)
                                     .font(.caption)
@@ -177,7 +177,7 @@ struct ConfirmationViewAccess: View {
                             
                             HStack {
                                 Text("Concepto")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 TextField(Constant.defaults.value(forKey: "concept") as! String, text: self.$text)
                                     .font(.caption)
@@ -186,7 +186,7 @@ struct ConfirmationViewAccess: View {
                        
                             HStack {
                                 Text("Origin")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 80, alignment: .leading)
                                     .font(.caption)
                                 TextField(currencySelect["nombreProducto"]!, text: self.$text)
                                     .font(.caption)

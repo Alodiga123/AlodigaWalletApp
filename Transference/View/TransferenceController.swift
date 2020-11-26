@@ -195,6 +195,9 @@ public class TransferenceController {
                         objetResponse = try JSONDecoder().decode(ObjectProcessTransference.self, from: jsonStr.data(using: .utf8)!)
                         let util = Utils()
                         util.updateProducts(listProduct: objetResponse.envelope.body.cambiar._return.products)
+                        Constant.defaults.setValue(objetResponse.envelope.body.cambiar._return.idTransaction, forKey: "idTransactionTransference")
+                        Constant.defaults.setValue(objetResponse.envelope.body.cambiar._return.fechaHora, forKey: "fechaHoraTransference")
+
                         completion(objetResponse, nil)
                     }else{
                         objetResponseError = try JSONDecoder().decode(ObjectProcessTransferenceError.self, from: jsonStr.data(using: .utf8)!)
