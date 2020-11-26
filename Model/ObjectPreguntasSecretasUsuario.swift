@@ -1,16 +1,16 @@
 //
-//  ObjectSecretQuestions.swift
+//  ObjectPreguntasSecretasUsuario.swift
 //  IOSAlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 19/11/20.
+//  Created by Lulymar Gutierrez on 24/11/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 
 import Foundation
 
 
-struct ObjectSecretQuestions: Decodable{
-    var envelope: EnvelopeSecretQuestions
+struct ObjectPreguntasSecretasUsuario: Decodable{
+    var envelope: EnvelopePreguntasSecretasUsuario
     
     enum CodingKeys: String, CodingKey {
          case envelope = "S:Envelope"
@@ -18,27 +18,27 @@ struct ObjectSecretQuestions: Decodable{
     
 }
 
-struct EnvelopeSecretQuestions: Decodable{
-   var xmlns : String
-   var body : BodySecretQuestions
-   
-   enum CodingKeys: String, CodingKey {
-        case xmlns = "_xmlns:S"
-        case body = "S:Body"
+    struct EnvelopePreguntasSecretasUsuario : Decodable{
+       var xmlns : String
+       var body : BodyPreguntasSecretasUsuario
+       
+       enum CodingKeys: String, CodingKey {
+            case xmlns = "_xmlns:S"
+            case body = "S:Body"
+        }
     }
-}
 
-struct BodySecretQuestions : Decodable{
-    var registerMovilResponse: SecretQuestionsResponse
+struct BodyPreguntasSecretasUsuario : Decodable{
+    var registerMovilResponse: SecretPreguntasSecretasUsuarioResponse
     
     enum CodingKeys: String, CodingKey {
          case registerMovilResponse = "ns2:getPreguntasSecretasResponse"
      }
 }
 
-struct SecretQuestionsResponse: Decodable{
+struct SecretPreguntasSecretasUsuarioResponse: Decodable{
    var _xmlns : String
-   var _return : ReturnSecretQuestions
+   var _return : ReturnPreguntasSecretasUsuario
     
     enum CodingKeys: String, CodingKey {
          case _xmlns = "_xmlns:ns2"
@@ -46,7 +46,7 @@ struct SecretQuestionsResponse: Decodable{
      }
 }
 
-struct ReturnSecretQuestions : Decodable{
+struct ReturnPreguntasSecretasUsuario : Decodable{
    var fechaHora : String
    var codigoRespuesta : String
    //var mensajeRespuesta : String
@@ -58,7 +58,7 @@ struct ReturnSecretQuestions : Decodable{
      }
 }
 
-struct Questions: Identifiable, Decodable, Hashable{
+struct Answers: Identifiable, Decodable, Hashable{
     var alternativeName3 : String
     var code : String
     var id : String

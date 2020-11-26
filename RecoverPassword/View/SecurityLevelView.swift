@@ -27,16 +27,16 @@ struct SecurityLevelViewAccess: View {
     @State var pass: String = "1234"
     @State var repeatPass: String = "1234"
     @State var isLoggedIn: Bool = false
-//    @State var stepFour: Bool = false
-//
-//    func stepNex(){
-//        DispatchQueue.main.asyncAfter(deadline: .now() ){
-//            self.stepFour = true
-//        }
-//    }
+    @State var stepFour: Bool = false
+
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.stepFour = true
+        }
+    }
     
     var body: some View {
-        ScrollView{
+        //ScrollView{
             GeometryReader { geometry in
                 ZStack{
                     VStack{
@@ -54,21 +54,21 @@ struct SecurityLevelViewAccess: View {
                         RepeatNewPassTextField2(repeatPass: self.$repeatPass)
                         TextLabelRecoverPass2()
                         
-//                         Button(action: {
-//                             let recoverController = RecoverController()
-//                             let recoverPass = CambiarCredencialAplicacionMovilEmailOrPhone()
-//                             let alert = ShowAlert()
-//
-//                             if(pass.isEmpty || repeatPass.isEmpty){
-//                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-//                             }else if (pass !=  repeatPass){
-//                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
-//                             }else{
-//                                recoverPass.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
-//                                recoverPass.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-//                                recoverPass.cpPhoneOrEmail = ""
-//                                recoverPass.cpCredencial = "";
-//
+                         Button(action: {
+                             let recoverController = RecoverController()
+                             let recoverPass = CambiarCredencialAplicacionMovilEmailOrPhone()
+                             let alert = ShowAlert()
+
+                             if(pass.isEmpty || repeatPass.isEmpty){
+                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                             }else if (pass !=  repeatPass){
+                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
+                             }else{
+                                recoverPass.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+                                recoverPass.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
+                                recoverPass.cpPhoneOrEmail = ""
+                                recoverPass.cpCredencial = "";
+
 //                                recoverController.getRecoverPass(cambiarCredencialAplicacionMovil: recoverPass) { (res,error) in
 //                                     print("EN LA VISTA CON EL CAMBIO DE CLAVE!!!!")
 //                                     if res != nil  {
@@ -86,14 +86,14 @@ struct SecurityLevelViewAccess: View {
 //                                         print(error!)
 //                                     }
 //                                 }
-//                                 stepNex()
-//                             }
-//                         }) {
-//                            ContinueRecoButtonContent()
-//                         }
-//                         NavigationLink(destination: SuccesfulRecoverView(), isActive:self.$stepFour){
-//                             EmptyView()
-//                         }
+                                 stepNex()
+                             }
+                         }) {
+                            ContinueRecoButtonContent()
+                         }
+                         NavigationLink(destination: SuccesfulRecoverView(), isActive:self.$stepFour){
+                             EmptyView()
+                         }
                          
                         NavigationLink(destination: MainViewLogged()) {
                             CancelRecorButtonContent()
@@ -103,7 +103,7 @@ struct SecurityLevelViewAccess: View {
                 }.padding(.bottom,geometry.size.height/2.2)
             }
         }
-    }
+    //}
 }
 
 struct TextLabelSecurity2: View {

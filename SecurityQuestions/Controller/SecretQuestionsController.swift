@@ -77,4 +77,43 @@ public class SecretQuestionsController{
             }
         }
     }
+    
+    
+    func getSendSecretAnswers(respuestasSecretas: SetPreguntasSecretasUsuarioAplicacionMovil ,completion: @escaping (_ res:ObjectPreguntasSecretasUsuario?, String?) -> Void) {
+        
+        let client_RU = RegistroUnificadoClient()
+        
+        //Llamada del servicio de guardar las respuestas Secretas
+        client_RU.opSetPreguntasSecretasUsuarioAplicacionMovil(setPreguntasSecretasUsuarioAplicacionMovil: respuestasSecretas) {(data, error) in
+            
+            if error != nil {
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            do{
+                var objectSecretAnswers: ObjectPreguntasSecretasUsuario
+                var objectResponseSecretAnswersError: ObjectErrorPreguntasSecretasUsuario
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON DE RESPUESTAS SECRETAS ---- > ")
+                print(jsonStr)
+                
+                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                {
+                    objectSecretAnswers = try JSONDecoder().decode(ObjectPreguntasSecretasUsuario.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objectSecretAnswers, nil)
+                }else{
+                    objectResponseSecretAnswersError = try JSONDecoder().decode(ObjectErrorPreguntasSecretasUsuario.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objectResponseSecretAnswersError.envelope.body.cambiar._return.codigoRespuesta)
+                }
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+        }
+    }
 }

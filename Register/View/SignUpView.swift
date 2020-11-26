@@ -128,31 +128,6 @@ struct PhoneRegisterTextField: View {
     @State var codePhone: String = ""
     
     var body: some View {
-//        HStack {
-//            TextField("", text: $codePhone)
-//                          //  .border(Color.black)
-//                        //Text("codigo ingresado:")
-//                        // 3.
-//                        Text("\(codePhone)")
-            
-//            TextField(text: Constant.defaults.object(forKey: "code") as! String, onEditingChanged: { (changed) in
-//
-//               if changed {
-//                   print("text edit has begun")
-//               } else {
-//                   print("committed the change")
-//                   //saveSongs(self.userData.songs)
-//               }
-            
-////            Text(phone)
-////                .font(.callout)
-////                .padding(.leading,20)
-////                .padding(.trailing,20)
-////                .padding(.bottom,0)
-////                .frame(height: 50)
-////                .on
-            //}
-            
             FloatingLabelTextField($phone, placeholder: "Ingrese el número de Teléfono", editingChanged: { (isChanged) in
             }) {
             }
@@ -215,19 +190,21 @@ struct CountryList: View {
                     .foregroundColor(.gray)
                 
                     Spacer()
-                
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
                         .resizable()
                         .frame(width: 13, height: 6, alignment: .bottomTrailing)
                         .foregroundColor(.gray)
+                
                 }.padding(10)
                 .cornerRadius(10)
                 .clipShape(Rectangle())
                 .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-           
+            
             .sheet(isPresented: self.$isSheetOpened) {
                 paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
             }
+            Text("\(selectedCountry.code)")
+            //                    PhoneRegisterTextField(phone: self.selectedCountry.code)
         }.onAppear(
             perform: getJSONCountry
         )
