@@ -114,6 +114,19 @@ struct MenuView: View {
 //                }
 //            }
             //.padding(.top, 20)
+            
+            HStack {
+                Image(systemName: "faceid")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
+                NavigationLink(destination: ChangePasswordView()) {
+                    Text("ChangePass")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
+            }
+            .padding(.top, 20)
+            
             HStack {
                 Image(systemName: "faceid")
                     .foregroundColor(.gray)

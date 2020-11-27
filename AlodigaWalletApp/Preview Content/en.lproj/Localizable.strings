@@ -22,6 +22,7 @@
 "ProcessWithdrawal" = "Process Withdrawal";
 "ProcessRecharge" = "Process Recharge";
 "ScanQr" = "Scan QR";
+"Change" = "Change";
 
 //Common
 "OperationsKey" = "Operations Key";
@@ -210,6 +211,8 @@
 "info_Fail_code" = "La Clave de Operaciones no es valida.  \n Numero de intentos restantes:";
 
 
-
-
+//Change Password
+"ChangePass" = "Change Password";
+"PassHelp" = "Help: The password must be alphanumeric. Must have/n at least one uppercase letter, special characters, and/n length of 8 characters";
+"SuccessfulPassChange" = "Successful password change";
 

@@ -20,6 +20,8 @@
 		044BD0BB2548CEBE005A6754 /* SuccessfulQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */; };
 		045375A725475CF400D12D77 /* ObjectRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375A625475CF400D12D77 /* ObjectRegisterUser.swift */; };
 		045375B9254790F600D12D77 /* ObjectErrorRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */; };
+		045D398D25718EBC00A98BCA /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D398C25718EBC00A98BCA /* ChangePasswordView.swift */; };
+		045D399525719B2900A98BCA /* SuccessfulChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D399425719B2900A98BCA /* SuccessfulChangeView.swift */; };
 		0471A9F92567542B00498491 /* ObjectSecretQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471A9F82567542B00498491 /* ObjectSecretQuestions.swift */; };
 		0471A9FE2567551C00498491 /* ObjectErrorSecretQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471A9FD2567551C00498491 /* ObjectErrorSecretQuestions.swift */; };
 		0471AA03256755BD00498491 /* SecretQuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471AA02256755BD00498491 /* SecretQuestionsController.swift */; };
@@ -145,6 +147,8 @@
 		044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulQuestionsView.swift; sourceTree = "<group>"; };
 		045375A625475CF400D12D77 /* ObjectRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRegisterUser.swift; sourceTree = "<group>"; };
 		045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorRegisterUser.swift; sourceTree = "<group>"; };
+		045D398C25718EBC00A98BCA /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		045D399425719B2900A98BCA /* SuccessfulChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulChangeView.swift; sourceTree = "<group>"; };
 		0471A9F82567542B00498491 /* ObjectSecretQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSecretQuestions.swift; sourceTree = "<group>"; };
 		0471A9FD2567551C00498491 /* ObjectErrorSecretQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorSecretQuestions.swift; sourceTree = "<group>"; };
 		0471AA02256755BD00498491 /* SecretQuestionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretQuestionsController.swift; sourceTree = "<group>"; };
@@ -362,6 +366,31 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		045D398925718DCD00A98BCA /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				045D398A25718E7000A98BCA /* Controller */,
+				045D398B25718E7C00A98BCA /* View */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		045D398A25718E7000A98BCA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		045D398B25718E7C00A98BCA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				045D398C25718EBC00A98BCA /* ChangePasswordView.swift */,
+				045D399425719B2900A98BCA /* SuccessfulChangeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04804198255E1A840025357E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +497,7 @@
 		467C04AD24D857F20021F472 = {
 			isa = PBXGroup;
 			children = (
+				045D398925718DCD00A98BCA /* ChangePassword */,
 				BA1B8B7F2554524B002A6892 /* remittances */,
 				044BD0AD2548AE1E005A6754 /* SecurityQuestions */,
 				BAE1E9B4252BA993007F9CD6 /* Model */,
@@ -943,6 +973,7 @@
 				46DBC47825128547008D42B3 /* SuccesfulPaymentQRView.swift in Sources */,
 				048612262549AA5F008E51CE /* ObjectErrorToken.swift in Sources */,
 				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
+				045D399525719B2900A98BCA /* SuccessfulChangeView.swift in Sources */,
 				043FEC86251BE2EE005C518B /* RecoverPasswordView.swift in Sources */,
 				04D322C52518E54C00F3F38C /* ConfirmationTopUpView.swift in Sources */,
 				BA6AC310256D5E5B0072E6C5 /* TransferenceQr.swift in Sources */,
@@ -998,6 +1029,7 @@
 				04D6DA77251A968D0053125C /* ValidateAccountFirstView.swift in Sources */,
 				04E3D09E251AB9D700DA1B31 /* SuccesfullValidateView.swift in Sources */,
 				46DBC4862512879B008D42B3 /* FormSignUpView.swift in Sources */,
+				045D398D25718EBC00A98BCA /* ChangePasswordView.swift in Sources */,
 				04D6DA89251AA5690053125C /* StepTwoView.swift in Sources */,
 				46DBC482251286E6008D42B3 /* TargetCustomerView.swift in Sources */,
 				042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */,
