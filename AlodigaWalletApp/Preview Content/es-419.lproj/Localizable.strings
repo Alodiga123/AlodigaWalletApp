@@ -209,5 +209,5 @@
 "Fail_code_info" = "The Operations Key has been temporarily locked.";
 "Fail_code_title" = "Operations Key";
 "info_Fail_code" = "The Operations Code is not valid.  \n Number of remaining attempts:";
-
+"confirmation_title_successfull_alodiga" = "SUCCESSFUL TRANSACTION / AlodigaWallet";
 

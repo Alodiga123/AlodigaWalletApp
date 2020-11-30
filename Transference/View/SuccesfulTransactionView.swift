@@ -226,7 +226,47 @@ struct SuccesfulTransactionViewAccess: View {
                          //   ShareButtonContents()
                         //}
                         Button(action: {
-                            share(items: ["Prueba"])
+                           var name_final : String
+                            var lastname_final : String
+
+                           var phone_final : String
+                           var cuenta_final : String
+                            let util = Utils()
+                            let transation = Constant.defaults.value(forKey: "idTransactionTransference") as! String
+
+                            
+                            if (option == "0"){
+                                
+                                name_final = (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.nombre!)!
+                                lastname_final = (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.apellido!)!
+                                phone_final = (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.movil!)!
+                                cuenta_final = util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta?.numeroCuenta)!)
+                            }else{
+                                name_final = (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.nombre!)!
+                                lastname_final  = (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.apellido!)!
+                                phone_final = (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.movil!)!
+                                cuenta_final = util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta?.numeroCuenta)!)
+                            }
+                            
+                            
+                            
+                        
+
+                            let date = Constant.defaults.value(forKey: "fechaHoraTransference") as! String
+                            let nombreproduct = currencySelect["nombreProducto"]!
+                            let monto = Constant.defaults.value(forKey: "amount") as! String
+                            let concepto = Constant.defaults.value(forKey: "concept") as! String
+                            
+                            let shared  =
+                                NSLocalizedString("confirmation_title_successfull_alodiga", comment: "") + "\n" + NSLocalizedString("Name", comment: "") + " " + name_final + " " + lastname_final + "\n" + NSLocalizedString("Phone", comment: "") + " " + phone_final + "\n" + NSLocalizedString("Destination", comment: "") +  " " + cuenta_final + "\n" + NSLocalizedString("Monto", comment: "") + " " + monto
+                                + "\n" + NSLocalizedString("Concepto", comment: "") + " " + concepto
+                                + "\n" + NSLocalizedString("Origin", comment: "") + " " + nombreproduct
+                                    + "\n" + NSLocalizedString("Date", comment: "") + " " + date
+                                    + "\n" + NSLocalizedString("Transaction", comment: "") + " " + transation
+                            
+                                
+                             
+                            share(items: [shared])
                         }) {
                             ShareButtonContents()
                         }
