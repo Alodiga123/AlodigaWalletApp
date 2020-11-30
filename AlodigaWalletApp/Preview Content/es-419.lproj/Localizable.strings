@@ -22,6 +22,7 @@
 "ProcessWithdrawal" = "Procesar Retiro";
 "ProcessRecharge" = "Procesar Recarga";
 "ScanQr" = "Escanear QR";
+"Change" = "Cambiar";
 
 //Comunes
 "OperationsKey" = "Clave de Operaciones";
@@ -211,3 +212,7 @@
 "info_Fail_code" = "The Operations Code is not valid.  \n Number of remaining attempts:";
 "confirmation_title_successfull_alodiga" = "SUCCESSFUL TRANSACTION / AlodigaWallet";
 
+//Change Password
+"ChangePass" = "Cambiar Contraseña";
+"PassHelp" = "Ayuda: La contraseña debe ser alfanumérica. Debe tener al menos una mayúscula, caracteres especiales y una longitud de 8 caracteres";
+"SuccessfulPassChange" = "Cambio de contraseña exitoso";

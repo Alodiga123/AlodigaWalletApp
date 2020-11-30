@@ -22,6 +22,7 @@
 "ProcessWithdrawal" = "Process Withdrawal";
 "ProcessRecharge" = "Process Recharge";
 "ScanQr" = "Scan QR";
+"Change" = "Change";
 
 //Common
 "OperationsKey" = "Operations Key";
@@ -211,6 +212,8 @@
 "confirmation_title_successfull_alodiga" = "TRANSACCION EXITOSA / AlodigaWallet";
 
 
-
-
+//Change Password
+"ChangePass" = "Change Password";
+"PassHelp" = "Help: The password must be alphanumeric. Must have/n at least one uppercase letter, special characters, and/n length of 8 characters";
+"SuccessfulPassChange" = "Successful password change";
 
