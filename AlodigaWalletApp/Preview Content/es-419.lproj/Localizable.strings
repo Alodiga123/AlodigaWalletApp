@@ -58,6 +58,7 @@
 "Transference" = "Transferencia";
 "PaymentBusinessesQR" = "Pago Comercio QR";
 "ValidateAccount" = "Validar Cuenta";
+"SignOff" = "Cerrar Sesión";
 
 //Registrar
 "Register" = "Registro";
