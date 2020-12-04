@@ -49,7 +49,14 @@ struct ChangePasswordViewAccess: View {
     @State var repeatPass: String = ""
     @State var isLoggedIn: Bool = false
     @State var stepFour: Bool = false
+    @State var isSucces: Bool = false
 
+    func isSuccesIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isSucces = true
+        }
+    }
+    
     func stepNex(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.stepFour = true
@@ -75,9 +82,41 @@ struct ChangePasswordViewAccess: View {
                         RepeatNewPassTextField(repeatPass: self.$repeatPass)
                         TextLabelRecoverPass()
                         
-                        NavigationLink(destination: SuccessfulChangeView()) {
-                            ChangeButtonContent()
-                        }
+                            Button(action: {
+                                let util = Utils()
+                                let alert = ShowAlert()
+                                var result : String = "0"
+
+                                if(pass != ""){
+                                result = util.validatePassword(clave: pass, confirmPassword: repeatPass)
+                                }
+                                else{
+                                    alert.showPaymentModeActionSheet(title: "error", message:  NSLocalizedString("EmptyFields", comment: ""))
+                                }
+                                
+                                if(result != "0"){
+                                    alert.showPaymentModeActionSheet(title: "error", message: result)
+                                }else if(repeatPass == ""){
+                                    alert.showPaymentModeActionSheet(title: "error", message:  NSLocalizedString("EmptyFields", comment: ""))
+                                }else if(pass != repeatPass)
+                                {
+                                    alert.showPaymentModeActionSheet(title: "error", message:                                      NSLocalizedString("toast_different_passwords", comment: ""))
+                                }else{                                self.isSuccesIn()
+                                    
+                                }
+                                
+                                
+                            }) {
+                                ChangeButtonContent()
+                            }.padding(3)
+                            
+                            
+                        NavigationLink(destination: SuccessfulChangeView(), isActive:self.$isSucces){
+                                EmptyView()
+                            }
+                            
+                            
+                    
                         NavigationLink(destination: MainViewLogged()) {
                             ChangeBackButtonContent()
                         }
@@ -105,43 +144,70 @@ struct TextLabelSecurityChangePass: View {
     }
 }
 
+
 struct NewPassTextField: View {
     @Binding var pass: String
     @State var progress : CGFloat = 0
+    @State private var isPasswordShow: Bool = false
+    let util = Utils()
     
-    var util = Utils()
     var body: some View {
-        
         ProgressBar(progress: $progress)
         FloatingLabelTextField($pass, placeholder: "Nueva contraseña", editingChanged: { (isChanged) in
             progress = util.getNivelProgressBar(clave: pass)
         }) {
         }
+     
+        .isSecureTextEntry(!self.isPasswordShow)
             .leftView({ // Add left view.
-                Image("")
+                Image("password")
             }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 50)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,0)
+            .rightView({ // Add right view.
+                Button(action: {
+                    withAnimation {
+                        self.isPasswordShow.toggle()
+                    }
+                    
+                }) {
+                    Image(self.isPasswordShow ? "eye" : "eye").foregroundColor(Color.gray)
+                }
+            })
+            .frame(height: 50).padding(.leading,20).padding(.trailing,20).padding(.top,0).padding(.bottom,0)
+    }
+    
+    func setProgress() {
+        progress = util.getNivelProgressBar(clave: pass)
     }
 }
 
+
+
 struct RepeatNewPassTextField: View {
     @Binding var repeatPass: String
+    @State private var isPasswordShow: Bool = false
     var body: some View {
         FloatingLabelTextField($repeatPass, placeholder: "Repita la nueva contraseña", editingChanged: { (isChanged) in
+            
         }) {
         }
+        .isSecureTextEntry(!self.isPasswordShow)
             .leftView({ // Add left view.
-                Image("")
+                Image("password")
             }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 50)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,0)
+            .rightView({ // Add right view.
+                Button(action: {
+                    withAnimation {
+                        self.isPasswordShow.toggle()
+                    }
+                    
+                }) {
+                    Image(self.isPasswordShow ? "eye" : "eye").foregroundColor(Color.gray)
+                }
+            })
+            .frame(height: 50).padding(.leading,20).padding(.trailing,20).padding(.top,0).padding(.bottom,0)
     }
 }
+
 
 struct TextLabelRecoverPass: View {
     var body: some View {

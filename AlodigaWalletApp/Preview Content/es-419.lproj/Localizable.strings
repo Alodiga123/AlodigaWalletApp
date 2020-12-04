@@ -208,12 +208,19 @@
 "invalidPhone" = "La longitud del telefono es invelida";
 "invalidAmount" = "El monto es invalido";
 "pinText" = "Introduzca una clave de 4 digitos";
-"Fail_code_info" = "The Operations Key has been temporarily locked.";
-"Fail_code_title" = "Operations Key";
-"info_Fail_code" = "The Operations Code is not valid.  \n Number of remaining attempts:";
-"confirmation_title_successfull_alodiga" = "SUCCESSFUL TRANSACTION / AlodigaWallet";
+"Fail_code_info" = "La Clave de Operaciones ha sido bloqueada temporalmente";
+"Fail_code_title" = "Clave de Operaciones";
+"info_Fail_code" = "La Clave de Operaciones no es valida.  \n Numero de intentos restantes:";
+"confirmation_title_successfull_alodiga" = "TRANSACCION EXITOSA / AlodigaWallet";
 
 //Change Password
 "ChangePass" = "Cambiar Contraseña";
 "PassHelp" = "Ayuda: La contraseña debe ser alfanumérica. Debe tener al menos una mayúscula, caracteres especiales y una longitud de 8 caracteres";
 "SuccessfulPassChange" = "Cambio de contraseña exitoso";
+"validate_password_change_capital_letter" = "La contraseña debe tener al menos una letra mayúscula.";
+"validate_password_change_lowercase_letter" = "La contraseña debe tener al menos una letra minúscula.";
+"validate_password_change_number" = "La contraseña debe tener al menos un número.";
+"validate_password_change_special_character" = "La contraseña debe tener al menos uno de los siguientes caracteres.   # ? ! @ $ % ^ * -";
+"validate_password_change_number_characters" = "La contraseña debe tener al menos 8 caracteres.";
+"toast_different_passwords" = "Las contraseñas no coinciden. Inténtalo de nuevo.";
+

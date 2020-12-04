@@ -11,85 +11,31 @@ import SwiftUI
 
 public class Utils{
 
-    
-    /*public static func progressBar(String newPassword) -> Int
-       {
-           Pattern capitalLetter = Pattern.compile(CAPITAL_LETTER);
-           Matcher capLet = capitalLetter.matcher(newPassword);
-           Pattern lowerLetter = Pattern.compile(LOWERCASE_LETTER);
-           Matcher lowLet = lowerLetter.matcher(newPassword);
-           Pattern number = Pattern.compile(NUMBER);
-           Matcher nb = number.matcher(newPassword);
-           Pattern specialCharacter = Pattern.compile(SPECIAL_CHARACTER);
-           Matcher spChar = specialCharacter.matcher(newPassword);
-           Pattern numberCharacters = Pattern.compile(NUMBER_OF_CHARACTERS);
-           Matcher nmbChar = numberCharacters.matcher(newPassword);
-           int progressIndicator = 0;
-
-           boolean[]var = new boolean[]{false,false,false,false,false,false};
-
-           if(!newPassword.equals(""))
-           {
-               if(capLet.lookingAt())
-               {
-                   var[0]= true;
-               }
-               if(lowLet.lookingAt())
-               {
-                   var[1]= true;
-               }
-               if(nb.lookingAt())
-               {
-                   var[2]= true;
-               }
-               if(spChar.lookingAt())
-               {
-                   var[3]= true;
-               }
-               if(nmbChar.lookingAt())
-               {
-                   var[4]= true;
-               }
-               for(int i = 0; i< var.length ; i++)
-               {
-                   if(var[i]==true)
-                   {
-                       progressIndicator += 10;
-                   }
-               }
-               return progressIndicator;
-           }else
-           {
-               return 0;
-           }
-       }
-
-    
-    */
+    /**
+     * CAPITAL_LETTER: Constant used to detect the existence of a capital letter in a text string
+     */
+    var CAPITAL_LETTER: String = "(?=.*?[A-Z])";
+    /**
+     * LOWERCASE_LETTER: Constant used to detect the existence of a lowercase letter in a text string
+     */
+    var LOWERCASE_LETTER: String = "(?=.*?[a-z])";
+    /**
+     * NUMBER: Constant used to detect the existence of a number in a text string
+     */
+    var NUMBER: String = "(?=.*?[0-9])";
+    /**
+     * SPECIAL_CHARACTER: Constant used to detect the existence of a special character in a text string
+     */
+    var SPECIAL_CHARACTER: String = "(?=.*?[#?!@$%^&*-])";
+    /**
+     * NUMBER_OF_CHARACTERS: Constant used to detect the number of characters allowed in a text string
+     */
+    var  NUMBER_OF_CHARACTERS: String = ".{8,}";
+ 
     
     func getNivelProgressBar(clave: String) -> CGFloat {
         
-        /**
-         * CAPITAL_LETTER: Constant used to detect the existence of a capital letter in a text string
-         */
-        var CAPITAL_LETTER: String = "(?=.*?[A-Z])";
-        /**
-         * LOWERCASE_LETTER: Constant used to detect the existence of a lowercase letter in a text string
-         */
-        var LOWERCASE_LETTER: String = "(?=.*?[a-z])";
-        /**
-         * NUMBER: Constant used to detect the existence of a number in a text string
-         */
-        var NUMBER: String = "(?=.*?[0-9])";
-        /**
-         * SPECIAL_CHARACTER: Constant used to detect the existence of a special character in a text string
-         */
-        var SPECIAL_CHARACTER: String = "(?=.*?[#?!@$%^&*-])";
-        /**
-         * NUMBER_OF_CHARACTERS: Constant used to detect the number of characters allowed in a text string
-         */
-        var  NUMBER_OF_CHARACTERS: String = ".{8,}";
-        
+          
        /* Pattern capitalLetter = Pattern.compile(CAPITAL_LETTER);
         Matcher capLet = capitalLetter.matcher(newPassword);
         Pattern lowerLetter = Pattern.compile(LOWERCASE_LETTER);
@@ -137,6 +83,41 @@ public class Utils{
         }
     }
     
+    
+    func validatePassword(clave: String, confirmPassword:String) -> String
+     {
+        let capLet = try! NSRegularExpression(pattern: CAPITAL_LETTER, options: .useUnixLineSeparators)
+        let lowLet = try! NSRegularExpression(pattern: LOWERCASE_LETTER, options: .caseInsensitive)
+        let nb = try! NSRegularExpression(pattern: NUMBER, options: .caseInsensitive)
+        let spChar = try! NSRegularExpression(pattern: SPECIAL_CHARACTER, options: .caseInsensitive)
+        let nmbChar = try! NSRegularExpression(pattern: NUMBER_OF_CHARACTERS, options: .caseInsensitive)
+
+  
+        
+        if(capLet.firstMatch(in: clave, options: [], range: NSRange(location: 0, length: clave.count)) == nil)
+        
+         {
+            return NSLocalizedString("validate_password_change_capital_letter", comment: "")
+            
+        }else if(lowLet.firstMatch(in: clave, options: [], range: NSRange(location: 0, length: clave.count)) == nil)
+         {
+            return NSLocalizedString("validate_password_change_lowercase_letter", comment: "")
+
+         }else if(nb.firstMatch(in: clave, options: [], range: NSRange(location: 0, length: clave.count)) == nil)
+         {
+            return NSLocalizedString("validate_password_change_number", comment: "")
+
+         }else if(spChar.firstMatch(in: clave, options: [], range: NSRange(location: 0, length: clave.count)) == nil)
+         {
+            return NSLocalizedString("validate_password_change_special_character", comment: "")
+
+         }else if(clave.count != 8)
+         {
+            return NSLocalizedString("validate_password_change_number_characters", comment: "")
+
+         }
+        return "0"
+     }
     
     
     func getCuenta(cuenta : String) -> String {
