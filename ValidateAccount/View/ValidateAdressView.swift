@@ -28,6 +28,13 @@ struct ValidateAdressViewAccess: View {
     @State var city: String = ""
     @State var zipZone: String = ""
     @State var street: String = ""
+    @State var steptwo: Bool = false
+    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.steptwo = true
+        }
+    }
     
     var body: some View {
         
@@ -48,9 +55,63 @@ struct ValidateAdressViewAccess: View {
                     CityTextField(city: self.$city)
                     ZipZoneTextField(zipZone: self.$zipZone)
                     StreetTextField(street: self.$street)
-                    NavigationLink(destination: SuccesfullValidateView()) {
+//                    NavigationLink(destination: SuccesfullValidateView()) {
+//                        NextValidateButtonContent()
+//                    }
+                    
+                    Button(action: {
+                        let validateController = ValidateAccountController()
+                        let alert = ShowAlert()
+                        let guardar = AL_SaveCumplimient()
+                        
+                        
+                        if(state.isEmpty || city.isEmpty || zipZone.isEmpty || street.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                        }else{
+                            /*
+                             map.put("userId", Session.getUserId());
+                             map.put("estado", getedtstate_);
+                             map.put("ciudad", getedtcity_);
+                             map.put("zipCode", getedtcode_);
+                             map.put("addres1", getedtAv_);
+                             map.put("imgDocument", Utils.encodeImage(Session.getSelectedImage()));
+                             map.put("imgProfile", Utils.encodeImage(Session.getSelectedImageSelfie()));
+
+                             */
+                            
+                            guardar.cpUserId = 379
+                            guardar.cpEstado = state
+                            guardar.cpCiudad = city
+                            guardar.cpZipCode = zipZone
+                            guardar.cpAddres1 = street
+                            guardar.cpImgDocument = "1"
+                            guardar.cpImgProfile = "2"
+                            validateController.getValidateAccount(salvarCuenta: guardar) { (res,error) in
+                                print("VALIDANDO LA CUENTA !!!!")
+                                if res != nil  {
+                                    print(res as Any)
+                                    let validarCuenta: ObjectValidateAccount
+                                    validarCuenta = res! as ObjectValidateAccount
+                                    print(validarCuenta.envelope.body.validateResponse._return.fechaHora)
+                                    stepNex()
+                                }
+
+                                if error != nil {
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: validateController.getMessageError(code: error!))
+                                    print(error!)
+                                }
+                            }
+                            stepNex()
+                        }
+                    }) {
                         NextValidateButtonContent()
                     }
+                    
+                    NavigationLink(destination: SuccesfullValidateView(), isActive:self.$steptwo){
+                        EmptyView()
+                    }
+                    
                     NavigationLink(destination: PhotoViewStepTwoView()) {
                         ValidateBackButtonContent()
                     }

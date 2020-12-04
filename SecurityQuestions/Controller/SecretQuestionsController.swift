@@ -2,8 +2,8 @@
 //  SecretQuestionsController.swift
 //  IOSAlodigaWalletApp
 //
-//  Created by mac on 11/19/20.
-//  Copyright © 2020 Kerwin Gomez. All rights reserved.
+//  Created by mac on 24/11/20.
+//  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 
 import Foundation

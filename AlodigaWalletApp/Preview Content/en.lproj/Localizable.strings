@@ -58,6 +58,7 @@
 "Transference" = "Transference";
 "PaymentBusinessesQR" = "Payment Businesses QR";
 "ValidateAccount" = "Validate Account";
+"SignOff" = "Sign Off";
 
 //Register
 "Register" = "Register";

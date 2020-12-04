@@ -64,37 +64,42 @@ struct SecurityQuestionsViewAccess: View {
                     
                     Button(action: {
                         let questionsController = SecretQuestionsController()
-                        //let alert = ShowAlert()
-                        let preguntaSeguridad = GetPreguntasSecretas()
+                        let alert = ShowAlert()
+                        let preguntaSeguridad = SetPreguntasSecretasUsuarioAplicacionMovil()
                         
-                        preguntaSeguridad.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
-                        preguntaSeguridad.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-                        preguntaSeguridad.cpIdIdioma = 4
-                     
-//                            Constant.defaults.setValue("123456", forKey: "token")
-//                            stepNex()
-//                            questionsController.getSecretQuestions(preguntaSecreta: preguntaSeguridad) { (res,error) in
-//                                print("EN LAS PREGUNTAS!!!!")
+                        
+                        if(question1.isEmpty || question2.isEmpty || question3.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                        }else{
+                            preguntaSeguridad.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+                            preguntaSeguridad.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
+                            preguntaSeguridad.cpUsuarioId = 379//Int(Constant.defaults.value(forKey: "usuarioID") as! String)
+                            preguntaSeguridad.cpPreguntaId1 = "01"
+                            preguntaSeguridad.cpRepuestaId1 = question1
+                            preguntaSeguridad.cpPreguntaId2 = "02"
+                            preguntaSeguridad.cpRepuestaId2 = question2
+                            preguntaSeguridad.cpPreguntaId3 = "03"
+                            preguntaSeguridad.cpRepuestaId3 = question3
+//                            questionsController.getSendSecretAnswers(respuestasSecretas: preguntaSeguridad) { (res,error) in
+//                                print("ENVIANDO LAS PREGUNTAS!!!!")
 //                                if res != nil  {
 //                                    print(res as Any)
-//                                    let preguntaSeguridad: ObjectSecretQuestions
-//                                    preguntaSeguridad = res! as ObjectSecretQuestions
+//                                    let preguntaSeguridad: ObjectPreguntasSecretasUsuario
+//                                    preguntaSeguridad = res! as ObjectPreguntasSecretasUsuario
 //                                    print(preguntaSeguridad.envelope.body.registerMovilResponse._return.fechaHora)
-//
-////                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
 //                                    stepNex()
 //                                }
-//
+//    
 //                                if error != nil {
 //                                    let alert = ShowAlert()
 //                                    alert.showPaymentModeActionSheet(title: "error", message: questionsController.getMessageError(code: error!))
 //                                    print(error!)
 //                                }
 //                            }
-                        stepNex()
+                            stepNex()
+                        }
                     }) {
-                        //QuestionsContinueButtonContent()
-                        QuestionsBackButtonContent()
+                        QuestionsContinueButtonContent()
                     }
                     
                     NavigationLink(destination: SuccessfulQuestionsView(), isActive:self.$steptwo){
@@ -102,8 +107,8 @@ struct SecurityQuestionsViewAccess: View {
                     }
                     
                     
-                    NavigationLink(destination: SuccessfulQuestionsView()) {
-                        QuestionsContinueButtonContent()
+                    NavigationLink(destination: MainViewLogged()) {
+                        QuestionsBackButtonContent()
                     }
                     
                 }.background(Color.cardButtonViewGray)
@@ -240,7 +245,7 @@ struct ListarPregunta: View {
     }
 }
 
-struct QuestionsBackButtonContent: View {
+struct QuestionsContinueButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
         Text("Continue")
@@ -254,7 +259,7 @@ struct QuestionsBackButtonContent: View {
 }
 
 
-struct QuestionsContinueButtonContent: View {
+struct QuestionsBackButtonContent: View {
     let co = Color.black.opacity(0.1)
     var body: some View {
         Text("Back")
@@ -265,6 +270,104 @@ struct QuestionsContinueButtonContent: View {
             .cornerRadius(35.0)
             .padding(.top,5)
             .padding(.bottom)
+    }
+}
+
+struct QuestionsList: View {
+    @State var isSheetOpened = false
+    @State var selectedQuestions = Questions()
+    @State var questions : [Questions] = []
+    @State var expand = false
+    @State var separador: String = ""
+    @State var jsonQuestion : ObjectSecretQuestions?
+    var body: some View {
+        VStack {
+            Button(action: {
+                self.isSheetOpened.toggle()
+                
+            }) {
+                Text("\(selectedQuestions.alternativeName3)")
+                    //.fontWeight(.bold)
+                    .foregroundColor(.gray)
+                    Spacer()
+                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
+                        .resizable()
+                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
+                        .foregroundColor(.gray)
+                
+                }.padding(10)
+                .cornerRadius(10)
+                .clipShape(Rectangle())
+                .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+            
+            .sheet(isPresented: self.$isSheetOpened) {
+                preguntas(questions: self.questions, isSheetOpened: self.isSheetOpened, selectedQuestions: self.$selectedQuestions)
+            }
+        }.onAppear(
+            perform: getJSONQuestions
+        )
+    }
+    
+    func getJSONQuestions() {
+        let secretQuestionsController = SecretQuestionsController()
+        let preguntas = GetPreguntasSecretas()
+
+        secretQuestionsController.getSecretQuestions(preguntaSecreta: preguntas) { (res,error) in
+            self.jsonQuestion = res! as ObjectSecretQuestions
+            //self.questions = res!.envelope.body.registerMovilResponse._return.fechaHora
+        }
+    }
+}
+
+struct preguntas: View {
+    var questions : [Questions]
+    var isSheetOpened : Bool
+    @Binding var selectedQuestions: Questions
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack {
+            List {
+                ForEach(self.questions, id: \.self) { index in
+                    Button(action: {
+                        self.selectedQuestions = index
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text(index.alternativeName3)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                            .frame(width: 340, alignment: .leading)
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct TextLabelQuestion: View {
+    @State var questions : [Questions] = []
+    @State var jsonQuestion : ObjectSecretQuestions?
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text("Seleccione la Pregunta")
+                .font(.callout)
+                .frame(width: 340, alignment: .leading)
+                .foregroundColor(.gray)
+                .padding()
+            QuestionsList()
+        }
+    }
+    
+    func getJSONCountry() {
+        let secretQuestionsController = SecretQuestionsController()
+        let preguntas = GetPreguntasSecretas()
+        
+        secretQuestionsController.getSecretQuestions(preguntaSecreta: preguntas) { (res,error) in
+            self.jsonQuestion = res! as ObjectSecretQuestions
+            //self.questions = res!.envelope.body.registerMovilResponse._return.codigoRespuesta
+        }
     }
 }
 

@@ -30,6 +30,9 @@
 		0480419A255E1AB40025357E /* RecoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04804199255E1AB40025357E /* RecoverController.swift */; };
 		048612212549A799008E51CE /* ObjectToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048612202549A799008E51CE /* ObjectToken.swift */; };
 		048612262549AA5F008E51CE /* ObjectErrorToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048612252549AA5F008E51CE /* ObjectErrorToken.swift */; };
+		049132E82577065A00698369 /* ValidateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049132E72577065A00698369 /* ValidateAccountController.swift */; };
+		049132ED257707FE00698369 /* ObjectValidateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049132EC257707FE00698369 /* ObjectValidateAccount.swift */; };
+		049132F22577081600698369 /* ObjectErrorValidateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049132F12577081600698369 /* ObjectErrorValidateAccount.swift */; };
 		0492CD8A256F418F009C5CD9 /* ObjectPreguntasSecretasUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492CD89256F418F009C5CD9 /* ObjectPreguntasSecretasUsuario.swift */; };
 		0492CD8F256F41A4009C5CD9 /* ObjectErrorPreguntasSecretasUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492CD8E256F41A4009C5CD9 /* ObjectErrorPreguntasSecretasUsuario.swift */; };
 		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
@@ -157,6 +160,9 @@
 		04804199255E1AB40025357E /* RecoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverController.swift; sourceTree = "<group>"; };
 		048612202549A799008E51CE /* ObjectToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectToken.swift; sourceTree = "<group>"; };
 		048612252549AA5F008E51CE /* ObjectErrorToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorToken.swift; sourceTree = "<group>"; };
+		049132E72577065A00698369 /* ValidateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateAccountController.swift; sourceTree = "<group>"; };
+		049132EC257707FE00698369 /* ObjectValidateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectValidateAccount.swift; sourceTree = "<group>"; };
+		049132F12577081600698369 /* ObjectErrorValidateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorValidateAccount.swift; sourceTree = "<group>"; };
 		0492CD89256F418F009C5CD9 /* ObjectPreguntasSecretasUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPreguntasSecretasUsuario.swift; sourceTree = "<group>"; };
 		0492CD8E256F41A4009C5CD9 /* ObjectErrorPreguntasSecretasUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorPreguntasSecretasUsuario.swift; sourceTree = "<group>"; };
 		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
@@ -399,6 +405,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		049132E62577062500698369 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				049132E72577065A00698369 /* ValidateAccountController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		04B2F42F2513A7E700DBDA03 /* Recharge */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,7 +479,7 @@
 		04D6DA5E251A4A480053125C /* ValidateAccount */ = {
 			isa = PBXGroup;
 			children = (
-				04D6DA60251A4A7D0053125C /* Controller */,
+				049132E62577062500698369 /* Controller */,
 				04D6DA5F251A4A6F0053125C /* View */,
 			);
 			path = ValidateAccount;
@@ -485,13 +499,6 @@
 				04E3D09D251AB9D700DA1B31 /* SuccesfullValidateView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		04D6DA60251A4A7D0053125C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		467C04AD24D857F20021F472 = {
@@ -801,6 +808,8 @@
 				0471A9FD2567551C00498491 /* ObjectErrorSecretQuestions.swift */,
 				0492CD89256F418F009C5CD9 /* ObjectPreguntasSecretasUsuario.swift */,
 				0492CD8E256F41A4009C5CD9 /* ObjectErrorPreguntasSecretasUsuario.swift */,
+				049132EC257707FE00698369 /* ObjectValidateAccount.swift */,
+				049132F12577081600698369 /* ObjectErrorValidateAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -967,6 +976,7 @@
 				04D322D52518EA4E00F3F38C /* OperationKeyTopUpView.swift in Sources */,
 				045375B9254790F600D12D77 /* ObjectErrorRegisterUser.swift in Sources */,
 				BA6AC2ED2564AA790072E6C5 /* FailCodeOperation.swift in Sources */,
+				049132ED257707FE00698369 /* ObjectValidateAccount.swift in Sources */,
 				BAE1E9BB252BA9EB007F9CD6 /* WebServicesCall.swift in Sources */,
 				46DBC48A251287DF008D42B3 /* SignUpView.swift in Sources */,
 				46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */,
@@ -984,8 +994,10 @@
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
 				BA1B8BC82563668B002A6892 /* ObjectGetUsuarioByEmailError.swift in Sources */,
 				46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */,
+				049132F22577081600698369 /* ObjectErrorValidateAccount.swift in Sources */,
 				04B6828125632D3000834E95 /* ObjectChangePassForgot.swift in Sources */,
 				46DBC488251287C4008D42B3 /* PassByTokenView.swift in Sources */,
+				049132E82577065A00698369 /* ValidateAccountController.swift in Sources */,
 				0471A9FE2567551C00498491 /* ObjectErrorSecretQuestions.swift in Sources */,
 				0492CD8A256F418F009C5CD9 /* ObjectPreguntasSecretasUsuario.swift in Sources */,
 				0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */,
