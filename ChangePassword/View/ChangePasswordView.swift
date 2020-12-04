@@ -8,6 +8,27 @@
 import SwiftUI
 import FloatingLabelTextFieldSwiftUI
 
+
+struct ProgressBar: View {
+    @Binding var progress: CGFloat
+    @State var isShowing = false
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Rectangle()
+                .foregroundColor(Color.gray)
+                .opacity(0.3)
+                .frame(width: 345.0, height: 8.0)
+            Rectangle()
+                .foregroundColor(Color.fontOrangeColor)
+                .frame(width: 345.0 * (self.progress / 100.0), height: 8.0)
+        }
+        .onAppear {
+            self.isShowing = true
+        }
+        .cornerRadius(4.0)
+    }
+}
+
 struct ChangePasswordView: View {
     var body: some View {
         GeometryReader { geometry in
@@ -86,8 +107,14 @@ struct TextLabelSecurityChangePass: View {
 
 struct NewPassTextField: View {
     @Binding var pass: String
+    @State var progress : CGFloat = 0
+    
+    var util = Utils()
     var body: some View {
+        
+        ProgressBar(progress: $progress)
         FloatingLabelTextField($pass, placeholder: "Nueva contraseña", editingChanged: { (isChanged) in
+            progress = util.getNivelProgressBar(clave: pass)
         }) {
         }
             .leftView({ // Add left view.
