@@ -3053,7 +3053,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Credencial
 var cpCredencial: String?

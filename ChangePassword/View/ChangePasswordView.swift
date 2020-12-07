@@ -101,7 +101,19 @@ struct ChangePasswordViewAccess: View {
                                 }else if(pass != repeatPass)
                                 {
                                     alert.showPaymentModeActionSheet(title: "error", message:                                      NSLocalizedString("toast_different_passwords", comment: ""))
-                                }else{                                self.isSuccesIn()
+                                }else{
+                                    let changePasswordController = ChangePasswordController()
+                                    
+                                    changePasswordController.cambiarCredencialAplicacionMovil(credencial: pass, userId: Constant.defaults.value(forKey: "usuarioID") as! String) { (data, error) in
+                                        
+                                        if(data != ""){
+                                            self.isSuccesIn()
+                                        }
+                                        
+
+                                    }
+                                    
+                                    
                                     
                                 }
                                 
