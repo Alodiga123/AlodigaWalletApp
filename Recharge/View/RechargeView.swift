@@ -30,6 +30,13 @@ struct RechargeViewAccess: View {
     @State var concept: String = ""
     @State var transfer: String = ""
     @State var amount: String = ""
+    @State var steptwo: Bool = false
+    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.steptwo = true
+        }
+    }
     
     var body: some View {
         
@@ -53,27 +60,28 @@ struct RechargeViewAccess: View {
                     AmountRechargeTextField(amount: self.$amount)
                     //NavigationLink(destination: RechargeConfirmationView()) {
                     Button(action: {
-                         
                          let responseController = ResponseController()
                         
                          responseController.parseResponse{ (response) in
-                            
                             if response != nil {
                                 print("+++++++++++ OBJETO +++++++++++++++++")
                                 print(response)
                             }
-                         
+                            stepNex()
                          }
                  
-                                     }) {
-                            RechargeButtonContent()
+                    }) {
+                        RechargeButtonContent()
                     }
-                   // }
-                    
-                    
-                    NavigationLink(destination: MainViewLogged()) {
-                        RechargeBackButtonContent()
+                    VStack{
+                        NavigationLink(destination: RechargeConfirmationView(), isActive:self.$steptwo){
+                            EmptyView()
+                        }
+                        NavigationLink(destination: MainViewLogged()) {
+                            RechargeBackButtonContent()
+                        }
                     }
+            
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)

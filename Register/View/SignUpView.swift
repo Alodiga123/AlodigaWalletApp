@@ -189,6 +189,8 @@ struct CountryList: View {
                 Text("\(selectedCountry.alternativeName3)")
                     //.fontWeight(.bold)
                     .foregroundColor(.gray)
+                    .font(.callout)
+                
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
                         .resizable()
@@ -235,8 +237,9 @@ struct paises: View {
                         self.presentationMode.wrappedValue.dismiss()
                         
                         Constant.defaults.setValue(index.code, forKey: "code")
-                        print("codigo")
-                        print(index.code)
+                        Constant.defaults.setValue(index.id, forKey: "idCountry")
+                        print("codigo: "+index.code)
+                        print("Id: " + index.id)
                     }) {
                         Text(index.alternativeName3)
                             .font(.callout)
@@ -261,11 +264,6 @@ struct TextLabelCountry: View {
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(.gray)
                 .padding()
-            
-//                .font(.body)
-                //            .fontWeight(.bold)
-                //            .foregroundColor(.gray)
-                //            .padding(.top,20)
             CountryList()
         }
     }

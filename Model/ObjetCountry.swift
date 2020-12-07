@@ -68,7 +68,7 @@ struct Country: Identifiable, Decodable, Hashable{
     var shortName : String
     
     init( ) {
-        self.alternativeName3 = "Seleccione una opcion"
+        self.alternativeName3 = "Seleccione"
         self.code  = ""
         self.id  = ""
         self.name  = ""

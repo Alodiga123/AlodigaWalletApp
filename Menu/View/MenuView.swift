@@ -172,9 +172,9 @@ struct cerrarSesión: View {
             title: Text("Cerrar Sesión"),
             message: Text("¿Esta seguro que desea cerrar la sesión?"),
             primaryButton: .default (Text("OK")) {
-                        print("OK button tapped")
+                        print("Presionando OK")
                       },
-                      secondaryButton: .cancel()
+            secondaryButton: .cancel()
         )
     }
     
