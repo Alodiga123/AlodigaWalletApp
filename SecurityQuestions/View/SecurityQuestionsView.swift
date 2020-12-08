@@ -80,22 +80,22 @@ struct SecurityQuestionsViewAccess: View {
                             preguntaSeguridad.cpRepuestaId2 = question2
                             preguntaSeguridad.cpPreguntaId3 = "03"
                             preguntaSeguridad.cpRepuestaId3 = question3
-//                            questionsController.getSendSecretAnswers(respuestasSecretas: preguntaSeguridad) { (res,error) in
-//                                print("ENVIANDO LAS PREGUNTAS!!!!")
-//                                if res != nil  {
-//                                    print(res as Any)
-//                                    let preguntaSeguridad: ObjectPreguntasSecretasUsuario
-//                                    preguntaSeguridad = res! as ObjectPreguntasSecretasUsuario
-//                                    print(preguntaSeguridad.envelope.body.registerMovilResponse._return.fechaHora)
-//                                    stepNex()
-//                                }
-//    
-//                                if error != nil {
-//                                    let alert = ShowAlert()
-//                                    alert.showPaymentModeActionSheet(title: "error", message: questionsController.getMessageError(code: error!))
-//                                    print(error!)
-//                                }
-//                            }
+                            questionsController.getSendSecretAnswers(respuestasSecretas: preguntaSeguridad) { (res,error) in
+                                print("ENVIANDO LAS PREGUNTAS!!!!")
+                                if res != nil  {
+                                    print(res as Any)
+                                    let preguntaSeguridad: ObjectPreguntasSecretasUsuario
+                                    preguntaSeguridad = res! as ObjectPreguntasSecretasUsuario
+                                    print(preguntaSeguridad.envelope.body.registerMovilResponse._return.fechaHora)
+                                    stepNex()
+                                }
+    
+                                if error != nil {
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: questionsController.getMessageError(code: error!))
+                                    print(error!)
+                                }
+                            }
                             stepNex()
                         }
                     }) {
