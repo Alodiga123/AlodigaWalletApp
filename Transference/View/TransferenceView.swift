@@ -124,7 +124,7 @@ struct EmailTextField: View {
 struct PhoneTextField: View {
     @Binding var user: String
     var body: some View {
-        FloatingLabelTextField($user, placeholder: "Numero de Telefono", editingChanged: { (isChanged) in
+        FloatingLabelTextField($user, placeholder: NSLocalizedString("Phone", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
         .leftView({ // Add left view.
