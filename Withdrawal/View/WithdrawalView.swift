@@ -415,7 +415,7 @@ struct BankWithdrawalList: View {
     func getJSONBank() {
         let withdrawalControler = WithdrawalControler()
         let bankByCountry = AL_GetBankByCountryApp()
-        let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
+        //let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
         
         bankByCountry.cpCountryId = "1"
         

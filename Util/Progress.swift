@@ -1,5 +1,5 @@
 //
-//  Progress.swift
+//  ProgressV3.swift
 //  IOSAlodigaWalletApp
 //
 //  Created by Adira Quintero on 12/9/20.
@@ -7,22 +7,21 @@
 //
 
 import Foundation
-import SwiftUI
+import  SwiftUI
 
-
-struct HUDProgressView : View {
-    var placeHolder : String
-    @Binding var show : Bool
+struct Loader : View {
     @State var animate = false
     
     var body: some View {
         VStack(spacing: 28){
             Circle()
-                .stroke(AngularGradient(gradient: .init(colors: [Color.placeholderGrayColor, Color.placeholderGrayColor.opacity(0)]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/ ))
-                .frame(width: 80, height: 80 )
+                .trim(from: 0, to: 0.8)
+                .stroke(AngularGradient(gradient: .init(colors: [Color.placeholderGrayColor, Color.placeholderGrayColor.opacity(0)]), center: .center ),style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                .frame(width: 150, height: 40 )
                 .rotationEffect(.init(degrees: animate ? 360 : 0))
+                //.animation(Animation.linear(duration: 0.7).repeatForever(autoreverses: false))
             
-            Text(placeHolder)
+            Text("Cargando")
                 .fontWeight(.bold)
                 
             
@@ -31,31 +30,10 @@ struct HUDProgressView : View {
         .background(BlurView())
         .cornerRadius(20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.placeholderGrayColor.opacity(0.35).onTapGesture {
-            withAnimation{
-                animate.toggle()
-            }
+        .onAppear{
+            self.animate.toggle()
         }
-                     
-        ).onAppear{
-            withAnimation(Animation.linear(duration: 1.5).repeatForever(autoreverses: false)){
-                show.toggle()
-            }
-        }
+     
     }
     
 }
-
-struct BlurView: UIViewRepresentable {
-    
-    func makeUIView(context: Context) -> UIVisualEffectView {
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemThinMaterial))
-        
-        return view
-    }
-    
-    func updateUIView(_ uiView: UIVisualEffectView, context: Context)  {
-    }
-}
-
-
