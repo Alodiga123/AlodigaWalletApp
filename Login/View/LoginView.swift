@@ -108,6 +108,8 @@ struct CardButtonViewAccess: View {
     @State var authenticationDidSucceed: Bool = false
     @State var isLoggedIn: Bool = false
     @State var isSecurityQuestion: Bool = false
+    @State var HUD = false
+    @State var progressValue: Float = 0.0
 
     func login(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -121,7 +123,10 @@ struct CardButtonViewAccess: View {
     }
     var body: some View{
         ZStack{
+                
+           
             VStack{
+               
                 Rectangle()
                     .frame(width:50, height: 6)
                     .cornerRadius(3.0)
@@ -129,14 +134,27 @@ struct CardButtonViewAccess: View {
                     .padding(.top,16)
                 VStack(alignment: .leading) {
                     TextLabelBeginingSession1()
+                    if self.HUD{
+                        GeometryReader{_ in
+                            Loader()
+                        }.background(Color.black.opacity(0.45))
+                    }
+                   // HUDProgressView(placeHolder: "Cargando", show: $HUD)
                 }.padding(.leading,20).padding(.trailing,20)
+                
                 UsernameTextField(username: self.$username)
                 PasswordSecureField(password: self.$password)
                 
                 NavigationLink(destination: RecoverPasswordView()){
                     ForgotPassword()
                 }
+
                 Button(action: {
+                    //UIApplication.shared.windows.first?.rootViewController?.present(ProgressBar2(progress: $progressValue), animated: true, completion: nil)
+                        // withAnimation{
+                    self.HUD.toggle()
+                    //}
+                    
                     let loginController = LoginController()
                     let util = Utils()
                     
@@ -192,6 +210,7 @@ struct CardButtonViewAccess: View {
                                 let util = Utils()
                                 util.updateProductsIninitial(products: login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos)
                                 
+                                self.HUD.toggle()
                                 self.login()
                             }else if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "12"){
                                 
@@ -216,6 +235,7 @@ struct CardButtonViewAccess: View {
                         }
                         
                         if error != nil {
+                            self.HUD.toggle()
                             let alert = ShowAlert()
                             alert.showPaymentModeActionSheet(title: "error", message: loginController.getMessageErrorLogin(code: error!))
                             print(error!)
