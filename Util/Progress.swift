@@ -37,3 +37,15 @@ struct Loader : View {
     }
     
 }
+
+struct BlurView: UIViewRepresentable {
+    
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemThinMaterial))
+        
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context)  {
+    }
+}
