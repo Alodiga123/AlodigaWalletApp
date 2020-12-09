@@ -72,12 +72,14 @@
 "4DigitPass" = "Introduzca una clave de 4 digitos";
 "PassMustBe" = "La contraseña debe tener 8 caractéres. Poseer\n mayúscula, minúscula, números y caractéres especiales";
 "YouHaveAccount" = "¿Ya tienes cuenta? Entra aquí";
-"TermsAndConditions" = "Al hacer clic en Regístrate, Usted acepta todos los Términos\n y Condiciones Alodiga";
+"TermsAndConditions" = "Al hacer clic en Regístrate, Usted acepta todos\n los Términos y Condiciones Alodiga";
 "UserCreated" = "Usuario creado";
 "Welcome" = "Bienvenido";
 "RegisterCompleted" = "Gracias! Su registro a sido completado de forma exitosa. Ya puede comenzar a utilizar nuestros servicios";
 "Enter" = "Ingresar";
-"EnterPhone" = "Introduzca el Teléfono";
+"ValidationInvalidLong" = "Número de teléfono no puede estar vacio";
+"InvalidPhone" = "La longitud del teléfono en invalida";
+"pinInvalid" = "Clave de operaciones es invalida, debe tener 4 digitos";
 "EmptyFields" = "Existen campos vacios";
 
 //Validar Cuenta
@@ -137,6 +139,10 @@
 "PassMustBe8" = "La contraseña debe tener 8 caracteres. Poseer mayúscula, minúscula, números y caracteres especiales";
 "SuccessfulRecovery" = "Recuperación exitosa";
 "SuccessfulPassRecovery" = "Recuperación de contraseña exitoso";
+"CodeEmpty" = "El código de validación no puede estar vacio";
+"CodeLengthInvalid" = "Longitud de código de validación inválida";
+"Remaining" = "Numero de intentos restantes: ";
+"registerValidationLimit" = "Demasiados intentos, repita el proceso nuevamente";
 
 //Recarga
 "ManualRecharge" = "Recarga Manual";

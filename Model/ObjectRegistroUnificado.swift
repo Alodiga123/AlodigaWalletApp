@@ -827,7 +827,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Pregunta Id1
 var cpPreguntaId1: String?

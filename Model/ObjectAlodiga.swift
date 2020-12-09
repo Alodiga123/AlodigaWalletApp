@@ -3839,7 +3839,7 @@ public class AL_SaveCumplimient : SyedAbsarObjectBase {
 
 
 /// User Id
-var cpUserId: CLong?
+var cpUserId: String?
 
 /// Img Document
 var cpImgDocument: String?

@@ -48,9 +48,9 @@ struct SuccesfulRecoverViewAccess: View {
                         NavigationLink(destination: MainViewLogged()) {
                             EndRecoverButtonContents()
                         }
-                        NavigationLink(destination: MainViewLogged()) {
-                            LoginButtonContents()
-                        }
+//                        NavigationLink(destination: MainViewLogged()) {
+//                            LoginButtonContents()
+//                        }
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(40)
                 }.padding(.bottom,geometry.size.height/3.2)

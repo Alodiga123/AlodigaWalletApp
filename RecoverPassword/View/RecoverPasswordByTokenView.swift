@@ -49,6 +49,7 @@ struct TopButtonViewAccess: View {
     @State var authenticationDidSucceed: Bool = false
     @State var isLoggedIn: Bool = false
     @State var stepThree: Bool = false
+    @State var restCountIntent : Int = 3
     
     func stepNex(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -83,11 +84,19 @@ struct TopButtonViewAccess: View {
                     Button(action: {
                         let alert = ShowAlert()
                         
-                        if(token.isEmpty){
-                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("PassSent", comment: ""))
+                        if(token.isEmpty || token.count == 0){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("CodeEmpty", comment: ""))
+                        }else if(token.count < 6){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("CodeLengthInvalid", comment: ""))
                         }else{
-                            if ((Constant.defaults.value(forKey: "token") as! String) !=  token){
-                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
+                            if ((Constant.defaults.value(forKey: "tokenApi") as! String) !=  token){
+                                restCountIntent -= 1
+                                print("INTENTOS: ", restCountIntent)
+                                if (restCountIntent == 0){
+                                    alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("registerValidationLimit", comment: ""))
+                                }else{
+                                    alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("Remaining", comment: "12"))
+                                }
                             }else {
                                 stepNex()
                             }
@@ -137,7 +146,11 @@ struct TimerCounterValue: View {
         VStack(alignment: .center, spacing: 6) {
             Text(SecondToMinutesAndSeconds(seconds:secondsElapsed2))
         }.onReceive(timer2) { _ in
-            self.secondsElapsed2 -= 1
+            if (secondsElapsed2 == 0){
+                Text(SecondToMinutesAndSeconds(seconds:secondsElapsed2))
+            }else{
+                self.secondsElapsed2 -= 1
+            }
         }
     }
 }

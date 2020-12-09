@@ -27,6 +27,7 @@ struct PassByTokenViewAccess: View {
     @State var token: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
+    @State var restCountIntent : Int = 3
     @State var stepThree: Bool = false
     
     func stepNex(){
@@ -55,15 +56,34 @@ struct PassByTokenViewAccess: View {
                     Button(action: {
                         let alert = ShowAlert()
                         
-                        if(token.isEmpty){
-                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("PassSent", comment: ""))
+//                        if(token.isEmpty){
+//                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("PassSent", comment: ""))
+//                        }else{
+//                            if ((Constant.defaults.value(forKey: "tokenAplication") as! String) !=  token){
+//                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
+//                            }else {
+//                                stepNex()
+//                            }
+//                        }
+                        
+                        if(token.isEmpty || token.count == 0){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("CodeEmpty", comment: ""))
+                        }else if(token.count < 6){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("CodeLengthInvalid", comment: ""))
                         }else{
-                            if ((Constant.defaults.value(forKey: "tokenAplication") as! String) !=  token){
-                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
+                            if ((Constant.defaults.value(forKey: "tokenApi") as! String) !=  token){
+                                restCountIntent -= 1
+                                print("INTENTOS: ", restCountIntent)
+                                if (restCountIntent == 0){
+                                    alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("registerValidationLimit", comment: ""))
+                                }else{
+                                    alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("Remaining", comment: "12"))
+                                }
                             }else {
                                 stepNex()
                             }
                         }
+                        
                     }) {
                         RegisterContinueButtonContent()
                     }
@@ -124,7 +144,11 @@ struct TimerCounterValue2: View {
         VStack(alignment: .center, spacing: 6) {
             Text(SecondToMinutesAndSeconds(seconds:secondsElapsed2))
         }.onReceive(timer2) { _ in
-            self.secondsElapsed2 -= 1
+            if (secondsElapsed2 == 0){
+                Text(SecondToMinutesAndSeconds(seconds:secondsElapsed2))
+            }else{
+                self.secondsElapsed2 -= 1
+            }
         }
     }
 }

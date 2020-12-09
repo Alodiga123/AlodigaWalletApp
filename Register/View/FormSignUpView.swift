@@ -70,51 +70,69 @@ struct FormSignUpViewAccess: View {
                             let registerController = RegisterController()
                             let registraUsuario = GuardarUsuarioAplicacionMovil()
                             let alert = ShowAlert()
+                            let util = Utils()
+                            var result : String = "0"
                             
-                            if(name.isEmpty || lastName.isEmpty || email.isEmpty || password.isEmpty || rePass.isEmpty || pass.isEmpty || operationsKey.isEmpty ){
+                            if(name.isEmpty || lastName.isEmpty || email.isEmpty || password.isEmpty || rePass.isEmpty || pass.isEmpty || operationsKey.isEmpty || name.count == 0 || lastName.count == 0 || email.count == 0 || password.count == 0 || rePass.count == 0 || pass.count == 0 || operationsKey.count == 0 ){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-                            }else if ((Constant.defaults.value(forKey: "token") as! String) !=  operationsKey){
-                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
+                            }else if(!util.isValidEmail(testStr: email)){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: ""))
+                            }else if (password != rePass){
+                               alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("toast_different_passwords", comment: ""))
+                            }else if(pass.count < 4){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinInvalid", comment: ""))
+                            }else if(operationsKey.count < 4){
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinInvalid", comment: ""))
                             }else{
-                                registraUsuario.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
-                                registraUsuario.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-                                registraUsuario.cpUsuarioId = ""
-                                registraUsuario.cpNombre = name;
-                                registraUsuario.cpApellido = lastName;
-                                registraUsuario.cpCredencial = password;
-                                registraUsuario.cpEmail = email;
-                                registraUsuario.cpMovil = "584126157526";
-                                registraUsuario.cpFechaNacimiento = "21-03-2000";
-                                registraUsuario.cpDireccion = "APP_MOBILE";
-                                registraUsuario.cpPaisId = "1";
-                                registraUsuario.cpEstadoId = "1";
-                                registraUsuario.cpCiudadId = "1";
-                                registraUsuario.cpCondadoId = "1";
-                                registraUsuario.cpCodigoPostal = "1050";
-                                registraUsuario.cpCodigoValidacionMovil = "1234";
-                                registraUsuario.cpNombreImagen = "AloCash App Android";
-                                registraUsuario.cpImagenBytes = "null"
-                                registraUsuario.cpLink = "AloCash App Android";
-                                registraUsuario.cpPin = pass;
+                                result = util.validatePassword(clave: password, confirmPassword: rePass)
+//
+                                if(result != "0"){
+                                    alert.showPaymentModeActionSheet(title: "error", message: result)
+                                }else{
                                 
-                                registerController.getGuardarUsuario(generarRegistro: registraUsuario) { (res,error) in
-                                    print("EN LA VISTA CON EL REGISTRO!!!!")
-                                    if res != nil  {
-                                        print(res as Any)
-    //                                    let registro: ObjectRegisterUser
-    //                                    registro = res! as ObjectRegisterUser
-    //                                    print(registro.envelope.body.registerMovilResponse._return.fechaHora)
-                                        //print(registro.envelope.body.countryResponse._return.countries)
-                                        //stepNex()
+                                //}
+                                
+                                    registraUsuario.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+                                    registraUsuario.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
+                                    registraUsuario.cpUsuarioId = ""
+                                    registraUsuario.cpNombre = name;
+                                    registraUsuario.cpApellido = lastName;
+                                    registraUsuario.cpCredencial = password;
+                                    registraUsuario.cpEmail = email;
+                                    registraUsuario.cpMovil = Constant.defaults.value(forKey: "Rphone") as! String //"584126157526";
+                                    registraUsuario.cpFechaNacimiento = "21-03-2000";
+                                    registraUsuario.cpDireccion = "APP_MOBILE";
+                                    registraUsuario.cpPaisId = "1";
+                                    registraUsuario.cpEstadoId = "1";
+                                    registraUsuario.cpCiudadId = "1";
+                                    registraUsuario.cpCondadoId = "1";
+                                    registraUsuario.cpCodigoPostal = "1050";
+                                    registraUsuario.cpCodigoValidacionMovil = "1234";
+                                    registraUsuario.cpNombreImagen = "AloCash App Android";
+                                    registraUsuario.cpImagenBytes = "null"
+                                    registraUsuario.cpLink = "AloCash App Android";
+                                    registraUsuario.cpPin = pass;
+                                    print(Constant.defaults.value(forKey: "Rphone") as! String)
+                                
+                                    registerController.getGuardarUsuario(generarRegistro: registraUsuario) { (res,error) in
+                                        print("EN LA VISTA CON EL REGISTRO!!!!")
+                                        if res != nil  {
+                                            print(res as Any)
+        //                                    let registro: ObjectRegisterUser
+        //                                    registro = res! as ObjectRegisterUser
+        //                                    print(registro.envelope.body.registerMovilResponse._return.fechaHora)
+                                            //print(registro.envelope.body.countryResponse._return.countries)
+                                            //stepNex()
+                                        }
+                                        
+                                        if error != nil {
+                                            let alert = ShowAlert()
+                                            alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
+                                            print(error!)
+                                        }
                                     }
-                                    
-                                    if error != nil {
-                                        let alert = ShowAlert()
-                                        alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
-                                        print(error!)
-                                    }
+                                    stepNex()
                                 }
-                                stepNex()
                             }
                         }) {
                             RegisterButtonContent()

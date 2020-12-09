@@ -79,7 +79,7 @@ struct ValidateAdressViewAccess: View {
 
                              */
                             
-                            guardar.cpUserId = 379
+                            guardar.cpUserId = "379"
                             guardar.cpEstado = state
                             guardar.cpCiudad = city
                             guardar.cpZipCode = zipZone

@@ -63,10 +63,13 @@ struct SignUpViewAccess: View {
                         
                         print (phone)
                         
-//                        if(phone.isEmpty){
-//                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EnterPhone", comment: ""))
+//                        if(phone.isEmpty || phone.count == 0){
+//                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("ValidationInvalidLong", comment: ""))
+//                        }else if(phone.count <= 11){
+//                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("InvalidPhone", comment: ""))
 //                        }else{
                             Constant.defaults.setValue("123456", forKey: "token")
+                            Constant.defaults.setValue(phone, forKey: "Rphone")
                             stepNex()
 //                            registerController.getToken(dataToken: token) { (res,error) in
 //                                print("EN EL TOKEN!!!!")
@@ -86,7 +89,7 @@ struct SignUpViewAccess: View {
 //                                    print(error!)
 //                                }
 //                            }
-                        //}
+//                        }
                     }) {
                         RegisterContinueButtonContent()
                     }
@@ -171,6 +174,14 @@ struct RegisterCancelButtonContent: View {
     }
 }
 
+var line: some View {
+    VStack { Divider()
+        .background(Color.fontBlackColor)
+        .border(Color.black, width: 5) }
+        .padding(.bottom,10)
+        .frame(width: 380, alignment: .center)
+}
+
 
 struct CountryList: View {
     @State var isSheetOpened = false
@@ -180,6 +191,15 @@ struct CountryList: View {
     @State var separador: String = ""
     @State var jsonCountry : ObjectCountry?
     @State var code: String = ""
+    
+//    var line: some View {
+//        VStack { Divider()
+//            .background(Color.fontBlackColor)
+//            .border(Color.black, width: 5) }
+//            .padding(.bottom,10)
+//            .frame(width: 380, alignment: .center)
+//    }
+    
     var body: some View {
         VStack {
             Button(action: {
@@ -205,6 +225,7 @@ struct CountryList: View {
             .sheet(isPresented: self.$isSheetOpened) {
                 paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
             }
+            line
               PhoneRegisterTextField(phone: $selectedCountry.code)
         }.onAppear(
             perform: getJSONCountry

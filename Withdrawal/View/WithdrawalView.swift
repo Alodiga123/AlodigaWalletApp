@@ -284,7 +284,7 @@ struct BankWithdrawalTextField: View {
         let bankByCountry = AL_GetBankByCountryApp()
         let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
         
-        bankByCountry.cpCountryId = idCountry
+        bankByCountry.cpCountryId = "2"
         
         withdrawalControler.getBankByCountry(bancosPorPais: bankByCountry){ (res,error) in
             self.jsonBank = res! as ObjectBankByCountry
@@ -356,7 +356,7 @@ struct CountryWithdrawalList: View {
             .sheet(isPresented: self.$isSheetOpened) {
                 paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
             }
-            BankWithdrawalTextField(id: $selectedCountry.id)
+            BankWithdrawalList(id: $selectedCountry.id)
         }.onAppear(
             perform: getJSONCountry
         )
@@ -402,10 +402,10 @@ struct BankWithdrawalList: View {
                 .cornerRadius(10)
                 .clipShape(Rectangle())
                 .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+                .sheet(isPresented: self.$isSheetOpened) {
+                    bancos(banks: self.banks, isSheetOpened: self.isSheetOpened, selectedBank: self.$selectedBank)
+                }
             
-            .sheet(isPresented: self.$isSheetOpened) {
-                bancos(banks: self.banks, isSheetOpened: self.isSheetOpened, selectedBank: self.$selectedBank)
-            }
             ProductWithdrawalTextField(id: $selectedBank.id)
         }.onAppear(
             perform: getJSONBank
@@ -417,7 +417,7 @@ struct BankWithdrawalList: View {
         let bankByCountry = AL_GetBankByCountryApp()
         //let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
         
-        bankByCountry.cpCountryId = "1"
+        bankByCountry.cpCountryId = "1" //self.id
         
         withdrawalControler.getBankByCountry(bancosPorPais: bankByCountry){ (res,error) in
             self.jsonBank = res! as ObjectBankByCountry
@@ -470,7 +470,7 @@ struct ProductsWithdrawalList: View {
         //let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
         
         productsByBank.cpBankId = "1"
-        productsByBank.cpUserId = "379"
+        productsByBank.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String
         
         withdrawalControler.getProductByBank(productosPorBancos: productsByBank){ (res,error) in
             self.jsonProducts = res! as ObjectProductsByBank
