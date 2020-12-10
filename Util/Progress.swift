@@ -16,13 +16,15 @@ struct Loader : View {
         VStack(spacing: 28){
             Circle()
                 .trim(from: 0, to: 0.8)
-                .stroke(AngularGradient(gradient: .init(colors: [Color.placeholderGrayColor, Color.placeholderGrayColor.opacity(0)]), center: .center ),style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                .stroke(AngularGradient(gradient: .init(colors: [Color.fontOrangeColor, Color.fontOrangeColor.opacity(0)]), center: .center ),style: StrokeStyle(lineWidth: 8, lineCap: .round))
                 .frame(width: 150, height: 40 )
                 .rotationEffect(.init(degrees: animate ? 360 : 0))
-                //.animation(Animation.linear(duration: 0.7).repeatForever(autoreverses: false))
+                .animation(Animation.linear(duration: 0.7).repeatForever(autoreverses: false))
             
             Text("Cargando")
                 .fontWeight(.bold)
+                //.background(Color.fontBlackColor)
+                .foregroundColor(Color.fontOrangeColor)
                 
             
         }.padding(.vertical,25)
@@ -41,7 +43,8 @@ struct Loader : View {
 struct BlurView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIVisualEffectView {
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemThinMaterial))
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemChromeMaterialLight
+))
         
         return view
     }

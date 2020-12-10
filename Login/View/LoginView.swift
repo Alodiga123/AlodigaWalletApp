@@ -137,7 +137,7 @@ struct CardButtonViewAccess: View {
                     if self.HUD{
                         GeometryReader{_ in
                             Loader()
-                        }.background(Color.black.opacity(0.45))
+                        }.background(Color.white.opacity(10))
                     }
                    // HUDProgressView(placeHolder: "Cargando", show: $HUD)
                 }.padding(.leading,20).padding(.trailing,20)

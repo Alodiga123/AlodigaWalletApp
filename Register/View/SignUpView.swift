@@ -94,7 +94,8 @@ struct SignUpViewAccess: View {
                     NavigationLink(destination: PassByTokenView(), isActive:self.$steptwo){
                         EmptyView()
                     }
-                    NavigationLink(destination: MainViewLogged()) {
+                
+                    NavigationLink(destination: LoginView()) {
                         RegisterCancelButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
