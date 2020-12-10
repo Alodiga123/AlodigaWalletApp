@@ -56,16 +56,6 @@ struct PassByTokenViewAccess: View {
                     Button(action: {
                         let alert = ShowAlert()
                         
-//                        if(token.isEmpty){
-//                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("PassSent", comment: ""))
-//                        }else{
-//                            if ((Constant.defaults.value(forKey: "tokenAplication") as! String) !=  token){
-//                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("KeyNotMatch", comment: ""))
-//                            }else {
-//                                stepNex()
-//                            }
-//                        }
-                        
                         if(token.isEmpty || token.count == 0){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("CodeEmpty", comment: ""))
                         }else if(token.count < 6){
@@ -83,7 +73,6 @@ struct PassByTokenViewAccess: View {
                                 stepNex()
                             }
                         }
-                        
                     }) {
                         RegisterContinueButtonContent()
                     }
@@ -153,17 +142,10 @@ struct TimerCounterValue2: View {
     }
 }
 
-//struct BackImg2: View {
-//    var body: some View {
-//        Image("back_login")
-//            .resizable().padding(.top,-80).padding(.bottom,-20)
-//    }
-//}
-
 struct RegisterTokenTextField: View {
     @Binding var token: String
     var body: some View {
-        FloatingLabelTextField($token, placeholder: "Introduzca la clave recibida", editingChanged: { (isChanged) in
+        FloatingLabelTextField($token, placeholder: NSLocalizedString("PassReceived", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
         .placeholderColor(Color.placeholderGrayColor)

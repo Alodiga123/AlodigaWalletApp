@@ -141,7 +141,7 @@ struct EmailRecorTextField: View {
 //                RoundedRectangle(cornerRadius: 8)
 //                    .fill(Color.init(white: 0.28))
 //            )
-        FloatingLabelTextField($email, placeholder: "Correo Electrónico", editingChanged: { (isChanged) in
+        FloatingLabelTextField($email, placeholder: NSLocalizedString("Email", comment: ""), editingChanged: { (isChanged) in
 
         }) {
 

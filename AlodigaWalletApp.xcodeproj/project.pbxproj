@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0406178F2581822E0028860D /* SpinnerCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406178E2581822E0028860D /* SpinnerCountry.swift */; };
 		0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */; };
 		0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */; };
 		0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422338125140EC300AEB65F /* WithdrawalView.swift */; };
@@ -144,6 +145,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0406178E2581822E0028860D /* SpinnerCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCountry.swift; sourceTree = "<group>"; };
 		0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeConfirmationView.swift; sourceTree = "<group>"; };
 		0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucesfullRechargeView.swift; sourceTree = "<group>"; };
 		0422338125140EC300AEB65F /* WithdrawalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalView.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				0422338125140EC300AEB65F /* WithdrawalView.swift */,
 				042233832514121C00AEB65F /* WithdrawalConfirmationView.swift */,
 				042233852514134B00AEB65F /* SucesfullWithdrawalView.swift */,
+				0406178E2581822E0028860D /* SpinnerCountry.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1044,6 +1047,7 @@
 				0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */,
 				BA1B8BA0255C1985002A6892 /* SpinnerCurrencyTransference.swift in Sources */,
 				04D6DA6D251A5C3F0053125C /* AccountExpiredView.swift in Sources */,
+				0406178F2581822E0028860D /* SpinnerCountry.swift in Sources */,
 				04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */,
 				04D6DA84251AA2C70053125C /* PhotoView.swift in Sources */,
 				BAE1EA50252E04B2007F9CD6 /* ObjectAlodiga.swift in Sources */,

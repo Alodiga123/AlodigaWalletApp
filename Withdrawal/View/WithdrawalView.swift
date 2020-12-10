@@ -324,54 +324,54 @@ struct ProductWithdrawalTextField: View {
     }
 }
 
-struct CountryWithdrawalList: View {
-    @State var isSheetOpened = false
-    @State var selectedCountry = Country()
-    @State var countries : [Country] = []
-    @State var expand = false
-    @State var separador: String = ""
-    @State var jsonCountry : ObjectCountry?
-    @State var code: String = ""
-    var body: some View {
-        VStack {
-            Button(action: {
-                self.isSheetOpened.toggle()
-                
-            }) {
-                Text("\(selectedCountry.alternativeName3)")
-                    //.fontWeight(.bold)
-                    .foregroundColor(.gray)
-                    .font(.callout) 
-                    Spacer()
-                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
-                        .resizable()
-                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
-                        .foregroundColor(.gray)
-                
-                }.padding(10)
-                .cornerRadius(10)
-                .clipShape(Rectangle())
-                .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-            
-            .sheet(isPresented: self.$isSheetOpened) {
-                paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
-            }
-            BankWithdrawalList(id: $selectedCountry.id)
-        }.onAppear(
-            perform: getJSONCountry
-        )
-    }
-    
-    func getJSONCountry() {
-        let registerController = RegisterController()
-        let countryMovil = AL_GetCountries()
-        
-        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
-            self.jsonCountry = res! as ObjectCountry
-            self.countries = res!.envelope.body.countryResponse._return.countries
-        }
-    }
-}
+//struct CountryWithdrawalList: View {
+//    @State var isSheetOpened = false
+//    @State var selectedCountry = Country()
+//    @State var countries : [Country] = []
+//    @State var expand = false
+//    @State var separador: String = ""
+//    @State var jsonCountry : ObjectCountry?
+//    @State var code: String = ""
+//    var body: some View {
+//        VStack {
+//            Button(action: {
+//                self.isSheetOpened.toggle()
+//                
+//            }) {
+//                Text("\(selectedCountry.alternativeName3)")
+//                    //.fontWeight(.bold)
+//                    .foregroundColor(.gray)
+//                    .font(.callout) 
+//                    Spacer()
+//                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
+//                        .resizable()
+//                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
+//                        .foregroundColor(.gray)
+//                
+//                }.padding(10)
+//                .cornerRadius(10)
+//                .clipShape(Rectangle())
+//                .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+//            
+//            .sheet(isPresented: self.$isSheetOpened) {
+//                paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
+//            }
+//            BankWithdrawalList(id: $selectedCountry.id)
+//        }.onAppear(
+//            perform: getJSONCountry
+//        )
+//    }
+//    
+//    func getJSONCountry() {
+//        let registerController = RegisterController()
+//        let countryMovil = AL_GetCountries()
+//        
+//        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
+//            self.jsonCountry = res! as ObjectCountry
+//            self.countries = res!.envelope.body.countryResponse._return.countries
+//        }
+//    }
+//}
 
 struct BankWithdrawalList: View {
     @Binding var id: String

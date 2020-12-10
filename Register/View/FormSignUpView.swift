@@ -89,9 +89,6 @@ struct FormSignUpViewAccess: View {
                                 if(result != "0"){
                                     alert.showPaymentModeActionSheet(title: "error", message: result)
                                 }else{
-                                
-                                //}
-                                
                                     registraUsuario.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
                                     registraUsuario.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
                                     registraUsuario.cpUsuarioId = ""
@@ -156,7 +153,7 @@ struct FormSignUpViewAccess: View {
 struct NameTextField: View {
     @Binding var name: String
     var body: some View {
-        FloatingLabelTextField($name, placeholder: "Nombre", editingChanged: { (isChanged) in
+        FloatingLabelTextField($name, placeholder: NSLocalizedString("Name", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -172,7 +169,7 @@ struct NameTextField: View {
 struct LastNameTextField: View {
     @Binding var lastName: String
     var body: some View {
-        FloatingLabelTextField($lastName, placeholder: "Apellido", editingChanged: { (isChanged) in
+        FloatingLabelTextField($lastName, placeholder: NSLocalizedString("LastName", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -188,7 +185,7 @@ struct LastNameTextField: View {
 struct MailTextField: View {
     @Binding var email: String
     var body: some View {
-        FloatingLabelTextField($email, placeholder: "Correo Electrónico", editingChanged: { (isChanged) in
+        FloatingLabelTextField($email, placeholder: NSLocalizedString("Email", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -204,7 +201,7 @@ struct MailTextField: View {
 struct PasswordTextField: View {
     @Binding var password: String
     var body: some View {
-        FloatingLabelTextField($password, placeholder: "Contraseña", editingChanged: { (isChanged) in
+        FloatingLabelTextField($password, placeholder: NSLocalizedString("Pass", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -220,7 +217,7 @@ struct PasswordTextField: View {
 struct RepeatPassTextField: View {
     @Binding var rePass: String
     var body: some View {
-        FloatingLabelTextField($rePass, placeholder: "Confirme la Contraseña", editingChanged: { (isChanged) in
+        FloatingLabelTextField($rePass, placeholder: NSLocalizedString("ConfirmPass", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -236,7 +233,7 @@ struct RepeatPassTextField: View {
 struct PassTextField: View {
     @Binding var pass: String
     var body: some View {
-        FloatingLabelTextField($pass, placeholder: "Introduzca una clave de 4 digitos", editingChanged: { (isChanged) in
+        FloatingLabelTextField($pass, placeholder: NSLocalizedString("4DigitPass", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -252,7 +249,7 @@ struct PassTextField: View {
 struct OperationsKeyTextField: View {
     @Binding var operationsKey: String
     var body: some View {
-        FloatingLabelTextField($operationsKey, placeholder: "Clave de operaciones", editingChanged: { (isChanged) in
+        FloatingLabelTextField($operationsKey, placeholder: NSLocalizedString("OperationsKey", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.

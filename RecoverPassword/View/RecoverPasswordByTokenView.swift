@@ -78,9 +78,6 @@ struct TopButtonViewAccess: View {
                     TimerCounter()
                     TimerCounterValue()
                     RecoverTokenTextField2(username: self.$token)
-//                    NavigationLink(destination: SecurityLevelView()) {
-//                        ContinueRecoButtonContent()
-//                    }
                     Button(action: {
                         let alert = ShowAlert()
                         
@@ -194,7 +191,7 @@ struct BackImg3: View {
 struct RecoverTokenTextField2: View {
     @Binding var username: String
     var body: some View {
-        FloatingLabelTextField($username, placeholder: "Introduzca la clave recibida", editingChanged: { (isChanged) in
+        FloatingLabelTextField($username, placeholder: NSLocalizedString("PassReceived", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
         .placeholderColor(Color.placeholderGrayColor)

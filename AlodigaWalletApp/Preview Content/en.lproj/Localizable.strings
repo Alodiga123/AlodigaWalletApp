@@ -99,6 +99,7 @@
 "Street" = "Enter your street, Av, house";
 "ValidationInProcess" = "Its validation is in process";
 "Validation24Hours" = "In the next 24 hours we will notify you.\n Once validated you will be able to do all the functionalities that the Alogida Wallet offers";
+"InvalidAllQuestion" = "All fields are required";
 
 //Convert
 "ProductOrigin" = "Select the Product of Origin";

@@ -140,7 +140,7 @@ struct NewPassTextField1: View {
     
     var body: some View {
         ProgressBar(progress: $progress)
-        FloatingLabelTextField($pass, placeholder: "Nueva contraseña", editingChanged: { (isChanged) in
+        FloatingLabelTextField($pass, placeholder: NSLocalizedString("NewPassword", comment: ""), editingChanged: { (isChanged) in
             progress = util.getNivelProgressBar(clave: pass)
         }) {
         }
@@ -171,7 +171,7 @@ struct RepeatNewPassTextField1: View {
     @State private var isPasswordShow: Bool = false
     
     var body: some View {
-        FloatingLabelTextField($repeatPass, placeholder: "Repita la nueva contraseña", editingChanged: { (isChanged) in
+        FloatingLabelTextField($repeatPass, placeholder: NSLocalizedString("RepeatNewPass", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
         .isSecureTextEntry(!self.isPasswordShow)
