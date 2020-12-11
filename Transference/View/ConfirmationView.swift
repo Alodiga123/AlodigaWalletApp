@@ -143,9 +143,9 @@ struct ConfirmationViewAccess: View {
                             }
                             
                             if self.progress{
-                                //GeometryReader{_ in
-                                    ViewControllerProgress.Loader()
-                                //}//.background(Color.white.opacity(10))
+                                GeometryReader{_ in
+                                    Loader()
+                                }//.background(Color.white.opacity(10))
                             }
                             
                           

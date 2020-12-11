@@ -88,9 +88,8 @@ struct ChangePasswordViewAccess: View {
                         TextLabelRecoverPass()
                         if self.progress{
                             GeometryReader{_ in
-                                
-                                ViewControllerProgress.Loader()
-                            }.background(Color.white.opacity(10))
+                                Loader()
+                            }//.background(Color.white.opacity(10))
                         }
                             Button(action: {
                                 
