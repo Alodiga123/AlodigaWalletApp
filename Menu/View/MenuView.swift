@@ -35,18 +35,18 @@ struct MenuView: View {
                     
                 }
                 .padding(.top, 10)
-                HStack {
-                    Image(systemName: "gear")
-                        .foregroundColor(.gray)
-                        .imageScale(.large)
-                    NavigationLink(destination: ConvertView()) {
-                        Text("Convert")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                    }
-                    
-                }
-                .padding(.top, 10)
+//                HStack {
+//                    Image(systemName: "gear")
+//                        .foregroundColor(.gray)
+//                        .imageScale(.large)
+//                    NavigationLink(destination: ConvertView()) {
+//                        Text("Convert")
+//                            .foregroundColor(.gray)
+//                            .font(.headline)
+//                    }
+//
+//                }
+//                .padding(.top, 10)
                 HStack {
                     Image(systemName: "person")
                         .foregroundColor(.gray)
@@ -58,31 +58,31 @@ struct MenuView: View {
                     }
                 }
                 .padding(.top, 10)
-                HStack {
-                    Image(systemName: "person")
-                        .foregroundColor(.gray)
-                        .imageScale(.large)
-                    NavigationLink(destination: TopUpView()) {
-                        Text("TopUp")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                    }
-                }
-                .padding(.top, 10)
-                Spacer()
+//                HStack {
+//                    Image(systemName: "person")
+//                        .foregroundColor(.gray)
+//                        .imageScale(.large)
+//                    NavigationLink(destination: TopUpView()) {
+//                        Text("TopUp")
+//                            .foregroundColor(.gray)
+//                            .font(.headline)
+//                    }
+//                }
+//                .padding(.top, 10)
+               // Spacer()
             }
             
-            HStack {
-                Image(systemName: "person")
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                NavigationLink(destination: PaymentBusinessesQRView()) {
-                    Text("PaymentBusinessesQR")
-                        .foregroundColor(.gray)
-                        .font(.headline)
-                }
-            }
-            .padding(.top, 10)
+//            HStack {
+//                Image(systemName: "person")
+//                    .foregroundColor(.gray)
+//                    .imageScale(.large)
+//                NavigationLink(destination: PaymentBusinessesQRView()) {
+//                    Text("PaymentBusinessesQR")
+//                        .foregroundColor(.gray)
+//                        .font(.headline)
+//                }
+//            }
+//            .padding(.top, 10)
             
             HStack {
                 Image(systemName: "person")
@@ -118,7 +118,7 @@ struct MenuView: View {
 //            }
             //.padding(.top, 20)
             
-            Spacer()
+            //Spacer()
             
             VStack(alignment: .leading){
                 HStack {

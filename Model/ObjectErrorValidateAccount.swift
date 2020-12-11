@@ -31,7 +31,7 @@ struct ObjectErrorValidateAccount: Decodable{
         var cambiar: Credencial
         
         enum CodingKeys: String, CodingKey {
-             case cambiar = "ns2:getCountriesResponse"
+             case cambiar = "ns2:saveCumplimientResponse"
          }
     }
 

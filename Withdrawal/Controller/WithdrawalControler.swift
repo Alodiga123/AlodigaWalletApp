@@ -80,49 +80,7 @@ public class WithdrawalControler{
             }
         }
     }
-    
-    /*
-     func getGuardarUsuario(generarRegistro: GuardarUsuarioAplicacionMovil ,completion: @escaping (_ res:ObjectRegisterUser?, String?) -> Void) {
-         
-         let client_RU = RegistroUnificadoClient()
-         
-         //Llamada del servicio de Guardar Usuarios
-         client_RU.opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil: generarRegistro) {(data,error) in
-             
-             if error != nil {
-                 completion(nil,"90")
-                 print("error=\(String(describing: error))")
-                 return
-             }
-             
-             do{
-                 var objetResponse: ObjectRegisterUser
-                 var objetResponseError: ObjectErrorRegisterUser
-
-                 let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
-                 //print("datastring " + datastring)
-                 let parser = ParseXMLData(xml: datastring)
-                 let jsonStr = parser.parseXML()
-                 print("JSON REGISTER---- > ")
-                 print(jsonStr)
-                 
-                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
-                 {
-                     objetResponse = try JSONDecoder().decode(ObjectRegisterUser.self, from: jsonStr.data(using: .utf8)!)
-                     completion(objetResponse, nil)
-                 }else{
-                     objetResponseError = try JSONDecoder().decode(ObjectErrorRegisterUser.self, from: jsonStr.data(using: .utf8)!)
-                     completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
-                 }
-                 
-             }catch{
-                 print("Error: ")
-                 print(error)
-             }
-         }
-     }
-     */
-    
+        
     func getBankByCountry(bancosPorPais: AL_GetBankByCountryApp ,completion: @escaping (_ res:ObjectBankByCountry?, String?) -> Void) {
         
         let client_AC = AlodigaClient()
@@ -196,6 +154,46 @@ public class WithdrawalControler{
                 }else{
                     objectResponseErrorProductsByBank = try JSONDecoder().decode(ObjectErrorProductsByBank.self, from: jsonStr.data(using: .utf8)!)
                     completion(nil, objectResponseErrorProductsByBank.envelope.body.cambiar._return.codigoRespuesta)
+                }
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+        }
+    }
+    
+    func getManualWithdrawals(retirosManuales: AL_ManualWithdrawals ,completion: @escaping (_ res:ObjectManualWithdrawals?, String?) -> Void) {
+        
+        let client_AC = AlodigaClient()
+        
+        //Llamada del servicio de Paises
+        client_AC.opManualWithdrawals(manualWithdrawals: retirosManuales) { (data, error) in
+            
+            if error != nil {
+                completion(nil,"90")
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            do{
+                var objectResponseManualWithdrawals: ObjectManualWithdrawals
+                var objectResponseErrorManualWithdrawals: ObjectErrorManualWithdrawals
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON PRODUCTOS POR PAIS ---- > ")
+                print(jsonStr)
+                
+                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                {
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
+                    objectResponseManualWithdrawals = try JSONDecoder().decode(ObjectManualWithdrawals.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objectResponseManualWithdrawals, nil)
+                }else{
+                    objectResponseErrorManualWithdrawals = try JSONDecoder().decode(ObjectErrorManualWithdrawals.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objectResponseErrorManualWithdrawals.envelope.body.cambiar._return.codigoRespuesta)
                 }
             }catch{
                 print("Error: ")

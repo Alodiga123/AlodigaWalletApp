@@ -65,43 +65,32 @@ struct ValidateAdressViewAccess: View {
                         let guardar = AL_SaveCumplimient()
                         
                         
-                        if(state.isEmpty || city.isEmpty || zipZone.isEmpty || street.isEmpty){
-                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-                        }else{
-                            /*
-                             map.put("userId", Session.getUserId());
-                             map.put("estado", getedtstate_);
-                             map.put("ciudad", getedtcity_);
-                             map.put("zipCode", getedtcode_);
-                             map.put("addres1", getedtAv_);
-                             map.put("imgDocument", Utils.encodeImage(Session.getSelectedImage()));
-                             map.put("imgProfile", Utils.encodeImage(Session.getSelectedImageSelfie()));
-
-                             */
-                            
-                            guardar.cpUserId = 379
+                        if(state.isEmpty || state.count == 0 || city.isEmpty || city.count == 0 || zipZone.isEmpty || zipZone.count == 0 || street.isEmpty || street.count == 0){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("InvalidAllQuestion", comment: ""))
+                        }else{                            
+                            guardar.cpUserId = "379"
                             guardar.cpEstado = state
                             guardar.cpCiudad = city
                             guardar.cpZipCode = zipZone
                             guardar.cpAddres1 = street
                             guardar.cpImgDocument = "1"
                             guardar.cpImgProfile = "2"
-                            validateController.getValidateAccount(salvarCuenta: guardar) { (res,error) in
-                                print("VALIDANDO LA CUENTA !!!!")
-                                if res != nil  {
-                                    print(res as Any)
-                                    let validarCuenta: ObjectValidateAccount
-                                    validarCuenta = res! as ObjectValidateAccount
-                                    print(validarCuenta.envelope.body.validateResponse._return.fechaHora)
-                                    stepNex()
-                                }
-
-                                if error != nil {
-                                    let alert = ShowAlert()
-                                    alert.showPaymentModeActionSheet(title: "error", message: validateController.getMessageError(code: error!))
-                                    print(error!)
-                                }
-                            }
+//                            validateController.getValidateAccount(salvarCuenta: guardar) { (res,error) in
+//                                print("VALIDANDO LA CUENTA !!!!")
+//                                if res != nil  {
+//                                    print(res as Any)
+//                                    let validarCuenta: ObjectValidateAccount
+//                                    validarCuenta = res! as ObjectValidateAccount
+//                                    print(validarCuenta.envelope.body.validateResponse._return.fechaHora)
+//                                    stepNex()
+//                                }
+//
+//                                if error != nil {
+//                                    let alert = ShowAlert()
+//                                    alert.showPaymentModeActionSheet(title: "error", message: validateController.getMessageError(code: error!))
+//                                    print(error!)
+//                                }
+//                            }
                             stepNex()
                         }
                     }) {
@@ -136,7 +125,7 @@ struct TextLabelValidateDirecction: View {
 struct StateTextField: View {
     @Binding var state: String
     var body: some View {
-        FloatingLabelTextField($state, placeholder: "Introduzca el estado", editingChanged: { (isChanged) in
+        FloatingLabelTextField($state, placeholder: NSLocalizedString("State", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -152,7 +141,7 @@ struct StateTextField: View {
 struct CityTextField: View {
     @Binding var city: String
     var body: some View {
-        FloatingLabelTextField($city, placeholder: "Introduzca la ciudad", editingChanged: { (isChanged) in
+        FloatingLabelTextField($city, placeholder: NSLocalizedString("City", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -168,7 +157,7 @@ struct CityTextField: View {
 struct ZipZoneTextField: View {
     @Binding var zipZone: String
     var body: some View {
-        FloatingLabelTextField($zipZone, placeholder: "Introduzca el código postal", editingChanged: { (isChanged) in
+        FloatingLabelTextField($zipZone, placeholder: NSLocalizedString("ZipCode", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -184,7 +173,7 @@ struct ZipZoneTextField: View {
 struct StreetTextField: View {
     @Binding var street: String
     var body: some View {
-        FloatingLabelTextField($street, placeholder: "Ingrese su calle, Av, casa", editingChanged: { (isChanged) in
+        FloatingLabelTextField($street, placeholder: NSLocalizedString("Street", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.

@@ -31,7 +31,7 @@ struct BodyPreguntasSecretasUsuarioError : Decodable{
     var cambiar: Credencial
     
     enum CodingKeys: String, CodingKey {
-         case cambiar = "ns2:getPreguntasSecretasResponse"
+         case cambiar = "ns2:setPreguntasSecretasUsuarioAplicacionMovilResponse"
      }
 }
 
