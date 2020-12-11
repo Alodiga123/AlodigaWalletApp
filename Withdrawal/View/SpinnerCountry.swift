@@ -9,6 +9,22 @@
 import Foundation
 import SwiftUI
 
+struct CountryWithdrawalTextField: View {
+    @State var countries : [Country] = []
+    @State var jsonCountry : ObjectCountry?
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text("SelectCountry")
+                .font(.callout)
+                .frame(width: 340, alignment: .leading)
+                .foregroundColor(.gray)
+                .padding()
+            CountryWithdrawalList()
+        }
+    }
+}
+
 struct CountryWithdrawalList: View {
     @State var isSheetOpened = false
     @State var selectedCountry = Country()
@@ -37,13 +53,15 @@ struct CountryWithdrawalList: View {
                 .cornerRadius(10)
                 .clipShape(Rectangle())
                 .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-            
-            .sheet(isPresented: self.$isSheetOpened) {
-                paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
+                .sheet(isPresented: self.$isSheetOpened) {
+                    paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
+                }
+            //line
+            BankWithdrawalTextField()
+            if (!selectedCountry.id.isEmpty){
+                BankWithdrawalList(idCountry: self.$selectedCountry.id)
             }
-            line
-            BankWithdrawalTextField(id: $selectedCountry.id)
-            //BankWithdrawalList(id: $selectedCountry.id)
+            
         }.onAppear(
             perform: getJSONCountry
         )
@@ -74,10 +92,11 @@ struct paises: View {
                         self.selectedCountry = index
                         self.presentationMode.wrappedValue.dismiss()
                         
-                        Constant.defaults.setValue(index.code, forKey: "code")
-                        Constant.defaults.setValue(index.id, forKey: "idCountry")
-                        print("codigo: "+index.code)
-                        print("Id: " + index.id)
+                        Constant.defaults.setValue(index.name, forKey: "nameCountryR")
+                        Constant.defaults.setValue(index.id, forKey: "idCountryR")
+                        Constant.defaults.setValue(index.code, forKey: "codeCountryR")
+                        print("codigo Pais: " + index.code)
+                        print("Id Pais: " + index.id)
                     }) {
                         Text(index.alternativeName3)
                             .font(.callout)

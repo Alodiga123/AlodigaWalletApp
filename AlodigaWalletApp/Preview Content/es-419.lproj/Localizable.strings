@@ -125,7 +125,8 @@
 "Retirement" = "Retiro";
 "ManualWithdrawal" = "Retiro Manual";
 "AccountNumber" = "Número de Cuenta";
-"Description" = "Descripción";
+"EnterAmount" = "Ingrese el Monto";
+"Description" = "Ingrese la Descripción";
 "Confirmation" = "Confirmación";
 "WithdrawalInformation" = "Información del Retiro";
 "SuccessfulWithdrawal" = "Retiro Exitoso";

@@ -30,6 +30,7 @@ struct WithdrawalViewAccess: View {
     @State var acount: String = ""
     @State var amount: String = ""
     @State var description: String = ""
+    let productSelected = Constant.defaults.object(forKey: "productSelected") as? [String: String] ?? [String: String]()
     @State var steptwo: Bool = false
     
     func stepNex(){
@@ -37,7 +38,6 @@ struct WithdrawalViewAccess: View {
             self.steptwo = true
         }
     }
-    
     var body: some View {
         
         GeometryReader { geometry in
@@ -52,26 +52,49 @@ struct WithdrawalViewAccess: View {
                         TextLabelWithdrawal()
                     }
                     CountryWithdrawalTextField()
-                    //CountryWithdrawalTextField(country: self.$country)
-                    //BankWithdrawalTextField(bank: self.$bank)
                     AcountNumberTextField(acount: self.$acount)
                     AmountWithdrawalTextField(amount: self.$amount)
                     DescriptionTextField(description: self.$description)
-//                    NavigationLink(destination: WithdrawalConfirmationView()) {
-//                        WithdrawalButtonContent()
-//                    }
                     
                     Button(action: {
                         let withdrawalControler = WithdrawalControler()
-                        let productsByBank = AL_GetProductsByBankId()
+                        let retiroManual = AL_ManualWithdrawals()
                         let alert = ShowAlert()
-                        let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
+                        let amount_aux: Float = Float(amount) ?? 0
+                        let saldo1 = productSelected["saldoActual"]! as String
+                        let saldo: Float = Float(saldo1) ?? 0
                         
-                        productsByBank.cpBankId = "1"
-                        productsByBank.cpUserId = "379"
-                        //bankByCountry.cpCountryId = "1"
+                        if(acount.isEmpty || acount.count == 0 || amount.isEmpty || amount.count == 0 || description.isEmpty || description.count == 0 ){
+                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("ValidationInvalidLong", comment: ""))
+                        }else if(amount.count < 3){
+                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("invalidAmount", comment: ""))
+                        }else if(amount_aux <= 0){
+                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("invalidAmount", comment: ""))
+                        }else if(saldo < amount_aux ){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
+                        }else{
+                            Constant.defaults.setValue(acount, forKey: "acountRemoval")
+                            Constant.defaults.setValue(amount, forKey: "amountRemoval")
+                            Constant.defaults.setValue(description, forKey: "descriptionRemoval")
+                            
+                            /*
+                             map.put("bankId", getbank.getId());
+                                             map.put("emailUser", Session.getEmail());
+                                             map.put("accountBank", getaccountBank);
+                                             map.put("amountWithdrawal", getAmountRecharge);
+                                             map.put("productId", getproduct.getId());
+                                             map.put("conceptTransaction", getDescrip);
+                             */
+                            retiroManual.cpBankId = 1
+                            retiroManual.cpEmailUser = ""
+                            retiroManual.cpAccountBank = acount
+                            retiroManual.cpAmountWithdrawal = amount_aux
+                            retiroManual.cpProductId = 1
+                            retiroManual.cpConceptTransaction = description
+                            
+                        }
                         
-                        withdrawalControler.getProductByBank(productosPorBancos: productsByBank){ (res,error) in
+                        withdrawalControler.getManualWithdrawals(retirosManuales: retiroManual){ (res,error) in
                             if res != nil {
                                 print("+++++++++++ OBJETO +++++++++++++++++")
                                 print(res)
@@ -81,9 +104,10 @@ struct WithdrawalViewAccess: View {
                                 alert.showPaymentModeActionSheet(title: "error", message: withdrawalControler.getMessageError(code: error!))
                                 print(error!)
                             }
-                            
+
                             stepNex()
                          }
+                        //stepNex()
                  
                     }) {
                         WithdrawalButtonContent()
@@ -113,58 +137,10 @@ struct TextLabelWithdrawal: View {
     }
 }
 
-//struct CountryWithdrawalTextField: View {
-//    @Binding var country: String
-//    var body: some View {
-//        FloatingLabelTextField($country, placeholder: "País", editingChanged: { (isChanged) in
-//        }) {
-//        }
-//            .leftView({ // Add left view.
-//                Image("")
-//            }).placeholderColor(Color.placeholderGrayColor)
-//            .frame(height: 40)
-//            .padding(.leading,20)
-//            .padding(.trailing,20)
-//            .padding(.bottom,-1)
-//    }
-//}
-
-//struct BankWithdrawalTextField: View {
-//    @Binding var bank: String
-//    var body: some View {
-//        FloatingLabelTextField($bank, placeholder: "Banco", editingChanged: { (isChanged) in
-//        }) {
-//        }
-//            .leftView({ // Add left view.
-//                Image("")
-//            }).placeholderColor(Color.placeholderGrayColor)
-//            .frame(height: 40)
-//            .padding(.leading,20)
-//            .padding(.trailing,20)
-//            .padding(.bottom,-1)
-//    }
-//}
-
-//struct ProductWithdrawalTextField: View {
-//    @Binding var product: String
-//    var body: some View {
-//        FloatingLabelTextField($product, placeholder: "Producto", editingChanged: { (isChanged) in
-//        }) {
-//        }
-//            .leftView({ // Add left view.
-//                Image("")
-//            }).placeholderColor(Color.placeholderGrayColor)
-//            .frame(height: 40)
-//            .padding(.leading,20)
-//            .padding(.trailing,20)
-//            .padding(.bottom,-1)
-//    }
-//}
-
 struct AcountNumberTextField: View {
     @Binding var acount: String
     var body: some View {
-        FloatingLabelTextField($acount, placeholder: "Número de Cuenta", editingChanged: { (isChanged) in
+        FloatingLabelTextField($acount, placeholder: NSLocalizedString("AccountNumber", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -180,7 +156,7 @@ struct AcountNumberTextField: View {
 struct AmountWithdrawalTextField: View {
     @Binding var amount: String
     var body: some View {
-        FloatingLabelTextField($amount, placeholder: "Número de Cuenta", editingChanged: { (isChanged) in
+        FloatingLabelTextField($amount, placeholder: NSLocalizedString("EnterAmount", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -196,7 +172,7 @@ struct AmountWithdrawalTextField: View {
 struct DescriptionTextField: View {
     @Binding var description: String
     var body: some View {
-        FloatingLabelTextField($description, placeholder: "Descripción", editingChanged: { (isChanged) in
+        FloatingLabelTextField($description, placeholder: NSLocalizedString("Description", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -233,333 +209,6 @@ struct WithdrawallBackButtonContent: View {
             .cornerRadius(35.0)
             .padding(.top,5)
             .padding(.bottom,10)
-    }
-}
-
-
-struct CountryWithdrawalTextField: View {
-    @State var countries : [Country] = []
-    @State var jsonCountry : ObjectCountry?
-    
-    var body: some View {
-        VStack(alignment: .center, spacing: 5) {
-            Text("SelectCountry")
-                .font(.callout)
-                .frame(width: 340, alignment: .leading)
-                .foregroundColor(.gray)
-                .padding()
-            CountryWithdrawalList()
-        }
-    }
-    
-    func getJSONCountry() {
-        let registerController = RegisterController()
-        let countryMovil = AL_GetCountries()
-        
-        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
-            self.jsonCountry = res! as ObjectCountry
-            self.countries = res!.envelope.body.countryResponse._return.countries
-        }
-    }
-}
-
-struct BankWithdrawalTextField: View {
-    @Binding var id: String
-    @State var banks : [BankByCountry] = []
-    @State var jsonBank : ObjectBankByCountry?
-    
-    var body: some View {
-        VStack(alignment: .center, spacing: 5) {
-            Text("Selecciona el Banco")
-                .font(.callout)
-                .frame(width: 340, alignment: .leading)
-                .foregroundColor(.gray)
-                .padding()
-            BankWithdrawalList(id: $id)
-        }
-    }
-    
-    func getJSONBank() {
-        let withdrawalControler = WithdrawalControler()
-        let bankByCountry = AL_GetBankByCountryApp()
-        let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
-        
-        bankByCountry.cpCountryId = "2"
-        
-        withdrawalControler.getBankByCountry(bancosPorPais: bankByCountry){ (res,error) in
-            self.jsonBank = res! as ObjectBankByCountry
-            self.banks = res!.envelope.body.bankByCountryResponse._return.banks
-        }
-    }
-}
-
-struct ProductWithdrawalTextField: View {
-    @Binding var id: String
-    @State var products : [ProductsByBank] = []
-    @State var jsonProduct : ObjectProductsByBank?
-    
-    var body: some View {
-        VStack(alignment: .center, spacing: 5) {
-            Text("Selecciona el Producto")
-                .font(.callout)
-                .frame(width: 340, alignment: .leading)
-                .foregroundColor(.gray)
-                .padding()
-            ProductsWithdrawalList(id: $id)
-        }
-    }
-    
-    func getJSONProducts() {
-        let withdrawalControler = WithdrawalControler()
-        let productsByBank = AL_GetProductsByBankId()
-        //let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
-        
-        productsByBank.cpBankId = "1"
-        productsByBank.cpUserId = "379"
-        
-        withdrawalControler.getProductByBank(productosPorBancos: productsByBank){ (res,error) in
-            self.jsonProduct = res! as ObjectProductsByBank
-            self.products = res!.envelope.body.productsByBankResponse._return.products
-        }
-    }
-}
-
-//struct CountryWithdrawalList: View {
-//    @State var isSheetOpened = false
-//    @State var selectedCountry = Country()
-//    @State var countries : [Country] = []
-//    @State var expand = false
-//    @State var separador: String = ""
-//    @State var jsonCountry : ObjectCountry?
-//    @State var code: String = ""
-//    var body: some View {
-//        VStack {
-//            Button(action: {
-//                self.isSheetOpened.toggle()
-//                
-//            }) {
-//                Text("\(selectedCountry.alternativeName3)")
-//                    //.fontWeight(.bold)
-//                    .foregroundColor(.gray)
-//                    .font(.callout) 
-//                    Spacer()
-//                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
-//                        .resizable()
-//                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
-//                        .foregroundColor(.gray)
-//                
-//                }.padding(10)
-//                .cornerRadius(10)
-//                .clipShape(Rectangle())
-//                .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-//            
-//            .sheet(isPresented: self.$isSheetOpened) {
-//                paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
-//            }
-//            BankWithdrawalList(id: $selectedCountry.id)
-//        }.onAppear(
-//            perform: getJSONCountry
-//        )
-//    }
-//    
-//    func getJSONCountry() {
-//        let registerController = RegisterController()
-//        let countryMovil = AL_GetCountries()
-//        
-//        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
-//            self.jsonCountry = res! as ObjectCountry
-//            self.countries = res!.envelope.body.countryResponse._return.countries
-//        }
-//    }
-//}
-
-struct BankWithdrawalList: View {
-    @Binding var id: String
-    @State var isSheetOpened = false
-    @State var selectedBank = BankByCountry()
-    @State var banks : [BankByCountry] = []
-    @State var expand = false
-    @State var separador: String = ""
-    @State var jsonBank : ObjectBankByCountry?
-    @State var code: String = ""
-    
-    var body: some View {
-        VStack {
-            Button(action: {
-                self.isSheetOpened.toggle()
-                
-            }) {
-                Text("\(selectedBank.name)")
-                    .foregroundColor(.gray)
-                    .font(.callout)
-                    Spacer()
-                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
-                        .resizable()
-                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
-                        .foregroundColor(.gray)
-                
-                }.padding(10)
-                .cornerRadius(10)
-                .clipShape(Rectangle())
-                .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-                .sheet(isPresented: self.$isSheetOpened) {
-                    bancos(banks: self.banks, isSheetOpened: self.isSheetOpened, selectedBank: self.$selectedBank)
-                }
-            
-            ProductWithdrawalTextField(id: $selectedBank.id)
-        }.onAppear(
-            perform: getJSONBank
-        )
-    }
-    
-    func getJSONBank() {
-        let withdrawalControler = WithdrawalControler()
-        let bankByCountry = AL_GetBankByCountryApp()
-        //let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
-        
-        bankByCountry.cpCountryId = "1" //self.id
-        
-        withdrawalControler.getBankByCountry(bancosPorPais: bankByCountry){ (res,error) in
-            self.jsonBank = res! as ObjectBankByCountry
-            self.banks = res!.envelope.body.bankByCountryResponse._return.banks
-        }
-    }
-}
-
-struct ProductsWithdrawalList: View {
-    @Binding var id: String
-    @State var isSheetOpened = false
-    @State var selectedProducts = ProductsByBank()
-    @State var products : [ProductsByBank] = []
-    @State var expand = false
-    @State var separador: String = ""
-    @State var jsonProducts : ObjectProductsByBank?
-    @State var code: String = ""
-    
-    var body: some View {
-        VStack {
-            Button(action: {
-                self.isSheetOpened.toggle()
-                
-            }) {
-                Text("\(selectedProducts.name + " " + selectedProducts.symbol + " " + selectedProducts.currentBalance)")
-                    .foregroundColor(.gray)
-                    .font(.callout)
-                    Spacer()
-                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
-                        .resizable()
-                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
-                        .foregroundColor(.gray)
-                
-                }.padding(10)
-                .cornerRadius(10)
-                .clipShape(Rectangle())
-                .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-            
-            .sheet(isPresented: self.$isSheetOpened) {
-                productos(products: self.products, isSheetOpened: self.isSheetOpened, selectedProduct: self.$selectedProducts)
-            }
-        }.onAppear(
-            perform: getJSONProducts
-        )
-    }
-    
-    func getJSONProducts() {
-        let withdrawalControler = WithdrawalControler()
-        let productsByBank = AL_GetProductsByBankId()
-        //let idCountry = Constant.defaults.value(forKey: "idCountry") as! String
-        
-        productsByBank.cpBankId = "1"
-        productsByBank.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String
-        
-        withdrawalControler.getProductByBank(productosPorBancos: productsByBank){ (res,error) in
-            self.jsonProducts = res! as ObjectProductsByBank
-            self.products = res!.envelope.body.productsByBankResponse._return.products
-        }
-    }
-}
-
-struct bancos: View {
-    var banks : [BankByCountry]
-    var isSheetOpened : Bool
-    @Binding var selectedBank: BankByCountry
-    @Environment(\.presentationMode) var presentationMode
-
-    var body: some View {
-        VStack {
-            List {
-                ForEach(self.banks, id: \.self) { index in
-                    Button(action: {
-                        self.selectedBank = index
-                        self.presentationMode.wrappedValue.dismiss()
-                        
-                        Constant.defaults.setValue(index.name, forKey: "nameBank")
-                        Constant.defaults.setValue(index.id, forKey: "idBank")
-                        print("Nombre del Banco: "+index.name)
-                        print("Id: " + index.id)
-                        
-                    }) {
-                        Text(index.name)
-                            .font(.callout)
-                            .fontWeight(.bold)
-                            .frame(width: 340, alignment: .leading)
-                            .foregroundColor(.gray)
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct productos: View {
-    var products : [ProductsByBank]
-    var isSheetOpened : Bool
-    @Binding var selectedProduct: ProductsByBank
-    @Environment(\.presentationMode) var presentationMode
-
-    var body: some View {
-        VStack {
-            List {
-                ForEach(self.products, id: \.self) { index in
-                    Button(action: {
-                        self.selectedProduct = index
-                        self.presentationMode.wrappedValue.dismiss()
-                        
-                        let productSelected = ["id" : index.id,
-                                    "name" : index.name,
-                                    "current" : index.currentBalance,
-                                    "symbol" : index.symbol]
-                        Constant.defaults.set(productSelected, forKey: "productSelected")
-                        
-                        /*
-                         /*
-                         ForEach(self.products, id: \.self) { index in
-                             Button(action: {
-                                 self.selectedProduct = index
-                                 
-                                 let currencySelected = ["id" : index.id,
-                                             "isPayTopUP" : index.isPayTopUP,
-                                             "nombreProducto" : index.nombreProducto,
-                                             "saldoActual" : index.saldoActual,
-                                             "simbolo" : index.simbolo]
-                                 Constant.defaults.set(currencySelected, forKey: "currencySelected")
-                         */
-                         */
-                        
-                        Constant.defaults.setValue(index.name, forKey: "nameBank")
-                        Constant.defaults.setValue(index.id, forKey: "idBank")
-                        print("Nombre del Producto: "+index.name)
-                        print("Id: " + index.id)
-                    }) {
-                        Text(index.name + " " + index.symbol + " " + index.currentBalance)
-                            .font(.callout)
-                            .fontWeight(.bold)
-                            .frame(width: 340, alignment: .leading)
-                            .foregroundColor(.gray)
-                    }
-                }
-            }
-        }
     }
 }
 

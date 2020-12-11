@@ -36,6 +36,10 @@
 		049132F22577081600698369 /* ObjectErrorValidateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049132F12577081600698369 /* ObjectErrorValidateAccount.swift */; };
 		0492CD8A256F418F009C5CD9 /* ObjectPreguntasSecretasUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492CD89256F418F009C5CD9 /* ObjectPreguntasSecretasUsuario.swift */; };
 		0492CD8F256F41A4009C5CD9 /* ObjectErrorPreguntasSecretasUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0492CD8E256F41A4009C5CD9 /* ObjectErrorPreguntasSecretasUsuario.swift */; };
+		049FC9062582AE7F00133FD7 /* SpinnerBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FC9052582AE7F00133FD7 /* SpinnerBank.swift */; };
+		049FC90B2582B32C00133FD7 /* SpinnerProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FC90A2582B32C00133FD7 /* SpinnerProduct.swift */; };
+		049FC9162582F13A00133FD7 /* ObjectManualWithdrawals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FC9152582F13A00133FD7 /* ObjectManualWithdrawals.swift */; };
+		049FC91B2582F14800133FD7 /* ObjectErrorManualWithdrawals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FC91A2582F14800133FD7 /* ObjectErrorManualWithdrawals.swift */; };
 		04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F4322513A82800DBDA03 /* RechargeView.swift */; };
 		04B6828125632D3000834E95 /* ObjectChangePassForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6828025632D3000834E95 /* ObjectChangePassForgot.swift */; };
 		04B6828625632F8D00834E95 /* ObjectErrorPassForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */; };
@@ -174,6 +178,10 @@
 		049132F12577081600698369 /* ObjectErrorValidateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorValidateAccount.swift; sourceTree = "<group>"; };
 		0492CD89256F418F009C5CD9 /* ObjectPreguntasSecretasUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPreguntasSecretasUsuario.swift; sourceTree = "<group>"; };
 		0492CD8E256F41A4009C5CD9 /* ObjectErrorPreguntasSecretasUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorPreguntasSecretasUsuario.swift; sourceTree = "<group>"; };
+		049FC9052582AE7F00133FD7 /* SpinnerBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerBank.swift; sourceTree = "<group>"; };
+		049FC90A2582B32C00133FD7 /* SpinnerProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProduct.swift; sourceTree = "<group>"; };
+		049FC9152582F13A00133FD7 /* ObjectManualWithdrawals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManualWithdrawals.swift; sourceTree = "<group>"; };
+		049FC91A2582F14800133FD7 /* ObjectErrorManualWithdrawals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorManualWithdrawals.swift; sourceTree = "<group>"; };
 		04B2F4322513A82800DBDA03 /* RechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeView.swift; sourceTree = "<group>"; };
 		04B6828025632D3000834E95 /* ObjectChangePassForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectChangePassForgot.swift; sourceTree = "<group>"; };
 		04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorPassForgot.swift; sourceTree = "<group>"; };
@@ -324,6 +332,8 @@
 				042233832514121C00AEB65F /* WithdrawalConfirmationView.swift */,
 				042233852514134B00AEB65F /* SucesfullWithdrawalView.swift */,
 				0406178E2581822E0028860D /* SpinnerCountry.swift */,
+				049FC9052582AE7F00133FD7 /* SpinnerBank.swift */,
+				049FC90A2582B32C00133FD7 /* SpinnerProduct.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -834,6 +844,8 @@
 				04CF669E2579B2A3006688BA /* ObjectErrorBankByCountry.swift */,
 				04F85F83257B065400A35C83 /* ObjectProductsByBank.swift */,
 				04F85F88257B068100A35C83 /* ObjectErrorProductsByBank.swift */,
+				049FC9152582F13A00133FD7 /* ObjectManualWithdrawals.swift */,
+				049FC91A2582F14800133FD7 /* ObjectErrorManualWithdrawals.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -987,6 +999,7 @@
 				46870D642502825400984049 /* ExtensionColor.swift in Sources */,
 				BA647E1925406E0200598944 /* ShowAlert.swift in Sources */,
 				46870D62250281AF00984049 /* Constans.swift in Sources */,
+				049FC9162582F13A00133FD7 /* ObjectManualWithdrawals.swift in Sources */,
 				04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */,
 				BA6AC327257D1C7E0072E6C5 /* ChangePasswordController.swift in Sources */,
 				BA6AC2E825644DE00072E6C5 /* Utils.swift in Sources */,
@@ -1019,6 +1032,7 @@
 				46870D5724FD96A600984049 /* TransferenceView.swift in Sources */,
 				BA1B8BC82563668B002A6892 /* ObjectGetUsuarioByEmailError.swift in Sources */,
 				BA6AC33925813B9D0072E6C5 /* Progress.swift in Sources */,
+				049FC91B2582F14800133FD7 /* ObjectErrorManualWithdrawals.swift in Sources */,
 				46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */,
 				049132F22577081600698369 /* ObjectErrorValidateAccount.swift in Sources */,
 				04B6828125632D3000834E95 /* ObjectChangePassForgot.swift in Sources */,
@@ -1047,6 +1061,7 @@
 				0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */,
 				BA1B8BA0255C1985002A6892 /* SpinnerCurrencyTransference.swift in Sources */,
 				04D6DA6D251A5C3F0053125C /* AccountExpiredView.swift in Sources */,
+				049FC90B2582B32C00133FD7 /* SpinnerProduct.swift in Sources */,
 				0406178F2581822E0028860D /* SpinnerCountry.swift in Sources */,
 				04B2F4332513A82800DBDA03 /* RechargeView.swift in Sources */,
 				04D6DA84251AA2C70053125C /* PhotoView.swift in Sources */,
@@ -1087,6 +1102,7 @@
 				044BD0B12548AEF5005A6754 /* SecurityQuestionsView.swift in Sources */,
 				46DBC472251284B9008D42B3 /* ConfirmationQRView.swift in Sources */,
 				46DBC47E2512869E008D42B3 /* OperationsKeyView.swift in Sources */,
+				049FC9062582AE7F00133FD7 /* SpinnerBank.swift in Sources */,
 				048612212549A799008E51CE /* ObjectToken.swift in Sources */,
 				46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */,
 			);
