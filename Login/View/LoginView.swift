@@ -123,10 +123,10 @@ struct CardButtonViewAccess: View {
     }
     var body: some View{
         ZStack{
-                
+          
            
             VStack{
-               
+              
                 Rectangle()
                     .frame(width:50, height: 6)
                     .cornerRadius(3.0)
@@ -137,11 +137,12 @@ struct CardButtonViewAccess: View {
                     if self.HUD{
                         GeometryReader{_ in
                             Loader()
-                        }.background(Color.white.opacity(10))
+                        }//.background(Color.white.opacity(10))
                     }
                    // HUDProgressView(placeHolder: "Cargando", show: $HUD)
                 }.padding(.leading,20).padding(.trailing,20)
                 
+              
                 UsernameTextField(username: self.$username)
                 PasswordSecureField(password: self.$password)
                 
@@ -150,17 +151,15 @@ struct CardButtonViewAccess: View {
                 }
 
                 Button(action: {
-                    //UIApplication.shared.windows.first?.rootViewController?.present(ProgressBar2(progress: $progressValue), animated: true, completion: nil)
-                        // withAnimation{
                     self.HUD.toggle()
-                    //}
+                    
                     
                     let loginController = LoginController()
                     let util = Utils()
                     
                     let alert = ShowAlert()
 
-                    //FALTA validar la encriptacion de la clave
+                    //TODO: FALTA validar la encriptacion de la clave
                     if(username.isEmpty || password.isEmpty){
                         alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("enter_both_credentials", comment: ""))
                     }else if(!util.isValidEmail(testStr: username)){
@@ -227,11 +226,9 @@ struct CardButtonViewAccess: View {
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.email, forKey: "email")
                                 
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.movil, forKey: "movil")
+                                self.HUD.toggle()
                                 self.securityQuestion()
                             }
-                            
-                   
-                            
                         }
                         
                         if error != nil {

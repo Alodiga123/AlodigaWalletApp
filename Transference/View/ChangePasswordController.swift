@@ -47,8 +47,9 @@ public class ChangePasswordController {
                             //print(objetResponse)
                             completion(jsonStr, nil)
                         }else{
-                            objetResponseError = try JSONDecoder().decode(ObjectErrorGetUsuarioByEmail.self, from: jsonStr.data(using: .utf8)!)
-                            completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
+                            //objetResponseError = try JSONDecoder().decode(ObjectErrorGetUsuarioByEmail.self, from: jsonStr.data(using: .utf8)!)
+                            completion(nil, "90")
+                            //objetResponseError.envelope.body.cambiar._return.codigoRespuesta
                         }
                         
                     }catch{

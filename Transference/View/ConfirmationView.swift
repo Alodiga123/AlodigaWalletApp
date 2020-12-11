@@ -31,6 +31,8 @@ struct ConfirmationViewAccess: View {
     @State var isTransfereceProcess: Bool = false
     let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
     @State var userDestinationID : String = ""
+    @State var progress = false
+
     
     
     func isTransfereceProcessIn(){
@@ -140,6 +142,13 @@ struct ConfirmationViewAccess: View {
                                 }
                             }
                             
+                            if self.progress{
+                                GeometryReader{_ in
+                                    Loader()
+                                }//.background(Color.white.opacity(10))
+                            }
+                            
+                          
                             HStack {
                                 let util = Utils()
                                 Text("Destination")
@@ -199,7 +208,7 @@ struct ConfirmationViewAccess: View {
                         .padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
                         
-                        
+                      
                      
                         
                         Button(action: {
@@ -214,13 +223,16 @@ struct ConfirmationViewAccess: View {
                             
                             let controller = TransferenceController()
                         
+                            self.progress.toggle()
                             controller.proccesTransference(saveTransferBetweenAccount: saveTransferBetweenAccount) { (res, error) in
                                 
                                 if(res != nil){
+                                    self.progress.toggle()
                                     self.isTransfereceProcessIn()
                                 }
                                 
                                 if error != nil {
+                                    self.progress.toggle()
                                     let alert = ShowAlert()
                                     alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageErrorProcessTransference(code: error!))
                                     print(error!)

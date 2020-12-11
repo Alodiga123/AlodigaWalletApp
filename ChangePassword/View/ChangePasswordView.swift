@@ -50,6 +50,7 @@ struct ChangePasswordViewAccess: View {
     @State var isLoggedIn: Bool = false
     @State var stepFour: Bool = false
     @State var isSucces: Bool = false
+    @State var progress = false
 
     func isSuccesIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -75,14 +76,23 @@ struct ChangePasswordViewAccess: View {
                             .padding(.top,16)
                         VStack(alignment: .leading) {
                             TextLabelChangePassword()
+                         
                         }.padding(.leading,20)
                             .padding(.trailing,20)
+                        
+                       
                         TextLabelSecurityChangePass()
+                     
                         NewPassTextField(pass: self.$pass)
                         RepeatNewPassTextField(repeatPass: self.$repeatPass)
                         TextLabelRecoverPass()
-                        
+                        if self.progress{
+                            GeometryReader{_ in
+                                Loader()
+                            }.background(Color.white.opacity(10))
+                        }
                             Button(action: {
+                                
                                 let util = Utils()
                                 let alert = ShowAlert()
                                 var result : String = "0"
@@ -97,26 +107,41 @@ struct ChangePasswordViewAccess: View {
                                 if(result != "0"){
                                     alert.showPaymentModeActionSheet(title: "error", message: result)
                                 }else if(repeatPass == ""){
+                                    self.progress.toggle()
+
                                     alert.showPaymentModeActionSheet(title: "error", message:  NSLocalizedString("EmptyFields", comment: ""))
                                 }else if(pass != repeatPass)
                                 {
+
                                     alert.showPaymentModeActionSheet(title: "error", message:                                      NSLocalizedString("toast_different_passwords", comment: ""))
                                 }else{
+                                    self.progress.toggle()
+
                                     let changePasswordController = ChangePasswordController()
                                     
                                     changePasswordController.cambiarCredencialAplicacionMovil(credencial: pass, userId: Constant.defaults.value(forKey: "usuarioID") as! String) { (data, error) in
                                         
                                         if(data != ""){
+                                            self.progress.toggle()
                                             self.isSuccesIn()
                                         }
                                         
+                                        if error != nil {
+                                            self.progress.toggle()
+                                            let alert = ShowAlert()
+                                            alert.showPaymentModeActionSheet(title: "error", message: "ERROR")
+                                            //alert.showPaymentModeActionSheet(title: "error", message: loginController.getMessageErrorLogin(code: error!))
+                                            print(error!)
+                                        }
+                                        
+                                       // self.progress.toggle()
+
 
                                     }
                                     
-                                    
-                                    
                                 }
                                 
+                                //self.progress.toggle()
                                 
                             }) {
                                 ChangeButtonContent()
