@@ -11,6 +11,10 @@ import UIKit
 
 class ShowAlert: UIViewController{
     
+   
+    
+    
+    
     func showPaymentModeActionSheet(title: String, message: String)  {
 
             DispatchQueue.main.async {
@@ -25,12 +29,22 @@ class ShowAlert: UIViewController{
             
                 optionMenu.view.addSubview(imgViewTitle)
     
-                UIApplication.shared.windows.first?.rootViewController?.present(optionMenu, animated: true, completion: nil)
+                if self.presentedViewController == nil {
+                    UIApplication.shared.windows.first?.rootViewController?.present(optionMenu, animated: true, completion: nil)
+                          }
+                          else {
+                            optionMenu.dismiss(animated: false, completion: nil)
+                              UIApplication.shared.windows.first?.rootViewController?.present(optionMenu, animated: true, completion: nil)
+                }
+                
+                
+                
+                
+               // UIApplication.shared.windows.first?.rootViewController?.present(optionMenu, animated: true, completion: nil)
                 //optionMenu.addAction(cancelAction)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     optionMenu.dismiss(animated: true, completion: nil)
-
                 }
         }
     

@@ -134,11 +134,11 @@ struct CardButtonViewAccess: View {
                     .padding(.top,16)
                 VStack(alignment: .leading) {
                     TextLabelBeginingSession1()
-                    if self.HUD{
-                        GeometryReader{_ in
-                            Loader()
-                        }//.background(Color.white.opacity(10))
-                    }
+                    //if self.HUD{
+                        //GeometryReader{_ in
+                      //      ViewControllerProgress.Loader()
+                        //}//.background(Color.white.opacity(10))
+                   // }
                    // HUDProgressView(placeHolder: "Cargando", show: $HUD)
                 }.padding(.leading,20).padding(.trailing,20)
                 
@@ -152,18 +152,32 @@ struct CardButtonViewAccess: View {
 
                 Button(action: {
                     self.HUD.toggle()
+                    let loading = Loading()
+                    loading.loadindView()
+                 /*   let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
+                    let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+                    loadingIndicator.hidesWhenStopped = true
+                    loadingIndicator.style = UIActivityIndicatorView.Style.gray
+                    loadingIndicator.startAnimating();
+
+                    alert.view.addSubview(loadingIndicator)
                     
+                    DispatchQueue.main.asyncAfter(deadline: .now() ){
+
+                    UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
+                    }*/
                     
                     let loginController = LoginController()
                     let util = Utils()
                     
-                    let alert = ShowAlert()
+                    let alert2 = ShowAlert()
 
                     //TODO: FALTA validar la encriptacion de la clave
                     if(username.isEmpty || password.isEmpty){
-                        alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("enter_both_credentials", comment: ""))
+                        alert2.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("enter_both_credentials", comment: ""))
                     }else if(!util.isValidEmail(testStr: username)){
-                        alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
+                        alert2.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
                     }else{
                     
                     let loginAplicacionMovil = LoginAplicacionMovil()
@@ -209,6 +223,11 @@ struct CardButtonViewAccess: View {
                                 let util = Utils()
                                 util.updateProductsIninitial(products: login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos)
                                 
+                                //DispatchQueue.main.asyncAfter(deadline: .now() ){
+                                  //  alert.dismiss(animated: false, completion: nil)
+                                //}
+                                loading.loadingDismiss()
+
                                 self.HUD.toggle()
                                 self.login()
                             }else if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "12"){
@@ -226,15 +245,26 @@ struct CardButtonViewAccess: View {
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.email, forKey: "email")
                                 
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.movil, forKey: "movil")
+                                
+                                //DispatchQueue.main.asyncAfter(deadline: .now() ){
+                                  //  alert.dismiss(animated: false, completion: nil)
+                                //}
+                                loading.loadingDismiss()
+
                                 self.HUD.toggle()
                                 self.securityQuestion()
                             }
                         }
                         
                         if error != nil {
+                            //DispatchQueue.main.asyncAfter(deadline: .now() ){
+                              //  alert.dismiss(animated: false, completion: nil)
+                            //}
+                            loading.loadingDismiss()
+
                             self.HUD.toggle()
-                            let alert = ShowAlert()
-                            alert.showPaymentModeActionSheet(title: "error", message: loginController.getMessageErrorLogin(code: error!))
+                            let alert2 = ShowAlert()
+                            alert2.showPaymentModeActionSheet(title: "error", message: loginController.getMessageErrorLogin(code: error!))
                             print(error!)
                         }
                     }
