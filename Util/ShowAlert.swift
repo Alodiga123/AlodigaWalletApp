@@ -12,43 +12,43 @@ import UIKit
 class ShowAlert: UIViewController{
     
    
-    
+    var optionMenu = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
     
     
     func showPaymentModeActionSheet(title: String, message: String)  {
 
             DispatchQueue.main.async {
                 
-                // 1
-                let optionMenu = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-                optionMenu.modalPresentationStyle = .pageSheet
+                self.optionMenu = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+      
+                self.optionMenu.modalPresentationStyle = .pageSheet
            
             //Add imageview to alert
             let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 10, width: 40, height: 40))
                 imgViewTitle.image = UIImage(named:"error")
             
-                optionMenu.view.addSubview(imgViewTitle)
-    
-                if self.presentedViewController == nil {
-                    UIApplication.shared.windows.first?.rootViewController?.present(optionMenu, animated: true, completion: nil)
-                          }
-                          else {
-                            optionMenu.dismiss(animated: false, completion: nil)
-                              UIApplication.shared.windows.first?.rootViewController?.present(optionMenu, animated: true, completion: nil)
-                }
-                
-                
-                
-                
-               // UIApplication.shared.windows.first?.rootViewController?.present(optionMenu, animated: true, completion: nil)
-                //optionMenu.addAction(cancelAction)
-                
+                self.optionMenu.view.addSubview(imgViewTitle)
+                UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: false, completion: {
+                    UIApplication.shared.windows.first?.rootViewController?.present(self.optionMenu, animated: true, completion: nil)
+                })
+             
+                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    optionMenu.dismiss(animated: true, completion: nil)
+                    self.optionMenu.dismiss(animated: true, completion: nil)
                 }
         }
     
     }
+    
+    func alertDismiss()  {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()
+        + 1) {
+            self.optionMenu.dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
     
     func showAlert(title: String, message: String)  {
 

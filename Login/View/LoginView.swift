@@ -153,25 +153,14 @@ struct CardButtonViewAccess: View {
                 Button(action: {
                     self.HUD.toggle()
                     let loading = Loading()
+                    loading.loadingDismiss()
                     loading.loadindView()
-                 /*   let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-
-                    let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-                    loadingIndicator.hidesWhenStopped = true
-                    loadingIndicator.style = UIActivityIndicatorView.Style.gray
-                    loadingIndicator.startAnimating();
-
-                    alert.view.addSubview(loadingIndicator)
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() ){
-
-                    UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-                    }*/
                     
                     let loginController = LoginController()
                     let util = Utils()
                     
                     let alert2 = ShowAlert()
+                    alert2.alertDismiss()
 
                     //TODO: FALTA validar la encriptacion de la clave
                     if(username.isEmpty || password.isEmpty){
@@ -222,10 +211,7 @@ struct CardButtonViewAccess: View {
                                 
                                 let util = Utils()
                                 util.updateProductsIninitial(products: login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos)
-                                
-                                //DispatchQueue.main.asyncAfter(deadline: .now() ){
-                                  //  alert.dismiss(animated: false, completion: nil)
-                                //}
+
                                 loading.loadingDismiss()
 
                                 self.HUD.toggle()
@@ -249,6 +235,9 @@ struct CardButtonViewAccess: View {
                                 //DispatchQueue.main.asyncAfter(deadline: .now() ){
                                   //  alert.dismiss(animated: false, completion: nil)
                                 //}
+                                
+                                //loadingv2.showUniversalLoadingView(false)
+
                                 loading.loadingDismiss()
 
                                 self.HUD.toggle()
@@ -260,10 +249,11 @@ struct CardButtonViewAccess: View {
                             //DispatchQueue.main.asyncAfter(deadline: .now() ){
                               //  alert.dismiss(animated: false, completion: nil)
                             //}
+                            
+                           // loadingv2.showUniversalLoadingView(false)
                             loading.loadingDismiss()
-
-                            self.HUD.toggle()
-                            let alert2 = ShowAlert()
+                         
+                 
                             alert2.showPaymentModeActionSheet(title: "error", message: loginController.getMessageErrorLogin(code: error!))
                             print(error!)
                         }
@@ -293,7 +283,6 @@ struct CardButtonViewAccess: View {
         }
     }
 }
-
 
 struct ValueRegister: View {
     var body: some View {

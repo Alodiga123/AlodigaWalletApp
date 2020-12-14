@@ -22,19 +22,17 @@ class Loading: UIViewController{
 
         self.alert.view.addSubview(loadingIndicator)
         
-        if alert.presentedViewController == nil {
-            UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-                  }
-                  else {
-                      alert.dismiss(animated: false, completion: nil)
-                      UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-        }
+        UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: false, completion: {
+            UIApplication.shared.windows.first?.rootViewController?.present(self.alert, animated: true, completion: nil)
+        })
+        
+
         
         //UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
     func loadingDismiss() {
-        DispatchQueue.main.asyncAfter(deadline: .now() ){
+        DispatchQueue.main.async {
             self.alert.dismiss(animated: false, completion: nil)
         }
     }
