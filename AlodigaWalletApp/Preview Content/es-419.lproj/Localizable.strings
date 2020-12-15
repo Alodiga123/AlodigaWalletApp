@@ -232,3 +232,4 @@
 "validate_password_change_number_characters" = "La contraseña debe tener al menos 8 caracteres.";
 "toast_different_passwords" = "Las contraseñas no coinciden. Inténtalo de nuevo.";
 
+"loading" = "cargando..";

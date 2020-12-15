@@ -233,3 +233,5 @@
 "validate_password_change_number_characters" = "The password must have at least 8 characters. ";
 "validate_password_change_special_character" = "The password must have at least one of the following characters.  # ? ! @ $ % ^ * -";
 "toast_different_passwords" = "Passwords do not match. Try again. ";
+
+"loading" = "loading..";
