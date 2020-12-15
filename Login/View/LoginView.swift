@@ -151,16 +151,16 @@ struct CardButtonViewAccess: View {
                 }
 
                 Button(action: {
-                    self.HUD.toggle()
+                    
+                    //Cargando
                     let loading = Loading()
-                    loading.loadingDismiss()
                     loading.loadindView()
+                    
                     
                     let loginController = LoginController()
                     let util = Utils()
                     
                     let alert2 = ShowAlert()
-                    alert2.alertDismiss()
 
                     //TODO: FALTA validar la encriptacion de la clave
                     if(username.isEmpty || password.isEmpty){
@@ -212,9 +212,8 @@ struct CardButtonViewAccess: View {
                                 let util = Utils()
                                 util.updateProductsIninitial(products: login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos)
 
+                                
                                 loading.loadingDismiss()
-
-                                self.HUD.toggle()
                                 self.login()
                             }else if(login.envelope.body.aplicacionMovilResponse._return.codigoRespuesta == "12"){
                                 
@@ -231,29 +230,16 @@ struct CardButtonViewAccess: View {
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.email, forKey: "email")
                                 
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.movil, forKey: "movil")
-                                
-                                //DispatchQueue.main.asyncAfter(deadline: .now() ){
-                                  //  alert.dismiss(animated: false, completion: nil)
-                                //}
-                                
-                                //loadingv2.showUniversalLoadingView(false)
 
                                 loading.loadingDismiss()
-
-                                self.HUD.toggle()
                                 self.securityQuestion()
                             }
                         }
                         
                         if error != nil {
-                            //DispatchQueue.main.asyncAfter(deadline: .now() ){
-                              //  alert.dismiss(animated: false, completion: nil)
-                            //}
-                            
-                           // loadingv2.showUniversalLoadingView(false)
+                          
                             loading.loadingDismiss()
-                         
-                 
+                
                             alert2.showPaymentModeActionSheet(title: "error", message: loginController.getMessageErrorLogin(code: error!))
                             print(error!)
                         }
