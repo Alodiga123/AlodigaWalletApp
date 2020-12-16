@@ -20,9 +20,7 @@ struct optionTransference : Hashable {
         self.id = id
         
     }
-    
-    
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(name)
@@ -56,9 +54,8 @@ struct FirstViewSpinnerOption: View {
     
     
     func getUserSucces(){
-        DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.isgetUserSuccesIn = true
-        }
+        
     }
     
     var line: some View {
@@ -114,10 +111,8 @@ struct FirstViewSpinnerOption: View {
                     let controller = TransferenceController()
                     let util = Utils()
                     let alert = ShowAlert()
-                     
-                  
-                    
-                    
+                    let loading = Loading()
+
                     if(selectedProduct.id == "0"){
                         if(user.isEmpty){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
@@ -125,21 +120,26 @@ struct FirstViewSpinnerOption: View {
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
                         }else{
                             
-                            
+                            loading.loadindView()
+
                             controller.getUserByEmail(data: user) { (objectGetUsuarioByEmail, error) in
+
                                 if(objectGetUsuarioByEmail != nil){
-                                    Constant.defaults.set("0", forKey: "optionTransference")
+                                    loading.loadingDismiss()
+
                                     self.getUserSucces()
+                                    Constant.defaults.set("0", forKey: "optionTransference")
+
                                 }
                                 if error != nil {
+                                    loading.loadingDismiss()
+
                                     let alert = ShowAlert()
                                     alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageErrorTransference(code: error!))
                                     print(error!)
                                 }
                                 
                             }
-                            
-                            
                             
                         }
                         
@@ -152,14 +152,18 @@ struct FirstViewSpinnerOption: View {
                        }else if(user.count <= 11){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidPhone", comment: "") )
                         }else{
+                            loading.loadindView()
+
                             controller.getUserByMovil(data: user) { (res, error) in
                             print(res)
                             if(res != nil){
                                 Constant.defaults.set("1", forKey: "optionTransference")
+                                loading.loadingDismiss()
                                 self.getUserSucces()
                             }
                             
                             if error != nil {
+                                loading.loadingDismiss()
                                 let alert = ShowAlert()
                                 alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageErrorTransference(code: error!))
                                 print(error!)
@@ -172,15 +176,7 @@ struct FirstViewSpinnerOption: View {
                 }){
                     TransferenceSerchButtonContent()
                 }
-                
-                
-                
-                
-                
             }
-            
-            
-            
         }
         
         NavigationLink(destination: TargetCustomerView(), isActive:self.$isgetUserSuccesIn){

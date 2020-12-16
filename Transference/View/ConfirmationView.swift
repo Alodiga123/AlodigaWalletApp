@@ -32,6 +32,7 @@ struct ConfirmationViewAccess: View {
     let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
     @State var userDestinationID : String = ""
     @State var progress = false
+    var loading = Loading()
 
     
     
@@ -42,7 +43,8 @@ struct ConfirmationViewAccess: View {
     }
     
     func getJSONUser() {
-        
+      //  loading.loadindView()
+
         //let option = Constant.defaults.value(forKey: "optionTransference") as! String
         
         if self.option == "0" {
@@ -72,7 +74,8 @@ struct ConfirmationViewAccess: View {
                 print("Error: decodificando json")
             }
         }
-   
+       // loading.loadingDismiss()
+
     }
     
     var body: some View {
@@ -142,11 +145,11 @@ struct ConfirmationViewAccess: View {
                                 }
                             }
                             
-                            if self.progress{
+                           /* if self.progress{
                                 GeometryReader{_ in
                                     Loader()
                                 }//.background(Color.white.opacity(10))
-                            }
+                            }*/
                             
                           
                             HStack {
@@ -212,6 +215,7 @@ struct ConfirmationViewAccess: View {
                      
                         
                         Button(action: {
+                            loading.loadindView()
                             let saveTransferBetweenAccount = AL_SaveTransferBetweenAccount()
                             saveTransferBetweenAccount.cpCryptogramUserSource = "1"
                             saveTransferBetweenAccount.cpEmailUser = Constant.defaults.value(forKey: "emailUser") as! String
@@ -223,16 +227,17 @@ struct ConfirmationViewAccess: View {
                             
                             let controller = TransferenceController()
                         
-                            self.progress.toggle()
+                            //self.progress.toggle()
                             controller.proccesTransference(saveTransferBetweenAccount: saveTransferBetweenAccount) { (res, error) in
-                                
+                                loading.loadingDismiss()
                                 if(res != nil){
-                                    self.progress.toggle()
+                                    //self.progress.toggle()
                                     self.isTransfereceProcessIn()
                                 }
                                 
                                 if error != nil {
-                                    self.progress.toggle()
+                                    loading.loadingDismiss()
+                                    //self.progress.toggle()
                                     let alert = ShowAlert()
                                     alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageErrorProcessTransference(code: error!))
                                     print(error!)

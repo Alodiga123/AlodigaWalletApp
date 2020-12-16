@@ -35,9 +35,11 @@ struct TargetCustomerViewAccess: View {
     @State var option =  Constant.defaults.value(forKey: "optionTransference") as! String
     @State var isConfirmData: Bool = false
     let currencySelect = Constant.defaults.object(forKey: "currencySelected") as? [String: String] ?? [String: String]()
+    var loading = Loading()
    
     func getJSONUser() {
-                
+        //loading.loadindView()
+
         if self.option == "0" {
             var objetResponse: ObjectGetUsuarioByEmail
             let str: String = Constant.defaults.value(forKey: "jsonUserByEmail") as! String
@@ -65,7 +67,7 @@ struct TargetCustomerViewAccess: View {
                 print("Error: decodificando json")
             }
         }
-   
+        //loading.loadingDismiss()
     }
 
     

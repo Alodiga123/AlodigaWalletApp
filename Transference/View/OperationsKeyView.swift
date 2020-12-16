@@ -30,6 +30,7 @@ struct OperationsKeyViewAccess: View {
     @State var count_aux : Int = 3
     @State var isFailKey: Bool = false
     @State var fail : Bool = false
+    var loading = Loading()
     
     func isSuccesKeyIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -84,8 +85,13 @@ struct OperationsKeyViewAccess: View {
                                 
                             }else{
                                 let util = Utils()
+                             loading.loadindView()
+
                                 util.getCodeOperation(data: key.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (res, error) in
                                     if(res != nil){
+                             loading.loadingDismiss()
+
+
                                         let clave : String
                                         clave = res! as String
                                         
@@ -100,6 +106,8 @@ struct OperationsKeyViewAccess: View {
                                         
                                     }
                                     if error != nil {
+                             loading.loadingDismiss()
+
                                         //comentar true
                                         //fail = true
                                         //count_aux = count_aux - 1

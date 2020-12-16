@@ -18,6 +18,7 @@ struct FirstView: View {
     @State var selectedProduct = ListadoProductos()
     @State var expand = false
     @State var separador: String = " - "
+    let loading = Loading()
     var body: some View {
 
         VStack {
@@ -52,6 +53,7 @@ struct FirstView: View {
         )
     }
     func getJSONLogin() {
+        loading.loadindView()
         var objetResponse: ObjectLogin
         let str: String = Constant.defaults.value(forKey: "jsonLogin") as! String
         do {
@@ -61,8 +63,11 @@ struct FirstView: View {
             self.products = objetResponse.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos
             self.selectedProduct = products[0]
         } catch  {
+            loading.loadingDismiss()
             print("Error: decodificando json")
         }
+        
+        loading.loadingDismiss()
     }
 }
 
