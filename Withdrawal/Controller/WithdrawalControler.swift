@@ -183,7 +183,7 @@ public class WithdrawalControler{
                 print("datastring " + datastring)
                 let parser = ParseXMLData(xml: datastring)
                 let jsonStr = parser.parseXML()
-                print("JSON PRODUCTOS POR PAIS ---- > ")
+                print("JSON RECARGA MANUAL ---- > ")
                 print(jsonStr)
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")

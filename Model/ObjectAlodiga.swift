@@ -6473,7 +6473,7 @@ public class AL_ManualWithdrawals : SyedAbsarObjectBase {
 
 
 /// Bank Id
-var cpBankId: CLong?
+var cpBankId: String?
 
 /// Email User
 var cpEmailUser: String?
@@ -6482,10 +6482,10 @@ var cpEmailUser: String?
 var cpAccountBank: String?
 
 /// Amount Withdrawal
-var cpAmountWithdrawal: Float?
+var cpAmountWithdrawal: String?
 
 /// Product Id
-var cpProductId: CLong?
+var cpProductId: String?
 
 /// Concept Transaction
 var cpConceptTransaction: String?

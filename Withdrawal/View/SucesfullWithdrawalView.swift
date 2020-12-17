@@ -41,12 +41,48 @@ struct SucesfullWithdrawalViewAccess: View {
                     }.padding(.leading,20)
                         .padding(.trailing,20)
                     WithdrawalCheckImagine()
-                    ForEach(self.labels, id: \.self) { label in
+                    
+                    VStack{
                         HStack {
-                            Text(label)
+                            Text("Pais")
                                 .frame(width: 80, alignment: .leading)
                                 .font(.caption)
-                            TextField(label, text: self.$text)
+                            TextField( Constant.defaults.value(forKey: "nameCountryR") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Banco")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "nameBankR") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Producto")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "nameProductR") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Cuenta")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "acountRemoval") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Monto")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "amountRemoval") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Descripción")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "descriptionRemoval") as! String, text: self.$text)
                                 .font(.caption)
                         }
                     }

@@ -25,7 +25,14 @@ struct WithdrawalConfirmationView: View {
 
 struct WithdrawalConfirmationViewAccess: View {
     @State var text = ""
-    let labels = ["Pais", "Banco", "Producto", "Cuenta", "Monto", "Descripción"]
+    let productSelect = Constant.defaults.object(forKey: "productSelected") as? [String: String] ?? [String: String]()
+    @State var stepThree: Bool = false
+    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.stepThree = true
+        }
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -41,21 +48,95 @@ struct WithdrawalConfirmationViewAccess: View {
                     }.padding(.leading,20)
                         .padding(.trailing,20)
                     TextLabelInfWithdrawal()
-                    ForEach(self.labels, id: \.self) { label in
+                    VStack{
                         HStack {
-                            Text(label)
+                            Text("Pais")
                                 .frame(width: 80, alignment: .leading)
                                 .font(.caption)
-                            TextField(label, text: self.$text)
+                            TextField( Constant.defaults.value(forKey: "nameCountryR") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Banco")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "nameBankR") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Producto")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "nameProductR") as! String, text: self.$text)
+                           // TextField(productSelect["productSelected"]!, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Cuenta")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "acountRemoval") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Monto")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "amountRemoval") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Descripción")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "descriptionRemoval") as! String, text: self.$text)
                                 .font(.caption)
                         }
                     }
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    NavigationLink(destination: SucesfullWithdrawalView()) {
+//                    NavigationLink(destination: SucesfullWithdrawalView()) {
+//                        WithdrawalProcessButtonContent()
+//                            .padding(.top)
+//                    }
+                    
+                    Button(action: {
+                        let withdrawalControler = WithdrawalControler()
+                        let retiroManual = AL_ManualWithdrawals()
+                        let alert = ShowAlert()
+                        let loading = Loading()
+                        loading.loadindView()
+                                                  
+                        retiroManual.cpBankId = Constant.defaults.value(forKey: "idBankR") as? String
+                        retiroManual.cpEmailUser = Constant.defaults.value(forKey: "emailUser") as? String
+                        retiroManual.cpAccountBank = Constant.defaults.value(forKey: "acountRemoval") as? String
+                        retiroManual.cpAmountWithdrawal = Constant.defaults.value(forKey: "amountRemoval") as? String
+                        retiroManual.cpProductId = Constant.defaults.value(forKey: "idProductR") as? String
+                        retiroManual.cpConceptTransaction = Constant.defaults.value(forKey: "descriptionRemoval") as? String
+                        
+                        withdrawalControler.getManualWithdrawals(retirosManuales: retiroManual){ (res,error) in
+                            if res != nil {
+                                print("+++++++++++ OBJETO +++++++++++++++++")
+                                print(res)
+                                loading.loadingDismiss()
+                                stepNex()
+                            }
+                            if error != nil {
+                                let alert = ShowAlert()
+                                alert.showPaymentModeActionSheet(title: "error", message: withdrawalControler.getMessageError(code: error!))
+                                print(error!)
+                                loading.loadingDismiss()
+                            }
+                         }
+                        stepNex()
+                 
+                    }) {
                         WithdrawalProcessButtonContent()
-                            .padding(.top)
+                    }
+                 
+                    NavigationLink(destination: SucesfullWithdrawalView(), isActive:self.$stepThree){
+                        EmptyView()
                     }
                     NavigationLink(destination: WithdrawalView()) {
                         WithdrawallBackButtonContent()

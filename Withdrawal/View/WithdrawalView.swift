@@ -27,9 +27,9 @@ struct WithdrawalViewAccess: View {
     @State var country: String = ""
     @State var bank: String = ""
     @State var product: String = ""
-    @State var acount: String = ""
-    @State var amount: String = ""
-    @State var description: String = ""
+    @State var acount: String = "123"
+    @State var amount: String = "100"
+    @State var description: String = "p"
     let productSelected = Constant.defaults.object(forKey: "productSelected") as? [String: String] ?? [String: String]()
     @State var steptwo: Bool = false
     
@@ -85,29 +85,29 @@ struct WithdrawalViewAccess: View {
                                              map.put("productId", getproduct.getId());
                                              map.put("conceptTransaction", getDescrip);
                              */
-                            retiroManual.cpBankId = 1
+                            retiroManual.cpBankId = "1"
                             retiroManual.cpEmailUser = ""
                             retiroManual.cpAccountBank = acount
-                            retiroManual.cpAmountWithdrawal = amount_aux
-                            retiroManual.cpProductId = 1
+                            retiroManual.cpAmountWithdrawal = amount
+                            retiroManual.cpProductId = "1"
                             retiroManual.cpConceptTransaction = description
                             
                         }
                         
-                        withdrawalControler.getManualWithdrawals(retirosManuales: retiroManual){ (res,error) in
-                            if res != nil {
-                                print("+++++++++++ OBJETO +++++++++++++++++")
-                                print(res)
-                            }
-                            if error != nil {
-                                let alert = ShowAlert()
-                                alert.showPaymentModeActionSheet(title: "error", message: withdrawalControler.getMessageError(code: error!))
-                                print(error!)
-                            }
-
-                            stepNex()
-                         }
-                        //stepNex()
+//                        withdrawalControler.getManualWithdrawals(retirosManuales: retiroManual){ (res,error) in
+//                            if res != nil {
+//                                print("+++++++++++ OBJETO +++++++++++++++++")
+//                                print(res)
+//                            }
+//                            if error != nil {
+//                                let alert = ShowAlert()
+//                                alert.showPaymentModeActionSheet(title: "error", message: withdrawalControler.getMessageError(code: error!))
+//                                print(error!)
+//                            }
+//
+//                            stepNex()
+//                         }
+                        stepNex()
                  
                     }) {
                         WithdrawalButtonContent()
