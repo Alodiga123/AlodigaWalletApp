@@ -147,7 +147,7 @@ struct OperationsKeyViewAccess: View {
                             TransferenceBackButtonContent()
                         }
                     }.background(Color.cardButtonViewGray)
-                        .cornerRadius(40)
+                        .cornerRadius(25)
                 }.padding(.bottom,geometry.size.height/2.2)
             }
     }

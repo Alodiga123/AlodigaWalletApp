@@ -49,7 +49,7 @@ struct ValidateAccountViewAccess: View {
                 .padding(.horizontal)
                 .background(Color.cardButtonViewGray)
                 .frame(width: geometry.size.width, height: geometry.size.height/1.7)
-                    .cornerRadius(40)
+                    .cornerRadius(25)
             }.padding(.bottom,geometry.size.height/3.2)
         }
     }

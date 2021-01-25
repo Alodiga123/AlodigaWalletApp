@@ -144,7 +144,7 @@ struct FormSignUpViewAccess: View {
                             .frame(width: 360, height: 35)
                     }
                 }.background(Color.cardButtonViewGray)
-                    .cornerRadius(40)
+                    .cornerRadius(25)
             }.padding(.bottom,geometry.size.height/2.2)
         }
     }

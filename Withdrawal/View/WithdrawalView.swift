@@ -94,20 +94,20 @@ struct WithdrawalViewAccess: View {
                             
                         }
                         
-//                        withdrawalControler.getManualWithdrawals(retirosManuales: retiroManual){ (res,error) in
-//                            if res != nil {
-//                                print("+++++++++++ OBJETO +++++++++++++++++")
-//                                print(res)
-//                            }
-//                            if error != nil {
-//                                let alert = ShowAlert()
-//                                alert.showPaymentModeActionSheet(title: "error", message: withdrawalControler.getMessageError(code: error!))
-//                                print(error!)
-//                            }
-//
-//                            stepNex()
-//                         }
-                        stepNex()
+                        withdrawalControler.getManualWithdrawals(retirosManuales: retiroManual){ (res,error) in
+                            if res != nil {
+                                print("+++++++++++ OBJETO +++++++++++++++++")
+                                print(res)
+                            }
+                            if error != nil {
+                                let alert = ShowAlert()
+                                alert.showPaymentModeActionSheet(title: "error", message: withdrawalControler.getMessageError(code: error!))
+                                print(error!)
+                            }
+
+                            stepNex()
+                         }
+                        //stepNex()
                  
                     }) {
                         WithdrawalButtonContent()
@@ -121,7 +121,7 @@ struct WithdrawalViewAccess: View {
                         }
                     }
                 }.background(Color.cardButtonViewGray)
-                    .cornerRadius(40)
+                    .cornerRadius(25)
             }.padding(.bottom,geometry.size.height/2.2)
         }
     }
