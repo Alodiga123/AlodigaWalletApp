@@ -87,7 +87,7 @@ struct WithdrawalViewAccess: View {
                              */
                             retiroManual.cpBankId = "1"
                             retiroManual.cpEmailUser = ""
-                            retiroManual.cpAccountBank = acount
+                            //retiroManual.cpAccountBank = acount
                             retiroManual.cpAmountWithdrawal = amount
                             retiroManual.cpProductId = "1"
                             retiroManual.cpConceptTransaction = description

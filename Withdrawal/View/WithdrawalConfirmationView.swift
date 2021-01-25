@@ -110,7 +110,7 @@ struct WithdrawalConfirmationViewAccess: View {
                                                   
                         retiroManual.cpBankId = Constant.defaults.value(forKey: "idBankR") as? String
                         retiroManual.cpEmailUser = Constant.defaults.value(forKey: "emailUser") as? String
-                        retiroManual.cpAccountBank = Constant.defaults.value(forKey: "acountRemoval") as? String
+                        //retiroManual.cpAccountBank = Constant.defaults.value(forKey: "acountRemoval") as? String
                         retiroManual.cpAmountWithdrawal = Constant.defaults.value(forKey: "amountRemoval") as? String
                         retiroManual.cpProductId = Constant.defaults.value(forKey: "idProductR") as? String
                         retiroManual.cpConceptTransaction = Constant.defaults.value(forKey: "descriptionRemoval") as? String

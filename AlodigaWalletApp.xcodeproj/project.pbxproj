@@ -117,6 +117,7 @@
 		BA6AC310256D5E5B0072E6C5 /* TransferenceQr.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC30F256D5E5B0072E6C5 /* TransferenceQr.swift */; };
 		BA6AC327257D1C7E0072E6C5 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC326257D1C7E0072E6C5 /* ChangePasswordController.swift */; };
 		BA6AC33925813B9D0072E6C5 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC33825813B9D0072E6C5 /* Progress.swift */; };
+		BA6AF4C625BF00D20079125F /* Client-Alodiga.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AF4C525BF00D20079125F /* Client-Alodiga.swift */; };
 		BAC6171A2583EB490057CBC4 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617192583EB490057CBC4 /* Loading.swift */; };
 		BAC6171F2583F1F00057CBC4 /* Loadinv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */; };
 		BAC617242583F4CA0057CBC4 /* LoadingV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617232583F4CA0057CBC4 /* LoadingV3.swift */; };
@@ -128,7 +129,6 @@
 		BAE1E9F6252BE894007F9CD6 /* ObjectRegistroUnificado.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9F5252BE894007F9CD6 /* ObjectRegistroUnificado.swift */; };
 		BAE1EA50252E04B2007F9CD6 /* ObjectAlodiga.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */; };
 		BAE1EA55252E04EF007F9CD6 /* ObjectBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA54252E04EF007F9CD6 /* ObjectBase.swift */; };
-		BAE1EA5A252E0545007F9CD6 /* AlodigaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA59252E0545007F9CD6 /* AlodigaClient.swift */; };
 		BAE1EA65252E8DCB007F9CD6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA64252E8DCB007F9CD6 /* LoginController.swift */; };
 		BAE1EA6A252EAEB4007F9CD6 /* ObjectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA69252EAEB4007F9CD6 /* ObjectLogin.swift */; };
 		BAE1EA6F252EC9EA007F9CD6 /* ObjectErrorLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1EA6E252EC9EA007F9CD6 /* ObjectErrorLogin.swift */; };
@@ -271,6 +271,7 @@
 		BA6AC30F256D5E5B0072E6C5 /* TransferenceQr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferenceQr.swift; sourceTree = "<group>"; };
 		BA6AC326257D1C7E0072E6C5 /* ChangePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangePasswordController.swift; path = Transference/View/ChangePasswordController.swift; sourceTree = SOURCE_ROOT; };
 		BA6AC33825813B9D0072E6C5 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		BA6AF4C525BF00D20079125F /* Client-Alodiga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client-Alodiga.swift"; sourceTree = "<group>"; };
 		BAC617192583EB490057CBC4 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadinv2.swift; sourceTree = "<group>"; };
 		BAC617232583F4CA0057CBC4 /* LoadingV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingV3.swift; sourceTree = "<group>"; };
@@ -282,7 +283,6 @@
 		BAE1E9F5252BE894007F9CD6 /* ObjectRegistroUnificado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRegistroUnificado.swift; sourceTree = "<group>"; };
 		BAE1EA4F252E04B2007F9CD6 /* ObjectAlodiga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAlodiga.swift; sourceTree = "<group>"; };
 		BAE1EA54252E04EF007F9CD6 /* ObjectBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectBase.swift; sourceTree = "<group>"; };
-		BAE1EA59252E0545007F9CD6 /* AlodigaClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlodigaClient.swift; sourceTree = "<group>"; };
 		BAE1EA64252E8DCB007F9CD6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Login/Controller/LoginController.swift; sourceTree = SOURCE_ROOT; };
 		BAE1EA69252EAEB4007F9CD6 /* ObjectLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectLogin.swift; sourceTree = "<group>"; };
 		BAE1EA6E252EC9EA007F9CD6 /* ObjectErrorLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorLogin.swift; sourceTree = "<group>"; };
@@ -812,7 +812,7 @@
 				BAE1E9F0252BC687007F9CD6 /* ParseXMLData.swift */,
 				BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */,
 				BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */,
-				BAE1EA59252E0545007F9CD6 /* AlodigaClient.swift */,
+				BA6AF4C525BF00D20079125F /* Client-Alodiga.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1058,7 +1058,6 @@
 				04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */,
 				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
 				BA1B8B95255C11B2002A6892 /* SpinnerOption.swift in Sources */,
-				BAE1EA5A252E0545007F9CD6 /* AlodigaClient.swift in Sources */,
 				0422338B251551F600AEB65F /* TopUpView.swift in Sources */,
 				BAE1E9F1252BC687007F9CD6 /* ParseXMLData.swift in Sources */,
 				BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */,
@@ -1077,6 +1076,7 @@
 				BAC6171F2583F1F00057CBC4 /* Loadinv2.swift in Sources */,
 				04D6DA84251AA2C70053125C /* PhotoView.swift in Sources */,
 				BAE1EA50252E04B2007F9CD6 /* ObjectAlodiga.swift in Sources */,
+				BA6AF4C625BF00D20079125F /* Client-Alodiga.swift in Sources */,
 				BA1B8BBE256351C6002A6892 /* ObjectGetUsuarioByMovil.swift in Sources */,
 				04ECA1212537CC7600A77BA1 /* RegisterController.swift in Sources */,
 				04F85F84257B065400A35C83 /* ObjectProductsByBank.swift in Sources */,

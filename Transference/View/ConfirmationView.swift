@@ -220,7 +220,7 @@ struct ConfirmationViewAccess: View {
                             saveTransferBetweenAccount.cpCryptogramUserSource = "1"
                             saveTransferBetweenAccount.cpEmailUser = Constant.defaults.value(forKey: "emailUser") as! String
                             saveTransferBetweenAccount.cpProductId = currencySelect["id"]
-                            saveTransferBetweenAccount.cpAmountTransfer = Constant.defaults.value(forKey: "amount") as! String
+                            saveTransferBetweenAccount.cpAmountTransfer = Constant.defaults.value(forKey: "amount")  as! String
                             saveTransferBetweenAccount.cpConceptTransaction = Constant.defaults.value(forKey: "concept") as! String
                             saveTransferBetweenAccount.cpCryptogramUserDestination = "1"
                             saveTransferBetweenAccount.cpIdUserDestination = self.userDestinationID
