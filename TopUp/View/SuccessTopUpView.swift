@@ -60,7 +60,7 @@ struct SuccessTopUpViewAccess: View {
                         TopUpShareButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
-                    .cornerRadius(40)
+                    .cornerRadius(25)
             }.padding(.bottom,geometry.size.height/8.2)
         }
     }

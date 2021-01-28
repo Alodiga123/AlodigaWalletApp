@@ -72,17 +72,17 @@ struct MenuView: View {
                // Spacer()
             }
             
-//            HStack {
-//                Image(systemName: "person")
-//                    .foregroundColor(.gray)
-//                    .imageScale(.large)
-//                NavigationLink(destination: PaymentBusinessesQRView()) {
-//                    Text("PaymentBusinessesQR")
-//                        .foregroundColor(.gray)
-//                        .font(.headline)
-//                }
-//            }
-//            .padding(.top, 10)
+            HStack {
+                Image(systemName: "person")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
+                NavigationLink(destination: PaymentBusinessesQRView()) {
+                    Text("PaymentBusinessesQR")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }
+            }
+            .padding(.top, 10)
             
             HStack {
                 Image(systemName: "person")

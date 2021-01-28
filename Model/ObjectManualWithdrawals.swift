@@ -31,7 +31,7 @@ struct BodyManualWithdrawals : Decodable{
     var ManualWithdrawalsResponse: ManualWithdrawalsMovilResponse
     
     enum CodingKeys: String, CodingKey {
-         case ManualWithdrawalsResponse = "ns2:getBankByCountryAppResponse"
+         case ManualWithdrawalsResponse = "ns2:manualWithdrawalsResponse"
      }
 }
 
