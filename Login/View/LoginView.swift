@@ -177,6 +177,7 @@ struct CardButtonViewAccess: View {
                     loginAplicacionMovil.cpEmail = username
                     //Falta desencriptar
                     loginAplicacionMovil.cpCredencial = password
+                        
                     loginController.getLogin(dataUser: loginAplicacionMovil) { (res,error) in
                         if res != nil  {
                             //print(res as Any)

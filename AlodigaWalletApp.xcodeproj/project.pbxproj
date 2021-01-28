@@ -118,10 +118,10 @@
 		BA6AC327257D1C7E0072E6C5 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC326257D1C7E0072E6C5 /* ChangePasswordController.swift */; };
 		BA6AC33925813B9D0072E6C5 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AC33825813B9D0072E6C5 /* Progress.swift */; };
 		BA6AF4C625BF00D20079125F /* Client-Alodiga.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AF4C525BF00D20079125F /* Client-Alodiga.swift */; };
+		BA6AF4E025C246210079125F /* RegistroUnificado-Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6AF4DF25C246210079125F /* RegistroUnificado-Client.swift */; };
 		BAC6171A2583EB490057CBC4 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617192583EB490057CBC4 /* Loading.swift */; };
 		BAC6171F2583F1F00057CBC4 /* Loadinv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */; };
 		BAC617242583F4CA0057CBC4 /* LoadingV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617232583F4CA0057CBC4 /* LoadingV3.swift */; };
-		BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */; };
 		BAE1E9B6252BA9D5007F9CD6 /* ObjetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */; };
 		BAE1E9BB252BA9EB007F9CD6 /* WebServicesCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */; };
 		BAE1E9E6252BC13E007F9CD6 /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1E9E5252BC13E007F9CD6 /* ResponseController.swift */; };
@@ -272,10 +272,10 @@
 		BA6AC326257D1C7E0072E6C5 /* ChangePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangePasswordController.swift; path = Transference/View/ChangePasswordController.swift; sourceTree = SOURCE_ROOT; };
 		BA6AC33825813B9D0072E6C5 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		BA6AF4C525BF00D20079125F /* Client-Alodiga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client-Alodiga.swift"; sourceTree = "<group>"; };
+		BA6AF4DF25C246210079125F /* RegistroUnificado-Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RegistroUnificado-Client.swift"; sourceTree = "<group>"; };
 		BAC617192583EB490057CBC4 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadinv2.swift; sourceTree = "<group>"; };
 		BAC617232583F4CA0057CBC4 /* LoadingV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingV3.swift; sourceTree = "<group>"; };
-		BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroUnificadoClient.swift; sourceTree = "<group>"; };
 		BAE1E9B5252BA9D5007F9CD6 /* ObjetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjetError.swift; sourceTree = "<group>"; };
 		BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesCall.swift; sourceTree = "<group>"; };
 		BAE1E9E5252BC13E007F9CD6 /* ResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
@@ -811,8 +811,8 @@
 			children = (
 				BAE1E9F0252BC687007F9CD6 /* ParseXMLData.swift */,
 				BAE1E9BA252BA9EB007F9CD6 /* WebServicesCall.swift */,
-				BAE1E9AF252BA8D1007F9CD6 /* RegistroUnificadoClient.swift */,
 				BA6AF4C525BF00D20079125F /* Client-Alodiga.swift */,
+				BA6AF4DF25C246210079125F /* RegistroUnificado-Client.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1013,6 +1013,7 @@
 				BA6AC327257D1C7E0072E6C5 /* ChangePasswordController.swift in Sources */,
 				BA6AC2E825644DE00072E6C5 /* Utils.swift in Sources */,
 				043FEC93251BFD5B005C518B /* SuccesfulRecoverView.swift in Sources */,
+				BA6AF4E025C246210079125F /* RegistroUnificado-Client.swift in Sources */,
 				04D6DA62251A4A9B0053125C /* ValidateAccountView.swift in Sources */,
 				BA1B8BC325636672002A6892 /* ObjectGetUsuarioByMovilError.swift in Sources */,
 				BA1B8BA82562DD27002A6892 /* TransferenceController.swift in Sources */,
@@ -1060,7 +1061,6 @@
 				BA1B8B95255C11B2002A6892 /* SpinnerOption.swift in Sources */,
 				0422338B251551F600AEB65F /* TopUpView.swift in Sources */,
 				BAE1E9F1252BC687007F9CD6 /* ParseXMLData.swift in Sources */,
-				BAE1E9B0252BA8D1007F9CD6 /* RegistroUnificadoClient.swift in Sources */,
 				BA1B8BB62562F5C5002A6892 /* ObjectGetUsuarioByEmail.swift in Sources */,
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
 				04D6DA8E251AABC10053125C /* PhotoViewStepTwoView.swift in Sources */,

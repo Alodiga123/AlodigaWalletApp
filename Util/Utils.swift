@@ -142,10 +142,10 @@ public class Utils{
         validarPin.cpPin = data
         validarPin.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
         validarPin.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-        validarPin.cpUsuarioId = 379//Int(Constant.defaults.value(forKey: "usuarioID") as! String)
+        validarPin.cpUsuarioId = "379"//Int(Constant.defaults.value(forKey: "usuarioID") as! String)
         
         
-        client_RU.opValidarPin(pin: data, userId: "379") {(data,error) in
+        client_RU.opValidarPin(validarPin: validarPin) {(data,error) in
                 if error != nil {
                     print("error=\(String(describing: error))")
                     completion(nil,"90")

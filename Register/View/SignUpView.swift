@@ -55,7 +55,7 @@ struct SignUpViewAccess: View {
                     Button(action: {
                         let registerController = RegisterController()
                         let alert = ShowAlert()
-                        let token = RU_GenerarCodigoMovilSMS()
+                        let token = GenerarCodigoMovilSMS()
                         
                         token.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
                         token.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS

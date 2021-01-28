@@ -1,11 +1,3 @@
-//
-//  ObjetosRegistroUnificado.swift
-//  IOSAlodigaWalletApp
-//
-//  Created by Adira Quintero on 10/5/20.
-//  Copyright © 2020 Kerwin Gomez. All rights reserved.
-//
-
 import Foundation
 
 
@@ -86,7 +78,7 @@ public class Aplicacion : SyedAbsarObjectBase {
 
 
 /// Aplicacion Id
-var cpAplicacionId: Int?
+var cpAplicacionId: String?
 
 /// Nombre
 var cpNombre: String?
@@ -110,10 +102,10 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Kit Afiliacion
-var cpKitAfiliacion: Bool?
+var cpKitAfiliacion: String?
 
 /// Empresa Id
 var cpEmpresaId: String?
@@ -164,7 +156,7 @@ public class Usuario : SyedAbsarObjectBase {
 
 
 /// Usuario I D
-var cpUsuarioID: Int?
+var cpUsuarioID: String?
 
 /// Apellido
 var cpApellido: String?
@@ -182,7 +174,7 @@ var cpEmail: String?
 var cpFechaNacimiento: NSDate?
 
 /// Intentos Fallidos
-var cpIntentosFallidos: Int?
+var cpIntentosFallidos: String?
 
 /// Movil
 var cpMovil: String?
@@ -200,16 +192,16 @@ var cpRespuestaListadoProductos: String?
 var cpCumplimient: String?
 
 /// Prepay Card Asociate
-var cpPrepayCardAsociate: Bool?
+var cpPrepayCardAsociate: String?
 
 /// Prepay Card
-var cpPrepayCard: Bool?
+var cpPrepayCard: String?
 
 /// Number Card
 var cpNumberCard: String?
 
 /// Country Source Id
-var cpCountrySourceId: Int?
+var cpCountrySourceId: String?
 
 /// Direccion
 var cpDireccion: String?
@@ -251,7 +243,7 @@ var cpPerfilAloRrp: String?
 var cpPin: String?
 
 /// Remettences Direccion Id
-var cpRemettencesDireccionId: Int?
+var cpRemettencesDireccionId: String?
 
 /// Cuenta Bancarias
 var cpCuentaBancarias: String?
@@ -272,22 +264,25 @@ public class RespuestaListadoProducto : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: CLong?
+var cpId: String?
 
 /// Is Pay Top U P
-var cpIsPayTopUP: Bool?
+var cpIsPayTopUP: String?
+
+/// Is Use Prepaid Card
+var cpIsUsePrepaidCard: String?
 
 /// Nombre Producto
 var cpNombreProducto: String?
 
 /// Saldo Actual
-var cpSaldoActual: Float?
+var cpSaldoActual: String?
 
 /// Simbolo
 var cpSimbolo: String?
 
 override static func cpKeys() -> Array<String> {
-return ["Id","IsPayTopUP","NombreProducto","SaldoActual","Simbolo"]
+return ["Id","IsPayTopUP","IsUsePrepaidCard","NombreProducto","SaldoActual","Simbolo"]
 }
 }
 
@@ -299,25 +294,25 @@ public class Direccion : SyedAbsarObjectBase {
 
 
 /// Ciudad Id
-var cpCiudadId: Int?
+var cpCiudadId: String?
 
 /// Codigo Postal
 var cpCodigoPostal: String?
 
 /// Condado Id
-var cpCondadoId: Int?
+var cpCondadoId: String?
 
 /// Direccion
 var cpDireccion: String?
 
 /// Direccion Id
-var cpDireccionId: Int?
+var cpDireccionId: String?
 
 /// Estado Id
-var cpEstadoId: Int?
+var cpEstadoId: String?
 
 /// Pais Id
-var cpPaisId: Int?
+var cpPaisId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CiudadId","CodigoPostal","CondadoId","Direccion","DireccionId","EstadoId","PaisId"]
@@ -335,7 +330,7 @@ public class Estado : SyedAbsarObjectBase {
 var cpDescripcion: String?
 
 /// Estado Id
-var cpEstadoId: Int?
+var cpEstadoId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Descripcion","EstadoId"]
@@ -353,7 +348,7 @@ public class Imagen : SyedAbsarObjectBase {
 var cpImagen: String?
 
 /// Imagen Id
-var cpImagenId: Int?
+var cpImagenId: String?
 
 /// Nombre
 var cpNombre: String?
@@ -371,7 +366,7 @@ public class Cuenta : SyedAbsarObjectBase {
 
 
 /// Cuenta Id
-var cpCuentaId: Int?
+var cpCuentaId: String?
 
 /// Numero Cuenta
 var cpNumeroCuenta: String?
@@ -404,7 +399,7 @@ var cpNombre: String?
 var cpNombreAlternativo: String?
 
 /// Ocupacion Id
-var cpOcupacionId: Int?
+var cpOcupacionId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Nombre","NombreAlternativo","OcupacionId"]
@@ -422,7 +417,7 @@ public class TipoDocumento : SyedAbsarObjectBase {
 var cpNombre: String?
 
 /// Tipo Documento Id
-var cpTipoDocumentoId: Int?
+var cpTipoDocumentoId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Nombre","TipoDocumentoId"]
@@ -449,7 +444,7 @@ var cpMontoMaximoTransacciones: String?
 var cpNombreTienda: String?
 
 /// Perfil Alo E S P Id
-var cpPerfilAloESPId: Int?
+var cpPerfilAloESPId: String?
 
 /// Razon Social
 var cpRazonSocial: String?
@@ -482,7 +477,7 @@ var cpEmpresa: String?
 var cpFechaVencimientoDocumento: NSDate?
 
 /// Perfil Alo Pos Id
-var cpPerfilAloPosId: Int?
+var cpPerfilAloPosId: String?
 
 /// Tipo Persona
 var cpTipoPersona: String?
@@ -512,7 +507,7 @@ var cpEin: String?
 var cpEmail: String?
 
 /// Empresa Id
-var cpEmpresaId: Int?
+var cpEmpresaId: String?
 
 /// Ingresos Estimados
 var cpIngresosEstimados: String?
@@ -539,7 +534,7 @@ public class CuentaBancaria : SyedAbsarObjectBase {
 
 
 /// Cuenta Bancaria Id
-var cpCuentaBancariaId: Int?
+var cpCuentaBancariaId: String?
 
 /// Numero Cuenta
 var cpNumeroCuenta: String?
@@ -569,10 +564,10 @@ public class Banco : SyedAbsarObjectBase {
 
 
 /// Banco Id
-var cpBancoId: Int?
+var cpBancoId: String?
 
 /// Country Id
-var cpCountryId: Int?
+var cpCountryId: String?
 
 /// Created By
 var cpCreatedBy: String?
@@ -590,7 +585,7 @@ var cpEditedDate: NSDate?
 var cpName: String?
 
 /// Version
-var cpVersion: Int?
+var cpVersion: String?
 
 override static func cpKeys() -> Array<String> {
 return ["BancoId","CountryId","CreatedBy","CreatedDate","EditedBy","EditedDate","Name","Version"]
@@ -611,7 +606,7 @@ var cpCreatedBy: String?
 var cpCreatedDate: NSDate?
 
 /// Cuenta Bancaria Id
-var cpCuentaBancariaId: Int?
+var cpCuentaBancariaId: String?
 
 /// Edited By
 var cpEditedBy: String?
@@ -623,7 +618,7 @@ var cpEditedDate: NSDate?
 var cpName: String?
 
 /// Version
-var cpVersion: Int?
+var cpVersion: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CreatedBy","CreatedDate","CuentaBancariaId","EditedBy","EditedDate","Name","Version"]
@@ -644,7 +639,7 @@ var cpIdioma: String?
 var cpNombre: String?
 
 /// Tipo Empresa Id
-var cpTipoEmpresaId: Int?
+var cpTipoEmpresaId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Idioma","Nombre","TipoEmpresaId"]
@@ -659,16 +654,16 @@ public class PerfilAloRRP : SyedAbsarObjectBase {
 
 
 /// Distribuidor Padre Id
-var cpDistribuidorPadreId: Int?
+var cpDistribuidorPadreId: String?
 
 /// Empresa Id
-var cpEmpresaId: Int?
+var cpEmpresaId: String?
 
 /// Is Affiliated Kit
-var cpIsAffiliatedKit: Bool?
+var cpIsAffiliatedKit: String?
 
 /// Usuario Alo R R P Id
-var cpUsuarioAloRRPId: Int?
+var cpUsuarioAloRRPId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["DistribuidorPadreId","EmpresaId","IsAffiliatedKit","UsuarioAloRRPId"]
@@ -704,10 +699,10 @@ public class TarjetaUsuarioPK : SyedAbsarObjectBase {
 
 
 /// Tarjeta Id
-var cpTarjetaId: Int?
+var cpTarjetaId: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["TarjetaId","UsuarioId"]
@@ -722,7 +717,7 @@ public class Tarjeta : SyedAbsarObjectBase {
 
 
 /// Codigo Seguridad
-var cpCodigoSeguridad: Int?
+var cpCodigoSeguridad: String?
 
 /// Direccion
 var cpDireccion: String?
@@ -734,7 +729,7 @@ var cpDireccionContacto: String?
 var cpEmailContacto: String?
 
 /// Estado Tarjeta Id
-var cpEstadoTarjetaId: Int?
+var cpEstadoTarjetaId: String?
 
 /// Fecha Creacion
 var cpFechaCreacion: NSDate?
@@ -749,7 +744,7 @@ var cpNombreTarjetaHabiente: String?
 var cpNumeroTarjeta: String?
 
 /// Tarjeta Id
-var cpTarjetaId: Int?
+var cpTarjetaId: String?
 
 /// Telefono Contacto
 var cpTelefonoContacto: String?
@@ -776,7 +771,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Genero
 var cpGenero: String?
@@ -1055,7 +1050,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Id Idioma
-var cpIdIdioma: Int?
+var cpIdIdioma: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UsuarioApi","PasswordApi","IdIdioma"]
@@ -1100,13 +1095,13 @@ public class PreguntaIdioma : SyedAbsarObjectBase {
 
 
 /// Pregunta Idioma Id
-var cpPreguntaIdiomaId: Int?
+var cpPreguntaIdiomaId: String?
 
 /// Pregunta
 var cpPregunta: String?
 
 /// Pregunta Id
-var cpPreguntaId: Int?
+var cpPreguntaId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["PreguntaIdiomaId","Pregunta","PreguntaId"]
@@ -1127,10 +1122,12 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Preguntas Secretas Enviadas
-var cpPreguntasSecretasEnviadas: String?
+var cpPreguntasSecretasEnviadas_cpPreguntaSecretaId: String?
+var cpPreguntasSecretasEnviadas_cpPreguntaId: String?
+var cpPreguntasSecretasEnviadas_cpRespuestad: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UsuarioApi","PasswordApi","UsuarioId","PreguntasSecretasEnviadas"]
@@ -1145,10 +1142,10 @@ public class PreguntaSecreta : SyedAbsarObjectBase {
 
 
 /// Pregunta Secreta Id
-var cpPreguntaSecretaId: Int?
+var cpPreguntaSecretaId: String?
 
 /// Pregunta Id
-var cpPreguntaId: Int?
+var cpPreguntaId: String?
 
 /// Respuesta
 var cpRespuesta: String?
@@ -1304,7 +1301,7 @@ public class RespuestaToken : SyedAbsarObjectBase {
 
 
 /// Datos Respuesta
-var cpDatosRespuesta: Bool?
+var cpDatosRespuesta: String?
 
 override static func cpKeys() -> Array<String> {
 return ["DatosRespuesta"]
@@ -1544,7 +1541,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Pin
 var cpPin: String?
@@ -1762,6 +1759,45 @@ return ["Return"]
 }
 
 /**
+  Actualizar Usuariopor Id.
+*/
+@objc(ActualizarUsuarioporId)
+public class ActualizarUsuarioporId : SyedAbsarObjectBase {
+
+
+/// Usuario Api
+var cpUsuarioApi: String?
+
+/// Password Api
+var cpPasswordApi: String?
+
+/// Usuario Id
+var cpUsuarioId: String?
+
+/// Remettences Direccion Id
+var cpRemettencesDireccionId: String?
+
+override static func cpKeys() -> Array<String> {
+return ["UsuarioApi","PasswordApi","UsuarioId","RemettencesDireccionId"]
+}
+}
+
+/**
+  Actualizar Usuariopor Id Response.
+*/
+@objc(ActualizarUsuarioporIdResponse)
+public class ActualizarUsuarioporIdResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
   Get Preguntas Secretas Usuario.
 */
 @objc(GetPreguntasSecretasUsuario)
@@ -1775,7 +1811,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UsuarioApi","PasswordApi","UsuarioId"]
@@ -1874,7 +1910,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UsuarioApi","PasswordApi","UsuarioId"]
@@ -1994,7 +2030,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Ip
 var cpIp: String?
@@ -2048,7 +2084,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Credencial
 var cpCredencial: String?
@@ -2123,10 +2159,10 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Aplicacion Id
-var cpAplicacionId: Int?
+var cpAplicacionId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UsuarioApi","PasswordApi","UsuarioId","AplicacionId"]
@@ -2186,7 +2222,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UsuarioApi","PasswordApi","UsuarioId"]
@@ -2222,7 +2258,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Genero
 var cpGenero: String?
@@ -2231,7 +2267,7 @@ var cpGenero: String?
 var cpTelefonoResidencial: String?
 
 /// Ocupacion Id
-var cpOcupacionId: Int?
+var cpOcupacionId: String?
 
 /// Tipo Documento Id
 var cpTipoDocumentoId: String?
@@ -2246,7 +2282,7 @@ var cpNombreEmpresa: String?
 var cpEmailEmpresa: String?
 
 /// Tipo Empresa Id
-var cpTipoEmpresaId: Int?
+var cpTipoEmpresaId: String?
 
 /// Ein Empresa
 var cpEinEmpresa: String?
@@ -2267,19 +2303,19 @@ var cpIngresosEstimadosEmpresa: String?
 var cpDireccionEmpresa: String?
 
 /// Pais Empresa Id
-var cpPaisEmpresaId: Int?
+var cpPaisEmpresaId: String?
 
 /// Estado Empresa Id
-var cpEstadoEmpresaId: Int?
+var cpEstadoEmpresaId: String?
 
 /// Ciudad Empresa Id
-var cpCiudadEmpresaId: Int?
+var cpCiudadEmpresaId: String?
 
 /// Codigo Postal Empresa
 var cpCodigoPostalEmpresa: String?
 
 /// Tipo Cuenta Bancaria Id
-var cpTipoCuentaBancariaId: Int?
+var cpTipoCuentaBancariaId: String?
 
 /// Numero Ruta Bancaria
 var cpNumeroRutaBancaria: String?
@@ -2288,7 +2324,7 @@ var cpNumeroRutaBancaria: String?
 var cpNumeroCuentaBancaria: String?
 
 /// Banco Id
-var cpBancoId: Int?
+var cpBancoId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UsuarioApi","PasswordApi","UsuarioId","Genero","TelefonoResidencial","OcupacionId","TipoDocumentoId","NumeroDocumento","NombreEmpresa","EmailEmpresa","TipoEmpresaId","EinEmpresa","TipoPersona","FechavencimientoDocumento","TelefonoEmpresa","IngresosEstimadosEmpresa","DireccionEmpresa","PaisEmpresaId","EstadoEmpresaId","CiudadEmpresaId","CodigoPostalEmpresa","TipoCuentaBancariaId","NumeroRutaBancaria","NumeroCuentaBancaria","BancoId"]
@@ -2424,6 +2460,21 @@ var cpReturn: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Return"]
+}
+}
+
+/**
+  Exception.
+*/
+@objc(Exception)
+public class Exception : SyedAbsarObjectBase {
+
+
+/// Message
+var cpMessage: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Message"]
 }
 }
 
@@ -2583,8 +2634,8 @@ return ["Return"]
 /**
   Send Sms Simbox.
 */
-@objc(RU_SendSmsSimbox)
-public class RU_SendSmsSimbox : SyedAbsarObjectBase {
+@objc(SendSmsSimbox)
+public class SendSmsSimbox : SyedAbsarObjectBase {
 
 
 /// Usuario Api
@@ -2607,8 +2658,8 @@ return ["UsuarioApi","PasswordApi","Number","Text"]
 /**
   Send Sms Simbox Response.
 */
-@objc(RU_SendSmsSimboxResponse)
-public class RU_SendSmsSimboxResponse : SyedAbsarObjectBase {
+@objc(SendSmsSimboxResponse)
+public class SendSmsSimboxResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -2695,6 +2746,39 @@ return ["Return"]
 }
 
 /**
+  Compra Alocoins.
+*/
+@objc(CompraAlocoins)
+public class CompraAlocoins : SyedAbsarObjectBase {
+
+
+/// Usuario Id
+var cpUsuarioId: String?
+
+/// Cantidad
+var cpCantidad: String?
+
+override static func cpKeys() -> Array<String> {
+return ["UsuarioId","Cantidad"]
+}
+}
+
+/**
+  Compra Alocoins Response.
+*/
+@objc(CompraAlocoinsResponse)
+public class CompraAlocoinsResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
   Test Ecnript.
 */
 @objc(TestEcnript)
@@ -2731,39 +2815,6 @@ return ["Return"]
 }
 
 /**
-  Compra Alocoins.
-*/
-@objc(CompraAlocoins)
-public class CompraAlocoins : SyedAbsarObjectBase {
-
-
-/// Usuario Id
-var cpUsuarioId: String?
-
-/// Cantidad
-var cpCantidad: String?
-
-override static func cpKeys() -> Array<String> {
-return ["UsuarioId","Cantidad"]
-}
-}
-
-/**
-  Compra Alocoins Response.
-*/
-@objc(CompraAlocoinsResponse)
-public class CompraAlocoinsResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
-}
-}
-
-/**
   Guardar Bitacora.
 */
 @objc(GuardarBitacora)
@@ -2771,7 +2822,7 @@ public class GuardarBitacora : SyedAbsarObjectBase {
 
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Ip
 var cpIp: String?
@@ -3218,10 +3269,13 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Preguntas Secretas
-var cpPreguntasSecretas: String?
+var cpPreguntasSecretas_cpPreguntaSecretaId: String?
+var cpPreguntasSecretas_cpPreguntaId: String?
+var cpPreguntasSecretas_cpRespuesta: String?
+
 
 override static func cpKeys() -> Array<String> {
 return ["UsuarioApi","PasswordApi","UsuarioId","PreguntasSecretas"]
@@ -3257,7 +3311,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Token
-var cpToken: Int?
+var cpToken: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UsuarioApi","PasswordApi","Token"]
@@ -3293,7 +3347,7 @@ var cpUsuarioApi: String?
 var cpPasswordApi: String?
 
 /// Usuario Id
-var cpUsuarioId: Int?
+var cpUsuarioId: String?
 
 /// Tipo Cuenta
 var cpTipoCuenta: String?
@@ -3480,8 +3534,8 @@ return ["Usuarios"]
 /**
   Generar Codigo Movil S M S.
 */
-@objc(RU_GenerarCodigoMovilSMS)
-public class RU_GenerarCodigoMovilSMS : SyedAbsarObjectBase {
+@objc(GenerarCodigoMovilSMS)
+public class GenerarCodigoMovilSMS : SyedAbsarObjectBase {
 
 
 /// Usuario Api
@@ -3501,8 +3555,8 @@ return ["UsuarioApi","PasswordApi","Movil"]
 /**
   Generar Codigo Movil S M S Response.
 */
-@objc(RU_GenerarCodigoMovilSMSResponse)
-public class RU_GenerarCodigoMovilSMSResponse : SyedAbsarObjectBase {
+@objc(GenerarCodigoMovilSMSResponse)
+public class GenerarCodigoMovilSMSResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -3528,48 +3582,12 @@ return []
 /**
   Send Mail Test Response.
 */
-@objc(RU_SendMailTestResponse)
-public class RU_SendMailTestResponse : SyedAbsarObjectBase {
+@objc(SendMailTestResponse)
+public class SendMailTestResponse : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
 return []
-}
-}
-
-/**
-  Logout.
-*/
-@objc(Logout)
-public class Logout : SyedAbsarObjectBase {
-
-
-/// Usuario Api
-var cpUsuarioApi: String?
-
-/// Password Api
-var cpPasswordApi: String?
-
-/// Token
-var cpToken: String?
-
-override static func cpKeys() -> Array<String> {
-return ["UsuarioApi","PasswordApi","Token"]
-}
-}
-
-/**
-  Logout Response.
-*/
-@objc(LogoutResponse)
-public class LogoutResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
 }
 }
 
@@ -3602,6 +3620,42 @@ return ["UsuarioApi","PasswordApi","EmpresaId","TipoPersona"]
 */
 @objc(GetAgentesComercialesPorEmpresaResponse)
 public class GetAgentesComercialesPorEmpresaResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
+  Logout.
+*/
+@objc(Logout)
+public class Logout : SyedAbsarObjectBase {
+
+
+/// Usuario Api
+var cpUsuarioApi: String?
+
+/// Password Api
+var cpPasswordApi: String?
+
+/// Token
+var cpToken: String?
+
+override static func cpKeys() -> Array<String> {
+return ["UsuarioApi","PasswordApi","Token"]
+}
+}
+
+/**
+  Logout Response.
+*/
+@objc(LogoutResponse)
+public class LogoutResponse : SyedAbsarObjectBase {
 
 
 /// Return

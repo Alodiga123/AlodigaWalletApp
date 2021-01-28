@@ -82,7 +82,7 @@ public class RegisterController{
     }
     
 
-    func getToken(dataToken: RU_GenerarCodigoMovilSMS ,completion: @escaping (_ res:ObjectToken?, String?) -> Void) {
+    func getToken(dataToken: GenerarCodigoMovilSMS ,completion: @escaping (_ res:ObjectToken?, String?) -> Void) {
 
         let client_RU = RegistroUnificadoClient()
         
