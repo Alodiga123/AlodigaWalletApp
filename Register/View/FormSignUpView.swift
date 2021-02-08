@@ -115,9 +115,9 @@ struct FormSignUpViewAccess: View {
                                         print("EN LA VISTA CON EL REGISTRO!!!!")
                                         if res != nil  {
                                             print(res as Any)
-        //                                    let registro: ObjectRegisterUser
-        //                                    registro = res! as ObjectRegisterUser
-        //                                    print(registro.envelope.body.registerMovilResponse._return.fechaHora)
+                                            let registro: ObjectRegisterUser
+                                            registro = res! as ObjectRegisterUser
+                                            print(registro.envelope.body.registerMovilResponse._return.fechaHora)
                                             //print(registro.envelope.body.countryResponse._return.countries)
                                             //stepNex()
                                         }

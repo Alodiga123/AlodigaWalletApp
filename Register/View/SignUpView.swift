@@ -68,7 +68,7 @@ struct SignUpViewAccess: View {
 //                        }else if(phone.count <= 11){
 //                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("InvalidPhone", comment: ""))
 //                        }else{
-                            Constant.defaults.setValue("123456", forKey: "token")
+                            Constant.defaults.setValue("123456", forKey: "tokenApi")
                             Constant.defaults.setValue(phone, forKey: "Rphone")
                             stepNex()
 //                            registerController.getToken(dataToken: token) { (res,error) in
@@ -191,7 +191,7 @@ struct CountryList: View {
     @State var expand = false
     @State var separador: String = ""
     @State var jsonCountry : ObjectCountry?
-    @State var code: String = ""
+    @State var code: String = "58"
     
 //    var line: some View {
 //        VStack { Divider()
@@ -227,9 +227,10 @@ struct CountryList: View {
                 paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
             }
             line
-              PhoneRegisterTextField(phone: $selectedCountry.code)
+              //PhoneRegisterTextField(phone: $selectedCountry.code)
+            PhoneRegisterTextField(phone: $code)
         }.onAppear(
-            perform: getJSONCountry
+            //perform: getJSONCountry
         )
     }
     
