@@ -61,7 +61,11 @@ struct SignUpViewAccess: View {
                         token.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
                         token.cpMovil = phone
                         
-                        print (phone)
+                        
+                        print (Constant.WEB_SERVICES_USUARIOWS)
+                        print (Constant.WEB_SERVICES_PASSWORDWS)
+                        print ("584125157526")
+                        
                         
 //                        if(phone.isEmpty || phone.count == 0){
 //                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("ValidationInvalidLong", comment: ""))
@@ -71,25 +75,25 @@ struct SignUpViewAccess: View {
                             Constant.defaults.setValue("123456", forKey: "tokenApi")
                             Constant.defaults.setValue(phone, forKey: "Rphone")
                             stepNex()
-//                            registerController.getToken(dataToken: token) { (res,error) in
-//                                print("EN EL TOKEN!!!!")
-//                                if res != nil  {
-//                                    print(res as Any)
-//                                    let tokens: ObjectToken
-//                                    tokens = res! as ObjectToken
-//                                    print(tokens.envelope.body.tokenResponse._return.datosRespuesta)
-//
-//                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
-//                                    stepNex()
-//                                }
-//
-//                                if error != nil {
-//                                    let alert = ShowAlert()
-//                                    alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
-//                                    print(error!)
-//                                }
-//                            }
-//                        }
+                            registerController.getToken(dataToken: token) { (res,error) in
+                                print("EN EL TOKEN!!!!")
+                                if res != nil  {
+                                    print(res as Any)
+                                    let tokens: ObjectToken
+                                    tokens = res! as ObjectToken
+                                    print(tokens.envelope.body.tokenResponse._return.datosRespuesta)
+
+                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
+                                    stepNex()
+                                }
+
+                                if error != nil {
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
+                                    print(error!)
+                                }
+                            }
+                        //}
                     }) {
                         RegisterContinueButtonContent()
                     }
@@ -224,11 +228,11 @@ struct CountryList: View {
                 .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
             
             .sheet(isPresented: self.$isSheetOpened) {
-                paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
+                paisess(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
             }
             line
-              //PhoneRegisterTextField(phone: $selectedCountry.code)
-            PhoneRegisterTextField(phone: $code)
+              PhoneRegisterTextField(phone: $selectedCountry.code)
+            //PhoneRegisterTextField(phone: $code)
         }.onAppear(
             //perform: getJSONCountry
         )
@@ -245,36 +249,36 @@ struct CountryList: View {
     }
 }
 
-//struct paises: View {
-//    var countries : [Country]
-//    var isSheetOpened : Bool
-//    @Binding var selectedCountry: Country
-//    @Environment(\.presentationMode) var presentationMode
-//
-//    var body: some View {
-//        VStack {
-//            List {
-//                ForEach(self.countries, id: \.self) { index in
-//                    Button(action: {
-//                        self.selectedCountry = index
-//                        self.presentationMode.wrappedValue.dismiss()
-//
-//                        Constant.defaults.setValue(index.code, forKey: "code")
-//                        Constant.defaults.setValue(index.id, forKey: "idCountry")
-//                        print("codigo: "+index.code)
-//                        print("Id: " + index.id)
-//                    }) {
-//                        Text(index.alternativeName3)
-//                            .font(.callout)
-//                            .fontWeight(.bold)
-//                            .frame(width: 340, alignment: .leading)
-//                            .foregroundColor(.gray)
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
+struct paisess: View {
+    var countries : [Country]
+    var isSheetOpened : Bool
+    @Binding var selectedCountry: Country
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack {
+            List {
+                ForEach(self.countries, id: \.self) { index in
+                    Button(action: {
+                        self.selectedCountry = index
+                        self.presentationMode.wrappedValue.dismiss()
+
+                        Constant.defaults.setValue(index.code, forKey: "code")
+                        Constant.defaults.setValue(index.id, forKey: "idCountry")
+                        print("codigo: "+index.code)
+                        print("Id: " + index.id)
+                    }) {
+                        Text(index.alternativeName3)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                            .frame(width: 340, alignment: .leading)
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
+        }
+    }
+}
 
 struct TextLabelCountry: View {
     @State var countries : [Country] = []

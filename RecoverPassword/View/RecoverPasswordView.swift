@@ -77,25 +77,25 @@ struct RecoverPasswordViewAccess: View {
                                 stepNex()
 
 
-//                                recoverController.getTokenAplication(dataTokenApli: tokenAplication) { (res,error) in
-//                                    print("EN EL TOKEN DE LA APLICACION!!!!")
-//                                    if res != nil  {
-//                                        print(res as Any)
-//                                        let tokenApli: ObjectTokenAplication
-//                                        tokenApli = res! as ObjectTokenAplication
-//                                        print(tokenApli.envelope.body.tokenResponse._return.datosRespuesta)
-//
-////                                        Constant.defaults.setValue(tokenApli.envelope.body.tokenResponse._return.datosRespuesta, forKey: "tokenApi")
-//                                        stepNex()
-//                                    }
-//
-//                                    if error != nil {
-//                                        let alert = ShowAlert()
-//                                        alert.showPaymentModeActionSheet(title: "error", message: recoverController.getMessageError(code: error!))
-//                                        print(error!)
-//                                    }
-//                                    stepNex()
-//                                }
+                                recoverController.getTokenAplication(dataTokenApli: tokenAplication) { (res,error) in
+                                    print("EN EL TOKEN DE LA APLICACION!!!!")
+                                    if res != nil  {
+                                        print(res as Any)
+                                        let tokenApli: ObjectTokenAplication
+                                        tokenApli = res! as ObjectTokenAplication
+                                        print(tokenApli.envelope.body.tokenResponse._return.datosRespuesta)
+
+//                                        Constant.defaults.setValue(tokenApli.envelope.body.tokenResponse._return.datosRespuesta, forKey: "tokenApi")
+                                        stepNex()
+                                    }
+
+                                    if error != nil {
+                                        let alert = ShowAlert()
+                                        alert.showPaymentModeActionSheet(title: "error", message: recoverController.getMessageError(code: error!))
+                                        print(error!)
+                                    }
+                                    stepNex()
+                                }
                             }
                         }) {
                             ContinueRecoButtonContent()
