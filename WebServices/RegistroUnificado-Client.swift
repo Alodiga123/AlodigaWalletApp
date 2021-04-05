@@ -11,7 +11,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  
 import Foundation
 
-/* Soap Client Generated from WSDL: http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService?wsdl powered by http://www.wsdl2swift.com */
+/* Soap Client Generated from WSDL: http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService?wsdl powered by http://www.wsdl2swift.com */
 
  public class RegistroUnificadoClient {
 
@@ -28,7 +28,7 @@ public func opGetUsuariopormovil(getUsuariopormovil : GetUsuariopormovil , compl
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getUsuariopormovil><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><movil>%@</movil></ns1:getUsuariopormovil></SOAP-ENV:Body></SOAP-ENV:Envelope>",getUsuariopormovil.cpUsuarioApi!,getUsuariopormovil.cpPasswordApi!,getUsuariopormovil.cpMovil!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuariopormovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuariopormovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -43,7 +43,7 @@ public func opGetUsuarioporemail(getUsuarioporemail : GetUsuarioporemail , compl
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getUsuarioporemail><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><email>%@</email></ns1:getUsuarioporemail></SOAP-ENV:Body></SOAP-ENV:Envelope>",getUsuarioporemail.cpUsuarioApi!,getUsuarioporemail.cpPasswordApi!,getUsuarioporemail.cpEmail!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioporemailResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioporemailResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -58,7 +58,7 @@ public func opGetTiposEmpresa(getTiposEmpresa : GetTiposEmpresa , completionHand
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getTiposEmpresa><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi></ns1:getTiposEmpresa></SOAP-ENV:Body></SOAP-ENV:Envelope>",getTiposEmpresa.cpUsuarioApi!,getTiposEmpresa.cpPasswordApi!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetTiposEmpresaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetTiposEmpresaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -73,7 +73,7 @@ public func opGetTiposDocumento(getTiposDocumento : GetTiposDocumento , completi
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getTiposDocumento><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi></ns1:getTiposDocumento></SOAP-ENV:Body></SOAP-ENV:Envelope>",getTiposDocumento.cpUsuarioApi!,getTiposDocumento.cpPasswordApi!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetTiposDocumentoResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetTiposDocumentoResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -88,7 +88,7 @@ public func opGetListaEmpresaPorPosTipoPersona(getListaEmpresaPorPosTipoPersona 
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getListaEmpresaPorPosTipoPersona><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><descripcion>%@</descripcion><tipoPersona>%@</tipoPersona></ns1:getListaEmpresaPorPosTipoPersona></SOAP-ENV:Body></SOAP-ENV:Envelope>",getListaEmpresaPorPosTipoPersona.cpUsuarioApi!,getListaEmpresaPorPosTipoPersona.cpPasswordApi!,getListaEmpresaPorPosTipoPersona.cpDescripcion!,getListaEmpresaPorPosTipoPersona.cpTipoPersona!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetListaEmpresaPorPosTipoPersonaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetListaEmpresaPorPosTipoPersonaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -103,7 +103,7 @@ public func opGuardarUsuario(guardarUsuario : GuardarUsuario , completionHandler
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarUsuario><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><nombre>%@</nombre><apellido>%@</apellido><credencial>%@</credencial><email>%@</email><movil>%@</movil><fechaNacimiento>%@</fechaNacimiento><direccion>%@</direccion><paisId>%@</paisId><estadoId>%@</estadoId><ciudadId>%@</ciudadId><condadoId>%@</condadoId><codigoPostal>%@</codigoPostal><codigoValidacionMovil>%@</codigoValidacionMovil><nombreImagen>%@</nombreImagen><imagenBytes>JUA=</imagenBytes><link>%@</link></ns1:guardarUsuario></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarUsuario.cpUsuarioApi!,guardarUsuario.cpPasswordApi!,guardarUsuario.cpUsuarioId!,guardarUsuario.cpNombre!,guardarUsuario.cpApellido!,guardarUsuario.cpCredencial!,guardarUsuario.cpEmail!,guardarUsuario.cpMovil!,guardarUsuario.cpFechaNacimiento!,guardarUsuario.cpDireccion!,guardarUsuario.cpPaisId!,guardarUsuario.cpEstadoId!,guardarUsuario.cpCiudadId!,guardarUsuario.cpCondadoId!,guardarUsuario.cpCodigoPostal!,guardarUsuario.cpCodigoValidacionMovil!,guardarUsuario.cpNombreImagen!,guardarUsuario.cpImagenBytes!,guardarUsuario.cpLink!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -118,7 +118,7 @@ public func opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil : Guar
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarUsuarioAplicacionMovil><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><nombre>%@</nombre><apellido>%@</apellido><credencial>%@</credencial><email>%@</email><movil>%@</movil><fechaNacimiento>%@</fechaNacimiento><direccion>%@</direccion><paisId>%@</paisId><estadoId>%@</estadoId><ciudadId>%@</ciudadId><condadoId>%@</condadoId><codigoPostal>%@</codigoPostal><codigoValidacionMovil>%@</codigoValidacionMovil><nombreImagen>%@</nombreImagen><imagenBytes>JUA=</imagenBytes><link>%@</link><pin>%@</pin></ns1:guardarUsuarioAplicacionMovil></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarUsuarioAplicacionMovil.cpUsuarioApi!,guardarUsuarioAplicacionMovil.cpPasswordApi!,guardarUsuarioAplicacionMovil.cpUsuarioId!,guardarUsuarioAplicacionMovil.cpNombre!,guardarUsuarioAplicacionMovil.cpApellido!,guardarUsuarioAplicacionMovil.cpCredencial!,guardarUsuarioAplicacionMovil.cpEmail!,guardarUsuarioAplicacionMovil.cpMovil!,guardarUsuarioAplicacionMovil.cpFechaNacimiento!,guardarUsuarioAplicacionMovil.cpDireccion!,guardarUsuarioAplicacionMovil.cpPaisId!,guardarUsuarioAplicacionMovil.cpEstadoId!,guardarUsuarioAplicacionMovil.cpCiudadId!,guardarUsuarioAplicacionMovil.cpCondadoId!,guardarUsuarioAplicacionMovil.cpCodigoPostal!,guardarUsuarioAplicacionMovil.cpCodigoValidacionMovil!,guardarUsuarioAplicacionMovil.cpNombreImagen!,guardarUsuarioAplicacionMovil.cpImagenBytes!,guardarUsuarioAplicacionMovil.cpLink!,guardarUsuarioAplicacionMovil.cpPin!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarUsuarioAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarUsuarioAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -133,7 +133,7 @@ public func opGuardarDireccionConfianza(guardarDireccionConfianza : GuardarDirec
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarDireccionConfianza><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><ip>%@</ip></ns1:guardarDireccionConfianza></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarDireccionConfianza.cpUsuarioApi!,guardarDireccionConfianza.cpPasswordApi!,guardarDireccionConfianza.cpUsuarioId!,guardarDireccionConfianza.cpIp!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarDireccionConfianzaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarDireccionConfianzaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -148,7 +148,7 @@ public func opGetPreguntasSecretasUsuario(getPreguntasSecretasUsuario : GetPregu
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getPreguntasSecretasUsuario><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId></ns1:getPreguntasSecretasUsuario></SOAP-ENV:Body></SOAP-ENV:Envelope>",getPreguntasSecretasUsuario.cpUsuarioApi!,getPreguntasSecretasUsuario.cpPasswordApi!,getPreguntasSecretasUsuario.cpUsuarioId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetPreguntasSecretasUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetPreguntasSecretasUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -163,7 +163,7 @@ public func opGetAplicaciones(getAplicaciones : GetAplicaciones , completionHand
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getAplicaciones><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi></ns1:getAplicaciones></SOAP-ENV:Body></SOAP-ENV:Envelope>",getAplicaciones.cpUsuarioApi!,getAplicaciones.cpPasswordApi!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetAplicacionesResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetAplicacionesResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -178,7 +178,7 @@ public func opGetUsuarioporId(getUsuarioporId : GetUsuarioporId , completionHand
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getUsuarioporId><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId></ns1:getUsuarioporId></SOAP-ENV:Body></SOAP-ENV:Envelope>",getUsuarioporId.cpUsuarioApi!,getUsuarioporId.cpPasswordApi!,getUsuarioporId.cpUsuarioId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioporIdResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioporIdResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -193,7 +193,7 @@ public func opCompraAlocoins(compraAlocoins : CompraAlocoins , completionHandler
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:compraAlocoins><usuarioId>%@</usuarioId><cantidad>%@</cantidad></ns1:compraAlocoins></SOAP-ENV:Body></SOAP-ENV:Envelope>",compraAlocoins.cpUsuarioId!,compraAlocoins.cpCantidad!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CompraAlocoinsResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CompraAlocoinsResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -208,7 +208,7 @@ public func opActivarUsuarioPorCorreo(activarUsuarioPorCorreo : ActivarUsuarioPo
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:activarUsuarioPorCorreo><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId></ns1:activarUsuarioPorCorreo></SOAP-ENV:Body></SOAP-ENV:Envelope>",activarUsuarioPorCorreo.cpUsuarioApi!,activarUsuarioPorCorreo.cpPasswordApi!,activarUsuarioPorCorreo.cpUsuarioId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ActivarUsuarioPorCorreoResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ActivarUsuarioPorCorreoResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -223,7 +223,7 @@ public func opActivarUsuario(activarUsuario : ActivarUsuario , completionHandler
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:activarUsuario><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><token>%@</token></ns1:activarUsuario></SOAP-ENV:Body></SOAP-ENV:Envelope>",activarUsuario.cpUsuarioApi!,activarUsuario.cpPasswordApi!,activarUsuario.cpToken!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ActivarUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ActivarUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -238,7 +238,7 @@ public func opGetUsuarios(getUsuarios : GetUsuarios , completionHandler:  @escap
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getUsuarios><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi></ns1:getUsuarios></SOAP-ENV:Body></SOAP-ENV:Envelope>",getUsuarios.cpUsuarioApi!,getUsuarios.cpPasswordApi!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuariosResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuariosResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -253,7 +253,7 @@ public func opGuardarPerfilAloPos(guardarPerfilAloPos : GuardarPerfilAloPos , co
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarPerfilAloPos><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><genero>%@</genero><telefonoResidencial>%@</telefonoResidencial><ocupacionId>%@</ocupacionId><tipoDocumentoId>%@</tipoDocumentoId><numeroDocumento>%@</numeroDocumento><nombreEmpresa>%@</nombreEmpresa><emailEmpresa>%@</emailEmpresa><tipoEmpresaId>%@</tipoEmpresaId><einEmpresa>%@</einEmpresa><tipoPersona>%@</tipoPersona><fechavencimientoDocumento>%@</fechavencimientoDocumento><telefonoEmpresa>%@</telefonoEmpresa><ingresosEstimadosEmpresa>%@</ingresosEstimadosEmpresa><direccionEmpresa>%@</direccionEmpresa><paisEmpresaId>%@</paisEmpresaId><estadoEmpresaId>%@</estadoEmpresaId><ciudadEmpresaId>%@</ciudadEmpresaId><codigoPostalEmpresa>%@</codigoPostalEmpresa><tipoCuentaBancariaId>%@</tipoCuentaBancariaId><numeroRutaBancaria>%@</numeroRutaBancaria><numeroCuentaBancaria>%@</numeroCuentaBancaria><bancoId>%@</bancoId></ns1:guardarPerfilAloPos></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarPerfilAloPos.cpUsuarioApi!,guardarPerfilAloPos.cpPasswordApi!,guardarPerfilAloPos.cpUsuarioId!,guardarPerfilAloPos.cpGenero!,guardarPerfilAloPos.cpTelefonoResidencial!,guardarPerfilAloPos.cpOcupacionId!,guardarPerfilAloPos.cpTipoDocumentoId!,guardarPerfilAloPos.cpNumeroDocumento!,guardarPerfilAloPos.cpNombreEmpresa!,guardarPerfilAloPos.cpEmailEmpresa!,guardarPerfilAloPos.cpTipoEmpresaId!,guardarPerfilAloPos.cpEinEmpresa!,guardarPerfilAloPos.cpTipoPersona!,guardarPerfilAloPos.cpFechavencimientoDocumento!,guardarPerfilAloPos.cpTelefonoEmpresa!,guardarPerfilAloPos.cpIngresosEstimadosEmpresa!,guardarPerfilAloPos.cpDireccionEmpresa!,guardarPerfilAloPos.cpPaisEmpresaId!,guardarPerfilAloPos.cpEstadoEmpresaId!,guardarPerfilAloPos.cpCiudadEmpresaId!,guardarPerfilAloPos.cpCodigoPostalEmpresa!,guardarPerfilAloPos.cpTipoCuentaBancariaId!,guardarPerfilAloPos.cpNumeroRutaBancaria!,guardarPerfilAloPos.cpNumeroCuentaBancaria!,guardarPerfilAloPos.cpBancoId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloPosResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloPosResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -268,7 +268,7 @@ public func opGetUsuarioporAplicacion(getUsuarioporAplicacion : GetUsuarioporApl
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getUsuarioporAplicacion><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><aplicacionId>%@</aplicacionId></ns1:getUsuarioporAplicacion></SOAP-ENV:Body></SOAP-ENV:Envelope>",getUsuarioporAplicacion.cpUsuarioApi!,getUsuarioporAplicacion.cpPasswordApi!,getUsuarioporAplicacion.cpUsuarioId!,getUsuarioporAplicacion.cpAplicacionId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioporAplicacionResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioporAplicacionResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -283,7 +283,7 @@ public func opGuardarPerfilAloCash(guardarPerfilAloCash : GuardarPerfilAloCash ,
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarPerfilAloCash><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><genero>%@</genero><TelefonoResidencial>%@</TelefonoResidencial><ocupacion>%@</ocupacion><tipoDocumentoId>%@</tipoDocumentoId><numeroDocumento>%@</numeroDocumento></ns1:guardarPerfilAloCash></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarPerfilAloCash.cpUsuarioApi!,guardarPerfilAloCash.cpPasswordApi!,guardarPerfilAloCash.cpUsuarioId!,guardarPerfilAloCash.cpGenero!,guardarPerfilAloCash.cpTelefonoResidencial!,guardarPerfilAloCash.cpOcupacion!,guardarPerfilAloCash.cpTipoDocumentoId!,guardarPerfilAloCash.cpNumeroDocumento!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloCashResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloCashResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -298,7 +298,7 @@ public func opGetOcupaciones(getOcupaciones : GetOcupaciones , completionHandler
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getOcupaciones><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi></ns1:getOcupaciones></SOAP-ENV:Body></SOAP-ENV:Envelope>",getOcupaciones.cpUsuarioApi!,getOcupaciones.cpPasswordApi!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetOcupacionesResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetOcupacionesResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -313,7 +313,7 @@ public func opSendSmsSimbox(sendSmsSimbox : SendSmsSimbox , completionHandler:  
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:sendSmsSimbox><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><number>%@</number><text>%@</text></ns1:sendSmsSimbox></SOAP-ENV:Body></SOAP-ENV:Envelope>",sendSmsSimbox.cpUsuarioApi!,sendSmsSimbox.cpPasswordApi!,sendSmsSimbox.cpNumber!,sendSmsSimbox.cpText!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SendSmsSimboxResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SendSmsSimboxResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -328,7 +328,7 @@ public func opGenerarCodigoMovilSMS(generarCodigoMovilSMS : GenerarCodigoMovilSM
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:generarCodigoMovilSMS><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><movil>%@</movil></ns1:generarCodigoMovilSMS></SOAP-ENV:Body></SOAP-ENV:Envelope>",generarCodigoMovilSMS.cpUsuarioApi!,generarCodigoMovilSMS.cpPasswordApi!,generarCodigoMovilSMS.cpMovil!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GenerarCodigoMovilSMSResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GenerarCodigoMovilSMSResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -343,7 +343,7 @@ public func opSendMailTest(sendMailTest : SendMailTest , completionHandler:  @es
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:sendMailTest/></SOAP-ENV:Body></SOAP-ENV:Envelope>")
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SendMailTestResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SendMailTestResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -358,7 +358,7 @@ public func opGuardarPerfilAloEsp(guardarPerfilAloEsp : GuardarPerfilAloEsp , co
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarPerfilAloEsp><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><tipoCuenta>%@</tipoCuenta><nombreTienda>%@</nombreTienda><montoMaximo>%@</montoMaximo><einTienda>%@</einTienda><taxTienda>%@</taxTienda><razonSocial>%@</razonSocial><telefonoEstablecimiento>%@</telefonoEstablecimiento><idiomaEnvio>%@</idiomaEnvio></ns1:guardarPerfilAloEsp></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarPerfilAloEsp.cpUsuarioApi!,guardarPerfilAloEsp.cpPasswordApi!,guardarPerfilAloEsp.cpUsuarioId!,guardarPerfilAloEsp.cpTipoCuenta!,guardarPerfilAloEsp.cpNombreTienda!,guardarPerfilAloEsp.cpMontoMaximo!,guardarPerfilAloEsp.cpEinTienda!,guardarPerfilAloEsp.cpTaxTienda!,guardarPerfilAloEsp.cpRazonSocial!,guardarPerfilAloEsp.cpTelefonoEstablecimiento!,guardarPerfilAloEsp.cpIdiomaEnvio!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloEspResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloEspResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -373,7 +373,7 @@ public func opGuardarPerfilAloRRP(guardarPerfilAloRRP : GuardarPerfilAloRRP , co
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarPerfilAloRRP><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><kitAfiliacion>true</kitAfiliacion><empresaId>%@</empresaId><distribuidorPadreId>%@</distribuidorPadreId></ns1:guardarPerfilAloRRP></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarPerfilAloRRP.cpUsuarioApi!,guardarPerfilAloRRP.cpPasswordApi!,guardarPerfilAloRRP.cpUsuarioId!,guardarPerfilAloRRP.cpKitAfiliacion!,guardarPerfilAloRRP.cpEmpresaId!,guardarPerfilAloRRP.cpDistribuidorPadreId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloRRPResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloRRPResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -388,7 +388,7 @@ public func opGuardarPerfilAloBenefit(guardarPerfilAloBenefit : GuardarPerfilAlo
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarPerfilAloBenefit><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId></ns1:guardarPerfilAloBenefit></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarPerfilAloBenefit.cpUsuarioApi!,guardarPerfilAloBenefit.cpPasswordApi!,guardarPerfilAloBenefit.cpUsuarioId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloBenefitResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarPerfilAloBenefitResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -403,7 +403,7 @@ public func opGuardarBitacora(guardarBitacora : GuardarBitacora , completionHand
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarBitacora><usuarioId>%@</usuarioId><ip>%@</ip><accion>%@</accion></ns1:guardarBitacora></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarBitacora.cpUsuarioId!,guardarBitacora.cpIp!,guardarBitacora.cpAccion!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarBitacoraResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarBitacoraResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -418,7 +418,7 @@ public func opDesbloquearUsuario(desbloquearUsuario : DesbloquearUsuario , compl
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:desbloquearUsuario><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><preguntasSecretasEnviadas><preguntaSecretaId>%@</preguntaSecretaId><preguntaId>%@</preguntaId><respuesta>%@</respuesta></preguntasSecretasEnviadas></ns1:desbloquearUsuario></SOAP-ENV:Body></SOAP-ENV:Envelope>",desbloquearUsuario.cpUsuarioApi!,desbloquearUsuario.cpPasswordApi!,desbloquearUsuario.cpUsuarioId!,desbloquearUsuario.cpPreguntasSecretasEnviadas_cpPreguntaSecretaId!,    desbloquearUsuario.cpPreguntasSecretasEnviadas_cpPreguntaId!,    desbloquearUsuario.cpPreguntasSecretasEnviadas_cpRespuestad!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"DesbloquearUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"DesbloquearUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -434,7 +434,7 @@ public func opSetPreguntasSecretasUsuario(setPreguntasSecretasUsuario : SetPregu
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:setPreguntasSecretasUsuario><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><preguntasSecretas><preguntaSecretaId>%@</preguntaSecretaId><preguntaId>%@</preguntaId><respuesta>%@</respuesta></preguntasSecretas></ns1:setPreguntasSecretasUsuario></SOAP-ENV:Body></SOAP-ENV:Envelope>",setPreguntasSecretasUsuario.cpUsuarioApi!,setPreguntasSecretasUsuario.cpPasswordApi!,setPreguntasSecretasUsuario.cpUsuarioId!,setPreguntasSecretasUsuario.cpPreguntasSecretas_cpPreguntaSecretaId!,setPreguntasSecretasUsuario.cpPreguntasSecretas_cpPreguntaId!,setPreguntasSecretasUsuario.cpPreguntasSecretas_cpRespuesta!)
 
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SetPreguntasSecretasUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SetPreguntasSecretasUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -449,7 +449,7 @@ public func opSetPreguntasSecretasUsuarioAplicacionMovil(setPreguntasSecretasUsu
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:setPreguntasSecretasUsuarioAplicacionMovil><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><preguntaId1>%@</preguntaId1><repuestaId1>%@</repuestaId1><preguntaId2>%@</preguntaId2><repuestaId2>%@</repuestaId2><preguntaId3>%@</preguntaId3><repuestaId3>%@</repuestaId3></ns1:setPreguntasSecretasUsuarioAplicacionMovil></SOAP-ENV:Body></SOAP-ENV:Envelope>",setPreguntasSecretasUsuarioAplicacionMovil.cpUsuarioApi!,setPreguntasSecretasUsuarioAplicacionMovil.cpPasswordApi!,setPreguntasSecretasUsuarioAplicacionMovil.cpUsuarioId!,setPreguntasSecretasUsuarioAplicacionMovil.cpPreguntaId1!,setPreguntasSecretasUsuarioAplicacionMovil.cpRepuestaId1!,setPreguntasSecretasUsuarioAplicacionMovil.cpPreguntaId2!,setPreguntasSecretasUsuarioAplicacionMovil.cpRepuestaId2!,setPreguntasSecretasUsuarioAplicacionMovil.cpPreguntaId3!,setPreguntasSecretasUsuarioAplicacionMovil.cpRepuestaId3!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SetPreguntasSecretasUsuarioAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SetPreguntasSecretasUsuarioAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -464,7 +464,7 @@ public func opLoginAplicacionMovil(loginAplicacionMovil : LoginAplicacionMovil ,
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:loginAplicacionMovil><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><email>%@</email><movil>%@</movil><credencial>%@</credencial><ip>%@</ip></ns1:loginAplicacionMovil></SOAP-ENV:Body></SOAP-ENV:Envelope>",loginAplicacionMovil.cpUsuarioApi!,loginAplicacionMovil.cpPasswordApi!,loginAplicacionMovil.cpEmail!,loginAplicacionMovil.cpMovil!,loginAplicacionMovil.cpCredencial!,loginAplicacionMovil.cpIp!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LoginAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LoginAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -479,7 +479,7 @@ public func opGetPreguntasSecretas(getPreguntasSecretas : GetPreguntasSecretas ,
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getPreguntasSecretas><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><IdIdioma>%@</IdIdioma></ns1:getPreguntasSecretas></SOAP-ENV:Body></SOAP-ENV:Envelope>",getPreguntasSecretas.cpUsuarioApi!,getPreguntasSecretas.cpPasswordApi!,getPreguntasSecretas.cpIdIdioma!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetPreguntasSecretasResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetPreguntasSecretasResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -494,7 +494,7 @@ public func opGetEstadosUsuario(getEstadosUsuario : GetEstadosUsuario , completi
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getEstadosUsuario><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi></ns1:getEstadosUsuario></SOAP-ENV:Body></SOAP-ENV:Envelope>",getEstadosUsuario.cpUsuarioApi!,getEstadosUsuario.cpPasswordApi!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetEstadosUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetEstadosUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -509,7 +509,7 @@ public func opGuardarUsuarioSocialNetwork(guardarUsuarioSocialNetwork : GuardarU
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarUsuarioSocialNetwork><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><nombre>%@</nombre><apellido>%@</apellido><email>%@</email><movil>%@</movil><codigoValidacionMovil>%@</codigoValidacionMovil></ns1:guardarUsuarioSocialNetwork></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarUsuarioSocialNetwork.cpUsuarioApi!,guardarUsuarioSocialNetwork.cpPasswordApi!,guardarUsuarioSocialNetwork.cpUsuarioId!,guardarUsuarioSocialNetwork.cpNombre!,guardarUsuarioSocialNetwork.cpApellido!,guardarUsuarioSocialNetwork.cpEmail!,guardarUsuarioSocialNetwork.cpMovil!,guardarUsuarioSocialNetwork.cpCodigoValidacionMovil!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarUsuarioSocialNetworkResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarUsuarioSocialNetworkResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -524,7 +524,7 @@ public func opGetUsuarioporcuenta(getUsuarioporcuenta : GetUsuarioporcuenta , co
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getUsuarioporcuenta><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><cuenta>%@</cuenta></ns1:getUsuarioporcuenta></SOAP-ENV:Body></SOAP-ENV:Envelope>",getUsuarioporcuenta.cpUsuarioApi!,getUsuarioporcuenta.cpPasswordApi!,getUsuarioporcuenta.cpCuenta!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioporcuentaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioporcuentaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -539,7 +539,7 @@ public func opGetUsuarioportarjeta(getUsuarioportarjeta : GetUsuarioportarjeta ,
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getUsuarioportarjeta><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><tarjeta>%@</tarjeta></ns1:getUsuarioportarjeta></SOAP-ENV:Body></SOAP-ENV:Envelope>",getUsuarioportarjeta.cpUsuarioApi!,getUsuarioportarjeta.cpPasswordApi!,getUsuarioportarjeta.cpTarjeta!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioportarjetaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetUsuarioportarjetaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -554,7 +554,7 @@ public func opGetEstadoToken(getEstadoToken : GetEstadoToken , completionHandler
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getEstadoToken><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><token>%@</token></ns1:getEstadoToken></SOAP-ENV:Body></SOAP-ENV:Envelope>",getEstadoToken.cpUsuarioApi!,getEstadoToken.cpPasswordApi!,getEstadoToken.cpToken!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetEstadoTokenResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetEstadoTokenResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -569,7 +569,7 @@ public func opGenerarCodigoMovil(generarCodigoMovil : GenerarCodigoMovil , compl
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:generarCodigoMovil><movil>%@</movil></ns1:generarCodigoMovil></SOAP-ENV:Body></SOAP-ENV:Envelope>",generarCodigoMovil.cpMovil!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GenerarCodigoMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GenerarCodigoMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -584,7 +584,7 @@ public func opValidarExisteNumero(validarExisteNumero : ValidarExisteNumero , co
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:validarExisteNumero><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><movil>%@</movil></ns1:validarExisteNumero></SOAP-ENV:Body></SOAP-ENV:Envelope>",validarExisteNumero.cpUsuarioApi!,validarExisteNumero.cpPasswordApi!,validarExisteNumero.cpMovil!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ValidarExisteNumeroResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ValidarExisteNumeroResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -599,7 +599,7 @@ public func opCambiarCredencial(cambiarCredencial : CambiarCredencial , completi
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:cambiarCredencial><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><credencial>%@</credencial></ns1:cambiarCredencial></SOAP-ENV:Body></SOAP-ENV:Envelope>",cambiarCredencial.cpUsuarioApi!,cambiarCredencial.cpPasswordApi!,cambiarCredencial.cpUsuarioId!,cambiarCredencial.cpCredencial!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CambiarCredencialResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CambiarCredencialResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -614,7 +614,7 @@ public func opGetTipoCuentasBancarias(getTipoCuentasBancarias : GetTipoCuentasBa
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getTipoCuentasBancarias><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi></ns1:getTipoCuentasBancarias></SOAP-ENV:Body></SOAP-ENV:Envelope>",getTipoCuentasBancarias.cpUsuarioApi!,getTipoCuentasBancarias.cpPasswordApi!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetTipoCuentasBancariasResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetTipoCuentasBancariasResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -629,7 +629,7 @@ public func opGetBancosDisponibles(getBancosDisponibles : GetBancosDisponibles ,
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getBancosDisponibles><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi></ns1:getBancosDisponibles></SOAP-ENV:Body></SOAP-ENV:Envelope>",getBancosDisponibles.cpUsuarioApi!,getBancosDisponibles.cpPasswordApi!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetBancosDisponiblesResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetBancosDisponiblesResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -644,7 +644,7 @@ public func opGetTarjetasDisponibles(getTarjetasDisponibles : GetTarjetasDisponi
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getTarjetasDisponibles><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi></ns1:getTarjetasDisponibles></SOAP-ENV:Body></SOAP-ENV:Envelope>",getTarjetasDisponibles.cpUsuarioApi!,getTarjetasDisponibles.cpPasswordApi!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetTarjetasDisponiblesResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetTarjetasDisponiblesResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -659,7 +659,7 @@ public func opSolicitarTarjeta(solicitarTarjeta : SolicitarTarjeta , completionH
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:solicitarTarjeta><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><emailContacto>%@</emailContacto><direccionContacto>%@</direccionContacto><telefonoContacto>%@</telefonoContacto></ns1:solicitarTarjeta></SOAP-ENV:Body></SOAP-ENV:Envelope>",solicitarTarjeta.cpUsuarioApi!,solicitarTarjeta.cpPasswordApi!,solicitarTarjeta.cpUsuarioId!,solicitarTarjeta.cpEmailContacto!,solicitarTarjeta.cpDireccionContacto!,solicitarTarjeta.cpTelefonoContacto!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SolicitarTarjetaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SolicitarTarjetaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -674,7 +674,7 @@ public func opCambiarCredencialPorCorreo(cambiarCredencialPorCorreo : CambiarCre
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:cambiarCredencialPorCorreo><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><email>%@</email><credencial>%@</credencial></ns1:cambiarCredencialPorCorreo></SOAP-ENV:Body></SOAP-ENV:Envelope>",cambiarCredencialPorCorreo.cpUsuarioApi!,cambiarCredencialPorCorreo.cpPasswordApi!,cambiarCredencialPorCorreo.cpEmail!,cambiarCredencialPorCorreo.cpCredencial!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CambiarCredencialPorCorreoResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CambiarCredencialPorCorreoResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -689,7 +689,7 @@ public func opRecuperarCredencial(recuperarCredencial : RecuperarCredencial , co
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:recuperarCredencial><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><idioma>%@</idioma><email>%@</email></ns1:recuperarCredencial></SOAP-ENV:Body></SOAP-ENV:Envelope>",recuperarCredencial.cpUsuarioApi!,recuperarCredencial.cpPasswordApi!,recuperarCredencial.cpIdioma!,recuperarCredencial.cpEmail!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"RecuperarCredencialResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"RecuperarCredencialResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -704,7 +704,7 @@ public func opActivarTarjeta(activarTarjeta : ActivarTarjeta , completionHandler
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:activarTarjeta><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><pin>%@</pin></ns1:activarTarjeta></SOAP-ENV:Body></SOAP-ENV:Envelope>",activarTarjeta.cpUsuarioApi!,activarTarjeta.cpPasswordApi!,activarTarjeta.cpUsuarioId!,activarTarjeta.cpPin!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ActivarTarjetaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ActivarTarjetaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -719,7 +719,7 @@ public func opLexis(lexis : Lexis , completionHandler:  @escaping (Data?, NSErro
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:lexis><usuarioId>%@</usuarioId></ns1:lexis></SOAP-ENV:Body></SOAP-ENV:Envelope>",lexis.cpUsuarioId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LexisResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LexisResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -734,7 +734,7 @@ public func opAfiliarCuenta(afiliarCuenta : AfiliarCuenta , completionHandler:  
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:afiliarCuenta><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><bancoId>%@</bancoId><cuentaBancariaId>%@</cuentaBancariaId><numeroRuta>%@</numeroRuta><numeroCuenta>%@</numeroCuenta></ns1:afiliarCuenta></SOAP-ENV:Body></SOAP-ENV:Envelope>",afiliarCuenta.cpUsuarioApi!,afiliarCuenta.cpPasswordApi!,afiliarCuenta.cpUsuarioId!,afiliarCuenta.cpBancoId!,afiliarCuenta.cpCuentaBancariaId!,afiliarCuenta.cpNumeroRuta!,afiliarCuenta.cpNumeroCuenta!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"AfiliarCuentaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"AfiliarCuentaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -749,7 +749,7 @@ public func opAfiliarTarjeta(afiliarTarjeta : AfiliarTarjeta , completionHandler
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:afiliarTarjeta><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><nombre>%@</nombre><numeroTarjeta>%@</numeroTarjeta><fechaVencimiento>%@</fechaVencimiento><tipo>%@</tipo><cvv>%@</cvv><paisId>%@</paisId><estadoId>%@</estadoId><ciudadId>%@</ciudadId><condadoId>%@</condadoId><codigoPostal>%@</codigoPostal><direccion>%@</direccion></ns1:afiliarTarjeta></SOAP-ENV:Body></SOAP-ENV:Envelope>",afiliarTarjeta.cpUsuarioApi!,afiliarTarjeta.cpPasswordApi!,afiliarTarjeta.cpUsuarioId!,afiliarTarjeta.cpNombre!,afiliarTarjeta.cpNumeroTarjeta!,afiliarTarjeta.cpFechaVencimiento!,afiliarTarjeta.cpTipo!,afiliarTarjeta.cpCvv!,afiliarTarjeta.cpPaisId!,afiliarTarjeta.cpEstadoId!,afiliarTarjeta.cpCiudadId!,afiliarTarjeta.cpCondadoId!,afiliarTarjeta.cpCodigoPostal!,afiliarTarjeta.cpDireccion!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"AfiliarTarjetaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"AfiliarTarjetaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -764,7 +764,7 @@ public func opGetAgentesComercialesPorEmpresa(getAgentesComercialesPorEmpresa : 
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:getAgentesComercialesPorEmpresa><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><empresaId>%@</empresaId><tipoPersona>%@</tipoPersona></ns1:getAgentesComercialesPorEmpresa></SOAP-ENV:Body></SOAP-ENV:Envelope>",getAgentesComercialesPorEmpresa.cpUsuarioApi!,getAgentesComercialesPorEmpresa.cpPasswordApi!,getAgentesComercialesPorEmpresa.cpEmpresaId!,getAgentesComercialesPorEmpresa.cpTipoPersona!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetAgentesComercialesPorEmpresaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GetAgentesComercialesPorEmpresaResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -779,7 +779,7 @@ public func opGuardarAgenteComercial(guardarAgenteComercial : GuardarAgenteComer
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarAgenteComercial><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><usuarioEmpresaId>%@</usuarioEmpresaId><nombre>%@</nombre><apellido>%@</apellido><credencial>%@</credencial><email>%@</email><movil>%@</movil><fechaNacimiento>%@</fechaNacimiento><direccion>%@</direccion><paisId>%@</paisId><estadoId>%@</estadoId><ciudadId>%@</ciudadId><condadoId>%@</condadoId><codigoPostal>%@</codigoPostal><link>%@</link><fechaVencimientoDocumento>%@</fechaVencimientoDocumento><estado>%@</estado><tipoDocumento>%@</tipoDocumento><numeroDocumento>%@</numeroDocumento><numeroIdentificacion>%@</numeroIdentificacion><telefono>%@</telefono></ns1:guardarAgenteComercial></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarAgenteComercial.cpUsuarioApi!,guardarAgenteComercial.cpPasswordApi!,guardarAgenteComercial.cpUsuarioId!,guardarAgenteComercial.cpUsuarioEmpresaId!,guardarAgenteComercial.cpNombre!,guardarAgenteComercial.cpApellido!,guardarAgenteComercial.cpCredencial!,guardarAgenteComercial.cpEmail!,guardarAgenteComercial.cpMovil!,guardarAgenteComercial.cpFechaNacimiento!,guardarAgenteComercial.cpDireccion!,guardarAgenteComercial.cpPaisId!,guardarAgenteComercial.cpEstadoId!,guardarAgenteComercial.cpCiudadId!,guardarAgenteComercial.cpCondadoId!,guardarAgenteComercial.cpCodigoPostal!,guardarAgenteComercial.cpLink!,guardarAgenteComercial.cpFechaVencimientoDocumento!,guardarAgenteComercial.cpEstado!,guardarAgenteComercial.cpTipoDocumento!,guardarAgenteComercial.cpNumeroDocumento!,guardarAgenteComercial.cpNumeroIdentificacion!,guardarAgenteComercial.cpTelefono!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarAgenteComercialResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarAgenteComercialResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -794,7 +794,7 @@ public func opTransferirAlocoins(transferirAlocoins : TransferirAlocoins , compl
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:transferirAlocoins><usuarioId1>%@</usuarioId1><usuarioId2>%@</usuarioId2><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><alocoins>%@</alocoins></ns1:transferirAlocoins></SOAP-ENV:Body></SOAP-ENV:Envelope>",transferirAlocoins.cpUsuarioId1!,transferirAlocoins.cpUsuarioId2!,transferirAlocoins.cpUsuarioApi!,transferirAlocoins.cpPasswordApi!,transferirAlocoins.cpAlocoins!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"TransferirAlocoinsResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"TransferirAlocoinsResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -809,7 +809,7 @@ public func opRecuperarPassword(recuperarPassword : RecuperarPassword , completi
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:recuperarPassword><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><idioma>%@</idioma><email>%@</email><cliente>%@</cliente></ns1:recuperarPassword></SOAP-ENV:Body></SOAP-ENV:Envelope>",recuperarPassword.cpUsuarioApi!,recuperarPassword.cpPasswordApi!,recuperarPassword.cpIdioma!,recuperarPassword.cpEmail!,recuperarPassword.cpCliente!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"RecuperarPasswordResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"RecuperarPasswordResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -824,7 +824,7 @@ public func opLoginSocialNetwork(loginSocialNetwork : LoginSocialNetwork , compl
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:loginSocialNetwork><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><email>%@</email><movil>%@</movil><ip>%@</ip></ns1:loginSocialNetwork></SOAP-ENV:Body></SOAP-ENV:Envelope>",loginSocialNetwork.cpUsuarioApi!,loginSocialNetwork.cpPasswordApi!,loginSocialNetwork.cpEmail!,loginSocialNetwork.cpMovil!,loginSocialNetwork.cpIp!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LoginSocialNetworkResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LoginSocialNetworkResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -839,7 +839,7 @@ public func opValidarPin(validarPin : ValidarPin , completionHandler:  @escaping
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:validarPin><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><pin>%@</pin></ns1:validarPin></SOAP-ENV:Body></SOAP-ENV:Envelope>",validarPin.cpUsuarioApi!,validarPin.cpPasswordApi!,validarPin.cpUsuarioId!,validarPin.cpPin!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ValidarPinResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ValidarPinResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -854,7 +854,7 @@ public func opListadoProductosPorUsuario(listadoProductosPorUsuario : ListadoPro
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:listadoProductosPorUsuario><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId></ns1:listadoProductosPorUsuario></SOAP-ENV:Body></SOAP-ENV:Envelope>",listadoProductosPorUsuario.cpUsuarioApi!,listadoProductosPorUsuario.cpPasswordApi!,listadoProductosPorUsuario.cpUsuarioId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ListadoProductosPorUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ListadoProductosPorUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -869,7 +869,7 @@ public func opSendSmsTest(sendSmsTest : SendSmsTest , completionHandler:  @escap
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:sendSmsTest/></SOAP-ENV:Body></SOAP-ENV:Envelope>")
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SendSmsTestResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"SendSmsTestResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -884,7 +884,7 @@ public func opCambiarCredencialAplicacionMovil(cambiarCredencialAplicacionMovil 
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:cambiarCredencialAplicacionMovil><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><credencial>%@</credencial></ns1:cambiarCredencialAplicacionMovil></SOAP-ENV:Body></SOAP-ENV:Envelope>",cambiarCredencialAplicacionMovil.cpUsuarioApi!,cambiarCredencialAplicacionMovil.cpPasswordApi!,cambiarCredencialAplicacionMovil.cpUsuarioId!,cambiarCredencialAplicacionMovil.cpCredencial!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CambiarCredencialAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CambiarCredencialAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -899,7 +899,7 @@ public func opGenerarCodigoMovilSMSAplicacionMovil(generarCodigoMovilSMSAplicaci
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:generarCodigoMovilSMSAplicacionMovil><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><movil>%@</movil><email>%@</email></ns1:generarCodigoMovilSMSAplicacionMovil></SOAP-ENV:Body></SOAP-ENV:Envelope>",generarCodigoMovilSMSAplicacionMovil.cpUsuarioApi!,generarCodigoMovilSMSAplicacionMovil.cpPasswordApi!,generarCodigoMovilSMSAplicacionMovil.cpMovil!,generarCodigoMovilSMSAplicacionMovil.cpEmail!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GenerarCodigoMovilSMSAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GenerarCodigoMovilSMSAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -914,7 +914,7 @@ public func opCambiarCredencialAplicacionMovilEmailOrPhone(cambiarCredencialApli
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:cambiarCredencialAplicacionMovilEmailOrPhone><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><phoneOrEmail>%@</phoneOrEmail><credencial>%@</credencial></ns1:cambiarCredencialAplicacionMovilEmailOrPhone></SOAP-ENV:Body></SOAP-ENV:Envelope>",cambiarCredencialAplicacionMovilEmailOrPhone.cpUsuarioApi!,cambiarCredencialAplicacionMovilEmailOrPhone.cpPasswordApi!,cambiarCredencialAplicacionMovilEmailOrPhone.cpPhoneOrEmail!,cambiarCredencialAplicacionMovilEmailOrPhone.cpCredencial!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CambiarCredencialAplicacionMovilEmailOrPhoneResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"CambiarCredencialAplicacionMovilEmailOrPhoneResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -929,7 +929,7 @@ public func opActualizarUsuarioporId(actualizarUsuarioporId : ActualizarUsuariop
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:actualizarUsuarioporId><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><remettencesDireccionId>%@</remettencesDireccionId></ns1:actualizarUsuarioporId></SOAP-ENV:Body></SOAP-ENV:Envelope>",actualizarUsuarioporId.cpUsuarioApi!,actualizarUsuarioporId.cpPasswordApi!,actualizarUsuarioporId.cpUsuarioId!,actualizarUsuarioporId.cpRemettencesDireccionId!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ActualizarUsuarioporIdResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"ActualizarUsuarioporIdResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -944,7 +944,7 @@ public func opTestEcnript(testEcnript : TestEcnript , completionHandler:  @escap
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:testEcnript><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><textValue>%@</textValue></ns1:testEcnript></SOAP-ENV:Body></SOAP-ENV:Envelope>",testEcnript.cpUsuarioApi!,testEcnript.cpPasswordApi!,testEcnript.cpTextValue!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"TestEcnriptResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"TestEcnriptResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -959,7 +959,7 @@ public func opLogintemp(logintemp : Logintemp , completionHandler:  @escaping (D
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:logintemp><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><email>%@</email><movil>%@</movil><credencial>%@</credencial><ip>%@</ip></ns1:logintemp></SOAP-ENV:Body></SOAP-ENV:Envelope>",logintemp.cpUsuarioApi!,logintemp.cpPasswordApi!,logintemp.cpEmail!,logintemp.cpMovil!,logintemp.cpCredencial!,logintemp.cpIp!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LogintempResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LogintempResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -974,7 +974,7 @@ public func opTestDesEcnript(testDesEcnript : TestDesEcnript , completionHandler
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:testDesEcnript><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><textValue>%@</textValue></ns1:testDesEcnript></SOAP-ENV:Body></SOAP-ENV:Envelope>",testDesEcnript.cpUsuarioApi!,testDesEcnript.cpPasswordApi!,testDesEcnript.cpTextValue!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"TestDesEcnriptResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"TestDesEcnriptResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
 /**
@@ -989,7 +989,7 @@ public func opLogin(login : Login , completionHandler:  @escaping (Data?, NSErro
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:login><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><email>%@</email><movil>%@</movil><credencial>%@</credencial><ip>%@</ip></ns1:login></SOAP-ENV:Body></SOAP-ENV:Envelope>",login.cpUsuarioApi!,login.cpPasswordApi!,login.cpEmail!,login.cpMovil!,login.cpCredencial!,login.cpIp!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LoginResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LoginResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 /**
@@ -1004,7 +1004,7 @@ public func opLogout(logout : Logout , completionHandler:  @escaping (Data?, NSE
 
 let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:logout><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><token>%@</token></ns1:logout></SOAP-ENV:Body></SOAP-ENV:Envelope>",logout.cpUsuarioApi!,logout.cpPasswordApi!,logout.cpToken!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://44.235.115.116:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LogoutResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
+webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"LogoutResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj ,error) })
  }
 
 

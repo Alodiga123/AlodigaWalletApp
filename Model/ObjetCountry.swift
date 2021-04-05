@@ -65,14 +65,14 @@ struct Country: Identifiable, Decodable, Hashable{
     var code : String
     var id : String
     var name : String
-    var shortName : String
+    //var shortName : String
     
     init( ) {
         self.alternativeName3 = "Seleccione"
         self.code  = ""
         self.id  = ""
         self.name  = ""
-        self.shortName = ""
+        //self.shortName = ""
     }
 
     enum CodingKeys: String, CodingKey {
@@ -80,7 +80,7 @@ struct Country: Identifiable, Decodable, Hashable{
         case code = "code"
         case id = "id"
         case name = "name"
-        case shortName = "shortName"
+        //case shortName = "shortName"
      }
     
     func hash(into hasher: inout Hasher) {
@@ -88,7 +88,7 @@ struct Country: Identifiable, Decodable, Hashable{
         hasher.combine(code)
         hasher.combine(id)
         hasher.combine(name)
-        hasher.combine(shortName)
+        //hasher.combine(shortName)
     }
 }
 
@@ -101,6 +101,10 @@ struct AlternativeName1: Decodable{
 }
 
 struct AlternativeName2: Decodable{
+    
+}
+
+struct shortName: Decodable{
     
 }
 

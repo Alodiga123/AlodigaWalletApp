@@ -61,26 +61,35 @@ struct ReturnBankByCountry : Decodable{
 }
 
 struct BankByCountry: Identifiable, Decodable, Hashable{
-    var aba : String
+    var countryId : String
     var id : String
     var name : String
+    var swiftCode : String
     
     init( ) {
-        self.aba = ""
+        self.countryId = ""
         self.id  = ""
         self.name  = "Seleccione un Banco"
+        self.swiftCode  = ""
     }
 
     enum CodingKeys: String, CodingKey {
-        case aba = "aba"
+        case countryId = "countryId"
         case id = "id"
         case name = "name"
+        case swiftCode = "swiftCode"
      }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(aba)
+        hasher.combine(countryId)
         hasher.combine(id)
         hasher.combine(name)
+        hasher.combine(swiftCode)
     }
 }
+
+struct abaCode: Decodable{
+    
+}
+
 
