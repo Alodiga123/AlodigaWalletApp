@@ -73,7 +73,7 @@ struct RecoverPasswordViewAccess: View {
                             }else if(!util.isValidEmail(testStr: email)){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
                             }else{
-                                Constant.defaults.setValue("123456", forKey: "tokenApi")
+                                //Constant.defaults.setValue("123456", forKey: "tokenApi")
                                 stepNex()
 
 
@@ -85,7 +85,7 @@ struct RecoverPasswordViewAccess: View {
                                         tokenApli = res! as ObjectTokenAplication
                                         print(tokenApli.envelope.body.tokenResponse._return.datosRespuesta)
 
-//                                        Constant.defaults.setValue(tokenApli.envelope.body.tokenResponse._return.datosRespuesta, forKey: "tokenApi")
+                                        Constant.defaults.setValue(tokenApli.envelope.body.tokenResponse._return.datosRespuesta, forKey: "tokenApi")
                                         stepNex()
                                     }
 
