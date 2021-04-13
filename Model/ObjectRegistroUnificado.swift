@@ -2917,8 +2917,14 @@ var cpLink: String?
 /// Pin
 var cpPin: String?
 
+/// Tipo Documento Id
+var cpTipoDocumentoId: Int?
+
+/// Numero Documento
+var cpNumeroDocumento: String?
+
 override static func cpKeys() -> Array<String> {
-return ["UsuarioApi","PasswordApi","UsuarioId","Nombre","Apellido","Credencial","Email","Movil","FechaNacimiento","Direccion","PaisId","EstadoId","CiudadId","CondadoId","CodigoPostal","CodigoValidacionMovil","NombreImagen","ImagenBytes","Link","Pin"]
+return ["UsuarioApi","PasswordApi","UsuarioId","Nombre","Apellido","Credencial","Email","Movil","FechaNacimiento","Direccion","PaisId","EstadoId","CiudadId","CondadoId","CodigoPostal","CodigoValidacionMovil","NombreImagen","ImagenBytes","Link","Pin","TipoDocumentoId","NumeroDocumento"]
 }
 }
 

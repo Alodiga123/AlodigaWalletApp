@@ -106,20 +106,23 @@ let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP
 webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarUsuarioResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
  }
 
-/**
-    Calls the SOAP Operation: GuardarUsuarioAplicacionMovil with Message based on GuardarUsuarioAplicacionMovil Object.
+    /**
+        Calls the SOAP Operation: GuardarUsuarioAplicacionMovil with Message based on GuardarUsuarioAplicacionMovil Object.
 
-    - parameter guardarUsuarioAplicacionMovil:  GuardarUsuarioAplicacionMovil Object.
-    - parameter completionHandler:  The Callback Handler.
+        - parameter guardarUsuarioAplicacionMovil:  GuardarUsuarioAplicacionMovil Object.
+        - parameter completionHandler:  The Callback Handler.
 
-    - returns: Void.
-*/
-public func opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil : GuardarUsuarioAplicacionMovil , completionHandler:  @escaping (Data?, NSError?) -> Void) {
+        - returns: Void.
+    */
+    public func opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil : GuardarUsuarioAplicacionMovil , completionHandler: @escaping (Data?, NSError?) -> Void) {
 
-let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarUsuarioAplicacionMovil><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><nombre>%@</nombre><apellido>%@</apellido><credencial>%@</credencial><email>%@</email><movil>%@</movil><fechaNacimiento>%@</fechaNacimiento><direccion>%@</direccion><paisId>%@</paisId><estadoId>%@</estadoId><ciudadId>%@</ciudadId><condadoId>%@</condadoId><codigoPostal>%@</codigoPostal><codigoValidacionMovil>%@</codigoValidacionMovil><nombreImagen>%@</nombreImagen><imagenBytes>JUA=</imagenBytes><link>%@</link><pin>%@</pin></ns1:guardarUsuarioAplicacionMovil></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarUsuarioAplicacionMovil.cpUsuarioApi!,guardarUsuarioAplicacionMovil.cpPasswordApi!,guardarUsuarioAplicacionMovil.cpUsuarioId!,guardarUsuarioAplicacionMovil.cpNombre!,guardarUsuarioAplicacionMovil.cpApellido!,guardarUsuarioAplicacionMovil.cpCredencial!,guardarUsuarioAplicacionMovil.cpEmail!,guardarUsuarioAplicacionMovil.cpMovil!,guardarUsuarioAplicacionMovil.cpFechaNacimiento!,guardarUsuarioAplicacionMovil.cpDireccion!,guardarUsuarioAplicacionMovil.cpPaisId!,guardarUsuarioAplicacionMovil.cpEstadoId!,guardarUsuarioAplicacionMovil.cpCiudadId!,guardarUsuarioAplicacionMovil.cpCondadoId!,guardarUsuarioAplicacionMovil.cpCodigoPostal!,guardarUsuarioAplicacionMovil.cpCodigoValidacionMovil!,guardarUsuarioAplicacionMovil.cpNombreImagen!,guardarUsuarioAplicacionMovil.cpImagenBytes!,guardarUsuarioAplicacionMovil.cpLink!,guardarUsuarioAplicacionMovil.cpPin!)
+    let soapMessage = String(format:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://ws.alodiga.ericsson.com/\"><SOAP-ENV:Body><ns1:guardarUsuarioAplicacionMovil><usuarioApi>%@</usuarioApi><passwordApi>%@</passwordApi><usuarioId>%@</usuarioId><nombre>%@</nombre><apellido>%@</apellido><credencial>%@</credencial><email>%@</email><movil>%@</movil><fechaNacimiento>%@</fechaNacimiento><direccion>%@</direccion><paisId>%@</paisId><estadoId>%@</estadoId><ciudadId>%@</ciudadId><condadoId>%@</condadoId><codigoPostal>%@</codigoPostal><codigoValidacionMovil>%@</codigoValidacionMovil><nombreImagen>%@</nombreImagen><imagenBytes>JUA=</imagenBytes><link>%@</link><pin>%@</pin><tipoDocumentoId>0</tipoDocumentoId><numeroDocumento>%@</numeroDocumento></ns1:guardarUsuarioAplicacionMovil></SOAP-ENV:Body></SOAP-ENV:Envelope>",guardarUsuarioAplicacionMovil.cpUsuarioApi!,guardarUsuarioAplicacionMovil.cpPasswordApi!,guardarUsuarioAplicacionMovil.cpUsuarioId!,guardarUsuarioAplicacionMovil.cpNombre!,guardarUsuarioAplicacionMovil.cpApellido!,guardarUsuarioAplicacionMovil.cpCredencial!,guardarUsuarioAplicacionMovil.cpEmail!,guardarUsuarioAplicacionMovil.cpMovil!,guardarUsuarioAplicacionMovil.cpFechaNacimiento!,guardarUsuarioAplicacionMovil.cpDireccion!,guardarUsuarioAplicacionMovil.cpPaisId!,guardarUsuarioAplicacionMovil.cpEstadoId!,guardarUsuarioAplicacionMovil.cpCiudadId!,guardarUsuarioAplicacionMovil.cpCondadoId!,guardarUsuarioAplicacionMovil.cpCodigoPostal!,guardarUsuarioAplicacionMovil.cpCodigoValidacionMovil!,guardarUsuarioAplicacionMovil.cpNombreImagen!,guardarUsuarioAplicacionMovil.cpImagenBytes!,guardarUsuarioAplicacionMovil.cpLink!,guardarUsuarioAplicacionMovil.cpPin!,guardarUsuarioAplicacionMovil.cpTipoDocumentoId!,guardarUsuarioAplicacionMovil.cpNumeroDocumento!)
 
-webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarUsuarioAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj  ,error) })
- }
+            
+            
+            webServiceCall.makeSoapConnection(soapLocation:"http://34.211.97.207:8080/RegistroUnificado/APIRegistroUnificadoService", soapAction: "", soapMessage: soapMessage, soapVersion: "1", className:"GuardarUsuarioAplicacionMovilResponse", completionHandler: { (syedabsarObj:Data?, error: NSError? )->Void in completionHandler(syedabsarObj,error) })
+             
+    }
 
 /**
     Calls the SOAP Operation: GuardarDireccionConfianza with Message based on GuardarDireccionConfianza Object.
