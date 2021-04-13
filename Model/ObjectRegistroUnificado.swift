@@ -200,6 +200,9 @@ var cpPrepayCard: String?
 /// Number Card
 var cpNumberCard: String?
 
+/// Card Holder
+var cpCardHolder: String?
+
 /// Country Source Id
 var cpCountrySourceId: String?
 
@@ -252,7 +255,7 @@ var cpCuentaBancarias: String?
 var cpTarjetaUsuarios: String?
 
 override static func cpKeys() -> Array<String> {
-return ["UsuarioID","Apellido","Credencial","CredencialFecha","Email","FechaNacimiento","IntentosFallidos","Movil","Nombre","Aplicaciones","RespuestaListadoProductos","Cumplimient","PrepayCardAsociate","PrepayCard","NumberCard","CountrySourceId","Direccion","Estado","Imagen","Cuenta","Genero","TelefonoResidencial","Ocupacion","TipoDocumento","NumeroDocumento","PerfilAloEsp","PerfilAloPos","PerfilAloRrp","Pin","RemettencesDireccionId","CuentaBancarias","TarjetaUsuarios"]
+return ["UsuarioID","Apellido","Credencial","CredencialFecha","Email","FechaNacimiento","IntentosFallidos","Movil","Nombre","Aplicaciones","RespuestaListadoProductos","Cumplimient","PrepayCardAsociate","PrepayCard","NumberCard","CardHolder","CountrySourceId","Direccion","Estado","Imagen","Cuenta","Genero","TelefonoResidencial","Ocupacion","TipoDocumento","NumeroDocumento","PerfilAloEsp","PerfilAloPos","PerfilAloRrp","Pin","RemettencesDireccionId","CuentaBancarias","TarjetaUsuarios"]
 }
 }
 
@@ -276,7 +279,7 @@ var cpIsUsePrepaidCard: String?
 var cpNombreProducto: String?
 
 /// Saldo Actual
-var cpSaldoActual: String?
+var cpSaldoActual: Float?
 
 /// Simbolo
 var cpSimbolo: String?
@@ -2918,7 +2921,7 @@ var cpLink: String?
 var cpPin: String?
 
 /// Tipo Documento Id
-var cpTipoDocumentoId: Int?
+var cpTipoDocumentoId: String?
 
 /// Numero Documento
 var cpNumeroDocumento: String?
@@ -3400,51 +3403,6 @@ return ["Return"]
 }
 
 /**
-  Login Aplicacion Movil.
-*/
-@objc(LoginAplicacionMovil)
-public class LoginAplicacionMovil : SyedAbsarObjectBase {
-
-
-/// Usuario Api
-var cpUsuarioApi: String?
-
-/// Password Api
-var cpPasswordApi: String?
-
-/// Email
-var cpEmail: String?
-
-/// Movil
-var cpMovil: String?
-
-/// Credencial
-var cpCredencial: String?
-
-/// Ip
-var cpIp: String?
-
-override static func cpKeys() -> Array<String> {
-return ["UsuarioApi","PasswordApi","Email","Movil","Credencial","Ip"]
-}
-}
-
-/**
-  Login Aplicacion Movil Response.
-*/
-@objc(LoginAplicacionMovilResponse)
-public class LoginAplicacionMovilResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
-}
-}
-
-/**
   Solicitar Tarjeta.
 */
 @objc(SolicitarTarjeta)
@@ -3479,6 +3437,51 @@ return ["UsuarioApi","PasswordApi","UsuarioId","EmailContacto","DireccionContact
 */
 @objc(SolicitarTarjetaResponse)
 public class SolicitarTarjetaResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
+  Login Aplicacion Movil.
+*/
+@objc(LoginAplicacionMovil)
+public class LoginAplicacionMovil : SyedAbsarObjectBase {
+
+
+/// Usuario Api
+var cpUsuarioApi: String?
+
+/// Password Api
+var cpPasswordApi: String?
+
+/// Email
+var cpEmail: String?
+
+/// Movil
+var cpMovil: String?
+
+/// Credencial
+var cpCredencial: String?
+
+/// Ip
+var cpIp: String?
+
+override static func cpKeys() -> Array<String> {
+return ["UsuarioApi","PasswordApi","Email","Movil","Credencial","Ip"]
+}
+}
+
+/**
+  Login Aplicacion Movil Response.
+*/
+@objc(LoginAplicacionMovilResponse)
+public class LoginAplicacionMovilResponse : SyedAbsarObjectBase {
 
 
 /// Return
