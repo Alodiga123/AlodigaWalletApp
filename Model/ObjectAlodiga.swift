@@ -26,7 +26,7 @@ return ["Email","TimeZone","Status"]
   Activate Card Response.
 */
 @objc(AL_ActivateCardResponse)
-public class  AL_ActivateCardResponse : SyedAbsarObjectBase {
+public class AL_AL_ActivateCardResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -40,8 +40,8 @@ return ["Return"]
 /**
   Activate Card Responses.
 */
-@objc(AL_ActivateCardResponses)
-public class  AL_ActivateCardResponses : SyedAbsarObjectBase {
+@objc(AL_AL_ActivateCardResponses)
+public class AL_AL_ActivateCardResponses : SyedAbsarObjectBase {
 
 
 /// Credential Response
@@ -62,11 +62,11 @@ return ["CredentialResponse","Products","NumberCard"]
   Response.
 */
 @objc(AL_Response)
-public class  AL_Response : SyedAbsarObjectBase {
+public class AL_AL_Response : SyedAbsarObjectBase {
 
 
 /// Fecha Hora
-var cpFechaHora: NSDate?
+var cpFechaHora: String?
 
 /// Codigo Respuesta
 var cpCodigoRespuesta: String?
@@ -89,7 +89,7 @@ return ["FechaHora","CodigoRespuesta","MensajeRespuesta","IdTransaction","IdBuss
   Change Status Credential Card.
 */
 @objc(AL_ChangeStatusCredentialCard)
-public class  AL_ChangeStatusCredentialCard : SyedAbsarObjectBase {
+public class AL_AL_ChangeStatusCredentialCard : SyedAbsarObjectBase {
 
 
 /// Bigining Atention
@@ -119,7 +119,7 @@ return ["BiginingAtention","EndingAtention","TimerAtention","Code","Description"
   Product.
 */
 @objc(AL_Product)
-public class  AL_Product : SyedAbsarObjectBase {
+public class AL_AL_Product : SyedAbsarObjectBase {
 
 
 /// Category Id
@@ -129,40 +129,40 @@ var cpCategoryId: String?
 var cpCountryId: String?
 
 /// Current Balance
-var cpCurrentBalance: Float?
+var cpCurrentBalance: String?
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Has Associated Bank
-var cpIndHasAssociatedBank: Bool?
+var cpIndHasAssociatedBank: String?
 
 /// Is Alocash Product
-var cpIsAlocashProduct: Bool?
+var cpIsAlocashProduct: String?
 
 /// Is Default Product
-var cpIsDefaultProduct: Bool?
+var cpIsDefaultProduct: String?
 
 /// Is Exchange Product
-var cpIsExchangeProduct: Bool?
+var cpIsExchangeProduct: String?
 
 /// Is Free
-var cpIsFree: Bool?
+var cpIsFree: String?
 
 /// Is Pay Top Up
-var cpIsPayTopUp: Bool?
+var cpIsPayTopUp: String?
 
 /// Is Payment Info
-var cpIsPaymentInfo: Bool?
+var cpIsPaymentInfo: String?
 
 /// Is Remettence
-var cpIsRemettence: Bool?
+var cpIsRemettence: String?
 
 /// Is Use Prepaid Card
-var cpIsUsePrepaidCard: Bool?
+var cpIsUsePrepaidCard: String?
 
 /// Name
 var cpName: String?
@@ -174,7 +174,7 @@ var cpReferenceCode: String?
 var cpSymbol: String?
 
 /// Tax Include
-var cpTaxInclude: Bool?
+var cpTaxInclude: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CategoryId","CountryId","CurrentBalance","Enabled","Id","IndHasAssociatedBank","IsAlocashProduct","IsDefaultProduct","IsExchangeProduct","IsFree","IsPayTopUp","IsPaymentInfo","IsRemettence","IsUsePrepaidCard","Name","ReferenceCode","Symbol","TaxInclude"]
@@ -185,7 +185,7 @@ return ["CategoryId","CountryId","CurrentBalance","Enabled","Id","IndHasAssociat
   Abstract Wallet Entity.
 */
 @objc(AL_AbstractWalletEntity)
-public class  AL_AbstractWalletEntity : SyedAbsarObjectBase {
+public class AL_AbstractWalletEntity : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -197,11 +197,11 @@ return []
   Category.
 */
 @objc(AL_Category)
-public class  AL_Category : SyedAbsarObjectBase {
+public class AL_Category : SyedAbsarObjectBase {
 
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
 var cpId: String?
@@ -218,7 +218,7 @@ return ["Enabled","Id","Name"]
   Maw_country.
 */
 @objc(AL_Maw_country)
-public class  AL_Maw_country : SyedAbsarObjectBase {
+public class AL_Maw_country : SyedAbsarObjectBase {
 
 
 /// Alternative Name1
@@ -254,7 +254,7 @@ return ["AlternativeName1","AlternativeName2","AlternativeName3","Code","Code_is
   Desactivate Card.
 */
 @objc(AL_DesactivateCard)
-public class  AL_DesactivateCard : SyedAbsarObjectBase {
+public class AL_DesactivateCard : SyedAbsarObjectBase {
 
 
 /// Email
@@ -275,7 +275,7 @@ return ["Email","TimeZone","Status"]
   Desactivate Card Response.
 */
 @objc(AL_DesactivateCardResponse)
-public class  AL_DesactivateCardResponse : SyedAbsarObjectBase {
+public class AL_DesactivateCardResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -290,7 +290,7 @@ return ["Return"]
   Desactivate Card Responses.
 */
 @objc(AL_DesactivateCardResponses)
-public class  AL_DesactivateCardResponses : SyedAbsarObjectBase {
+public class AL_DesactivateCardResponses : SyedAbsarObjectBase {
 
 
 /// Credential Response
@@ -305,7 +305,7 @@ return ["CredentialResponse"]
   Save Recharge Top Up.
 */
 @objc(AL_SaveRechargeTopUp)
-public class  AL_SaveRechargeTopUp : SyedAbsarObjectBase {
+public class AL_SaveRechargeTopUp : SyedAbsarObjectBase {
 
 
 /// Email User
@@ -327,10 +327,10 @@ var cpDestinationNumber: String?
 var cpSenderNumber: String?
 
 /// Amount Recharge
-var cpAmountRecharge: Float?
+var cpAmountRecharge: String?
 
 /// Amount Payment
-var cpAmountPayment: Float?
+var cpAmountPayment: String?
 
 /// Language
 var cpLanguage: String?
@@ -344,7 +344,7 @@ return ["EmailUser","ProductId","CryptogramUser","SkudId","DestinationNumber","S
   Save Recharge Top Up Response.
 */
 @objc(AL_SaveRechargeTopUpResponse)
-public class  AL_SaveRechargeTopUpResponse : SyedAbsarObjectBase {
+public class AL_SaveRechargeTopUpResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -359,7 +359,7 @@ return ["Return"]
   Transaction Response.
 */
 @objc(AL_TransactionResponse)
-public class  AL_TransactionResponse : SyedAbsarObjectBase {
+public class AL_TransactionResponse : SyedAbsarObjectBase {
 
 
 /// Response
@@ -369,22 +369,22 @@ var cpResponse: String?
 var cpProducts: String?
 
 /// Amount Commission
-var cpAmountCommission: Float?
+var cpAmountCommission: String?
 
 /// Value Commission
-var cpValueCommission: Float?
+var cpValueCommission: String?
 
 /// Total Debit
-var cpTotalDebit: Float?
+var cpTotalDebit: String?
 
 /// Amount Conversion
-var cpAmountConversion: Float?
+var cpAmountConversion: String?
 
 /// Exchange Rate Product Source
-var cpExchangeRateProductSource: Float?
+var cpExchangeRateProductSource: String?
 
 /// Exchange Rate Product Destination
-var cpExchangeRateProductDestination: Float?
+var cpExchangeRateProductDestination: String?
 
 /// Is Percent Commision
 var cpIsPercentCommision: CShort?
@@ -398,20 +398,20 @@ return ["Response","Products","AmountCommission","ValueCommission","TotalDebit",
   Maw_transaction.
 */
 @objc(AL_Maw_transaction)
-public class  AL_Maw_transaction : SyedAbsarObjectBase {
+public class AL_Maw_transaction : SyedAbsarObjectBase {
 
 
 /// Amount
-var cpAmount: Float?
+var cpAmount: String?
 
 /// Bill Payment Description
 var cpBillPaymentDescription: String?
 
 /// Business Destination Id
-var cpBusinessDestinationId: Int?
+var cpBusinessDestinationId: String?
 
 /// Business Id
-var cpBusinessId: Int?
+var cpBusinessId: String?
 
 /// Commision Amount
 var cpCommisionAmount: String?
@@ -420,7 +420,7 @@ var cpCommisionAmount: String?
 var cpConcept: String?
 
 /// Creation Date
-var cpCreationDate: NSDate?
+var cpCreationDate: String?
 
 /// Daily Closing Id
 var cpDailyClosingId: String?
@@ -435,7 +435,7 @@ var cpExternalId: String?
 var cpId: String?
 
 /// Ind Closed
-var cpIndClosed: Bool?
+var cpIndClosed: String?
 
 /// Payment Info Id
 var cpPaymentInfoId: String?
@@ -444,22 +444,22 @@ var cpPaymentInfoId: String?
 var cpProductId: String?
 
 /// Promotion Amount
-var cpPromotionAmount: Float?
+var cpPromotionAmount: String?
 
 /// Top Up Description
 var cpTopUpDescription: String?
 
 /// Total Alopoints Used
-var cpTotalAlopointsUsed: Float?
+var cpTotalAlopointsUsed: String?
 
 /// Total Amount
-var cpTotalAmount: Float?
+var cpTotalAmount: String?
 
 /// Total Tax
-var cpTotalTax: Float?
+var cpTotalTax: String?
 
 /// Transaction Business Id
-var cpTransactionBusinessId: Int?
+var cpTransactionBusinessId: String?
 
 /// Transaction Number
 var cpTransactionNumber: String?
@@ -480,10 +480,10 @@ var cpTransactionType: String?
 var cpTransactionTypeId: String?
 
 /// User Destination Id
-var cpUserDestinationId: Int?
+var cpUserDestinationId: String?
 
 /// User Source Id
-var cpUserSourceId: Int?
+var cpUserSourceId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Amount","BillPaymentDescription","BusinessDestinationId","BusinessId","CommisionAmount","Concept","CreationDate","DailyClosingId","DestinationUser","ExternalId","Id","IndClosed","PaymentInfoId","ProductId","PromotionAmount","TopUpDescription","TotalAlopointsUsed","TotalAmount","TotalTax","TransactionBusinessId","TransactionNumber","TransactionSequence","TransactionSourceId","TransactionStatus","TransactionType","TransactionTypeId","UserDestinationId","UserSourceId"]
@@ -494,20 +494,20 @@ return ["Amount","BillPaymentDescription","BusinessDestinationId","BusinessId","
   Daily Closing.
 */
 @objc(AL_DailyClosing)
-public class  AL_DailyClosing : SyedAbsarObjectBase {
+public class AL_DailyClosing : SyedAbsarObjectBase {
 
 
 /// Closing Date
-var cpClosingDate: NSDate?
+var cpClosingDate: String?
 
 /// Closing End Time
-var cpClosingEndTime: NSDate?
+var cpClosingEndTime: String?
 
 /// Closing Start Time
-var cpClosingStartTime: NSDate?
+var cpClosingStartTime: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
@@ -516,13 +516,13 @@ var cpId: String?
 var cpOriginApplicationId: String?
 
 /// Total Transactions
-var cpTotalTransactions: Int?
+var cpTotalTransactions: String?
 
 /// Transactions Amount
-var cpTransactionsAmount: Float?
+var cpTransactionsAmount: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["ClosingDate","ClosingEndTime","ClosingStartTime","CreateDate","Id","OriginApplicationId","TotalTransactions","TransactionsAmount","UpdateDate"]
@@ -533,14 +533,14 @@ return ["ClosingDate","ClosingEndTime","ClosingStartTime","CreateDate","Id","Ori
   Maw_origin_application.
 */
 @objc(AL_Maw_origin_application)
-public class  AL_Maw_origin_application : SyedAbsarObjectBase {
+public class AL_Maw_origin_application : SyedAbsarObjectBase {
 
 
 /// Code
 var cpCode: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -554,11 +554,11 @@ return ["Code","Id","Name"]
   Payment Info.
 */
 @objc(AL_PaymentInfo)
-public class  AL_PaymentInfo : SyedAbsarObjectBase {
+public class AL_PaymentInfo : SyedAbsarObjectBase {
 
 
 /// Beginning Date
-var cpBeginningDate: NSDate?
+var cpBeginningDate: String?
 
 /// Billing Address Id
 var cpBillingAddressId: String?
@@ -567,7 +567,7 @@ var cpBillingAddressId: String?
 var cpCreditCardCVV: String?
 
 /// Credit Card Date
-var cpCreditCardDate: NSDate?
+var cpCreditCardDate: String?
 
 /// Credit Card Name
 var cpCreditCardName: String?
@@ -579,10 +579,10 @@ var cpCreditCardNumber: String?
 var cpCreditCardTypeId: String?
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Ending Date
-var cpEndingDate: NSDate?
+var cpEndingDate: String?
 
 /// Id
 var cpId: String?
@@ -594,7 +594,7 @@ var cpPaymentPatnerId: String?
 var cpPaymentTypeId: String?
 
 /// User Id
-var cpUserId: Int?
+var cpUserId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["BeginningDate","BillingAddressId","CreditCardCVV","CreditCardDate","CreditCardName","CreditCardNumber","CreditCardTypeId","Enabled","EndingDate","Id","PaymentPatnerId","PaymentTypeId","UserId"]
@@ -605,7 +605,7 @@ return ["BeginningDate","BillingAddressId","CreditCardCVV","CreditCardDate","Cre
   Maw_address.
 */
 @objc(AL_Maw_address)
-public class  AL_Maw_address : SyedAbsarObjectBase {
+public class AL_Maw_address : SyedAbsarObjectBase {
 
 
 /// Address Line1
@@ -630,13 +630,13 @@ var cpCountyId: String?
 var cpEdificationTypeId: String?
 
 /// Floor
-var cpFloor: Int?
+var cpFloor: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Main Address
-var cpIndMainAddress: Bool?
+var cpIndMainAddress: String?
 
 /// Name Edification
 var cpNameEdification: String?
@@ -665,7 +665,7 @@ return ["AddressLine1","AddressLine2","AddressTypeId","CityId","CountryId","Coun
   Maw_address_type.
 */
 @objc(AL_Maw_address_type)
-public class  AL_Maw_address_type : SyedAbsarObjectBase {
+public class AL_Maw_address_type : SyedAbsarObjectBase {
 
 
 /// Code
@@ -675,7 +675,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -686,7 +686,7 @@ return ["Code","Description","Id"]
   City.
 */
 @objc(AL_City)
-public class  AL_City : SyedAbsarObjectBase {
+public class AL_City : SyedAbsarObjectBase {
 
 
 /// Id
@@ -707,7 +707,7 @@ return ["Id","Name","StateId"]
   Maw_state.
 */
 @objc(AL_Maw_state)
-public class  AL_Maw_state : SyedAbsarObjectBase {
+public class AL_Maw_state : SyedAbsarObjectBase {
 
 
 /// Country Id
@@ -728,7 +728,7 @@ return ["CountryId","Id","Name"]
   County.
 */
 @objc(AL_County)
-public class  AL_County : SyedAbsarObjectBase {
+public class AL_County : SyedAbsarObjectBase {
 
 
 /// Id
@@ -752,7 +752,7 @@ return ["Id","Name","ShortName","StateId"]
   Edification Type.
 */
 @objc(AL_EdificationType)
-public class  AL_EdificationType : SyedAbsarObjectBase {
+public class AL_EdificationType : SyedAbsarObjectBase {
 
 
 /// Code
@@ -762,7 +762,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -773,7 +773,7 @@ return ["Code","Description","Id"]
   Maw_street_type.
 */
 @objc(AL_Maw_street_type)
-public class  AL_Maw_street_type : SyedAbsarObjectBase {
+public class AL_Maw_street_type : SyedAbsarObjectBase {
 
 
 /// Code
@@ -783,7 +783,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -794,11 +794,11 @@ return ["Code","Description","Id"]
   Creditcard Type.
 */
 @objc(AL_CreditcardType)
-public class  AL_CreditcardType : SyedAbsarObjectBase {
+public class AL_CreditcardType : SyedAbsarObjectBase {
 
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
 var cpId: String?
@@ -818,11 +818,11 @@ return ["Enabled","Id","Lengh","Name"]
   Payment Patner.
 */
 @objc(AL_PaymentPatner)
-public class  AL_PaymentPatner : SyedAbsarObjectBase {
+public class AL_PaymentPatner : SyedAbsarObjectBase {
 
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Encription Key
 var cpEncriptionKey: String?
@@ -840,7 +840,7 @@ var cpName: String?
 var cpPaymentUser: String?
 
 /// Test Mode
-var cpTestMode: Bool?
+var cpTestMode: String?
 
 /// Url Confirmation
 var cpUrlConfirmation: String?
@@ -860,11 +860,11 @@ return ["Enabled","EncriptionKey","Id","IntegrationTypeId","Name","PaymentUser",
   Payment Integration Type.
 */
 @objc(AL_PaymentIntegrationType)
-public class  AL_PaymentIntegrationType : SyedAbsarObjectBase {
+public class AL_PaymentIntegrationType : SyedAbsarObjectBase {
 
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
 var cpId: String?
@@ -881,11 +881,11 @@ return ["Enabled","Id","Name"]
   Payment Type.
 */
 @objc(AL_PaymentType)
-public class  AL_PaymentType : SyedAbsarObjectBase {
+public class AL_PaymentType : SyedAbsarObjectBase {
 
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
 var cpId: String?
@@ -902,7 +902,7 @@ return ["Enabled","Id","Name"]
   Transaction Source.
 */
 @objc(AL_TransactionSource)
-public class  AL_TransactionSource : SyedAbsarObjectBase {
+public class AL_TransactionSource : SyedAbsarObjectBase {
 
 
 /// Code
@@ -923,7 +923,7 @@ return ["Code","Id","Name"]
   Transaction Type.
 */
 @objc(AL_TransactionType)
-public class  AL_TransactionType : SyedAbsarObjectBase {
+public class AL_TransactionType : SyedAbsarObjectBase {
 
 
 /// Code
@@ -947,7 +947,7 @@ return ["Code","Description","Id","Value"]
   Manual Recharge.
 */
 @objc(AL_ManualRecharge)
-public class  AL_ManualRecharge : SyedAbsarObjectBase {
+public class AL_ManualRecharge : SyedAbsarObjectBase {
 
 
 /// Bank Id
@@ -960,7 +960,7 @@ var cpEmailUser: String?
 var cpReferenceNumberOperation: String?
 
 /// Amount Recharge
-var cpAmountRecharge: Float?
+var cpAmountRecharge: String?
 
 /// Product Id
 var cpProductId: String?
@@ -983,7 +983,7 @@ return ["BankId","EmailUser","ReferenceNumberOperation","AmountRecharge","Produc
   Manual Recharge Response.
 */
 @objc(AL_ManualRechargeResponse)
-public class  AL_ManualRechargeResponse : SyedAbsarObjectBase {
+public class AL_ManualRechargeResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -998,7 +998,7 @@ return ["Return"]
   Get Status Affiliation Request By User.
 */
 @objc(AL_GetStatusAffiliationRequestByUser)
-public class  AL_GetStatusAffiliationRequestByUser : SyedAbsarObjectBase {
+public class AL_GetStatusAffiliationRequestByUser : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -1016,7 +1016,7 @@ return ["UserId","RequestTypeId"]
   Get Status Affiliation Request By User Response.
 */
 @objc(AL_GetStatusAffiliationRequestByUserResponse)
-public class  AL_GetStatusAffiliationRequestByUserResponse : SyedAbsarObjectBase {
+public class AL_GetStatusAffiliationRequestByUserResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1031,7 +1031,7 @@ return ["Return"]
   Status Request Response.
 */
 @objc(AL_StatusRequestResponse)
-public class  AL_StatusRequestResponse : SyedAbsarObjectBase {
+public class AL_StatusRequestResponse : SyedAbsarObjectBase {
 
 
 /// Response
@@ -1046,7 +1046,7 @@ return ["Response"]
   Status Request.
 */
 @objc(AL_StatusRequest)
-public class  AL_StatusRequest : SyedAbsarObjectBase {
+public class AL_StatusRequest : SyedAbsarObjectBase {
 
 
 /// Code
@@ -1056,7 +1056,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -1067,7 +1067,7 @@ return ["Code","Description","Id"]
   Empty List Exception.
 */
 @objc(AL_EmptyListException)
-public class  AL_EmptyListException : SyedAbsarObjectBase {
+public class AL_EmptyListException : SyedAbsarObjectBase {
 
 
 /// Message
@@ -1082,7 +1082,7 @@ return ["Message"]
   Get Language.
 */
 @objc(AL_GetLanguage)
-public class  AL_GetLanguage : SyedAbsarObjectBase {
+public class AL_GetLanguage : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -1094,7 +1094,7 @@ return []
   Get Language Response.
 */
 @objc(AL_GetLanguageResponse)
-public class  AL_GetLanguageResponse : SyedAbsarObjectBase {
+public class AL_GetLanguageResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1109,7 +1109,7 @@ return ["Return"]
   Language List Response.
 */
 @objc(AL_LanguageListResponse)
-public class  AL_LanguageListResponse : SyedAbsarObjectBase {
+public class AL_LanguageListResponse : SyedAbsarObjectBase {
 
 
 /// Languages
@@ -1124,14 +1124,14 @@ return ["Languages"]
   Language.
 */
 @objc(AL_Language)
-public class  AL_Language : SyedAbsarObjectBase {
+public class AL_Language : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
 var cpId: String?
@@ -1148,7 +1148,7 @@ return ["Description","Enabled","Id","Iso"]
   Get Balance History By Product And User.
 */
 @objc(AL_GetBalanceHistoryByProductAndUser)
-public class  AL_GetBalanceHistoryByProductAndUser : SyedAbsarObjectBase {
+public class AL_GetBalanceHistoryByProductAndUser : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -1166,7 +1166,7 @@ return ["UserId","ProductId"]
   Get Balance History By Product And User Response.
 */
 @objc(AL_GetBalanceHistoryByProductAndUserResponse)
-public class  AL_GetBalanceHistoryByProductAndUserResponse : SyedAbsarObjectBase {
+public class AL_GetBalanceHistoryByProductAndUserResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1181,7 +1181,7 @@ return ["Return"]
   Balance History Response.
 */
 @objc(AL_BalanceHistoryResponse)
-public class  AL_BalanceHistoryResponse : SyedAbsarObjectBase {
+public class AL_BalanceHistoryResponse : SyedAbsarObjectBase {
 
 
 /// Response
@@ -1196,7 +1196,7 @@ return ["Response"]
   Balance History.
 */
 @objc(AL_BalanceHistory)
-public class  AL_BalanceHistory : SyedAbsarObjectBase {
+public class AL_BalanceHistory : SyedAbsarObjectBase {
 
 
 /// Adjusment Info
@@ -1206,16 +1206,16 @@ var cpAdjusmentInfo: String?
 var cpBusinessId: String?
 
 /// Current Amount
-var cpCurrentAmount: Float?
+var cpCurrentAmount: String?
 
 /// Date
-var cpDate: NSDate?
+var cpDate: String?
 
 /// Id
 var cpId: String?
 
 /// Old Amount
-var cpOldAmount: Float?
+var cpOldAmount: String?
 
 /// Product Id
 var cpProductId: String?
@@ -1241,7 +1241,7 @@ return ["AdjusmentInfo","BusinessId","CurrentAmount","Date","Id","OldAmount","Pr
   Get Transactions By Business Id Between Date.
 */
 @objc(AL_GetTransactionsByBusinessIdBetweenDate)
-public class  AL_GetTransactionsByBusinessIdBetweenDate : SyedAbsarObjectBase {
+public class AL_GetTransactionsByBusinessIdBetweenDate : SyedAbsarObjectBase {
 
 
 /// Business Id
@@ -1262,7 +1262,7 @@ return ["BusinessId","From","To"]
   Get Transactions By Business Id Between Date Response.
 */
 @objc(AL_GetTransactionsByBusinessIdBetweenDateResponse)
-public class  AL_GetTransactionsByBusinessIdBetweenDateResponse : SyedAbsarObjectBase {
+public class AL_GetTransactionsByBusinessIdBetweenDateResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1277,7 +1277,7 @@ return ["Return"]
   Transaction List Response.
 */
 @objc(AL_TransactionListResponse)
-public class  AL_TransactionListResponse : SyedAbsarObjectBase {
+public class AL_TransactionListResponse : SyedAbsarObjectBase {
 
 
 /// Response
@@ -1295,7 +1295,7 @@ return ["Response","Transactions"]
   Transfer Card To Card Autorization.
 */
 @objc(AL_TransferCardToCardAutorization)
-public class  AL_TransferCardToCardAutorization : SyedAbsarObjectBase {
+public class AL_TransferCardToCardAutorization : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -1310,14 +1310,14 @@ var cpNumberCardDestinate: String?
 /// Balance
 var cpBalance: String?
 
-/// Id User Destination
-var cpIdUserDestination: String?
+/// Email Destination
+var cpEmailDestination: String?
 
 /// Concept Transaction
 var cpConceptTransaction: String?
 
 override static func cpKeys() -> Array<String> {
-return ["UserId","NumberCardOrigin","NumberCardDestinate","Balance","IdUserDestination","ConceptTransaction"]
+return ["UserId","NumberCardOrigin","NumberCardDestinate","Balance","EmailDestination","ConceptTransaction"]
 }
 }
 
@@ -1325,7 +1325,7 @@ return ["UserId","NumberCardOrigin","NumberCardDestinate","Balance","IdUserDesti
   Transfer Card To Card Autorization Response.
 */
 @objc(AL_TransferCardToCardAutorizationResponse)
-public class  AL_TransferCardToCardAutorizationResponse : SyedAbsarObjectBase {
+public class AL_TransferCardToCardAutorizationResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1340,7 +1340,7 @@ return ["Return"]
   Transfer Card To Card Responses.
 */
 @objc(AL_TransferCardToCardResponses)
-public class  AL_TransferCardToCardResponses : SyedAbsarObjectBase {
+public class AL_TransferCardToCardResponses : SyedAbsarObjectBase {
 
 
 /// Transfer Card To Card Credential
@@ -1358,7 +1358,7 @@ return ["TransferCardToCardCredential","Products"]
   Transfer Card To Card Credential.
 */
 @objc(AL_TransferCardToCardCredential)
-public class  AL_TransferCardToCardCredential : SyedAbsarObjectBase {
+public class AL_TransferCardToCardCredential : SyedAbsarObjectBase {
 
 
 /// Code Error
@@ -1397,7 +1397,7 @@ return ["CodeError","MessageError","CodeAnswer","MessageResponse","CodeAuthoriza
   Change Status Payment Info.
 */
 @objc(AL_ChangeStatusPaymentInfo)
-public class  AL_ChangeStatusPaymentInfo : SyedAbsarObjectBase {
+public class AL_ChangeStatusPaymentInfo : SyedAbsarObjectBase {
 
 
 /// User Api
@@ -1413,7 +1413,7 @@ var cpUserId: String?
 var cpPaymentInfoId: String?
 
 /// Status
-var cpStatus: Bool?
+var cpStatus: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UserApi","PasswordApi","UserId","PaymentInfoId","Status"]
@@ -1424,7 +1424,7 @@ return ["UserApi","PasswordApi","UserId","PaymentInfoId","Status"]
   Change Status Payment Info Response.
 */
 @objc(AL_ChangeStatusPaymentInfoResponse)
-public class  AL_ChangeStatusPaymentInfoResponse : SyedAbsarObjectBase {
+public class AL_ChangeStatusPaymentInfoResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1439,7 +1439,7 @@ return ["Return"]
   Payment Info Response.
 */
 @objc(AL_PaymentInfoResponse)
-public class  AL_PaymentInfoResponse : SyedAbsarObjectBase {
+public class AL_PaymentInfoResponse : SyedAbsarObjectBase {
 
 
 /// Payment Info
@@ -1454,14 +1454,14 @@ return ["PaymentInfo"]
   Get Document Person Type By Country.
 */
 @objc(AL_GetDocumentPersonTypeByCountry)
-public class  AL_GetDocumentPersonTypeByCountry : SyedAbsarObjectBase {
+public class AL_GetDocumentPersonTypeByCountry : SyedAbsarObjectBase {
 
 
 /// Country Id
 var cpCountryId: String?
 
 /// Origin Aplication Id
-var cpOriginAplicationId: Int?
+var cpOriginAplicationId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CountryId","OriginAplicationId"]
@@ -1472,7 +1472,7 @@ return ["CountryId","OriginAplicationId"]
   Get Document Person Type By Country Response.
 */
 @objc(AL_GetDocumentPersonTypeByCountryResponse)
-public class  AL_GetDocumentPersonTypeByCountryResponse : SyedAbsarObjectBase {
+public class AL_GetDocumentPersonTypeByCountryResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1487,7 +1487,7 @@ return ["Return"]
   Document Person Type List Response.
 */
 @objc(AL_DocumentPersonTypeListResponse)
-public class  AL_DocumentPersonTypeListResponse : SyedAbsarObjectBase {
+public class AL_DocumentPersonTypeListResponse : SyedAbsarObjectBase {
 
 
 /// Documents Person Types
@@ -1502,7 +1502,7 @@ return ["DocumentsPersonTypes"]
   Documents Person Type.
 */
 @objc(AL_DocumentsPersonType)
-public class  AL_DocumentsPersonType : SyedAbsarObjectBase {
+public class AL_DocumentsPersonType : SyedAbsarObjectBase {
 
 
 /// Code Identification
@@ -1512,7 +1512,7 @@ var cpCodeIdentification: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Person Type Id
 var cpPersonTypeId: String?
@@ -1526,7 +1526,7 @@ return ["CodeIdentification","Description","Id","PersonTypeId"]
   Maw_person_type.
 */
 @objc(AL_Maw_person_type)
-public class  AL_Maw_person_type : SyedAbsarObjectBase {
+public class AL_Maw_person_type : SyedAbsarObjectBase {
 
 
 /// Country Id
@@ -1536,10 +1536,10 @@ var cpCountryId: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Ind Natural Person
-var cpIndNaturalPerson: Bool?
+var cpIndNaturalPerson: String?
 
 /// Origin Application Id
 var cpOriginApplicationId: String?
@@ -1553,11 +1553,11 @@ return ["CountryId","Description","Id","IndNaturalPerson","OriginApplicationId"]
   Save Payment Shop.
 */
 @objc(AL_SavePaymentShop)
-public class  AL_SavePaymentShop : SyedAbsarObjectBase {
+public class AL_SavePaymentShop : SyedAbsarObjectBase {
 
 
-/// Cryptograma Shop
-var cpCryptogramaShop: String?
+/// Cryptogram Shop
+var cpCryptogramShop: String?
 
 /// Email User
 var cpEmailUser: String?
@@ -1566,13 +1566,13 @@ var cpEmailUser: String?
 var cpProductId: String?
 
 /// Amount Payment
-var cpAmountPayment: Float?
+var cpAmountPayment: String?
 
 /// Concept Transaction
 var cpConceptTransaction: String?
 
 override static func cpKeys() -> Array<String> {
-return ["CryptogramaShop","EmailUser","ProductId","AmountPayment","ConceptTransaction"]
+return ["CryptogramShop","EmailUser","ProductId","AmountPayment","ConceptTransaction"]
 }
 }
 
@@ -1580,7 +1580,7 @@ return ["CryptogramaShop","EmailUser","ProductId","AmountPayment","ConceptTransa
   Save Payment Shop Response.
 */
 @objc(AL_SavePaymentShopResponse)
-public class  AL_SavePaymentShopResponse : SyedAbsarObjectBase {
+public class AL_SavePaymentShopResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1595,7 +1595,7 @@ return ["Return"]
   Get Countries.
 */
 @objc(AL_GetCountries)
-public class  AL_GetCountries : SyedAbsarObjectBase {
+public class AL_GetCountries : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -1607,7 +1607,7 @@ return []
   Get Countries Response.
 */
 @objc(AL_GetCountriesResponse)
-public class  AL_GetCountriesResponse : SyedAbsarObjectBase {
+public class AL_GetCountriesResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1622,7 +1622,7 @@ return ["Return"]
   Country List Response.
 */
 @objc(AL_CountryListResponse)
-public class  AL_CountryListResponse : SyedAbsarObjectBase {
+public class AL_CountryListResponse : SyedAbsarObjectBase {
 
 
 /// Countries
@@ -1637,7 +1637,7 @@ return ["Countries"]
   Save Address.
 */
 @objc(AL_SaveAddress)
-public class  AL_SaveAddress : SyedAbsarObjectBase {
+public class AL_SaveAddress : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -1664,7 +1664,7 @@ return ["UserId","Estado","Ciudad","ZipCode","Addres1"]
   Save Address Response.
 */
 @objc(AL_SaveAddressResponse)
-public class  AL_SaveAddressResponse : SyedAbsarObjectBase {
+public class AL_SaveAddressResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1679,7 +1679,7 @@ return ["Return"]
   Exception.
 */
 @objc(AL_Exception)
-public class  AL_Exception : SyedAbsarObjectBase {
+public class AL_Exception : SyedAbsarObjectBase {
 
 
 /// Message
@@ -1694,7 +1694,7 @@ return ["Message"]
   Exchange Product.
 */
 @objc(AL_ExchangeProduct)
-public class  AL_ExchangeProduct : SyedAbsarObjectBase {
+public class AL_ExchangeProduct : SyedAbsarObjectBase {
 
 
 /// Email User
@@ -1707,13 +1707,13 @@ var cpProductSourceId: String?
 var cpProductDestinationId: String?
 
 /// Amount Exchange
-var cpAmountExchange: Float?
+var cpAmountExchange: String?
 
 /// Concept Transaction
 var cpConceptTransaction: String?
 
 /// Included Amount
-var cpIncludedAmount: Int?
+var cpIncludedAmount: String?
 
 override static func cpKeys() -> Array<String> {
 return ["EmailUser","ProductSourceId","ProductDestinationId","AmountExchange","ConceptTransaction","IncludedAmount"]
@@ -1724,7 +1724,7 @@ return ["EmailUser","ProductSourceId","ProductDestinationId","AmountExchange","C
   Exchange Product Response.
 */
 @objc(AL_ExchangeProductResponse)
-public class  AL_ExchangeProductResponse : SyedAbsarObjectBase {
+public class AL_ExchangeProductResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1739,7 +1739,7 @@ return ["Return"]
   Get Products Recharge Payment By User Id.
 */
 @objc(AL_GetProductsRechargePaymentByUserId)
-public class  AL_GetProductsRechargePaymentByUserId : SyedAbsarObjectBase {
+public class AL_GetProductsRechargePaymentByUserId : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -1754,7 +1754,7 @@ return ["UserId"]
   Get Products Recharge Payment By User Id Response.
 */
 @objc(AL_GetProductsRechargePaymentByUserIdResponse)
-public class  AL_GetProductsRechargePaymentByUserIdResponse : SyedAbsarObjectBase {
+public class AL_GetProductsRechargePaymentByUserIdResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1769,7 +1769,7 @@ return ["Return"]
   Product List Response.
 */
 @objc(AL_ProductListResponse)
-public class  AL_ProductListResponse : SyedAbsarObjectBase {
+public class AL_ProductListResponse : SyedAbsarObjectBase {
 
 
 /// Products
@@ -1784,7 +1784,7 @@ return ["Products"]
   Get Top Up Countries.
 */
 @objc(AL_GetTopUpCountries)
-public class  AL_GetTopUpCountries : SyedAbsarObjectBase {
+public class AL_GetTopUpCountries : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -1796,7 +1796,7 @@ return []
   Get Top Up Countries Response.
 */
 @objc(AL_GetTopUpCountriesResponse)
-public class  AL_GetTopUpCountriesResponse : SyedAbsarObjectBase {
+public class AL_GetTopUpCountriesResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1811,7 +1811,7 @@ return ["Return"]
   Top Up Country List Response.
 */
 @objc(AL_TopUpCountryListResponse)
-public class  AL_TopUpCountryListResponse : SyedAbsarObjectBase {
+public class AL_TopUpCountryListResponse : SyedAbsarObjectBase {
 
 
 /// Top Up Countrys
@@ -1826,7 +1826,7 @@ return ["TopUpCountrys"]
   Top Up Country.
 */
 @objc(AL_TopUpCountry)
-public class  AL_TopUpCountry : SyedAbsarObjectBase {
+public class AL_TopUpCountry : SyedAbsarObjectBase {
 
 
 /// Alternative Name1
@@ -1859,7 +1859,7 @@ return ["AlternativeName1","AlternativeName2","AlternativeName3","Code","Id","Na
   Get Countries Has Bank.
 */
 @objc(AL_GetCountriesHasBank)
-public class  AL_GetCountriesHasBank : SyedAbsarObjectBase {
+public class AL_GetCountriesHasBank : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -1874,7 +1874,7 @@ return ["UserId"]
   Get Countries Has Bank Response.
 */
 @objc(AL_GetCountriesHasBankResponse)
-public class  AL_GetCountriesHasBankResponse : SyedAbsarObjectBase {
+public class AL_GetCountriesHasBankResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1889,7 +1889,7 @@ return ["Return"]
   Activate Cardby Business.
 */
 @objc(AL_ActivateCardbyBusiness)
-public class  AL_ActivateCardbyBusiness : SyedAbsarObjectBase {
+public class AL_ActivateCardbyBusiness : SyedAbsarObjectBase {
 
 
 /// Business Id
@@ -1910,7 +1910,7 @@ return ["BusinessId","UserEmail","TimeZone"]
   Activate Cardby Business Response.
 */
 @objc(AL_ActivateCardbyBusinessResponse)
-public class  AL_ActivateCardbyBusinessResponse : SyedAbsarObjectBase {
+public class AL_ActivateCardbyBusinessResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1925,7 +1925,7 @@ return ["Return"]
   Get Products By Bank Id.
 */
 @objc(AL_GetProductsByBankId)
-public class  AL_GetProductsByBankId : SyedAbsarObjectBase {
+public class AL_GetProductsByBankId : SyedAbsarObjectBase {
 
 
 /// Bank Id
@@ -1943,7 +1943,7 @@ return ["BankId","UserId"]
   Get Products By Bank Id Response.
 */
 @objc(AL_GetProductsByBankIdResponse)
-public class  AL_GetProductsByBankIdResponse : SyedAbsarObjectBase {
+public class AL_GetProductsByBankIdResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1958,7 +1958,7 @@ return ["Return"]
   Get Bank By Country App.
 */
 @objc(AL_GetBankByCountryApp)
-public class  AL_GetBankByCountryApp : SyedAbsarObjectBase {
+public class AL_GetBankByCountryApp : SyedAbsarObjectBase {
 
 
 /// Country Id
@@ -1973,7 +1973,7 @@ return ["CountryId"]
   Get Bank By Country App Response.
 */
 @objc(AL_GetBankByCountryAppResponse)
-public class  AL_GetBankByCountryAppResponse : SyedAbsarObjectBase {
+public class AL_GetBankByCountryAppResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -1988,7 +1988,7 @@ return ["Return"]
   Bank List Response.
 */
 @objc(AL_BankListResponse)
-public class  AL_BankListResponse : SyedAbsarObjectBase {
+public class AL_BankListResponse : SyedAbsarObjectBase {
 
 
 /// Banks
@@ -2003,7 +2003,7 @@ return ["Banks"]
   Maw_bank.
 */
 @objc(AL_Maw_bank)
-public class  AL_Maw_bank : SyedAbsarObjectBase {
+public class AL_Maw_bank : SyedAbsarObjectBase {
 
 
 /// Aba Code
@@ -2030,7 +2030,7 @@ return ["AbaCode","CountryId","Id","Name","SwiftCode"]
   Get Card By Email.
 */
 @objc(AL_GetCardByEmail)
-public class  AL_GetCardByEmail : SyedAbsarObjectBase {
+public class AL_GetCardByEmail : SyedAbsarObjectBase {
 
 
 /// Email
@@ -2045,7 +2045,7 @@ return ["Email"]
   Get Card By Email Response.
 */
 @objc(AL_GetCardByEmailResponse)
-public class  AL_GetCardByEmailResponse : SyedAbsarObjectBase {
+public class AL_GetCardByEmailResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -2060,7 +2060,7 @@ return ["Return"]
   Card Response.
 */
 @objc(AL_CardResponse)
-public class  AL_CardResponse : SyedAbsarObjectBase {
+public class AL_CardResponse : SyedAbsarObjectBase {
 
 
 /// Card
@@ -2090,7 +2090,7 @@ return ["Card","AliasCard","Name","Email","NumberPhone","CardHolder"]
   Card.
 */
 @objc(AL_Card)
-public class  AL_Card : SyedAbsarObjectBase {
+public class AL_Card : SyedAbsarObjectBase {
 
 
 /// Alias
@@ -2100,7 +2100,7 @@ var cpAlias: String?
 var cpAssignedAccount: String?
 
 /// Automatic Renewal Date
-var cpAutomaticRenewalDate: NSDate?
+var cpAutomaticRenewalDate: String?
 
 /// Card Holder
 var cpCardHolder: String?
@@ -2112,10 +2112,10 @@ var cpCardNumber: String?
 var cpCardStatusId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Expiration Date
-var cpExpirationDate: NSDate?
+var cpExpirationDate: String?
 
 /// I C V V Magnetic Strip
 var cpICVVMagneticStrip: String?
@@ -2124,19 +2124,19 @@ var cpICVVMagneticStrip: String?
 var cpId: String?
 
 /// Ind Delivery Request
-var cpIndDeliveryRequest: Bool?
+var cpIndDeliveryRequest: String?
 
 /// Ind Pending New Card Issue
-var cpIndPendingNewCardIssue: Bool?
+var cpIndPendingNewCardIssue: String?
 
 /// Ind Received Card
-var cpIndReceivedCard: Bool?
+var cpIndReceivedCard: String?
 
 /// Ind Renewal
-var cpIndRenewal: Bool?
+var cpIndRenewal: String?
 
 /// Issue Date
-var cpIssueDate: NSDate?
+var cpIssueDate: String?
 
 /// Observations
 var cpObservations: String?
@@ -2145,7 +2145,7 @@ var cpObservations: String?
 var cpPersonCustomerId: String?
 
 /// Pin Lenght
-var cpPinLenght: Int?
+var cpPinLenght: String?
 
 /// Pin Offset
 var cpPinOffset: String?
@@ -2163,16 +2163,16 @@ var cpSecurityCodeCard: String?
 var cpSecurityCodeMagneticStrip: String?
 
 /// Sequential Number
-var cpSequentialNumber: Int?
+var cpSequentialNumber: String?
 
 /// Status Update Reason Date
-var cpStatusUpdateReasonDate: NSDate?
+var cpStatusUpdateReasonDate: String?
 
 /// Status Update Reason Id
 var cpStatusUpdateReasonId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Responsible Status Update Id
 var cpUserResponsibleStatusUpdateId: String?
@@ -2189,7 +2189,7 @@ return ["Alias","AssignedAccount","AutomaticRenewalDate","CardHolder","CardNumbe
   Abstract Distribution Entity.
 */
 @objc(AL_AbstractDistributionEntity)
-public class  AL_AbstractDistributionEntity : SyedAbsarObjectBase {
+public class AL_AbstractDistributionEntity : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -2201,14 +2201,14 @@ return []
   Card Status.
 */
 @objc(AL_CardStatus)
-public class  AL_CardStatus : SyedAbsarObjectBase {
+public class AL_CardStatus : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -2219,7 +2219,7 @@ return ["Description","Id"]
   Cms_person.
 */
 @objc(AL_Cms_person)
-public class  AL_Cms_person : SyedAbsarObjectBase {
+public class AL_Cms_person : SyedAbsarObjectBase {
 
 
 /// Applicant Natural Person
@@ -2232,7 +2232,7 @@ var cpCardRequestNaturalPerson: String?
 var cpCountryId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Email
 var cpEmail: String?
@@ -2289,7 +2289,7 @@ var cpRequest: String?
 var cpReviewOFAC: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User
 var cpUser: String?
@@ -2303,7 +2303,7 @@ return ["ApplicantNaturalPerson","CardRequestNaturalPerson","CountryId","CreateD
   Applicant Natural Person.
 */
 @objc(AL_ApplicantNaturalPerson)
-public class  AL_ApplicantNaturalPerson : SyedAbsarObjectBase {
+public class AL_ApplicantNaturalPerson : SyedAbsarObjectBase {
 
 
 /// Applicant Natural Person
@@ -2313,25 +2313,25 @@ var cpApplicantNaturalPerson: String?
 var cpApplicantParentId: String?
 
 /// Citizen
-var cpCitizen: Bool?
+var cpCitizen: String?
 
 /// Civil Status Id
 var cpCivilStatusId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Date Birth
-var cpDateBirth: NSDate?
+var cpDateBirth: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
 
 /// Due Date Document Identification
-var cpDueDateDocumentIdentification: NSDate?
+var cpDueDateDocumentIdentification: String?
 
 /// Family Responsibilities
-var cpFamilyResponsibilities: Int?
+var cpFamilyResponsibilities: String?
 
 /// First Names
 var cpFirstNames: String?
@@ -2370,10 +2370,10 @@ var cpPlaceBirth: String?
 var cpProfessionId: String?
 
 /// Promotion
-var cpPromotion: Bool?
+var cpPromotion: String?
 
 /// Recommendation
-var cpRecommendation: Bool?
+var cpRecommendation: String?
 
 /// Request
 var cpRequest: String?
@@ -2385,7 +2385,7 @@ var cpStatusApplicantId: String?
 var cpTaxInformationRegistry: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["ApplicantNaturalPerson","ApplicantParentId","Citizen","CivilStatusId","CreateDate","DateBirth","DocumentsPersonTypeId","DueDateDocumentIdentification","FamilyResponsibilities","FirstNames","Gender","Id","IdentificationNumber","IdentificationNumberOld","KinShipApplicantId","LastNames","MarriedLastName","Observations","PersonId","PlaceBirth","ProfessionId","Promotion","Recommendation","Request","StatusApplicantId","TaxInformationRegistry","UpdateDate"]
@@ -2396,14 +2396,14 @@ return ["ApplicantNaturalPerson","ApplicantParentId","Citizen","CivilStatusId","
   Cms_civil Status.
 */
 @objc(AL_Cms_civilStatus)
-public class  AL_Cms_civilStatus : SyedAbsarObjectBase {
+public class AL_Cms_civilStatus : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Language Id
 var cpLanguageId: String?
@@ -2417,14 +2417,14 @@ return ["Description","Id","LanguageId"]
   Cms_language.
 */
 @objc(AL_Cms_language)
-public class  AL_Cms_language : SyedAbsarObjectBase {
+public class AL_Cms_language : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
 var cpId: String?
@@ -2441,7 +2441,7 @@ return ["Description","Enabled","Id","Iso"]
   Cms_documents Person Type.
 */
 @objc(AL_Cms_documentsPersonType)
-public class  AL_Cms_documentsPersonType : SyedAbsarObjectBase {
+public class AL_Cms_documentsPersonType : SyedAbsarObjectBase {
 
 
 /// Code Identification Number
@@ -2451,7 +2451,7 @@ var cpCodeIdentificationNumber: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Person Type Id
 var cpPersonTypeId: String?
@@ -2465,7 +2465,7 @@ return ["CodeIdentificationNumber","Description","Id","PersonTypeId"]
   Cms_person Type.
 */
 @objc(AL_Cms_personType)
-public class  AL_Cms_personType : SyedAbsarObjectBase {
+public class AL_Cms_personType : SyedAbsarObjectBase {
 
 
 /// Country Id
@@ -2475,10 +2475,10 @@ var cpCountryId: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Ind Natural Person
-var cpIndNaturalPerson: Bool?
+var cpIndNaturalPerson: String?
 
 /// Origin Application Id
 var cpOriginApplicationId: String?
@@ -2492,7 +2492,7 @@ return ["CountryId","Description","Id","IndNaturalPerson","OriginApplicationId"]
   Cms_country.
 */
 @objc(AL_Cms_country)
-public class  AL_Cms_country : SyedAbsarObjectBase {
+public class AL_Cms_country : SyedAbsarObjectBase {
 
 
 /// Code
@@ -2508,7 +2508,7 @@ var cpCodeIso3: String?
 var cpCurrencyId: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -2522,11 +2522,11 @@ return ["Code","CodeIso2","CodeIso3","CurrencyId","Id","Name"]
   Currency.
 */
 @objc(AL_Currency)
-public class  AL_Currency : SyedAbsarObjectBase {
+public class AL_Currency : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -2543,11 +2543,11 @@ return ["Id","Name","Symbol"]
   Cms_origin Application.
 */
 @objc(AL_Cms_originApplication)
-public class  AL_Cms_originApplication : SyedAbsarObjectBase {
+public class AL_Cms_originApplication : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -2561,14 +2561,14 @@ return ["Id","Name"]
   Kin Ship Applicant.
 */
 @objc(AL_KinShipApplicant)
-public class  AL_KinShipApplicant : SyedAbsarObjectBase {
+public class AL_KinShipApplicant : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Language Id
 var cpLanguageId: String?
@@ -2582,11 +2582,11 @@ return ["Description","Id","LanguageId"]
   Cms_profession.
 */
 @objc(AL_Cms_profession)
-public class  AL_Cms_profession : SyedAbsarObjectBase {
+public class AL_Cms_profession : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -2600,20 +2600,20 @@ return ["Id","Name"]
   Request.
 */
 @objc(AL_Request)
-public class  AL_Request : SyedAbsarObjectBase {
+public class AL_Request : SyedAbsarObjectBase {
 
 
 /// Country Id
 var cpCountryId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Person Natural Request
-var cpIndPersonNaturalRequest: Bool?
+var cpIndPersonNaturalRequest: String?
 
 /// Person Customer Id
 var cpPersonCustomerId: String?
@@ -2634,7 +2634,7 @@ var cpProgramId: String?
 var cpReasonRejectionRequestId: String?
 
 /// Request Date
-var cpRequestDate: NSDate?
+var cpRequestDate: String?
 
 /// Request Number
 var cpRequestNumber: String?
@@ -2646,7 +2646,7 @@ var cpRequestTypeId: String?
 var cpStatusRequestId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Id
 var cpUserId: String?
@@ -2660,11 +2660,11 @@ return ["CountryId","CreateDate","Id","IndPersonNaturalRequest","PersonCustomerI
   Product Type.
 */
 @objc(AL_ProductType)
-public class  AL_ProductType : SyedAbsarObjectBase {
+public class AL_ProductType : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -2678,7 +2678,7 @@ return ["Id","Name"]
   Program.
 */
 @objc(AL_Program)
-public class  AL_Program : SyedAbsarObjectBase {
+public class AL_Program : SyedAbsarObjectBase {
 
 
 /// Bin Sponsor Id
@@ -2697,10 +2697,10 @@ var cpCardProgramManagerId: String?
 var cpCashAccess: CShort?
 
 /// Contract Date
-var cpContractDate: NSDate?
+var cpContractDate: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Currency Id
 var cpCurrencyId: String?
@@ -2709,13 +2709,13 @@ var cpCurrencyId: String?
 var cpDescription: String?
 
 /// Expected Launch Date
-var cpExpectedLaunchDate: NSDate?
+var cpExpectedLaunchDate: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Wallet
-var cpIndWallet: Bool?
+var cpIndWallet: String?
 
 /// Issuer Id
 var cpIssuerId: String?
@@ -2751,7 +2751,7 @@ var cpSharedBrand: CShort?
 var cpSourceFundsId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// Use International
 var cpUseInternational: CShort?
@@ -2768,14 +2768,14 @@ return ["BinSponsorId","BiniinNumber","CardIssuanceTypeId","CardProgramManagerId
   Bin Sponsor.
 */
 @objc(AL_BinSponsor)
-public class  AL_BinSponsor : SyedAbsarObjectBase {
+public class AL_BinSponsor : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -2786,14 +2786,14 @@ return ["Description","Id"]
   Card Issuance Type.
 */
 @objc(AL_CardIssuanceType)
-public class  AL_CardIssuanceType : SyedAbsarObjectBase {
+public class AL_CardIssuanceType : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -2804,14 +2804,14 @@ return ["Description","Id"]
   Issuer.
 */
 @objc(AL_Issuer)
-public class  AL_Issuer : SyedAbsarObjectBase {
+public class AL_Issuer : SyedAbsarObjectBase {
 
 
 /// Aba Code
 var cpAbaCode: String?
 
 /// Bin Number
-var cpBinNumber: Int?
+var cpBinNumber: String?
 
 /// Contract Number
 var cpContractNumber: String?
@@ -2832,7 +2832,7 @@ var cpEmailPersonContact: String?
 var cpFaxNumber: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Issuer Person Id
 var cpIssuerPersonId: String?
@@ -2864,7 +2864,7 @@ return ["AbaCode","BinNumber","ContractNumber","CountryId","DocumentIdentificati
   Issuer Type.
 */
 @objc(AL_IssuerType)
-public class  AL_IssuerType : SyedAbsarObjectBase {
+public class AL_IssuerType : SyedAbsarObjectBase {
 
 
 /// Description
@@ -2882,11 +2882,11 @@ return ["Description","Id"]
   Program Type.
 */
 @objc(AL_ProgramType)
-public class  AL_ProgramType : SyedAbsarObjectBase {
+public class AL_ProgramType : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -2900,14 +2900,14 @@ return ["Id","Name"]
   Responsible Network Reporting.
 */
 @objc(AL_ResponsibleNetworkReporting)
-public class  AL_ResponsibleNetworkReporting : SyedAbsarObjectBase {
+public class AL_ResponsibleNetworkReporting : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -2918,14 +2918,14 @@ return ["Description","Id"]
   Source Funds.
 */
 @objc(AL_SourceFunds)
-public class  AL_SourceFunds : SyedAbsarObjectBase {
+public class AL_SourceFunds : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -2936,7 +2936,7 @@ return ["Description","Id"]
   Reason Rejection Request.
 */
 @objc(AL_ReasonRejectionRequest)
-public class  AL_ReasonRejectionRequest : SyedAbsarObjectBase {
+public class AL_ReasonRejectionRequest : SyedAbsarObjectBase {
 
 
 /// Code
@@ -2946,7 +2946,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -2957,7 +2957,7 @@ return ["Code","Description","Id"]
   Cms_request Type.
 */
 @objc(AL_Cms_requestType)
-public class  AL_Cms_requestType : SyedAbsarObjectBase {
+public class AL_Cms_requestType : SyedAbsarObjectBase {
 
 
 /// Code
@@ -2967,7 +2967,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -2978,7 +2978,7 @@ return ["Code","Description","Id"]
   Cms_status Request.
 */
 @objc(AL_Cms_statusRequest)
-public class  AL_Cms_statusRequest : SyedAbsarObjectBase {
+public class AL_Cms_statusRequest : SyedAbsarObjectBase {
 
 
 /// Code
@@ -2988,7 +2988,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -2999,7 +2999,7 @@ return ["Code","Description","Id"]
   Cms_user.
 */
 @objc(AL_Cms_user)
-public class  AL_Cms_user : SyedAbsarObjectBase {
+public class AL_Cms_user : SyedAbsarObjectBase {
 
 
 /// Authorized Employee Id
@@ -3018,13 +3018,13 @@ var cpDocumentsPersonTypeId: String?
 var cpEmployeeId: String?
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// First Names
 var cpFirstNames: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Identification Number
 var cpIdentificationNumber: String?
@@ -3050,7 +3050,7 @@ return ["AuthorizedEmployeeId","Code","ComercialAgencyId","DocumentsPersonTypeId
   Cms_employee.
 */
 @objc(AL_Cms_employee)
-public class  AL_Cms_employee : SyedAbsarObjectBase {
+public class AL_Cms_employee : SyedAbsarObjectBase {
 
 
 /// Comercial Agency Id
@@ -3066,10 +3066,10 @@ var cpEmployedPositionId: String?
 var cpFirstNames: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Identification Number
-var cpIdentificationNumber: Int?
+var cpIdentificationNumber: String?
 
 /// Last Names
 var cpLastNames: String?
@@ -3086,14 +3086,14 @@ return ["ComercialAgencyId","DocumentsPersonTypeId","EmployedPositionId","FirstN
   Cms_comercial Agency.
 */
 @objc(AL_Cms_comercialAgency)
-public class  AL_Cms_comercialAgency : SyedAbsarObjectBase {
+public class AL_Cms_comercialAgency : SyedAbsarObjectBase {
 
 
 /// City Id
 var cpCityId: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -3107,11 +3107,11 @@ return ["CityId","Id","Name"]
   Cms_city.
 */
 @objc(AL_Cms_city)
-public class  AL_Cms_city : SyedAbsarObjectBase {
+public class AL_Cms_city : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -3128,7 +3128,7 @@ return ["Id","Name","StateId"]
   Cms_state.
 */
 @objc(AL_Cms_state)
-public class  AL_Cms_state : SyedAbsarObjectBase {
+public class AL_Cms_state : SyedAbsarObjectBase {
 
 
 /// Code
@@ -3138,7 +3138,7 @@ var cpCode: String?
 var cpCountryId: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -3152,11 +3152,11 @@ return ["Code","CountryId","Id","Name"]
   Cms_employed Position.
 */
 @objc(AL_Cms_employedPosition)
-public class  AL_Cms_employedPosition : SyedAbsarObjectBase {
+public class AL_Cms_employedPosition : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -3170,7 +3170,7 @@ return ["Id","Name"]
   Cms_status Applicant.
 */
 @objc(AL_Cms_statusApplicant)
-public class  AL_Cms_statusApplicant : SyedAbsarObjectBase {
+public class AL_Cms_statusApplicant : SyedAbsarObjectBase {
 
 
 /// Code
@@ -3180,7 +3180,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -3191,7 +3191,7 @@ return ["Code","Description","Id"]
   Card Request Natural Person.
 */
 @objc(AL_CardRequestNaturalPerson)
-public class  AL_CardRequestNaturalPerson : SyedAbsarObjectBase {
+public class AL_CardRequestNaturalPerson : SyedAbsarObjectBase {
 
 
 /// Documents Person Type Id
@@ -3225,7 +3225,7 @@ var cpPersonId: String?
 var cpPositionEnterprise: String?
 
 /// Proposed Limit
-var cpProposedLimit: Float?
+var cpProposedLimit: String?
 
 /// Status Applicant Id
 var cpStatusApplicantId: String?
@@ -3239,14 +3239,14 @@ return ["DocumentsPersonTypeId","FirstNames","Id","IdentificationNumber","LastNa
   Legal Customer.
 */
 @objc(AL_LegalCustomer)
-public class  AL_LegalCustomer : SyedAbsarObjectBase {
+public class AL_LegalCustomer : SyedAbsarObjectBase {
 
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Date Inscription Register
-var cpDateInscriptionRegister: NSDate?
+var cpDateInscriptionRegister: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
@@ -3264,7 +3264,7 @@ var cpId: String?
 var cpIdentificationNumber: String?
 
 /// Payed Capital
-var cpPayedCapital: Float?
+var cpPayedCapital: String?
 
 /// Person Id
 var cpPersonId: String?
@@ -3279,7 +3279,7 @@ var cpStatusCustomerId: String?
 var cpTradeName: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// Web Site
 var cpWebSite: String?
@@ -3293,7 +3293,7 @@ return ["CreateDate","DateInscriptionRegister","DocumentsPersonTypeId","Economic
   Economic Activity.
 */
 @objc(AL_EconomicActivity)
-public class  AL_EconomicActivity : SyedAbsarObjectBase {
+public class AL_EconomicActivity : SyedAbsarObjectBase {
 
 
 /// Code
@@ -3306,7 +3306,7 @@ var cpCountryId: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","CountryId","Description","Id"]
@@ -3317,14 +3317,14 @@ return ["Code","CountryId","Description","Id"]
   Status Customer.
 */
 @objc(AL_StatusCustomer)
-public class  AL_StatusCustomer : SyedAbsarObjectBase {
+public class AL_StatusCustomer : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -3335,14 +3335,14 @@ return ["Description","Id"]
   Cms_legal Person.
 */
 @objc(AL_Cms_legalPerson)
-public class  AL_Cms_legalPerson : SyedAbsarObjectBase {
+public class AL_Cms_legalPerson : SyedAbsarObjectBase {
 
 
 /// Code Identification Number
 var cpCodeIdentificationNumber: String?
 
 /// Date Inscription Register
-var cpDateInscriptionRegister: NSDate?
+var cpDateInscriptionRegister: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
@@ -3363,7 +3363,7 @@ var cpId: String?
 var cpIdentificationNumber: String?
 
 /// Payed Capital
-var cpPayedCapital: Float?
+var cpPayedCapital: String?
 
 /// Person Id
 var cpPersonId: String?
@@ -3389,23 +3389,23 @@ return ["CodeIdentificationNumber","DateInscriptionRegister","DocumentsPersonTyp
   Legal Representatives.
 */
 @objc(AL_LegalRepresentatives)
-public class  AL_LegalRepresentatives : SyedAbsarObjectBase {
+public class AL_LegalRepresentatives : SyedAbsarObjectBase {
 
 
 /// Age
-var cpAge: Int?
+var cpAge: String?
 
 /// Civil Status Id
 var cpCivilStatusId: String?
 
 /// Date Birth
-var cpDateBirth: NSDate?
+var cpDateBirth: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
 
 /// Due Date Document Identification
-var cpDueDateDocumentIdentification: NSDate?
+var cpDueDateDocumentIdentification: String?
 
 /// First Names
 var cpFirstNames: String?
@@ -3414,7 +3414,7 @@ var cpFirstNames: String?
 var cpGender: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Identification Number
 var cpIdentificationNumber: String?
@@ -3443,29 +3443,29 @@ return ["Age","CivilStatusId","DateBirth","DocumentsPersonTypeId","DueDateDocume
   Natural Customer.
 */
 @objc(AL_NaturalCustomer)
-public class  AL_NaturalCustomer : SyedAbsarObjectBase {
+public class AL_NaturalCustomer : SyedAbsarObjectBase {
 
 
 /// Civil Status Id
 var cpCivilStatusId: String?
 
 /// Country Stay Time
-var cpCountryStayTime: Int?
+var cpCountryStayTime: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Date Birth
-var cpDateBirth: NSDate?
+var cpDateBirth: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
 
 /// Due Date Document Identification
-var cpDueDateDocumentIdentification: NSDate?
+var cpDueDateDocumentIdentification: String?
 
 /// Family Responsibilities
-var cpFamilyResponsibilities: Int?
+var cpFamilyResponsibilities: String?
 
 /// First Names
 var cpFirstNames: String?
@@ -3483,10 +3483,10 @@ var cpIdentificationNumber: String?
 var cpIdentificationNumberOld: String?
 
 /// Ind Foreign
-var cpIndForeign: Bool?
+var cpIndForeign: String?
 
 /// Ind Naturalized
-var cpIndNaturalized: Bool?
+var cpIndNaturalized: String?
 
 /// Kin Ship Applicant Id
 var cpKinShipApplicantId: String?
@@ -3516,7 +3516,7 @@ var cpRifNumber: String?
 var cpStatusCustomerId: String?
 
 /// Updatedate
-var cpUpdatedate: NSDate?
+var cpUpdatedate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CivilStatusId","CountryStayTime","CreateDate","DateBirth","DocumentsPersonTypeId","DueDateDocumentIdentification","FamilyResponsibilities","FirstNames","Gender","Id","IdentificationNumber","IdentificationNumberOld","IndForeign","IndNaturalized","KinShipApplicantId","LastNames","MarriedLastName","NaturalCustomerId","PersonId","PlaceBirth","ProfessionId","RifNumber","StatusCustomerId","Updatedate"]
@@ -3527,26 +3527,26 @@ return ["CivilStatusId","CountryStayTime","CreateDate","DateBirth","DocumentsPer
   Cms_natural Person.
 */
 @objc(AL_Cms_naturalPerson)
-public class  AL_Cms_naturalPerson : SyedAbsarObjectBase {
+public class AL_Cms_naturalPerson : SyedAbsarObjectBase {
 
 
 /// Civil Status Id
 var cpCivilStatusId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Date Birth
-var cpDateBirth: NSDate?
+var cpDateBirth: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
 
 /// Due Date Document Identification
-var cpDueDateDocumentIdentification: NSDate?
+var cpDueDateDocumentIdentification: String?
 
 /// Family Responsibilities
-var cpFamilyResponsibilities: Int?
+var cpFamilyResponsibilities: String?
 
 /// First Names
 var cpFirstNames: String?
@@ -3579,7 +3579,7 @@ var cpPlaceBirth: String?
 var cpProfessionId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CivilStatusId","CreateDate","DateBirth","DocumentsPersonTypeId","DueDateDocumentIdentification","FamilyResponsibilities","FirstNames","Gender","Id","IdentificationNumber","IdentificationNumberOld","LastNames","MarriedLastName","PersonId","PlaceBirth","ProfessionId","UpdateDate"]
@@ -3590,7 +3590,7 @@ return ["CivilStatusId","CreateDate","DateBirth","DocumentsPersonTypeId","DueDat
   Cms_person Classification.
 */
 @objc(AL_Cms_personClassification)
-public class  AL_Cms_personClassification : SyedAbsarObjectBase {
+public class AL_Cms_personClassification : SyedAbsarObjectBase {
 
 
 /// Code
@@ -3600,7 +3600,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -3611,14 +3611,14 @@ return ["Code","Description","Id"]
   Cms_person Has Address.
 */
 @objc(AL_Cms_personHasAddress)
-public class  AL_Cms_personHasAddress : SyedAbsarObjectBase {
+public class AL_Cms_personHasAddress : SyedAbsarObjectBase {
 
 
 /// Address Id
 var cpAddressId: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Person Id
 var cpPersonId: String?
@@ -3632,7 +3632,7 @@ return ["AddressId","Id","PersonId"]
   Cms_address.
 */
 @objc(AL_Cms_address)
-public class  AL_Cms_address : SyedAbsarObjectBase {
+public class AL_Cms_address : SyedAbsarObjectBase {
 
 
 /// Address Line1
@@ -3651,19 +3651,19 @@ var cpCityId: String?
 var cpCountryId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Edification Type Id
 var cpEdificationTypeId: String?
 
 /// Floor
-var cpFloor: Int?
+var cpFloor: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Ind Address Delivery
-var cpIndAddressDelivery: Bool?
+var cpIndAddressDelivery: String?
 
 /// Name Edification
 var cpNameEdification: String?
@@ -3681,7 +3681,7 @@ var cpStreetTypeId: String?
 var cpTower: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// Urbanization
 var cpUrbanization: String?
@@ -3701,14 +3701,14 @@ return ["AddressLine1","AddressLine2","AddressTypeId","CityId","CountryId","Crea
   Cms_address Type.
 */
 @objc(AL_Cms_addressType)
-public class  AL_Cms_addressType : SyedAbsarObjectBase {
+public class AL_Cms_addressType : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -3719,7 +3719,7 @@ return ["Description","Id"]
   Cms_edification Type.
 */
 @objc(AL_Cms_edificationType)
-public class  AL_Cms_edificationType : SyedAbsarObjectBase {
+public class AL_Cms_edificationType : SyedAbsarObjectBase {
 
 
 /// Code
@@ -3729,7 +3729,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -3740,14 +3740,14 @@ return ["Code","Description","Id"]
   Cms_street Type.
 */
 @objc(AL_Cms_streetType)
-public class  AL_Cms_streetType : SyedAbsarObjectBase {
+public class AL_Cms_streetType : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -3758,7 +3758,7 @@ return ["Description","Id"]
   Zip Zone.
 */
 @objc(AL_ZipZone)
-public class  AL_ZipZone : SyedAbsarObjectBase {
+public class AL_ZipZone : SyedAbsarObjectBase {
 
 
 /// City Id
@@ -3768,7 +3768,7 @@ var cpCityId: String?
 var cpCode: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -3782,7 +3782,7 @@ return ["CityId","Code","Id","Name"]
   Cms_phone Person.
 */
 @objc(AL_Cms_phonePerson)
-public class  AL_Cms_phonePerson : SyedAbsarObjectBase {
+public class AL_Cms_phonePerson : SyedAbsarObjectBase {
 
 
 /// Area Code
@@ -3801,7 +3801,7 @@ var cpExtensionPhoneNumber: String?
 var cpId: String?
 
 /// Ind Main Phone
-var cpIndMainPhone: Bool?
+var cpIndMainPhone: String?
 
 /// Number Phone
 var cpNumberPhone: String?
@@ -3821,14 +3821,14 @@ return ["AreaCode","CountryCode","CountryId","ExtensionPhoneNumber","Id","IndMai
   Cms_phone Type.
 */
 @objc(AL_Cms_phoneType)
-public class  AL_Cms_phoneType : SyedAbsarObjectBase {
+public class AL_Cms_phoneType : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -3839,7 +3839,7 @@ return ["Description","Id"]
   Plastic Manufacturer.
 */
 @objc(AL_PlasticManufacturer)
-public class  AL_PlasticManufacturer : SyedAbsarObjectBase {
+public class AL_PlasticManufacturer : SyedAbsarObjectBase {
 
 
 /// Contact Person
@@ -3855,13 +3855,13 @@ var cpDocumentsPersonTypeId: String?
 var cpEmailContactPerson: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Identification Number
 var cpIdentificationNumber: String?
 
 /// Ind Status
-var cpIndStatus: Bool?
+var cpIndStatus: String?
 
 /// Name
 var cpName: String?
@@ -3878,7 +3878,7 @@ return ["ContactPerson","ContractNumber","DocumentsPersonTypeId","EmailContactPe
   Cms_review O F A C.
 */
 @objc(AL_Cms_reviewOFAC)
-public class  AL_Cms_reviewOFAC : SyedAbsarObjectBase {
+public class AL_Cms_reviewOFAC : SyedAbsarObjectBase {
 
 
 /// Id
@@ -3891,7 +3891,7 @@ var cpPersonId: String?
 var cpRequestId: String?
 
 /// Result Review
-var cpResultReview: Float?
+var cpResultReview: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Id","PersonId","RequestId","ResultReview"]
@@ -3902,17 +3902,17 @@ return ["Id","PersonId","RequestId","ResultReview"]
   Cms_product.
 */
 @objc(AL_Cms_product)
-public class  AL_Cms_product : SyedAbsarObjectBase {
+public class AL_Cms_product : SyedAbsarObjectBase {
 
 
 /// Activation Date
-var cpActivationDate: NSDate?
+var cpActivationDate: String?
 
 /// Approval Product Rate
 var cpApprovalProductRate: String?
 
 /// Begin Date Validity
-var cpBeginDateValidity: NSDate?
+var cpBeginDateValidity: String?
 
 /// Bin Number
 var cpBinNumber: String?
@@ -3927,34 +3927,34 @@ var cpCardRequest: String?
 var cpCountryId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Days Before Expiration
-var cpDaysBeforeExpiration: Int?
+var cpDaysBeforeExpiration: String?
 
 /// Days To Activate
-var cpDaysToActivate: Int?
+var cpDaysToActivate: String?
 
 /// Days To Inactivate
-var cpDaysToInactivate: Int?
+var cpDaysToInactivate: String?
 
 /// Days To Use
-var cpDaysToUse: Int?
+var cpDaysToUse: String?
 
 /// Days To Withdraw Card
-var cpDaysToWithdrawCard: Int?
+var cpDaysToWithdrawCard: String?
 
 /// Domestic Currency Id
 var cpDomesticCurrencyId: String?
 
 /// End Date Validity
-var cpEndDateValidity: NSDate?
+var cpEndDateValidity: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Activation
-var cpIndActivation: Bool?
+var cpIndActivation: String?
 
 /// International Currency Id
 var cpInternationalCurrencyId: String?
@@ -3969,13 +3969,13 @@ var cpKindCardId: String?
 var cpLevelProductId: String?
 
 /// Maximum Balance
-var cpMaximumBalance: Float?
+var cpMaximumBalance: String?
 
 /// Maximun Deactivation Time Blocking
-var cpMaximunDeactivationTimeBlocking: Int?
+var cpMaximunDeactivationTimeBlocking: String?
 
 /// Minimum Balance
-var cpMinimumBalance: Float?
+var cpMinimumBalance: String?
 
 /// Name
 var cpName: String?
@@ -4017,13 +4017,13 @@ var cpStatusProductId: String?
 var cpStorageMedioid: String?
 
 /// Updatedate
-var cpUpdatedate: NSDate?
+var cpUpdatedate: String?
 
 /// User Activation Id
 var cpUserActivationId: String?
 
 /// Validity Months
-var cpValidityMonths: Int?
+var cpValidityMonths: String?
 
 /// Segment Marketing Id
 var cpSegmentMarketingId: String?
@@ -4037,26 +4037,26 @@ return ["ActivationDate","ApprovalProductRate","BeginDateValidity","BinNumber","
   Approval Product Rate.
 */
 @objc(AL_ApprovalProductRate)
-public class  AL_ApprovalProductRate : SyedAbsarObjectBase {
+public class AL_ApprovalProductRate : SyedAbsarObjectBase {
 
 
 /// Approval Date
-var cpApprovalDate: NSDate?
+var cpApprovalDate: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Approved
-var cpIndApproved: Bool?
+var cpIndApproved: String?
 
 /// Product Id
 var cpProductId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Id
 var cpUserId: String?
@@ -4070,7 +4070,7 @@ return ["ApprovalDate","CreateDate","Id","IndApproved","ProductId","UpdateDate",
   Card Request.
 */
 @objc(AL_CardRequest)
-public class  AL_CardRequest : SyedAbsarObjectBase {
+public class AL_CardRequest : SyedAbsarObjectBase {
 
 
 /// Card Status Id
@@ -4094,14 +4094,14 @@ return ["CardStatusId","Id","ProductId","RequestId"]
   Kind Card.
 */
 @objc(AL_KindCard)
-public class  AL_KindCard : SyedAbsarObjectBase {
+public class AL_KindCard : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -4112,14 +4112,14 @@ return ["Description","Id"]
   Level Product.
 */
 @objc(AL_LevelProduct)
-public class  AL_LevelProduct : SyedAbsarObjectBase {
+public class AL_LevelProduct : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -4130,44 +4130,44 @@ return ["Description","Id"]
   Product Has Channel Has Transaction.
 */
 @objc(AL_ProductHasChannelHasTransaction)
-public class  AL_ProductHasChannelHasTransaction : SyedAbsarObjectBase {
+public class AL_ProductHasChannelHasTransaction : SyedAbsarObjectBase {
 
 
 /// Amount Maximum Transaction Domestic
-var cpAmountMaximumTransactionDomestic: Float?
+var cpAmountMaximumTransactionDomestic: String?
 
 /// Amount Maximum Transaction International
-var cpAmountMaximumTransactionInternational: Float?
+var cpAmountMaximumTransactionInternational: String?
 
 /// Amount Minimum Transaction Domestic
-var cpAmountMinimumTransactionDomestic: Float?
+var cpAmountMinimumTransactionDomestic: String?
 
 /// Amount Minimum Transaction International
-var cpAmountMinimumTransactionInternational: Float?
+var cpAmountMinimumTransactionInternational: String?
 
 /// Channel Id
 var cpChannelId: String?
 
 /// Daily Amount Limit Domestic
-var cpDailyAmountLimitDomestic: Float?
+var cpDailyAmountLimitDomestic: String?
 
 /// Daily Amount Limit International
-var cpDailyAmountLimitInternational: Float?
+var cpDailyAmountLimitInternational: String?
 
 /// Id
 var cpId: String?
 
 /// Maximum Number Transactions Daily
-var cpMaximumNumberTransactionsDaily: Int?
+var cpMaximumNumberTransactionsDaily: String?
 
 /// Maximum Number Transactions Monthly
-var cpMaximumNumberTransactionsMonthly: Int?
+var cpMaximumNumberTransactionsMonthly: String?
 
 /// Monthly Amount Limit Domestic
-var cpMonthlyAmountLimitDomestic: Float?
+var cpMonthlyAmountLimitDomestic: String?
 
 /// Monthly Amount Limit International
-var cpMonthlyAmountLimitInternational: Float?
+var cpMonthlyAmountLimitInternational: String?
 
 /// Product Id
 var cpProductId: String?
@@ -4187,14 +4187,14 @@ return ["AmountMaximumTransactionDomestic","AmountMaximumTransactionInternationa
   Channel.
 */
 @objc(AL_Channel)
-public class  AL_Channel : SyedAbsarObjectBase {
+public class AL_Channel : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -4208,14 +4208,14 @@ return ["Description","Id","Name"]
   Product Use.
 */
 @objc(AL_ProductUse)
-public class  AL_ProductUse : SyedAbsarObjectBase {
+public class AL_ProductUse : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -4226,7 +4226,7 @@ return ["Description","Id"]
   Cms_transaction.
 */
 @objc(AL_Cms_transaction)
-public class  AL_Cms_transaction : SyedAbsarObjectBase {
+public class AL_Cms_transaction : SyedAbsarObjectBase {
 
 
 /// Code
@@ -4236,16 +4236,16 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Ind Monetary Type
-var cpIndMonetaryType: Bool?
+var cpIndMonetaryType: String?
 
 /// Ind Transaction Purchase
-var cpIndTransactionPurchase: Bool?
+var cpIndTransactionPurchase: String?
 
 /// Ind Variation Rate Channel
-var cpIndVariationRateChannel: Bool?
+var cpIndVariationRateChannel: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id","IndMonetaryType","IndTransactionPurchase","IndVariationRateChannel"]
@@ -4256,14 +4256,14 @@ return ["Code","Description","Id","IndMonetaryType","IndTransactionPurchase","In
   Product Has Commerce Category.
 */
 @objc(AL_ProductHasCommerceCategory)
-public class  AL_ProductHasCommerceCategory : SyedAbsarObjectBase {
+public class AL_ProductHasCommerceCategory : SyedAbsarObjectBase {
 
 
 /// Commerce Category Id
 var cpCommerceCategoryId: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Product Id
 var cpProductId: String?
@@ -4277,7 +4277,7 @@ return ["CommerceCategoryId","Id","ProductId"]
   Commerce Category.
 */
 @objc(AL_CommerceCategory)
-public class  AL_CommerceCategory : SyedAbsarObjectBase {
+public class AL_CommerceCategory : SyedAbsarObjectBase {
 
 
 /// Description Economic Activity
@@ -4287,7 +4287,7 @@ var cpDescriptionEconomicActivity: String?
 var cpEconomicActivity: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Mcc Code
 var cpMccCode: String?
@@ -4304,11 +4304,11 @@ return ["DescriptionEconomicActivity","EconomicActivity","Id","MccCode","Segment
   Segment Commerce.
 */
 @objc(AL_SegmentCommerce)
-public class  AL_SegmentCommerce : SyedAbsarObjectBase {
+public class AL_SegmentCommerce : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -4322,32 +4322,32 @@ return ["Id","Name"]
   Program Loyalty.
 */
 @objc(AL_ProgramLoyalty)
-public class  AL_ProgramLoyalty : SyedAbsarObjectBase {
+public class AL_ProgramLoyalty : SyedAbsarObjectBase {
 
 
 /// Activation Date
-var cpActivationDate: NSDate?
+var cpActivationDate: String?
 
 /// Activation Observations
 var cpActivationObservations: String?
 
 /// Conversion Rate Points
-var cpConversionRatePoints: Float?
+var cpConversionRatePoints: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Description
 var cpDescription: String?
 
 /// End Date
-var cpEndDate: NSDate?
+var cpEndDate: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Activation
-var cpIndActivation: Bool?
+var cpIndActivation: String?
 
 /// Observations
 var cpObservations: String?
@@ -4362,13 +4362,13 @@ var cpProgramId: String?
 var cpProgramLoyaltyTypeId: String?
 
 /// Start Date
-var cpStartDate: NSDate?
+var cpStartDate: String?
 
 /// Status Program Loyalty Id
 var cpStatusProgramLoyaltyId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Activation Id
 var cpUserActivationId: String?
@@ -4382,11 +4382,11 @@ return ["ActivationDate","ActivationObservations","ConversionRatePoints","Create
   Program Loyalty Type.
 */
 @objc(AL_ProgramLoyaltyType)
-public class  AL_ProgramLoyaltyType : SyedAbsarObjectBase {
+public class AL_ProgramLoyaltyType : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -4400,14 +4400,14 @@ return ["Id","Name"]
   Status Program Loyalty.
 */
 @objc(AL_StatusProgramLoyalty)
-public class  AL_StatusProgramLoyalty : SyedAbsarObjectBase {
+public class AL_StatusProgramLoyalty : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -4418,7 +4418,7 @@ return ["Description","Id"]
   Rate By Product.
 */
 @objc(AL_RateByProduct)
-public class  AL_RateByProduct : SyedAbsarObjectBase {
+public class AL_RateByProduct : SyedAbsarObjectBase {
 
 
 /// Approval Product Rate Id
@@ -4428,25 +4428,25 @@ var cpApprovalProductRateId: String?
 var cpChannelId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Fixed Rate
-var cpFixedRate: Float?
+var cpFixedRate: String?
 
 /// Fixed Rate P R
-var cpFixedRatePR: Float?
+var cpFixedRatePR: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Card Holder Modification
-var cpIndCardHolderModification: Bool?
+var cpIndCardHolderModification: String?
 
 /// Percentage Rate
-var cpPercentageRate: Float?
+var cpPercentageRate: String?
 
 /// Percentage Rate P R
-var cpPercentageRatePR: Float?
+var cpPercentageRatePR: String?
 
 /// Product Id
 var cpProductId: String?
@@ -4455,22 +4455,22 @@ var cpProductId: String?
 var cpRateApplicationTypeId: String?
 
 /// Total Initial Transactions Exempt
-var cpTotalInitialTransactionsExempt: Int?
+var cpTotalInitialTransactionsExempt: String?
 
 /// Total Initial Transactions Exempt P R
-var cpTotalInitialTransactionsExemptPR: Int?
+var cpTotalInitialTransactionsExemptPR: String?
 
 /// Total Transactions Exempt Per Month
-var cpTotalTransactionsExemptPerMonth: Int?
+var cpTotalTransactionsExemptPerMonth: String?
 
 /// Total Transactions Exempt Per Month P R
-var cpTotalTransactionsExemptPerMonthPR: Int?
+var cpTotalTransactionsExemptPerMonthPR: String?
 
 /// Transaction Id
 var cpTransactionId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["ApprovalProductRateId","ChannelId","CreateDate","FixedRate","FixedRatePR","Id","IndCardHolderModification","PercentageRate","PercentageRatePR","ProductId","RateApplicationTypeId","TotalInitialTransactionsExempt","TotalInitialTransactionsExemptPR","TotalTransactionsExemptPerMonth","TotalTransactionsExemptPerMonthPR","TransactionId","UpdateDate"]
@@ -4481,14 +4481,14 @@ return ["ApprovalProductRateId","ChannelId","CreateDate","FixedRate","FixedRateP
   Rate Application Type.
 */
 @objc(AL_RateApplicationType)
-public class  AL_RateApplicationType : SyedAbsarObjectBase {
+public class AL_RateApplicationType : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -4499,20 +4499,20 @@ return ["Description","Id"]
   Review Request.
 */
 @objc(AL_ReviewRequest)
-public class  AL_ReviewRequest : SyedAbsarObjectBase {
+public class AL_ReviewRequest : SyedAbsarObjectBase {
 
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Approved
-var cpIndApproved: Bool?
+var cpIndApproved: String?
 
 /// Maximum Recharge Amount
-var cpMaximumRechargeAmount: Float?
+var cpMaximumRechargeAmount: String?
 
 /// Observations
 var cpObservations: String?
@@ -4524,13 +4524,13 @@ var cpProductId: String?
 var cpRequestId: String?
 
 /// Review Date
-var cpReviewDate: NSDate?
+var cpReviewDate: String?
 
 /// Review Request Type Id
 var cpReviewRequestTypeId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Id
 var cpUserId: String?
@@ -4544,14 +4544,14 @@ return ["CreateDate","Id","IndApproved","MaximumRechargeAmount","Observations","
   Review Request Type.
 */
 @objc(AL_ReviewRequestType)
-public class  AL_ReviewRequestType : SyedAbsarObjectBase {
+public class AL_ReviewRequestType : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -4562,14 +4562,14 @@ return ["Description","Id"]
   Status Product.
 */
 @objc(AL_StatusProduct)
-public class  AL_StatusProduct : SyedAbsarObjectBase {
+public class AL_StatusProduct : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -4580,14 +4580,14 @@ return ["Description","Id"]
   Storage Medio.
 */
 @objc(AL_StorageMedio)
-public class  AL_StorageMedio : SyedAbsarObjectBase {
+public class AL_StorageMedio : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -4598,14 +4598,14 @@ return ["Description","Id"]
   Segment Marketing.
 */
 @objc(AL_SegmentMarketing)
-public class  AL_SegmentMarketing : SyedAbsarObjectBase {
+public class AL_SegmentMarketing : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -4619,20 +4619,20 @@ return ["Description","Id","Name"]
   Status Update Reason.
 */
 @objc(AL_StatusUpdateReason)
-public class  AL_StatusUpdateReason : SyedAbsarObjectBase {
+public class AL_StatusUpdateReason : SyedAbsarObjectBase {
 
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CreateDate","Description","Id","UpdateDate"]
@@ -4643,14 +4643,14 @@ return ["CreateDate","Description","Id","UpdateDate"]
   Validate Recharge Card.
 */
 @objc(AL_ValidateRechargeCard)
-public class  AL_ValidateRechargeCard : SyedAbsarObjectBase {
+public class AL_ValidateRechargeCard : SyedAbsarObjectBase {
 
 
 /// Recharge Amount
 var cpRechargeAmount: String?
 
 /// Include Fee
-var cpIncludeFee: Bool?
+var cpIncludeFee: String?
 
 override static func cpKeys() -> Array<String> {
 return ["RechargeAmount","IncludeFee"]
@@ -4661,7 +4661,7 @@ return ["RechargeAmount","IncludeFee"]
   Validate Recharge Card Response.
 */
 @objc(AL_ValidateRechargeCardResponse)
-public class  AL_ValidateRechargeCardResponse : SyedAbsarObjectBase {
+public class AL_ValidateRechargeCardResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -4676,7 +4676,7 @@ return ["Return"]
   Recharge Validation Response.
 */
 @objc(AL_RechargeValidationResponse)
-public class  AL_RechargeValidationResponse : SyedAbsarObjectBase {
+public class AL_RechargeValidationResponse : SyedAbsarObjectBase {
 
 
 /// Amount Before Fee
@@ -4697,7 +4697,7 @@ return ["AmountBeforeFee","TotalFee","TotalAmount"]
   Get Validate Collection.
 */
 @objc(AL_GetValidateCollection)
-public class  AL_GetValidateCollection : SyedAbsarObjectBase {
+public class AL_GetValidateCollection : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -4715,7 +4715,7 @@ return ["UserId","Language"]
   Get Validate Collection Response.
 */
 @objc(AL_GetValidateCollectionResponse)
-public class  AL_GetValidateCollectionResponse : SyedAbsarObjectBase {
+public class AL_GetValidateCollectionResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -4730,7 +4730,7 @@ return ["Return"]
   Collection List Response.
 */
 @objc(AL_CollectionListResponse)
-public class  AL_CollectionListResponse : SyedAbsarObjectBase {
+public class AL_CollectionListResponse : SyedAbsarObjectBase {
 
 
 /// Validation Collections
@@ -4745,7 +4745,7 @@ return ["ValidationCollections"]
   Validation Collection.
 */
 @objc(AL_ValidationCollection)
-public class  AL_ValidationCollection : SyedAbsarObjectBase {
+public class AL_ValidationCollection : SyedAbsarObjectBase {
 
 
 /// Additional
@@ -4775,7 +4775,7 @@ return ["Additional","CountryId","Id","LanguageId","Name","Status"]
   Get Product Prepaid Card By User.
 */
 @objc(AL_GetProductPrepaidCardByUser)
-public class  AL_GetProductPrepaidCardByUser : SyedAbsarObjectBase {
+public class AL_GetProductPrepaidCardByUser : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -4790,7 +4790,7 @@ return ["UserId"]
   Get Product Prepaid Card By User Response.
 */
 @objc(AL_GetProductPrepaidCardByUserResponse)
-public class  AL_GetProductPrepaidCardByUserResponse : SyedAbsarObjectBase {
+public class AL_GetProductPrepaidCardByUserResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -4805,7 +4805,7 @@ return ["Return"]
   Product Response.
 */
 @objc(AL_ProductResponse)
-public class  AL_ProductResponse : SyedAbsarObjectBase {
+public class AL_ProductResponse : SyedAbsarObjectBase {
 
 
 /// Response
@@ -4820,7 +4820,7 @@ return ["Response"]
   Retrive Income Plaid.
 */
 @objc(AL_RetriveIncomePlaid)
-public class  AL_RetriveIncomePlaid : SyedAbsarObjectBase {
+public class AL_RetriveIncomePlaid : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -4832,7 +4832,7 @@ return []
   Retrive Income Plaid Response.
 */
 @objc(AL_RetriveIncomePlaidResponse)
-public class  AL_RetriveIncomePlaidResponse : SyedAbsarObjectBase {
+public class AL_RetriveIncomePlaidResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -4847,7 +4847,7 @@ return ["Return"]
   Retrive Income Plaid Responses.
 */
 @objc(AL_RetriveIncomePlaidResponses)
-public class  AL_RetriveIncomePlaidResponses : SyedAbsarObjectBase {
+public class AL_RetriveIncomePlaidResponses : SyedAbsarObjectBase {
 
 
 /// Products
@@ -4865,7 +4865,7 @@ return ["Products","RetriveIncomeResponse"]
   Retrive Income Response.
 */
 @objc(AL_RetriveIncomeResponse)
-public class  AL_RetriveIncomeResponse : SyedAbsarObjectBase {
+public class AL_RetriveIncomeResponse : SyedAbsarObjectBase {
 
 
 /// Income
@@ -4883,7 +4883,7 @@ return ["Income","Request_id"]
   Income.
 */
 @objc(AL_Income)
-public class  AL_Income : SyedAbsarObjectBase {
+public class AL_Income : SyedAbsarObjectBase {
 
 
 /// Income Streams
@@ -4916,7 +4916,7 @@ return ["IncomeStreams","Last_year_income","Last_year_income_before_tax","Max_nu
   Income Stream.
 */
 @objc(AL_IncomeStream)
-public class  AL_IncomeStream : SyedAbsarObjectBase {
+public class AL_IncomeStream : SyedAbsarObjectBase {
 
 
 /// Confidence
@@ -4937,61 +4937,10 @@ return ["Confidence","Days","Monthly_income","Name"]
 }
 
 /**
-  Manual Withdrawals Business.
-*/
-@objc(AL_ManualWithdrawalsBusiness)
-public class  AL_ManualWithdrawalsBusiness : SyedAbsarObjectBase {
-
-
-/// Bank Id
-var cpBankId: String?
-
-/// Account Bank Business Id
-var cpAccountBankBusinessId: String?
-
-/// Account Bank
-var cpAccountBank: String?
-
-/// Amount Withdrawal
-var cpAmountWithdrawal: Float?
-
-/// Product Id
-var cpProductId: String?
-
-/// Concept Transaction
-var cpConceptTransaction: String?
-
-/// Business Id
-var cpBusinessId: String?
-
-/// Business Transaction Id
-var cpBusinessTransactionId: String?
-
-override static func cpKeys() -> Array<String> {
-return ["BankId","AccountBankBusinessId","AccountBank","AmountWithdrawal","ProductId","ConceptTransaction","BusinessId","BusinessTransactionId"]
-}
-}
-
-/**
-  Manual Withdrawals Business Response.
-*/
-@objc(AL_ManualWithdrawalsBusinessResponse)
-public class  AL_ManualWithdrawalsBusinessResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
-}
-}
-
-/**
   Check Status Card By Business.
 */
 @objc(AL_CheckStatusCardByBusiness)
-public class  AL_CheckStatusCardByBusiness : SyedAbsarObjectBase {
+public class AL_CheckStatusCardByBusiness : SyedAbsarObjectBase {
 
 
 /// User Email
@@ -5009,7 +4958,7 @@ return ["UserEmail","TimeZone"]
   Check Status Card By Business Response.
 */
 @objc(AL_CheckStatusCardByBusinessResponse)
-public class  AL_CheckStatusCardByBusinessResponse : SyedAbsarObjectBase {
+public class AL_CheckStatusCardByBusinessResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -5024,7 +4973,7 @@ return ["Return"]
   Check Status Card Responses.
 */
 @objc(AL_CheckStatusCardResponses)
-public class  AL_CheckStatusCardResponses : SyedAbsarObjectBase {
+public class AL_CheckStatusCardResponses : SyedAbsarObjectBase {
 
 
 /// Check Status Credential Card
@@ -5039,7 +4988,7 @@ return ["CheckStatusCredentialCard"]
   Check Status Credential Card.
 */
 @objc(AL_CheckStatusCredentialCard)
-public class  AL_CheckStatusCredentialCard : SyedAbsarObjectBase {
+public class AL_CheckStatusCredentialCard : SyedAbsarObjectBase {
 
 
 /// Code
@@ -5141,10 +5090,61 @@ return ["Code","Description","Ticket","BiginingAtention","EndingAtention","Timer
 }
 
 /**
+  Manual Withdrawals Business.
+*/
+@objc(AL_ManualWithdrawalsBusiness)
+public class AL_ManualWithdrawalsBusiness : SyedAbsarObjectBase {
+
+
+/// Bank Id
+var cpBankId: String?
+
+/// Account Bank Business Id
+var cpAccountBankBusinessId: String?
+
+/// Account Bank
+var cpAccountBank: String?
+
+/// Amount Withdrawal
+var cpAmountWithdrawal: String?
+
+/// Product Id
+var cpProductId: String?
+
+/// Concept Transaction
+var cpConceptTransaction: String?
+
+/// Business Id
+var cpBusinessId: String?
+
+/// Business Transaction Id
+var cpBusinessTransactionId: String?
+
+override static func cpKeys() -> Array<String> {
+return ["BankId","AccountBankBusinessId","AccountBank","AmountWithdrawal","ProductId","ConceptTransaction","BusinessId","BusinessTransactionId"]
+}
+}
+
+/**
+  Manual Withdrawals Business Response.
+*/
+@objc(AL_ManualWithdrawalsBusinessResponse)
+public class AL_ManualWithdrawalsBusinessResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
   Balance Inquiry With Movements.
 */
 @objc(AL_BalanceInquiryWithMovements)
-public class  AL_BalanceInquiryWithMovements : SyedAbsarObjectBase {
+public class AL_BalanceInquiryWithMovements : SyedAbsarObjectBase {
 
 
 /// Email
@@ -5159,7 +5159,7 @@ return ["Email"]
   Balance Inquiry With Movements Response.
 */
 @objc(AL_BalanceInquiryWithMovementsResponse)
-public class  AL_BalanceInquiryWithMovementsResponse : SyedAbsarObjectBase {
+public class AL_BalanceInquiryWithMovementsResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -5174,7 +5174,7 @@ return ["Return"]
   Balance Inquiry With Movements Responses.
 */
 @objc(AL_BalanceInquiryWithMovementsResponses)
-public class  AL_BalanceInquiryWithMovementsResponses : SyedAbsarObjectBase {
+public class AL_BalanceInquiryWithMovementsResponses : SyedAbsarObjectBase {
 
 
 /// Balance Inquiry With Movements Credential
@@ -5189,7 +5189,7 @@ return ["BalanceInquiryWithMovementsCredential"]
   Balance Inquiry With Movements Credential.
 */
 @objc(AL_BalanceInquiryWithMovementsCredential)
-public class  AL_BalanceInquiryWithMovementsCredential : SyedAbsarObjectBase {
+public class AL_BalanceInquiryWithMovementsCredential : SyedAbsarObjectBase {
 
 
 /// Code Error
@@ -5243,7 +5243,7 @@ return ["CodeError","MessageError","CodeAnswer","MessageResponse","CodeAuthoriza
   Movimiento.
 */
 @objc(AL_Movimiento)
-public class  AL_Movimiento : SyedAbsarObjectBase {
+public class AL_Movimiento : SyedAbsarObjectBase {
 
 
 /// Codigo Autorizacion
@@ -5273,7 +5273,7 @@ return ["CodigoAutorizacion","Comercio","DescripcionImporte","Fecha","Hora","Imp
   Check Status Card.
 */
 @objc(AL_CheckStatusCard)
-public class  AL_CheckStatusCard : SyedAbsarObjectBase {
+public class AL_CheckStatusCard : SyedAbsarObjectBase {
 
 
 /// Email
@@ -5291,7 +5291,7 @@ return ["Email","TimeZone"]
   Check Status Card Response.
 */
 @objc(AL_CheckStatusCardResponse)
-public class  AL_CheckStatusCardResponse : SyedAbsarObjectBase {
+public class AL_CheckStatusCardResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -5306,7 +5306,7 @@ return ["Return"]
   Retrive Transaction Plaid.
 */
 @objc(AL_RetriveTransactionPlaid)
-public class  AL_RetriveTransactionPlaid : SyedAbsarObjectBase {
+public class AL_RetriveTransactionPlaid : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -5318,7 +5318,7 @@ return []
   Retrive Transaction Plaid Response.
 */
 @objc(AL_RetriveTransactionPlaidResponse)
-public class  AL_RetriveTransactionPlaidResponse : SyedAbsarObjectBase {
+public class AL_RetriveTransactionPlaidResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -5333,7 +5333,7 @@ return ["Return"]
   Retrive Transaction Plaid Responses.
 */
 @objc(AL_RetriveTransactionPlaidResponses)
-public class  AL_RetriveTransactionPlaidResponses : SyedAbsarObjectBase {
+public class AL_RetriveTransactionPlaidResponses : SyedAbsarObjectBase {
 
 
 /// Products
@@ -5351,7 +5351,7 @@ return ["Products","RetriveTransactionResponse"]
   Retrive Transaction Response.
 */
 @objc(AL_RetriveTransactionResponse)
-public class  AL_RetriveTransactionResponse : SyedAbsarObjectBase {
+public class AL_RetriveTransactionResponse : SyedAbsarObjectBase {
 
 
 /// Accounts
@@ -5378,7 +5378,7 @@ return ["Accounts","Item","Request_id","Total_transactions","Transactions"]
   Accounts.
 */
 @objc(AL_Accounts)
-public class  AL_Accounts : SyedAbsarObjectBase {
+public class AL_Accounts : SyedAbsarObjectBase {
 
 
 /// Account_id
@@ -5411,7 +5411,7 @@ return ["Account_id","Balances","Mask","Name","Official_name","Subtype","Type"]
   Balance.
 */
 @objc(AL_Balance)
-public class  AL_Balance : SyedAbsarObjectBase {
+public class AL_Balance : SyedAbsarObjectBase {
 
 
 /// Available
@@ -5438,7 +5438,7 @@ return ["Available","Current","Iso_currency_code","Limit","Unofficial_currency_c
   Item.
 */
 @objc(AL_Item)
-public class  AL_Item : SyedAbsarObjectBase {
+public class AL_Item : SyedAbsarObjectBase {
 
 
 /// Available_products
@@ -5468,7 +5468,7 @@ return ["Available_products","Billed_products","Error","Institution_id","Item_id
   Transactions.
 */
 @objc(AL_Transactions)
-public class  AL_Transactions : SyedAbsarObjectBase {
+public class AL_Transactions : SyedAbsarObjectBase {
 
 
 /// Account_id
@@ -5525,7 +5525,7 @@ return ["Account_id","Account_owner","Amount","Category","Category_id","Date","I
   Location.
 */
 @objc(AL_Location)
-public class  AL_Location : SyedAbsarObjectBase {
+public class AL_Location : SyedAbsarObjectBase {
 
 
 /// Address
@@ -5558,7 +5558,7 @@ return ["Address","City","Lat","Lon","State","Store_number","Zip"]
   Payment Meta.
 */
 @objc(AL_PaymentMeta)
-public class  AL_PaymentMeta : SyedAbsarObjectBase {
+public class AL_PaymentMeta : SyedAbsarObjectBase {
 
 
 /// By_order_of
@@ -5594,7 +5594,7 @@ return ["By_order_of","Payee","Payer","Payment_method","Payment_processor","Ppd_
   Retrive Identity Plaid.
 */
 @objc(AL_RetriveIdentityPlaid)
-public class  AL_RetriveIdentityPlaid : SyedAbsarObjectBase {
+public class AL_RetriveIdentityPlaid : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -5606,7 +5606,7 @@ return []
   Retrive Identity Plaid Response.
 */
 @objc(AL_RetriveIdentityPlaidResponse)
-public class  AL_RetriveIdentityPlaidResponse : SyedAbsarObjectBase {
+public class AL_RetriveIdentityPlaidResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -5621,7 +5621,7 @@ return ["Return"]
   Retrive Identity Plaid Responses.
 */
 @objc(AL_RetriveIdentityPlaidResponses)
-public class  AL_RetriveIdentityPlaidResponses : SyedAbsarObjectBase {
+public class AL_RetriveIdentityPlaidResponses : SyedAbsarObjectBase {
 
 
 /// Products
@@ -5639,7 +5639,7 @@ return ["Products","RetriveIdentityResponse"]
   Retrive Identity Response.
 */
 @objc(AL_RetriveIdentityResponse)
-public class  AL_RetriveIdentityResponse : SyedAbsarObjectBase {
+public class AL_RetriveIdentityResponse : SyedAbsarObjectBase {
 
 
 /// Accounts
@@ -5660,7 +5660,7 @@ return ["Accounts","Item","Request_id"]
   Accounts Identity.
 */
 @objc(AL_AccountsIdentity)
-public class  AL_AccountsIdentity : SyedAbsarObjectBase {
+public class AL_AccountsIdentity : SyedAbsarObjectBase {
 
 
 /// Account_id
@@ -5696,7 +5696,7 @@ return ["Account_id","Balances","Mask","Name","Official_name","Owners","Subtype"
   Owners.
 */
 @objc(AL_Owners)
-public class  AL_Owners : SyedAbsarObjectBase {
+public class AL_Owners : SyedAbsarObjectBase {
 
 
 /// Addresses
@@ -5720,7 +5720,7 @@ return ["Addresses","Emails","Names","Phone_numbers"]
   Addresses.
 */
 @objc(AL_Addresses)
-public class  AL_Addresses : SyedAbsarObjectBase {
+public class AL_Addresses : SyedAbsarObjectBase {
 
 
 /// Data
@@ -5734,13 +5734,35 @@ return ["Data","Primary"]
 }
 }
 
+/**
+  Data.
+*/
+@objc(AL_Data)
+public class AL_Data : SyedAbsarObjectBase {
 
+
+/// City
+var cpCity: String?
+
+/// State
+var cpState: String?
+
+/// Street
+var cpStreet: String?
+
+/// Zip
+var cpZip: String?
+
+override static func cpKeys() -> Array<String> {
+return ["City","State","Street","Zip"]
+}
+}
 
 /**
   Emails.
 */
 @objc(AL_Emails)
-public class  AL_Emails : SyedAbsarObjectBase {
+public class AL_Emails : SyedAbsarObjectBase {
 
 
 /// Data
@@ -5761,7 +5783,7 @@ return ["Data","Primary","Type"]
   Phone Number.
 */
 @objc(AL_PhoneNumber)
-public class  AL_PhoneNumber : SyedAbsarObjectBase {
+public class AL_PhoneNumber : SyedAbsarObjectBase {
 
 
 /// Data
@@ -5782,7 +5804,7 @@ return ["Data","Primary","Type"]
   Retrive Balance Plaid.
 */
 @objc(AL_RetriveBalancePlaid)
-public class  AL_RetriveBalancePlaid : SyedAbsarObjectBase {
+public class AL_RetriveBalancePlaid : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -5794,7 +5816,7 @@ return []
   Retrive Balance Plaid Response.
 */
 @objc(AL_RetriveBalancePlaidResponse)
-public class  AL_RetriveBalancePlaidResponse : SyedAbsarObjectBase {
+public class AL_RetriveBalancePlaidResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -5809,7 +5831,7 @@ return ["Return"]
   Retrive Balance Plaid Responses.
 */
 @objc(AL_RetriveBalancePlaidResponses)
-public class  AL_RetriveBalancePlaidResponses : SyedAbsarObjectBase {
+public class AL_RetriveBalancePlaidResponses : SyedAbsarObjectBase {
 
 
 /// Products
@@ -5827,7 +5849,7 @@ return ["Products","RetriveBalanceResponse"]
   Retrive Balance Response.
 */
 @objc(AL_RetriveBalanceResponse)
-public class  AL_RetriveBalanceResponse : SyedAbsarObjectBase {
+public class AL_RetriveBalanceResponse : SyedAbsarObjectBase {
 
 
 /// Accounts
@@ -5848,7 +5870,7 @@ return ["Accounts","Item","Request_id"]
   Save Account Bank User.
 */
 @objc(AL_SaveAccountBankUser)
-public class  AL_SaveAccountBankUser : SyedAbsarObjectBase {
+public class AL_SaveAccountBankUser : SyedAbsarObjectBase {
 
 
 /// Bank Id
@@ -5861,7 +5883,7 @@ var cpUnifiedRegistryId: String?
 var cpAccountNumber: String?
 
 /// Account Type Bank Id
-var cpAccountTypeBankId: Int?
+var cpAccountTypeBankId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["BankId","UnifiedRegistryId","AccountNumber","AccountTypeBankId"]
@@ -5872,7 +5894,7 @@ return ["BankId","UnifiedRegistryId","AccountNumber","AccountTypeBankId"]
   Save Account Bank User Response.
 */
 @objc(AL_SaveAccountBankUserResponse)
-public class  AL_SaveAccountBankUserResponse : SyedAbsarObjectBase {
+public class AL_SaveAccountBankUserResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -5887,7 +5909,7 @@ return ["Return"]
   Account Bank Response.
 */
 @objc(AL_AccountBankResponse)
-public class  AL_AccountBankResponse : SyedAbsarObjectBase {
+public class AL_AccountBankResponse : SyedAbsarObjectBase {
 
 
 /// Account Bank
@@ -5902,7 +5924,7 @@ return ["AccountBank"]
   Account Bank.
 */
 @objc(AL_AccountBank)
-public class  AL_AccountBank : SyedAbsarObjectBase {
+public class AL_AccountBank : SyedAbsarObjectBase {
 
 
 /// Account Number
@@ -5918,7 +5940,7 @@ var cpBankId: String?
 var cpBusinessId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
@@ -5930,7 +5952,7 @@ var cpStatusAccountBankId: String?
 var cpUnifiedRegistryId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["AccountNumber","AccountTypeBankId","BankId","BusinessId","CreateDate","Id","StatusAccountBankId","UnifiedRegistryId","UpdateDate"]
@@ -5941,7 +5963,7 @@ return ["AccountNumber","AccountTypeBankId","BankId","BusinessId","CreateDate","
   Account Type Bank.
 */
 @objc(AL_AccountTypeBank)
-public class  AL_AccountTypeBank : SyedAbsarObjectBase {
+public class AL_AccountTypeBank : SyedAbsarObjectBase {
 
 
 /// Code
@@ -5951,7 +5973,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -5962,7 +5984,7 @@ return ["Code","Description","Id"]
   Status Account Bank.
 */
 @objc(AL_StatusAccountBank)
-public class  AL_StatusAccountBank : SyedAbsarObjectBase {
+public class AL_StatusAccountBank : SyedAbsarObjectBase {
 
 
 /// Code
@@ -5972,7 +5994,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -5983,7 +6005,7 @@ return ["Code","Description","Id"]
   Get Cards List By User Id.
 */
 @objc(AL_GetCardsListByUserId)
-public class  AL_GetCardsListByUserId : SyedAbsarObjectBase {
+public class AL_GetCardsListByUserId : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -5998,7 +6020,7 @@ return ["UserId"]
   Get Cards List By User Id Response.
 */
 @objc(AL_GetCardsListByUserIdResponse)
-public class  AL_GetCardsListByUserIdResponse : SyedAbsarObjectBase {
+public class AL_GetCardsListByUserIdResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -6013,7 +6035,7 @@ return ["Return"]
   Card List Response.
 */
 @objc(AL_CardListResponse)
-public class  AL_CardListResponse : SyedAbsarObjectBase {
+public class AL_CardListResponse : SyedAbsarObjectBase {
 
 
 /// Cards
@@ -6028,7 +6050,7 @@ return ["Cards"]
   Get Status Transaction Aprove.
 */
 @objc(AL_GetStatusTransactionAprove)
-public class  AL_GetStatusTransactionAprove : SyedAbsarObjectBase {
+public class AL_GetStatusTransactionAprove : SyedAbsarObjectBase {
 
 
 /// Status
@@ -6043,7 +6065,7 @@ return ["Status"]
   Get Status Transaction Aprove Response.
 */
 @objc(AL_GetStatusTransactionAproveResponse)
-public class  AL_GetStatusTransactionAproveResponse : SyedAbsarObjectBase {
+public class AL_GetStatusTransactionAproveResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -6058,7 +6080,7 @@ return ["Return"]
   Status Transaction Approve Request.
 */
 @objc(AL_StatusTransactionApproveRequest)
-public class  AL_StatusTransactionApproveRequest : SyedAbsarObjectBase {
+public class AL_StatusTransactionApproveRequest : SyedAbsarObjectBase {
 
 
 /// Code
@@ -6068,7 +6090,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -6079,7 +6101,7 @@ return ["Code","Description","Id"]
   Get Account Bank By User.
 */
 @objc(AL_GetAccountBankByUser)
-public class  AL_GetAccountBankByUser : SyedAbsarObjectBase {
+public class AL_GetAccountBankByUser : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -6094,7 +6116,7 @@ return ["UserId"]
   Get Account Bank By User Response.
 */
 @objc(AL_GetAccountBankByUserResponse)
-public class  AL_GetAccountBankByUserResponse : SyedAbsarObjectBase {
+public class AL_GetAccountBankByUserResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -6109,7 +6131,7 @@ return ["Return"]
   Account Bank List Response.
 */
 @objc(AL_AccountBankListResponse)
-public class  AL_AccountBankListResponse : SyedAbsarObjectBase {
+public class AL_AccountBankListResponse : SyedAbsarObjectBase {
 
 
 /// Account Banks
@@ -6124,7 +6146,7 @@ return ["AccountBanks"]
   Save Affiliation Request User Wallet.
 */
 @objc(AL_SaveAffiliationRequestUserWallet)
-public class  AL_SaveAffiliationRequestUserWallet : SyedAbsarObjectBase {
+public class AL_SaveAffiliationRequestUserWallet : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -6157,7 +6179,7 @@ return ["UserId","CountryId","ZipCode","AddressLine1","AddressLine2","ImgDocumen
   Save Affiliation Request User Wallet Response.
 */
 @objc(AL_SaveAffiliationRequestUserWalletResponse)
-public class  AL_SaveAffiliationRequestUserWalletResponse : SyedAbsarObjectBase {
+public class AL_SaveAffiliationRequestUserWalletResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -6172,7 +6194,7 @@ return ["Return"]
   Affiliation Request Response.
 */
 @objc(AL_AffiliationRequestResponse)
-public class  AL_AffiliationRequestResponse : SyedAbsarObjectBase {
+public class AL_AffiliationRequestResponse : SyedAbsarObjectBase {
 
 
 /// Affiliation Request
@@ -6187,17 +6209,17 @@ return ["AffiliationRequest"]
   Affiliation Request.
 */
 @objc(AL_AffiliationRequest)
-public class  AL_AffiliationRequest : SyedAbsarObjectBase {
+public class AL_AffiliationRequest : SyedAbsarObjectBase {
 
 
 /// Business Person Id
 var cpBusinessPersonId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Date Request
-var cpDateRequest: NSDate?
+var cpDateRequest: String?
 
 /// Id
 var cpId: String?
@@ -6221,7 +6243,7 @@ var cpReviewOfac: String?
 var cpStatusRequestId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Register Unified Id
 var cpUserRegisterUnifiedId: String?
@@ -6235,7 +6257,7 @@ return ["BusinessPersonId","CreateDate","DateRequest","Id","NumberRequest","Requ
   Person.
 */
 @objc(AL_Person)
-public class  AL_Person : SyedAbsarObjectBase {
+public class AL_Person : SyedAbsarObjectBase {
 
 
 /// Affiliation Request
@@ -6245,7 +6267,7 @@ var cpAffiliationRequest: String?
 var cpCountryId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Email
 var cpEmail: String?
@@ -6281,7 +6303,7 @@ var cpPhonePerson: String?
 var cpReviewOfac: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// Web Site
 var cpWebSite: String?
@@ -6295,7 +6317,7 @@ return ["AffiliationRequest","CountryId","CreateDate","Email","Employee","Id","L
   Employe.
 */
 @objc(AL_Employe)
-public class  AL_Employe : SyedAbsarObjectBase {
+public class AL_Employe : SyedAbsarObjectBase {
 
 
 /// Comercial Agency Id
@@ -6311,7 +6333,7 @@ var cpEmployedPositionId: String?
 var cpFirstNames: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Identification Number
 var cpIdentificationNumber: String?
@@ -6331,14 +6353,14 @@ return ["ComercialAgencyId","DocumentsPersonTypeId","EmployedPositionId","FirstN
   Maw_comercial_agency.
 */
 @objc(AL_Maw_comercial_agency)
-public class  AL_Maw_comercial_agency : SyedAbsarObjectBase {
+public class AL_Maw_comercial_agency : SyedAbsarObjectBase {
 
 
 /// City Id
 var cpCityId: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -6352,11 +6374,11 @@ return ["CityId","Id","Name"]
   Employed Position.
 */
 @objc(AL_EmployedPosition)
-public class  AL_EmployedPosition : SyedAbsarObjectBase {
+public class AL_EmployedPosition : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -6370,7 +6392,7 @@ return ["Id","Name"]
   Maw_legal_person.
 */
 @objc(AL_Maw_legal_person)
-public class  AL_Maw_legal_person : SyedAbsarObjectBase {
+public class AL_Maw_legal_person : SyedAbsarObjectBase {
 
 
 /// Business Category Id
@@ -6380,10 +6402,10 @@ var cpBusinessCategoryId: String?
 var cpBusinessName: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Date Inscription Register
-var cpDateInscriptionRegister: NSDate?
+var cpDateInscriptionRegister: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
@@ -6398,7 +6420,7 @@ var cpIdentificationNumber: String?
 var cpLegalRepresentativeId: String?
 
 /// Payed Capital
-var cpPayedCapital: Float?
+var cpPayedCapital: String?
 
 /// Person Id
 var cpPersonId: String?
@@ -6413,7 +6435,7 @@ var cpStatusApplicantId: String?
 var cpTradeName: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["BusinessCategoryId","BusinessName","CreateDate","DateInscriptionRegister","DocumentsPersonTypeId","Id","IdentificationNumber","LegalRepresentativeId","PayedCapital","PersonId","RegisterNumber","StatusApplicantId","TradeName","UpdateDate"]
@@ -6424,14 +6446,14 @@ return ["BusinessCategoryId","BusinessName","CreateDate","DateInscriptionRegiste
   Business Category.
 */
 @objc(AL_BusinessCategory)
-public class  AL_BusinessCategory : SyedAbsarObjectBase {
+public class AL_BusinessCategory : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Mcc Code
 var cpMccCode: String?
@@ -6445,26 +6467,26 @@ return ["Description","Id","MccCode"]
   Legal Representative.
 */
 @objc(AL_LegalRepresentative)
-public class  AL_LegalRepresentative : SyedAbsarObjectBase {
+public class AL_LegalRepresentative : SyedAbsarObjectBase {
 
 
 /// Age
-var cpAge: Int?
+var cpAge: String?
 
 /// Civil Status Id
 var cpCivilStatusId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Date Birth
-var cpDateBirth: NSDate?
+var cpDateBirth: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
 
 /// Due Date Document Identification
-var cpDueDateDocumentIdentification: NSDate?
+var cpDueDateDocumentIdentification: String?
 
 /// First Names
 var cpFirstNames: String?
@@ -6494,7 +6516,7 @@ var cpPlaceBirth: String?
 var cpStatusApplicantId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Age","CivilStatusId","CreateDate","DateBirth","DocumentsPersonTypeId","DueDateDocumentIdentification","FirstNames","Gender","Id","IdentificationNumber","IdentificationNumberOld","LastNames","PersonId","PlaceBirth","StatusApplicantId","UpdateDate"]
@@ -6505,14 +6527,14 @@ return ["Age","CivilStatusId","CreateDate","DateBirth","DocumentsPersonTypeId","
   Maw_civil_status.
 */
 @objc(AL_Maw_civil_status)
-public class  AL_Maw_civil_status : SyedAbsarObjectBase {
+public class AL_Maw_civil_status : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Language Id
 var cpLanguageId: String?
@@ -6526,7 +6548,7 @@ return ["Description","Id","LanguageId"]
   Maw_status_applicant.
 */
 @objc(AL_Maw_status_applicant)
-public class  AL_Maw_status_applicant : SyedAbsarObjectBase {
+public class AL_Maw_status_applicant : SyedAbsarObjectBase {
 
 
 /// Code
@@ -6536,7 +6558,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -6547,23 +6569,23 @@ return ["Code","Description","Id"]
   Natural Person.
 */
 @objc(AL_NaturalPerson)
-public class  AL_NaturalPerson : SyedAbsarObjectBase {
+public class AL_NaturalPerson : SyedAbsarObjectBase {
 
 
 /// Civil Status Id
 var cpCivilStatusId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Date Birth
-var cpDateBirth: NSDate?
+var cpDateBirth: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
 
 /// Due Date Document Identification
-var cpDueDateDocumentIdentification: NSDate?
+var cpDueDateDocumentIdentification: String?
 
 /// First Name
 var cpFirstName: String?
@@ -6599,7 +6621,7 @@ var cpProfessionId: String?
 var cpStatusApplicantId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CivilStatusId","CreateDate","DateBirth","DocumentsPersonTypeId","DueDateDocumentIdentification","FirstName","Gender","Id","IdentificactionNumberOld","IdentificationNumber","LastName","MarriedLastName","PersonId","PlaceBirth","ProfessionId","StatusApplicantId","UpdateDate"]
@@ -6610,11 +6632,11 @@ return ["CivilStatusId","CreateDate","DateBirth","DocumentsPersonTypeId","DueDat
   Maw_profession.
 */
 @objc(AL_Maw_profession)
-public class  AL_Maw_profession : SyedAbsarObjectBase {
+public class AL_Maw_profession : SyedAbsarObjectBase {
 
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Name
 var cpName: String?
@@ -6628,7 +6650,7 @@ return ["Id","Name"]
   Person Classification.
 */
 @objc(AL_PersonClassification)
-public class  AL_PersonClassification : SyedAbsarObjectBase {
+public class AL_PersonClassification : SyedAbsarObjectBase {
 
 
 /// Code
@@ -6638,7 +6660,7 @@ var cpCode: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","Description","Id"]
@@ -6649,23 +6671,23 @@ return ["Code","Description","Id"]
   Person Has Address.
 */
 @objc(AL_PersonHasAddress)
-public class  AL_PersonHasAddress : SyedAbsarObjectBase {
+public class AL_PersonHasAddress : SyedAbsarObjectBase {
 
 
 /// Address Id
 var cpAddressId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Person Id
 var cpPersonId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["AddressId","CreateDate","Id","PersonId","UpdateDate"]
@@ -6676,7 +6698,7 @@ return ["AddressId","CreateDate","Id","PersonId","UpdateDate"]
   Phone Person.
 */
 @objc(AL_PhonePerson)
-public class  AL_PhonePerson : SyedAbsarObjectBase {
+public class AL_PhonePerson : SyedAbsarObjectBase {
 
 
 /// Area Code
@@ -6689,7 +6711,7 @@ var cpCountryCode: String?
 var cpCountryId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Extension Phone Number
 var cpExtensionPhoneNumber: String?
@@ -6698,7 +6720,7 @@ var cpExtensionPhoneNumber: String?
 var cpId: String?
 
 /// Ind Main Phone
-var cpIndMainPhone: Bool?
+var cpIndMainPhone: String?
 
 /// Number Phone
 var cpNumberPhone: String?
@@ -6710,7 +6732,7 @@ var cpPersonId: String?
 var cpPhoneTypeId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["AreaCode","CountryCode","CountryId","CreateDate","ExtensionPhoneNumber","Id","IndMainPhone","NumberPhone","PersonId","PhoneTypeId","UpdateDate"]
@@ -6721,14 +6743,14 @@ return ["AreaCode","CountryCode","CountryId","CreateDate","ExtensionPhoneNumber"
   Phone Type.
 */
 @objc(AL_PhoneType)
-public class  AL_PhoneType : SyedAbsarObjectBase {
+public class AL_PhoneType : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -6739,14 +6761,14 @@ return ["Description","Id"]
   Maw_review_ofac.
 */
 @objc(AL_Maw_review_ofac)
-public class  AL_Maw_review_ofac : SyedAbsarObjectBase {
+public class AL_Maw_review_ofac : SyedAbsarObjectBase {
 
 
 /// Affiliation Request Id
 var cpAffiliationRequestId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
@@ -6758,10 +6780,10 @@ var cpObservations: String?
 var cpPersonId: String?
 
 /// Result Review
-var cpResultReview: Float?
+var cpResultReview: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Review Id
 var cpUserReviewId: String?
@@ -6775,14 +6797,14 @@ return ["AffiliationRequestId","CreateDate","Id","Observations","PersonId","Resu
   User.
 */
 @objc(AL_User)
-public class  AL_User : SyedAbsarObjectBase {
+public class AL_User : SyedAbsarObjectBase {
 
 
 /// Authorized Employee Id
 var cpAuthorizedEmployeeId: String?
 
 /// Creation Date
-var cpCreationDate: NSDate?
+var cpCreationDate: String?
 
 /// Documents Person Type Id
 var cpDocumentsPersonTypeId: String?
@@ -6794,7 +6816,7 @@ var cpEmail: String?
 var cpEmployeeId: String?
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// First Name
 var cpFirstName: String?
@@ -6821,7 +6843,7 @@ var cpPersonId: String?
 var cpPhoneNumber: String?
 
 /// Receive Top Up Notification
-var cpReceiveTopUpNotification: Bool?
+var cpReceiveTopUpNotification: String?
 
 /// User Has Profile
 var cpUserHasProfile: String?
@@ -6835,7 +6857,7 @@ return ["AuthorizedEmployeeId","CreationDate","DocumentsPersonTypeId","Email","E
   User Has Profile.
 */
 @objc(AL_UserHasProfile)
-public class  AL_UserHasProfile : SyedAbsarObjectBase {
+public class AL_UserHasProfile : SyedAbsarObjectBase {
 
 
 /// Beginning Date
@@ -6862,11 +6884,11 @@ return ["BeginningDate","EndingDate","Id","Profile","User"]
   Timestamp.
 */
 @objc(AL_Timestamp)
-public class  AL_Timestamp : SyedAbsarObjectBase {
+public class AL_Timestamp : SyedAbsarObjectBase {
 
 
 /// Nanos
-var cpNanos: Int?
+var cpNanos: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Nanos"]
@@ -6877,11 +6899,11 @@ return ["Nanos"]
   Profile.
 */
 @objc(AL_Profile)
-public class  AL_Profile : SyedAbsarObjectBase {
+public class AL_Profile : SyedAbsarObjectBase {
 
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
 var cpId: String?
@@ -6904,7 +6926,7 @@ return ["Enabled","Id","Name","PermissionHasProfiles","ProfileData"]
   Permission Has Profile.
 */
 @objc(AL_PermissionHasProfile)
-public class  AL_PermissionHasProfile : SyedAbsarObjectBase {
+public class AL_PermissionHasProfile : SyedAbsarObjectBase {
 
 
 /// Id
@@ -6925,14 +6947,14 @@ return ["Id","Permission","Profile"]
   Permission.
 */
 @objc(AL_Permission)
-public class  AL_Permission : SyedAbsarObjectBase {
+public class AL_Permission : SyedAbsarObjectBase {
 
 
 /// Action
 var cpAction: String?
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Entity
 var cpEntity: String?
@@ -6958,7 +6980,7 @@ return ["Action","Enabled","Entity","Id","Name","PermissionData","PermissionGrou
   Permission Data.
 */
 @objc(AL_PermissionData)
-public class  AL_PermissionData : SyedAbsarObjectBase {
+public class AL_PermissionData : SyedAbsarObjectBase {
 
 
 /// Alias
@@ -6985,11 +7007,11 @@ return ["Alias","Description","Id","Language","Permission"]
   Permission Group.
 */
 @objc(AL_PermissionGroup)
-public class  AL_PermissionGroup : SyedAbsarObjectBase {
+public class AL_PermissionGroup : SyedAbsarObjectBase {
 
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
 var cpId: String?
@@ -7009,7 +7031,7 @@ return ["Enabled","Id","Name","PermissionGroupData"]
   Permission Group Data.
 */
 @objc(AL_PermissionGroupData)
-public class  AL_PermissionGroupData : SyedAbsarObjectBase {
+public class AL_PermissionGroupData : SyedAbsarObjectBase {
 
 
 /// Alias
@@ -7036,7 +7058,7 @@ return ["Alias","Description","Id","Language","PermissionGroup"]
   Profile Data.
 */
 @objc(AL_ProfileData)
-public class  AL_ProfileData : SyedAbsarObjectBase {
+public class AL_ProfileData : SyedAbsarObjectBase {
 
 
 /// Alias
@@ -7046,7 +7068,7 @@ var cpAlias: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Language
 var cpLanguage: String?
@@ -7063,7 +7085,7 @@ return ["Alias","Description","Id","Language","Profile"]
   Request Has Collection Request.
 */
 @objc(AL_RequestHasCollectionRequest)
-public class  AL_RequestHasCollectionRequest : SyedAbsarObjectBase {
+public class AL_RequestHasCollectionRequest : SyedAbsarObjectBase {
 
 
 /// Affiliation Request Id
@@ -7073,7 +7095,7 @@ var cpAffiliationRequestId: String?
 var cpCollectionsRequestId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
@@ -7082,13 +7104,13 @@ var cpId: String?
 var cpImageFileUrl: String?
 
 /// Ind Approved
-var cpIndApproved: CShort?
+var cpIndApproved: String?
 
 /// Observations
 var cpObservations: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["AffiliationRequestId","CollectionsRequestId","CreateDate","Id","ImageFileUrl","IndApproved","Observations","UpdateDate"]
@@ -7099,17 +7121,17 @@ return ["AffiliationRequestId","CollectionsRequestId","CreateDate","Id","ImageFi
   Collections Request.
 */
 @objc(AL_CollectionsRequest)
-public class  AL_CollectionsRequest : SyedAbsarObjectBase {
+public class AL_CollectionsRequest : SyedAbsarObjectBase {
 
 
 /// Collection Type Id
 var cpCollectionTypeId: String?
 
 /// Enabled
-var cpEnabled: Bool?
+var cpEnabled: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Person Type Id
 var cpPersonTypeId: String?
@@ -7126,7 +7148,7 @@ return ["CollectionTypeId","Enabled","Id","PersonTypeId","RequestTypeId"]
   Collection Type.
 */
 @objc(AL_CollectionType)
-public class  AL_CollectionType : SyedAbsarObjectBase {
+public class AL_CollectionType : SyedAbsarObjectBase {
 
 
 /// Country Id
@@ -7136,7 +7158,7 @@ var cpCountryId: String?
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Orden
 var cpOrden: String?
@@ -7153,23 +7175,23 @@ return ["CountryId","Description","Id","Orden","PersonTypeId"]
   Request Type.
 */
 @objc(AL_RequestType)
-public class  AL_RequestType : SyedAbsarObjectBase {
+public class AL_RequestType : SyedAbsarObjectBase {
 
 
 /// Code
 var cpCode: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","CreateDate","Description","Id","UpdateDate"]
@@ -7180,32 +7202,32 @@ return ["Code","CreateDate","Description","Id","UpdateDate"]
   Review Affiliation Request.
 */
 @objc(AL_ReviewAffiliationRequest)
-public class  AL_ReviewAffiliationRequest : SyedAbsarObjectBase {
+public class AL_ReviewAffiliationRequest : SyedAbsarObjectBase {
 
 
 /// Affiliation Request Id
 var cpAffiliationRequestId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Approved
-var cpIndApproved: Bool?
+var cpIndApproved: String?
 
 /// Observations
 var cpObservations: String?
 
 /// Review Date
-var cpReviewDate: NSDate?
+var cpReviewDate: String?
 
 /// Review Type Id
 var cpReviewTypeId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Review Id
 var cpUserReviewId: String?
@@ -7219,14 +7241,14 @@ return ["AffiliationRequestId","CreateDate","Id","IndApproved","Observations","R
   Review Type.
 */
 @objc(AL_ReviewType)
-public class  AL_ReviewType : SyedAbsarObjectBase {
+public class AL_ReviewType : SyedAbsarObjectBase {
 
 
 /// Description
 var cpDescription: String?
 
 /// Id
-var cpId: Int?
+var cpId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Description","Id"]
@@ -7234,10 +7256,40 @@ return ["Description","Id"]
 }
 
 /**
+  Get Status Affiliation Request By Email.
+*/
+@objc(AL_GetStatusAffiliationRequestByEmail)
+public class AL_GetStatusAffiliationRequestByEmail : SyedAbsarObjectBase {
+
+
+/// Email
+var cpEmail: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Email"]
+}
+}
+
+/**
+  Get Status Affiliation Request By Email Response.
+*/
+@objc(AL_GetStatusAffiliationRequestByEmailResponse)
+public class AL_GetStatusAffiliationRequestByEmailResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
   Save User Has Product.
 */
 @objc(AL_SaveUserHasProduct)
-public class  AL_SaveUserHasProduct : SyedAbsarObjectBase {
+public class AL_SaveUserHasProduct : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -7255,7 +7307,7 @@ return ["UserId","ProductId"]
   Save User Has Product Response.
 */
 @objc(AL_SaveUserHasProductResponse)
-public class  AL_SaveUserHasProductResponse : SyedAbsarObjectBase {
+public class AL_SaveUserHasProductResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7270,7 +7322,7 @@ return ["Return"]
   User Has Product Response.
 */
 @objc(AL_UserHasProductResponse)
-public class  AL_UserHasProductResponse : SyedAbsarObjectBase {
+public class AL_UserHasProductResponse : SyedAbsarObjectBase {
 
 
 /// Response
@@ -7285,7 +7337,7 @@ return ["Response"]
   Get Credit Card Type.
 */
 @objc(AL_GetCreditCardType)
-public class  AL_GetCreditCardType : SyedAbsarObjectBase {
+public class AL_GetCreditCardType : SyedAbsarObjectBase {
 
 
 /// User Api
@@ -7303,7 +7355,7 @@ return ["UserApi","PasswordApi"]
   Get Credit Card Type Response.
 */
 @objc(AL_GetCreditCardTypeResponse)
-public class  AL_GetCreditCardTypeResponse : SyedAbsarObjectBase {
+public class AL_GetCreditCardTypeResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7318,7 +7370,7 @@ return ["Return"]
   Credit Card List Response.
 */
 @objc(AL_CreditCardListResponse)
-public class  AL_CreditCardListResponse : SyedAbsarObjectBase {
+public class AL_CreditCardListResponse : SyedAbsarObjectBase {
 
 
 /// Creditcard Types
@@ -7333,7 +7385,7 @@ return ["CreditcardTypes"]
   Get Products Use Prepaid Card By User Id.
 */
 @objc(AL_GetProductsUsePrepaidCardByUserId)
-public class  AL_GetProductsUsePrepaidCardByUserId : SyedAbsarObjectBase {
+public class AL_GetProductsUsePrepaidCardByUserId : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -7348,7 +7400,7 @@ return ["UserId"]
   Get Products Use Prepaid Card By User Id Response.
 */
 @objc(AL_GetProductsUsePrepaidCardByUserIdResponse)
-public class  AL_GetProductsUsePrepaidCardByUserIdResponse : SyedAbsarObjectBase {
+public class AL_GetProductsUsePrepaidCardByUserIdResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7363,7 +7415,7 @@ return ["Return"]
   Save Account Bank.
 */
 @objc(AL_SaveAccountBank)
-public class  AL_SaveAccountBank : SyedAbsarObjectBase {
+public class AL_SaveAccountBank : SyedAbsarObjectBase {
 
 
 /// Unified Registry Id
@@ -7376,7 +7428,7 @@ var cpAccountNumber: String?
 var cpBankId: String?
 
 /// Account Type Bank Id
-var cpAccountTypeBankId: Int?
+var cpAccountTypeBankId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UnifiedRegistryId","AccountNumber","BankId","AccountTypeBankId"]
@@ -7387,7 +7439,7 @@ return ["UnifiedRegistryId","AccountNumber","BankId","AccountTypeBankId"]
   Save Account Bank Response.
 */
 @objc(AL_SaveAccountBankResponse)
-public class  AL_SaveAccountBankResponse : SyedAbsarObjectBase {
+public class AL_SaveAccountBankResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7402,7 +7454,7 @@ return ["Return"]
   Check Status Account.
 */
 @objc(AL_CheckStatusAccount)
-public class  AL_CheckStatusAccount : SyedAbsarObjectBase {
+public class AL_CheckStatusAccount : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -7423,7 +7475,7 @@ return ["UserId","Card","TimeZone"]
   Check Status Account Response.
 */
 @objc(AL_CheckStatusAccountResponse)
-public class  AL_CheckStatusAccountResponse : SyedAbsarObjectBase {
+public class AL_CheckStatusAccountResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7438,7 +7490,7 @@ return ["Return"]
   Check Status Account Responses.
 */
 @objc(AL_CheckStatusAccountResponses)
-public class  AL_CheckStatusAccountResponses : SyedAbsarObjectBase {
+public class AL_CheckStatusAccountResponses : SyedAbsarObjectBase {
 
 
 /// Check Status Credential Account
@@ -7453,7 +7505,7 @@ return ["CheckStatusCredentialAccount"]
   Check Status Credential Account.
 */
 @objc(AL_CheckStatusCredentialAccount)
-public class  AL_CheckStatusCredentialAccount : SyedAbsarObjectBase {
+public class AL_CheckStatusCredentialAccount : SyedAbsarObjectBase {
 
 
 /// Code
@@ -7573,7 +7625,7 @@ return ["Code","Description","AccountNumber","StateCode","StateDescription","Ent
   Get Person By Email.
 */
 @objc(AL_GetPersonByEmail)
-public class  AL_GetPersonByEmail : SyedAbsarObjectBase {
+public class AL_GetPersonByEmail : SyedAbsarObjectBase {
 
 
 /// Email
@@ -7588,7 +7640,7 @@ return ["Email"]
   Get Person By Email Response.
 */
 @objc(AL_GetPersonByEmailResponse)
-public class  AL_GetPersonByEmailResponse : SyedAbsarObjectBase {
+public class AL_GetPersonByEmailResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7603,7 +7655,7 @@ return ["Return"]
   Person Response.
 */
 @objc(AL_PersonResponse)
-public class  AL_PersonResponse : SyedAbsarObjectBase {
+public class AL_PersonResponse : SyedAbsarObjectBase {
 
 
 /// Person
@@ -7618,14 +7670,14 @@ return ["Person"]
   Person Generic.
 */
 @objc(AL_PersonGeneric)
-public class  AL_PersonGeneric : SyedAbsarObjectBase {
+public class AL_PersonGeneric : SyedAbsarObjectBase {
 
 
 /// Country Id
 var cpCountryId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Email
 var cpEmail: String?
@@ -7637,7 +7689,7 @@ var cpId: String?
 var cpPersonTypeId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// Web Site
 var cpWebSite: String?
@@ -7651,7 +7703,7 @@ return ["CountryId","CreateDate","Email","Id","PersonTypeId","UpdateDate","WebSi
   Get Products Remettence By User Id.
 */
 @objc(AL_GetProductsRemettenceByUserId)
-public class  AL_GetProductsRemettenceByUserId : SyedAbsarObjectBase {
+public class AL_GetProductsRemettenceByUserId : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -7666,7 +7718,7 @@ return ["UserId"]
   Get Products Remettence By User Id Response.
 */
 @objc(AL_GetProductsRemettenceByUserIdResponse)
-public class  AL_GetProductsRemettenceByUserIdResponse : SyedAbsarObjectBase {
+public class AL_GetProductsRemettenceByUserIdResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7681,14 +7733,14 @@ return ["Return"]
   Save Recharge Afinitas.
 */
 @objc(AL_SaveRechargeAfinitas)
-public class  AL_SaveRechargeAfinitas : SyedAbsarObjectBase {
+public class AL_SaveRechargeAfinitas : SyedAbsarObjectBase {
 
 
 /// User Id
 var cpUserId: String?
 
 /// Amount Recharge
-var cpAmountRecharge: Float?
+var cpAmountRecharge: String?
 
 /// Currency
 var cpCurrency: String?
@@ -7720,7 +7772,7 @@ return ["UserId","AmountRecharge","Currency","CardNumber","ExpirationYear","Expi
   Save Recharge Afinitas Response.
 */
 @objc(AL_SaveRechargeAfinitasResponse)
-public class  AL_SaveRechargeAfinitasResponse : SyedAbsarObjectBase {
+public class AL_SaveRechargeAfinitasResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7735,7 +7787,7 @@ return ["Return"]
   Recharge Afinitas Responses.
 */
 @objc(AL_RechargeAfinitasResponses)
-public class  AL_RechargeAfinitasResponses : SyedAbsarObjectBase {
+public class AL_RechargeAfinitasResponses : SyedAbsarObjectBase {
 
 
 /// Recharge Afinitas
@@ -7756,7 +7808,7 @@ return ["RechargeAfinitas","Products","ChargeResponse"]
   Recharge Afinitas.
 */
 @objc(AL_RechargeAfinitas)
-public class  AL_RechargeAfinitas : SyedAbsarObjectBase {
+public class AL_RechargeAfinitas : SyedAbsarObjectBase {
 
 
 /// Status
@@ -7783,7 +7835,7 @@ return ["Status","RequestId","Date","Time","Error"]
   Error Afinitas.
 */
 @objc(AL_ErrorAfinitas)
-public class  AL_ErrorAfinitas : SyedAbsarObjectBase {
+public class AL_ErrorAfinitas : SyedAbsarObjectBase {
 
 
 /// Bin Information
@@ -7807,7 +7859,7 @@ return ["BinInformation","Code","Description","HttpStatusCode"]
   Bin Information Afinitas.
 */
 @objc(AL_BinInformationAfinitas)
-public class  AL_BinInformationAfinitas : SyedAbsarObjectBase {
+public class AL_BinInformationAfinitas : SyedAbsarObjectBase {
 
 
 /// Bank
@@ -7834,7 +7886,7 @@ return ["Bank","Bin","Brand","Product","Type"]
   Charge Response.
 */
 @objc(AL_ChargeResponse)
-public class  AL_ChargeResponse : SyedAbsarObjectBase {
+public class AL_ChargeResponse : SyedAbsarObjectBase {
 
 
 /// Date
@@ -7861,7 +7913,7 @@ return ["Date","Error","RequestId","Status","Time"]
   Error.
 */
 @objc(AL_Error)
-public class  AL_Error : SyedAbsarObjectBase {
+public class AL_Error : SyedAbsarObjectBase {
 
 
 /// Bin Information
@@ -7885,7 +7937,7 @@ return ["BinInformation","Code","Description","HttpStatusCode"]
   Bin Information.
 */
 @objc(AL_BinInformation)
-public class  AL_BinInformation : SyedAbsarObjectBase {
+public class AL_BinInformation : SyedAbsarObjectBase {
 
 
 /// Bank
@@ -7912,7 +7964,7 @@ return ["Bank","Bin","Brand","Product","Type"]
   Get Country Code.
 */
 @objc(AL_GetCountryCode)
-public class  AL_GetCountryCode : SyedAbsarObjectBase {
+public class AL_GetCountryCode : SyedAbsarObjectBase {
 
 
 /// Str Ani
@@ -7927,7 +7979,7 @@ return ["StrAni"]
   Get Country Code Response.
 */
 @objc(AL_GetCountryCodeResponse)
-public class  AL_GetCountryCodeResponse : SyedAbsarObjectBase {
+public class AL_GetCountryCodeResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7942,14 +7994,14 @@ return ["Return"]
   Limit Advance.
 */
 @objc(AL_LimitAdvance)
-public class  AL_LimitAdvance : SyedAbsarObjectBase {
+public class AL_LimitAdvance : SyedAbsarObjectBase {
 
 
 /// Email
 var cpEmail: String?
 
 /// Amount Withdrawal
-var cpAmountWithdrawal: Float?
+var cpAmountWithdrawal: String?
 
 /// Product Id
 var cpProductId: String?
@@ -7963,7 +8015,7 @@ return ["Email","AmountWithdrawal","ProductId"]
   Limit Advance Response.
 */
 @objc(AL_LimitAdvanceResponse)
-public class  AL_LimitAdvanceResponse : SyedAbsarObjectBase {
+public class AL_LimitAdvanceResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -7978,7 +8030,7 @@ return ["Return"]
   Limit Advance Responses.
 */
 @objc(AL_LimitAdvanceResponses)
-public class  AL_LimitAdvanceResponses : SyedAbsarObjectBase {
+public class AL_LimitAdvanceResponses : SyedAbsarObjectBase {
 
 
 /// Limit Advance Credential
@@ -7996,7 +8048,7 @@ return ["LimitAdvanceCredential","Products"]
   Limit Advance Credential.
 */
 @objc(AL_LimitAdvanceCredential)
-public class  AL_LimitAdvanceCredential : SyedAbsarObjectBase {
+public class AL_LimitAdvanceCredential : SyedAbsarObjectBase {
 
 
 /// Code Error
@@ -8023,7 +8075,7 @@ return ["CodeError","MessageError","CodeAnswer","MessageResponse","CodeAuthoriza
   Send Sms Simbox.
 */
 @objc(AL_SendSmsSimbox)
-public class  AL_SendSmsSimbox : SyedAbsarObjectBase {
+public class AL_SendSmsSimbox : SyedAbsarObjectBase {
 
 
 /// Phone Number
@@ -8044,7 +8096,7 @@ return ["PhoneNumber","Text","UserId"]
   Send Sms Simbox Response.
 */
 @objc(AL_SendSmsSimboxResponse)
-public class  AL_SendSmsSimboxResponse : SyedAbsarObjectBase {
+public class AL_SendSmsSimboxResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8059,7 +8111,7 @@ return ["Return"]
   Get Products Is Exchange Product User Id.
 */
 @objc(AL_GetProductsIsExchangeProductUserId)
-public class  AL_GetProductsIsExchangeProductUserId : SyedAbsarObjectBase {
+public class AL_GetProductsIsExchangeProductUserId : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -8074,7 +8126,7 @@ return ["UserId"]
   Get Products Is Exchange Product User Id Response.
 */
 @objc(AL_GetProductsIsExchangeProductUserIdResponse)
-public class  AL_GetProductsIsExchangeProductUserIdResponse : SyedAbsarObjectBase {
+public class AL_GetProductsIsExchangeProductUserIdResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8089,7 +8141,7 @@ return ["Return"]
   Save Cumplimient.
 */
 @objc(AL_SaveCumplimient)
-public class  AL_SaveCumplimient : SyedAbsarObjectBase {
+public class AL_SaveCumplimient : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -8122,7 +8174,7 @@ return ["UserId","ImgDocument","ImgProfile","Estado","Ciudad","ZipCode","Addres1
   Save Cumplimient Response.
 */
 @objc(AL_SaveCumplimientResponse)
-public class  AL_SaveCumplimientResponse : SyedAbsarObjectBase {
+public class AL_SaveCumplimientResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8137,7 +8189,7 @@ return ["Return"]
   Get Card By Identification Number.
 */
 @objc(AL_GetCardByIdentificationNumber)
-public class  AL_GetCardByIdentificationNumber : SyedAbsarObjectBase {
+public class AL_GetCardByIdentificationNumber : SyedAbsarObjectBase {
 
 
 /// Number Identification
@@ -8152,7 +8204,7 @@ return ["NumberIdentification"]
   Get Card By Identification Number Response.
 */
 @objc(AL_GetCardByIdentificationNumberResponse)
-public class  AL_GetCardByIdentificationNumberResponse : SyedAbsarObjectBase {
+public class AL_GetCardByIdentificationNumberResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8167,14 +8219,14 @@ return ["Return"]
   Dispertion Transfer.
 */
 @objc(AL_DispertionTransfer)
-public class  AL_DispertionTransfer : SyedAbsarObjectBase {
+public class AL_DispertionTransfer : SyedAbsarObjectBase {
 
 
 /// Email
 var cpEmail: String?
 
 /// Amount Recharge
-var cpAmountRecharge: Float?
+var cpAmountRecharge: String?
 
 /// Product Id
 var cpProductId: String?
@@ -8188,7 +8240,7 @@ return ["Email","AmountRecharge","ProductId"]
   Dispertion Transfer Response.
 */
 @objc(AL_DispertionTransferResponse)
-public class  AL_DispertionTransferResponse : SyedAbsarObjectBase {
+public class AL_DispertionTransferResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8203,7 +8255,7 @@ return ["Return"]
   Dispertion Transfer Responses.
 */
 @objc(AL_DispertionTransferResponses)
-public class  AL_DispertionTransferResponses : SyedAbsarObjectBase {
+public class AL_DispertionTransferResponses : SyedAbsarObjectBase {
 
 
 /// Dispertion Transfer Credential
@@ -8221,7 +8273,7 @@ return ["DispertionTransferCredential","Products"]
   Dispertion Transfer Credential.
 */
 @objc(AL_DispertionTransferCredential)
-public class  AL_DispertionTransferCredential : SyedAbsarObjectBase {
+public class AL_DispertionTransferCredential : SyedAbsarObjectBase {
 
 
 /// Code Error
@@ -8248,7 +8300,7 @@ return ["CodeError","MessageError","CodeAnswer","MessageResponse","CodeAuthoriza
   Get Bank By User.
 */
 @objc(AL_GetBankByUser)
-public class  AL_GetBankByUser : SyedAbsarObjectBase {
+public class AL_GetBankByUser : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -8263,37 +8315,7 @@ return ["UserId"]
   Get Bank By User Response.
 */
 @objc(AL_GetBankByUserResponse)
-public class  AL_GetBankByUserResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
-}
-}
-
-/**
-  Get Products Pay Top Up By User Id.
-*/
-@objc(AL_GetProductsPayTopUpByUserId)
-public class  AL_GetProductsPayTopUpByUserId : SyedAbsarObjectBase {
-
-
-/// User Id
-var cpUserId: String?
-
-override static func cpKeys() -> Array<String> {
-return ["UserId"]
-}
-}
-
-/**
-  Get Products Pay Top Up By User Id Response.
-*/
-@objc(AL_GetProductsPayTopUpByUserIdResponse)
-public class  AL_GetProductsPayTopUpByUserIdResponse : SyedAbsarObjectBase {
+public class AL_GetBankByUserResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8308,17 +8330,17 @@ return ["Return"]
   Validate Business Manual Withdrawal.
 */
 @objc(AL_ValidateBusinessManualWithdrawal)
-public class  AL_ValidateBusinessManualWithdrawal : SyedAbsarObjectBase {
+public class AL_ValidateBusinessManualWithdrawal : SyedAbsarObjectBase {
 
 
 /// Withdrawal Amount
-var cpWithdrawalAmount: Float?
+var cpWithdrawalAmount: String?
 
 /// Product Id
 var cpProductId: String?
 
 /// Include Fee
-var cpIncludeFee: Bool?
+var cpIncludeFee: String?
 
 override static func cpKeys() -> Array<String> {
 return ["WithdrawalAmount","ProductId","IncludeFee"]
@@ -8329,7 +8351,7 @@ return ["WithdrawalAmount","ProductId","IncludeFee"]
   Validate Business Manual Withdrawal Response.
 */
 @objc(AL_ValidateBusinessManualWithdrawalResponse)
-public class  AL_ValidateBusinessManualWithdrawalResponse : SyedAbsarObjectBase {
+public class AL_ValidateBusinessManualWithdrawalResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8344,17 +8366,17 @@ return ["Return"]
   Transaction Validation Response.
 */
 @objc(AL_TransactionValidationResponse)
-public class  AL_TransactionValidationResponse : SyedAbsarObjectBase {
+public class AL_TransactionValidationResponse : SyedAbsarObjectBase {
 
 
 /// Amount Before Fee
-var cpAmountBeforeFee: Float?
+var cpAmountBeforeFee: String?
 
 /// Fee
-var cpFee: Float?
+var cpFee: String?
 
 /// Amount After Fee
-var cpAmountAfterFee: Float?
+var cpAmountAfterFee: String?
 
 override static func cpKeys() -> Array<String> {
 return ["AmountBeforeFee","Fee","AmountAfterFee"]
@@ -8362,17 +8384,47 @@ return ["AmountBeforeFee","Fee","AmountAfterFee"]
 }
 
 /**
+  Get Products Pay Top Up By User Id.
+*/
+@objc(AL_GetProductsPayTopUpByUserId)
+public class AL_GetProductsPayTopUpByUserId : SyedAbsarObjectBase {
+
+
+/// User Id
+var cpUserId: String?
+
+override static func cpKeys() -> Array<String> {
+return ["UserId"]
+}
+}
+
+/**
+  Get Products Pay Top Up By User Id Response.
+*/
+@objc(AL_GetProductsPayTopUpByUserIdResponse)
+public class AL_GetProductsPayTopUpByUserIdResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
   Save Transfer Between Business Account.
 */
 @objc(AL_SaveTransferBetweenBusinessAccount)
-public class  AL_SaveTransferBetweenBusinessAccount : SyedAbsarObjectBase {
+public class AL_SaveTransferBetweenBusinessAccount : SyedAbsarObjectBase {
 
 
 /// Product Id
 var cpProductId: String?
 
 /// Amount Transfer
-var cpAmountTransfer: Float?
+var cpAmountTransfer: String?
 
 /// Concept Transaction
 var cpConceptTransaction: String?
@@ -8392,7 +8444,7 @@ return ["ProductId","AmountTransfer","ConceptTransaction","BusinessId","Business
   Save Transfer Between Business Account Response.
 */
 @objc(AL_SaveTransferBetweenBusinessAccountResponse)
-public class  AL_SaveTransferBetweenBusinessAccountResponse : SyedAbsarObjectBase {
+public class AL_SaveTransferBetweenBusinessAccountResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8407,7 +8459,7 @@ return ["Return"]
   Save Transaction Approve Request.
 */
 @objc(AL_SaveTransactionApproveRequest)
-public class  AL_SaveTransactionApproveRequest : SyedAbsarObjectBase {
+public class AL_SaveTransactionApproveRequest : SyedAbsarObjectBase {
 
 
 /// Unified Registry Id
@@ -8437,7 +8489,7 @@ return ["UnifiedRegistryId","ProductId","TransactionId","BankOperationId","Docum
   Save Transaction Approve Request Response.
 */
 @objc(AL_SaveTransactionApproveRequestResponse)
-public class  AL_SaveTransactionApproveRequestResponse : SyedAbsarObjectBase {
+public class AL_SaveTransactionApproveRequestResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8452,7 +8504,7 @@ return ["Return"]
   Transaction Approve Request Response.
 */
 @objc(AL_TransactionApproveRequestResponse)
-public class  AL_TransactionApproveRequestResponse : SyedAbsarObjectBase {
+public class AL_TransactionApproveRequestResponse : SyedAbsarObjectBase {
 
 
 /// Transaction Approve Request
@@ -8467,26 +8519,26 @@ return ["TransactionApproveRequest"]
   Transaction Approve Request.
 */
 @objc(AL_TransactionApproveRequest)
-public class  AL_TransactionApproveRequest : SyedAbsarObjectBase {
+public class AL_TransactionApproveRequest : SyedAbsarObjectBase {
 
 
 /// Approved Request Date
-var cpApprovedRequestDate: NSDate?
+var cpApprovedRequestDate: String?
 
 /// Bank Operation Id
 var cpBankOperationId: String?
 
 /// Business Id
-var cpBusinessId: Int?
+var cpBusinessId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Approve Request
-var cpIndApproveRequest: Bool?
+var cpIndApproveRequest: String?
 
 /// Observations
 var cpObservations: String?
@@ -8495,7 +8547,7 @@ var cpObservations: String?
 var cpProductId: String?
 
 /// Request Date
-var cpRequestDate: NSDate?
+var cpRequestDate: String?
 
 /// Request Number
 var cpRequestNumber: String?
@@ -8507,10 +8559,10 @@ var cpStatusTransactionApproveRequestId: String?
 var cpTransactionId: String?
 
 /// Unified Registry User Id
-var cpUnifiedRegistryUserId: Int?
+var cpUnifiedRegistryUserId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Approved Request Id
 var cpUserApprovedRequestId: String?
@@ -8524,11 +8576,11 @@ return ["ApprovedRequestDate","BankOperationId","BusinessId","CreateDate","Id","
   Bank Operation.
 */
 @objc(AL_BankOperation)
-public class  AL_BankOperation : SyedAbsarObjectBase {
+public class AL_BankOperation : SyedAbsarObjectBase {
 
 
 /// Account Bank Business Id
-var cpAccountBankBusinessId: Int?
+var cpAccountBankBusinessId: String?
 
 /// Account Bank Id
 var cpAccountBankId: String?
@@ -8537,10 +8589,10 @@ var cpAccountBankId: String?
 var cpBankId: String?
 
 /// Bank Operation Amount
-var cpBankOperationAmount: Float?
+var cpBankOperationAmount: String?
 
 /// Bank Operation Date
-var cpBankOperationDate: NSDate?
+var cpBankOperationDate: String?
 
 /// Bank Operation Mode Id
 var cpBankOperationModeId: String?
@@ -8552,13 +8604,13 @@ var cpBankOperationNumber: String?
 var cpBankOperationTypeId: String?
 
 /// Business Id
-var cpBusinessId: Int?
+var cpBusinessId: String?
 
 /// Commision Id
 var cpCommisionId: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Id
 var cpId: String?
@@ -8582,10 +8634,10 @@ var cpStatusBankOperationId: String?
 var cpTransactionId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 /// User Source Id
-var cpUserSourceId: Int?
+var cpUserSourceId: String?
 
 override static func cpKeys() -> Array<String> {
 return ["AccountBankBusinessId","AccountBankId","BankId","BankOperationAmount","BankOperationDate","BankOperationModeId","BankOperationNumber","BankOperationTypeId","BusinessId","CommisionId","CreateDate","Id","Observations","PaymentTypeId","ProductId","Responsible","StatusBankOperationId","TransactionId","UpdateDate","UserSourceId"]
@@ -8596,7 +8648,7 @@ return ["AccountBankBusinessId","AccountBankId","BankId","BankOperationAmount","
   Bank Operation Mode.
 */
 @objc(AL_BankOperationMode)
-public class  AL_BankOperationMode : SyedAbsarObjectBase {
+public class AL_BankOperationMode : SyedAbsarObjectBase {
 
 
 /// Id
@@ -8614,7 +8666,7 @@ return ["Id","Name"]
   Bank Operation Type.
 */
 @objc(AL_BankOperationType)
-public class  AL_BankOperationType : SyedAbsarObjectBase {
+public class AL_BankOperationType : SyedAbsarObjectBase {
 
 
 /// Id
@@ -8632,20 +8684,20 @@ return ["Id","Name"]
   Commission.
 */
 @objc(AL_Commission)
-public class  AL_Commission : SyedAbsarObjectBase {
+public class AL_Commission : SyedAbsarObjectBase {
 
 
 /// Beginning Date
-var cpBeginningDate: NSDate?
+var cpBeginningDate: String?
 
 /// Ending Date
-var cpEndingDate: NSDate?
+var cpEndingDate: String?
 
 /// Id
 var cpId: String?
 
 /// Ind Application Commission
-var cpIndApplicationCommission: Int?
+var cpIndApplicationCommission: String?
 
 /// Is Percent Commision
 var cpIsPercentCommision: CShort?
@@ -8657,7 +8709,7 @@ var cpProductId: String?
 var cpTransactionTypeId: String?
 
 /// Value
-var cpValue: Float?
+var cpValue: String?
 
 override static func cpKeys() -> Array<String> {
 return ["BeginningDate","EndingDate","Id","IndApplicationCommission","IsPercentCommision","ProductId","TransactionTypeId","Value"]
@@ -8668,14 +8720,14 @@ return ["BeginningDate","EndingDate","Id","IndApplicationCommission","IsPercentC
   Maw_status_bank_operation.
 */
 @objc(AL_Maw_status_bank_operation)
-public class  AL_Maw_status_bank_operation : SyedAbsarObjectBase {
+public class AL_Maw_status_bank_operation : SyedAbsarObjectBase {
 
 
 /// Code
 var cpCode: String?
 
 /// Create Date
-var cpCreateDate: NSDate?
+var cpCreateDate: String?
 
 /// Description
 var cpDescription: String?
@@ -8684,7 +8736,7 @@ var cpDescription: String?
 var cpId: String?
 
 /// Update Date
-var cpUpdateDate: NSDate?
+var cpUpdateDate: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Code","CreateDate","Description","Id","UpdateDate"]
@@ -8695,7 +8747,7 @@ return ["Code","CreateDate","Description","Id","UpdateDate"]
   Get Transactions By Business Id.
 */
 @objc(AL_GetTransactionsByBusinessId)
-public class  AL_GetTransactionsByBusinessId : SyedAbsarObjectBase {
+public class AL_GetTransactionsByBusinessId : SyedAbsarObjectBase {
 
 
 /// Business Id
@@ -8713,7 +8765,73 @@ return ["BusinessId","MaxResult"]
   Get Transactions By Business Id Response.
 */
 @objc(AL_GetTransactionsByBusinessIdResponse)
-public class  AL_GetTransactionsByBusinessIdResponse : SyedAbsarObjectBase {
+public class AL_GetTransactionsByBusinessIdResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
+  Get Products By Business Id.
+*/
+@objc(AL_GetProductsByBusinessId)
+public class AL_GetProductsByBusinessId : SyedAbsarObjectBase {
+
+
+/// Business Id
+var cpBusinessId: String?
+
+override static func cpKeys() -> Array<String> {
+return ["BusinessId"]
+}
+}
+
+/**
+  Get Products By Business Id Response.
+*/
+@objc(AL_GetProductsByBusinessIdResponse)
+public class AL_GetProductsByBusinessIdResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
+  Validate Business Transfer To User.
+*/
+@objc(AL_ValidateBusinessTransferToUser)
+public class AL_ValidateBusinessTransferToUser : SyedAbsarObjectBase {
+
+
+/// Withdrawal Amount
+var cpWithdrawalAmount: String?
+
+/// Product Id
+var cpProductId: String?
+
+/// Include Fee
+var cpIncludeFee: String?
+
+override static func cpKeys() -> Array<String> {
+return ["WithdrawalAmount","ProductId","IncludeFee"]
+}
+}
+
+/**
+  Validate Business Transfer To User Response.
+*/
+@objc(AL_ValidateBusinessTransferToUserResponse)
+public class AL_ValidateBusinessTransferToUserResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8728,7 +8846,7 @@ return ["Return"]
   Send S M S.
 */
 @objc(AL_SendSMS)
-public class  AL_SendSMS : SyedAbsarObjectBase {
+public class AL_SendSMS : SyedAbsarObjectBase {
 
 
 /// Movil
@@ -8746,7 +8864,7 @@ return ["Movil","Message"]
   Send S M S Response.
 */
 @objc(AL_SendSMSResponse)
-public class  AL_SendSMSResponse : SyedAbsarObjectBase {
+public class AL_SendSMSResponse : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -8755,76 +8873,10 @@ return []
 }
 
 /**
-  Validate Business Transfer To User.
-*/
-@objc(AL_ValidateBusinessTransferToUser)
-public class  AL_ValidateBusinessTransferToUser : SyedAbsarObjectBase {
-
-
-/// Withdrawal Amount
-var cpWithdrawalAmount: Float?
-
-/// Product Id
-var cpProductId: String?
-
-/// Include Fee
-var cpIncludeFee: Bool?
-
-override static func cpKeys() -> Array<String> {
-return ["WithdrawalAmount","ProductId","IncludeFee"]
-}
-}
-
-/**
-  Validate Business Transfer To User Response.
-*/
-@objc(AL_ValidateBusinessTransferToUserResponse)
-public class  AL_ValidateBusinessTransferToUserResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
-}
-}
-
-/**
-  Get Products By Business Id.
-*/
-@objc(AL_GetProductsByBusinessId)
-public class  AL_GetProductsByBusinessId : SyedAbsarObjectBase {
-
-
-/// Business Id
-var cpBusinessId: String?
-
-override static func cpKeys() -> Array<String> {
-return ["BusinessId"]
-}
-}
-
-/**
-  Get Products By Business Id Response.
-*/
-@objc(AL_GetProductsByBusinessIdResponse)
-public class  AL_GetProductsByBusinessIdResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
-}
-}
-
-/**
   Get Business Info By Cryptogram.
 */
 @objc(AL_GetBusinessInfoByCryptogram)
-public class  AL_GetBusinessInfoByCryptogram : SyedAbsarObjectBase {
+public class AL_GetBusinessInfoByCryptogram : SyedAbsarObjectBase {
 
 
 /// Cryptogram
@@ -8839,7 +8891,7 @@ return ["Cryptogram"]
   Get Business Info By Cryptogram Response.
 */
 @objc(AL_GetBusinessInfoByCryptogramResponse)
-public class  AL_GetBusinessInfoByCryptogramResponse : SyedAbsarObjectBase {
+public class AL_GetBusinessInfoByCryptogramResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8854,7 +8906,7 @@ return ["Return"]
   Business Shop Response.
 */
 @objc(AL_BusinessShopResponse)
-public class  AL_BusinessShopResponse : SyedAbsarObjectBase {
+public class AL_BusinessShopResponse : SyedAbsarObjectBase {
 
 
 /// Business Name
@@ -8869,8 +8921,14 @@ var cpStoreName: String?
 /// Pos Code
 var cpPosCode: String?
 
+/// Address
+var cpAddress: String?
+
+/// Phone Number
+var cpPhoneNumber: String?
+
 override static func cpKeys() -> Array<String> {
-return ["BusinessName","BusinessRif","StoreName","PosCode"]
+return ["BusinessName","BusinessRif","StoreName","PosCode","Address","PhoneNumber"]
 }
 }
 
@@ -8878,7 +8936,7 @@ return ["BusinessName","BusinessRif","StoreName","PosCode"]
   Get Cumplimient Status.
 */
 @objc(AL_GetCumplimientStatus)
-public class  AL_GetCumplimientStatus : SyedAbsarObjectBase {
+public class AL_GetCumplimientStatus : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -8893,7 +8951,7 @@ return ["UserId"]
   Get Cumplimient Status Response.
 */
 @objc(AL_GetCumplimientStatusResponse)
-public class  AL_GetCumplimientStatusResponse : SyedAbsarObjectBase {
+public class AL_GetCumplimientStatusResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -8908,7 +8966,7 @@ return ["Return"]
   Cumplimient Response.
 */
 @objc(AL_CumplimientResponse)
-public class  AL_CumplimientResponse : SyedAbsarObjectBase {
+public class AL_CumplimientResponse : SyedAbsarObjectBase {
 
 
 /// Cumplimients
@@ -8923,11 +8981,11 @@ return ["Cumplimients"]
   Cumplimient.
 */
 @objc(AL_Cumplimient)
-public class  AL_Cumplimient : SyedAbsarObjectBase {
+public class AL_Cumplimient : SyedAbsarObjectBase {
 
 
 /// A M L Percent
-var cpAMLPercent: Float?
+var cpAMLPercent: String?
 
 /// Additional
 var cpAdditional: String?
@@ -8936,19 +8994,19 @@ var cpAdditional: String?
 var cpAddressId: String?
 
 /// Agent Complient Id
-var cpAgentComplientId: Int?
+var cpAgentComplientId: String?
 
 /// Aproved Date
-var cpAprovedDate: NSDate?
+var cpAprovedDate: String?
 
 /// Beginning Date
-var cpBeginningDate: NSDate?
+var cpBeginningDate: String?
 
 /// Complient Status Id
 var cpComplientStatusId: String?
 
 /// Ending Date
-var cpEndingDate: NSDate?
+var cpEndingDate: String?
 
 /// Id
 var cpId: String?
@@ -8960,10 +9018,10 @@ var cpImgDocumentDate: String?
 var cpImgProfile: String?
 
 /// Is A M L
-var cpIsAML: Bool?
+var cpIsAML: String?
 
 /// Is K Y C
-var cpIsKYC: Bool?
+var cpIsKYC: String?
 
 /// User Source Id
 var cpUserSourceId: String?
@@ -8977,7 +9035,7 @@ return ["AMLPercent","Additional","AddressId","AgentComplientId","AprovedDate","
   Cumplimient Status.
 */
 @objc(AL_CumplimientStatus)
-public class  AL_CumplimientStatus : SyedAbsarObjectBase {
+public class AL_CumplimientStatus : SyedAbsarObjectBase {
 
 
 /// Id
@@ -8992,10 +9050,58 @@ return ["Id","Value"]
 }
 
 /**
+  Exchange Business Product.
+*/
+@objc(AL_ExchangeBusinessProduct)
+public class AL_ExchangeBusinessProduct : SyedAbsarObjectBase {
+
+
+/// Business Id
+var cpBusinessId: String?
+
+/// Product Source Id
+var cpProductSourceId: String?
+
+/// Product Destination Id
+var cpProductDestinationId: String?
+
+/// Amount Exchange
+var cpAmountExchange: String?
+
+/// Concept Transaction
+var cpConceptTransaction: String?
+
+/// Included Fee
+var cpIncludedFee: String?
+
+/// Business Email
+var cpBusinessEmail: String?
+
+override static func cpKeys() -> Array<String> {
+return ["BusinessId","ProductSourceId","ProductDestinationId","AmountExchange","ConceptTransaction","IncludedFee","BusinessEmail"]
+}
+}
+
+/**
+  Exchange Business Product Response.
+*/
+@objc(AL_ExchangeBusinessProductResponse)
+public class AL_ExchangeBusinessProductResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
   Desactivate Card By Business.
 */
 @objc(AL_DesactivateCardByBusiness)
-public class  AL_DesactivateCardByBusiness : SyedAbsarObjectBase {
+public class AL_DesactivateCardByBusiness : SyedAbsarObjectBase {
 
 
 /// Business Id
@@ -9016,7 +9122,7 @@ return ["BusinessId","UserEmail","TimeZone"]
   Desactivate Card By Business Response.
 */
 @objc(AL_DesactivateCardByBusinessResponse)
-public class  AL_DesactivateCardByBusinessResponse : SyedAbsarObjectBase {
+public class AL_DesactivateCardByBusinessResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9031,7 +9137,7 @@ return ["Return"]
   Top Up List.
 */
 @objc(AL_TopUpList)
-public class  AL_TopUpList : SyedAbsarObjectBase {
+public class AL_TopUpList : SyedAbsarObjectBase {
 
 
 /// Receiver Number
@@ -9049,7 +9155,7 @@ return ["ReceiverNumber","PhoneNumber"]
   Top Up List Response.
 */
 @objc(AL_TopUpListResponse)
-public class  AL_TopUpListResponse : SyedAbsarObjectBase {
+public class AL_TopUpListResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9064,7 +9170,7 @@ return ["Return"]
   Top Up Info List Response.
 */
 @objc(AL_TopUpInfoListResponse)
-public class  AL_TopUpInfoListResponse : SyedAbsarObjectBase {
+public class AL_TopUpInfoListResponse : SyedAbsarObjectBase {
 
 
 /// Top Up Infos
@@ -9079,11 +9185,11 @@ return ["TopUpInfos"]
   Top Up Info.
 */
 @objc(AL_TopUpInfo)
-public class  AL_TopUpInfo : SyedAbsarObjectBase {
+public class AL_TopUpInfo : SyedAbsarObjectBase {
 
 
 /// Commission Percent
-var cpCommissionPercent: Float?
+var cpCommissionPercent: String?
 
 /// Country
 var cpCountry: String?
@@ -9095,13 +9201,13 @@ var cpCoutryId: String?
 var cpCreationDate: String?
 
 /// Denomination
-var cpDenomination: Float?
+var cpDenomination: String?
 
 /// Denomination Receiver
-var cpDenominationReceiver: Float?
+var cpDenominationReceiver: String?
 
 /// Denomination Sale
-var cpDenominationSale: Float?
+var cpDenominationSale: String?
 
 /// Destination Currency
 var cpDestinationCurrency: String?
@@ -9110,16 +9216,16 @@ var cpDestinationCurrency: String?
 var cpId: String?
 
 /// Increment
-var cpIncrement: Float?
+var cpIncrement: String?
 
 /// Is Open Range
-var cpIsOpenRange: Bool?
+var cpIsOpenRange: String?
 
 /// Maximum Amount
-var cpMaximumAmount: Float?
+var cpMaximumAmount: String?
 
 /// Minimum Amount
-var cpMinimumAmount: Float?
+var cpMinimumAmount: String?
 
 /// Operatorid
 var cpOperatorid: String?
@@ -9131,7 +9237,7 @@ var cpOpertador: String?
 var cpSkuid: String?
 
 /// Wholesale Price
-var cpWholesalePrice: Float?
+var cpWholesalePrice: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CommissionPercent","Country","CoutryId","CreationDate","Denomination","DenominationReceiver","DenominationSale","DestinationCurrency","Id","Increment","IsOpenRange","MaximumAmount","MinimumAmount","Operatorid","Opertador","Skuid","WholesalePrice"]
@@ -9139,58 +9245,10 @@ return ["CommissionPercent","Country","CoutryId","CreationDate","Denomination","
 }
 
 /**
-  Exchange Business Product.
-*/
-@objc(AL_ExchangeBusinessProduct)
-public class  AL_ExchangeBusinessProduct : SyedAbsarObjectBase {
-
-
-/// Business Id
-var cpBusinessId: String?
-
-/// Product Source Id
-var cpProductSourceId: String?
-
-/// Product Destination Id
-var cpProductDestinationId: String?
-
-/// Amount Exchange
-var cpAmountExchange: Float?
-
-/// Concept Transaction
-var cpConceptTransaction: String?
-
-/// Included Fee
-var cpIncludedFee: Bool?
-
-/// Business Email
-var cpBusinessEmail: String?
-
-override static func cpKeys() -> Array<String> {
-return ["BusinessId","ProductSourceId","ProductDestinationId","AmountExchange","ConceptTransaction","IncludedFee","BusinessEmail"]
-}
-}
-
-/**
-  Exchange Business Product Response.
-*/
-@objc(AL_ExchangeBusinessProductResponse)
-public class  AL_ExchangeBusinessProductResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
-}
-}
-
-/**
   Get Products By User Id.
 */
 @objc(AL_GetProductsByUserId)
-public class  AL_GetProductsByUserId : SyedAbsarObjectBase {
+public class AL_GetProductsByUserId : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -9205,7 +9263,7 @@ return ["UserId"]
   Get Products By User Id Response.
 */
 @objc(AL_GetProductsByUserIdResponse)
-public class  AL_GetProductsByUserIdResponse : SyedAbsarObjectBase {
+public class AL_GetProductsByUserIdResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9220,7 +9278,7 @@ return ["Return"]
   Validate Recharge Product.
 */
 @objc(AL_ValidateRechargeProduct)
-public class  AL_ValidateRechargeProduct : SyedAbsarObjectBase {
+public class AL_ValidateRechargeProduct : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -9233,7 +9291,7 @@ var cpProductID: String?
 var cpAmountToRecharge: String?
 
 /// Include Fee
-var cpIncludeFee: Bool?
+var cpIncludeFee: String?
 
 override static func cpKeys() -> Array<String> {
 return ["UserId","ProductID","AmountToRecharge","IncludeFee"]
@@ -9244,7 +9302,7 @@ return ["UserId","ProductID","AmountToRecharge","IncludeFee"]
   Validate Recharge Product Response.
 */
 @objc(AL_ValidateRechargeProductResponse)
-public class  AL_ValidateRechargeProductResponse : SyedAbsarObjectBase {
+public class AL_ValidateRechargeProductResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9259,7 +9317,7 @@ return ["Return"]
   Get Account Type Bank.
 */
 @objc(AL_GetAccountTypeBank)
-public class  AL_GetAccountTypeBank : SyedAbsarObjectBase {
+public class AL_GetAccountTypeBank : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -9271,7 +9329,7 @@ return []
   Get Account Type Bank Response.
 */
 @objc(AL_GetAccountTypeBankResponse)
-public class  AL_GetAccountTypeBankResponse : SyedAbsarObjectBase {
+public class AL_GetAccountTypeBankResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9286,7 +9344,7 @@ return ["Return"]
   Account Type Bank List Response.
 */
 @objc(AL_AccountTypeBankListResponse)
-public class  AL_AccountTypeBankListResponse : SyedAbsarObjectBase {
+public class AL_AccountTypeBankListResponse : SyedAbsarObjectBase {
 
 
 /// Account Type Bank
@@ -9301,7 +9359,7 @@ return ["AccountTypeBank"]
   Get Bank App.
 */
 @objc(AL_GetBankApp)
-public class  AL_GetBankApp : SyedAbsarObjectBase {
+public class AL_GetBankApp : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -9313,7 +9371,7 @@ return []
   Get Bank App Response.
 */
 @objc(AL_GetBankAppResponse)
-public class  AL_GetBankAppResponse : SyedAbsarObjectBase {
+public class AL_GetBankAppResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9328,7 +9386,7 @@ return ["Return"]
   Retrive Auth Plaid.
 */
 @objc(AL_RetriveAuthPlaid)
-public class  AL_RetriveAuthPlaid : SyedAbsarObjectBase {
+public class AL_RetriveAuthPlaid : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -9340,7 +9398,7 @@ return []
   Retrive Auth Plaid Response.
 */
 @objc(AL_RetriveAuthPlaidResponse)
-public class  AL_RetriveAuthPlaidResponse : SyedAbsarObjectBase {
+public class AL_RetriveAuthPlaidResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9355,7 +9413,7 @@ return ["Return"]
   Retrive Auth Plaid Responses.
 */
 @objc(AL_RetriveAuthPlaidResponses)
-public class  AL_RetriveAuthPlaidResponses : SyedAbsarObjectBase {
+public class AL_RetriveAuthPlaidResponses : SyedAbsarObjectBase {
 
 
 /// Products
@@ -9373,7 +9431,7 @@ return ["Products","RetriveAuthResponse"]
   Retrive Auth Response.
 */
 @objc(AL_RetriveAuthResponse)
-public class  AL_RetriveAuthResponse : SyedAbsarObjectBase {
+public class AL_RetriveAuthResponse : SyedAbsarObjectBase {
 
 
 /// Accounts
@@ -9397,7 +9455,7 @@ return ["Accounts","Item","Numbers","Request_id"]
   Numbers.
 */
 @objc(AL_Numbers)
-public class  AL_Numbers : SyedAbsarObjectBase {
+public class AL_Numbers : SyedAbsarObjectBase {
 
 
 /// Ach
@@ -9415,7 +9473,7 @@ return ["Ach","Eft"]
   Ach.
 */
 @objc(AL_Ach)
-public class  AL_Ach : SyedAbsarObjectBase {
+public class AL_Ach : SyedAbsarObjectBase {
 
 
 /// Account
@@ -9436,23 +9494,65 @@ return ["Account","Account_id","Routing","Wire_routing"]
 }
 
 /**
+  Save Transfer Between Business With User.
+*/
+@objc(AL_SaveTransferBetweenBusinessWithUser)
+public class AL_SaveTransferBetweenBusinessWithUser : SyedAbsarObjectBase {
+
+
+/// Product Id
+var cpProductId: String?
+
+/// Amount Transfer
+var cpAmountTransfer: String?
+
+/// Concept Transaction
+var cpConceptTransaction: String?
+
+/// Id User Destination
+var cpIdUserDestination: String?
+
+/// Business Id
+var cpBusinessId: String?
+
+override static func cpKeys() -> Array<String> {
+return ["ProductId","AmountTransfer","ConceptTransaction","IdUserDestination","BusinessId"]
+}
+}
+
+/**
+  Save Transfer Between Business With User Response.
+*/
+@objc(AL_SaveTransferBetweenBusinessWithUserResponse)
+public class AL_SaveTransferBetweenBusinessWithUserResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
   Process Remettence Account.
 */
 @objc(AL_ProcessRemettenceAccount)
-public class  AL_ProcessRemettenceAccount : SyedAbsarObjectBase {
+public class AL_ProcessRemettenceAccount : SyedAbsarObjectBase {
 
 
 /// User Id
 var cpUserId: String?
 
 /// Amount Origin
-var cpAmountOrigin: Float?
+var cpAmountOrigin: String?
 
 /// Total Amount
-var cpTotalAmount: Float?
+var cpTotalAmount: String?
 
 /// Amount Destiny
-var cpAmountDestiny: Float?
+var cpAmountDestiny: String?
 
 /// Exchange Rate Id
 var cpExchangeRateId: String?
@@ -9547,7 +9647,7 @@ return ["UserId","AmountOrigin","TotalAmount","AmountDestiny","ExchangeRateId","
   Process Remettence Account Response.
 */
 @objc(AL_ProcessRemettenceAccountResponse)
-public class  AL_ProcessRemettenceAccountResponse : SyedAbsarObjectBase {
+public class AL_ProcessRemettenceAccountResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9562,7 +9662,7 @@ return ["Return"]
   Remittance Response.
 */
 @objc(AL_RemittanceResponse)
-public class  AL_RemittanceResponse : SyedAbsarObjectBase {
+public class AL_RemittanceResponse : SyedAbsarObjectBase {
 
 
 /// Id
@@ -9685,52 +9785,10 @@ return ["Id","ApplicationDate","Commentary","AmountOrigin","TotalAmount","Sendin
 }
 
 /**
-  Save Transfer Between Business With User.
-*/
-@objc(AL_SaveTransferBetweenBusinessWithUser)
-public class  AL_SaveTransferBetweenBusinessWithUser : SyedAbsarObjectBase {
-
-
-/// Product Id
-var cpProductId: String?
-
-/// Amount Transfer
-var cpAmountTransfer: Float?
-
-/// Concept Transaction
-var cpConceptTransaction: String?
-
-/// Id User Destination
-var cpIdUserDestination: String?
-
-/// Business Id
-var cpBusinessId: String?
-
-override static func cpKeys() -> Array<String> {
-return ["ProductId","AmountTransfer","ConceptTransaction","IdUserDestination","BusinessId"]
-}
-}
-
-/**
-  Save Transfer Between Business With User Response.
-*/
-@objc(AL_SaveTransferBetweenBusinessWithUserResponse)
-public class  AL_SaveTransferBetweenBusinessWithUserResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: String?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
-}
-}
-
-/**
   Save Payment Info.
 */
 @objc(AL_SavePaymentInfo)
-public class  AL_SavePaymentInfo : SyedAbsarObjectBase {
+public class AL_SavePaymentInfo : SyedAbsarObjectBase {
 
 
 /// User Api
@@ -9784,7 +9842,7 @@ return ["UserApi","PasswordApi","UserId","Estado","Ciudad","ZipCode","Addres1","
   Save Payment Info Response.
 */
 @objc(AL_SavePaymentInfoResponse)
-public class  AL_SavePaymentInfoResponse : SyedAbsarObjectBase {
+public class AL_SavePaymentInfoResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9799,7 +9857,7 @@ return ["Return"]
   Recharge Card.
 */
 @objc(AL_RechargeCard)
-public class  AL_RechargeCard : SyedAbsarObjectBase {
+public class AL_RechargeCard : SyedAbsarObjectBase {
 
 
 /// Business Id
@@ -9812,7 +9870,7 @@ var cpUserEmail: String?
 var cpRechargeAmount: String?
 
 /// Include Fee
-var cpIncludeFee: Bool?
+var cpIncludeFee: String?
 
 override static func cpKeys() -> Array<String> {
 return ["BusinessId","UserEmail","RechargeAmount","IncludeFee"]
@@ -9823,7 +9881,37 @@ return ["BusinessId","UserEmail","RechargeAmount","IncludeFee"]
   Recharge Card Response.
 */
 @objc(AL_RechargeCardResponse)
-public class  AL_RechargeCardResponse : SyedAbsarObjectBase {
+public class AL_RechargeCardResponse : SyedAbsarObjectBase {
+
+
+/// Return
+var cpReturn: String?
+
+override static func cpKeys() -> Array<String> {
+return ["Return"]
+}
+}
+
+/**
+  Has Prepay Card Asociated.
+*/
+@objc(AL_HasPrepayCardAsociated)
+public class AL_HasPrepayCardAsociated : SyedAbsarObjectBase {
+
+
+/// User Id
+var cpUserId: String?
+
+override static func cpKeys() -> Array<String> {
+return ["UserId"]
+}
+}
+
+/**
+  Has Prepay Card Asociated Response.
+*/
+@objc(AL_HasPrepayCardAsociatedResponse)
+public class AL_HasPrepayCardAsociatedResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9838,7 +9926,7 @@ return ["Return"]
   Save Transfer Between Account.
 */
 @objc(AL_SaveTransferBetweenAccount)
-public class  AL_SaveTransferBetweenAccount : SyedAbsarObjectBase {
+public class AL_SaveTransferBetweenAccount : SyedAbsarObjectBase {
 
 
 /// Cryptogram User Source
@@ -9871,7 +9959,7 @@ return ["CryptogramUserSource","EmailUser","ProductId","AmountTransfer","Concept
   Save Transfer Between Account Response.
 */
 @objc(AL_SaveTransferBetweenAccountResponse)
-public class  AL_SaveTransferBetweenAccountResponse : SyedAbsarObjectBase {
+public class AL_SaveTransferBetweenAccountResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9883,40 +9971,10 @@ return ["Return"]
 }
 
 /**
-  Has Prepay Card Asociated.
-*/
-@objc(AL_HasPrepayCardAsociated)
-public class  AL_HasPrepayCardAsociated : SyedAbsarObjectBase {
-
-
-/// User Id
-var cpUserId: String?
-
-override static func cpKeys() -> Array<String> {
-return ["UserId"]
-}
-}
-
-/**
-  Has Prepay Card Asociated Response.
-*/
-@objc(AL_HasPrepayCardAsociatedResponse)
-public class  AL_HasPrepayCardAsociatedResponse : SyedAbsarObjectBase {
-
-
-/// Return
-var cpReturn: Bool?
-
-override static func cpKeys() -> Array<String> {
-return ["Return"]
-}
-}
-
-/**
   Get Card By Phone.
 */
 @objc(AL_GetCardByPhone)
-public class  AL_GetCardByPhone : SyedAbsarObjectBase {
+public class AL_GetCardByPhone : SyedAbsarObjectBase {
 
 
 /// Phone
@@ -9931,7 +9989,7 @@ return ["Phone"]
   Get Card By Phone Response.
 */
 @objc(AL_GetCardByPhoneResponse)
-public class  AL_GetCardByPhoneResponse : SyedAbsarObjectBase {
+public class AL_GetCardByPhoneResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -9946,7 +10004,7 @@ return ["Return"]
   Send Mail.
 */
 @objc(AL_SendMail)
-public class  AL_SendMail : SyedAbsarObjectBase {
+public class AL_SendMail : SyedAbsarObjectBase {
 
 
 /// Subject
@@ -9970,7 +10028,7 @@ return ["Subject","Body","To","From"]
   Send Mail Response.
 */
 @objc(AL_SendMailResponse)
-public class  AL_SendMailResponse : SyedAbsarObjectBase {
+public class AL_SendMailResponse : SyedAbsarObjectBase {
 
 
 override static func cpKeys() -> Array<String> {
@@ -9982,7 +10040,7 @@ return []
   Public Token Plaid.
 */
 @objc(AL_PublicTokenPlaid)
-public class  AL_PublicTokenPlaid : SyedAbsarObjectBase {
+public class AL_PublicTokenPlaid : SyedAbsarObjectBase {
 
 
 /// Methods
@@ -9997,7 +10055,7 @@ return ["Methods"]
   Public Token Plaid Response.
 */
 @objc(AL_PublicTokenPlaidResponse)
-public class  AL_PublicTokenPlaidResponse : SyedAbsarObjectBase {
+public class AL_PublicTokenPlaidResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10012,7 +10070,7 @@ return ["Return"]
   Exchange Token Plaid Responses.
 */
 @objc(AL_ExchangeTokenPlaidResponses)
-public class  AL_ExchangeTokenPlaidResponses : SyedAbsarObjectBase {
+public class AL_ExchangeTokenPlaidResponses : SyedAbsarObjectBase {
 
 
 /// Products
@@ -10033,7 +10091,7 @@ return ["Products","ExchangeTokenResponse","TokenResponse"]
   Exchange Token Response.
 */
 @objc(AL_ExchangeTokenResponse)
-public class  AL_ExchangeTokenResponse : SyedAbsarObjectBase {
+public class AL_ExchangeTokenResponse : SyedAbsarObjectBase {
 
 
 /// Access_token
@@ -10054,7 +10112,7 @@ return ["Access_token","Item_id","Request_id"]
   Save Product.
 */
 @objc(AL_SaveProduct)
-public class  AL_SaveProduct : SyedAbsarObjectBase {
+public class AL_SaveProduct : SyedAbsarObjectBase {
 
 
 /// Enterprise
@@ -10070,10 +10128,10 @@ var cpProductIntegrationTypeId: String?
 var cpName: String?
 
 /// Tax Include
-var cpTaxInclude: Bool?
+var cpTaxInclude: String?
 
 /// Status
-var cpStatus: Bool?
+var cpStatus: String?
 
 /// Reference Code
 var cpReferenceCode: String?
@@ -10085,10 +10143,10 @@ var cpRateUrl: String?
 var cpAccesNumberUrl: String?
 
 /// Is Free
-var cpIsFree: Bool?
+var cpIsFree: String?
 
 /// Is Alocashproduct
-var cpIsAlocashproduct: Bool?
+var cpIsAlocashproduct: String?
 
 /// Symbol
 var cpSymbol: String?
@@ -10102,7 +10160,7 @@ return ["Enterprise","Category","ProductIntegrationTypeId","Name","TaxInclude","
   Save Product Response.
 */
 @objc(AL_SaveProductResponse)
-public class  AL_SaveProductResponse : SyedAbsarObjectBase {
+public class AL_SaveProductResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10117,7 +10175,7 @@ return ["Return"]
   Balance Inquiry Without Movements.
 */
 @objc(AL_BalanceInquiryWithoutMovements)
-public class  AL_BalanceInquiryWithoutMovements : SyedAbsarObjectBase {
+public class AL_BalanceInquiryWithoutMovements : SyedAbsarObjectBase {
 
 
 /// Email
@@ -10132,7 +10190,7 @@ return ["Email"]
   Balance Inquiry Without Movements Response.
 */
 @objc(AL_BalanceInquiryWithoutMovementsResponse)
-public class  AL_BalanceInquiryWithoutMovementsResponse : SyedAbsarObjectBase {
+public class AL_BalanceInquiryWithoutMovementsResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10147,7 +10205,7 @@ return ["Return"]
   Balance Inquiry Without Movements Responses.
 */
 @objc(AL_BalanceInquiryWithoutMovementsResponses)
-public class  AL_BalanceInquiryWithoutMovementsResponses : SyedAbsarObjectBase {
+public class AL_BalanceInquiryWithoutMovementsResponses : SyedAbsarObjectBase {
 
 
 /// Balance Inquiry Without Movements Credential
@@ -10162,7 +10220,7 @@ return ["BalanceInquiryWithoutMovementsCredential"]
   Balance Inquiry Without Movements Credential.
 */
 @objc(AL_BalanceInquiryWithoutMovementsCredential)
-public class  AL_BalanceInquiryWithoutMovementsCredential : SyedAbsarObjectBase {
+public class AL_BalanceInquiryWithoutMovementsCredential : SyedAbsarObjectBase {
 
 
 /// Code Error
@@ -10213,7 +10271,7 @@ return ["CodeError","MessageError","CodeAnswer","MessageResponse","CodeAuthoriza
   Get Card By User Id.
 */
 @objc(AL_GetCardByUserId)
-public class  AL_GetCardByUserId : SyedAbsarObjectBase {
+public class AL_GetCardByUserId : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -10228,7 +10286,7 @@ return ["UserId"]
   Get Card By User Id Response.
 */
 @objc(AL_GetCardByUserIdResponse)
-public class  AL_GetCardByUserIdResponse : SyedAbsarObjectBase {
+public class AL_GetCardByUserIdResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10243,7 +10301,7 @@ return ["Return"]
   Save Business Has Product Default.
 */
 @objc(AL_SaveBusinessHasProductDefault)
-public class  AL_SaveBusinessHasProductDefault : SyedAbsarObjectBase {
+public class AL_SaveBusinessHasProductDefault : SyedAbsarObjectBase {
 
 
 /// Business Id
@@ -10258,7 +10316,7 @@ return ["BusinessId"]
   Save Business Has Product Default Response.
 */
 @objc(AL_SaveBusinessHasProductDefaultResponse)
-public class  AL_SaveBusinessHasProductDefaultResponse : SyedAbsarObjectBase {
+public class AL_SaveBusinessHasProductDefaultResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10273,7 +10331,7 @@ return ["Return"]
   Business Has Product Response.
 */
 @objc(AL_BusinessHasProductResponse)
-public class  AL_BusinessHasProductResponse : SyedAbsarObjectBase {
+public class AL_BusinessHasProductResponse : SyedAbsarObjectBase {
 
 
 /// Response
@@ -10288,7 +10346,7 @@ return ["Response"]
   Preview Exchange Product.
 */
 @objc(AL_PreviewExchangeProduct)
-public class  AL_PreviewExchangeProduct : SyedAbsarObjectBase {
+public class AL_PreviewExchangeProduct : SyedAbsarObjectBase {
 
 
 /// Email User
@@ -10301,10 +10359,10 @@ var cpProductSourceId: String?
 var cpProductDestinationId: String?
 
 /// Amount Exchange
-var cpAmountExchange: Float?
+var cpAmountExchange: String?
 
 /// Included Amount
-var cpIncludedAmount: Int?
+var cpIncludedAmount: String?
 
 override static func cpKeys() -> Array<String> {
 return ["EmailUser","ProductSourceId","ProductDestinationId","AmountExchange","IncludedAmount"]
@@ -10315,7 +10373,7 @@ return ["EmailUser","ProductSourceId","ProductDestinationId","AmountExchange","I
   Preview Exchange Product Response.
 */
 @objc(AL_PreviewExchangeProductResponse)
-public class  AL_PreviewExchangeProductResponse : SyedAbsarObjectBase {
+public class AL_PreviewExchangeProductResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10330,7 +10388,7 @@ return ["Return"]
   Manual Withdrawals.
 */
 @objc(AL_ManualWithdrawals)
-public class  AL_ManualWithdrawals : SyedAbsarObjectBase {
+public class AL_ManualWithdrawals : SyedAbsarObjectBase {
 
 
 /// Bank Id
@@ -10363,7 +10421,7 @@ return ["BankId","EmailUser","AmountWithdrawal","ProductId","ConceptTransaction"
   Manual Withdrawals Response.
 */
 @objc(AL_ManualWithdrawalsResponse)
-public class  AL_ManualWithdrawalsResponse : SyedAbsarObjectBase {
+public class AL_ManualWithdrawalsResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10378,7 +10436,7 @@ return ["Return"]
   Save User Has Product Default.
 */
 @objc(AL_SaveUserHasProductDefault)
-public class  AL_SaveUserHasProductDefault : SyedAbsarObjectBase {
+public class AL_SaveUserHasProductDefault : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -10393,7 +10451,7 @@ return ["UserId"]
   Save User Has Product Default Response.
 */
 @objc(AL_SaveUserHasProductDefaultResponse)
-public class  AL_SaveUserHasProductDefaultResponse : SyedAbsarObjectBase {
+public class AL_SaveUserHasProductDefaultResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10408,7 +10466,7 @@ return ["Return"]
   Get Transactions By User Id App.
 */
 @objc(AL_GetTransactionsByUserIdApp)
-public class  AL_GetTransactionsByUserIdApp : SyedAbsarObjectBase {
+public class AL_GetTransactionsByUserIdApp : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -10426,7 +10484,7 @@ return ["UserId","MaxResult"]
   Get Transactions By User Id App Response.
 */
 @objc(AL_GetTransactionsByUserIdAppResponse)
-public class  AL_GetTransactionsByUserIdAppResponse : SyedAbsarObjectBase {
+public class AL_GetTransactionsByUserIdAppResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10441,7 +10499,7 @@ return ["Return"]
   Generar Codigo Movil S M S.
 */
 @objc(AL_GenerarCodigoMovilSMS)
-public class  AL_GenerarCodigoMovilSMS : SyedAbsarObjectBase {
+public class AL_GenerarCodigoMovilSMS : SyedAbsarObjectBase {
 
 
 /// Movil
@@ -10459,7 +10517,7 @@ return ["Movil","Codigo"]
   Generar Codigo Movil S M S Response.
 */
 @objc(AL_GenerarCodigoMovilSMSResponse)
-public class  AL_GenerarCodigoMovilSMSResponse : SyedAbsarObjectBase {
+public class AL_GenerarCodigoMovilSMSResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10474,7 +10532,7 @@ return ["Return"]
   Recharge Wallet Product.
 */
 @objc(AL_RechargeWalletProduct)
-public class  AL_RechargeWalletProduct : SyedAbsarObjectBase {
+public class AL_RechargeWalletProduct : SyedAbsarObjectBase {
 
 
 /// Business Id
@@ -10490,7 +10548,7 @@ var cpProductId: String?
 var cpAmountToRecharge: String?
 
 /// Include Fee
-var cpIncludeFee: Bool?
+var cpIncludeFee: String?
 
 override static func cpKeys() -> Array<String> {
 return ["BusinessId","UserId","ProductId","AmountToRecharge","IncludeFee"]
@@ -10501,7 +10559,7 @@ return ["BusinessId","UserId","ProductId","AmountToRecharge","IncludeFee"]
   Recharge Wallet Product Response.
 */
 @objc(AL_RechargeWalletProductResponse)
-public class  AL_RechargeWalletProductResponse : SyedAbsarObjectBase {
+public class AL_RechargeWalletProductResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10516,7 +10574,7 @@ return ["Return"]
   Get Balance History By Product And Business Id.
 */
 @objc(AL_GetBalanceHistoryByProductAndBusinessId)
-public class  AL_GetBalanceHistoryByProductAndBusinessId : SyedAbsarObjectBase {
+public class AL_GetBalanceHistoryByProductAndBusinessId : SyedAbsarObjectBase {
 
 
 /// Business Id
@@ -10534,7 +10592,7 @@ return ["BusinessId","ProductId"]
   Get Balance History By Product And Business Id Response.
 */
 @objc(AL_GetBalanceHistoryByProductAndBusinessIdResponse)
-public class  AL_GetBalanceHistoryByProductAndBusinessIdResponse : SyedAbsarObjectBase {
+public class AL_GetBalanceHistoryByProductAndBusinessIdResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10549,7 +10607,7 @@ return ["Return"]
   Has Prepay Card.
 */
 @objc(AL_HasPrepayCard)
-public class  AL_HasPrepayCard : SyedAbsarObjectBase {
+public class AL_HasPrepayCard : SyedAbsarObjectBase {
 
 
 /// User Id
@@ -10564,11 +10622,11 @@ return ["UserId"]
   Has Prepay Card Response.
 */
 @objc(AL_HasPrepayCardResponse)
-public class  AL_HasPrepayCardResponse : SyedAbsarObjectBase {
+public class AL_HasPrepayCardResponse : SyedAbsarObjectBase {
 
 
 /// Return
-var cpReturn: Bool?
+var cpReturn: String?
 
 override static func cpKeys() -> Array<String> {
 return ["Return"]
@@ -10576,10 +10634,34 @@ return ["Return"]
 }
 
 /**
+  Send Mail Test.
+*/
+@objc(AL_SendMailTest)
+public class AL_SendMailTest : SyedAbsarObjectBase {
+
+
+override static func cpKeys() -> Array<String> {
+return []
+}
+}
+
+/**
+  Send Mail Test Response.
+*/
+@objc(AL_SendMailTestResponse)
+public class AL_SendMailTestResponse : SyedAbsarObjectBase {
+
+
+override static func cpKeys() -> Array<String> {
+return []
+}
+}
+
+/**
   Get Payment Info.
 */
 @objc(AL_GetPaymentInfo)
-public class  AL_GetPaymentInfo : SyedAbsarObjectBase {
+public class AL_GetPaymentInfo : SyedAbsarObjectBase {
 
 
 /// User Api
@@ -10600,7 +10682,7 @@ return ["UserApi","PasswordApi","UserId"]
   Get Payment Info Response.
 */
 @objc(AL_GetPaymentInfoResponse)
-public class  AL_GetPaymentInfoResponse : SyedAbsarObjectBase {
+public class AL_GetPaymentInfoResponse : SyedAbsarObjectBase {
 
 
 /// Return
@@ -10615,7 +10697,7 @@ return ["Return"]
   Payment Info List Response.
 */
 @objc(AL_PaymentInfoListResponse)
-public class  AL_PaymentInfoListResponse : SyedAbsarObjectBase {
+public class AL_PaymentInfoListResponse : SyedAbsarObjectBase {
 
 
 /// Payment Infos
@@ -10626,52 +10708,26 @@ return ["PaymentInfos"]
 }
 }
 
-/**
-  Send Mail Test.
-*/
-@objc(AL_AL_SendMailTest)
-public class  AL_SendMailTest : SyedAbsarObjectBase {
-
-
-override static func cpKeys() -> Array<String> {
-return []
-}
-}
 
 /**
-  Send Mail Test Response.
+    A generic base class for all Objects.
 */
-@objc(AL_SendMailTestResponse)
-public class  AL_SendMailTestResponse : SyedAbsarObjectBase {
+public class AL_SyedAbsarObjectBase : NSObject
+{
+    var xmlResponseString: String?
 
-
-override static func cpKeys() -> Array<String> {
-return []
-}
-}
-
-    /**
-      Data.
-    */
-    @objc(AL_Data)
-    public class  AL_DataAux : SyedAbsarObjectBase {
-
-
-    /// City
-    var cpCity: String?
-
-    /// State
-    var cpState: String?
-
-    /// Street
-    var cpStreet: String?
-
-    /// Zip
-    var cpZip: String?
-
-    override static func cpKeys() -> Array<String> {
-    return ["City","State","Street","Zip"]
-    }
+    class func cpKeys() -> Array <String>
+    {
+        return []
     }
     
-    
+    required override public init(){}
+  
+    class func newInstance() -> Self {
+        return self.init()
+    }
+
+
+}
+
+

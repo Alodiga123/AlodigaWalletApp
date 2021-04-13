@@ -57,7 +57,7 @@ public class Respuesta : SyedAbsarObjectBase {
 
 
 /// Fecha Hora
-var cpFechaHora: NSDate?
+var cpFechaHora: String?
 
 /// Codigo Respuesta
 var cpCodigoRespuesta: String?
@@ -165,13 +165,13 @@ var cpApellido: String?
 var cpCredencial: String?
 
 /// Credencial Fecha
-var cpCredencialFecha: NSDate?
+var cpCredencialFecha: String?
 
 /// Email
 var cpEmail: String?
 
 /// Fecha Nacimiento
-var cpFechaNacimiento: NSDate?
+var cpFechaNacimiento: String?
 
 /// Intentos Fallidos
 var cpIntentosFallidos: String?
@@ -477,7 +477,7 @@ public class PerfilAloPos : SyedAbsarObjectBase {
 var cpEmpresa: String?
 
 /// Fecha Vencimiento Documento
-var cpFechaVencimientoDocumento: NSDate?
+var cpFechaVencimientoDocumento: String?
 
 /// Perfil Alo Pos Id
 var cpPerfilAloPosId: String?
@@ -552,7 +552,7 @@ var cpBanco: String?
 var cpCuentaBancariaTipo: String?
 
 /// Fecha Creacion
-var cpFechaCreacion: NSDate?
+var cpFechaCreacion: String?
 
 override static func cpKeys() -> Array<String> {
 return ["CuentaBancariaId","NumeroCuenta","NumeroRuta","Banco","CuentaBancariaTipo","FechaCreacion"]
@@ -576,13 +576,13 @@ var cpCountryId: String?
 var cpCreatedBy: String?
 
 /// Created Date
-var cpCreatedDate: NSDate?
+var cpCreatedDate: String?
 
 /// Edited By
 var cpEditedBy: String?
 
 /// Edited Date
-var cpEditedDate: NSDate?
+var cpEditedDate: String?
 
 /// Name
 var cpName: String?
@@ -606,7 +606,7 @@ public class CuentaBancariaTipo : SyedAbsarObjectBase {
 var cpCreatedBy: String?
 
 /// Created Date
-var cpCreatedDate: NSDate?
+var cpCreatedDate: String?
 
 /// Cuenta Bancaria Id
 var cpCuentaBancariaId: String?
@@ -615,7 +615,7 @@ var cpCuentaBancariaId: String?
 var cpEditedBy: String?
 
 /// Edited Date
-var cpEditedDate: NSDate?
+var cpEditedDate: String?
 
 /// Name
 var cpName: String?
@@ -735,7 +735,7 @@ var cpEmailContacto: String?
 var cpEstadoTarjetaId: String?
 
 /// Fecha Creacion
-var cpFechaCreacion: NSDate?
+var cpFechaCreacion: String?
 
 /// Fecha Vencimiento
 var cpFechaVencimiento: String?
