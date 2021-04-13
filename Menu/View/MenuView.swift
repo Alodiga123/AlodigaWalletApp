@@ -174,6 +174,7 @@ struct cerrarSesión: View {
             primaryButton: .default (Text("OK")) {
                         print("Presionando OK")
                         exit(0)
+                
                       },
             secondaryButton: .cancel()
         )
