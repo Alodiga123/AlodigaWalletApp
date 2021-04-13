@@ -109,6 +109,9 @@ struct FormSignUpViewAccess: View {
                                     registraUsuario.cpImagenBytes = "null"
                                     registraUsuario.cpLink = "AloCash App Android";
                                     registraUsuario.cpPin = pass;
+                                    // TODO: valores nuevos rellenar
+                                    registraUsuario.cpNumeroDocumento="187299";
+                                    registraUsuario.cpTipoDocumentoId="1";
                                     print(Constant.defaults.value(forKey: "Rphone") as! String)
                                 
                                     registerController.getGuardarUsuario(generarRegistro: registraUsuario) { (res,error) in
