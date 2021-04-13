@@ -61,7 +61,7 @@ struct PassByTokenViewAccess: View {
                         }else if(token.count < 6){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("CodeLengthInvalid", comment: ""))
                         }else{
-                            if ((Constant.defaults.value(forKey: "tokenApi") as! String) !=  token){
+                            if ((Constant.defaults.value(forKey: "token") as! String) !=  token){
                                 restCountIntent -= 1
                                 print("INTENTOS: ", restCountIntent)
                                 if (restCountIntent == 0){
