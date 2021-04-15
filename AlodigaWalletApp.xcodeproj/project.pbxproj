@@ -49,6 +49,7 @@
 		04B6828625632F8D00834E95 /* ObjectErrorPassForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */; };
 		04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC3025157E0700960B9F /* ProductTopUpView.swift */; };
 		04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC322515829600960B9F /* SuccessTopUpView.swift */; };
+		04CD77212628A55800453557 /* ObjectParameterOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD77202628A55800453557 /* ObjectParameterOptional.swift */; };
 		04CF66952579A75F006688BA /* WithdrawalControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF66942579A75F006688BA /* WithdrawalControler.swift */; };
 		04CF669A2579B27D006688BA /* ObjectBankByCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF66992579B27D006688BA /* ObjectBankByCountry.swift */; };
 		04CF669F2579B2A3006688BA /* ObjectErrorBankByCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF669E2579B2A3006688BA /* ObjectErrorBankByCountry.swift */; };
@@ -198,6 +199,7 @@
 		04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorPassForgot.swift; sourceTree = "<group>"; };
 		04BEBC3025157E0700960B9F /* ProductTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTopUpView.swift; sourceTree = "<group>"; };
 		04BEBC322515829600960B9F /* SuccessTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessTopUpView.swift; sourceTree = "<group>"; };
+		04CD77202628A55800453557 /* ObjectParameterOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectParameterOptional.swift; sourceTree = "<group>"; };
 		04CF66942579A75F006688BA /* WithdrawalControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalControler.swift; sourceTree = "<group>"; };
 		04CF66992579B27D006688BA /* ObjectBankByCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectBankByCountry.swift; sourceTree = "<group>"; };
 		04CF669E2579B2A3006688BA /* ObjectErrorBankByCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorBankByCountry.swift; sourceTree = "<group>"; };
@@ -850,6 +852,7 @@
 				BA1B8BC72563668B002A6892 /* ObjectGetUsuarioByEmailError.swift */,
 				04B6828025632D3000834E95 /* ObjectChangePassForgot.swift */,
 				04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */,
+				04CD77202628A55800453557 /* ObjectParameterOptional.swift */,
 				BA6AC2FA256752990072E6C5 /* ObjectCodeOprationError.swift */,
 				BA6AC2FF2567FBA20072E6C5 /* ObjectProccesTransferenceError.swift */,
 				BA6AC3042567FCD10072E6C5 /* ObjectProcessTransference.swift */,
@@ -1082,6 +1085,7 @@
 				044BD0BB2548CEBE005A6754 /* SuccessfulQuestionsView.swift in Sources */,
 				042233842514121C00AEB65F /* WithdrawalConfirmationView.swift in Sources */,
 				BAE1EA6A252EAEB4007F9CD6 /* ObjectLogin.swift in Sources */,
+				04CD77212628A55800453557 /* ObjectParameterOptional.swift in Sources */,
 				0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */,
 				BA1B8BA0255C1985002A6892 /* SpinnerCurrencyTransference.swift in Sources */,
 				04D6DA6D251A5C3F0053125C /* AccountExpiredView.swift in Sources */,
