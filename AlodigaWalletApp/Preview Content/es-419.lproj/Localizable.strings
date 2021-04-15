@@ -64,6 +64,7 @@
 "Register" = "Registro";
 "SignUp" = "Registrate";
 "SelectCountry" = "Seleccione el país";
+"SelectDocumentT" = "Seleccione tipo de documento";
 "EnterPhone" = "Ingrese el número de Teléfono";
 "KeyReceived" = "Clave recibida";
 "RegistrationData" = "Datos de Registro";

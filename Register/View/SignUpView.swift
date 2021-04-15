@@ -224,7 +224,7 @@ struct CountryList: View {
                 .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
             
             .sheet(isPresented: self.$isSheetOpened) {
-                paises(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
+                paisesR(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
             }
             line
               PhoneRegisterTextField(phone: $selectedCountry.code)
@@ -244,36 +244,36 @@ struct CountryList: View {
     }
 }
 
-//struct paises: View {
-//    var countries : [Country]
-//    var isSheetOpened : Bool
-//    @Binding var selectedCountry: Country
-//    @Environment(\.presentationMode) var presentationMode
-//
-//    var body: some View {
-//        VStack {
-//            List {
-//                ForEach(self.countries, id: \.self) { index in
-//                    Button(action: {
-//                        self.selectedCountry = index
-//                        self.presentationMode.wrappedValue.dismiss()
-//
-//                        Constant.defaults.setValue(index.code, forKey: "code")
-//                        Constant.defaults.setValue(index.id, forKey: "idCountry")
-//                        print("codigo: "+index.code)
-//                        print("Id: " + index.id)
-//                    }) {
-//                        Text(index.alternativeName3)
-//                            .font(.callout)
-//                            .fontWeight(.bold)
-//                            .frame(width: 340, alignment: .leading)
-//                            .foregroundColor(.gray)
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
+struct paisesR: View {
+    var countries : [Country]
+    var isSheetOpened : Bool
+    @Binding var selectedCountry: Country
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack {
+            List {
+                ForEach(self.countries, id: \.self) { index in
+                    Button(action: {
+                        self.selectedCountry = index
+                        self.presentationMode.wrappedValue.dismiss()
+
+                        Constant.defaults.setValue(index.code, forKey: "code")
+                        Constant.defaults.setValue(index.id, forKey: "idCountryR")
+                        print("codigo: "+index.code)
+                        print("Id: " + index.id)
+                    }) {
+                        Text(index.alternativeName3)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                            .frame(width: 340, alignment: .leading)
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
+        }
+    }
+}
 
 struct TextLabelCountry: View {
     @State var countries : [Country] = []
