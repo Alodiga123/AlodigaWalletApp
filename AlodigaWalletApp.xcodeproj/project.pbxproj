@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040044102626542F007C4DEF /* FormSignUpView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400440F2626542F007C4DEF /* FormSignUpView2.swift */; };
+		0400441826267068007C4DEF /* ObjectDocumentPersonTypeByContry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400441726267068007C4DEF /* ObjectDocumentPersonTypeByContry.swift */; };
+		0400441D262670A1007C4DEF /* ObjectErrorDocumentPersonTypeByContry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400441C262670A1007C4DEF /* ObjectErrorDocumentPersonTypeByContry.swift */; };
+		0400442226267404007C4DEF /* SpinnerDocumentPersonByCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400442126267404007C4DEF /* SpinnerDocumentPersonByCountry.swift */; };
 		0406178F2581822E0028860D /* SpinnerCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406178E2581822E0028860D /* SpinnerCountry.swift */; };
 		0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */; };
 		0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */; };
@@ -152,6 +156,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0400440F2626542F007C4DEF /* FormSignUpView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSignUpView2.swift; sourceTree = "<group>"; };
+		0400441726267068007C4DEF /* ObjectDocumentPersonTypeByContry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDocumentPersonTypeByContry.swift; sourceTree = "<group>"; };
+		0400441C262670A1007C4DEF /* ObjectErrorDocumentPersonTypeByContry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorDocumentPersonTypeByContry.swift; sourceTree = "<group>"; };
+		0400442126267404007C4DEF /* SpinnerDocumentPersonByCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerDocumentPersonByCountry.swift; sourceTree = "<group>"; };
 		0406178E2581822E0028860D /* SpinnerCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCountry.swift; sourceTree = "<group>"; };
 		0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeConfirmationView.swift; sourceTree = "<group>"; };
 		0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucesfullRechargeView.swift; sourceTree = "<group>"; };
@@ -769,7 +777,9 @@
 				46DBC489251287DF008D42B3 /* SignUpView.swift */,
 				46DBC487251287C4008D42B3 /* PassByTokenView.swift */,
 				46DBC4852512879B008D42B3 /* FormSignUpView.swift */,
+				0400440F2626542F007C4DEF /* FormSignUpView2.swift */,
 				46DBC48B25128804008D42B3 /* WelcomeView.swift */,
+				0400442126267404007C4DEF /* SpinnerDocumentPersonByCountry.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -855,6 +865,8 @@
 				04F85F88257B068100A35C83 /* ObjectErrorProductsByBank.swift */,
 				049FC9152582F13A00133FD7 /* ObjectManualWithdrawals.swift */,
 				049FC91A2582F14800133FD7 /* ObjectErrorManualWithdrawals.swift */,
+				0400441726267068007C4DEF /* ObjectDocumentPersonTypeByContry.swift */,
+				0400441C262670A1007C4DEF /* ObjectErrorDocumentPersonTypeByContry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1030,6 +1042,7 @@
 				46B271F824FD2831005DB0C1 /* LoginView.swift in Sources */,
 				46DBC47825128547008D42B3 /* SuccesfulPaymentQRView.swift in Sources */,
 				048612262549AA5F008E51CE /* ObjectErrorToken.swift in Sources */,
+				040044102626542F007C4DEF /* FormSignUpView2.swift in Sources */,
 				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
 				045D399525719B2900A98BCA /* SuccessfulChangeView.swift in Sources */,
 				043FEC86251BE2EE005C518B /* RecoverPasswordView.swift in Sources */,
@@ -1043,6 +1056,7 @@
 				BA1B8BC82563668B002A6892 /* ObjectGetUsuarioByEmailError.swift in Sources */,
 				BA6AC33925813B9D0072E6C5 /* Progress.swift in Sources */,
 				BAC6171A2583EB490057CBC4 /* Loading.swift in Sources */,
+				0400441D262670A1007C4DEF /* ObjectErrorDocumentPersonTypeByContry.swift in Sources */,
 				049FC91B2582F14800133FD7 /* ObjectErrorManualWithdrawals.swift in Sources */,
 				46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */,
 				049132F22577081600698369 /* ObjectErrorValidateAccount.swift in Sources */,
@@ -1060,6 +1074,7 @@
 				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
 				BA1B8B95255C11B2002A6892 /* SpinnerOption.swift in Sources */,
 				0422338B251551F600AEB65F /* TopUpView.swift in Sources */,
+				0400441826267068007C4DEF /* ObjectDocumentPersonTypeByContry.swift in Sources */,
 				BAE1E9F1252BC687007F9CD6 /* ParseXMLData.swift in Sources */,
 				BA1B8BB62562F5C5002A6892 /* ObjectGetUsuarioByEmail.swift in Sources */,
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
@@ -1105,6 +1120,7 @@
 				042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */,
 				46DBC48C25128804008D42B3 /* WelcomeView.swift in Sources */,
 				BA6AC3002567FBA20072E6C5 /* ObjectProccesTransferenceError.swift in Sources */,
+				0400442226267404007C4DEF /* SpinnerDocumentPersonByCountry.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
 				043FEC8E251BF601005C518B /* SecurityLevelView.swift in Sources */,
 				04D6DA41251913210053125C /* ConvertView.swift in Sources */,

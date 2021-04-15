@@ -120,6 +120,48 @@ public class RegisterController{
         }
     }
     
+    
+    func getDocumentPersonTypeByCountry(generarDocumentPersonType: AL_GetDocumentPersonTypeByCountry ,completion: @escaping (_ res:ObjectDocumentPersonTypeByContry?, String?) -> Void) {
+        
+        let client_RU = AlodigaClient()
+    
+        let documentPersonTypes = AL_GetDocumentPersonTypeByCountry()
+        
+        //Llamada del servicio de DocumentPersonTypesByCountry
+        client_RU.opGetDocumentPersonTypeByCountry(getDocumentPersonTypeByCountry: documentPersonTypes) { (data, error) in
+            
+            if error != nil {
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            do{
+                var objetResponseDocumentPersonTypeByContry: ObjectDocumentPersonTypeByContry
+                var objetResponseDocumentPersonTypeByContryError: ObjectErrorDocumentPersonTypeByContry
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON Document By Country---- > ")
+                print(jsonStr)
+                
+                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                {
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonDocumentPersonTypeByContry")
+                    objetResponseDocumentPersonTypeByContry = try JSONDecoder().decode(ObjectDocumentPersonTypeByContry.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objetResponseDocumentPersonTypeByContry, nil)
+                }else{
+                    objetResponseDocumentPersonTypeByContryError = try JSONDecoder().decode(ObjectErrorDocumentPersonTypeByContry.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objetResponseDocumentPersonTypeByContryError.envelope.body.cambiar._return.codigoRespuesta)
+                }
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+        }
+    }
+    
     func getGuardarUsuario(generarRegistro: GuardarUsuarioAplicacionMovil ,completion: @escaping (_ res:ObjectRegisterUser?, String?) -> Void) {
         
         let client_RU = RegistroUnificadoClient()    
