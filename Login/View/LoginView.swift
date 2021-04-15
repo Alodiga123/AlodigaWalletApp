@@ -197,21 +197,21 @@ struct CardButtonViewAccess: View {
                                 
                                 Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.prepayCard, forKey: "prepayCard")
                                 
-                                Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.cuenta.numeroCuenta, forKey: "numeroCuenta")
+                                Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.cuenta?.numeroCuenta, forKey: "numeroCuenta")
                                 
                                 
                                 if(Constant.defaults.bool(forKey: "prepayCard")){
                                     Constant.defaults.set(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.numberCard, forKey: "numberCard")
                                 }
                                 
-                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.nombre + " " + login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.apellido, forKey: "user")
+                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.nombre! + " " + login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.apellido!, forKey: "user")
                                 
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.email, forKey: "email")
                                 
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.movil, forKey: "movil")
                                 
                                 let util = Utils()
-                                util.updateProductsIninitial(products: login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos)
+                                util.updateProductsIninitial(products: login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos!)
 
                                 
                                 loading.loadingDismiss()
@@ -226,7 +226,7 @@ struct CardButtonViewAccess: View {
                                 Constant.defaults.set(false, forKey: "prepayCardAsociate")
                                 Constant.defaults.set(false, forKey: "prepayCard")
                                 
-                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.nombre + " " + login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.apellido, forKey: "user")
+                                Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.nombre! + " " + login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.apellido!, forKey: "user")
                                 
                                 Constant.defaults.setValue(login.envelope.body.aplicacionMovilResponse._return.datosRespuesta.email, forKey: "email")
                                 

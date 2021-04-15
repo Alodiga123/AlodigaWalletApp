@@ -60,7 +60,7 @@ struct FirstView: View {
             objetResponse = try JSONDecoder().decode(ObjectLogin.self, from: str.data(using: .utf8)!)
             print("OBJETO DECODE")
             print(objetResponse)
-            self.products = objetResponse.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos
+            self.products = objetResponse.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos!
             self.selectedProduct = products[0]
         } catch  {
             loading.loadingDismiss()

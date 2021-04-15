@@ -350,7 +350,7 @@ struct lista: View{
             print(objetResponse)
 
             self.jsonLogin = objetResponse
-            self.products = objetResponse.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos
+            self.products = objetResponse.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos!
         } catch  {
             print("Error: decodificando json")
         }

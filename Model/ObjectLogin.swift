@@ -62,34 +62,34 @@ struct ReturnLogin : Decodable{
 }
 
 struct DatoRespuestaLogin : Decodable{
-    var usuarioID: String
-    var apellido: String
-    var credencial : String
-    var credencialFecha: String
-    var email: String
-    var fechaNacimiento: String
-    var intentosFallidos: String
-    var movil: String
-    var nombre: String
-    var aplicaciones: [AplicacionesLogin]
-    var respuestaListadoProductos : [ListadoProductos]
-    var cumplimient: String
-    var prepayCardAsociate: String
-    var prepayCard : String
-    var numberCard: String
-    var countrySourceId: String
-    var direccion: DireccionLogin
-    var estado: EstadoLogin
-    var imagen: ImagenLogin
-    var cuenta : CuentaLogin
-    var genero : String
-    var telefonoResidencial : String
-    var ocupacion: OcupacionLogin
-    var tipoDocumento: TipoDocumentoLogin
-    var numeroDocumento : String
-    var perfilAloRrp: PerfilAloRrpLogin
-    var pin: String
-    var remettencesDireccionId: String
+    var usuarioID: String?
+    var apellido: String?
+    var credencial : String?
+    var credencialFecha: String?
+    var email: String?
+    var fechaNacimiento: String?
+    var intentosFallidos: String?
+    var movil: String?
+    var nombre: String?
+    var aplicaciones: [AplicacionesLogin]?
+    var respuestaListadoProductos : [ListadoProductos]?
+    var cumplimient: String?
+    var prepayCardAsociate: String?
+    var prepayCard : String?
+    var numberCard: String?
+    var countrySourceId: String?
+    var direccion: DireccionLogin?
+    var estado: EstadoLogin?
+    var imagen: ImagenLogin?
+    var cuenta : CuentaLogin?
+    var genero : String?
+    var telefonoResidencial : String?
+    var ocupacion: OcupacionLogin?
+    var tipoDocumento: TipoDocumentoLogin?
+    var numeroDocumento : String?
+    var perfilAloRrp: PerfilAloRrpLogin?
+    var pin: String?
+    var remettencesDireccionId: String?
     
     enum CodingKeys: String, CodingKey {
        case usuarioID = "UsuarioID"
@@ -123,6 +123,47 @@ struct DatoRespuestaLogin : Decodable{
 
 
      }
+    
+    
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        usuarioID = try container.decodeIfPresent(String.self, forKey: .usuarioID)
+        apellido = try container.decodeIfPresent(String.self, forKey: .apellido)
+        credencial = try container.decodeIfPresent(String.self, forKey: .credencial)
+        credencialFecha = try container.decodeIfPresent(String.self, forKey: .credencialFecha)
+        email = try container.decodeIfPresent(String.self, forKey: .email)
+        fechaNacimiento = try container.decodeIfPresent(String.self, forKey: .fechaNacimiento)
+        intentosFallidos = try container.decodeIfPresent(String.self, forKey: .intentosFallidos)
+        movil = try container.decodeIfPresent(String.self, forKey: .movil)
+        nombre = try container.decodeIfPresent(String.self, forKey: .nombre)
+        aplicaciones = try container.decodeIfPresent([FailableDecodable<AplicacionesLogin>].self, forKey: .aplicaciones)?
+        .compactMap { $0.base } // .flatMap in Swift 4.0
+        
+        respuestaListadoProductos = try container.decodeIfPresent([FailableDecodable<ListadoProductos>].self, forKey: .respuestaListadoProductos)?
+            .compactMap { $0.base }
+            //.compactMap { $0.base } // .flatMap in Swift 4.0
+            
+        cumplimient = try container.decodeIfPresent(String.self, forKey: .cumplimient)
+        prepayCardAsociate = try container.decodeIfPresent(String.self, forKey: .prepayCardAsociate)
+        prepayCard = try container.decodeIfPresent(String.self, forKey: .prepayCard)
+        numberCard = try container.decodeIfPresent(String.self, forKey: .numberCard)
+        countrySourceId = try container.decodeIfPresent(String.self, forKey: .countrySourceId)
+        direccion = try container.decodeIfPresent(DireccionLogin.self, forKey: .direccion)
+        estado = try container.decodeIfPresent(EstadoLogin.self, forKey: .estado)
+        imagen = try container.decodeIfPresent(ImagenLogin.self, forKey: .imagen)
+        cuenta = try container.decodeIfPresent(CuentaLogin.self, forKey: .cuenta)
+        genero = try container.decodeIfPresent(String.self, forKey: .genero)
+        telefonoResidencial = try container.decodeIfPresent(String.self, forKey: .telefonoResidencial)
+        ocupacion = try container.decodeIfPresent(OcupacionLogin.self, forKey: .ocupacion)
+        tipoDocumento = try container.decodeIfPresent(TipoDocumentoLogin.self, forKey: .tipoDocumento)
+        numeroDocumento = try container.decodeIfPresent(String.self, forKey: .numeroDocumento)
+        perfilAloRrp = try container.decodeIfPresent(PerfilAloRrpLogin.self, forKey: .perfilAloRrp)
+        pin = try container.decodeIfPresent(String.self, forKey: .pin)
+        remettencesDireccionId = try container.decodeIfPresent(String.self, forKey: .remettencesDireccionId)
+
+    }
 }
 
 struct AplicacionesLogin: Decodable{
