@@ -1,8 +1,8 @@
 //
-//  ObjectOptional.swift
+//  ObjectParameterOptional.swift
 //  IOSAlodigaWalletApp
 //
-//  Created by Adira Quintero on 4/14/21.
+//  Created by Adira Quintero on 4/15/21.
 //  Copyright © 2021 Kerwin Gomez. All rights reserved.
 //
 
@@ -18,5 +18,3 @@ struct FailableDecodable<Base : Decodable> : Decodable {
         self.base = try? container.decode(Base.self)
     }
 }
-
-
