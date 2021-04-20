@@ -29,6 +29,7 @@ struct SecurityQuestionsViewAccess: View {
     @State var question2: String = ""
     @State var question3: String = ""
     @State var steptwo: Bool = false
+   
     
     func stepNex(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -49,14 +50,17 @@ struct SecurityQuestionsViewAccess: View {
                         TextLabelQuestions()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
-                    TextLabelEnterSQ()
+                    //TextLabelEnterSQ()
                     VStack{
-                        ListarPregunta()
-                        Questions1RegisterTextField(question1: self.$question1)
-                        ListarPregunta()
-                        Questions2RegisterTextField(question2: self.$question2)
-                        ListarPregunta()
-                        Questions3RegisterTextField(question3: self.$question3)
+                        Spacer()
+                        FirstViewSecurity()
+                        //Questions2RegisterTextField(question2: self.$question2)
+                        //Spacer()
+                     
+                        //ListarPregunta()
+                        //Questions2RegisterTextField(question2: self.$question2)
+                        //ListarPregunta()
+                        //Questions3RegisterTextField(question3: self.$question3)
                     }
                     Button(action: {
                         let questionsController = SecretQuestionsController()
@@ -268,103 +272,6 @@ struct QuestionsBackButtonContent: View {
     }
 }
 
-struct QuestionsList: View {
-    @State var isSheetOpened = false
-    @State var selectedQuestions = Questions()
-    @State var questions : [Questions] = []
-    @State var expand = false
-    @State var separador: String = ""
-    @State var jsonQuestion : ObjectSecretQuestions?
-    var body: some View {
-        VStack {
-            Button(action: {
-                self.isSheetOpened.toggle()
-                
-            }) {
-                Text("\(selectedQuestions.alternativeName3)")
-                    //.fontWeight(.bold)
-                    .foregroundColor(.gray)
-                    Spacer()
-                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
-                        .resizable()
-                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
-                        .foregroundColor(.gray)
-                
-                }.padding(10)
-                .cornerRadius(10)
-                .clipShape(Rectangle())
-                .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-            
-            .sheet(isPresented: self.$isSheetOpened) {
-                preguntas(questions: self.questions, isSheetOpened: self.isSheetOpened, selectedQuestions: self.$selectedQuestions)
-            }
-        }.onAppear(
-            perform: getJSONQuestions
-        )
-    }
-    
-    func getJSONQuestions() {
-        let secretQuestionsController = SecretQuestionsController()
-        let preguntas = GetPreguntasSecretas()
-
-        secretQuestionsController.getSecretQuestions(preguntaSecreta: preguntas) { (res,error) in
-            self.jsonQuestion = res! as ObjectSecretQuestions
-            //self.questions = res!.envelope.body.registerMovilResponse._return.fechaHora
-        }
-    }
-}
-
-struct preguntas: View {
-    var questions : [Questions]
-    var isSheetOpened : Bool
-    @Binding var selectedQuestions: Questions
-    @Environment(\.presentationMode) var presentationMode
-
-    var body: some View {
-        VStack {
-            List {
-                ForEach(self.questions, id: \.self) { index in
-                    Button(action: {
-                        self.selectedQuestions = index
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text(index.alternativeName3)
-                            .font(.callout)
-                            .fontWeight(.bold)
-                            .frame(width: 340, alignment: .leading)
-                            .foregroundColor(.gray)
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct TextLabelQuestion: View {
-    @State var questions : [Questions] = []
-    @State var jsonQuestion : ObjectSecretQuestions?
-    
-    var body: some View {
-        VStack(alignment: .center, spacing: 5) {
-            Text("Seleccione la Pregunta")
-                .font(.callout)
-                .frame(width: 340, alignment: .leading)
-                .foregroundColor(.gray)
-                .padding()
-            QuestionsList()
-        }
-    }
-    
-    func getJSONCountry() {
-        let secretQuestionsController = SecretQuestionsController()
-        let preguntas = GetPreguntasSecretas()
-        
-        secretQuestionsController.getSecretQuestions(preguntaSecreta: preguntas) { (res,error) in
-            self.jsonQuestion = res! as ObjectSecretQuestions
-            //self.questions = res!.envelope.body.registerMovilResponse._return.codigoRespuesta
-        }
-    }
-}
 
 struct SecurityQuestionsView_Previews: PreviewProvider {
     static var previews: some View {

@@ -46,46 +46,41 @@ struct SecretQuestionsResponse: Decodable{
      }
 }
 
+
 struct ReturnSecretQuestions : Decodable{
    var fechaHora : String
    var codigoRespuesta : String
-   //var mensajeRespuesta : String
+   var datosRespuesta : [questionsSecurity]
     
     enum CodingKeys: String, CodingKey {
          case fechaHora = "fechaHora"
          case codigoRespuesta = "codigoRespuesta"
-         //case mensajeRespuesta = "mensajeRespuesta"
+         case datosRespuesta = "datosRespuesta"
      }
 }
 
-struct Questions: Identifiable, Decodable, Hashable{
-    var alternativeName3 : String
-    var code : String
-    var id : String
-    var name : String
-    var shortName : String
+
+struct questionsSecurity:  Decodable, Hashable{
+    
+    var preguntaIdiomaId : String
+    var pregunta : String
+    var preguntaId : String
     
     init( ) {
-        self.alternativeName3 = "Seleccione una opcion"
-        self.code  = ""
-        self.id  = ""
-        self.name  = ""
-        self.shortName = ""
+        self.preguntaIdiomaId  = ""
+        self.pregunta = "Seleccione una opcion"
+        self.preguntaId  = "-1"
     }
 
     enum CodingKeys: String, CodingKey {
-        case alternativeName3 = "alternativeName3"
-        case code = "code"
-        case id = "id"
-        case name = "name"
-        case shortName = "shortName"
+        case preguntaIdiomaId = "preguntaIdiomaId"
+        case pregunta = "pregunta"
+        case preguntaId = "preguntaId"
      }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(alternativeName3)
-        hasher.combine(code)
-        hasher.combine(id)
-        hasher.combine(name)
-        hasher.combine(shortName)
+        hasher.combine(preguntaIdiomaId)
+        hasher.combine(pregunta)
+        hasher.combine(preguntaId)
     }
 }
