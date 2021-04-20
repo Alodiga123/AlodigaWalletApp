@@ -55,7 +55,7 @@ struct SecurityQuestionsViewAccess: View {
                         Spacer()
                         FirstViewSecurity()
                         //Questions2RegisterTextField(question2: self.$question2)
-                        //Spacer()
+                        //S/pacer()
                      
                         //ListarPregunta()
                         //Questions2RegisterTextField(question2: self.$question2)
