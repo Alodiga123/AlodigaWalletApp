@@ -25,7 +25,9 @@ struct RechargeConfirmationView: View {
 
 struct RechargeConfirmationViewAccess: View {
     @State var text = ""
-    let labels = ["Pais", "Banco", "Producto", "Concepto", "Transf No", "Monto"]
+    let countrySelect = Constant.defaults.object(forKey: "countrySelected") as? [String: String] ?? [String: String]()
+    let banksSelected = Constant.defaults.object(forKey: "banksSelected") as? [String: String] ?? [String: String]()
+    let productSelected = Constant.defaults.object(forKey: "productSelected") as? [String: String] ?? [String: String]()
     
     var body: some View {
         GeometryReader { geometry in
@@ -41,12 +43,50 @@ struct RechargeConfirmationViewAccess: View {
                     }.padding(.leading,20)
                         .padding(.trailing,20)
                     TextLabelInfRecharge()
-                    ForEach(self.labels, id: \.self) { label in
+                    VStack{
                         HStack {
-                            Text(label)
+                            Text("País")
                                 .frame(width: 80, alignment: .leading)
                                 .font(.caption)
-                            TextField(label, text: self.$text)
+                            TextField(countrySelect["nameCountryRe"]!, text: self.$text)
+                                .font(.caption)
+                        }
+                        /*HStack {
+                            Text("Banco")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField(Constant.defaults.value(forKey: "nameBankRe") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        HStack {
+                            Text("Producto")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField(Constant.defaults.value(forKey: "nameProductRe") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        */
+                        HStack {
+                            Text("Concepto")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField(Constant.defaults.value(forKey: "conceptRe") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        
+                        HStack {
+                            Text("Transf No")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField(Constant.defaults.value(forKey: "transferRe") as! String, text: self.$text)
+                                .font(.caption)
+                        }
+                        
+                        HStack {
+                            Text("Monto")
+                                .frame(width: 80, alignment: .leading)
+                                .font(.caption)
+                            TextField( Constant.defaults.value(forKey: "amountRe") as! String, text: self.$text)
                                 .font(.caption)
                         }
                     }

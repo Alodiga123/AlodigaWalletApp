@@ -27,10 +27,7 @@ struct FormSignUpViewAccess: View {
     @State var name: String = ""
     @State var lastName: String = ""
     @State var email: String = ""
-    @State var password: String = ""
-    @State var rePass: String = ""
-    @State var pass: String = ""
-    @State var operationsKey: String = ""
+    @State var numberDocument: String = ""
     @State var isLoggedIn: Bool = false
     @State var stepFour: Bool = false
     
@@ -56,22 +53,35 @@ struct FormSignUpViewAccess: View {
                     NameTextField(name: self.$name)
                     LastNameTextField(lastName: self.$lastName)
                     MailTextField(email: self.$email)
+                    DocumentByCountryTextField()
+                    NumberDocumentField(numberDocument: self.$numberDocument)
                     VStack{
                         Button(action: {
                             let registerController = RegisterController()
-                            let documentByContry = AL_GetDocumentPersonTypeByCountry()
+                            let documentByCountry = AL_GetDocumentPersonTypeByCountry()
                             let alert = ShowAlert()
                             let util = Utils()
                             
-                            if(name.isEmpty || lastName.isEmpty || email.isEmpty || name.count == 0 || lastName.count == 0 || email.count == 0){
+                            if(name.isEmpty || lastName.isEmpty || email.isEmpty || name.count == 0 || lastName.count == 0 || email.count == 0 || numberDocument.isEmpty || numberDocument.count == 0){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
                             }else if(!util.isValidEmail(testStr: email)){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: ""))
                             }else{
                                 
-                                documentByContry.cpCountryId = Constant.defaults.value(forKey: "idCountryR") as! String
+                                Constant.defaults.set(name, forKey: "nameR")
+                                Constant.defaults.setValue(lastName, forKey: "lastNameR")
+                                Constant.defaults.setValue(email, forKey: "emailR")
+                                Constant.defaults.setValue(numberDocument, forKey: "numberDocumentR")
                                 
-                                registerController.getDocumentPersonTypeByCountry(generarDocumentPersonType: documentByContry){ (res,error) in
+                                print("Nombre: " + name)
+                                print("apellido: " + lastName)
+                                print("email: " + email)
+                                
+                                /*
+                                documentByCountry.cpCountryId = "1"; //Constant.defaults.value(forKey: "idCountryR") as! String
+                                documentByCountry.cpOriginAplicationId = "1";
+                                
+                                registerController.getDocumentPersonTypeByCountry(generarDocumentPersonType: documentByCountry){ (res,error) in
                                     if res != nil {
                                         print("+++++++++++ OBJETO +++++++++++++++++")
                                         print(res)
@@ -82,8 +92,9 @@ struct FormSignUpViewAccess: View {
                                         print(error!)
                                     }
 
-                                    //stepNex()
-                                 }
+                                    
+                                 }*/
+                            stepNex()
                             }
                         }) {
                             RegisterContinueButtonContent()
@@ -149,6 +160,23 @@ struct MailTextField: View {
             .padding(.bottom,-1)
     }
 }
+
+struct NumberDocumentField: View {
+    @Binding var numberDocument: String
+    var body: some View {
+        FloatingLabelTextField($numberDocument, placeholder: NSLocalizedString("NumberDocument", comment: ""), editingChanged: { (isChanged) in
+        }) {
+        }
+            .leftView({ // Add left view.
+                Image("")
+            }).placeholderColor(Color.placeholderGrayColor)
+            .frame(height: 40)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,-1)
+    }
+}
+
 
 struct FormSignUpView_Previews: PreviewProvider {
     static var previews: some View {

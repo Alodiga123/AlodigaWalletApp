@@ -30,7 +30,7 @@ struct BodyValidateAccount : Decodable{
     var validateResponse: ValidateAccountMovilResponse
     
     enum CodingKeys: String, CodingKey {
-         case validateResponse = "ns2:saveCumplimientResponse"
+         case validateResponse = "ns2:saveAffiliationRequestUserWalletResponse "
      }
 }
 

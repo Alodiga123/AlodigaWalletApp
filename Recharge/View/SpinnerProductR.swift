@@ -2,14 +2,14 @@
 //  SpinnerProduct.swift
 //  IOSAlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 10/12/20.
+//  Created by Lulymar Gutierrez on 18/04/20.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 
 import Foundation
 import SwiftUI
 
-struct ProductWithdrawalTextField: View {
+struct ProductsRechargeTextField: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
@@ -22,7 +22,7 @@ struct ProductWithdrawalTextField: View {
     }
 }
 
-struct ProductsWithdrawalList: View {
+struct ProductsRechargeList: View {
     @Binding var idBank: String
     @State var isSheetOpened = false
     @State var selectedProducts = ProductsByBank()
@@ -53,7 +53,7 @@ struct ProductsWithdrawalList: View {
                 .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
             
             .sheet(isPresented: self.$isSheetOpened) {
-                productos(products: self.products, isSheetOpened: self.isSheetOpened, selectedProduct: self.$selectedProducts)
+                productosR(products: self.products, isSheetOpened: self.isSheetOpened, selectedProduct: self.$selectedProducts)
             }
         }.onAppear(
             perform: getJSONProducts
@@ -86,7 +86,7 @@ struct ProductsWithdrawalList: View {
 }
 
 
-struct productos: View {
+struct productosR: View {
     var products : [ProductsByBank]
     var isSheetOpened : Bool
     @Binding var selectedProduct: ProductsByBank
@@ -106,8 +106,9 @@ struct productos: View {
                                                "simbolo" : index.symbol]
                         
                         Constant.defaults.set(productSelected, forKey: "productSelected")
-                        Constant.defaults.setValue(index.name, forKey: "nameProductR")
-                        Constant.defaults.setValue(index.id, forKey: "idProductR")
+                        
+                        /*Constant.defaults.setValue(index.name, forKey: "nameProductRe")
+                        Constant.defaults.setValue(index.id, forKey: "idProductRe")*/
                         print("Nombre del Producto: "+index.name)
                         print("Id producto: " + index.id)
                     }) {

@@ -62,83 +62,91 @@ struct ReturnProductsByBank : Decodable{
 
 struct ProductsByBank: Identifiable, Decodable, Hashable {
        
-    var accessNumberUrl : String
+    //var accessNumberUrl : String
     //var categoryId : [Categoria]
     var currentBalance : String
     var enabled : String
     //var enterpriseId : [EnterpriseId]
     var id: String
+    var indHasAssociatedBank : String
     var isAlocashProduct : String
+    var isDefaultProduct : String
     var isExchangeProduct : String
     var isFree : String
     var isPayTopUp : String
     var isPaymentInfo : String
     var isRemettence : String
+    var isUsePrepaidCard : String
     var name : String
     //var productIntegrationTypeId : [ProductsIntegrationType]
-    var ratesUrl : String
     var referenceCode : String
     var symbol : String
     var taxInclude : String
     
     init() {
-        self.accessNumberUrl = ""
+        //self.accessNumberUrl = ""
         //self.categoryId = ""
         self.currentBalance = ""
         self.enabled = ""
         //self.enterpriseId = ""
         self.id = ""
+        self.indHasAssociatedBank = ""
         self.isAlocashProduct = ""
+        self.isDefaultProduct = ""
         self.isExchangeProduct = ""
         self.isFree = ""
         self.isPayTopUp = ""
         self.isPaymentInfo = ""
         self.isRemettence = ""
+        self.isUsePrepaidCard = ""
         self.name = "Seleccione"
         //self.productIntegrationTypeId = ""
-        self.ratesUrl = ""
         self.referenceCode = ""
         self.symbol = ""
         self.taxInclude = ""
     }
     
     enum CodingKeys: String, CodingKey {
-        case accessNumberUrl = "accessNumberUrl"
+        //case accessNumberUrl = "accessNumberUrl"
         //case categoryId = "categoryId"
         case currentBalance = "currentBalance"
         case enabled = "enabled"
         //case enterpriseId = "enterpriseId"
         case id = "id"
+        case indHasAssociatedBank = "indHasAssociatedBank"
         case isAlocashProduct = "isAlocashProduct"
+        case isDefaultProduct = "isDefaultProduct"
         case isExchangeProduct = "isExchangeProduct"
         case isFree = "isFree"
         case isPayTopUp = "isPayTopUp"
         case isPaymentInfo = "isPaymentInfo"
         case isRemettence = "isRemettence"
+        case isUsePrepaidCard = "isUsePrepaidCard"
         case name = "name"
         //case productIntegrationTypeId = "productIntegrationTypeId"
-        case ratesUrl = "ratesUrl"
         case referenceCode = "referenceCode"
         case symbol = "symbol"
         case taxInclude = "taxInclude"
      }
     
     func hash(into hasher: inout Hasher) {
-      hasher.combine(accessNumberUrl)
+      //hasher.combine(accessNumberUrl)
      //hasher.combine(categoryId)
         hasher.combine(currentBalance)
         hasher.combine(enabled)
         //hasher.combine(enterpriseId)
         hasher.combine(id)
+        hasher.combine(indHasAssociatedBank)
         hasher.combine(isAlocashProduct)
+        hasher.combine(isDefaultProduct)
         hasher.combine(isExchangeProduct)
         hasher.combine(isFree)
         hasher.combine(isPayTopUp)
         hasher.combine(isPaymentInfo)
         hasher.combine(isRemettence)
+        hasher.combine(isUsePrepaidCard)
         hasher.combine(name)
         //hasher.combine(productIntegrationTypeId)
-        hasher.combine(ratesUrl)
         hasher.combine(referenceCode)
         hasher.combine(symbol)
         hasher.combine(taxInclude)

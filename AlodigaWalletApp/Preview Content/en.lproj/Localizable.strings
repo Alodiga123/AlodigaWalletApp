@@ -65,6 +65,7 @@
 "SignUp" = "Sign Up";
 "SelectCountry" = "Select country";
 "SelectDocumentT" = "Select document type";
+"NumberDocument" = "Number Document";
 "EnterPhone" = "Enter phone number";
 "KeyReceived" = "Key received";
 "RegistrationData" = "Registration Data";

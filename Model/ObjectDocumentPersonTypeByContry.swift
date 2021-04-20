@@ -31,7 +31,7 @@ struct BodyDocumentByCountry : Decodable{
     var documentByCountryResponse: DocumentByCountryMovilResponse
     
     enum CodingKeys: String, CodingKey {
-         case documentByCountryResponse = "ns2:getCountriesResponse"
+         case documentByCountryResponse = "ns2:getDocumentPersonTypeByCountryResponse"
      }
 }
 
@@ -47,53 +47,45 @@ struct DocumentByCountryMovilResponse: Decodable{
 
 
 struct ReturnDocumentByCountry : Decodable{
-   var fechaHora : String
-   var codigoRespuesta : String
-   var mensajeRespuesta : MensajeRespuesta
-    //var countries : [Country]
+    var fechaHora : String
+    var codigoRespuesta : String
+    var mensajeRespuesta : MensajeRespuestaDoc
+    var documentsPersonTypes : [DocumentsPersonTypes]
     
     enum CodingKeys: String, CodingKey {
          case fechaHora = "fechaHora"
          case codigoRespuesta = "codigoRespuesta"
          case mensajeRespuesta = "mensajeRespuesta"
-         //case countries = "countries"
+         case documentsPersonTypes = "documentsPersonTypes"
      }
 }
 
 
-struct DocumentByCountry: Identifiable, Decodable, Hashable{
-    var alternativeName3 : String
-    var code : String
+struct DocumentsPersonTypes: Identifiable, Decodable, Hashable{
+    var codeIdentification : String
+    var description : String
     var id : String
-    var name : String
-    //var shortName : String
     
     init( ) {
-        self.alternativeName3 = "Seleccione"
-        self.code  = ""
+        self.codeIdentification = ""
+        self.description  = "Seleccione"
         self.id  = ""
-        self.name  = ""
-        //self.shortName = ""
     }
 
     enum CodingKeys: String, CodingKey {
-        case alternativeName3 = "alternativeName3"
-        case code = "code"
+        case codeIdentification = "codeIdentification"
+        case description = "description"
         case id = "id"
-        case name = "name"
-        //case shortName = "shortName"
      }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(alternativeName3)
-        hasher.combine(code)
+        hasher.combine(codeIdentification)
+        hasher.combine(description)
         hasher.combine(id)
-        hasher.combine(name)
-        //hasher.combine(shortName)
     }
 }
-/*
-struct MensajeRespuesta: Decodable{
+
+struct MensajeRespuestaDoc: Decodable{
     
 }
-*/
+
