@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct DocumentByCountryTextField: View {
-    @State var documentPersonByConuntry : [DocumentByCountry] = []
+    @State var documentPersonByCountry : [DocumentsPersonTypes] = []
     @State var jsonDocumentPersonTypeByContry : ObjectDocumentPersonTypeByContry?
     
     var body: some View {
@@ -27,8 +27,8 @@ struct DocumentByCountryTextField: View {
 
 struct DocumentPersonByCountrylList: View {
     @State var isSheetOpened = false
-    @State var selectedDocumentT = DocumentByCountry()
-    @State var documentPersonByCountry : [DocumentByCountry] = []
+    @State var selectedDocumentT = DocumentsPersonTypes()
+    @State var documentPersonByCountry : [DocumentsPersonTypes] = []
     @State var expand = false
     @State var separador: String = ""
     @State var jsonDocumentPersonTypeByContry : ObjectDocumentPersonTypeByContry?
@@ -40,7 +40,7 @@ struct DocumentPersonByCountrylList: View {
                 self.isSheetOpened.toggle()
                 code = selectedDocumentT.id
             }) {
-                Text("\(selectedDocumentT.alternativeName3)")
+                Text("\(selectedDocumentT.description)")
                     //.fontWeight(.bold)
                     .foregroundColor(.gray)
                     .font(.callout)
@@ -58,9 +58,9 @@ struct DocumentPersonByCountrylList: View {
                 }
             //line
             //BankWithdrawalTextField()
-            if (!selectedDocumentT.id.isEmpty){
+            /*if (!selectedDocumentT.id.isEmpty){
                 BankWithdrawalList(idCountry: self.$selectedDocumentT.id)
-            }
+            }*/
             
         }.onAppear(
             perform: getJSONCountry
@@ -69,19 +69,30 @@ struct DocumentPersonByCountrylList: View {
     
     func getJSONCountry() {
         let registerController = RegisterController()
-        let documentByContry = AL_GetDocumentPersonTypeByCountry()
+        let documentByCountry = AL_GetDocumentPersonTypeByCountry()
         
-        registerController.getDocumentPersonTypeByCountry(generarDocumentPersonType: documentByContry) { (res,error) in
-            self.jsonDocumentPersonTypeByContry = res! as ObjectDocumentPersonTypeByContry
-            //self.documentPersonByCountry = res!.envelope.body.documentByCountryResponse
+        documentByCountry.cpCountryId = Constant.defaults.value(forKey: "idCountryR") as! String
+        documentByCountry.cpOriginAplicationId = "1";
+        
+        registerController.getDocumentPersonTypeByCountry(generarDocumentPersonType: documentByCountry) { (res,error) in
+            if res != nil {
+                self.jsonDocumentPersonTypeByContry = res! as ObjectDocumentPersonTypeByContry
+                self.documentPersonByCountry = res!.envelope.body.documentByCountryResponse._return.documentsPersonTypes
+            }
+            
+            if error != nil {
+                let alert = ShowAlert()
+                alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
+                print(error!)
+            }
         }
     }
 }
 
 struct tipoDocumentos: View {
-    var documentPersonByCountry : [DocumentByCountry]
+    var documentPersonByCountry : [DocumentsPersonTypes]
     var isSheetOpened : Bool
-    @Binding var selectedDocumentT: DocumentByCountry
+    @Binding var selectedDocumentT: DocumentsPersonTypes
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -92,13 +103,14 @@ struct tipoDocumentos: View {
                         self.selectedDocumentT = index
                         self.presentationMode.wrappedValue.dismiss()
                         
-                        Constant.defaults.setValue(index.name, forKey: "nameCountryR")
-                        Constant.defaults.setValue(index.id, forKey: "idCountryR")
-                        Constant.defaults.setValue(index.code, forKey: "codeCountryR")
-                        //print("codigo Pais: " + index.code)
-                        //print("Id Pais: " + index.id)
+                        Constant.defaults.setValue(index.codeIdentification, forKey: "codeIdentificationR")
+                        Constant.defaults.setValue(index.id, forKey: "idDocumentR")
+                        Constant.defaults.setValue(index.description, forKey: "descriptionDocumentR")
+                        print("codigo Identificacion: " + index.codeIdentification)
+                        print("Id doc: " + index.id)
+                        
                     }) {
-                        Text(index.alternativeName3)
+                        Text(index.description)
                             .font(.callout)
                             .fontWeight(.bold)
                             .frame(width: 340, alignment: .leading)

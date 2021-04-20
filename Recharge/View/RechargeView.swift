@@ -24,12 +24,9 @@ struct RechargeView: View {
 }
 
 struct RechargeViewAccess: View {
-    @State var country: String = ""
-    @State var bank: String = ""
-    @State var product: String = ""
-    @State var concept: String = ""
-    @State var transfer: String = ""
-    @State var amount: String = ""
+    @State var conceptRecharge: String = "prueba"
+    @State var transferNumber: String = "123456"
+    @State var amountRecharge: String = "1"
     @State var steptwo: Bool = false
     
     func stepNex(){
@@ -52,23 +49,27 @@ struct RechargeViewAccess: View {
                         TextLabelRecharge()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
-                    CountryRechargeTextField(country: self.$country)
-                    BankRechargeTextField(bank: self.$bank)
-                    ProductRechargeTextField(product: self.$product)
-                    ConceptoRechargeTextField(concept: self.$concept)
-                    TransferRechargeTextField(transfer: self.$transfer)
-                    AmountRechargeTextField(amount: self.$amount)
-                    //NavigationLink(destination: RechargeConfirmationView()) {
+                    CountryRechargeTextField()
+                    ConceptoRechargeTextField(conceptRecharge: self.$conceptRecharge)
+                    TransferRechargeTextField(transferNumber: self.$transferNumber)
+                    AmountRechargeTextField(amountRecharge: self.$amountRecharge)
                     Button(action: {
-                         let responseController = ResponseController()
+                        let amount_aux : Float = Float(amountRecharge) ?? 0
                         
-                         responseController.parseResponse{ (response) in
-                            if response != nil {
-                                print("+++++++++++ OBJETO +++++++++++++++++")
-                                print(response)
-                            }
+                        let alert = ShowAlert()
+                        
+                        if(amountRecharge.isEmpty || conceptRecharge.isEmpty || transferNumber.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                        }
+                        else if(amount_aux <= 0){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
+                        }else{
+                            Constant.defaults.setValue(conceptRecharge, forKey: "conceptRe")
+                            Constant.defaults.setValue(transferNumber, forKey: "transferRe")
+                            Constant.defaults.setValue(amountRecharge, forKey: "amountRe")
+                            
                             stepNex()
-                         }
+                        }
                  
                     }) {
                         RechargeButtonContent()
@@ -97,58 +98,10 @@ struct TextLabelRecharge: View {
     }
 }
 
-struct CountryRechargeTextField: View {
-    @Binding var country: String
-    var body: some View {
-        FloatingLabelTextField($country, placeholder: "País", editingChanged: { (isChanged) in
-        }) {
-        }
-            .leftView({ // Add left view.
-                Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 40)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,-1)
-    }
-}
-
-struct BankRechargeTextField: View {
-    @Binding var bank: String
-    var body: some View {
-        FloatingLabelTextField($bank, placeholder: "Banco", editingChanged: { (isChanged) in
-        }) {
-        }
-            .leftView({ // Add left view.
-                Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 40)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,-1)
-    }
-}
-
-struct ProductRechargeTextField: View {
-    @Binding var product: String
-    var body: some View {
-        FloatingLabelTextField($product, placeholder: "Producto", editingChanged: { (isChanged) in
-        }) {
-        }
-            .leftView({ // Add left view.
-                Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 40)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,-1)
-    }
-}
-
 struct ConceptoRechargeTextField: View {
-    @Binding var concept: String
+    @Binding var conceptRecharge: String
     var body: some View {
-        FloatingLabelTextField($concept, placeholder: "Concepto", editingChanged: { (isChanged) in
+        FloatingLabelTextField($conceptRecharge, placeholder: "Concepto", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -162,9 +115,9 @@ struct ConceptoRechargeTextField: View {
 }
 
 struct TransferRechargeTextField: View {
-    @Binding var transfer: String
+    @Binding var transferNumber: String
     var body: some View {
-        FloatingLabelTextField($transfer, placeholder: "Número de Transferencia", editingChanged: { (isChanged) in
+        FloatingLabelTextField($transferNumber, placeholder: "Número de Transferencia", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.
@@ -178,9 +131,9 @@ struct TransferRechargeTextField: View {
 }
 
 struct AmountRechargeTextField: View {
-    @Binding var amount: String
+    @Binding var amountRecharge: String
     var body: some View {
-        FloatingLabelTextField($amount, placeholder: "Monto", editingChanged: { (isChanged) in
+        FloatingLabelTextField($amountRecharge, placeholder: "Monto", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.

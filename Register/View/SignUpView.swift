@@ -59,37 +59,37 @@ struct SignUpViewAccess: View {
                         
                         token.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
                         token.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-                        token.cpMovil = phone
+                        token.cpMovil = "584126157526" // Constant.defaults.value(forKey: "Rphone") as! String
                         
-                        print (phone)
+                        print ("Telefono")
                         
 //                        if(phone.isEmpty || phone.count == 0){
 //                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("ValidationInvalidLong", comment: ""))
 //                        }else if(phone.count <= 11){
 //                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("InvalidPhone", comment: ""))
 //                        }else{
-                            Constant.defaults.setValue("123456", forKey: "token")
+                            //Constant.defaults.setValue("123456", forKey: "token")
                             Constant.defaults.setValue(phone, forKey: "Rphone")
                             stepNex()
-//                            registerController.getToken(dataToken: token) { (res,error) in
-//                                print("EN EL TOKEN!!!!")
-//                                if res != nil  {
-//                                    print(res as Any)
-//                                    let tokens: ObjectToken
-//                                    tokens = res! as ObjectToken
-//                                    print(tokens.envelope.body.tokenResponse._return.datosRespuesta)
-//
-//                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
-//                                    stepNex()
-//                                }
-//
-//                                if error != nil {
-//                                    let alert = ShowAlert()
-//                                    alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
-//                                    print(error!)
-//                                }
-//                            }
-//                        }
+                            registerController.getToken(dataToken: token) { (res,error) in
+                                print("EN EL TOKEN!!!!")
+                                if res != nil  {
+                                    print(res as Any)
+                                    let tokens: ObjectToken
+                                    tokens = res! as ObjectToken
+                                    print(tokens.envelope.body.tokenResponse._return.datosRespuesta)
+
+                                    Constant.defaults.setValue(tokens.envelope.body.tokenResponse._return.datosRespuesta, forKey: "token")
+                                    stepNex()
+                                }
+
+                                if error != nil {
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
+                                   print(error!)
+                                }
+                            }
+                        //}
                     }) {
                         RegisterContinueButtonContent()
                     }
@@ -134,7 +134,9 @@ struct PhoneRegisterTextField: View {
     var body: some View {
             FloatingLabelTextField($phone, placeholder: NSLocalizedString("EnterPhone", comment: ""), editingChanged: { (isChanged) in
             }) {
+                Constant.defaults.setValue(phone, forKey: "Rphone")
             }
+        
                 .leftView({ // Add left view.
                     Image("")
                 }).placeholderColor(Color.placeholderGrayColor)

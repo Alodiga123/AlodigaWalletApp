@@ -125,10 +125,10 @@ public class RegisterController{
         
         let client_RU = AlodigaClient()
     
-        let documentPersonTypes = AL_GetDocumentPersonTypeByCountry()
+        //let documentPersonTypes = AL_GetDocumentPersonTypeByCountry()
         
         //Llamada del servicio de DocumentPersonTypesByCountry
-        client_RU.opGetDocumentPersonTypeByCountry(getDocumentPersonTypeByCountry: documentPersonTypes) { (data, error) in
+        client_RU.opGetDocumentPersonTypeByCountry(getDocumentPersonTypeByCountry: generarDocumentPersonType) { (data, error) in
             
             if error != nil {
                 print("error=\(String(describing: error))")

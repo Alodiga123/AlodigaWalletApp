@@ -40,7 +40,8 @@ struct ValidateAccountFirstViewAccess: View {
                     }.padding(.leading,40)
                      .padding(.trailing,40)
                     CircleImagine()
-                    NavigationLink(destination: TakePhotoView()) {
+                    NavigationLink(destination: ValidateAdressView()) {
+                    //NavigationLink(destination: TakePhotoView()) {
                         ValidateAccountButtonContent()
                     }
                     NavigationLink(destination: MainViewLogged()) {

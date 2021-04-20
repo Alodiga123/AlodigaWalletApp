@@ -25,6 +25,9 @@
 		044BD0BB2548CEBE005A6754 /* SuccessfulQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */; };
 		045375A725475CF400D12D77 /* ObjectRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375A625475CF400D12D77 /* ObjectRegisterUser.swift */; };
 		045375B9254790F600D12D77 /* ObjectErrorRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */; };
+		045951BF262E4D5B00DC25F0 /* SpinnerCountryR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951BE262E4D5B00DC25F0 /* SpinnerCountryR.swift */; };
+		045951C7262E4D7700DC25F0 /* SpinnerBankR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951C6262E4D7700DC25F0 /* SpinnerBankR.swift */; };
+		045951CF262E4D8C00DC25F0 /* SpinnerProductR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951CE262E4D8C00DC25F0 /* SpinnerProductR.swift */; };
 		045D398D25718EBC00A98BCA /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D398C25718EBC00A98BCA /* ChangePasswordView.swift */; };
 		045D399525719B2900A98BCA /* SuccessfulChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D399425719B2900A98BCA /* SuccessfulChangeView.swift */; };
 		0471A9F92567542B00498491 /* ObjectSecretQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471A9F82567542B00498491 /* ObjectSecretQuestions.swift */; };
@@ -175,6 +178,9 @@
 		044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulQuestionsView.swift; sourceTree = "<group>"; };
 		045375A625475CF400D12D77 /* ObjectRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRegisterUser.swift; sourceTree = "<group>"; };
 		045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorRegisterUser.swift; sourceTree = "<group>"; };
+		045951BE262E4D5B00DC25F0 /* SpinnerCountryR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCountryR.swift; sourceTree = "<group>"; };
+		045951C6262E4D7700DC25F0 /* SpinnerBankR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerBankR.swift; sourceTree = "<group>"; };
+		045951CE262E4D8C00DC25F0 /* SpinnerProductR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProductR.swift; sourceTree = "<group>"; };
 		045D398C25718EBC00A98BCA /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		045D399425719B2900A98BCA /* SuccessfulChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulChangeView.swift; sourceTree = "<group>"; };
 		0471A9F82567542B00498491 /* ObjectSecretQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSecretQuestions.swift; sourceTree = "<group>"; };
@@ -473,6 +479,9 @@
 				04B2F4322513A82800DBDA03 /* RechargeView.swift */,
 				0422337A2513B84C00AEB65F /* RechargeConfirmationView.swift */,
 				0422337C2513EA8D00AEB65F /* SucesfullRechargeView.swift */,
+				045951BE262E4D5B00DC25F0 /* SpinnerCountryR.swift */,
+				045951C6262E4D7700DC25F0 /* SpinnerBankR.swift */,
+				045951CE262E4D8C00DC25F0 /* SpinnerProductR.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1067,6 +1076,7 @@
 				46DBC488251287C4008D42B3 /* PassByTokenView.swift in Sources */,
 				049132E82577065A00698369 /* ValidateAccountController.swift in Sources */,
 				0471A9FE2567551C00498491 /* ObjectErrorSecretQuestions.swift in Sources */,
+				045951C7262E4D7700DC25F0 /* SpinnerBankR.swift in Sources */,
 				0492CD8A256F418F009C5CD9 /* ObjectPreguntasSecretasUsuario.swift in Sources */,
 				0422337D2513EA8D00AEB65F /* SucesfullRechargeView.swift in Sources */,
 				04CF669F2579B2A3006688BA /* ObjectErrorBankByCountry.swift in Sources */,
@@ -1083,6 +1093,7 @@
 				467C04BA24D857F30021F472 /* AppDelegate.swift in Sources */,
 				04D6DA8E251AABC10053125C /* PhotoViewStepTwoView.swift in Sources */,
 				044BD0BB2548CEBE005A6754 /* SuccessfulQuestionsView.swift in Sources */,
+				045951CF262E4D8C00DC25F0 /* SpinnerProductR.swift in Sources */,
 				042233842514121C00AEB65F /* WithdrawalConfirmationView.swift in Sources */,
 				BAE1EA6A252EAEB4007F9CD6 /* ObjectLogin.swift in Sources */,
 				04CD77212628A55800453557 /* ObjectParameterOptional.swift in Sources */,
@@ -1119,6 +1130,7 @@
 				46DBC4862512879B008D42B3 /* FormSignUpView.swift in Sources */,
 				045D398D25718EBC00A98BCA /* ChangePasswordView.swift in Sources */,
 				04D6DA89251AA5690053125C /* StepTwoView.swift in Sources */,
+				045951BF262E4D5B00DC25F0 /* SpinnerCountryR.swift in Sources */,
 				04CF66952579A75F006688BA /* WithdrawalControler.swift in Sources */,
 				46DBC482251286E6008D42B3 /* TargetCustomerView.swift in Sources */,
 				042233862514134B00AEB65F /* SucesfullWithdrawalView.swift in Sources */,
