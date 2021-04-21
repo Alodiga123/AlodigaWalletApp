@@ -57,7 +57,7 @@ struct FirstViewSecurity: View {
     }
 
     func getJSONSecurity() {
-        loading.loadindView()
+        //loading.loadindView()
         
         let secretQuestionsController = SecretQuestionsController()
         let getPreguntasSecretas = GetPreguntasSecretas()
@@ -84,7 +84,7 @@ struct FirstViewSecurity: View {
             }
         }
         
-        loading.loadingDismiss()
+        //loading.loadingDismiss()
     }
 }
 
