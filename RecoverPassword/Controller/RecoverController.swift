@@ -81,6 +81,26 @@ public class RecoverController{
     func getRecoverPass(cambiarCredencialAplicacionMovil: CambiarCredencialAplicacionMovilEmailOrPhone ,completion: @escaping (_ res:ObjectChangePassForgot?, String?) -> Void) {
         
         let client_RU = RegistroUnificadoClient()
+        let util = Utils()
+        
+        util.getKeyEncript(key: cambiarCredencialAplicacionMovil.cpCredencial as! String) { (res, error) in
+            if(res != nil){
+                let clave : String
+                clave = res! as String
+                print(clave)
+                cambiarCredencialAplicacionMovil.cpCredencial = clave
+            }
+            if error != nil {
+                let alert = ShowAlert()
+                alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
+                print(error!)
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1){
+        
+        
+        
         
         //Llamada del servicio de Guardar Usuarios
         client_RU.opCambiarCredencialAplicacionMovilEmailOrPhone(cambiarCredencialAplicacionMovilEmailOrPhone: cambiarCredencialAplicacionMovil){(data,error) in
@@ -116,6 +136,7 @@ public class RecoverController{
                 print(error)
             }
         }
+    }
     }
     
 }

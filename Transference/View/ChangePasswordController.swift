@@ -21,7 +21,6 @@ public class ChangePasswordController {
              cambiarCredencialAplicacionMovil.cpUsuarioId = userId
         
         let util = Utils()
-
         
         util.getKeyEncript(key: credencial) { (res, error) in
             if(res != nil){
