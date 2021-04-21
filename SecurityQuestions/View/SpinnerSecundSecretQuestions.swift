@@ -16,6 +16,8 @@ struct SecundQuestionList: View {
     @State  var selectedSecurity = questionsSecurity()
     @State var expand = false
     @State var question2: String = ""
+    @State var jsonSecurity : ObjectSecretQuestions?
+
 
 
     let loading = Loading()
@@ -53,29 +55,38 @@ struct SecundQuestionList: View {
         perform: getJSONSecurity
         )
     }
+
+
+func getJSONSecurity() {
+    //loading.loadindView()
     
-    func getJSONSecurity() {
-        //loading.loadindView()
-        var objetResponse: ObjectSecretQuestions
-        let str: String = Constant.defaults.value(forKey: "jsonSecurity") as! String
-        
-        do {
-            objetResponse = try JSONDecoder().decode(ObjectSecretQuestions.self, from: str.data(using: .utf8)!)
-            print("OBJETO DECODE")
-            print(objetResponse)
-            self.securitys = objetResponse.envelope.body.registerMovilResponse._return.datosRespuesta
+    let secretQuestionsController = SecretQuestionsController()
+    let getPreguntasSecretas = GetPreguntasSecretas()
+    Constant.defaults.set(true, forKey: "questionIni")
+
+
+        getPreguntasSecretas.cpIdIdioma = "4"
+        getPreguntasSecretas.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
+        getPreguntasSecretas.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+    
+    secretQuestionsController.getSecretQuestions(preguntaSecreta: getPreguntasSecretas){ (res,error) in
+        if res != nil {
+            self.jsonSecurity = res! as ObjectSecretQuestions
+            self.securitys = res!.envelope.body.registerMovilResponse._return.datosRespuesta
             self.selectedSecurity = securitys[1]
             Constant.defaults.set(securitys[1].preguntaId, forKey: "question2ID")
 
-        } catch  {
-            loading.loadingDismiss()
-            print("Error: decodificando json")
         }
         
-        //loading.loadingDismiss()
+        if error != nil {
+            let alert = ShowAlert()
+            alert.showPaymentModeActionSheet(title: "error", message: secretQuestionsController.getMessageError(code: error!))
+            print(error!)
+        }
     }
     
-
+    //loading.loadingDismiss()
+}
 }
 
 

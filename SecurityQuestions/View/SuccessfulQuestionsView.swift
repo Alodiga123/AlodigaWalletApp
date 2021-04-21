@@ -23,11 +23,18 @@ struct SuccessfulQuestionsView: View {
     }
 }
 
+
 struct SuccessfulQuestionsViewAccess: View {
     @State var pass: String = ""
     @State var repeatPass: String = ""
     @State var isLoggedIn: Bool = false
-    
+    @State var steptwo: Bool = false
+
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.steptwo = true
+        }
+    }
     var body: some View {
         ScrollView{
             GeometryReader { geometry in
@@ -47,12 +54,23 @@ struct SuccessfulQuestionsViewAccess: View {
                         RecoverCheckImagine()
                         Spacer()
                         
-                        
-                        NavigationLink(destination: MainViewLogged()) {
-                            QuestionsContinueButtonContent()
-                        }
-                        NavigationLink(destination: SecurityQuestionsView()) {
+                        Button(action: {
+                            Constant.defaults.removeObject(forKey: "question1ID")
+                            Constant.defaults.removeObject(forKey: "question2ID")
+                            Constant.defaults.removeObject(forKey: "question3ID")
+                            Constant.defaults.removeObject(forKey: "jsonSecurity")
+                            stepNex()
+                        }) {
                             QuestionsBackButtonContent()
+                        }
+                        
+                        NavigationLink(destination:  MainViewLogged(), isActive:self.$steptwo){
+                            EmptyView()
+                        }
+                      
+                        
+                        NavigationLink(destination: SecurityQuestionsView()) {
+                          
                         }
                     }.background(Color.cardButtonViewGray)
                         .cornerRadius(25)

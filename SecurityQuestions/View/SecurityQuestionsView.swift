@@ -74,11 +74,11 @@ struct SecurityQuestionsViewAccess: View {
                             preguntaSeguridad.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
                             preguntaSeguridad.cpUsuarioId = "379"//Int(Constant.defaults.value(forKey: "usuarioID") as! String)
                             preguntaSeguridad.cpPreguntaId1 = Constant.defaults.value(forKey: "question1ID") as? String
-                            preguntaSeguridad.cpRepuestaId1 = Constant.defaults.value(forKey: "question1") as! String
+                            preguntaSeguridad.cpRepuestaId1 = question1
                             preguntaSeguridad.cpPreguntaId2 = Constant.defaults.value(forKey: "question2ID") as? String
-                            preguntaSeguridad.cpRepuestaId2 = Constant.defaults.value(forKey: "question2") as! String
+                            preguntaSeguridad.cpRepuestaId2 = question2
                             preguntaSeguridad.cpPreguntaId3 = Constant.defaults.value(forKey: "question3ID") as? String
-                            preguntaSeguridad.cpRepuestaId3 = Constant.defaults.value(forKey: "question3") as! String
+                            preguntaSeguridad.cpRepuestaId3 = question3
                             questionsController.getSendSecretAnswers(respuestasSecretas: preguntaSeguridad) { (res,error) in
                                 print("ENVIANDO LAS PREGUNTAS!!!!")
                                 if res != nil  {
