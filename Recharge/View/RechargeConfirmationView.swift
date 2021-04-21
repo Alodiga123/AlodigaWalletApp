@@ -28,6 +28,14 @@ struct RechargeConfirmationViewAccess: View {
     let countrySelect = Constant.defaults.object(forKey: "countrySelected") as? [String: String] ?? [String: String]()
     let banksSelected = Constant.defaults.object(forKey: "banksSelected") as? [String: String] ?? [String: String]()
     let productSelected = Constant.defaults.object(forKey: "productSelected") as? [String: String] ?? [String: String]()
+    @State var stepthree: Bool = false
+    var loading = Loading()
+    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.stepthree = true
+        }
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -44,14 +52,14 @@ struct RechargeConfirmationViewAccess: View {
                         .padding(.trailing,20)
                     TextLabelInfRecharge()
                     VStack{
-                        HStack {
+                        /*HStack {
                             Text("País")
                                 .frame(width: 80, alignment: .leading)
                                 .font(.caption)
                             TextField(countrySelect["nameCountryRe"]!, text: self.$text)
                                 .font(.caption)
                         }
-                        /*HStack {
+                        HStack {
                             Text("Banco")
                                 .frame(width: 80, alignment: .leading)
                                 .font(.caption)
@@ -93,9 +101,46 @@ struct RechargeConfirmationViewAccess: View {
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    NavigationLink(destination: SucesfullRechargeView()) {
-                        RechargeProcessButtonContent()
+                    Button(action: {
+                        //loading.loadindView()
+                        let saveManualRecharger = AL_ManualRecharge()
+                        saveManualRecharger.cpBankId = countrySelect["id"]
+                        saveManualRecharger.cpEmailUser = Constant.defaults.value(forKey: "email") as! String
+                        saveManualRecharger.cpReferenceNumberOperation = Constant.defaults.value(forKey: "transferRe")  as! String
+                        saveManualRecharger.cpAmountRecharge = Constant.defaults.value(forKey: "amountRe")  as! String
+                        saveManualRecharger.cpProductId = productSelected["id"]
+                        saveManualRecharger.cpConceptTransaction = Constant.defaults.value(forKey: "conceptRe")  as! String
+                        saveManualRecharger.cpDocumentTypeId = "1"
+                        saveManualRecharger.cpOriginApplicationId = "1"
+                        
+                        let controller = ResponseController()
+                    
+                        //self.progress.toggle()
+                        controller.getSaveManualRecharge(saveManualRecharge: saveManualRecharger) { (res, error) in
+                            //loading.loadingDismiss()
+                            if(res != nil){
+                                //self.progress.toggle()
+                                self.stepNex()
+                            }
+                            
+                            if error != nil {
+                                //loading.loadingDismiss()
+                                let alert = ShowAlert()
+                                alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageError(code: error!))
+                                print(error!)
+                            }
+                            
+                        }
+                        
+                        
+                    }) {
+                        ProcessButtonContents()
+                    }.padding(3)
+                    
+                    NavigationLink(destination: SucesfullRechargeView(), isActive:self.$stepthree){
+                        EmptyView()
                     }
+                    
                     NavigationLink(destination: RechargeView()) {
                         RechargeBackButtonContent()
                     }
