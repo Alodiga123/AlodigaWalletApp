@@ -28,6 +28,8 @@
 		045951BF262E4D5B00DC25F0 /* SpinnerCountryR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951BE262E4D5B00DC25F0 /* SpinnerCountryR.swift */; };
 		045951C7262E4D7700DC25F0 /* SpinnerBankR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951C6262E4D7700DC25F0 /* SpinnerBankR.swift */; };
 		045951CF262E4D8C00DC25F0 /* SpinnerProductR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951CE262E4D8C00DC25F0 /* SpinnerProductR.swift */; };
+		045951EF262FBD0600DC25F0 /* ObjectManualRecharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */; };
+		045951F4262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */; };
 		045D398D25718EBC00A98BCA /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D398C25718EBC00A98BCA /* ChangePasswordView.swift */; };
 		045D399525719B2900A98BCA /* SuccessfulChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D399425719B2900A98BCA /* SuccessfulChangeView.swift */; };
 		0471A9F92567542B00498491 /* ObjectSecretQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471A9F82567542B00498491 /* ObjectSecretQuestions.swift */; };
@@ -184,6 +186,8 @@
 		045951BE262E4D5B00DC25F0 /* SpinnerCountryR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCountryR.swift; sourceTree = "<group>"; };
 		045951C6262E4D7700DC25F0 /* SpinnerBankR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerBankR.swift; sourceTree = "<group>"; };
 		045951CE262E4D8C00DC25F0 /* SpinnerProductR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProductR.swift; sourceTree = "<group>"; };
+		045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManualRecharge.swift; sourceTree = "<group>"; };
+		045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorManualRecharge.swift; sourceTree = "<group>"; };
 		045D398C25718EBC00A98BCA /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		045D399425719B2900A98BCA /* SuccessfulChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulChangeView.swift; sourceTree = "<group>"; };
 		0471A9F82567542B00498491 /* ObjectSecretQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSecretQuestions.swift; sourceTree = "<group>"; };
@@ -888,6 +892,8 @@
 				049FC91A2582F14800133FD7 /* ObjectErrorManualWithdrawals.swift */,
 				0400441726267068007C4DEF /* ObjectDocumentPersonTypeByContry.swift */,
 				0400441C262670A1007C4DEF /* ObjectErrorDocumentPersonTypeByContry.swift */,
+				045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */,
+				045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1109,6 +1115,7 @@
 				BAE1EA6A252EAEB4007F9CD6 /* ObjectLogin.swift in Sources */,
 				04CD77212628A55800453557 /* ObjectParameterOptional.swift in Sources */,
 				0422337B2513B84C00AEB65F /* RechargeConfirmationView.swift in Sources */,
+				045951EF262FBD0600DC25F0 /* ObjectManualRecharge.swift in Sources */,
 				BA1B8BA0255C1985002A6892 /* SpinnerCurrencyTransference.swift in Sources */,
 				04D6DA6D251A5C3F0053125C /* AccountExpiredView.swift in Sources */,
 				049FC90B2582B32C00133FD7 /* SpinnerProduct.swift in Sources */,
@@ -1133,6 +1140,7 @@
 				BA6B7FB1262F8A8800E4184D /* SpinnerSecundSecretQuestions.swift in Sources */,
 				46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */,
 				46DBC47C2512866C008D42B3 /* ConfirmationView.swift in Sources */,
+				045951F4262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift in Sources */,
 				0471AA03256755BD00498491 /* SecretQuestionsController.swift in Sources */,
 				BAE1E9F6252BE894007F9CD6 /* ObjectRegistroUnificado.swift in Sources */,
 				04ECA1292537D6A900A77BA1 /* ObjetCountry.swift in Sources */,
