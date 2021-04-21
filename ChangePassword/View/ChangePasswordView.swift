@@ -88,7 +88,7 @@ struct ChangePasswordViewAccess: View {
                         TextLabelRecoverPass()
                         if self.progress{
                             GeometryReader{_ in
-                                Loader()
+                                //Loader()
                             }//.background(Color.white.opacity(10))
                         }
                             Button(action: {
@@ -115,8 +115,10 @@ struct ChangePasswordViewAccess: View {
 
                                     alert.showPaymentModeActionSheet(title: "error", message:                                      NSLocalizedString("toast_different_passwords", comment: ""))
                                 }else{
-                                    self.progress.toggle()
-
+                                    //self.progress.toggle()
+                                    //Cargando
+                                    let loading = Loading()
+                                    loading.loadindView()
                                     let changePasswordController = ChangePasswordController()
                                     
                                     changePasswordController.cambiarCredencialAplicacionMovil(credencial: pass, userId: Constant.defaults.value(forKey: "usuarioID") as! String) { (data, error) in
@@ -124,14 +126,18 @@ struct ChangePasswordViewAccess: View {
                                         if(data != ""){
                                             self.progress.toggle()
                                             self.isSuccesIn()
+                                            loading.loadingDismiss()
+
                                         }
                                         
                                         if error != nil {
                                             self.progress.toggle()
                                             let alert = ShowAlert()
+                                            loading.loadingDismiss()
                                             alert.showPaymentModeActionSheet(title: "error", message: "ERROR")
                                             //alert.showPaymentModeActionSheet(title: "error", message: loginController.getMessageErrorLogin(code: error!))
                                             print(error!)
+                                            
                                         }
                                         
                                        // self.progress.toggle()

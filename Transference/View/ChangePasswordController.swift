@@ -15,12 +15,29 @@ public class ChangePasswordController {
         let client_RU = RegistroUnificadoClient()
 
              let cambiarCredencialAplicacionMovil = CambiarCredencialAplicacionMovil()
-             cambiarCredencialAplicacionMovil.cpCredencial = "123456"//credencial.trimmingCharacters(in: NSCharacterSet.whitespaces)
+             //cambiarCredencialAplicacionMovil.cpCredencial = credencial.trimmingCharacters(in: NSCharacterSet.whitespaces)
              cambiarCredencialAplicacionMovil.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
              cambiarCredencialAplicacionMovil.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-             cambiarCredencialAplicacionMovil.cpUsuarioId = "410"//userId
-                
-      
+             cambiarCredencialAplicacionMovil.cpUsuarioId = userId
+        
+        let util = Utils()
+
+        
+        util.getKeyEncript(key: credencial) { (res, error) in
+            if(res != nil){
+                let clave : String
+                clave = res! as String
+                print(clave)
+                cambiarCredencialAplicacionMovil.cpCredencial = clave
+            }
+            if error != nil {
+                let alert = ShowAlert()
+                alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
+                print(error!)
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1){
         
                 client_RU.opCambiarCredencialAplicacionMovil(cambiarCredencialAplicacionMovil: cambiarCredencialAplicacionMovil) {(data,error) in
                     if error != nil {
@@ -60,7 +77,7 @@ public class ChangePasswordController {
                 }
     }
     
-    
+    }
     
     
     
