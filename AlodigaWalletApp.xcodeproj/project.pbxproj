@@ -132,6 +132,7 @@
 		BA6B7FAC262F8A7B00E4184D /* SpinnerSecretQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B7FAB262F8A7A00E4184D /* SpinnerSecretQuestions.swift */; };
 		BA6B7FB1262F8A8800E4184D /* SpinnerSecundSecretQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B7FB0262F8A8800E4184D /* SpinnerSecundSecretQuestions.swift */; };
 		BA6B7FB6262F8A9000E4184D /* SpinnerUltSecretQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B7FB5262F8A9000E4184D /* SpinnerUltSecretQuestion.swift */; };
+		BA6B7FBE2630ACB700E4184D /* ObjectKeyEncript.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B7FBD2630ACB700E4184D /* ObjectKeyEncript.swift */; };
 		BAC6171A2583EB490057CBC4 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617192583EB490057CBC4 /* Loading.swift */; };
 		BAC6171F2583F1F00057CBC4 /* Loadinv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */; };
 		BAC617242583F4CA0057CBC4 /* LoadingV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617232583F4CA0057CBC4 /* LoadingV3.swift */; };
@@ -299,6 +300,7 @@
 		BA6B7FAB262F8A7A00E4184D /* SpinnerSecretQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerSecretQuestions.swift; sourceTree = "<group>"; };
 		BA6B7FB0262F8A8800E4184D /* SpinnerSecundSecretQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerSecundSecretQuestions.swift; sourceTree = "<group>"; };
 		BA6B7FB5262F8A9000E4184D /* SpinnerUltSecretQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerUltSecretQuestion.swift; sourceTree = "<group>"; };
+		BA6B7FBD2630ACB700E4184D /* ObjectKeyEncript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectKeyEncript.swift; sourceTree = "<group>"; };
 		BAC617192583EB490057CBC4 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadinv2.swift; sourceTree = "<group>"; };
 		BAC617232583F4CA0057CBC4 /* LoadingV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingV3.swift; sourceTree = "<group>"; };
@@ -894,6 +896,7 @@
 				0400441C262670A1007C4DEF /* ObjectErrorDocumentPersonTypeByContry.swift */,
 				045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */,
 				045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */,
+				BA6B7FBD2630ACB700E4184D /* ObjectKeyEncript.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1100,6 +1103,7 @@
 				045375A725475CF400D12D77 /* ObjectRegisterUser.swift in Sources */,
 				04D6DA7F251A98630053125C /* TakePhotoView.swift in Sources */,
 				04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */,
+				BA6B7FBE2630ACB700E4184D /* ObjectKeyEncript.swift in Sources */,
 				46DBC46B250BC236008D42B3 /* RecoverPasswordByTokenView.swift in Sources */,
 				BA1B8B95255C11B2002A6892 /* SpinnerOption.swift in Sources */,
 				0422338B251551F600AEB65F /* TopUpView.swift in Sources */,

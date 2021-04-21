@@ -285,4 +285,46 @@ public class Utils{
         return productArray
     }
     
+    
+    func getKeyEncript(key: String, completion: @escaping (_ res:String?, String?) -> Void) {
+    
+    let client_RU = RegistroUnificadoClient()
+
+        let dataKey = TestEcnript()
+        dataKey.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+        dataKey.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
+        dataKey.cpTextValue = key
+        
+        client_RU.opTestEcnript(testEcnript: dataKey) { (data, error) in
+            if error != nil {
+                print("error=\(String(describing: error))")
+                completion(nil,"90")
+                return
+            }
+            
+            do{
+                var objetResponse: ObjectKeyEncript
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON ---- > ")
+                print(jsonStr)
+          
+                    objetResponse = try JSONDecoder().decode(ObjectKeyEncript.self, from: jsonStr.data(using: .utf8)!)
+                    //var clave = objetResponse.envelope.body.cambiar._return as String
+                    Constant.defaults.setValue(objetResponse.envelope.body.cambiar._return, forKey: "keyaux")
+                    completion(objetResponse.envelope.body.cambiar._return, nil)
+            
+                
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+
+        }
+        
+}
+
 }
