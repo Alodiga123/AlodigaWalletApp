@@ -15,8 +15,6 @@ struct FirstViewSecurity: View {
     //var products = Manager()
     @State var securitys : [questionsSecurity] = []
     @State var selectedSecurity = questionsSecurity()
-    @State var selectedSecurity2 = questionsSecurity()
-    @State var selectedSecurity3 = questionsSecurity()
     @State var expand = false
     @State var separador: String = " - "
     @State var jsonSecurity : ObjectSecretQuestions?
@@ -29,6 +27,7 @@ struct FirstViewSecurity: View {
         VStack {
             Button(action: {
                 self.isSheetOpened.toggle()
+
                 }) {
                 
                 Text("\(selectedSecurity.pregunta)").fontWeight(.bold)
@@ -52,17 +51,11 @@ struct FirstViewSecurity: View {
                 
                 SheetSecurity(questions: self.securitys, isSheetOpened: self.isSheetOpened, question1: selectedSecurity, question2: Constant.defaults.value(forKey: "question2ID") as? String ?? "-1" , question3: Constant.defaults.value(forKey: "question3ID") as? String ?? "-1", selectedquestions: self.$selectedSecurity)
             }
-            
-            Questions1RegisterTextField(question1: self.$question1)
-            Spacer()
-
-            if (selectedSecurity.preguntaId != "-1"){
-                SecundQuestionList(securitys: securitys, selectedSecurity1: self.$selectedSecurity)
-            }
+ 
         }.onAppear(
-            perform: getJSONSecurity
-        )
+            perform: getJSONSecurity)
     }
+
     func getJSONSecurity() {
         loading.loadindView()
         
@@ -79,8 +72,9 @@ struct FirstViewSecurity: View {
             if res != nil {
                 self.jsonSecurity = res! as ObjectSecretQuestions
                 self.securitys = res!.envelope.body.registerMovilResponse._return.datosRespuesta
-               
-
+                self.selectedSecurity = securitys[0]
+                Constant.defaults.set(selectedSecurity.preguntaId, forKey: "question1ID")
+                
             }
             
             if error != nil {

@@ -54,13 +54,13 @@ struct SecurityQuestionsViewAccess: View {
                     VStack{
                         Spacer()
                         FirstViewSecurity()
-                        //Questions2RegisterTextField(question2: self.$question2)
-                        //S/pacer()
-                     
-                        //ListarPregunta()
-                        //Questions2RegisterTextField(question2: self.$question2)
-                        //ListarPregunta()
-                        //Questions3RegisterTextField(question3: self.$question3)
+                        Questions1RegisterTextField(question1: self.$question1)
+                        Spacer()
+                        SecundQuestionList()
+                        Questions2RegisterTextField(question2: self.$question2)
+                        Spacer()
+                        UltQuestionList()
+                        Questions3RegisterTextField(question3: self.$question3)
                     }
                     Button(action: {
                         let questionsController = SecretQuestionsController()
@@ -73,12 +73,12 @@ struct SecurityQuestionsViewAccess: View {
                             preguntaSeguridad.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
                             preguntaSeguridad.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
                             preguntaSeguridad.cpUsuarioId = "379"//Int(Constant.defaults.value(forKey: "usuarioID") as! String)
-                            preguntaSeguridad.cpPreguntaId1 = "01"
-                            preguntaSeguridad.cpRepuestaId1 = question1
-                            preguntaSeguridad.cpPreguntaId2 = "02"
-                            preguntaSeguridad.cpRepuestaId2 = question2
-                            preguntaSeguridad.cpPreguntaId3 = "03"
-                            preguntaSeguridad.cpRepuestaId3 = question3
+                            preguntaSeguridad.cpPreguntaId1 = Constant.defaults.value(forKey: "question1ID") as? String
+                            preguntaSeguridad.cpRepuestaId1 = Constant.defaults.value(forKey: "question1") as! String
+                            preguntaSeguridad.cpPreguntaId2 = Constant.defaults.value(forKey: "question2ID") as? String
+                            preguntaSeguridad.cpRepuestaId2 = Constant.defaults.value(forKey: "question2") as! String
+                            preguntaSeguridad.cpPreguntaId3 = Constant.defaults.value(forKey: "question3ID") as? String
+                            preguntaSeguridad.cpRepuestaId3 = Constant.defaults.value(forKey: "question3") as! String
                             questionsController.getSendSecretAnswers(respuestasSecretas: preguntaSeguridad) { (res,error) in
                                 print("ENVIANDO LAS PREGUNTAS!!!!")
                                 if res != nil  {

@@ -65,6 +65,7 @@ public class SecretQuestionsController{
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonSecurity")
                     objectSecretQuestions = try JSONDecoder().decode(ObjectSecretQuestions.self, from: jsonStr.data(using: .utf8)!)
                     completion(objectSecretQuestions, nil)
                 }else{

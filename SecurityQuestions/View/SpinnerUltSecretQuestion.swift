@@ -12,10 +12,8 @@ import SwiftUI
 
 struct UltQuestionList: View {
     @State var isSheetOpened = false
-    @State var securitys : [questionsSecurity]
+    @State var securitys : [questionsSecurity] = []
     @State var selectedSecurity = questionsSecurity()
-    @Binding  var selectedSecurity1: questionsSecurity
-    @Binding  var selectedSecurity2: questionsSecurity
     @State var question3: String = ""
 
 
@@ -49,13 +47,32 @@ struct UltQuestionList: View {
                 SheetSecurity3(questions: self.securitys, isSheetOpened: self.isSheetOpened, question1: Constant.defaults.value(forKey: "question1ID") as? String ?? "-1", question2: Constant.defaults.value(forKey: "question2ID") as? String ?? "-1", selectedquestions: self.$selectedSecurity)
             }
 
-            Questions3RegisterTextField(question3: self.$question3)
-
-            
         }.onAppear(
-           // perform: getJSONSecurity
+            perform: getJSONSecurity
         )
+    
     }
+  
+    func getJSONSecurity() {
+        //loading.loadindView()
+        var objetResponse: ObjectSecretQuestions
+        let str: String = Constant.defaults.value(forKey: "jsonSecurity") as! String
+        do {
+            objetResponse = try JSONDecoder().decode(ObjectSecretQuestions.self, from: str.data(using: .utf8)!)
+            print("OBJETO DECODE")
+            print(objetResponse)
+            self.securitys = objetResponse.envelope.body.registerMovilResponse._return.datosRespuesta
+            self.selectedSecurity = securitys[2]
+            Constant.defaults.set(securitys[2].preguntaId, forKey: "question3ID")
+
+        } catch  {
+            loading.loadingDismiss()
+            print("Error: decodificando json")
+        }
+        
+       //loading.loadingDismiss()
+    }
+    
 }
 
 

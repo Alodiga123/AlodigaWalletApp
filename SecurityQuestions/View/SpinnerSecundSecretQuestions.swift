@@ -12,19 +12,20 @@ import SwiftUI
 
 struct SecundQuestionList: View {
     @State var isSheetOpened = false
-    @State var securitys : [questionsSecurity]
+    @State var securitys : [questionsSecurity] = []
     @State  var selectedSecurity = questionsSecurity()
-    @Binding  var selectedSecurity1 : questionsSecurity
     @State var expand = false
     @State var question2: String = ""
 
 
     let loading = Loading()
+
     var body: some View {
 
         VStack {
             Button(action: {
                 self.isSheetOpened.toggle()
+
                 }) {
                 
                 Text("\(selectedSecurity.pregunta)").fontWeight(.bold)
@@ -47,18 +48,36 @@ struct SecundQuestionList: View {
                 SheetSecurity2(questions: self.securitys, isSheetOpened: self.isSheetOpened, question1: Constant.defaults.value(forKey: "question1ID") as? String ?? "-1" , selectedquestions: self.$selectedSecurity)
             }
             
-            Questions2RegisterTextField(question2: self.$question2)
-        
-            Spacer()
-
-            if (selectedSecurity.preguntaId != "-1"){
-                UltQuestionList(securitys: securitys,selectedSecurity1: self.$selectedSecurity1, selectedSecurity2: self.$selectedSecurity)
-            }
+          
         }.onAppear(
-           // perform: getJSONSecurity
+        perform: getJSONSecurity
         )
     }
+    
+    func getJSONSecurity() {
+        //loading.loadindView()
+        var objetResponse: ObjectSecretQuestions
+        let str: String = Constant.defaults.value(forKey: "jsonSecurity") as! String
+        
+        do {
+            objetResponse = try JSONDecoder().decode(ObjectSecretQuestions.self, from: str.data(using: .utf8)!)
+            print("OBJETO DECODE")
+            print(objetResponse)
+            self.securitys = objetResponse.envelope.body.registerMovilResponse._return.datosRespuesta
+            self.selectedSecurity = securitys[1]
+            Constant.defaults.set(securitys[1].preguntaId, forKey: "question2ID")
+
+        } catch  {
+            loading.loadingDismiss()
+            print("Error: decodificando json")
+        }
+        
+        //loading.loadingDismiss()
+    }
+    
+
 }
+
 
 
 struct SheetSecurity2: View {
