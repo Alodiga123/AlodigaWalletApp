@@ -45,7 +45,7 @@ struct SecundQuestionList: View {
             .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
            
             .sheet(isPresented: self.$isSheetOpened) {
-                SheetSecurity2(questions: self.securitys, isSheetOpened: self.isSheetOpened, question1: Constant.defaults.value(forKey: "question1ID") as? String ?? "-1" , selectedquestions: self.$selectedSecurity)
+                SheetSecurity2(questions: self.securitys, isSheetOpened: self.isSheetOpened, question1: Constant.defaults.value(forKey: "question1ID") as? String ?? "-1", question3: Constant.defaults.value(forKey: "question3ID") as! String ?? "-1" , selectedquestions: self.$selectedSecurity)
             }
             
           
@@ -84,6 +84,7 @@ struct SheetSecurity2: View {
     var questions : [questionsSecurity]
     var isSheetOpened : Bool
     var question1: String
+    var question3 : String
     @Binding var selectedquestions: questionsSecurity
     @Environment(\.presentationMode) var presentationMode
     
@@ -93,7 +94,9 @@ struct SheetSecurity2: View {
             List {
                 ForEach(self.questions, id: \.self) { index in
                     
-                    if(index.preguntaId != question1){
+                    if(index.preguntaId != question3){
+                        if(index.preguntaId != selectedquestions.preguntaId){
+                        if(index.preguntaId != question1){
                     Button(action: {
                         self.selectedquestions = index
                         Constant.defaults.set(index.preguntaId, forKey: "question2ID")
@@ -105,6 +108,8 @@ struct SheetSecurity2: View {
 
                         
                     }
+                        }
+                        }
                 }
                 }
             }.colorMultiply(Color.cardButtonViewGray)

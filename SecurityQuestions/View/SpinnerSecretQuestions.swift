@@ -49,7 +49,7 @@ struct FirstViewSecurity: View {
            
             .sheet(isPresented: self.$isSheetOpened) {
                 
-                SheetSecurity(questions: self.securitys, isSheetOpened: self.isSheetOpened, question1: selectedSecurity, question2: Constant.defaults.value(forKey: "question2ID") as? String ?? "-1" , question3: Constant.defaults.value(forKey: "question3ID") as? String ?? "-1", selectedquestions: self.$selectedSecurity)
+                SheetSecurity(questions: self.securitys, isSheetOpened: self.isSheetOpened, question1: selectedSecurity, question2: Constant.defaults.value(forKey: "question2ID") as? String ?? "1" , question3: Constant.defaults.value(forKey: "question3ID") as? String ?? "2", selectedquestions: self.$selectedSecurity)
             }
  
         }.onAppear(
@@ -103,25 +103,11 @@ struct SheetSecurity: View {
         VStack {
             List {
                 ForEach(self.questions, id: \.self) { index in
-
-                    var valIni = Constant.defaults.bool(forKey: "questionIni")
                     
-                    if(valIni){
-                        
-                        Button(action: {
-                            
-                            self.selectedquestions = index
-                            Constant.defaults.set(index.preguntaId, forKey: "question1ID")
-
-                            self.presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Text(index.pregunta).fontWeight(.bold)
-                                .foregroundColor(.gray).font(.callout)
-                                .frame(width: 310, alignment: .leading)
-                        }
-                    }else{
+          
+                    if(index.preguntaId != question1.preguntaId ){
                     if(index.preguntaId != question2 ){
-                        if(index.preguntaId != question3 ){
+                    if(index.preguntaId != question3 ){
                     Button(action: {
                         
                         self.selectedquestions = index
@@ -133,8 +119,7 @@ struct SheetSecurity: View {
                             .foregroundColor(.gray).font(.callout)
                             .frame(width: 310, alignment: .leading)
                     }
-                    }
-                        
+                        }
                     }
                         
                     }

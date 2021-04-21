@@ -89,8 +89,10 @@ struct SheetSecurity3: View {
         VStack {
             List {
                 ForEach(self.questions, id: \.self) { index in
-                    if(index.preguntaId != question1 ){
+                    if(index.preguntaId != selectedquestions.preguntaId ){
                         if(index.preguntaId != question2 ){
+                            if(index.preguntaId != question1 ){
+
                     Button(action: {
                         self.selectedquestions = index
                         Constant.defaults.set(index.preguntaId, forKey: "question3ID")
@@ -99,9 +101,9 @@ struct SheetSecurity3: View {
                         Text(index.pregunta).fontWeight(.bold)
                             .foregroundColor(.gray).font(.callout)
                             .frame(width: 310, alignment: .leading)
-
                         
                     }
+                            }
                         }
                         
                     }
