@@ -386,33 +386,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "98B72C66-3FDF-4986-845F-465C2C3F9EED"
+            uuid = "63BDFE33-DBB4-4AB2-BD57-F6C95262877F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Login/Controller/LoginController.swift"
+            filePath = "Recharge/View/SpinnerCountryR.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "getLogin(dataUser:completion:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "getJSONCountry()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AA16881C-8554-499C-BF21-392B76D197B1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Login/Controller/LoginController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "getLogin(dataUser:completion:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "63BDFE33-DBB4-4AB2-BD57-F6C95262877F - 156d02d66eae7302"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlodigaWalletApp.CountryRechargelList.getJSONCountry() -&gt; ()"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Recharge/View/SpinnerCountryR.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "174">
+               </Location>
+               <Location
+                  uuid = "63BDFE33-DBB4-4AB2-BD57-F6C95262877F - cb68396631ae5765"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;AlodigaWalletApp.ObjectCountry&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in AlodigaWalletApp.CountryRechargelList.getJSONCountry() -&gt; ()"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Recharge/View/SpinnerCountryR.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
