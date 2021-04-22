@@ -133,6 +133,11 @@
 "WithdrawalInformation" = "Withdrawal Information";
 "SuccessfulWithdrawal" = "Successful Withdrawal";
 
+//Banco
+"AddBank" = "Add Bank";
+"Bank" = "Bank";
+"AccountNumber" = "Account Number";
+
 //Recover Password
 "RecoverPassword" = "Recover Password";
 "EmailRegister" = "Please enter your registered email";

@@ -10,8 +10,8 @@ import Foundation
 import SwiftUI
 
 struct CountryBankTextField: View {
-    @State var countries : [Country] = []
-    @State var jsonCountry : ObjectCountry?
+    @State var countriesHasBak : [CountryHasBank] = []
+    @State var jsonCountryHasBank : ObjetcCountryHasBank?
     
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
@@ -20,28 +20,27 @@ struct CountryBankTextField: View {
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(.gray)
                 .padding()
-            CountryWithdrawalList()
+            CountryHasBankList()
         }
     }
 }
 
-struct CountryBanksList: View {
+struct CountryHasBankList: View {
     @State var isSheetOpened = false
-    @State var selectedCountryBank = Country()
-    @State var countries : [Country] = []
+    @State var selectedCountryHasBank = CountryHasBank()
+    @State var countriesHasBank : [CountryHasBank] = []
     @State var expand = false
     @State var separador: String = ""
-    @State var jsonCountry : ObjectCountry?
+    @State var jsonCountryHasBank : ObjetcCountryHasBank?
     @State var code: String = ""
     
     var body: some View {
         VStack {
             Button(action: {
                 self.isSheetOpened.toggle()
-                code = selectedCountryBank.id
+                code = selectedCountryHasBank.id
             }) {
-                Text("\(selectedCountryBank.alternativeName3)")
-                    //.fontWeight(.bold)
+                Text("\(selectedCountryHasBank.alternativeName3)")
                     .foregroundColor(.gray)
                     .font(.callout)
                     Spacer()
@@ -54,12 +53,12 @@ struct CountryBanksList: View {
                 .clipShape(Rectangle())
                 .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
                 .sheet(isPresented: self.$isSheetOpened) {
-                    paisesBanks(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountryBank: self.$selectedCountryBank)
+                    paisTieneBanco(countriesHasBank: self.countriesHasBank, isSheetOpened: self.isSheetOpened, selectedCountryHasBank: self.$selectedCountryHasBank)
                 }
             //line
-            BanksTextField()
-            if (!selectedCountryBank.id.isEmpty){
-                BankWithdrawalList(idCountry: self.$selectedCountryBank.id)
+            BanksByCountryTextField()
+            if (!selectedCountryHasBank.id.isEmpty){
+                BanksByCountryList(idCountryHasBank: self.$selectedCountryHasBank.id)
             }
             
         }.onAppear(
@@ -68,33 +67,35 @@ struct CountryBanksList: View {
     }
     
     func getJSONCountry() {
-        let registerController = RegisterController()
-        let countryMovil = AL_GetCountries()
+        let countryHasBankController = BankController()
+        let countryHasBankMovil = AL_GetCountriesHasBank()
         
-        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
-            self.jsonCountry = res! as ObjectCountry
-            self.countries = res!.envelope.body.countryResponse._return.countries
+        countryHasBankMovil.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String;
+        
+        countryHasBankController.getCountryHasBank(generarCountryHasBank: countryHasBankMovil) { (res,error) in
+            self.jsonCountryHasBank = res! as ObjetcCountryHasBank
+            self.countriesHasBank = res!.envelope.body.countryHasBankResponse._return.countries
         }
     }
 }
 
-struct paisesBanks: View {
-    var countries : [Country]
+struct paisTieneBanco: View {
+    var countriesHasBank : [CountryHasBank]
     var isSheetOpened : Bool
-    @Binding var selectedCountryBank: Country
+    @Binding var selectedCountryHasBank: CountryHasBank
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
             List {
-                ForEach(self.countries, id: \.self) { index in
+                ForEach(self.countriesHasBank, id: \.self) { index in
                     Button(action: {
-                        self.selectedCountryBank = index
+                        self.selectedCountryHasBank = index
                         
-                        let countrySelectedBank = ["idCountryBank" : index.id,
+                        let countryHasBankSelected = ["idCountryBank" : index.id,
                                                "nameCountryBank" : index.name,
                                                "codeCountryBans" : index.code]
-                        Constant.defaults.set(countrySelectedBank, forKey: "countrySelectedBank")
+                        Constant.defaults.set(countryHasBankSelected, forKey: "countryHasBankSelected")
 
                         
                         self.presentationMode.wrappedValue.dismiss()
@@ -102,8 +103,8 @@ struct paisesBanks: View {
                         /*Constant.defaults.setValue(index.name, forKey: "nameCountryRe")
                         Constant.defaults.setValue(index.id, forKey: "idCountryRe")
                         Constant.defaults.setValue(index.code, forKey: "codeCountryRe")*/
-                        print("codigo Pais: " + index.code)
-                        print("Id Pais: " + index.id)
+                        print("Cod Country Has Bank: " + index.code)
+                        print("Id Country Has Bank: " + index.id)
                     }) {
                         Text(index.alternativeName3)
                             .font(.callout)

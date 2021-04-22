@@ -58,6 +58,20 @@ struct MenuView: View {
                     }
                 }
                 .padding(.top, 10)
+                
+                HStack {
+                    Image(systemName: "gear")
+                        .foregroundColor(.gray)
+                        .imageScale(.large)
+                    NavigationLink(destination: BankView()) {
+                        Text("AddBank")
+                            .foregroundColor(.gray)
+                            .font(.headline)
+                    }
+                    
+                }
+                .padding(.top, 10)
+                
 //                HStack {
 //                    Image(systemName: "person")
 //                        .foregroundColor(.gray)

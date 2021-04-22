@@ -133,6 +133,11 @@
 "WithdrawalInformation" = "Información del Retiro";
 "SuccessfulWithdrawal" = "Retiro Exitoso";
 
+//Banco
+"AddBank" = "Agregar Banco";
+"Bank" = "Banco";
+"AccountNumber" = "Numero de Cuenta";
+
 //Recuperar contraseña
 "RecoverPassword" = "Recuperar Contraseña";
 "EmailRegister" = "Por favor ingrese su correo electrónico registrado";

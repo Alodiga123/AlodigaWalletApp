@@ -25,6 +25,17 @@
 		044BD0BB2548CEBE005A6754 /* SuccessfulQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */; };
 		045375A725475CF400D12D77 /* ObjectRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375A625475CF400D12D77 /* ObjectRegisterUser.swift */; };
 		045375B9254790F600D12D77 /* ObjectErrorRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */; };
+		0455B8EE2631E5C400B35052 /* BankController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B8ED2631E5C400B35052 /* BankController.swift */; };
+		0455B8F82631E73800B35052 /* ObjetcCountryHasBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B8F72631E73800B35052 /* ObjetcCountryHasBank.swift */; };
+		0455B9002631E75200B35052 /* ObjetcErrorCountryHasBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B8FF2631E75200B35052 /* ObjetcErrorCountryHasBank.swift */; };
+		0455B90D2631F34500B35052 /* SpinnerCountryHasBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B90C2631F34500B35052 /* SpinnerCountryHasBank.swift */; };
+		0455B91526320B1500B35052 /* SpinnerAccountTypeBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B91426320B1500B35052 /* SpinnerAccountTypeBank.swift */; };
+		0455B91A26320BD700B35052 /* ObjectAccountTypeBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B91926320BD700B35052 /* ObjectAccountTypeBank.swift */; };
+		0455B92426320DB700B35052 /* ObjectErrorAccountTypeBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B92326320DB700B35052 /* ObjectErrorAccountTypeBank.swift */; };
+		0455B931263222F700B35052 /* SucesfullBankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B930263222F700B35052 /* SucesfullBankView.swift */; };
+		045951BF262E4D5B00DC25F0 /* SpinnerCountryR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951BE262E4D5B00DC25F0 /* SpinnerCountryR.swift */; };
+		045951C7262E4D7700DC25F0 /* SpinnerBankR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951C6262E4D7700DC25F0 /* SpinnerBankR.swift */; };
+		045951CF262E4D8C00DC25F0 /* SpinnerProductR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951CE262E4D8C00DC25F0 /* SpinnerProductR.swift */; };
 		045951EF262FBD0600DC25F0 /* ObjectManualRecharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */; };
 		045951F4262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */; };
 		045D398D25718EBC00A98BCA /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D398C25718EBC00A98BCA /* ChangePasswordView.swift */; };
@@ -51,7 +62,6 @@
 		04B6828625632F8D00834E95 /* ObjectErrorPassForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */; };
 		04BB56BC2630CDD2003FA7B4 /* BankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB56BB2630CDD2003FA7B4 /* BankView.swift */; };
 		04BB56C62630CE8B003FA7B4 /* SpinnerBanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB56C52630CE8B003FA7B4 /* SpinnerBanks.swift */; };
-		04BB56CB2630CEA2003FA7B4 /* SpinnerCountryBanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB56CA2630CEA2003FA7B4 /* SpinnerCountryBanks.swift */; };
 		04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC3025157E0700960B9F /* ProductTopUpView.swift */; };
 		04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC322515829600960B9F /* SuccessTopUpView.swift */; };
 		04CD77212628A55800453557 /* ObjectParameterOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD77202628A55800453557 /* ObjectParameterOptional.swift */; };
@@ -189,6 +199,17 @@
 		044BD0BA2548CEBE005A6754 /* SuccessfulQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulQuestionsView.swift; sourceTree = "<group>"; };
 		045375A625475CF400D12D77 /* ObjectRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRegisterUser.swift; sourceTree = "<group>"; };
 		045375B8254790F600D12D77 /* ObjectErrorRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorRegisterUser.swift; sourceTree = "<group>"; };
+		0455B8ED2631E5C400B35052 /* BankController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankController.swift; sourceTree = "<group>"; };
+		0455B8F72631E73800B35052 /* ObjetcCountryHasBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetcCountryHasBank.swift; sourceTree = "<group>"; };
+		0455B8FF2631E75200B35052 /* ObjetcErrorCountryHasBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetcErrorCountryHasBank.swift; sourceTree = "<group>"; };
+		0455B90C2631F34500B35052 /* SpinnerCountryHasBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCountryHasBank.swift; sourceTree = "<group>"; };
+		0455B91426320B1500B35052 /* SpinnerAccountTypeBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerAccountTypeBank.swift; sourceTree = "<group>"; };
+		0455B91926320BD700B35052 /* ObjectAccountTypeBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectAccountTypeBank.swift; sourceTree = "<group>"; };
+		0455B92326320DB700B35052 /* ObjectErrorAccountTypeBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorAccountTypeBank.swift; sourceTree = "<group>"; };
+		0455B930263222F700B35052 /* SucesfullBankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucesfullBankView.swift; sourceTree = "<group>"; };
+		045951BE262E4D5B00DC25F0 /* SpinnerCountryR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCountryR.swift; sourceTree = "<group>"; };
+		045951C6262E4D7700DC25F0 /* SpinnerBankR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerBankR.swift; sourceTree = "<group>"; };
+		045951CE262E4D8C00DC25F0 /* SpinnerProductR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProductR.swift; sourceTree = "<group>"; };
 		045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManualRecharge.swift; sourceTree = "<group>"; };
 		045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorManualRecharge.swift; sourceTree = "<group>"; };
 		045D398C25718EBC00A98BCA /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
@@ -215,7 +236,6 @@
 		04B6828525632F8D00834E95 /* ObjectErrorPassForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorPassForgot.swift; sourceTree = "<group>"; };
 		04BB56BB2630CDD2003FA7B4 /* BankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankView.swift; sourceTree = "<group>"; };
 		04BB56C52630CE8B003FA7B4 /* SpinnerBanks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerBanks.swift; sourceTree = "<group>"; };
-		04BB56CA2630CEA2003FA7B4 /* SpinnerCountryBanks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCountryBanks.swift; sourceTree = "<group>"; };
 		04BEBC3025157E0700960B9F /* ProductTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTopUpView.swift; sourceTree = "<group>"; };
 		04BEBC322515829600960B9F /* SuccessTopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessTopUpView.swift; sourceTree = "<group>"; };
 		04CD77202628A55800453557 /* ObjectParameterOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectParameterOptional.swift; sourceTree = "<group>"; };
@@ -539,6 +559,7 @@
 		04BB56B92630CD6A003FA7B4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0455B8ED2631E5C400B35052 /* BankController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -547,8 +568,10 @@
 			isa = PBXGroup;
 			children = (
 				04BB56BB2630CDD2003FA7B4 /* BankView.swift */,
-				04BB56CA2630CEA2003FA7B4 /* SpinnerCountryBanks.swift */,
+				0455B930263222F700B35052 /* SucesfullBankView.swift */,
+				0455B90C2631F34500B35052 /* SpinnerCountryHasBank.swift */,
 				04BB56C52630CE8B003FA7B4 /* SpinnerBanks.swift */,
+				0455B91426320B1500B35052 /* SpinnerAccountTypeBank.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -934,6 +957,10 @@
 				045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */,
 				045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */,
 				BA6B7FBD2630ACB700E4184D /* ObjectKeyEncript.swift */,
+				0455B8F72631E73800B35052 /* ObjetcCountryHasBank.swift */,
+				0455B8FF2631E75200B35052 /* ObjetcErrorCountryHasBank.swift */,
+				0455B91926320BD700B35052 /* ObjectAccountTypeBank.swift */,
+				0455B92326320DB700B35052 /* ObjectErrorAccountTypeBank.swift */,
 				BA6B7FD8263118B900E4184D /* ObjectRecharge.swift */,
 				BA6B7FDD26311AB200E4184D /* ObjectErrorRechargeCountry.swift */,
 			);
@@ -1090,11 +1117,13 @@
 				BA647E1925406E0200598944 /* ShowAlert.swift in Sources */,
 				46870D62250281AF00984049 /* Constans.swift in Sources */,
 				049FC9162582F13A00133FD7 /* ObjectManualWithdrawals.swift in Sources */,
+				0455B91A26320BD700B35052 /* ObjectAccountTypeBank.swift in Sources */,
 				04BEBC3125157E0700960B9F /* ProductTopUpView.swift in Sources */,
 				BA6AC327257D1C7E0072E6C5 /* ChangePasswordController.swift in Sources */,
 				BA6AC2E825644DE00072E6C5 /* Utils.swift in Sources */,
 				043FEC93251BFD5B005C518B /* SuccesfulRecoverView.swift in Sources */,
 				BA6AF4E025C246210079125F /* RegistroUnificado-Client.swift in Sources */,
+				0455B8EE2631E5C400B35052 /* BankController.swift in Sources */,
 				04D6DA62251A4A9B0053125C /* ValidateAccountView.swift in Sources */,
 				BA1B8BC325636672002A6892 /* ObjectGetUsuarioByMovilError.swift in Sources */,
 				BA1B8BA82562DD27002A6892 /* TransferenceController.swift in Sources */,
@@ -1116,7 +1145,9 @@
 				BA6B7FB6262F8A9000E4184D /* SpinnerUltSecretQuestion.swift in Sources */,
 				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
 				045D399525719B2900A98BCA /* SuccessfulChangeView.swift in Sources */,
+				0455B91526320B1500B35052 /* SpinnerAccountTypeBank.swift in Sources */,
 				043FEC86251BE2EE005C518B /* RecoverPasswordView.swift in Sources */,
+				0455B90D2631F34500B35052 /* SpinnerCountryHasBank.swift in Sources */,
 				04D322C52518E54C00F3F38C /* ConfirmationTopUpView.swift in Sources */,
 				BA6AC310256D5E5B0072E6C5 /* TransferenceQr.swift in Sources */,
 				BAE1EA65252E8DCB007F9CD6 /* LoginController.swift in Sources */,
@@ -1128,6 +1159,7 @@
 				BA6AC33925813B9D0072E6C5 /* Progress.swift in Sources */,
 				BAC6171A2583EB490057CBC4 /* Loading.swift in Sources */,
 				0400441D262670A1007C4DEF /* ObjectErrorDocumentPersonTypeByContry.swift in Sources */,
+				0455B92426320DB700B35052 /* ObjectErrorAccountTypeBank.swift in Sources */,
 				049FC91B2582F14800133FD7 /* ObjectErrorManualWithdrawals.swift in Sources */,
 				46DBC4742512851E008D42B3 /* OperationsKeyQRView.swift in Sources */,
 				049132F22577081600698369 /* ObjectErrorValidateAccount.swift in Sources */,
@@ -1168,6 +1200,7 @@
 				BAC6171F2583F1F00057CBC4 /* Loadinv2.swift in Sources */,
 				04D6DA84251AA2C70053125C /* PhotoView.swift in Sources */,
 				BAE1EA50252E04B2007F9CD6 /* ObjectAlodiga.swift in Sources */,
+				0455B9002631E75200B35052 /* ObjetcErrorCountryHasBank.swift in Sources */,
 				BA6AF4C625BF00D20079125F /* Client-Alodiga.swift in Sources */,
 				BA1B8BBE256351C6002A6892 /* ObjectGetUsuarioByMovil.swift in Sources */,
 				04ECA1212537CC7600A77BA1 /* RegisterController.swift in Sources */,
@@ -1185,6 +1218,7 @@
 				04D6DA49251946650053125C /* CommissionView.swift in Sources */,
 				BA6B7FB1262F8A8800E4184D /* SpinnerSecundSecretQuestions.swift in Sources */,
 				46DBC480251286C4008D42B3 /* SuccesfulTransactionView.swift in Sources */,
+				0455B8F82631E73800B35052 /* ObjetcCountryHasBank.swift in Sources */,
 				46DBC47C2512866C008D42B3 /* ConfirmationView.swift in Sources */,
 				045951F4262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift in Sources */,
 				0471AA03256755BD00498491 /* SecretQuestionsController.swift in Sources */,
@@ -1192,7 +1226,6 @@
 				04ECA1292537D6A900A77BA1 /* ObjetCountry.swift in Sources */,
 				46DBC47A2512855A008D42B3 /* TargetCustomerQRView.swift in Sources */,
 				04D6DA77251A968D0053125C /* ValidateAccountFirstView.swift in Sources */,
-				04BB56CB2630CEA2003FA7B4 /* SpinnerCountryBanks.swift in Sources */,
 				04E3D09E251AB9D700DA1B31 /* SuccesfullValidateView.swift in Sources */,
 				46DBC4862512879B008D42B3 /* FormSignUpView.swift in Sources */,
 				045D398D25718EBC00A98BCA /* ChangePasswordView.swift in Sources */,
@@ -1204,6 +1237,7 @@
 				BA6B7FE626311D2400E4184D /* SpinnerBankRecharge.swift in Sources */,
 				BA6AC3002567FBA20072E6C5 /* ObjectProccesTransferenceError.swift in Sources */,
 				0400442226267404007C4DEF /* SpinnerDocumentPersonByCountry.swift in Sources */,
+				0455B931263222F700B35052 /* SucesfullBankView.swift in Sources */,
 				467C04BC24D857F30021F472 /* SceneDelegate.swift in Sources */,
 				043FEC8E251BF601005C518B /* SecurityLevelView.swift in Sources */,
 				04D6DA41251913210053125C /* ConvertView.swift in Sources */,
@@ -1399,6 +1433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AlodigaWalletApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 5KDAGZ2FAD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AlodigaWalletApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1418,6 +1453,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AlodigaWalletApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 5KDAGZ2FAD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AlodigaWalletApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
