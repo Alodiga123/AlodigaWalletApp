@@ -68,10 +68,10 @@ struct SignUpViewAccess: View {
 //                        }else if(phone.count <= 11){
 //                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("InvalidPhone", comment: ""))
 //                        }else{
-                            //Constant.defaults.setValue("123456", forKey: "token")
+                            Constant.defaults.setValue("123456", forKey: "token")
                             Constant.defaults.setValue(phone, forKey: "Rphone")
                             stepNex()
-                            registerController.getToken(dataToken: token) { (res,error) in
+                            /*registerController.getToken(dataToken: token) { (res,error) in
                                 print("EN EL TOKEN!!!!")
                                 if res != nil  {
                                     print(res as Any)
@@ -88,7 +88,7 @@ struct SignUpViewAccess: View {
                                     alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
                                    print(error!)
                                 }
-                            }
+                            }*/
                         //}
                     }) {
                         RegisterContinueButtonContent()
