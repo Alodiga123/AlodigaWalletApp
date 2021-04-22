@@ -50,6 +50,7 @@ struct RechargeViewAccess: View {
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     CountryRechargeTextField()
+                    FirstViewCountryRecharge()
                     ConceptoRechargeTextField(conceptRecharge: self.$conceptRecharge)
                     TransferRechargeTextField(transferNumber: self.$transferNumber)
                     AmountRechargeTextField(amountRecharge: self.$amountRecharge)
@@ -89,7 +90,18 @@ struct RechargeViewAccess: View {
         }
     }
 }
-
+struct CountryRechargeTextField: View {
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text("Seleccione el pais")
+                .font(.callout)
+                .frame(width: 340, alignment: .leading)
+                .foregroundColor(.gray)
+                .padding()
+        }
+    }
+}
 struct TextLabelRecharge: View {
     var body: some View {
         Text("ManualRecharge")

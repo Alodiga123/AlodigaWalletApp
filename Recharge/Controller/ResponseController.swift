@@ -45,6 +45,7 @@ public class ResponseController{
         let client_AC = AlodigaClient()
         
         //Llamada del servicio de Guardar Usuarios
+    
         client_AC.opManualRecharge(manualRecharge: saveManualRecharge) {(data,error) in
             
             if error != nil {
@@ -79,6 +80,91 @@ public class ResponseController{
             }
         }
     }
+    
+    
+    func getCountriesHasBank(completion: @escaping (_ res:ObjectCountryRecharge?, String?) -> Void) {
+        
+        let client_AC = AlodigaClient()
+    
+        let countryMovil = AL_GetCountriesHasBank()
+        countryMovil.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String
+
+        //Llamada del servicio de Paises
+        client_AC.opGetCountriesHasBank(getCountriesHasBank: countryMovil) { (data, error) in
+            
+            if error != nil {
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            do{
+                var objetResponseCountry: ObjectCountryRecharge
+                var objetResponseCountryError: ObjectErrorCountry
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON ---- > ")
+                print(jsonStr)
+                
+                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                {
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
+                    objetResponseCountry = try JSONDecoder().decode(ObjectCountryRecharge.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objetResponseCountry, nil)
+                }else{
+                    objetResponseCountryError = try JSONDecoder().decode(ObjectErrorCountry.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objetResponseCountryError.envelope.body.cambiar._return.codigoRespuesta)
+                }
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+        }
+    }
+        
+    func getBankByCountry(bancosPorPais: AL_GetBankByCountryApp ,completion: @escaping (_ res:ObjectBankByCountry?, String?) -> Void) {
+        
+        let client_AC = AlodigaClient()
+        
+        //Llamada del servicio de Paises
+        client_AC.opGetBankByCountryApp(getBankByCountryApp: bancosPorPais) { (data, error) in
+            
+            if error != nil {
+                completion(nil,"90")
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            do{
+                var objectResponseBankByCountry: ObjectBankByCountry
+                var objectResponseErrorBankByCountry: ObjectErrorBankByCountry
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON PRODUCTOS POR PAIS ---- > ")
+                print(jsonStr)
+                
+                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                {
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
+                    objectResponseBankByCountry = try JSONDecoder().decode(ObjectBankByCountry.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objectResponseBankByCountry, nil)
+                }else{
+                    objectResponseErrorBankByCountry = try JSONDecoder().decode(ObjectErrorBankByCountry.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objectResponseErrorBankByCountry.envelope.body.cambiar._return.codigoRespuesta)
+                }
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+        }
+    }
+    
+    
     
     
     //Cambiar el retorno por el Struct a devolver

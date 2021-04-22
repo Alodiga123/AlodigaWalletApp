@@ -25,9 +25,6 @@ struct RechargeConfirmationView: View {
 
 struct RechargeConfirmationViewAccess: View {
     @State var text = ""
-    let countrySelect = Constant.defaults.object(forKey: "countrySelected") as? [String: String] ?? [String: String]()
-    let banksSelected = Constant.defaults.object(forKey: "banksSelected") as? [String: String] ?? [String: String]()
-    let productSelected = Constant.defaults.object(forKey: "productSelected") as? [String: String] ?? [String: String]()
     @State var stepthree: Bool = false
     var loading = Loading()
     
@@ -104,13 +101,16 @@ struct RechargeConfirmationViewAccess: View {
                     Button(action: {
                         //loading.loadindView()
                         let saveManualRecharger = AL_ManualRecharge()
-                        saveManualRecharger.cpBankId = countrySelect["id"]
+                        //let countrySelectRE = Constant.defaults.object(forKey: "countrySelectedRE") as? [String: String] ?? [String: String]()
+                        //let banksSelectedRE = Constant.defaults.object(forKey: "banksSelectedRE") as? [String: String] ?? [String: String]()
+                        //let productSelectedRE = Constant.defaults.object(forKey: "productSelectedRE") as? [String: String] ?? [String: String]()
+                        saveManualRecharger.cpBankId = Constant.defaults.value(forKey: "idBankRe")  as! String
                         saveManualRecharger.cpEmailUser = Constant.defaults.value(forKey: "email") as! String
                         saveManualRecharger.cpReferenceNumberOperation = Constant.defaults.value(forKey: "transferRe")  as! String
                         saveManualRecharger.cpAmountRecharge = Constant.defaults.value(forKey: "amountRe")  as! String
-                        saveManualRecharger.cpProductId = productSelected["id"]
+                        saveManualRecharger.cpProductId = Constant.defaults.value(forKey: "productSelectedID")  as! String
                         saveManualRecharger.cpConceptTransaction = Constant.defaults.value(forKey: "conceptRe")  as! String
-                        saveManualRecharger.cpDocumentTypeId = "1"
+                        saveManualRecharger.cpDocumentTypeId = "8"
                         saveManualRecharger.cpOriginApplicationId = "1"
                         
                         let controller = ResponseController()
