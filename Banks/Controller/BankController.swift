@@ -163,12 +163,12 @@ public class BankController{
     }
     
     
-    func getGuardarBanco(generarRegistro: GuardarUsuarioAplicacionMovil ,completion: @escaping (_ res:ObjectRegisterUser?, String?) -> Void) {
+    func getGuardarBanco(guardarBancoUsuario: AL_SaveAccountBankUser ,completion: @escaping (_ res:ObjectSaveAccountBank?, String?) -> Void) {
         
-        let client_RU = RegistroUnificadoClient()
+        let client_AC = AlodigaClient()
         
-        //Llamada del servicio de Guardar Usuarios
-        client_RU.opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil: generarRegistro) {(data,error) in
+        //Llamada del servicio de Guardar Banso del usuario
+        client_AC.opSaveAccountBankUser(saveAccountBankUser: guardarBancoUsuario) {(data,error) in
             
             if error != nil {
                 completion(nil,"90")
@@ -177,23 +177,22 @@ public class BankController{
             }
             
             do{
-                var objetResponse: ObjectRegisterUser
-                var objetResponseError: ObjectErrorRegisterUser
+                var objetSaveAccountResponse: ObjectSaveAccountBank
+                var objetSaveAccountResponseError: ObjectErrorSaveAccountBank
 
                 let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
-                //print("datastring " + datastring)
                 let parser = ParseXMLData(xml: datastring)
                 let jsonStr = parser.parseXML()
-                print("JSON REGISTER---- > ")
+                print("JSON Guardando Banco---- > ")
                 print(jsonStr)
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
-                    objetResponse = try JSONDecoder().decode(ObjectRegisterUser.self, from: jsonStr.data(using: .utf8)!)
-                    completion(objetResponse, nil)
+                    objetSaveAccountResponse = try JSONDecoder().decode(ObjectSaveAccountBank.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objetSaveAccountResponse, nil)
                 }else{
-                    objetResponseError = try JSONDecoder().decode(ObjectErrorRegisterUser.self, from: jsonStr.data(using: .utf8)!)
-                    completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
+                    objetSaveAccountResponseError = try JSONDecoder().decode(ObjectErrorSaveAccountBank.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objetSaveAccountResponseError.envelope.body.cambiar._return.codigoRespuesta)
                 }
                 
             }catch{

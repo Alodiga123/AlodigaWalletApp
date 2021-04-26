@@ -113,7 +113,7 @@ struct paisTieneBanco: View {
                             .foregroundColor(.gray)
                     }
                 }
-            }
+            }.colorMultiply(Color.cardButtonViewGray)
         }
     }
 }

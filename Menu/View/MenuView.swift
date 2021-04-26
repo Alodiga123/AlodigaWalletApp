@@ -60,7 +60,7 @@ struct MenuView: View {
                 .padding(.top, 10)
                 
                 HStack {
-                    Image(systemName: "gear")
+                    Image(systemName: "bahtsign.square.fill")
                         .foregroundColor(.gray)
                         .imageScale(.large)
                     NavigationLink(destination: BankView()) {
