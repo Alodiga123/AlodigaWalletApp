@@ -99,16 +99,16 @@ struct RechargeConfirmationViewAccess: View {
                     .fixedSize(horizontal: false, vertical: true)
                     
                     Button(action: {
-                        //loading.loadindView()
+                        loading.loadindView()
                         let saveManualRecharger = AL_ManualRecharge()
                         //let countrySelectRE = Constant.defaults.object(forKey: "countrySelectedRE") as? [String: String] ?? [String: String]()
                         //let banksSelectedRE = Constant.defaults.object(forKey: "banksSelectedRE") as? [String: String] ?? [String: String]()
                         //let productSelectedRE = Constant.defaults.object(forKey: "productSelectedRE") as? [String: String] ?? [String: String]()
-                        saveManualRecharger.cpBankId = Constant.defaults.value(forKey: "idBankRe")  as! String
+                        saveManualRecharger.cpBankId = Constant.defaults.value(forKey: "BankIDRecharge")  as! String
                         saveManualRecharger.cpEmailUser = Constant.defaults.value(forKey: "email") as! String
                         saveManualRecharger.cpReferenceNumberOperation = Constant.defaults.value(forKey: "transferRe")  as! String
                         saveManualRecharger.cpAmountRecharge = Constant.defaults.value(forKey: "amountRe")  as! String
-                        saveManualRecharger.cpProductId = Constant.defaults.value(forKey: "productSelectedID")  as! String
+                        saveManualRecharger.cpProductId = Constant.defaults.value(forKey: "ProductIDRecharge")  as! String
                         saveManualRecharger.cpConceptTransaction = Constant.defaults.value(forKey: "conceptRe")  as! String
                         saveManualRecharger.cpDocumentTypeId = "8"
                         saveManualRecharger.cpOriginApplicationId = "1"
@@ -117,14 +117,24 @@ struct RechargeConfirmationViewAccess: View {
                     
                         //self.progress.toggle()
                         controller.getSaveManualRecharge(saveManualRecharge: saveManualRecharger) { (res, error) in
-                            //loading.loadingDismiss()
+                            loading.loadingDismiss()
                             if(res != nil){
                                 //self.progress.toggle()
+                                Constant.defaults.removeObject(forKey: "CountryIDRecharge")
+                                Constant.defaults.removeObject(forKey: "BankIDRecharge")
+                                Constant.defaults.removeObject(forKey: "ProductIDRecharge")
+                                Constant.defaults.removeObject(forKey: "conceptRe")
+                                Constant.defaults.removeObject(forKey: "transferRe")
+                                Constant.defaults.removeObject(forKey: "amountRe")
+
+                            
+
+                               
                                 self.stepNex()
                             }
                             
                             if error != nil {
-                                //loading.loadingDismiss()
+                                loading.loadingDismiss()
                                 let alert = ShowAlert()
                                 alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageError(code: error!))
                                 print(error!)

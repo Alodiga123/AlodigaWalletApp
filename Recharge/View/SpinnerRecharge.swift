@@ -24,6 +24,8 @@ struct FirstViewCountryRecharge: View {
     @State var isSheetOpenedCountry = false
     @State var isSheetOpenedbank = false
     @State var ini : Bool = true
+    
+    @State var noValueProduct : Bool = false
 
 
 
@@ -62,9 +64,17 @@ struct FirstViewCountryRecharge: View {
                 self.isSheetOpenedCountry.toggle()
                 }) {
                 
-                Text("\(selectedCountry.alternativeName3)").fontWeight(.bold)
-                        .foregroundColor(.gray).font(.callout)
-                    .frame(width: 340, alignment: .leading)
+                if(selectedCountry.name.isEmpty){
+                    Text("\(selectText)").fontWeight(.bold)
+                            .foregroundColor(.gray).font(.callout)
+                        .frame(width: 340, alignment: .leading)
+                }else{
+                    Text("\(selectedCountry.alternativeName3)").fontWeight(.bold)
+                            .foregroundColor(.gray).font(.callout)
+                        .frame(width: 340, alignment: .leading)
+                }
+                
+              
                 
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
@@ -209,8 +219,15 @@ struct FirstViewCountryRecharge: View {
             }
             
             if error != nil {
-                let alert = ShowAlert()
-                alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
+                self.selectedCountry.name = ""
+                self.selectedBank.name = ""
+                self.selectedProducts.name = ""
+                Constant.defaults.removeObject(forKey: "CountryIDRecharge")
+                Constant.defaults.removeObject(forKey: "BankIDRecharge")
+                Constant.defaults.removeObject(forKey: "ProductIDRecharge")
+                
+                //let alert = ShowAlert()
+                //alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
                 print(error!)
             }
         }
@@ -231,8 +248,13 @@ struct FirstViewCountryRecharge: View {
             }
             
             if error != nil {
-                let alert = ShowAlert()
-                alert.showPaymentModeActionSheet(title: "error", message: controler.getMessageError(code: error!))
+                self.selectedBank.name = ""
+                self.selectedProducts.name = ""
+                Constant.defaults.removeObject(forKey: "BankIDRecharge")
+                Constant.defaults.removeObject(forKey: "ProductIDRecharge")
+
+                //let alert = ShowAlert()
+                //alert.showPaymentModeActionSheet(title: "error", message: controler.getMessageError(code: error!))
                 print(error!)
             }
         }
@@ -258,8 +280,10 @@ struct FirstViewCountryRecharge: View {
                 }
                 
                 if error != nil {
-                    let alert = ShowAlert()
-                    alert.showPaymentModeActionSheet(title: "error", message: withdrawalControler.getMessageError(code: error!))
+                    self.selectedProducts.name = ""
+                    Constant.defaults.removeObject(forKey: "ProductIDRecharge")
+                    //let alert = ShowAlert()
+                    //alert.showPaymentModeActionSheet(title: "error", message: withdrawalControler.getMessageError(code: error!))
                     print(error!)
                 }
             }

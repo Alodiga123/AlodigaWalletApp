@@ -383,11 +383,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B102FB0D-503E-4E75-8D1A-87E8D485599F - 5c7714e1210b0a45"
+                  uuid = "B102FB0D-503E-4E75-8D1A-87E8D485599F - bf24027e55e26e43"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "AlodigaWalletApp.ResponseController.getBankByCountry(bancosPorPais: AlodigaWalletApp.AL_GetBankByCountryApp, completion: (Swift.Optional&lt;AlodigaWalletApp.ObjectBankByCountry&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "AlodigaWalletApp.ResponseController.getBankByCountry(bancosPorPais: AlodigaWalletApp.AL_GetBankByCountryApp, completion: (Swift.Optional&lt;AlodigaWalletApp.ObjectBankByCountryUS&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "AlodigaWalletApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Recharge/Controller/ResponseController.swift"
@@ -398,11 +398,11 @@
                   offsetFromSymbolStart = "156">
                </Location>
                <Location
-                  uuid = "B102FB0D-503E-4E75-8D1A-87E8D485599F - 840615d898942649"
+                  uuid = "B102FB0D-503E-4E75-8D1A-87E8D485599F - abc82c41e4808042"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in AlodigaWalletApp.ResponseController.getBankByCountry(bancosPorPais: AlodigaWalletApp.AL_GetBankByCountryApp, completion: (Swift.Optional&lt;AlodigaWalletApp.ObjectBankByCountry&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in AlodigaWalletApp.ResponseController.getBankByCountry(bancosPorPais: AlodigaWalletApp.AL_GetBankByCountryApp, completion: (Swift.Optional&lt;AlodigaWalletApp.ObjectBankByCountryUS&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "AlodigaWalletApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Recharge/Controller/ResponseController.swift"
@@ -475,10 +475,10 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "119"
                   endingLineNumber = "119"
-                  offsetFromSymbolStart = "4127">
+                  offsetFromSymbolStart = "4185">
                </Location>
                <Location
-                  uuid = "CFD37B4C-A1D3-4A3B-B479-87C210C00A33 - 677ce4687e807904"
+                  uuid = "CFD37B4C-A1D3-4A3B-B479-87C210C00A33 - 677ce4687e807925"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -488,8 +488,8 @@
                   urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Recharge/View/RechargeConfirmationView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
                   offsetFromSymbolStart = "242">
                </Location>
             </Locations>
@@ -603,6 +603,38 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
+            landmarkName = "getJSONProducts()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F62925D-E101-4C20-BF91-3D24B7C234D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recharge/View/SpinnerRecharge.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "921810E3-C73A-480F-8D4F-EE4ECD367CA7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recharge/View/SpinnerRecharge.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "getJSONProducts()"
             landmarkType = "7">
          </BreakpointContent>

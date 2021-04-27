@@ -56,10 +56,13 @@ struct RechargeViewAccess: View {
                     AmountRechargeTextField(amountRecharge: self.$amountRecharge)
                     Button(action: {
                         let amount_aux : Float = Float(amountRecharge) ?? 0
+                        let BankIDRecharge = Constant.defaults.value(forKey: "BankIDRecharge") as? String ?? ""
+                        let ProductIDRecharge = Constant.defaults.value(forKey: "ProductIDRecharge") as? String ?? ""
+
                         
                         let alert = ShowAlert()
                         
-                        if(amountRecharge.isEmpty || conceptRecharge.isEmpty || transferNumber.isEmpty){
+                        if(ProductIDRecharge.isEmpty || BankIDRecharge.isEmpty || amountRecharge.isEmpty || conceptRecharge.isEmpty || transferNumber.isEmpty){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
                         }
                         else if(amount_aux <= 0){
@@ -68,6 +71,8 @@ struct RechargeViewAccess: View {
                             Constant.defaults.setValue(conceptRecharge, forKey: "conceptRe")
                             Constant.defaults.setValue(transferNumber, forKey: "transferRe")
                             Constant.defaults.setValue(amountRecharge, forKey: "amountRe")
+                        
+                            
                             
                             stepNex()
                         }
