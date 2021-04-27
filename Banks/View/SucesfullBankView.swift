@@ -38,13 +38,14 @@ struct SucesfullBankViewAccess: View {
                         .cornerRadius(3.0)
                         .opacity(0.3)
                         .padding(.top,16)
+                        .padding(.bottom, 40)
                     VStack(alignment: .leading) {
                         TextLabelSucesfullBank()
-                    }.padding(.leading,20)
-                     .padding(.trailing,20)
+                    }.padding(.leading,70)
+                     .padding(.trailing,50)
+                    Spacer()
                     
-                    RegisterCheckImagine()
-                    TextLabelBanks()
+                    BankCheckImagine()
                     NavigationLink(destination: MainViewLogged()) {
                         BanksButtonContent()
                     }
@@ -57,9 +58,10 @@ struct SucesfullBankViewAccess: View {
 
 struct TextLabelSucesfullBank: View {
     var body: some View {
-        Text("Welcome")
-            .font(.title)
+        Text("SuccesfulBank")
+            .font(.caption)
             .foregroundColor(Color.fontBlackColor)
+            //.padding()
     }
 }
 
@@ -67,28 +69,17 @@ struct BankCheckImagine: View {
     var body: some View {
         Image(systemName: "checkmark")
             .foregroundColor(Color.fontOrangeColor)
-            .font(.system(size: 100.0, weight: .light, design: .monospaced))
-            .frame(width: 180, height: 100)
-    }
-}
-
-struct TextLabelBanks: View {
-    var body: some View {
-        Text("RegisterCompleted")
-            .font(.body)
-            //.font(.system(size: 100.0, weight: .light, design: .monospaced))
-            .foregroundColor(.gray)
-            .padding(.leading,28)
-            .padding(.trailing,28)
-            .padding(.bottom,0)
-            .padding(.top,18)
+            .font(.system(size: 180.0, weight: .light, design: .monospaced))
+            .frame(width: 200, height: 180)
+            .padding()
+            
     }
 }
 
 struct BanksButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Enter")
+        Text("Finalize")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

@@ -68,7 +68,7 @@ struct ValidateAdressViewAccess: View {
                         if(state.isEmpty || state.count == 0 || city.isEmpty || city.count == 0 || zipZone.isEmpty || zipZone.count == 0 || street.isEmpty || street.count == 0){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("InvalidAllQuestion", comment: ""))
                         }else{                            
-                            guardar.cpUserId = "379"
+                            guardar.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String
                             guardar.cpEstado = state
                             guardar.cpCiudad = city
                             guardar.cpZipCode = zipZone

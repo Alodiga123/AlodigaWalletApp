@@ -33,6 +33,8 @@
 		0455B91A26320BD700B35052 /* ObjectAccountTypeBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B91926320BD700B35052 /* ObjectAccountTypeBank.swift */; };
 		0455B92426320DB700B35052 /* ObjectErrorAccountTypeBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B92326320DB700B35052 /* ObjectErrorAccountTypeBank.swift */; };
 		0455B931263222F700B35052 /* SucesfullBankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B930263222F700B35052 /* SucesfullBankView.swift */; };
+		0455B93C26336B0600B35052 /* ObjectSaveAccountBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B93B26336B0600B35052 /* ObjectSaveAccountBank.swift */; };
+		0455B94126336B1E00B35052 /* ObjectErrorSaveAccountBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B94026336B1E00B35052 /* ObjectErrorSaveAccountBank.swift */; };
 		045951EF262FBD0600DC25F0 /* ObjectManualRecharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */; };
 		045951F4262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */; };
 		045D398D25718EBC00A98BCA /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D398C25718EBC00A98BCA /* ChangePasswordView.swift */; };
@@ -203,6 +205,8 @@
 		0455B91926320BD700B35052 /* ObjectAccountTypeBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectAccountTypeBank.swift; sourceTree = "<group>"; };
 		0455B92326320DB700B35052 /* ObjectErrorAccountTypeBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorAccountTypeBank.swift; sourceTree = "<group>"; };
 		0455B930263222F700B35052 /* SucesfullBankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucesfullBankView.swift; sourceTree = "<group>"; };
+		0455B93B26336B0600B35052 /* ObjectSaveAccountBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSaveAccountBank.swift; sourceTree = "<group>"; };
+		0455B94026336B1E00B35052 /* ObjectErrorSaveAccountBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorSaveAccountBank.swift; sourceTree = "<group>"; };
 		045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManualRecharge.swift; sourceTree = "<group>"; };
 		045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorManualRecharge.swift; sourceTree = "<group>"; };
 		045D398C25718EBC00A98BCA /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
@@ -954,6 +958,8 @@
 				BA6B805C2636F86700E4184D /* ObjectBankUS.swift */,
 				BA6B7FD8263118B900E4184D /* ObjectRecharge.swift */,
 				BA6B7FDD26311AB200E4184D /* ObjectErrorRechargeCountry.swift */,
+				0455B93B26336B0600B35052 /* ObjectSaveAccountBank.swift */,
+				0455B94026336B1E00B35052 /* ObjectErrorSaveAccountBank.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1135,6 +1141,7 @@
 				048612262549AA5F008E51CE /* ObjectErrorToken.swift in Sources */,
 				040044102626542F007C4DEF /* FormSignUpView2.swift in Sources */,
 				BA6B7FB6262F8A9000E4184D /* SpinnerUltSecretQuestion.swift in Sources */,
+				0455B93C26336B0600B35052 /* ObjectSaveAccountBank.swift in Sources */,
 				46DBC4762512852E008D42B3 /* PaymentBusinessesQRView.swift in Sources */,
 				045D399525719B2900A98BCA /* SuccessfulChangeView.swift in Sources */,
 				0455B91526320B1500B35052 /* SpinnerAccountTypeBank.swift in Sources */,
@@ -1203,6 +1210,7 @@
 				0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */,
 				04F85F89257B068100A35C83 /* ObjectErrorProductsByBank.swift in Sources */,
 				BA6AC2FB256752990072E6C5 /* ObjectCodeOprationError.swift in Sources */,
+				0455B94126336B1E00B35052 /* ObjectErrorSaveAccountBank.swift in Sources */,
 				04D6DA51251953B00053125C /* OperationKeyConvertView.swift in Sources */,
 				04B6828625632F8D00834E95 /* ObjectErrorPassForgot.swift in Sources */,
 				BAE1E9E6252BC13E007F9CD6 /* ResponseController.swift in Sources */,

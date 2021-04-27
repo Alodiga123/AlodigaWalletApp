@@ -100,6 +100,7 @@ struct tipoCuenta: View {
                                                        "id" : index.id]
                         
                         Constant.defaults.set(accountTypeBankSelected, forKey: "accountTypeBankSelected")
+                        Constant.defaults.setValue(index.id, forKey: "accountTypeId")
                         
                         print("Tipo de cuenta: "+index.description)
                         print("Id producto: " + index.id)

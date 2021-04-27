@@ -137,6 +137,8 @@
 "AddBank" = "Agregar Banco";
 "Bank" = "Banco";
 "AccountNumber" = "Numero de Cuenta";
+"SuccesfulBank" = "El banco se ha agregado satisfactoriamente";
+
 
 //Recuperar contraseña
 "RecoverPassword" = "Recuperar Contraseña";

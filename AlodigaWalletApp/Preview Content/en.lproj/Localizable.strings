@@ -137,6 +137,7 @@
 "AddBank" = "Add Bank";
 "Bank" = "Bank";
 "AccountNumber" = "Account Number";
+"SuccesfulBank" = "The bank has been added successfully";
 
 //Recover Password
 "RecoverPassword" = "Recover Password";

@@ -52,17 +52,37 @@ struct BankViewAccess: View {
                     AccountNumberTextField(accountNumber: self.$accountNumber)
                     Button(action: {
                         let alert = ShowAlert()
+                        let bankController = BankController()
                         let accountNumber_aux : Int = Int(accountNumber) ?? 0
+                        let guardarBanco = AL_SaveAccountBankUser()
                         
                         if(accountNumber.isEmpty){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
                         }
-                        else if(accountNumber_aux <= 20){
+                        else if(accountNumber_aux < 20){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
                         }else{
                             Constant.defaults.setValue(accountNumber, forKey: "accountNumber")
                             
-                            stepNex()
+                            guardarBanco.cpBankId = Constant.defaults.value(forKey: "idBanks") as! String
+                            guardarBanco.cpUnifiedRegistryId = Constant.defaults.value(forKey: "usuarioID") as! String
+                            guardarBanco.cpAccountNumber = accountNumber
+                            guardarBanco.cpAccountTypeBankId = Constant.defaults.value(forKey: "accountTypeId") as! String
+                            
+                            bankController.getGuardarBanco(guardarBancoUsuario: guardarBanco) { (res, error) in
+                                //loading.loadingDismiss()
+                                print("GUARDANDO BANCO!!!!")
+                                if(res != nil){
+                                    stepNex()
+                                }
+                                
+                                if error != nil {
+                                    //loading.loadingDismiss()
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: bankController.getMessageError(code: error!))
+                                    print(error!)
+                                }
+                            }
                         }
                  
                     }) {
@@ -111,7 +131,7 @@ struct AccountNumberTextField: View {
 struct BankButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("ProcessRecharge")
+        Text("AddBank")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)
