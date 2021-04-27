@@ -124,7 +124,7 @@ public class ResponseController{
         }
     }
         
-    func getBankByCountry(bancosPorPais: AL_GetBankByCountryApp ,completion: @escaping (_ res:ObjectBankByCountry?, String?) -> Void) {
+    func getBankByCountry(bancosPorPais: AL_GetBankByCountryApp ,completion: @escaping (_ res:ObjectBankByCountryUS?, String?) -> Void) {
         
         let client_AC = AlodigaClient()
         
@@ -138,7 +138,7 @@ public class ResponseController{
             }
             
             do{
-                var objectResponseBankByCountry: ObjectBankByCountry
+                var objectResponseBankByCountry: ObjectBankByCountryUS
                 var objectResponseErrorBankByCountry: ObjectErrorBankByCountry
 
                 let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
@@ -151,7 +151,7 @@ public class ResponseController{
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
                     Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
-                    objectResponseBankByCountry = try JSONDecoder().decode(ObjectBankByCountry.self, from: jsonStr.data(using: .utf8)!)
+                    objectResponseBankByCountry = try JSONDecoder().decode(ObjectBankByCountryUS.self, from: jsonStr.data(using: .utf8)!)
                     completion(objectResponseBankByCountry, nil)
                 }else{
                     objectResponseErrorBankByCountry = try JSONDecoder().decode(ObjectErrorBankByCountry.self, from: jsonStr.data(using: .utf8)!)

@@ -329,24 +329,8 @@
             filePath = "Transference/View/SpinnerOption.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7D262D70-73C9-4B58-8BEB-C9C8C5606711"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Transference/View/SpinnerOption.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -621,54 +605,6 @@
             endingLineNumber = "68"
             landmarkName = "getJSONProducts()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1A286976-AF92-4EF8-9C8E-5047C8C0107F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Recharge/View/SpinnerBankRecharge.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "getJSONBank()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1A286976-AF92-4EF8-9C8E-5047C8C0107F - 8f7ebd966ffe4e72"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AlodigaWalletApp.FirstViewBankRecharge.getJSONBank() -&gt; ()"
-                  moduleName = "AlodigaWalletApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Recharge/View/SpinnerBankRecharge.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "900">
-               </Location>
-               <Location
-                  uuid = "1A286976-AF92-4EF8-9C8E-5047C8C0107F - e887168aced7cc2e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;AlodigaWalletApp.ObjectBankByCountry&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in AlodigaWalletApp.FirstViewBankRecharge.getJSONBank() -&gt; ()"
-                  moduleName = "AlodigaWalletApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Recharge/View/SpinnerBankRecharge.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "269">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
