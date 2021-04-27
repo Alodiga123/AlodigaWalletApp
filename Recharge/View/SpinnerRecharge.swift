@@ -193,24 +193,7 @@ struct FirstViewCountryRecharge: View {
             }
         }
     }
-    func getJSONCountrySheet() {
-        let registerController = ResponseController()
-        registerController.getCountriesHasBank() { (res,error) in
-            
-            if res != nil {
-                self.jsonCountry = res! as ObjectCountryRecharge
-                self.countries = res!.envelope.body.countryResponse._return.countries
-                getJSONBank()
-            }
-            
-            if error != nil {
-                let alert = ShowAlert()
-                alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
-                print(error!)
-            }
-        }
-    }
-    
+
     func getJSONCountry() {
         let registerController = ResponseController()
         registerController.getCountriesHasBank() { (res,error) in
