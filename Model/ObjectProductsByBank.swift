@@ -99,7 +99,8 @@ struct ProductsByBank: Identifiable, Decodable, Hashable {
         self.isPaymentInfo = ""
         self.isRemettence = ""
         self.isUsePrepaidCard = ""
-        self.name = "Seleccione una opcion"
+        self.name = NSLocalizedString("selectoption", comment: "")
+
         //self.productIntegrationTypeId = ""
         self.referenceCode = ""
         self.symbol = ""

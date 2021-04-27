@@ -242,3 +242,11 @@
 "toast_different_passwords" = "Las contraseñas no coinciden. Inténtalo de nuevo.";
 
 "loading" = "cargando..";
+
+
+"recharge_succesfull" = "La recarga fue realizada satisfactoriamente. Una vez que nuestros operadores validen la operación sera informado a traves de un email o SMS";
+
+"selectoption" = "Seleccione una opcion";
+"selectbank" = "Seleccione un banco";
+"selectproduct" = "Seleccione un producto";
+"selectcountry" = "Seleccione un pais";

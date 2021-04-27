@@ -47,7 +47,8 @@ struct FirstViewCountryRecharge: View {
     @State var products : [ProductsByBank] = []
     @State var jsonProducts : ObjectProductsByBank?
 
-    @State var selectText : String = "Seleccione una opcion"
+    @State var selectText : String =  NSLocalizedString("selectoption", comment: "")
+
 
     let loading = Loading()
     var body: some View {
@@ -148,7 +149,7 @@ struct FirstViewCountryRecharge: View {
                             .foregroundColor(.gray).font(.callout)
                         .frame(width: 340, alignment: .leading)
                 }else{
-                    Text("\(selectedProducts.name + " " + selectedProducts.symbol + " - " + selectedProducts.currentBalance)").fontWeight(.bold)
+                    Text("\(selectedProducts.name + " " + selectedProducts.symbol + "  " + selectedProducts.currentBalance)").fontWeight(.bold)
                             .foregroundColor(.gray).font(.callout)
                         .frame(width: 340, alignment: .leading)
                     
@@ -182,7 +183,8 @@ struct FirstViewCountryRecharge: View {
         
         var body: some View {
             VStack(alignment: .center, spacing: 5) {
-                Text("Selecciona el banco")
+               
+                Text( NSLocalizedString("selectbank", comment: ""))
                     .font(.callout)
                     .frame(width: 340, alignment: .leading)
                     .foregroundColor(.gray)
@@ -195,7 +197,7 @@ struct FirstViewCountryRecharge: View {
         
         var body: some View {
             VStack(alignment: .center, spacing: 5) {
-                Text("Selecciona el Producto")
+                Text( NSLocalizedString("selectproduct", comment: ""))
                     .font(.callout)
                     .frame(width: 340, alignment: .leading)
                     .foregroundColor(.gray)
@@ -237,8 +239,8 @@ struct FirstViewCountryRecharge: View {
         let controler = ResponseController()
         let bankByCountry = AL_GetBankByCountryApp()
         
-        bankByCountry.cpCountryId =  Constant.defaults.value(forKey: "CountryIDRecharge") as! String
-        
+        bankByCountry.cpCountryId =  Constant.defaults.value(forKey: "CountryIDRecharge") as? String ?? ""
+        if(bankByCountry.cpCountryId != nil){
         controler.getBankByCountry(bancosPorPais: bankByCountry){ (res,error) in
             if res != nil {
                 self.jsonBank = res! as ObjectBankByCountryUS
@@ -258,6 +260,8 @@ struct FirstViewCountryRecharge: View {
                 print(error!)
             }
         }
+            
+        }
     }
     
   
@@ -267,9 +271,10 @@ struct FirstViewCountryRecharge: View {
         let productsByBank = AL_GetProductsByBankId()
         
         //if(!idBank.isEmpty){
-            productsByBank.cpBankId = Constant.defaults.value(forKey: "BankIDRecharge") as! String
+            productsByBank.cpBankId = Constant.defaults.value(forKey: "BankIDRecharge") as? String ?? ""
             productsByBank.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String
             
+        if(productsByBank.cpBankId != nil){
             withdrawalControler.getProductByBank(productosPorBancos: productsByBank){ (res,error) in
                         
                 if res != nil {
@@ -287,7 +292,7 @@ struct FirstViewCountryRecharge: View {
                     print(error!)
                 }
             }
-       // }
+        }
     }
 }
 
@@ -311,14 +316,14 @@ struct SheetproductsRecharge: View {
                         
                         self.selectedproduct = index
                         Constant.defaults.set(index.id, forKey: "ProductIDRecharge")
-
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
+                     
+                            Text(index.name + " " + index.symbol + "  " + index.currentBalance).fontWeight(.bold)
+                                .foregroundColor(.gray).font(.callout)
+                                .frame(width: 310, alignment: .leading)
+                            
                         
-                        Text(index.name + " " + index.symbol + " - " + index.currentBalance).fontWeight(.bold)
-                        //Text(index.name).fontWeight(.bold)
-                            .foregroundColor(.gray).font(.callout)
-                            .frame(width: 310, alignment: .leading)
                     }
                         
                 }

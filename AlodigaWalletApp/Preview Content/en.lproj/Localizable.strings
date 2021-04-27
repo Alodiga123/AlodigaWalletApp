@@ -243,3 +243,12 @@
 "toast_different_passwords" = "Passwords do not match. Try again. ";
 
 "loading" = "loading..";
+
+
+"recharge_succesfull" = "The recharge was successful. Once validated you will be notified";
+
+
+"selectoption" = "Select an option";
+"selectbank" = "Select a bank";
+"selectproduct" = "Select a product";
+"selectcountry" = "Select a country";

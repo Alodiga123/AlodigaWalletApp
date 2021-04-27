@@ -123,9 +123,7 @@ struct RechargeConfirmationViewAccess: View {
                                 Constant.defaults.removeObject(forKey: "CountryIDRecharge")
                                 Constant.defaults.removeObject(forKey: "BankIDRecharge")
                                 Constant.defaults.removeObject(forKey: "ProductIDRecharge")
-                                Constant.defaults.removeObject(forKey: "conceptRe")
-                                Constant.defaults.removeObject(forKey: "transferRe")
-                                Constant.defaults.removeObject(forKey: "amountRe")
+                      
 
                             
 

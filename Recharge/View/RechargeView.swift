@@ -28,7 +28,8 @@ struct RechargeViewAccess: View {
     @State var transferNumber: String = "123456"
     @State var amountRecharge: String = "1"
     @State var steptwo: Bool = false
-    
+    var loading = Loading()
+
     func stepNex(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.steptwo = true
@@ -68,20 +69,62 @@ struct RechargeViewAccess: View {
                         else if(amount_aux <= 0){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
                         }else{
-                            Constant.defaults.setValue(conceptRecharge, forKey: "conceptRe")
-                            Constant.defaults.setValue(transferNumber, forKey: "transferRe")
-                            Constant.defaults.setValue(amountRecharge, forKey: "amountRe")
+                            //Constant.defaults.setValue(conceptRecharge, forKey: "conceptRe")
+                            //Constant.defaults.setValue(transferNumber, forKey: "transferRe")
+                            //Constant.defaults.setValue(amountRecharge, forKey: "amountRe")
+                        
+                            loading.loadindView()
+                            let saveManualRecharger = AL_ManualRecharge()
+                            saveManualRecharger.cpBankId = BankIDRecharge
+                            saveManualRecharger.cpEmailUser = Constant.defaults.value(forKey: "email") as! String
+                            saveManualRecharger.cpReferenceNumberOperation = transferNumber
+                            saveManualRecharger.cpAmountRecharge = amountRecharge
+                            saveManualRecharger.cpProductId = ProductIDRecharge
+                            saveManualRecharger.cpConceptTransaction = conceptRecharge
+                            saveManualRecharger.cpDocumentTypeId = "8"
+                            saveManualRecharger.cpOriginApplicationId = "1"
+                            
+                            let controller = ResponseController()
+                        
+                            //self.progress.toggle()
+                            controller.getSaveManualRecharge(saveManualRecharge: saveManualRecharger) { (res, error) in
+                                loading.loadingDismiss()
+                                if(res != nil){
+                                    //self.progress.toggle()
+                                    Constant.defaults.removeObject(forKey: "CountryIDRecharge")
+                                    Constant.defaults.removeObject(forKey: "BankIDRecharge")
+                                    Constant.defaults.removeObject(forKey: "ProductIDRecharge")
+                          
+
+                                
+
+                                   
+                                    self.stepNex()
+                                }
+                                
+                                if error != nil {
+                                    loading.loadingDismiss()
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageError(code: error!))
+                                    print(error!)
+                                }
+                                
+                            }
+                            
+                            
+                            
+                            
+                            
                         
                             
-                            
-                            stepNex()
+                            //stepNex()
                         }
                  
                     }) {
                         RechargeButtonContent()
                     }
                     VStack{
-                        NavigationLink(destination: RechargeConfirmationView(), isActive:self.$steptwo){
+                        NavigationLink(destination: SucesfullRechargeView(), isActive:self.$steptwo){
                             EmptyView()
                         }
                         NavigationLink(destination: MainViewLogged()) {
@@ -99,7 +142,7 @@ struct CountryRechargeTextField: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
-            Text("Seleccione el pais")
+            Text(NSLocalizedString("selectcountry", comment: ""))
                 .font(.callout)
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(.gray)

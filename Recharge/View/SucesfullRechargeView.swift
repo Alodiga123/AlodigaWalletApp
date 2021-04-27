@@ -11,7 +11,7 @@ import FloatingLabelTextFieldSwiftUI
 struct SucesfullRechargeView: View {
     var body: some View {
         GeometryReader { geometry in
-            ZStack(alignment: .leading) {
+            ZStack(alignment: .center) {
                 Image("backScream")
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.height/2).padding(.bottom,-geometry.size.height/2)
@@ -25,7 +25,12 @@ struct SucesfullRechargeView: View {
 
 struct SucesfullRechargeViewAccess: View {
     @State var text = ""
-    
+    @State var stepthree: Bool = false
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.stepthree = true
+        }
+    }
     var body: some View {
         GeometryReader { geometry in
             ZStack{
@@ -39,8 +44,15 @@ struct SucesfullRechargeViewAccess: View {
                         TextLabelSucesfullRecharge()
                     }.padding(.leading,20)
                         .padding(.trailing,20)
-                    RechargeCheckImagine()                    
+                    
+                    TextLabelSuccesfulRe()
+                    RechargeCheckImagine()
+                    
                     VStack{
+                        
+                      
+                      
+                        
                         /*HStack {
                             Text("País")
                                 .frame(width: 80, alignment: .leading)
@@ -63,11 +75,11 @@ struct SucesfullRechargeViewAccess: View {
                                 .font(.caption)
                         }
                         */
-                        HStack {
+                       /* HStack {
                             Text("Concepto")
                                 .frame(width: 80, alignment: .leading)
                                 .font(.caption)
-                            TextField(Constant.defaults.value(forKey: "conceptRe") as! String, text: self.$text)
+                            TextField(Constant.defaults.value(forKey: "conceptRe") as? String ?? "", text: self.$text)
                                 .font(.caption)
                         }
                         
@@ -75,7 +87,7 @@ struct SucesfullRechargeViewAccess: View {
                             Text("Transf No")
                                 .frame(width: 80, alignment: .leading)
                                 .font(.caption)
-                            TextField(Constant.defaults.value(forKey: "transferRe") as! String, text: self.$text)
+                            TextField(Constant.defaults.value(forKey: "transferRe") as? String ?? "", text: self.$text)
                                 .font(.caption)
                         }
                         
@@ -83,22 +95,34 @@ struct SucesfullRechargeViewAccess: View {
                             Text("Monto")
                                 .frame(width: 80, alignment: .leading)
                                 .font(.caption)
-                            TextField( Constant.defaults.value(forKey: "amountRe") as! String, text: self.$text)
+                            TextField( Constant.defaults.value(forKey: "amountRe") as? String ?? "", text: self.$text)
                                 .font(.caption)
-                        }
+                        }*/
                     }
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    NavigationLink(destination: MainViewLogged()) {
+                    Button {
+                        Constant.defaults.removeObject(forKey: "conceptRe")
+                        Constant.defaults.removeObject(forKey: "transferRe")
+                        Constant.defaults.removeObject(forKey: "amountRe")
+                        stepNex()
+                    } label: { 
                         RechangeEndButtonContent()
+
                     }
-                    NavigationLink(destination: MainViewLogged()) {
-                        RechangeShareButtonContent()
+
+                    NavigationLink(destination: MainViewLogged(), isActive:self.$stepthree){
+                        EmptyView()
                     }
+                    
+                   
+                    //NavigationLink(destination: MainViewLogged()) {
+                      //  RechangeShareButtonContent()
+                    //}
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(25)
-            }.padding(.bottom,geometry.size.height/2.2)
+            }.padding(.bottom,geometry.size.height/3.2)
         }
     }
 }
@@ -111,6 +135,18 @@ struct TextLabelSucesfullRecharge: View {
     }
 }
 
+
+
+struct TextLabelSuccesfulRe: View {
+    var body: some View {
+        Text("recharge_succesfull")
+            .font(.body)
+            .foregroundColor(Color.fontOrangeColor)
+            .frame(width: 340, height: 60, alignment: .center)
+            .padding(.top,0)
+            .padding(.bottom,0)
+    }
+}
 struct RechargeCheckImagine: View {
     var body: some View {
         Image(systemName: "checkmark")
