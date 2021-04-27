@@ -87,7 +87,7 @@ struct BankByCountryUS: Identifiable, Decodable, Hashable{
     init( ) {
         self.countryId = countryIdRechargeUS()
         self.id  = ""
-        self.name  = "Seleccione un Banco"
+        self.name  = "Seleccione una opcion"
         self.swiftCode  = ""
     }
     

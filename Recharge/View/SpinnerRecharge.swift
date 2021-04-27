@@ -45,6 +45,7 @@ struct FirstViewCountryRecharge: View {
     @State var products : [ProductsByBank] = []
     @State var jsonProducts : ObjectProductsByBank?
 
+    @State var selectText : String = "Seleccione una opcion"
 
     let loading = Loading()
     var body: some View {
@@ -52,6 +53,12 @@ struct FirstViewCountryRecharge: View {
         VStack {
             Button(action: {
                 getJSONCountry()
+                self.selectedBank.name = ""
+                self.selectedProducts.name = ""
+                Constant.defaults.removeObject(forKey: "BankIDRecharge")
+                Constant.defaults.removeObject(forKey: "ProductIDRecharge")
+
+
                 self.isSheetOpenedCountry.toggle()
                 }) {
                 
@@ -75,7 +82,6 @@ struct FirstViewCountryRecharge: View {
                
             }) {
                 SheetCountryRecharge(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountries: self.$selectedCountry)
-
             }
             
             
@@ -84,12 +90,21 @@ struct FirstViewCountryRecharge: View {
 
             Button(action: {
                 getJSONBank()
+                self.selectedProducts.name = ""
+                Constant.defaults.removeObject(forKey: "ProductIDRecharge")
                 self.isSheetOpenedbank.toggle()
                 }) {
-                
-                Text("\(selectedBank.name)").fontWeight(.bold)
-                        .foregroundColor(.gray).font(.callout)
-                    .frame(width: 340, alignment: .leading)
+                if(selectedBank.name.isEmpty){
+                    Text("\(selectText)").fontWeight(.bold)
+                            .foregroundColor(.gray).font(.callout)
+                        .frame(width: 340, alignment: .leading)
+                }else{
+                    Text("\(selectedBank.name)").fontWeight(.bold)
+                    .foregroundColor(.gray).font(.callout)
+                .frame(width: 340, alignment: .leading)
+                    
+                }
+              
                 
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
@@ -118,9 +133,18 @@ struct FirstViewCountryRecharge: View {
 
                 }) {
                 
-                Text("\(selectedProducts.name + " " + selectedProducts.symbol + " " + selectedProducts.currentBalance)").fontWeight(.bold)
-                        .foregroundColor(.gray).font(.callout)
-                    .frame(width: 340, alignment: .leading)
+                if(selectedProducts.name.isEmpty){
+                    Text("\(selectText)").fontWeight(.bold)
+                            .foregroundColor(.gray).font(.callout)
+                        .frame(width: 340, alignment: .leading)
+                }else{
+                    Text("\(selectedProducts.name + " " + selectedProducts.symbol + " - " + selectedProducts.currentBalance)").fontWeight(.bold)
+                            .foregroundColor(.gray).font(.callout)
+                        .frame(width: 340, alignment: .leading)
+                    
+                }
+                
+      
                 
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
@@ -283,7 +307,9 @@ struct SheetproductsRecharge: View {
 
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Text(index.name).fontWeight(.bold)
+                        
+                        Text(index.name + " " + index.symbol + " - " + index.currentBalance).fontWeight(.bold)
+                        //Text(index.name).fontWeight(.bold)
                             .foregroundColor(.gray).font(.callout)
                             .frame(width: 310, alignment: .leading)
                     }

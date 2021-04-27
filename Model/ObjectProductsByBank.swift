@@ -99,7 +99,7 @@ struct ProductsByBank: Identifiable, Decodable, Hashable {
         self.isPaymentInfo = ""
         self.isRemettence = ""
         self.isUsePrepaidCard = ""
-        self.name = "Seleccione"
+        self.name = "Seleccione una opcion"
         //self.productIntegrationTypeId = ""
         self.referenceCode = ""
         self.symbol = ""

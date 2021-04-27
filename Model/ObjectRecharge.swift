@@ -69,7 +69,7 @@ struct CountryRechargeM: Identifiable, Decodable, Hashable{
     //var shortName : String
     
     init( ) {
-        self.alternativeName3 = "Seleccione"
+        self.alternativeName3 = "Seleccione una opcion"
         self.code  = ""
         self.id  = ""
         self.name  = ""
