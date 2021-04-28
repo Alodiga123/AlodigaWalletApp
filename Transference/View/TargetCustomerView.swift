@@ -181,7 +181,7 @@ struct TargetCustomerViewAccess: View {
                         TransferenceConceptTextField(concept: self.$concept)
                         
                         let amount_aux : Float = Float(amount) ?? 0
-                        let saldo1 = currencySelect["saldoActual"]! as String
+                        let saldo1 = currencySelect["saldoActual"] as? String ?? "0"
                         let saldo : Float = Float(saldo1) ?? 0
                                                   
                         

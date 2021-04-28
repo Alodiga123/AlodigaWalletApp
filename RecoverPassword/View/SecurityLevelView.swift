@@ -82,25 +82,25 @@ struct SecurityLevelViewAccess: View {
                                     recoverPass.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
                                     recoverPass.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
                                     recoverPass.cpPhoneOrEmail = ""
-                                    recoverPass.cpCredencial = "";
+                                    recoverPass.cpCredencial = pass;
 
-    //                                recoverController.getRecoverPass(cambiarCredencialAplicacionMovil: recoverPass) { (res,error) in
-    //                                     print("EN LA VISTA CON EL CAMBIO DE CLAVE!!!!")
-    //                                     if res != nil  {
-    //                                         print(res as Any)
-    //     //                                    let registro: ObjectRegisterUser
-    //     //                                    registro = res! as ObjectRegisterUser
-    //     //                                    print(registro.envelope.body.registerMovilResponse._return.fechaHora)
-    //                                         //print(registro.envelope.body.countryResponse._return.countries)
-    //                                         //stepNex()
-    //                                     }
-    //
-    //                                     if error != nil {
-    //                                         let alert = ShowAlert()
-    //                                         alert.showPaymentModeActionSheet(title: "error", message: recoverController.getMessageError(code: error!))
-    //                                         print(error!)
-    //                                     }
-    //                                 }
+                                    recoverController.getRecoverPass(cambiarCredencialAplicacionMovil: recoverPass) { (res,error) in
+                                         print("EN LA VISTA CON EL CAMBIO DE CLAVE!!!!")
+                                         if res != nil  {
+                                             print(res as Any)
+         //                                    let registro: ObjectRegisterUser
+         //                                    registro = res! as ObjectRegisterUser
+         //                                    print(registro.envelope.body.registerMovilResponse._return.fechaHora)
+                                             //print(registro.envelope.body.countryResponse._return.countries)
+                                             //stepNex()
+                                         }
+    
+                                         if error != nil {
+                                             let alert = ShowAlert()
+                                             alert.showPaymentModeActionSheet(title: "error", message: recoverController.getMessageError(code: error!))
+                                             print(error!)
+                                         }
+                                     }
                                      stepNex()
                                     }
                                 }

@@ -73,11 +73,11 @@ struct RecoverPasswordViewAccess: View {
                             }else if(!util.isValidEmail(testStr: email)){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
                             }else{
-                                //Constant.defaults.setValue("123456", forKey: "tokenApi")
+                                Constant.defaults.setValue("123456", forKey: "tokenApi")
                                 stepNex()
 
 
-                                recoverController.getTokenAplication(dataTokenApli: tokenAplication) { (res,error) in
+                             /*   recoverController.getTokenAplication(dataTokenApli: tokenAplication) { (res,error) in
                                     print("EN EL TOKEN DE LA APLICACION!!!!")
                                     if res != nil  {
                                         print(res as Any)
@@ -95,7 +95,7 @@ struct RecoverPasswordViewAccess: View {
                                         print(error!)
                                     }
                                     stepNex()
-                                }
+                                }*/
                             }
                         }) {
                             ContinueRecoButtonContent()

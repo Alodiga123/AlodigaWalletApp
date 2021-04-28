@@ -34,6 +34,8 @@ struct SuccesfulTransactionViewAccess: View {
     @State var userDestinationID : String = ""
     
     
+ 
+    
     func isTransfereceProcessIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.isTransfereceProcess = true
@@ -219,9 +221,29 @@ struct SuccesfulTransactionViewAccess: View {
                         .fixedSize(horizontal: false, vertical: true)
                         
             
-                        NavigationLink(destination: MainViewLogged()) {
+                        Button {
+                            Constant.defaults.removeObject(forKey: "optionTransference")
+                            Constant.defaults.removeObject(forKey: "currencySelected")
+                            Constant.defaults.removeObject(forKey: "optionSelected")
+                            Constant.defaults.removeObject(forKey: "jsonUserByEmail")
+                            Constant.defaults.removeObject(forKey: "jsonUserByMovil")
+                            Constant.defaults.removeObject(forKey: "amount")
+                            Constant.defaults.removeObject(forKey: "concept")
+                            Constant.defaults.removeObject(forKey: "countKey")
+                            isTransfereceProcessIn()
+
+                        } label: {
                             EndButtonContents()
                         }
+
+                        
+                        NavigationLink(destination: MainViewLogged(), isActive:self.$isTransfereceProcess){
+                            EmptyView()
+                        }
+                        
+                       // NavigationLink(destination: MainViewLogged()) {
+                         //   EndButtonContents()
+                        //}
                        // NavigationLink(destination: MainViewLogged()) {
                          //   ShareButtonContents()
                         //}
@@ -264,8 +286,6 @@ struct SuccesfulTransactionViewAccess: View {
                                     + "\n" + NSLocalizedString("Date", comment: "") + " " + date
                                     + "\n" + NSLocalizedString("Transaction", comment: "") + " " + transation
                             
-                                
-                             
                             share(items: [shared])
                         }) {
                             ShareButtonContents()
