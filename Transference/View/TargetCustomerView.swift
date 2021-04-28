@@ -272,6 +272,8 @@ struct TransferenceAmountTextField: View {
         .padding(.bottom,-1).keyboardType(UIKeyboardType.decimalPad)
         .keyboardType(.decimalPad)
     }
+    
+    
 }
 
 struct TransferenceConceptTextField: View {

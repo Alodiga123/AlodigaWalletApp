@@ -241,7 +241,8 @@ public class Utils{
                                             "isPayTopUP" : product.isPayTopUP,
                                             "nombreProducto" : product.nombreProducto,
                                             "saldoActual" : product.saldoActual,
-                                            "simbolo" : product.simbolo]
+                                            "simbolo" : product.simbolo,
+                                            "isUsePrepaidCard" : product.isUsePrepaidCard]
                     
                     emptyDictionary.append(currency)
                 }
@@ -259,7 +260,8 @@ public class Utils{
                                     "isPayTopUP" : product.isPayTopUp,
                                     "nombreProducto" : product.name,
                                             "saldoActual" : product.currentBalance,
-                                            "simbolo" : product.symbol]
+                                            "simbolo" : product.symbol,
+                                            "isUsePrepaidCard" : product.isUsePrepaidCard]
                     emptyDictionary.append(currency)
        
                 }
@@ -280,6 +282,7 @@ public class Utils{
             aux.isPayTopUP = product["isPayTopUP"] ?? ""
             aux.saldoActual = product["saldoActual"] ?? ""
             aux.simbolo = product["simbolo"] ?? ""
+            aux.isUsePrepaidCard = product["isUsePrepaidCard"] ?? "false"
             productArray.append(aux)
         }
         return productArray

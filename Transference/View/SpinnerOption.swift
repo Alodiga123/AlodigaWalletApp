@@ -49,7 +49,7 @@ struct FirstViewSpinnerOption: View {
     @State var options = Manager()
     @State var expand = false
     @State var separador: String = ""
-    @State var user: String = "kerwin2821@gmail.com"
+    @State var user: String = ""
     @State var isgetUserSuccesIn: Bool = false
     
     
@@ -71,7 +71,7 @@ struct FirstViewSpinnerOption: View {
             }) {
                 
                 Text("\(selectedProduct.name )").fontWeight(.bold)
-                    .foregroundColor(.gray).font(.callout)                .frame(width: 340, alignment: .leading)
+                    .foregroundColor(.gray).font(.callout)                .frame(width: 290, alignment: .leading)
                 
                 Spacer()
                 Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")

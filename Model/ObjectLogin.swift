@@ -182,6 +182,7 @@ struct ListadoProductos: Identifiable, Decodable, Hashable {
     var nombreProducto : String
     var saldoActual : String
     var simbolo : String
+    var isUsePrepaidCard: String
     
     init() {
       self.nombreProducto = ""
@@ -189,6 +190,7 @@ struct ListadoProductos: Identifiable, Decodable, Hashable {
         self.isPayTopUP  = ""
         self.saldoActual  = ""
         self.simbolo  = ""
+        self.isUsePrepaidCard  = ""
     }
     
     enum CodingKeys: String, CodingKey {
@@ -197,6 +199,7 @@ struct ListadoProductos: Identifiable, Decodable, Hashable {
         case nombreProducto = "nombreProducto"
         case saldoActual = "saldoActual"
         case simbolo = "simbolo"
+        case isUsePrepaidCard = "isUsePrepaidCard"
      }
     
     func hash(into hasher: inout Hasher) {
@@ -205,6 +208,7 @@ struct ListadoProductos: Identifiable, Decodable, Hashable {
         hasher.combine(nombreProducto)
         hasher.combine(saldoActual)
         hasher.combine(simbolo)
+        hasher.combine(isUsePrepaidCard)
     }
 }
 

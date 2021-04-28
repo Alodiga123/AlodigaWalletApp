@@ -27,7 +27,7 @@ struct FirstView: View {
                 }) {
                 
                 Text("\(selectedProduct.nombreProducto + " " + selectedProduct.simbolo + separador + selectedProduct.saldoActual )").fontWeight(.bold)
-                        .foregroundColor(.gray).font(.callout)                .frame(width: 340, alignment: .leading)
+                        .foregroundColor(.gray).font(.callout)                .frame(width: 290, alignment: .leading)
                 
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
@@ -49,9 +49,37 @@ struct FirstView: View {
             
             //Text("\(selectedProduct)")
         }.onAppear(
-            perform: getJSONLogin
+            perform: getProduct
         )
     }
+    
+    
+    func getProduct()  {
+     let util = Utils()
+        var listado : [ListadoProductos] = util.getProductSession()
+        var listadoaux : [ListadoProductos] = []
+
+        for index in  listado {
+            if(index.isUsePrepaidCard != "true"){
+                listadoaux.append(index)
+            }
+            }
+        self.products = listadoaux
+        self.selectedProduct = products[0]
+        let currencySelected = ["id" : selectedProduct.id,
+                    "isPayTopUP" : selectedProduct.isPayTopUP,
+                    "nombreProducto" : selectedProduct.nombreProducto,
+                    "saldoActual" : selectedProduct.saldoActual,
+                    "simbolo" : selectedProduct.simbolo,
+                    "isUsePrepaidCard" : selectedProduct.isUsePrepaidCard]
+        Constant.defaults.set(currencySelected, forKey: "currencySelected")
+
+    }
+    
+    func removeTP(){
+  
+        }
+    
     func getJSONLogin() {
         loading.loadindView()
         var objetResponse: ObjectLogin
@@ -76,22 +104,20 @@ struct Sheet: View {
     var isSheetOpened : Bool
     @Binding var selectedProduct: ListadoProductos
     @Environment(\.presentationMode) var presentationMode
-
+    
     var body: some View {
         VStack {
             List {
                 ForEach(self.products, id: \.self) { index in
                     Button(action: {
                         self.selectedProduct = index
-                        
                         let currencySelected = ["id" : index.id,
                                     "isPayTopUP" : index.isPayTopUP,
                                     "nombreProducto" : index.nombreProducto,
                                     "saldoActual" : index.saldoActual,
-                                    "simbolo" : index.simbolo]
+                                    "simbolo" : index.simbolo,
+                                    "isUsePrepaidCard" : index.isUsePrepaidCard]
                         Constant.defaults.set(currencySelected, forKey: "currencySelected")
-
-                      
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Text(index.nombreProducto + " " + index.simbolo + " - " + index.saldoActual).fontWeight(.bold)
