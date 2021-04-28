@@ -107,7 +107,7 @@ struct EmailTextField: View {
     
     
     var body: some View {
-        FloatingLabelTextField($user, placeholder: "", editingChanged: { (isChanged) in
+        FloatingLabelTextField($user, placeholder: "Email", editingChanged: { (isChanged) in
         }) {
         }               
         .leftView({ // Add left view.
