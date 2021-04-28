@@ -65,38 +65,74 @@ struct ObjectProcessTransference: Decodable{
 struct productTransference : Decodable {
     var accessNumberUrl : String
     var categoryId: Category
+    var countryId: CountryId
     var currentBalance : String
     var enabled : String
-    var enterpriseId : Enterprise
+    //var enterpriseId : Enterprise
     var id : String
+    var indHasAssociatedBank: String
     var isAlocashProduct : String
+    var isDefaultProduct : String
     var isExchangeProduct : String
     var isFree : String
     var isPayTopUp : String
     var isPaymentInfo : String
     var isRemettence : String
+    var isUsePrepaidCard : String
     var name : String
-    var productIntegrationTypeId : ProductIntegrationType
+    //var productIntegrationTypeId : ProductIntegrationType
     var ratesUrl : String
     var referenceCode : String
     var symbol : String
     var taxInclude : String
+
+    
+    init(from decoder: Decoder) throws {
+         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        accessNumberUrl = try container.decodeIfPresent(String.self, forKey: .accessNumberUrl) ??  ""
+        categoryId = try container.decode(Category.self, forKey: .categoryId)
+        countryId = try container.decode(CountryId.self, forKey: .countryId)
+        currentBalance = try container.decodeIfPresent(String.self, forKey: .currentBalance) ??  ""
+        enabled = try container.decodeIfPresent(String.self, forKey: .enabled) ??  ""
+        //enterpriseId = try container.decode(Enterprise.self, forKey: .enterpriseId)
+        id = try container.decodeIfPresent(String.self, forKey: .id) ??  ""
+        indHasAssociatedBank = try container.decodeIfPresent(String.self, forKey: .indHasAssociatedBank) ??  ""
+        isAlocashProduct = try container.decodeIfPresent(String.self, forKey: .isAlocashProduct) ??  ""
+        isDefaultProduct = try container.decodeIfPresent(String.self, forKey: .isDefaultProduct) ??  ""
+        isExchangeProduct = try container.decodeIfPresent(String.self, forKey: .isExchangeProduct) ??  ""
+        isFree = try container.decodeIfPresent(String.self, forKey: .isFree) ??  ""
+        isPayTopUp = try container.decodeIfPresent(String.self, forKey: .isPayTopUp) ??  ""
+        isPaymentInfo = try container.decodeIfPresent(String.self, forKey: .isPaymentInfo) ??  ""
+        isRemettence = try container.decodeIfPresent(String.self, forKey: .isRemettence) ??  ""
+        isUsePrepaidCard = try container.decodeIfPresent(String.self, forKey: .isUsePrepaidCard) ??  ""
+        name = try container.decodeIfPresent(String.self, forKey: .name) ??  ""
+        //productIntegrationTypeId = try container.decode(ProductIntegrationType.self, forKey: .productIntegrationTypeId)
+        ratesUrl = try container.decodeIfPresent(String.self, forKey: .ratesUrl) ??  ""
+        referenceCode = try container.decodeIfPresent(String.self, forKey: .referenceCode) ??  ""
+        symbol = try container.decodeIfPresent(String.self, forKey: .symbol) ??  ""
+        taxInclude = try container.decodeIfPresent(String.self, forKey: .taxInclude) ??  ""
+     }
     
     enum CodingKeys: String, CodingKey {
          case accessNumberUrl = "accessNumberUrl"
          case categoryId = "categoryId"
+         case countryId = "countryId"
          case currentBalance = "currentBalance"
         case enabled = "enabled"
-        case enterpriseId = "enterpriseId"
+        //case enterpriseId = "enterpriseId"
+        case indHasAssociatedBank = "indHasAssociatedBank"
         case id = "id"
         case isAlocashProduct = "isAlocashProduct"
+        case isDefaultProduct = "isDefaultProduct"
         case isExchangeProduct = "isExchangeProduct"
        case isFree = "isFree"
        case isPayTopUp = "isPayTopUp"
         case isPaymentInfo = "isPaymentInfo"
         case isRemettence = "isRemettence"
+        case isUsePrepaidCard = "isUsePrepaidCard"
         case name = "name"
-        case productIntegrationTypeId = "productIntegrationTypeId"
+        //case productIntegrationTypeId = "productIntegrationTypeId"
         case ratesUrl = "ratesUrl"
         case referenceCode = "referenceCode"
         case symbol = "symbol"

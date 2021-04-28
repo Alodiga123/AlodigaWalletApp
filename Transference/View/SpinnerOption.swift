@@ -112,7 +112,7 @@ struct FirstViewSpinnerOption: View {
                     let util = Utils()
                     let alert = ShowAlert()
                     let loading = Loading()
-
+                   // loading.loadindView()
                     if(selectedProduct.id == "0"){
                         if(user.isEmpty){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
@@ -120,19 +120,19 @@ struct FirstViewSpinnerOption: View {
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
                         }else{
                             
-                            loading.loadindView()
+                           
 
                             controller.getUserByEmail(data: user) { (objectGetUsuarioByEmail, error) in
 
                                 if(objectGetUsuarioByEmail != nil){
-                                    loading.loadingDismiss()
+                                  //  loading.loadingDismiss()
 
                                     self.getUserSucces()
                                     Constant.defaults.set("0", forKey: "optionTransference")
 
                                 }
                                 if error != nil {
-                                    loading.loadingDismiss()
+                                 //   loading.loadingDismiss()
 
                                     let alert = ShowAlert()
                                     alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageErrorTransference(code: error!))
@@ -152,18 +152,18 @@ struct FirstViewSpinnerOption: View {
                        }else if(user.count <= 11){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidPhone", comment: "") )
                         }else{
-                            loading.loadindView()
+                            //loading.loadindView()
 
                             controller.getUserByMovil(data: user) { (res, error) in
                             print(res)
                             if(res != nil){
                                 Constant.defaults.set("1", forKey: "optionTransference")
-                                loading.loadingDismiss()
+                              //  loading.loadingDismiss()
                                 self.getUserSucces()
                             }
                             
                             if error != nil {
-                                loading.loadingDismiss()
+                             //   loading.loadingDismiss()
                                 let alert = ShowAlert()
                                 alert.showPaymentModeActionSheet(title: "error", message: controller.getMessageErrorTransference(code: error!))
                                 print(error!)
@@ -172,6 +172,7 @@ struct FirstViewSpinnerOption: View {
                         }
                         
                     }
+                    //loading.loadingDismiss()
                     
                 }){
                     TransferenceSerchButtonContent()

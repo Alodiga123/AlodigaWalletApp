@@ -49,107 +49,107 @@ struct OperationsKeyViewAccess: View {
         }
     }
     var body: some View {
-            GeometryReader { geometry in
-                ZStack{
-                    VStack {
-                        Rectangle()
-                            .frame(width:50, height: 6)
-                            .cornerRadius(3.0)
-                            .opacity(0.3)
-                            .padding(.top,16)
-                        VStack(alignment: .leading) {
-                            TextLabelTransference()
-                        }.padding(.leading,20)
-                         .padding(.trailing,20)
-                      
-                        if(fail == true){
-                            TextFailView(count: $count_aux)
+        GeometryReader { geometry in
+            ZStack{
+                VStack {
+                    Rectangle()
+                        .frame(width:50, height: 6)
+                        .cornerRadius(3.0)
+                        .opacity(0.3)
+                        .padding(.top,16)
+                    VStack(alignment: .leading) {
+                        TextLabelTransference()
+                    }.padding(.leading,20)
+                    .padding(.trailing,20)
+                    
+                    if(fail == true){
+                        TextFailView(count: $count_aux)
+                    }
+                    TextLabelOperationKey()
+                    TransOperKeyTextField(key: self.$key)
+                    Button(action: {
+                        
+                        if(Constant.defaults.integer(forKey: "countKey") != nil){
+                            count = Constant.defaults.integer(forKey: "countKey")
                         }
-                        TextLabelOperationKey()
-                        TransOperKeyTextField(key: self.$key)
-                        Button(action: {
-                            /*
-                            if(Constant.defaults.integer(forKey: "countKey") != nil){
-                               count = Constant.defaults.integer(forKey: "countKey")
-                            }
+                        
+                        Constant.defaults.setValue(count, forKey: "countKey")
+                        
+                        let alert = ShowAlert()
+                        
+                        if(key.isEmpty || key.count != 4){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinText", comment: ""))
+                        }else if(Constant.defaults.integer(forKey: "countKey") >= 3){
+                            Constant.defaults.removeObject(forKey: "countKey")
+                            self.isFailKeyIn()
                             
-                            Constant.defaults.setValue(count, forKey: "countKey")
-                           
-                            let alert = ShowAlert()
-
-                            if(key.isEmpty || key.count != 4){
-                                   alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinText", comment: ""))
-                            }else if(Constant.defaults.integer(forKey: "countKey") >= 3){
-                                Constant.defaults.removeObject(forKey: "countKey")
-                                self.isFailKeyIn()
-                                
-                            }else{
-                                let util = Utils()
-                             loading.loadindView()
-
-                                util.getCodeOperation(data: key.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (res, error) in
-                                    if(res != nil){
-                             loading.loadingDismiss()
-
-
-                                        let clave : String
-                                        clave = res! as String
-                                        
-                                        if(clave == key){
-                                            self.isSuccesKeyIn()
-                                        }else{
-                                            fail = true
-                                            count_aux = count_aux - 1
-                                           count = count + 1
-                                            Constant.defaults.setValue(count, forKey: "countKey")
+                        }else{
+                            let util = Utils()
+                            //loading.loadindView()
+                            util.getKeyEncript(key: key.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (reskey, errorkey) in
+                               
+                                if(reskey != nil){
+                                    var claveencip = reskey! as String
+                                    util.getCodeOperation(data: claveencip.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (res, error) in
+                                        if(res != nil){
+                                           // loading.loadingDismiss()
+                                            let clave : String
+                                            clave = res! as String
+                                            
+                                            if(clave == "00"){
+                                                self.isSuccesKeyIn()
+                                            }else{
+                                                fail = true
+                                                count_aux = count_aux - 1
+                                                count = count + 1
+                                                Constant.defaults.setValue(count, forKey: "countKey")
+                                            }
+                                            
+                                        }
+                                        if error != nil {
+                                           // loading.loadingDismiss()
+                                            let alert = ShowAlert()
+                                            alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
+                                            print(error!)
                                         }
                                         
                                     }
-                                    if error != nil {
-                             loading.loadingDismiss()
-
-                                        //comentar true
-                                        //fail = true
-                                        //count_aux = count_aux - 1
-                                        //count = count + 1
-                                        //Constant.defaults.setValue(count, forKey: "countKey")
-                                        let alert = ShowAlert()
-                                        alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
-                                        print(error!)
-                                    }
-                                    
+                                }//key
+                                
+                                if errorkey != nil {
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: errorkey!))
+                                    print(errorkey!)
                                 }
-                                
-                                
-                            }*/
-                            
-                            
-                            self.isSuccesKeyIn()
-                        
-                        }) {
-                            
-                           TransferenceSendButtonContents()
-                        }.padding(3)
-                        
-                        
-                        NavigationLink(destination: ConfirmationView(), isActive:self.$isSuccesKey){
-                            EmptyView()
+                            }
                         }
                         
-                        NavigationLink(destination: FailCodeOperationView(), isActive:self.$isFailKey){
-                            EmptyView()
-                        }
+                        self.isSuccesKeyIn()
                         
-                        /*NavigationLink(destination: ConfirmationView()) {
-                            TransferenceSendButtonContents()
-                        }*/
-                        NavigationLink(destination: TargetCustomerView()) {
-                            TransferenceBackButtonContent()
-                        }
-                    }.background(Color.cardButtonViewGray)
-                        .cornerRadius(25)
-                }.padding(.bottom,geometry.size.height/2.2)
-            }
+                    }) {
+                        
+                        TransferenceSendButtonContents()
+                    }.padding(3)
+                    
+                    
+                    NavigationLink(destination: ConfirmationView(), isActive:self.$isSuccesKey){
+                        EmptyView()
+                    }
+                    
+                    NavigationLink(destination: FailCodeOperationView(), isActive:self.$isFailKey){
+                        EmptyView()
+                    }
+                    
+                    /*NavigationLink(destination: ConfirmationView()) {
+                     TransferenceSendButtonContents()
+                     }*/
+                    NavigationLink(destination: TargetCustomerView()) {
+                        TransferenceBackButtonContent()
+                    }
+                }.background(Color.cardButtonViewGray)
+                .cornerRadius(25)
+            }.padding(.bottom,geometry.size.height/2.2)
+        }
     }
 }
 
@@ -165,7 +165,7 @@ struct TextFailView: View {
                 .multilineTextAlignment(.center)
                 .lineLimit(nil)
                 .fixedSize(horizontal: false, vertical: true)
-                
+            
         }
     }
 }

@@ -153,7 +153,7 @@ public class Utils{
                 }
                 
                 do{
-                    //var objetResponse: ObjectGetUsuarioByEmail
+                    var objetResponse: ObjectCodeOperationError
                     var objetResponseError: ObjectCodeOperationError
 
                     let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
@@ -165,10 +165,10 @@ public class Utils{
                     
                     if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
                     {
-                        Constant.defaults.setValue(jsonStr, forKey: "jsonUserByEmail")
-                        //objetResponse = try JSONDecoder().decode(ObjectGetUsuarioByEmail.self, from: jsonStr.data(using: .utf8)!)
-                        //print(objetResponse)
-                        completion(jsonStr, nil)
+                        //Constant.defaults.setValue(jsonStr, forKey: "jsonUserByEmail")
+                        objetResponse = try JSONDecoder().decode(ObjectCodeOperationError.self, from: jsonStr.data(using: .utf8)!)
+                        print(objetResponse.envelope.body.cambiar._return.codigoRespuesta)
+                        completion(objetResponse.envelope.body.cambiar._return.codigoRespuesta, nil)
                     }else{
                         objetResponseError = try JSONDecoder().decode(ObjectCodeOperationError.self, from: jsonStr.data(using: .utf8)!)
                         completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)

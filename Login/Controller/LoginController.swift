@@ -62,62 +62,64 @@ public class LoginController{
         let util = Utils()
     
        
-        util.getKeyEncript(key: dataUser.cpCredencial as! String) { (res, error) in
-            if(res != nil){
+        util.getKeyEncript(key: dataUser.cpCredencial as! String) { (resprin, errorprin) in
+            if(resprin != nil){
                 let clave : String
-                clave = res! as String
-                print(clave)
+                clave = resprin! as String
                 dataUser.cpCredencial = clave
+                
+                
+                //Llamada del servicio a utilizar
+                client_RU.opLoginAplicacionMovil(loginAplicacionMovil: dataUser) {(data,error) in
+                    
+                    if error != nil {
+                        print("error=\(String(describing: error))")
+                        completion(nil,"90")
+                        return
+                    }
+                    
+                    do{
+                        var objetResponse: ObjectLogin
+                        var objetResponseError: ObjectErrorLogin
+
+                        let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                        print("datastring " + datastring)
+                        let parser = ParseXMLData(xml: datastring)
+                        let jsonStr = parser.parseXML()
+                        //print("JSON ---- > ")
+                        print(jsonStr)
+                        
+                        if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
+                            || datastring.contains("<codigoRespuesta>12</codigoRespuesta>")
+                        {
+                            Constant.defaults.setValue(jsonStr, forKey: "jsonLogin")
+                            objetResponse = try JSONDecoder().decode(ObjectLogin.self, from: jsonStr.data(using: .utf8)!)
+                            completion(objetResponse, nil)
+                        }else{
+                            objetResponseError = try JSONDecoder().decode(ObjectErrorLogin.self, from: jsonStr.data(using: .utf8)!)
+                            completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
+                        }
+                        
+                    }catch{
+                        print("Error: ")
+                        print(error)
+                    }
+                }
+            
+            
+
+                
+                
+                
+                
             }
-            if error != nil {
+            if errorprin != nil {
                 let alert = ShowAlert()
-                alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
-                print(error!)
+                alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: errorprin!))
+                print(errorprin!)
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+1){
-
-        //Llamada del servicio a utilizar
-        client_RU.opLoginAplicacionMovil(loginAplicacionMovil: dataUser) {(data,error) in
-            
-            if error != nil {
-                print("error=\(String(describing: error))")
-                completion(nil,"90")
-                return
-            }
-            
-            do{
-                var objetResponse: ObjectLogin
-                var objetResponseError: ObjectErrorLogin
-
-                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
-                print("datastring " + datastring)
-                let parser = ParseXMLData(xml: datastring)
-                let jsonStr = parser.parseXML()
-                //print("JSON ---- > ")
-                print(jsonStr)
-                
-                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || datastring.contains("<codigoRespuesta>0</codigoRespuesta>")
-                    || datastring.contains("<codigoRespuesta>12</codigoRespuesta>")
-                {
-                    Constant.defaults.setValue(jsonStr, forKey: "jsonLogin")
-                    objetResponse = try JSONDecoder().decode(ObjectLogin.self, from: jsonStr.data(using: .utf8)!)
-                    completion(objetResponse, nil)
-                }else{
-                    objetResponseError = try JSONDecoder().decode(ObjectErrorLogin.self, from: jsonStr.data(using: .utf8)!)
-                    completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
-                }
-                
-            }catch{
-                print("Error: ")
-                print(error)
-            }
-        }
-    }
-    
-
-   
     }
     
 }
