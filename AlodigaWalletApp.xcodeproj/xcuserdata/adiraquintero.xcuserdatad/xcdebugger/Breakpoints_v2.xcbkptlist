@@ -1003,8 +1003,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "227E24EC-3A27-4C99-9C6B-643EF2E90C8D - f4126bb7b658d90e"
@@ -1049,10 +1049,10 @@
             filePath = "RecoverPassword/View/RecoverPasswordView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "CAEF3F07-C0E4-4D0F-8735-15850572B4B5 - f4126bb7b658d90e"
@@ -1097,10 +1097,10 @@
             filePath = "RecoverPassword/View/RecoverPasswordView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "68AE713A-DD55-4085-B06F-43DA00B84179 - f4126bb7b658d90e"

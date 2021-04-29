@@ -19,23 +19,47 @@ struct SignUpView: View {
                 VStack() {
                     SignUpViewAccess()
                 }
-            }.navigationBarTitle("Register", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }
 
 struct SignUpViewAccess: View {
     @State var country: String = ""
-    @State var phone: String = "" //Constant.defaults.object(forKey: "code") as! String
+    @State var phone: String =  ""
     @State var code: String = ""
     @State var steptwo: Bool = false
+    @State var isSheetOpened = false
+    @State var selectedCountry = Country()
+    @State var countries : [Country] = []
+    @State var expand = false
+    @State var separador: String = ""
+    @State var jsonCountry : ObjectCountry?
+    //@State var code: String = ""
+
     
     func stepNex(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.steptwo = true
         }
     }
-    
+    func getJSONCountry() {  //Cargando
+        let loading = Loading()
+        loading.loadindView()
+        let registerController = RegisterController()
+        let countryMovil = AL_GetCountries()
+        
+        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
+            self.jsonCountry = res! as ObjectCountry
+            self.countries = res!.envelope.body.countryResponse._return.countries
+            self.selectedCountry = countries[0]
+            self.phone = selectedCountry.code
+            Constant.defaults.setValue(selectedCountry.code, forKey: "code")
+            Constant.defaults.setValue(selectedCountry.id, forKey: "idCountryR")
+
+            loading.loadingDismiss()
+        }
+    }
     var body: some View {
         GeometryReader { geometry in
             ZStack{
@@ -51,27 +75,77 @@ struct SignUpViewAccess: View {
                      .padding(.trailing,20)
                     Spacer()
                     TextLabelCountry()
-                    //PhoneRegisterTextField(phone: self.$phone)
+                    
+                    Button(action: {
+                        self.isSheetOpened.toggle()
+                        
+                    }) {
+                        Text("\(selectedCountry.alternativeName3)")
+                            //.fontWeight(.bold)
+                            .foregroundColor(.gray)
+                            .font(.callout)
+                        
+                            Spacer()
+                            Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
+                                .resizable()
+                                .frame(width: 13, height: 6, alignment: .bottomTrailing)
+                                .foregroundColor(.gray)
+                        
+                        }.sheet(isPresented: self.$isSheetOpened) {
+                            paisesR(countries: self.countries, phone: self.$phone, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
+                        }
+                        .padding(10)
+                        .cornerRadius(10)
+                        .clipShape(Rectangle())
+                        .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
+                  
+                    
+                    line
+
+
+                
+                    
+                    PhoneRegisterTextField(phone: self.$phone)
+                    
                     Button(action: {
                         let registerController = RegisterController()
                         let alert = ShowAlert()
                         let token = GenerarCodigoMovilSMS()
+                        var valid = false
+                        //var phoneaux = Constant.defaults.value(forKey: "Rphone") as? String ?? ""
                         
-                        token.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+                        let util = Utils()
+                        
+                        
                         token.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-                        token.cpMovil = "584126157526" // Constant.defaults.value(forKey: "Rphone") as! String
+                        token.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
+                        //token.cpMovil = "584126157526" // Constant.defaults.value(forKey: "Rphone") as! String
+
                         
                         print ("Telefono")
                         
-//                        if(phone.isEmpty || phone.count == 0){
-//                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("ValidationInvalidLong", comment: ""))
-//                        }else if(phone.count <= 11){
-//                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("InvalidPhone", comment: ""))
-//                        }else{
-                            Constant.defaults.setValue("123456", forKey: "token")
+                        if(phone.isEmpty || phone.count == 0){
+                            alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("ValidationInvalidLong", comment: ""))
+                        }else if (util.isOnlyNumbers(string: phone)){
+                           
+                            if(phone.count <= 11){
+                                alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("InvalidPhone", comment: ""))
+                            }else{
+                            token.cpMovil =  phone.replacingOccurrences(of: "+", with: "", options: NSString.CompareOptions.literal, range: nil)
                             Constant.defaults.setValue(phone, forKey: "Rphone")
+                                valid = true
+                            }
+                            
+                        }
+                            
+
+                        if(valid){
+                            //token.cpMovil = phone
+
+                            //Constant.defaults.setValue("123456", forKey: "token")
+                            //Constant.defaults.setValue(phone, forKey: "Rphone")
                             stepNex()
-                            /*registerController.getToken(dataToken: token) { (res,error) in
+                            registerController.getToken(dataToken: token) { (res,error) in
                                 print("EN EL TOKEN!!!!")
                                 if res != nil  {
                                     print(res as Any)
@@ -88,8 +162,8 @@ struct SignUpViewAccess: View {
                                     alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
                                    print(error!)
                                 }
-                            }*/
-                        //}
+                            }
+                        }
                     }) {
                         RegisterContinueButtonContent()
                     }
@@ -104,9 +178,13 @@ struct SignUpViewAccess: View {
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(40)
             }.padding(.bottom,geometry.size.height/2.2)
-        }
+        }  .onAppear(
+            perform: getJSONCountry
+        )
     }
 }
+
+
 
 struct TextLabelSignUp: View {
     var body: some View {
@@ -186,68 +264,9 @@ var line: some View {
 }
 
 
-struct CountryList: View {
-    @State var isSheetOpened = false
-    @State var selectedCountry = Country()
-    @State var countries : [Country] = []
-    @State var expand = false
-    @State var separador: String = ""
-    @State var jsonCountry : ObjectCountry?
-    @State var code: String = ""
-    
-//    var line: some View {
-//        VStack { Divider()
-//            .background(Color.fontBlackColor)
-//            .border(Color.black, width: 5) }
-//            .padding(.bottom,10)
-//            .frame(width: 380, alignment: .center)
-//    }
-    
-    var body: some View {
-        VStack {
-            Button(action: {
-                self.isSheetOpened.toggle()
-                
-            }) {
-                Text("\(selectedCountry.alternativeName3)")
-                    //.fontWeight(.bold)
-                    .foregroundColor(.gray)
-                    .font(.callout)
-                
-                    Spacer()
-                    Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
-                        .resizable()
-                        .frame(width: 13, height: 6, alignment: .bottomTrailing)
-                        .foregroundColor(.gray)
-                
-                }.padding(10)
-                .cornerRadius(10)
-                .clipShape(Rectangle())
-                .frame(width: UIScreen.main.bounds.size.width - 60, height: 10, alignment: .leading)
-            
-            .sheet(isPresented: self.$isSheetOpened) {
-                paisesR(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountry: self.$selectedCountry)
-            }
-            line
-              PhoneRegisterTextField(phone: $selectedCountry.code)
-        }.onAppear(
-            perform: getJSONCountry
-        )
-    }
-    
-    func getJSONCountry() {
-        let registerController = RegisterController()
-        let countryMovil = AL_GetCountries()
-        
-        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
-            self.jsonCountry = res! as ObjectCountry
-            self.countries = res!.envelope.body.countryResponse._return.countries
-        }
-    }
-}
-
 struct paisesR: View {
     var countries : [Country]
+    @Binding var phone : String
     var isSheetOpened : Bool
     @Binding var selectedCountry: Country
     @Environment(\.presentationMode) var presentationMode
@@ -257,9 +276,10 @@ struct paisesR: View {
             List {
                 ForEach(self.countries, id: \.self) { index in
                     Button(action: {
+                        self.phone = index.code
                         self.selectedCountry = index
                         self.presentationMode.wrappedValue.dismiss()
-
+                        
                         Constant.defaults.setValue(index.code, forKey: "code")
                         Constant.defaults.setValue(index.id, forKey: "idCountryR")
                         print("codigo: "+index.code)
@@ -288,17 +308,6 @@ struct TextLabelCountry: View {
                 .frame(width: 340, alignment: .leading)
                 .foregroundColor(.gray)
                 .padding()
-            CountryList()
-        }
-    }
-    
-    func getJSONCountry() {
-        let registerController = RegisterController()
-        let countryMovil = AL_GetCountries()
-        
-        registerController.getCountry(generarCodigoCountry: countryMovil) { (res,error) in
-            self.jsonCountry = res! as ObjectCountry
-            self.countries = res!.envelope.body.countryResponse._return.countries
         }
     }
 }

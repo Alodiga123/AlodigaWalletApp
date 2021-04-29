@@ -77,9 +77,14 @@ struct RecoverPasswordViewAccess: View {
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
                             }else if (util.isOnlyNumbers(string: aux)){
                                 //tokenAplication.cpEmail = " "
-                                tokenAplication.cpMovil =  aux.replacingOccurrences(of: "+", with: "", options: NSString.CompareOptions.literal, range: nil)
-                                Constant.defaults.setValue(tokenAplication.cpMovil , forKey: "emailOrPhoneKey")
-                                valid = true
+                                if(aux.count <= 11){
+                                    alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("InvalidPhone", comment: ""))
+                                }else{
+                                    tokenAplication.cpMovil =  aux.replacingOccurrences(of: "+", with: "", options: NSString.CompareOptions.literal, range: nil)
+                                    Constant.defaults.setValue(tokenAplication.cpMovil , forKey: "emailOrPhoneKey")
+                                    valid = true
+                                }
+                            
                             }else if(util.isValidEmail(testStr: aux)){
 
                                 tokenAplication.cpEmail = aux
