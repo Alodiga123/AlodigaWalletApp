@@ -26,9 +26,12 @@ struct RecoverPasswordView: View {
 }
 
 struct RecoverPasswordViewAccess: View {
-    @State var email: String = "kerwin2821@gmail.com"
+    @State var aux: String = "kerwin2821@gmail.com"
+
     @State var isLoggedIn: Bool = false
     @State var steptwo: Bool = false
+    @State var valid: Bool = false
+
     
     func stepNex(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -51,7 +54,7 @@ struct RecoverPasswordViewAccess: View {
                         }.padding(.leading,20)
                             .padding(.trailing,20)
                         TextLabelRecover()
-                        EmailRecorTextField(email: self.$email)
+                        EmailRecorTextField(email: self.$aux)
                         
                         Button(action: {
                             let recoverController = RecoverController()
@@ -61,42 +64,50 @@ struct RecoverPasswordViewAccess: View {
 
                             tokenAplication.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
                             tokenAplication.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-                            tokenAplication.cpEmail = email
-                            tokenAplication.cpMovil = " "
+                          
 
-                            print (email)
+                            //print (email)
                             //Constant.defaults.setValue("123456", forKey: "tokenAplication")
                             //stepNex()
-
-                            if(email.isEmpty){
+                            
+                            if (aux.isEmpty) {
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
-                            }else if(!util.isValidEmail(testStr: email)){
-                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("email_invalid", comment: "") )
-                            }else{
-                                Constant.defaults.setValue("123456", forKey: "tokenApi")
-                                stepNex()
-
-
-                             /*   recoverController.getTokenAplication(dataTokenApli: tokenAplication) { (res,error) in
-                                    print("EN EL TOKEN DE LA APLICACION!!!!")
-                                    if res != nil  {
-                                        print(res as Any)
-                                        let tokenApli: ObjectTokenAplication
-                                        tokenApli = res! as ObjectTokenAplication
-                                        print(tokenApli.envelope.body.tokenResponse._return.datosRespuesta)
-
-                                        Constant.defaults.setValue(tokenApli.envelope.body.tokenResponse._return.datosRespuesta, forKey: "tokenApi")
-                                        stepNex()
-                                    }
-
-                                    if error != nil {
-                                        let alert = ShowAlert()
-                                        alert.showPaymentModeActionSheet(title: "error", message: recoverController.getMessageError(code: error!))
-                                        print(error!)
-                                    }
-                                    stepNex()
-                                }*/
+                            }else if (util.isOnlyNumbers(string: aux) && aux.count > 11){
+                                tokenAplication.cpEmail = " "
+                                tokenAplication.cpMovil = aux
+                                valid = true
+                            }else if(util.isValidEmail(testStr: aux)){
+                                tokenAplication.cpEmail = aux
+                                tokenAplication.cpMovil = " "
+                                valid = true
+                            }else {
+                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_01", comment: "") )
+                
                             }
+                    
+                            if(valid){
+                            recoverController.getTokenAplication(dataTokenApli: tokenAplication) { (res,error) in
+                                print("EN EL TOKEN DE LA APLICACION!!!!")
+                                if res != nil  {
+                                    print(res as Any)
+                                    let tokenApli: ObjectTokenAplication
+                                    tokenApli = res! as ObjectTokenAplication
+                                    print(tokenApli.envelope.body.tokenResponse._return.datosRespuesta)
+
+                                    Constant.defaults.setValue(tokenApli.envelope.body.tokenResponse._return.datosRespuesta, forKey: "tokenApi")
+                                    stepNex()
+                                }
+
+                                if error != nil {
+                                    let alert = ShowAlert()
+                                    alert.showPaymentModeActionSheet(title: "error", message: recoverController.getMessageError(code: error!))
+                                    print(error!)
+                                }
+                                stepNex()
+                            }
+                            }
+                            
+                            
                         }) {
                             ContinueRecoButtonContent()
                         }
