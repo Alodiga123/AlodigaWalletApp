@@ -47,7 +47,8 @@ struct BankViewAccess: View {
                         TextLabelBank()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
-                    CountryBankTextField()
+                    CountryTextField()
+                    FirstViewCountryBank()
                     AccountTypeBankTextField()
                     AccountNumberTextField(accountNumber: self.$accountNumber)
                     Button(action: {
@@ -64,7 +65,7 @@ struct BankViewAccess: View {
                         }else{
                             Constant.defaults.setValue(accountNumber, forKey: "accountNumber")
                             
-                            guardarBanco.cpBankId = Constant.defaults.value(forKey: "idBanks") as! String
+                            guardarBanco.cpBankId = Constant.defaults.value(forKey: "BankIDBank") as! String
                             guardarBanco.cpUnifiedRegistryId = Constant.defaults.value(forKey: "usuarioID") as! String
                             guardarBanco.cpAccountNumber = accountNumber
                             guardarBanco.cpAccountTypeBankId = Constant.defaults.value(forKey: "accountTypeId") as! String
@@ -100,6 +101,18 @@ struct BankViewAccess: View {
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(25)
             }.padding(.bottom,geometry.size.height/2.2)
+        }
+    }
+}
+
+struct CountryTextField: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text(NSLocalizedString("selectcountry", comment: ""))
+                .font(.callout)
+                .frame(width: 340, alignment: .leading)
+                .foregroundColor(.gray)
+                .padding()
         }
     }
 }

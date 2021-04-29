@@ -72,10 +72,10 @@ struct CountryHasBankList: View {
         
         countryHasBankMovil.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String;
         
-        countryHasBankController.getCountryHasBank(generarCountryHasBank: countryHasBankMovil) { (res,error) in
+        /*countryHasBankController.getCountryHasBank(generarCountryHasBank: countryHasBankMovil) { (res,error) in
             self.jsonCountryHasBank = res! as ObjetcCountryHasBank
             self.countriesHasBank = res!.envelope.body.countryHasBankResponse._return.countries
-        }
+        }*/
     }
 }
 

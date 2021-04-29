@@ -68,7 +68,7 @@ struct RegisterCheckImagine: View {
         Image(systemName: "checkmark")
             .foregroundColor(Color.fontOrangeColor)
             .font(.system(size: 100.0, weight: .light, design: .monospaced))
-            .frame(width: 180, height: 100)
+            .frame(width: 375, height: 100)
     }
 }
 
@@ -78,9 +78,9 @@ struct TextLabelStart: View {
             .font(.body)
             //.font(.system(size: 100.0, weight: .light, design: .monospaced))
             .foregroundColor(.gray)
-            .padding(.leading,28)
-            .padding(.trailing,28)
-            .padding(.bottom,0)
+            .padding(.leading,30)
+            .padding(.trailing,30)
+            .padding(.bottom,5)
             .padding(.top,18)
     }
 }

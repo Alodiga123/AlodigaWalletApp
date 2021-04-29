@@ -97,7 +97,7 @@ struct FirstViewCountryRecharge: View {
             
             
             
-            ProductRechargeTextField()
+            BankRechargeTextField()
 
             Button(action: {
                 getJSONBank()

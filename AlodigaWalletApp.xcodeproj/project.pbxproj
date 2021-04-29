@@ -35,6 +35,7 @@
 		0455B931263222F700B35052 /* SucesfullBankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B930263222F700B35052 /* SucesfullBankView.swift */; };
 		0455B93C26336B0600B35052 /* ObjectSaveAccountBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B93B26336B0600B35052 /* ObjectSaveAccountBank.swift */; };
 		0455B94126336B1E00B35052 /* ObjectErrorSaveAccountBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B94026336B1E00B35052 /* ObjectErrorSaveAccountBank.swift */; };
+		0455B949263A3ACD00B35052 /* SpinnerAddBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455B948263A3ACA00B35052 /* SpinnerAddBank.swift */; };
 		045951EF262FBD0600DC25F0 /* ObjectManualRecharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */; };
 		045951F4262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */; };
 		045D398D25718EBC00A98BCA /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D398C25718EBC00A98BCA /* ChangePasswordView.swift */; };
@@ -207,6 +208,7 @@
 		0455B930263222F700B35052 /* SucesfullBankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucesfullBankView.swift; sourceTree = "<group>"; };
 		0455B93B26336B0600B35052 /* ObjectSaveAccountBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSaveAccountBank.swift; sourceTree = "<group>"; };
 		0455B94026336B1E00B35052 /* ObjectErrorSaveAccountBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorSaveAccountBank.swift; sourceTree = "<group>"; };
+		0455B948263A3ACA00B35052 /* SpinnerAddBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerAddBank.swift; sourceTree = "<group>"; };
 		045951EE262FBD0500DC25F0 /* ObjectManualRecharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManualRecharge.swift; sourceTree = "<group>"; };
 		045951F3262FBD1900DC25F0 /* ObjectErrorManualRecharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorManualRecharge.swift; sourceTree = "<group>"; };
 		045D398C25718EBC00A98BCA /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				0455B90C2631F34500B35052 /* SpinnerCountryHasBank.swift */,
 				04BB56C52630CE8B003FA7B4 /* SpinnerBanks.swift */,
 				0455B91426320B1500B35052 /* SpinnerAccountTypeBank.swift */,
+				0455B948263A3ACA00B35052 /* SpinnerAddBank.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1173,6 +1176,7 @@
 				BA6B7FDE26311AB200E4184D /* ObjectErrorRechargeCountry.swift in Sources */,
 				BAE1E9B6252BA9D5007F9CD6 /* ObjetError.swift in Sources */,
 				045375A725475CF400D12D77 /* ObjectRegisterUser.swift in Sources */,
+				0455B949263A3ACD00B35052 /* SpinnerAddBank.swift in Sources */,
 				04D6DA7F251A98630053125C /* TakePhotoView.swift in Sources */,
 				04BEBC332515829600960B9F /* SuccessTopUpView.swift in Sources */,
 				BA6B7FBE2630ACB700E4184D /* ObjectKeyEncript.swift in Sources */,
