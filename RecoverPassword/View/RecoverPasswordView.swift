@@ -74,7 +74,7 @@ struct RecoverPasswordViewAccess: View {
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
                             }else if (util.isOnlyNumbers(string: aux)){
                                 //tokenAplication.cpEmail = " "
-                                tokenAplication.cpMovil = aux
+                                tokenAplication.cpMovil =  aux.replacingOccurrences(of: "+", with: "", options: NSString.CompareOptions.literal, range: nil)
                                 valid = true
                             }else if(util.isValidEmail(testStr: aux)){
                                 tokenAplication.cpEmail = aux
