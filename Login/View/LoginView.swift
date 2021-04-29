@@ -43,6 +43,9 @@ struct LoginView: View {
                     }
                 }.navigationViewStyle(StackNavigationViewStyle())
                     .padding(.leading, geo.size.width < geo.size.height ? 0.25 : 0)
+                .navigationBarHidden(true)
+                
+
             }else{
                 
                 //Usada para pintar la pantalla de los iphone
@@ -76,7 +79,7 @@ struct LoginView: View {
                             }
                         }
                     }
-                }
+                }.navigationBarHidden(true)
             }
         }
     }

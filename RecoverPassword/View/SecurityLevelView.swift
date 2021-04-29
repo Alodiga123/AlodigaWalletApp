@@ -24,8 +24,8 @@ struct SecurityLevelView: View {
 }
 
 struct SecurityLevelViewAccess: View {
-    @State var pass: String = "1234"
-    @State var repeatPass: String = "1234"
+    @State var pass: String = "Alo.123-"
+    @State var repeatPass: String = "Alo.123-"
     @State var isLoggedIn: Bool = false
     @State var stepFour: Bool = false
     @State var isSucces: Bool = false
@@ -104,7 +104,7 @@ struct SecurityLevelViewAccess: View {
                                              print(error!)
                                          }
                                      }
-                                     stepNex()
+                                    // stepNex()
                                     }
                                 }
                             }) {

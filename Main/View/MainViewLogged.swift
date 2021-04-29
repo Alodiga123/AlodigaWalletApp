@@ -65,6 +65,8 @@ struct MainViewLogged: View {
                         }
                 }
             )
+            
+            
         }.background(Color.cardButtonViewGray)
         
         

@@ -110,7 +110,7 @@ struct RecoverPasswordViewAccess: View {
                                     alert.showPaymentModeActionSheet(title: "error", message: recoverController.getMessageError(code: error!))
                                     print(error!)
                                 }
-                                stepNex()
+                                //stepNex()
                             }
                             }
                             

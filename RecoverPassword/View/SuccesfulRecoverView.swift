@@ -45,7 +45,7 @@ struct SuccesfulRecoverViewAccess: View {
                         Spacer()
                         RecoverCheckImagine()
                         Spacer()
-                        NavigationLink(destination: MainViewLogged()) {
+                        NavigationLink(destination: LoginView()) {
                             EndRecoverButtonContents()
                         }
 //                        NavigationLink(destination: MainViewLogged()) {
