@@ -18,7 +18,7 @@ struct FormSignUpView2: View {
                 VStack() {
                     FormSignUpViewAccess2()
                 }
-            }.navigationBarTitle("RegistrationData", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

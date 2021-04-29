@@ -18,7 +18,7 @@ struct WelcomeView: View {
                 VStack() {
                     WelcomeViewViewAccess()
                 }
-            }.navigationBarTitle("UserCreated", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden(true)
         }
     }
 }

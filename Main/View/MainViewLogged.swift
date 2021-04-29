@@ -65,7 +65,7 @@ struct MainViewLogged: View {
                         }
                 }
             ).navigationBarBackButtonHidden(true)
-            
+            .navigationViewStyle(StackNavigationViewStyle())
             
         }.background(Color.cardButtonViewGray)
         

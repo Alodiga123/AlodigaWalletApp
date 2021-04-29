@@ -18,7 +18,7 @@ struct PassByTokenView: View {
                 VStack() {
                     PassByTokenViewAccess ()
                 }
-            } .navigationBarTitle("KeyReceived", displayMode: .inline)
+            } .navigationBarTitle("", displayMode: .inline)
         }
     }
 }

@@ -142,10 +142,10 @@ struct SignUpViewAccess: View {
                         if(valid){
                             //token.cpMovil = phone
 
-                            //Constant.defaults.setValue("123456", forKey: "token")
-                            //Constant.defaults.setValue(phone, forKey: "Rphone")
+                            Constant.defaults.setValue("123456", forKey: "token")
+                            Constant.defaults.setValue(token.cpMovil, forKey: "Rphone")
                             stepNex()
-                            registerController.getToken(dataToken: token) { (res,error) in
+                           /* registerController.getToken(dataToken: token) { (res,error) in
                                 print("EN EL TOKEN!!!!")
                                 if res != nil  {
                                     print(res as Any)
@@ -162,7 +162,7 @@ struct SignUpViewAccess: View {
                                     alert.showPaymentModeActionSheet(title: "error", message: registerController.getMessageError(code: error!))
                                    print(error!)
                                 }
-                            }
+                            }*/
                         }
                     }) {
                         RegisterContinueButtonContent()
