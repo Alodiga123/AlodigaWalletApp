@@ -136,8 +136,10 @@ public class Utils{
     
     
     func isOnlyNumbers(string: String) -> Bool {
-        return NSPredicate(format: "SELF MATCHES %@", "\\d{10}").evaluate(with: string)
-   }
+        let emailRegEx = "[+]?\\d*"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+      return emailTest.evaluate(with: string.trimmingCharacters(in: NSCharacterSet.whitespaces))   }
+    
     func getCodeOperation(data: String, completion: @escaping (_ res:String?, String?) -> Void) {
     
     let client_RU = RegistroUnificadoClient()
