@@ -18,7 +18,7 @@ struct TransferenceView: View {
                 VStack() {
                     TransferenceViewAccess()
                 }
-            }.navigationBarTitle("Transference", displayMode: .inline)
+            }.navigationBarTitle("")
         }
     }
 }

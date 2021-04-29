@@ -18,7 +18,7 @@ struct OperationsKeyView: View {
                 VStack() {
                     OperationsKeyViewAccess()
                 }
-            }.navigationBarTitle("Back", displayMode: .inline)
+            }.navigationBarTitle("")
         }
     }
 }

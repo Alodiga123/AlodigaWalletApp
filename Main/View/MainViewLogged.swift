@@ -64,7 +64,7 @@ struct MainViewLogged: View {
                             Text("...")
                         }
                 }
-            )
+            ).navigationBarBackButtonHidden(true)
             
             
         }.background(Color.cardButtonViewGray)

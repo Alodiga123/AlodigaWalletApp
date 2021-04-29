@@ -18,7 +18,8 @@ struct SuccesfulTransactionView: View {
                 VStack() {
                     SuccesfulTransactionViewAccess()
                 }
-            }.navigationBarTitle("Back", displayMode: .inline)
+            }.navigationBarTitle("")
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

@@ -19,7 +19,7 @@ struct TargetCustomerView: View {
                 VStack() {
                     TargetCustomerViewAccess()
                 }
-            }.navigationBarTitle("Back", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

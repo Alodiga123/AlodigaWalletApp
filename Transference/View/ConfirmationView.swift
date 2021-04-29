@@ -18,7 +18,7 @@ struct ConfirmationView: View {
                 VStack() {
                     ConfirmationViewAccess()
                 }
-            }.navigationBarTitle("Back", displayMode: .inline)
+            }.navigationBarTitle("")
         }
     }
 }

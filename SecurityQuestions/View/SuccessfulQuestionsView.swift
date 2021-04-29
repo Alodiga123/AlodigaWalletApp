@@ -64,7 +64,7 @@ struct SuccessfulQuestionsViewAccess: View {
                             QuestionsBackButtonContent()
                         }
                         
-                        NavigationLink(destination:  MainViewLogged(), isActive:self.$steptwo){
+                        NavigationLink(destination:  LoginView(), isActive:self.$steptwo){
                             EmptyView()
                         }
                       
