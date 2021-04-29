@@ -33,6 +33,7 @@ struct FormSignUpViewAccess2: View {
     @State var operationsKey: String = ""
     @State var isLoggedIn: Bool = false
     @State var stepFour: Bool = false
+    @State private var checked = true
     
     func stepNex(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -53,13 +54,40 @@ struct FormSignUpViewAccess2: View {
                         TextLabelSignUp()
                     }.padding(.leading,20)
                      .padding(.trailing,20)
-                    PasswordTextField(password: self.$password)
+                    TextLabelSecurity()
+                    PasswordTextField(pass: self.$password)
                     RepeatPassTextField(rePass: self.$rePass)
                     PassTextField(pass: self.$pass)
                     OperationsKeyTextField(operationsKey: self.$operationsKey)
+                    
+                    HStack {
+                        CheckBoxView(checked: $checked)
+                        Spacer()
+                        Text("TermsAndConditions").font(.caption)
+                           .multilineTextAlignment(.leading)
+                           .foregroundColor(Color.fontOrangeColor)
+                           .padding(.top,0)
+                    }.frame(width: 340, height: 60)
+                  /*  Button(action: {
+                             // do when checked / unchecked
+                             //...
+                     }) {
+                         HStack(alignment: .top, spacing: 10) {
+
+                             Rectangle()
+                                 .fill(Color.white)
+                                 .frame(width:20, height:20, alignment: .center)
+                                 .cornerRadius(5)
+                             Text("TermsAndConditions").font(.caption)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color.fontOrangeColor)
+                                .padding(.top,0)
+                         }
+                     }*/
+                    //SignInLabel()
                     VStack{
-                        PassInfLabel()
-                            .frame(width: 360, height: 35)
+                        //PassInfLabel()
+                         //  .frame(width: 360, height: 35)
                         Button(action: {
                             let registerController = RegisterController()
                             let registraUsuario = GuardarUsuarioAplicacionMovil()
@@ -132,10 +160,14 @@ struct FormSignUpViewAccess2: View {
                         NavigationLink(destination: WelcomeView(), isActive:self.$stepFour){
                             EmptyView()
                         }
+                        
                         NavigationLink(destination: LoginView()) {
                             SignInLabel()
                         }
-                        CondicionsLabel()
+                        //NavigationLink(destination: LoginView()) {
+                            
+                        //}
+                        //CondicionsLabel()
                             .frame(width: 360, height: 35)
                     }
                 }.background(Color.cardButtonViewGray)
@@ -145,68 +177,157 @@ struct FormSignUpViewAccess2: View {
     }
 }
 
+
+
 struct PasswordTextField: View {
+    @Binding var pass: String
+    @State var progress : CGFloat = 0
+    @State private var isPasswordShow: Bool = false
+    let util = Utils()
+    
+    var body: some View {
+        ProgressBar(progress: $progress)
+        FloatingLabelTextField($pass, placeholder: NSLocalizedString("Pass", comment: ""), editingChanged: { (isChanged) in
+            progress = util.getNivelProgressBar(clave: pass)
+        }) {
+        }
+        .isSecureTextEntry(!self.isPasswordShow)
+        .rightView({ // Add right view.
+            Button(action: {
+                withAnimation {
+                    self.isPasswordShow.toggle()
+                }
+                
+            }) {
+                Image(self.isPasswordShow ? "eye" : "eye").foregroundColor(Color.gray)
+            }
+        })
+        .frame(height: 50)
+        .padding(.leading,20)
+        .padding(.trailing,20)
+        .padding(.top,0)
+        .padding(.bottom,0)
+    }
+    func setProgress() {
+        progress = util.getNivelProgressBar(clave: pass)
+    }
+}
+
+struct PasswordTextFieldjhkj: View {
     @Binding var password: String
+    @State private var isPasswordShow: Bool = false
+    
     var body: some View {
         FloatingLabelTextField($password, placeholder: NSLocalizedString("Pass", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
-            .leftView({ // Add left view.
-                Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 40)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,-1)
+        .isSecureTextEntry(!self.isPasswordShow)
+        .rightView({ // Add right view.
+            Button(action: {
+                withAnimation {
+                    self.isPasswordShow.toggle()
+                }
+                
+            }) {
+                Image(self.isPasswordShow ? "eye" : "eye").foregroundColor(Color.gray)
+            }
+        })
+        .frame(height: 50)
+        .padding(.leading,20)
+        .padding(.trailing,20)
+        .padding(.top,0)
+        .padding(.bottom,0)
     }
+    
 }
 
 struct RepeatPassTextField: View {
     @Binding var rePass: String
+    @State private var isPasswordShow: Bool = false
+    
     var body: some View {
         FloatingLabelTextField($rePass, placeholder: NSLocalizedString("ConfirmPass", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
-            .leftView({ // Add left view.
-                Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 40)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,-1)
+        .isSecureTextEntry(!self.isPasswordShow)
+        .rightView({ // Add right view.
+            Button(action: {
+                withAnimation {
+                    self.isPasswordShow.toggle()
+                }
+                
+            }) {
+                Image(self.isPasswordShow ? "eye" : "eye").foregroundColor(Color.gray)
+            }
+        })
+        .frame(height: 50)
+        .padding(.leading,20)
+        .padding(.trailing,20)
+        .padding(.top,0)
+        .padding(.bottom,0)
     }
 }
 
 struct PassTextField: View {
     @Binding var pass: String
+    
+    @State private var isPasswordShow: Bool = false
+    
     var body: some View {
         FloatingLabelTextField($pass, placeholder: NSLocalizedString("4DigitPass", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
-            .leftView({ // Add left view.
-                Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 40)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,-1)
+        .isSecureTextEntry(!self.isPasswordShow)
+        .rightView({ // Add right view.
+            Button(action: {
+                withAnimation {
+                    self.isPasswordShow.toggle()
+                }
+                
+            }) {
+                Image(self.isPasswordShow ? "eye" : "eye").foregroundColor(Color.gray)
+            }
+        })
+        .frame(height: 50)
+        .padding(.leading,20)
+        .padding(.trailing,20)
+        .padding(.top,0)
+        .padding(.bottom,0)
     }
+
+    
 }
 
 struct OperationsKeyTextField: View {
     @Binding var operationsKey: String
+    
+    
+    
+    @State private var isPasswordShow: Bool = false
+    
     var body: some View {
         FloatingLabelTextField($operationsKey, placeholder: NSLocalizedString("OperationsKey", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
-            .leftView({ // Add left view.
-                Image("")
-            }).placeholderColor(Color.placeholderGrayColor)
-            .frame(height: 40)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.bottom,-1)
+        .isSecureTextEntry(!self.isPasswordShow)
+        .rightView({ // Add right view.
+            Button(action: {
+                withAnimation {
+                    self.isPasswordShow.toggle()
+                }
+                
+            }) {
+                Image(self.isPasswordShow ? "eye" : "eye").foregroundColor(Color.gray)
+            }
+        })
+        .frame(height: 50)
+        .padding(.leading,20)
+        .padding(.trailing,20)
+        .padding(.top,0)
+        .padding(.bottom,0)
     }
+
+
 }
 
 struct PassInfLabel: View {
@@ -254,5 +375,32 @@ struct RegisterButtonContent: View {
 struct FormSignUpView2_Previews: PreviewProvider {
     static var previews: some View {
         FormSignUpView2()
+    }
+}
+
+struct CheckBoxView: View {
+    @Binding var checked: Bool
+
+    var body: some View {
+        Image(systemName: checked ? "checkmark.square.fill" : "square")
+            .foregroundColor(checked ? Color(UIColor.systemBlue) : Color.secondary)
+            .onTapGesture {
+                self.checked.toggle()
+            }
+    }
+}
+
+struct CheckBoxView_Previews: PreviewProvider {
+    struct CheckBoxViewHolder: View {
+        @State var checked = false
+
+        var body: some View {
+            
+            CheckBoxView(checked: $checked)
+        }
+    }
+
+    static var previews: some View {
+        CheckBoxViewHolder()
     }
 }

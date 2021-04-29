@@ -78,6 +78,7 @@ struct DocumentPersonByCountrylList: View {
             if res != nil {
                 self.jsonDocumentPersonTypeByContry = res! as ObjectDocumentPersonTypeByContry
                 self.documentPersonByCountry = res!.envelope.body.documentByCountryResponse._return.documentsPersonTypes
+                self.selectedDocumentT = documentPersonByCountry[0]
             }
             
             if error != nil {

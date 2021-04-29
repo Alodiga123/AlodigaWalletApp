@@ -24,7 +24,7 @@ struct PassByTokenView: View {
 }
 
 struct PassByTokenViewAccess: View {
-    @State var token: String = ""
+    @State var token: String = "123456"
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @State var restCountIntent : Int = 3
@@ -144,18 +144,35 @@ struct TimerCounterValue2: View {
 
 struct RegisterTokenTextField: View {
     @Binding var token: String
+    
+    @State private var isPasswordShow: Bool = false
+    
     var body: some View {
         FloatingLabelTextField($token, placeholder: NSLocalizedString("PassReceived", comment: ""), editingChanged: { (isChanged) in
         }) {
         }
-        .placeholderColor(Color.placeholderGrayColor)
-        .frame(height:50)
+        .isSecureTextEntry(!self.isPasswordShow)
+        .rightView({ // Add right view.
+            Button(action: {
+                withAnimation {
+                    self.isPasswordShow.toggle()
+                }
+                
+            }) {
+                Image(self.isPasswordShow ? "eye" : "eye").foregroundColor(Color.gray)
+            }
+        })
+        .frame(height: 50)
         .padding(.leading,20)
         .padding(.trailing,20)
-        .padding(.top)
+        .padding(.top,0)
         .padding(.bottom,0)
     }
+
 }
+
+
+
 
 struct PassByTokenView_Previews: PreviewProvider {
     static var previews: some View {
