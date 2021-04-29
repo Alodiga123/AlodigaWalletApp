@@ -180,6 +180,16 @@ struct MenuView: View {
 
 struct cerrarSesión: View {
     @State var showAlert = false
+    @State var isLoggedIn: Bool = false
+    var util = Utils()
+
+    func login(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isLoggedIn = true
+        }
+    }
+    
+   
     
     var alert: Alert {
         Alert(
@@ -187,11 +197,16 @@ struct cerrarSesión: View {
             message: Text("¿Esta seguro que desea cerrar la sesión?"),
             primaryButton: .default (Text("OK")) {
                         print("Presionando OK")
-                        exit(0)
-                
+                util.resetDefaults()
+                login()
+             
                       },
             secondaryButton: .cancel()
+            
         )
+        
+     
+      
     }
     
     var body: some View {
@@ -201,6 +216,10 @@ struct cerrarSesión: View {
         Text("SignOff")
       }
       .alert(isPresented: $showAlert, content: { self.alert })
+        
+        NavigationLink(destination: LoginView(), isActive:self.$isLoggedIn){
+            EmptyView()
+        }
     }
 }
 

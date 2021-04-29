@@ -336,4 +336,13 @@ public class Utils{
         
 }
 
+    
+    func resetDefaults() {
+        let defaults = Constant.defaults
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            print(key)
+            defaults.removeObject(forKey: key)
+        }
+    }
 }
