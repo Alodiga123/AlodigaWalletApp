@@ -40,15 +40,15 @@ public class BankController{
 
     }
 
-    func getCountryHasBank(generarCountryHasBank: AL_GetCountriesHasBank ,completion: @escaping (_ res:ObjetcCountryHasBank?, String?) -> Void) {
+    func getCountryHasBank(completion: @escaping (_ res:ObjetcCountryHasBank?, String?) -> Void) {
         
         let client_AC = AlodigaClient()
+        let countryMovil = AL_GetCountriesHasBank()
         
-        //dataUser.cpCredencial = clave
-        //generarCountryHasBank.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String;        
+        countryMovil.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String
         
         //Llamada del servicio de Paises
-        client_AC.opGetCountriesHasBank(getCountriesHasBank: generarCountryHasBank) { (data, error) in
+        client_AC.opGetCountriesHasBank(getCountriesHasBank: countryMovil) { (data, error) in
             
             if error != nil {
                 print("error=\(String(describing: error))")
@@ -82,7 +82,7 @@ public class BankController{
         }
     }
 
-    func getBankByCountry(bancosPorPais: AL_GetBankByCountryApp ,completion: @escaping (_ res:ObjectBankByCountry?, String?) -> Void) {
+    func getBankByCountry(bancosPorPais: AL_GetBankByCountryApp ,completion: @escaping (_ res:ObjectBankByCountryUS?, String?) -> Void) {
         
         let client_AC = AlodigaClient()
         
@@ -96,7 +96,7 @@ public class BankController{
             }
             
             do{
-                var objectResponseBankByCountry: ObjectBankByCountry
+                var objectResponseBankByCountry: ObjectBankByCountryUS
                 var objectResponseErrorBankByCountry: ObjectErrorBankByCountry
 
                 let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
@@ -109,7 +109,7 @@ public class BankController{
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
                     Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
-                    objectResponseBankByCountry = try JSONDecoder().decode(ObjectBankByCountry.self, from: jsonStr.data(using: .utf8)!)
+                    objectResponseBankByCountry = try JSONDecoder().decode(ObjectBankByCountryUS.self, from: jsonStr.data(using: .utf8)!)
                     completion(objectResponseBankByCountry, nil)
                 }else{
                     objectResponseErrorBankByCountry = try JSONDecoder().decode(ObjectErrorBankByCountry.self, from: jsonStr.data(using: .utf8)!)

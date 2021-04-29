@@ -122,7 +122,7 @@ struct SucesfullRechargeViewAccess: View {
                     //}
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(25)
-            }.padding(.bottom,geometry.size.height/3.2)
+            }.padding(.bottom,geometry.size.height/2.2)
         }
     }
 }
@@ -131,6 +131,7 @@ struct TextLabelSucesfullRecharge: View {
     var body: some View {
         Text("SuccessfulRecharge")
             .font(.title)
+            .frame(width: 310, height: 60, alignment: .center)
             .foregroundColor(Color.fontBlackColor)
     }
 }
@@ -140,11 +141,17 @@ struct TextLabelSucesfullRecharge: View {
 struct TextLabelSuccesfulRe: View {
     var body: some View {
         Text("recharge_succesfull")
-            .font(.body)
-            .foregroundColor(Color.fontOrangeColor)
-            .frame(width: 340, height: 60, alignment: .center)
-            .padding(.top,0)
-            .padding(.bottom,0)
+            /*.font(.headline)
+            .foregroundColor(Color.fontOrangeColor)*/
+            .frame(width: 340, height: 80, alignment: .center)
+            //.padding()
+        
+            .font(.headline)
+            .foregroundColor(.gray)
+            .padding(.leading,20)
+            .padding(.trailing,15)
+            .padding(.bottom,10)
+            .padding(.top,8)
     }
 }
 struct RechargeCheckImagine: View {

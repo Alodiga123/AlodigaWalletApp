@@ -68,10 +68,10 @@ struct BanksByCountryList: View {
         bankByCountry.cpCountryId = self.idCountryHasBank
         
         bankControler.getBankByCountry(bancosPorPais: bankByCountry){ (res,error) in
-            if res != nil {
-                self.jsonBank = res! as ObjectBankByCountry
+            /*if res != nil {
+                self.jsonBank = res! as ObjectBankByCountryUS
                 self.banks = res!.envelope.body.bankByCountryResponse._return.banks
-            }
+            }*/
             
             if error != nil {
                 let alert = ShowAlert()
