@@ -81,18 +81,21 @@ struct SecurityLevelViewAccess: View {
                                 
                                     recoverPass.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
                                     recoverPass.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-                                    recoverPass.cpPhoneOrEmail = ""
+                                    recoverPass.cpPhoneOrEmail = Constant.defaults.value(forKey: "emailOrPhoneKey") as? String ?? ""
                                     recoverPass.cpCredencial = pass;
 
                                     recoverController.getRecoverPass(cambiarCredencialAplicacionMovil: recoverPass) { (res,error) in
                                          print("EN LA VISTA CON EL CAMBIO DE CLAVE!!!!")
                                          if res != nil  {
                                              print(res as Any)
-         //                                    let registro: ObjectRegisterUser
-         //                                    registro = res! as ObjectRegisterUser
-         //                                    print(registro.envelope.body.registerMovilResponse._return.fechaHora)
-                                             //print(registro.envelope.body.countryResponse._return.countries)
-                                             //stepNex()
+                                             let registro: ObjectChangePassForgot
+                                             registro = res! as ObjectChangePassForgot
+                                            print(registro.envelope.body.countryResponse._return.codigoRespuesta)
+                                            print(registro.envelope.body.countryResponse._return.codigoRespuesta)
+                                            Constant.defaults.removeObject(forKey: "emailOrPhoneKey")
+                                            Constant.defaults.removeObject(forKey: "tokenApi")
+
+                                            stepNex()
                                          }
     
                                          if error != nil {

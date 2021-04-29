@@ -68,6 +68,9 @@ struct RecoverPasswordViewAccess: View {
 
                             //print (email)
                             //Constant.defaults.setValue("123456", forKey: "tokenAplication")
+                            //Constant.defaults.setValue("123456", forKey: "tokenApi")
+                            //Constant.defaults.setValue(aux , forKey: "emailOrPhoneKey")
+                            
                             //stepNex()
                             
                             if (aux.isEmpty) {
@@ -75,9 +78,13 @@ struct RecoverPasswordViewAccess: View {
                             }else if (util.isOnlyNumbers(string: aux)){
                                 //tokenAplication.cpEmail = " "
                                 tokenAplication.cpMovil =  aux.replacingOccurrences(of: "+", with: "", options: NSString.CompareOptions.literal, range: nil)
+                                Constant.defaults.setValue(tokenAplication.cpMovil , forKey: "emailOrPhoneKey")
                                 valid = true
                             }else if(util.isValidEmail(testStr: aux)){
+
                                 tokenAplication.cpEmail = aux
+                                Constant.defaults.setValue(tokenAplication.cpEmail , forKey: "emailOrPhoneKey")
+
                                 tokenAplication.cpMovil = " "
                                 valid = true
                             }else {
