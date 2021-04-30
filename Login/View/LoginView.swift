@@ -21,32 +21,26 @@ struct LoginView: View {
         .autoconnect()
     var body: some View {
         GeometryReader{ geo in
-            if (UIDevice.current.userInterfaceIdiom == .pad){
+            //if (UIDevice.current.userInterfaceIdiom == .pad){
                 Color.screemWhiteColor
                 NavigationView{
                     ZStack {
                         Color.screemWhiteColor
                         VStack {
-                            Group {
-                                if self.orientation.isLandscape  || UIDevice.current.orientation.isLandscape {
-                                    //TopImageAlodigaLogo()
+                            VStack{
                                     BackgroundImageAlodiga()
-                                    CardButtonViewAccess().frame(width: geo.size.width, height: geo.size.height/2.4)
-                                    
-                                } else {
-                                    TopImageAlodigaLogo().padding(.bottom,40)
-                                    BackgroundImageAlodiga()
-                                    CardButtonViewAccess().frame(width: geo.size.width, height: geo.size.height/2.2)
-                                }
+                                    Spacer()
+                                    CardButtonViewAccess().frame(width: geo.size.width, height: geo.size.height/2.2)}
+                                
                             }
                         }
-                    }
-                }.navigationViewStyle(StackNavigationViewStyle())
+                    
+                }.frame(alignment: .center).navigationViewStyle(StackNavigationViewStyle())
                     .padding(.leading, geo.size.width < geo.size.height ? 0.25 : 0)
                 .navigationBarHidden(true)
                 
-
-            }else{
+            //}
+            /*}else{
                 
                 //Usada para pintar la pantalla de los iphone
                 
@@ -80,26 +74,22 @@ struct LoginView: View {
                         }
                     }
                 }.navigationBarHidden(true)
-            }
+            }*/
         }
     }
 }
 
-struct TopImageAlodigaLogo: View {
-    var devicemodel = UIDevice.modelName
-    var body: some View {
-        GeometryReader { geo in
-            Image("logo_alodiga")
-        }
-    }
-}
 
 struct BackgroundImageAlodiga: View {
     var body: some View {
         GeometryReader { geo in
+            VStack{
+            Image("logo_alodiga").padding(.top,5).padding(.bottom,-10).frame(alignment: .trailing)
+                                                                       
+            Spacer()
             Image("back_login")
-                .resizable().padding(.top,-80).padding(.bottom
-                    ,-20)
+                .resizable().padding(.top,20).padding(.bottom
+            ,-20).frame(alignment: .trailing)}
         }
     }
 }
