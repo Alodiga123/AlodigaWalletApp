@@ -75,6 +75,7 @@
 "PassMustBe" = "La contraseña debe tener 8 caractéres. Poseer\n mayúscula, minúscula, números y caractéres especiales";
 "YouHaveAccount" = "¿Ya tienes cuenta? Entra aquí";
 "TermsAndConditions" = "Al hacer clic en Regístrate, Usted acepta todos\n los Términos y Condiciones Alodiga";
+"acept_ter" = "Debe aceptar terminos y condiciones.";
 "UserCreated" = "Usuario creado";
 "Welcome" = "Bienvenido";
 "RegisterCompleted" = "Gracias! Su registro a sido completado de forma exitosa. Ya puede comenzar a utilizar nuestros servicios";

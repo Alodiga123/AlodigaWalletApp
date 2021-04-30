@@ -24,6 +24,10 @@ public class RegisterController{
             return NSLocalizedString("web_services_response_06", comment: "")
         case Constant.WEB_SERVICES_RESPONSE_CODE_VALIDACION_INVALIDO:
             return NSLocalizedString("web_services_response_07", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_NUMERO_TELEFONO_YA_EXISTE:
+            return NSLocalizedString("web_services_response_08", comment: "")
+        case Constant.WEB_SERVICES_RESPONSE_CODE_PRIMER_INGRESO:
+            return NSLocalizedString("web_services_response_12", comment: "")
         case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_SOSPECHOSO:
             return NSLocalizedString("web_services_response_95", comment: "")
         case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_PENDIENTE:
@@ -39,6 +43,10 @@ public class RegisterController{
         }
 
     }
+    
+    
+
+
 
     func getCountry(generarCodigoCountry: AL_GetCountries ,completion: @escaping (_ res:ObjectCountry?, String?) -> Void) {
         
@@ -143,8 +151,8 @@ public class RegisterController{
                 print("datastring " + datastring)
                 let parser = ParseXMLData(xml: datastring)
                 let jsonStr = parser.parseXML()
-                print("JSON Document By Country---- > ")
-                print(jsonStr)
+                //print("JSON Document By Country---- > ")
+                //print(jsonStr)
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
@@ -165,40 +173,90 @@ public class RegisterController{
     func getGuardarUsuario(generarRegistro: GuardarUsuarioAplicacionMovil ,completion: @escaping (_ res:ObjectRegisterUser?, String?) -> Void) {
         
         let client_RU = RegistroUnificadoClient()    
+        let util = Utils()
         
-        //Llamada del servicio de Guardar Usuarios
-        client_RU.opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil: generarRegistro) {(data,error) in
-            
-            if error != nil {
-                completion(nil,"90")
-                print("error=\(String(describing: error))")
-                return
-            }
-            
-            do{
-                var objetResponse: ObjectRegisterUser
-                var objetResponseError: ObjectErrorRegisterUser
-
-                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
-                //print("datastring " + datastring)
-                let parser = ParseXMLData(xml: datastring)
-                let jsonStr = parser.parseXML()
-                print("JSON REGISTER---- > ")
-                print(jsonStr)
+        util.getKeyEncript(key: generarRegistro.cpCredencial ?? "") { (res, error) in
+            if(res != nil){
+                var clave : String
+                clave = res! as String
+                //print(clave)
+                generarRegistro.cpCredencial = clave.trimmingCharacters(in: NSCharacterSet.whitespaces)
+        
+                util.getKeyEncript(key: generarRegistro.cpPin ?? "") { (respin, errorpin) in
+                    if(respin != nil){
+                        var pin : String
+                        pin = respin! as String
+                        //print(pin)
+                        generarRegistro.cpPin = pin//.trimmingCharacters(in: NSCharacterSet.whitespaces)
                 
-                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
-                {
-                    objetResponse = try JSONDecoder().decode(ObjectRegisterUser.self, from: jsonStr.data(using: .utf8)!)
-                    completion(objetResponse, nil)
-                }else{
-                    objetResponseError = try JSONDecoder().decode(ObjectErrorRegisterUser.self, from: jsonStr.data(using: .utf8)!)
-                    completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
+                        
+                        //print("DATOS ------------------")
+                        //print(generarRegistro.cpPin)
+                        
+                        //print("DATOS CRECENCIAL ------------------")
+                        //print(generarRegistro.cpCredencial)
+
+                        
+                        
+                        //Llamada del servicio de Guardar Usuarios
+                        client_RU.opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil: generarRegistro) {(data,errorgu) in
+                            
+                            if errorgu != nil {
+                                completion(nil,"90")
+                                print("error=\(String(describing: errorgu))")
+                                return
+                            }
+                            
+                            do{
+                                var objetResponse: ObjectRegisterUser
+                                var objetResponseError: ObjectErrorRegisterUser
+
+                                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                                //print("datastring " + datastring)
+                                let parser = ParseXMLData(xml: datastring)
+                                let jsonStr = parser.parseXML()
+                                print("JSON REGISTER---- > ")
+                                print(jsonStr)
+                                
+                                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                                {
+                                    objetResponse = try JSONDecoder().decode(ObjectRegisterUser.self, from: jsonStr.data(using: .utf8)!)
+                                    completion(objetResponse, nil)
+                                }else{
+                                    objetResponseError = try JSONDecoder().decode(ObjectErrorRegisterUser.self, from: jsonStr.data(using: .utf8)!)
+                                    completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
+                                }
+                                
+                            }catch{
+                                print("Error: ")
+                                print(errorgu)
+                            }
+                        }
+                        
+                        
+                        
+                        
+                    }
+                    if errorpin != nil {
+                        let alert = ShowAlert()
+                        alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: errorpin!))
+                        print(errorpin!)
+                    }
                 }
                 
-            }catch{
-                print("Error: ")
-                print(error)
+                
+                
+                
+                
+            }
+            if error != nil {
+                let alert = ShowAlert()
+                alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
+                print(error!)
             }
         }
+        
+        
+
     }
 }

@@ -318,8 +318,8 @@ public class Utils{
                 print("datastring " + datastring)
                 let parser = ParseXMLData(xml: datastring)
                 let jsonStr = parser.parseXML()
-                print("JSON ---- > ")
-                print(jsonStr)
+                //print("JSON ---- > ")
+                //print(jsonStr)
           
                     objetResponse = try JSONDecoder().decode(ObjectKeyEncript.self, from: jsonStr.data(using: .utf8)!)
                     //var clave = objetResponse.envelope.body.cambiar._return as String

@@ -75,6 +75,7 @@
 "PassMustBe" = "The password must be 8 characters long. Have\n uppercase, lowercase, numbers and special characters";
 "YouHaveAccount" = "Do you already have an account? Enter here";
 "TermsAndConditions" = "By clicking Register, you accept all Alodiga Terms\n and Conditions";
+"acept_ter" = "You must accept terms and conditions.";
 "UserCreated" = "User created";
 "Welcome" = "Welcome";
 "RegisterCompleted" = "Thank you! Your registration has been completed successfully. You can now start using our services";
