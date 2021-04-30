@@ -57,7 +57,7 @@ struct FormSignUpViewAccess2: View {
                     TextLabelSecurity()
                     PasswordTextField(pass: self.$password)
                     RepeatPassTextField(rePass: self.$rePass)
-                    PassTextField(pass: self.$pass)
+                    //PassTextField(pass: self.$pass)
                     OperationsKeyTextField(operationsKey: self.$operationsKey)
                     
                     HStack {
@@ -97,12 +97,10 @@ struct FormSignUpViewAccess2: View {
                             let loading = Loading()
                             loading.loadindView()
                             
-                            if(password.isEmpty || rePass.isEmpty || pass.isEmpty || operationsKey.isEmpty || password.count == 0 || rePass.count == 0 || pass.count == 0 || operationsKey.count == 0 ){
+                            if(password.isEmpty || rePass.isEmpty ||  operationsKey.isEmpty || password.count == 0 || rePass.count == 0 || operationsKey.count == 0 ){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
                             }else if (password != rePass){
                                alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("toast_different_passwords", comment: ""))
-                            }else if(pass.count < 4){
-                                alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinInvalid", comment: ""))
                             }else if(operationsKey.count < 4){
                                 alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("pinInvalid", comment: ""))
                             }else if(!checked){
