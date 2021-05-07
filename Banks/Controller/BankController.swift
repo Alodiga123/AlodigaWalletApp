@@ -68,7 +68,7 @@ public class BankController{
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
-                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountryHasBank")
                     objetResponseCountryHasBank = try JSONDecoder().decode(ObjetcCountryHasBank.self, from: jsonStr.data(using: .utf8)!)
                     completion(objetResponseCountryHasBank, nil)
                 }else{
@@ -108,7 +108,7 @@ public class BankController{
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
-                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonBankByCountryUS")
                     objectResponseBankByCountry = try JSONDecoder().decode(ObjectBankByCountryUS.self, from: jsonStr.data(using: .utf8)!)
                     completion(objectResponseBankByCountry, nil)
                 }else{
@@ -148,7 +148,7 @@ public class BankController{
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
-                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonAccountTypeBank")
                     objectResponseAccountTypeBank = try JSONDecoder().decode(ObjectAccountTypeBank.self, from: jsonStr.data(using: .utf8)!)
                     completion(objectResponseAccountTypeBank, nil)
                 }else{

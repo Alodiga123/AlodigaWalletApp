@@ -41,60 +41,10 @@ struct SucesfullWithdrawalViewAccess: View {
                     }.padding(.leading,20)
                         .padding(.trailing,20)
                     WithdrawalCheckImagine()
-                    
-                    VStack{
-                        HStack {
-                            Text("Pais")
-                                .frame(width: 80, alignment: .leading)
-                                .font(.caption)
-                            TextField( Constant.defaults.value(forKey: "nameCountryR") as! String, text: self.$text)
-                                .font(.caption)
-                        }
-                        HStack {
-                            Text("Banco")
-                                .frame(width: 80, alignment: .leading)
-                                .font(.caption)
-                            TextField( Constant.defaults.value(forKey: "nameBankR") as! String, text: self.$text)
-                                .font(.caption)
-                        }
-                        HStack {
-                            Text("Producto")
-                                .frame(width: 80, alignment: .leading)
-                                .font(.caption)
-                            TextField( Constant.defaults.value(forKey: "nameProductR") as! String, text: self.$text)
-                                .font(.caption)
-                        }
-                        HStack {
-                            Text("Cuenta")
-                                .frame(width: 80, alignment: .leading)
-                                .font(.caption)
-                            TextField( Constant.defaults.value(forKey: "acountRemoval") as! String, text: self.$text)
-                                .font(.caption)
-                        }
-                        HStack {
-                            Text("Monto")
-                                .frame(width: 80, alignment: .leading)
-                                .font(.caption)
-                            TextField( Constant.defaults.value(forKey: "amountRemoval") as! String, text: self.$text)
-                                .font(.caption)
-                        }
-                        HStack {
-                            Text("Descripción")
-                                .frame(width: 80, alignment: .leading)
-                                .font(.caption)
-                            TextField( Constant.defaults.value(forKey: "descriptionRemoval") as! String, text: self.$text)
-                                .font(.caption)
-                        }
-                    }
-                    .padding(.horizontal)
-                    .fixedSize(horizontal: false, vertical: true)
-                    
+                        .padding(.horizontal)
+                        .fixedSize(horizontal: false, vertical: true)
                     NavigationLink(destination: MainViewLogged()) {
                         WithdrawalEndButtonContent()
-                    }
-                    
-                    NavigationLink(destination: MainViewLogged()) {
-                        WithdrawalShareButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(25)
@@ -107,6 +57,7 @@ struct TextLabelSucesfullWithdrawal: View {
     var body: some View {
         Text("SuccessfulWithdrawal")
             .font(.title)
+            .frame(width: 330, height: 60, alignment: .center)
             .foregroundColor(Color.fontBlackColor)
     }
 }
@@ -117,6 +68,8 @@ struct WithdrawalCheckImagine: View {
             .foregroundColor(Color.fontOrangeColor)
             .font(.system(size: 100.0, weight: .light, design: .monospaced))
             .frame(width: 180, height: 100)
+            .padding(.top,10)
+            .padding(.bottom,10)
     }
 }
 

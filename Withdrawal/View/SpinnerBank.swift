@@ -2,7 +2,7 @@
 //  SpinnerBank.swift
 //  IOSAlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 10/12/20.
+//  Created by Lulymar Gutierrez on 29/04/21.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 
@@ -24,13 +24,13 @@ struct BankWithdrawalTextField: View {
 }
 
 struct BankWithdrawalList: View {
-    @Binding var idCountry: String
+    //@Binding var idCountry: String
     @State var isSheetOpened = false
-    @State var selectedBank = BankByCountry()
-    @State var banks : [BankByCountry] = []
+    @State var selectedBank = AccountBanks()
+    @State var banks : [AccountBanks] = []
     @State var expand = false
     @State var separador: String = ""
-    @State var jsonBank : ObjectBankByCountry?
+    @State var jsonBank : ObjectAccountBankByUser?
     @State var code: String = ""
     
     var body: some View {
@@ -39,7 +39,7 @@ struct BankWithdrawalList: View {
                 self.isSheetOpened.toggle()
                 
             }) {
-                Text("\(selectedBank.name)")
+                Text("\(selectedBank.bankId.name)")
                     .foregroundColor(.gray)
                     .font(.callout)
                     Spacer()
@@ -55,10 +55,10 @@ struct BankWithdrawalList: View {
                 .sheet(isPresented: self.$isSheetOpened) {
                     bancos(banks: self.banks, isSheetOpened: self.isSheetOpened, selectedBank: self.$selectedBank)
                 }
-            ProductWithdrawalTextField()
-            if (!selectedBank.id.isEmpty){
+            //ProductWithdrawalTextField()
+            /*if (!selectedBank.id.isEmpty){
                 ProductsWithdrawalList(idBank: self.$selectedBank.id)
-            }
+            }*/
             
         }.onAppear(
             perform: getJSONBank
@@ -69,12 +69,10 @@ struct BankWithdrawalList: View {
         let withdrawalControler = WithdrawalControler()
         let bankByCountry = AL_GetBankByCountryApp()
         
-        bankByCountry.cpCountryId = self.idCountry
-        
-        withdrawalControler.getBankByCountry(bancosPorPais: bankByCountry){ (res,error) in
+        withdrawalControler.getAccountBankByUser() { (res,error) in
             if res != nil {
-                self.jsonBank = res! as ObjectBankByCountry
-                self.banks = res!.envelope.body.bankByCountryResponse._return.banks
+                self.jsonBank = res! as ObjectAccountBankByUser
+                self.banks = res!.envelope.body.AccountBankByUserResponse._return.accountBanks!
             }
             
             if error != nil {
@@ -87,9 +85,9 @@ struct BankWithdrawalList: View {
 }
 
 struct bancos: View {
-    var banks : [BankByCountry]
+    var banks : [AccountBanks]
     var isSheetOpened : Bool
-    @Binding var selectedBank: BankByCountry
+    @Binding var selectedBank: AccountBanks
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -100,13 +98,12 @@ struct bancos: View {
                         self.selectedBank = index
                         self.presentationMode.wrappedValue.dismiss()
                         
-                        Constant.defaults.setValue(index.name, forKey: "nameBankR")
-                        Constant.defaults.setValue(index.id, forKey: "idBankR")
-                        print("Nombre del Banco: "+index.name)
-                        print("Id del Banco: " + index.id)
+                        Constant.defaults.setValue(index.bankId.name, forKey: "nameBankR")
+                        Constant.defaults.setValue(index.bankId, forKey: "idBankR")
+                        print("Numero de la Cuenta del Banco: "+index.accountNumber!)
                         
                     }) {
-                        Text(index.name)
+                        Text(index.bankId.name)
                             .font(.callout)
                             .fontWeight(.bold)
                             .frame(width: 340, alignment: .leading)

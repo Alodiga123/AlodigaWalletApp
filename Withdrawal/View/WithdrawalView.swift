@@ -25,7 +25,7 @@ struct WithdrawalView: View {
 
 struct WithdrawalViewAccess: View {
     @State var country: String = ""
-    @State var bank: String = ""
+    @State var bank: String = "1"
     @State var product: String = ""
     @State var acount: String = "123"
     @State var amount: String = "100"
@@ -51,11 +51,10 @@ struct WithdrawalViewAccess: View {
                     VStack(alignment: .leading) {
                         TextLabelWithdrawal()
                     }
-                    CountryWithdrawalTextField()
-                    AcountNumberTextField(acount: self.$acount)
+                    FirstViewBank()
+                    BankWithdrawalList()
                     AmountWithdrawalTextField(amount: self.$amount)
                     DescriptionTextField(description: self.$description)
-                    
                     Button(action: {
                         let withdrawalControler = WithdrawalControler()
                         let retiroManual = AL_ManualWithdrawals()
@@ -64,7 +63,7 @@ struct WithdrawalViewAccess: View {
                         let saldo1 = productSelected["saldoActual"]! as String
                         let saldo: Float = Float(saldo1) ?? 0
                         
-                        if(acount.isEmpty || acount.count == 0 || amount.isEmpty || amount.count == 0 || description.isEmpty || description.count == 0 ){
+                        if(amount.isEmpty || amount.count == 0 || description.isEmpty || description.count == 0 ){
                             alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("ValidationInvalidLong", comment: ""))
                         }else if(amount.count < 3){
                             alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("invalidAmount", comment: ""))
@@ -73,9 +72,8 @@ struct WithdrawalViewAccess: View {
                         }else if(saldo < amount_aux ){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
                         }else{
-                            Constant.defaults.setValue(acount, forKey: "acountRemoval")
-                            Constant.defaults.setValue(amount, forKey: "amountRemoval")
-                            Constant.defaults.setValue(description, forKey: "descriptionRemoval")
+                            Constant.defaults.setValue(amount, forKey: "amountWithdrawal")
+                            Constant.defaults.setValue(description, forKey: "descriptionWithdrawal")
                             
                             /*
                              map.put("bankId", getbank.getId());
@@ -87,11 +85,9 @@ struct WithdrawalViewAccess: View {
                              */
                             retiroManual.cpBankId = "1"
                             retiroManual.cpEmailUser = ""
-                            //retiroManual.cpAccountBank = acount
                             retiroManual.cpAmountWithdrawal = amount
                             retiroManual.cpProductId = "1"
                             retiroManual.cpConceptTransaction = description
-                            
                         }
                         
                         withdrawalControler.getManualWithdrawals(retirosManuales: retiroManual){ (res,error) in
@@ -113,7 +109,7 @@ struct WithdrawalViewAccess: View {
                         WithdrawalButtonContent()
                     }
                     VStack{
-                        NavigationLink(destination: WithdrawalConfirmationView(), isActive:self.$steptwo){
+                        NavigationLink(destination: SucesfullWithdrawalView(), isActive:self.$steptwo){
                             EmptyView()
                         }
                         NavigationLink(destination: MainViewLogged()) {
@@ -134,6 +130,45 @@ struct TextLabelWithdrawal: View {
             .foregroundColor(Color.fontBlackColor)
             .padding(.leading,20)
             .padding(.trailing,20)
+    }
+}
+
+struct WithdrawalBankTextField: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text("Seleccione la cuenta bancaria donde desea retirar los fondos")
+                .font(.body)
+                .multilineTextAlignment(.leading)
+                .frame(width: 340, height: 80, alignment: .center)
+                .foregroundColor(.gray)
+                .padding(.top,0)
+        }
+    }
+}
+
+struct AccountNumTextField: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text("Numero de cuenta")
+                .font(.body)
+                .multilineTextAlignment(.leading)
+                .frame(width: 340, height: 50, alignment: .leading)
+                .foregroundColor(.gray)
+                .padding(.top,0)
+        }
+    }
+}
+
+struct AccountTypeTextField: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text("Tipo de Cuenta")
+                .font(.body)
+                .multilineTextAlignment(.leading)
+                .frame(width: 340, height: 50, alignment: .leading)
+                .foregroundColor(.gray)
+                .padding(.top,0)
+        }
     }
 }
 

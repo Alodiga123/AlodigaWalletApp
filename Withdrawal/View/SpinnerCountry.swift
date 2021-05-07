@@ -58,9 +58,9 @@ struct CountryWithdrawalList: View {
                 }
             //line
             BankWithdrawalTextField()
-            if (!selectedCountry.id.isEmpty){
+            /*if (!selectedCountry.id.isEmpty){
                 BankWithdrawalList(idCountry: self.$selectedCountry.id)
-            }
+            }*/
             
         }.onAppear(
             perform: getJSONCountry

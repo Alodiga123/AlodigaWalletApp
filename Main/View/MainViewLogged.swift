@@ -11,8 +11,6 @@ import SwiftUI
 struct MainViewLogged: View {
     @State var showMenu = false
     var json : ObjectLogin? = nil
-
-    
     var body: some View {
         
         GeometryReader { geometry in
@@ -31,14 +29,12 @@ struct MainViewLogged: View {
                         .disabled(self.showMenu ? true : false)
                     
                 }.background(Color.cardButtonViewGray)
-            if self.showMenu {
-                MenuView()
-                    .frame(width: geometry.size.width/2)
-                    .transition(.move(edge: .leading))
-            }
-                
+                if self.showMenu {
+                    MenuView()
+                        .frame(width: geometry.size.width/2)
+                        .transition(.move(edge: .leading))
+                }
             }.padding(.bottom,5)
-            
             .gesture(
                     DragGesture()
                         .onEnded {
@@ -56,20 +52,18 @@ struct MainViewLogged: View {
                 }, trailing:
                 HStack {
                     Button(action: {
-                        withAnimation {
-                            self.showMenu.toggle()
-                            }
-                        })
-                        {
-                            Text("...")
+                    withAnimation {
+                        self.showMenu.toggle()
                         }
+                    })
+                    {
+                    Image(systemName: "lineweight")
+                        .imageScale(.large)
+                    }
                 }
             ).navigationBarBackButtonHidden(true)
             .navigationViewStyle(StackNavigationViewStyle())
-            
         }.background(Color.cardButtonViewGray)
-        
-        
     }
 }
 
