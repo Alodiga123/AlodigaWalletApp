@@ -80,6 +80,48 @@ public class WithdrawalControler{
             }
         }
     }
+    
+    func getAccountBankByUser(completion: @escaping (_ res:ObjectAccountBankByUser?, String?) -> Void) {
+        
+        let client_AC = AlodigaClient()
+        let accountBankMovil = AL_GetAccountBankByUser()
+        
+        accountBankMovil.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String
+        
+        //Llamada del servicio de Paises
+        client_AC.opGetAccountBankByUser(getAccountBankByUser: accountBankMovil) { (data, error) in
+            
+            if error != nil {
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            do{
+                var objetResponseAccountBankByUser: ObjectAccountBankByUser
+                var objetResponseAccountBankByUserError: ObjectErrorAccountBankByUser
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON Account Bank By User ---- > ")
+                print(jsonStr)
+                
+                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                {
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonAccountBankByUser")
+                    objetResponseAccountBankByUser = try JSONDecoder().decode(ObjectAccountBankByUser.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objetResponseAccountBankByUser, nil)
+                }else{
+                    objetResponseAccountBankByUserError = try JSONDecoder().decode(ObjectErrorAccountBankByUser.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objetResponseAccountBankByUserError.envelope.body.cambiar._return.codigoRespuesta)
+                }
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+        }
+    }
         
     func getBankByCountry(bancosPorPais: AL_GetBankByCountryApp ,completion: @escaping (_ res:ObjectBankByCountry?, String?) -> Void) {
         
@@ -107,7 +149,7 @@ public class WithdrawalControler{
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
-                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonBankByCountry")
                     objectResponseBankByCountry = try JSONDecoder().decode(ObjectBankByCountry.self, from: jsonStr.data(using: .utf8)!)
                     completion(objectResponseBankByCountry, nil)
                 }else{
@@ -148,7 +190,7 @@ public class WithdrawalControler{
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
-                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonProductsByBank")
                     objectResponseProductsByBank = try JSONDecoder().decode(ObjectProductsByBank.self, from: jsonStr.data(using: .utf8)!)
                     completion(objectResponseProductsByBank, nil)
                 }else{
@@ -188,7 +230,7 @@ public class WithdrawalControler{
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
-                    Constant.defaults.setValue(jsonStr, forKey: "jsonCountry")
+                    Constant.defaults.setValue(jsonStr, forKey: "jsonManualWithdrawals")
                     objectResponseManualWithdrawals = try JSONDecoder().decode(ObjectManualWithdrawals.self, from: jsonStr.data(using: .utf8)!)
                     completion(objectResponseManualWithdrawals, nil)
                 }else{
