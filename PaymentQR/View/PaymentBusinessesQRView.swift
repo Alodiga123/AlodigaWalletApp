@@ -42,7 +42,12 @@ struct PaymentBusinessesQRViewAccess: View {
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     Spacer()
-                    CurrencyKeyTextField(currency: self.$currency)
+                    Text("CurrencyTransfer")
+                        .font(.callout)
+                        .frame(width: 340, alignment: .leading)
+                        .foregroundColor(.gray)
+                        .padding()
+                    FirstPaymentView()
                     TextLabelCodeQR()
                     
                     NavigationLink(destination: TargetCustomerQRView()) {

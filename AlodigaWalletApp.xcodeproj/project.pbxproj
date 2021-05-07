@@ -147,6 +147,7 @@
 		BA6B7FD9263118B900E4184D /* ObjectRecharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B7FD8263118B900E4184D /* ObjectRecharge.swift */; };
 		BA6B7FDE26311AB200E4184D /* ObjectErrorRechargeCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B7FDD26311AB200E4184D /* ObjectErrorRechargeCountry.swift */; };
 		BA6B805D2636F86700E4184D /* ObjectBankUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B805C2636F86700E4184D /* ObjectBankUS.swift */; };
+		BA6B807C2644D97200E4184D /* SpinnerCurrencyPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B807B2644D97000E4184D /* SpinnerCurrencyPayment.swift */; };
 		BAC6171A2583EB490057CBC4 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617192583EB490057CBC4 /* Loading.swift */; };
 		BAC6171F2583F1F00057CBC4 /* Loadinv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */; };
 		BAC617242583F4CA0057CBC4 /* LoadingV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617232583F4CA0057CBC4 /* LoadingV3.swift */; };
@@ -329,6 +330,7 @@
 		BA6B7FD8263118B900E4184D /* ObjectRecharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRecharge.swift; sourceTree = "<group>"; };
 		BA6B7FDD26311AB200E4184D /* ObjectErrorRechargeCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorRechargeCountry.swift; sourceTree = "<group>"; };
 		BA6B805C2636F86700E4184D /* ObjectBankUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectBankUS.swift; sourceTree = "<group>"; };
+		BA6B807B2644D97000E4184D /* SpinnerCurrencyPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCurrencyPayment.swift; sourceTree = "<group>"; };
 		BAC617192583EB490057CBC4 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadinv2.swift; sourceTree = "<group>"; };
 		BAC617232583F4CA0057CBC4 /* LoadingV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingV3.swift; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 				46DBC4732512851E008D42B3 /* OperationsKeyQRView.swift */,
 				46DBC471251284B9008D42B3 /* ConfirmationQRView.swift */,
 				46DBC47725128546008D42B3 /* SuccesfulPaymentQRView.swift */,
+				BA6B807B2644D97000E4184D /* SpinnerCurrencyPayment.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1212,6 +1215,7 @@
 				04BB56C62630CE8B003FA7B4 /* SpinnerBanks.swift in Sources */,
 				04CF669A2579B27D006688BA /* ObjectBankByCountry.swift in Sources */,
 				0422338225140EC300AEB65F /* WithdrawalView.swift in Sources */,
+				BA6B807C2644D97200E4184D /* SpinnerCurrencyPayment.swift in Sources */,
 				04F85F89257B068100A35C83 /* ObjectErrorProductsByBank.swift in Sources */,
 				BA6AC2FB256752990072E6C5 /* ObjectCodeOprationError.swift in Sources */,
 				0455B94126336B1E00B35052 /* ObjectErrorSaveAccountBank.swift in Sources */,
