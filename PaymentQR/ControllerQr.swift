@@ -41,13 +41,14 @@ public class QrController{
 
     }
     
-    func getSaveManualRecharge(saveManualRecharge : AL_ManualRecharge ,completion: @escaping (_ res:ObjectManualRecharge?, String?) -> Void) {
+    func GetBusinessInfoByCryptogram(qr : String ,completion: @escaping (_ res:ObjectQR?, String?) -> Void) {
         
         let client_AC = AlodigaClient()
+        let datos = AL_GetBusinessInfoByCryptogram()
+        datos.cpCryptogram = ""
         
-        //Llamada del servicio de Guardar Usuarios
-    
-        client_AC.opManualRecharge(manualRecharge: saveManualRecharge) {(data,error) in
+        
+        client_AC.opGetBusinessInfoByCryptogram(getBusinessInfoByCryptogram: datos) {(data,error) in
             
             if error != nil {
                 completion(nil,"90")
@@ -56,22 +57,22 @@ public class QrController{
             }
             
             do{
-                var objetResponse: ObjectManualRecharge
-                var objetResponseError: ObjectErrorManualRecharge
+                var objetResponse: ObjectQR
+                var objetResponseError: ObjectErrorQr
 
                 let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
                 //print("datastring " + datastring)
                 let parser = ParseXMLData(xml: datastring)
                 let jsonStr = parser.parseXML()
-                print("JSON RECARGA MANUAL---- > ")
+                print("JSON QR ---- > ")
                 print(jsonStr)
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
-                    objetResponse = try JSONDecoder().decode(ObjectManualRecharge.self, from: jsonStr.data(using: .utf8)!)
+                    objetResponse = try JSONDecoder().decode(ObjectQR.self, from: jsonStr.data(using: .utf8)!)
                     completion(objetResponse, nil)
                 }else{
-                    objetResponseError = try JSONDecoder().decode(ObjectErrorManualRecharge.self, from: jsonStr.data(using: .utf8)!)
+                    objetResponseError = try JSONDecoder().decode(ObjectErrorQr.self, from: jsonStr.data(using: .utf8)!)
                     completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
                 }
                 

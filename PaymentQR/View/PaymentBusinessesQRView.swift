@@ -60,7 +60,25 @@ struct PaymentBusinessesQRViewAccess: View {
                     
                     Button(action: {
                         let qr = "h1/jrRjF47U="
+                        let qrController = QrController()
+                        var loading = Loading()
+
+                        qrController.GetBusinessInfoByCryptogram(qr: qr) { (data, error) in
+                            
+                            loading.loadingDismiss()
+                            if(data != nil){
+                                self.IsQrIn()
+                            }
+                            
+                            if error != nil {
+                                loading.loadingDismiss()
+                                let alert = ShowAlert()
+                                alert.showPaymentModeActionSheet(title: "error", message: qrController.getMessageError(code: error!))
+                                print(error!)
+                            }
+                            
                         
+                        }
                     }, label: {
                         ScannerQRButtonContent()
                     })
