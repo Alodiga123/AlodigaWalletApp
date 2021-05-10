@@ -45,7 +45,7 @@ public class QrController{
         
         let client_AC = AlodigaClient()
         let datos = AL_GetBusinessInfoByCryptogram()
-        datos.cpCryptogram = ""
+        datos.cpCryptogram = qr
         
         
         client_AC.opGetBusinessInfoByCryptogram(getBusinessInfoByCryptogram: datos) {(data,error) in

@@ -203,6 +203,7 @@
 "web_services_response_22" = "User does not have a phone";
 "web_services_response_30" = "Maximun amount exceeded";
 "web_services_response_31" = "You have exceeded the maximun number of transactions per product";
+"web_services_response_31_pin" = "Invalid Pin";
 "web_services_response_32" = "You have exceeded the maximun number of transactions per day";
 "web_services_response_33" = "Insufficient balance to complete the transaction";
 "web_services_response_95" = "User I suspect ";

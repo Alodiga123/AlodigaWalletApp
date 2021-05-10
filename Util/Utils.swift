@@ -217,6 +217,9 @@ public class Utils{
         case Constant.WEB_SERVICES_RESPONSE_CODE_USER_NOT_HAS_PHONE_NUMBER:
             return NSLocalizedString("web_services_response_22", comment: "")
             
+        case Constant.WEB_SERVICES_RESPONSE_CODE_IVALID_PIN:
+            return NSLocalizedString("web_services_response_31_pin", comment: "")
+            
         case Constant.WEB_SERVICES_RESPONSE_CODE_USUARIO_SOSPECHOSO:
             return NSLocalizedString("web_services_response_95", comment: "")
          
@@ -250,6 +253,10 @@ public class Utils{
                                             "simbolo" : product.simbolo,
                                             "isUsePrepaidCard" : product.isUsePrepaidCard]
                     
+                    if(product.id == "2"){
+                        Constant.defaults.setValue(emptyDictionary, forKey: "ProductDefault")
+                    }
+                    
                     emptyDictionary.append(currency)
                 }
                 
@@ -268,6 +275,10 @@ public class Utils{
                                             "saldoActual" : product.currentBalance,
                                             "simbolo" : product.symbol,
                                             "isUsePrepaidCard" : product.isUsePrepaidCard]
+                    
+                    if(product.id == "2"){
+                        Constant.defaults.setValue(emptyDictionary, forKey: "ProductDefault")
+                    }
                     emptyDictionary.append(currency)
        
                 }

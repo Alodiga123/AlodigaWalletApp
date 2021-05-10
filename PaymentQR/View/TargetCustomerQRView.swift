@@ -28,6 +28,17 @@ struct TargetCustomerQRViewAccess: View {
     @State var amount: String = ""
     @State var concept: String = ""
     let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Origen"]
+    let currencySelect = Constant.defaults.object(forKey: "currencySelectedQr") as? [String: String] ?? [String: String]()
+    let productDefault = Constant.defaults.object(forKey: "ProductDefault") as? [String: String] ?? [String: String]()
+    @State var isQrIn: Bool = false
+    var loading = Loading()
+    
+    func IsQrIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isQrIn = true
+        }
+    }
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -43,28 +54,99 @@ struct TargetCustomerQRViewAccess: View {
                     }.padding(.leading,20)
                      .padding(.trailing,20)
                     TextLabelPaymentInfAcount()
-                    ForEach(self.labels, id: \.self) { label in
+    
+                    
+                    VStack{
                         HStack {
-                            Text(label)
-                                .frame(width: 50, alignment: .leading)
+                            Text("Name")
+                                .frame(width: 70, alignment: .leading)
                                 .font(.caption)
-                            TextField(label, text: self.$text)
+                            Spacer()
+
+                            TextField(Constant.defaults.value(forKey: "businessName") as! String ?? "Name", text: self.$text)
                                 .font(.caption)
+                        
                         }
-                    }.padding(.horizontal)
+                    
+                    HStack {
+                        Text("Phone")
+                            .frame(width: 70, alignment: .leading)
+                            .font(.caption)
+                        Spacer()
+
+                        TextField(Constant.defaults.value(forKey: "businessPhoneNumber") as! String ?? "Phone", text: self.$text)
+                            .font(.caption)
+                    }
+                    
+                    
+                    HStack {
+                        Text("Origin")
+                            .frame(width: 70, alignment: .leading)
+                            .font(.caption)
+                        Spacer()
+                        
+
+                        TextField(currencySelect["nombreProducto"] ?? "" , text: self.$text)
+                            .font(.caption)
+                    }
+                        
+                    
+                    
+                  /*  HStack {
+                        Text("Destination")
+                            .frame(width: 70, alignment: .leading)
+                            .font(.caption)
+                        Spacer()
+                        TextField(currencySelect["nombreProducto"] ?? "" , text: self.$text)
+                            .font(.caption)
+                    }*/
+                        
+                    } .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
+                   
                     TextLabelPaymentInf()
                     PaymentAmountTextField(amount: self.$amount)
                         .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
                     PaymentConceptTextField(concept: self.$concept)
                     
-                    NavigationLink(destination: OperationsKeyQRView()) {
+                    let amount_aux : Float = Float(amount) ?? 0
+                    let saldo1 = currencySelect["saldoActual"] as? String ?? "0"
+                    let saldo : Float = Float(saldo1) ?? 0
+                                              
+                    
+                    Button(action: {
+                        
+                        let alert = ShowAlert()
+                        
+                        if(amount.isEmpty || concept.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                        }
+                        else if(amount_aux <= 0){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("invalidAmount", comment: "") )
+                        }else if(saldo < amount_aux ){
+                            
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
+                        }else{
+                            Constant.defaults.setValue(amount, forKey: "amountQr")
+                            Constant.defaults.setValue(concept, forKey: "conceptQr")
+
+                            self.IsQrIn()
+                            
+                        }
+                        
+                    }, label: {
                         PaymentSendButtonContent()
+                    })
+                    
+                    
+                    NavigationLink(destination: OperationsKeyViewQr(), isActive:self.$isQrIn){
+                        EmptyView()
                     }
+                  
                     NavigationLink(destination: PaymentBusinessesQRView()) {
                         PaymentBackButtonContent()
                     }
-                    Spacer()
+                    
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(25)
             }.padding(.bottom,geometry.size.height/2.2)

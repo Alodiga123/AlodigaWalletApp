@@ -71,7 +71,7 @@ struct FirstPaymentView: View {
                     "saldoActual" : selectedProduct.saldoActual,
                     "simbolo" : selectedProduct.simbolo,
                     "isUsePrepaidCard" : selectedProduct.isUsePrepaidCard]
-        Constant.defaults.set(currencySelected, forKey: "currencySelected")
+        Constant.defaults.set(currencySelected, forKey: "currencySelectedQr")
 
     }
     
@@ -116,7 +116,7 @@ struct SheetPayment: View {
                                     "saldoActual" : index.saldoActual,
                                     "simbolo" : index.simbolo,
                                     "isUsePrepaidCard" : index.isUsePrepaidCard]
-                        Constant.defaults.set(currencySelected, forKey: "currencySelected")
+                        Constant.defaults.set(currencySelected, forKey: "currencySelectedQr")
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Text(index.nombreProducto + " " + index.simbolo + " - " + index.saldoActual).fontWeight(.bold)

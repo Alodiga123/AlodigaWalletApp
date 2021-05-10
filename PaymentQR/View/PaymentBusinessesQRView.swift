@@ -27,7 +27,7 @@ struct PaymentBusinessesQRViewAccess: View {
     @State var currency: String = ""
     @State var isLoggedIn: Bool = false
     @State var isQrIn: Bool = false
-
+    var loading = Loading()
     
     func IsQrIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -59,19 +59,29 @@ struct PaymentBusinessesQRViewAccess: View {
                     TextLabelCodeQR()
                     
                     Button(action: {
+                        //loading.loadindView()
+
                         let qr = "h1/jrRjF47U="
+                        //let qr = "LDx7uYkEQHqWjNcF9DhAo8slem3BtGbbMkAXercF2H1W51mh32/Vhg=="
+                        //let qr = "LDx7uYkEQHqWjNcF9DhAo8slem3BtGbbMkAXercF2H1XZDz9BPdrOA=="
                         let qrController = QrController()
-                        var loading = Loading()
 
                         qrController.GetBusinessInfoByCryptogram(qr: qr) { (data, error) in
                             
-                            loading.loadingDismiss()
+                            
                             if(data != nil){
+                                let datos : ObjectQR = data as! ObjectQR
+                                
+                                Constant.defaults.setValue(datos.envelope.body.tokenResponse._return.businessName, forKey: "businessName")
+                                Constant.defaults.setValue(datos.envelope.body.tokenResponse._return.address, forKey: "businessAddress")
+                                Constant.defaults.setValue(datos.envelope.body.tokenResponse._return.phoneNumber, forKey: "businessPhoneNumber")
+                                
+                                //loading.loadingDismiss()
                                 self.IsQrIn()
                             }
                             
                             if error != nil {
-                                loading.loadingDismiss()
+                                //loading.loadingDismiss()
                                 let alert = ShowAlert()
                                 alert.showPaymentModeActionSheet(title: "error", message: qrController.getMessageError(code: error!))
                                 print(error!)

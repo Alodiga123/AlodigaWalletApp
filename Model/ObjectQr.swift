@@ -31,7 +31,7 @@ struct BodyQr : Decodable{
     var tokenResponse: QrResponse
     
     enum CodingKeys: String, CodingKey {
-         case tokenResponse = "ns2:generarCodigoMovilSMSResponse"
+         case tokenResponse = "ns2:getBusinessInfoByCryptogramResponse"
      }
 }
 
@@ -51,13 +51,41 @@ struct ReturnQr : Decodable{
     var codigoRespuesta : String
     var mensajeRespuesta : MensajeRespuestaQR
     var datosRespuesta : String
+    var businessName : String
+    var businessRif : String
+    var storeName : String
+    var posCode : String
+    var address : String
+    var phoneNumber : String
     
     enum CodingKeys: String, CodingKey {
         case fechaHora = "fechaHora"
         case codigoRespuesta = "codigoRespuesta"
         case mensajeRespuesta = "mensajeRespuesta"
         case datosRespuesta = "datosRespuesta"
+        case businessName = "businessName"
+        case businessRif = "businessRif"
+        case storeName = "storeName"
+        case posCode = "posCode"
+        case address = "address"
+        case phoneNumber = "phoneNumber"
      }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        fechaHora = try container.decodeIfPresent(String.self, forKey: .fechaHora) ?? ""
+        codigoRespuesta = try container.decodeIfPresent(String.self, forKey: .codigoRespuesta) ?? ""
+        mensajeRespuesta = try container.decode(MensajeRespuestaQR.self, forKey: .mensajeRespuesta)
+        datosRespuesta = try container.decodeIfPresent(String.self, forKey: .datosRespuesta) ?? ""
+        businessName = try container.decodeIfPresent(String.self, forKey: .businessName) ?? ""
+        businessRif = try container.decodeIfPresent(String.self, forKey: .businessRif) ?? ""
+        storeName = try container.decodeIfPresent(String.self, forKey: .storeName) ?? ""
+        posCode = try container.decodeIfPresent(String.self, forKey: .posCode) ?? ""
+        address = try container.decodeIfPresent(String.self, forKey: .address) ?? ""
+        phoneNumber = try container.decodeIfPresent(String.self, forKey: .phoneNumber) ?? ""
+    
+    }
 }
 
 struct MensajeRespuestaQR: Decodable{

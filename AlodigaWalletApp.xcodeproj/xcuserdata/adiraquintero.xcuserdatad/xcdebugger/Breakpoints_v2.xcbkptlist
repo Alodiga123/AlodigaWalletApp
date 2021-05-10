@@ -46,8 +46,8 @@
             filePath = "Util/Utils.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "getProductSession()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1225,8 +1225,8 @@
             filePath = "Util/Utils.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
             landmarkName = "getKeyEncript(key:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1330,22 +1330,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "71BA68E7-762C-4883-B26D-FD3D6887B7BE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Util/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
-            landmarkName = "getKeyEncript(key:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E346936B-42AE-4842-933F-033BBD2171F6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1357,6 +1341,70 @@
             endingLineNumber = "43"
             landmarkName = "opGuardarUsuarioAplicacionMovil(guardarUsuarioAplicacionMovil:completionHandler:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9A490C7-79D5-4648-8A32-E202FC0E027D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PaymentQR/View/OperationsKeyQRView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C9A490C7-79D5-4648-8A32-E202FC0E027D - 5e19ff9e082cc905"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, Swift.Optional&lt;AlodigaWalletApp.TextFailViewQr&gt;, AlodigaWalletApp.TextLabelOperationKeyQr, AlodigaWalletApp.TransOperKeyTextFieldQr, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.ConfirmationQRView&gt;, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.FailCodeOperationView&gt;, SwiftUI.NavigationLink&lt;AlodigaWalletApp.TransferenceBackButtonContent, AlodigaWalletApp.TargetCustomerView&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in AlodigaWalletApp.OperationsKeyViewAccessQR.body.getter : some"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/PaymentQR/View/OperationsKeyQRView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "542">
+               </Location>
+               <Location
+                  uuid = "C9A490C7-79D5-4648-8A32-E202FC0E027D - 1d0183c7f1936dbb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, Swift.Optional&lt;AlodigaWalletApp.TextFailViewQr&gt;, AlodigaWalletApp.TextLabelOperationKeyQr, AlodigaWalletApp.TransOperKeyTextFieldQr, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.ConfirmationQRView&gt;, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.FailCodeOperationView&gt;, SwiftUI.NavigationLink&lt;AlodigaWalletApp.TransferenceBackButtonContent, AlodigaWalletApp.TargetCustomerView&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in AlodigaWalletApp.OperationsKeyViewAccessQR.body.getter : some"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/PaymentQR/View/OperationsKeyQRView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "295">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8A19EC2-4E58-4ECD-B2E4-D49BB1E67C2C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PaymentQR/View/OperationsKeyQRView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
