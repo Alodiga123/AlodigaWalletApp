@@ -41,6 +41,48 @@ public class QrController{
 
     }
     
+    
+    func savePaymentShop(datos : AL_SavePaymentShop ,completion: @escaping (_ res:ObjectQR?, String?) -> Void){
+        
+        let client_AC = AlodigaClient()
+        
+        client_AC.opSavePaymentShop(savePaymentShop: datos) {(data,error) in
+            
+            if error != nil {
+                completion(nil,"90")
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            do{
+                var objetResponse: ObjectQR
+                var objetResponseError: ObjectErrorQr
+
+                let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
+                //print("datastring " + datastring)
+                let parser = ParseXMLData(xml: datastring)
+                let jsonStr = parser.parseXML()
+                print("JSON QR ---- > ")
+                print(jsonStr)
+                
+                if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
+                {
+                    objetResponse = try JSONDecoder().decode(ObjectQR.self, from: jsonStr.data(using: .utf8)!)
+                    completion(objetResponse, nil)
+                }else{
+                    objetResponseError = try JSONDecoder().decode(ObjectErrorQr.self, from: jsonStr.data(using: .utf8)!)
+                    completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
+                }
+                
+            }catch{
+                print("Error: ")
+                print(error)
+            }
+        }
+    }
+    
+    
+    
     func GetBusinessInfoByCryptogram(qr : String ,completion: @escaping (_ res:ObjectQR?, String?) -> Void) {
         
         let client_AC = AlodigaClient()

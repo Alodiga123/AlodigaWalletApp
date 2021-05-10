@@ -62,6 +62,7 @@ struct PaymentBusinessesQRViewAccess: View {
                         //loading.loadindView()
 
                         let qr = "h1/jrRjF47U="
+                        Constant.defaults.setValue(qr, forKey: "qr")
                         //let qr = "LDx7uYkEQHqWjNcF9DhAo8slem3BtGbbMkAXercF2H1W51mh32/Vhg=="
                         //let qr = "LDx7uYkEQHqWjNcF9DhAo8slem3BtGbbMkAXercF2H1XZDz9BPdrOA=="
                         let qrController = QrController()
