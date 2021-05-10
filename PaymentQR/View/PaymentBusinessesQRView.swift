@@ -26,6 +26,14 @@ struct PaymentBusinessesQRView: View {
 struct PaymentBusinessesQRViewAccess: View {
     @State var currency: String = ""
     @State var isLoggedIn: Bool = false
+    @State var isQrIn: Bool = false
+
+    
+    func IsQrIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isQrIn = true
+        }
+    }
     
     var body: some View {
         
@@ -50,9 +58,18 @@ struct PaymentBusinessesQRViewAccess: View {
                     FirstPaymentView()
                     TextLabelCodeQR()
                     
-                    NavigationLink(destination: TargetCustomerQRView()) {
+                    Button(action: {
+                        let qr = "h1/jrRjF47U="
+                        
+                    }, label: {
                         ScannerQRButtonContent()
+                    })
+                    
+                    
+                    NavigationLink(destination: TargetCustomerQRView(), isActive:self.$isQrIn){
+                        EmptyView()
                     }
+                
                     NavigationLink(destination: MainViewLogged()) {
                         PaymentBackButtonContent()
                     }

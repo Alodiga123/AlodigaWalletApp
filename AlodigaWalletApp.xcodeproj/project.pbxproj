@@ -153,6 +153,7 @@
 		BA6B7FDE26311AB200E4184D /* ObjectErrorRechargeCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B7FDD26311AB200E4184D /* ObjectErrorRechargeCountry.swift */; };
 		BA6B805D2636F86700E4184D /* ObjectBankUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B805C2636F86700E4184D /* ObjectBankUS.swift */; };
 		BA6B807C2644D97200E4184D /* SpinnerCurrencyPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B807B2644D97000E4184D /* SpinnerCurrencyPayment.swift */; };
+		BA6B808526496F5700E4184D /* ControllerQr.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B808426496F5600E4184D /* ControllerQr.swift */; };
 		BAC6171A2583EB490057CBC4 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617192583EB490057CBC4 /* Loading.swift */; };
 		BAC6171F2583F1F00057CBC4 /* Loadinv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */; };
 		BAC617242583F4CA0057CBC4 /* LoadingV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC617232583F4CA0057CBC4 /* LoadingV3.swift */; };
@@ -341,6 +342,7 @@
 		BA6B7FDD26311AB200E4184D /* ObjectErrorRechargeCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectErrorRechargeCountry.swift; sourceTree = "<group>"; };
 		BA6B805C2636F86700E4184D /* ObjectBankUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectBankUS.swift; sourceTree = "<group>"; };
 		BA6B807B2644D97000E4184D /* SpinnerCurrencyPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCurrencyPayment.swift; sourceTree = "<group>"; };
+		BA6B808426496F5600E4184D /* ControllerQr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerQr.swift; sourceTree = "<group>"; };
 		BAC617192583EB490057CBC4 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		BAC6171E2583F1F00057CBC4 /* Loadinv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadinv2.swift; sourceTree = "<group>"; };
 		BAC617232583F4CA0057CBC4 /* LoadingV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingV3.swift; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 		46DBC46F25128425008D42B3 /* PaymentQR */ = {
 			isa = PBXGroup;
 			children = (
+				BA6B808326496F4000E4184D /* Controller */,
 				46DBC47025128442008D42B3 /* View */,
 			);
 			path = PaymentQR;
@@ -911,6 +914,14 @@
 				BAE1EA64252E8DCB007F9CD6 /* LoginController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA6B808326496F4000E4184D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA6B808426496F5600E4184D /* ControllerQr.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		BAE1E9AE252BA83D007F9CD6 /* WebServices */ = {
@@ -1274,6 +1285,7 @@
 				BA6B7FD9263118B900E4184D /* ObjectRecharge.swift in Sources */,
 				46DBC47E2512869E008D42B3 /* OperationsKeyView.swift in Sources */,
 				049FC9062582AE7F00133FD7 /* SpinnerBank.swift in Sources */,
+				BA6B808526496F5700E4184D /* ControllerQr.swift in Sources */,
 				BAC617242583F4CA0057CBC4 /* LoadingV3.swift in Sources */,
 				048612212549A799008E51CE /* ObjectToken.swift in Sources */,
 				46B271FA24FD626B005DB0C1 /* MainViewLogged.swift in Sources */,
