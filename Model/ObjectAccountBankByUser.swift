@@ -31,7 +31,7 @@ struct BodyAccountBankByUser : Decodable{
     var AccountBankByUserResponse: AccountBankByUserMovilResponse
     
     enum CodingKeys: String, CodingKey {
-         case AccountBankByUserResponse = "ns2:getAccountBankByUser"
+         case AccountBankByUserResponse = "ns2:getAccountBankByUserResponse"
      }
 }
 
