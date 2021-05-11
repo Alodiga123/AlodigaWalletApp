@@ -50,7 +50,7 @@ struct ReturnManualWithdrawals : Decodable{
     var codigoRespuesta : String
     var mensajeRespuesta : MensajeRespuesta
     var idTransaction : String
-    var products : DatosProductos
+    var products : [productTransference]
     
     enum CodingKeys: String, CodingKey {
         case fechaHora = "fechaHora"
@@ -62,8 +62,8 @@ struct ReturnManualWithdrawals : Decodable{
 }
 
 struct DatosProductos : Decodable{
-    var categoryId: CategoriaProducto?
-    var countryId: CountryProducto?
+    var categoryId: Category?
+    var countryId: CountryId?
     var currentBalance: String?
     var enabled: String?
     var id: String?
@@ -105,8 +105,8 @@ struct DatosProductos : Decodable{
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        categoryId = try container.decodeIfPresent(CategoriaProducto.self, forKey: .categoryId)
-        countryId = try container.decodeIfPresent(CountryProducto.self, forKey: .countryId)
+        categoryId = try container.decode(Category.self, forKey: .categoryId)
+        countryId = try container.decode(CountryId.self, forKey: .countryId)
         currentBalance = try container.decodeIfPresent(String.self, forKey: .currentBalance)
         enabled = try container.decodeIfPresent(String.self, forKey: .enabled)
         id = try container.decodeIfPresent(String.self, forKey: .id)
