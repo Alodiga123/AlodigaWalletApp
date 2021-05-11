@@ -13,8 +13,7 @@ struct ObjectManualWithdrawals: Decodable{
     
     enum CodingKeys: String, CodingKey {
          case envelope = "S:Envelope"
-     }
-    
+     }    
 }
 
 struct EnvelopeManualWithdrawals : Decodable{
@@ -50,13 +49,80 @@ struct ReturnManualWithdrawals : Decodable{
     var fechaHora : String
     var codigoRespuesta : String
     var mensajeRespuesta : MensajeRespuesta
-    //var banks : [BankByCountry]
+    var idTransaction : String
+    var products : DatosProductos
     
     enum CodingKeys: String, CodingKey {
-         case fechaHora = "fechaHora"
-         case codigoRespuesta = "codigoRespuesta"
-         case mensajeRespuesta = "mensajeRespuesta"
-         //case banks = "banks"
+        case fechaHora = "fechaHora"
+        case codigoRespuesta = "codigoRespuesta"
+        case mensajeRespuesta = "mensajeRespuesta"
+        case idTransaction = "idTransaction"
+        case products = "products"
      }
+}
+
+struct DatosProductos : Decodable{
+    var categoryId: CategoriaProducto?
+    var countryId: CountryProducto?
+    var currentBalance: String?
+    var enabled: String?
+    var id: String?
+    var indHasAssociatedBank: String?
+    var isAlocashProduct: String?
+    var isDefaultProduct: String?
+    var isExchangeProduct: String?
+    var isFree: String?
+    var isPayTopUp: String?
+    var isPaymentInfo: String?
+    var isRemettence: String?
+    var isUsePrepaidCard: String?
+    var name: String?
+    var referenceCode: String?
+    var symbol: String?
+    var taxInclude: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case categoryId = "categoryId"
+        case countryId = "countryId"
+        case currentBalance = "currentBalance"
+        case enabled = "enabled"
+        case id = "id"
+        case indHasAssociatedBank = "indHasAssociatedBank"
+        case isAlocashProduct = "isAlocashProduct"
+        case isDefaultProduct = "isDefaultProduct"
+        case isExchangeProduct = "isExchangeProduct"
+        case isFree = "isFree"
+        case isPayTopUp = "isPayTopUp"
+        case isPaymentInfo = "isPaymentInfo"
+        case isRemettence = "isRemettence"
+        case isUsePrepaidCard = "isUsePrepaidCard"
+        case name = "name"
+        case referenceCode = "referenceCode"
+        case symbol = "symbol"
+        case taxInclude = "taxInclude"
+     }
+        
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        categoryId = try container.decodeIfPresent(CategoriaProducto.self, forKey: .categoryId)
+        countryId = try container.decodeIfPresent(CountryProducto.self, forKey: .countryId)
+        currentBalance = try container.decodeIfPresent(String.self, forKey: .currentBalance)
+        enabled = try container.decodeIfPresent(String.self, forKey: .enabled)
+        id = try container.decodeIfPresent(String.self, forKey: .id)
+        indHasAssociatedBank = try container.decodeIfPresent(String.self, forKey: .indHasAssociatedBank)
+        isAlocashProduct = try container.decodeIfPresent(String.self, forKey: .isAlocashProduct)
+        isDefaultProduct = try container.decodeIfPresent(String.self, forKey: .isDefaultProduct)
+        isExchangeProduct = try container.decodeIfPresent(String.self, forKey: .isExchangeProduct)
+        isFree = try container.decodeIfPresent(String.self, forKey: .isFree)
+        isPayTopUp = try container.decodeIfPresent(String.self, forKey: .isPayTopUp)
+        isPaymentInfo = try container.decodeIfPresent(String.self, forKey: .isPaymentInfo)
+        isRemettence = try container.decodeIfPresent(String.self, forKey: .isRemettence)
+        isUsePrepaidCard = try container.decodeIfPresent(String.self, forKey: .isUsePrepaidCard)
+        name = try container.decodeIfPresent(String.self, forKey: .name)
+        referenceCode = try container.decodeIfPresent(String.self, forKey: .referenceCode)
+        symbol = try container.decodeIfPresent(String.self, forKey: .symbol)
+        taxInclude = try container.decodeIfPresent(String.self, forKey: .taxInclude)
+    }
 }
 

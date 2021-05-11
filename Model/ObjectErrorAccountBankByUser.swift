@@ -30,7 +30,7 @@ struct BodyAccountBankByUserError : Decodable{
     var cambiar: Credencial
     
     enum CodingKeys: String, CodingKey {
-         case cambiar = "ns2:getAccountBankByUser"
+         case cambiar = "ns2:getAccountBankByUserResponse"
      }
 }
 

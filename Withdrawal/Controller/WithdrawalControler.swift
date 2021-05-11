@@ -208,7 +208,7 @@ public class WithdrawalControler{
         
         let client_AC = AlodigaClient()
         
-        //Llamada del servicio de Paises
+        //Llamada del servicio de Recarga Manual
         client_AC.opManualWithdrawals(manualWithdrawals: retirosManuales) { (data, error) in
             
             if error != nil {

@@ -2,7 +2,7 @@
 //  WithdrawalView.swift
 //  AlodigaWalletApp
 //
-//  Created by Lulymar Gutierrez on 9/17/20.
+//  Created by Lulymar Gutierrez on 30/05/21.
 //  Copyright © 2020 Lulymar Gutierrez. All rights reserved.
 //
 import SwiftUI
@@ -32,6 +32,7 @@ struct WithdrawalViewAccess: View {
     @State var description: String = "p"
     let productSelected = Constant.defaults.object(forKey: "productSelected") as? [String: String] ?? [String: String]()
     @State var steptwo: Bool = false
+    var loading = Loading()
     
     func stepNex(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -60,8 +61,9 @@ struct WithdrawalViewAccess: View {
                         let retiroManual = AL_ManualWithdrawals()
                         let alert = ShowAlert()
                         let amount_aux: Float = Float(amount) ?? 0
-                        let saldo1 = productSelected["saldoActual"]! as String
-                        let saldo: Float = Float(saldo1) ?? 0
+                        //let saldo1 = productSelected["saldoActual"]! as String
+                        //let saldo: Float = Float(saldo1) ?? 0
+                        //loading.loadindView()
                         
                         if(amount.isEmpty || amount.count == 0 || description.isEmpty || description.count == 0 ){
                             alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("ValidationInvalidLong", comment: ""))
@@ -69,36 +71,38 @@ struct WithdrawalViewAccess: View {
                             alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("invalidAmount", comment: ""))
                         }else if(amount_aux <= 0){
                             alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("invalidAmount", comment: ""))
-                        }else if(saldo < amount_aux ){
-                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )
+                        /*}else if(saldo < amount_aux ){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )*/
                         }else{
-                            Constant.defaults.setValue(amount, forKey: "amountWithdrawal")
-                            Constant.defaults.setValue(description, forKey: "descriptionWithdrawal")
+                            let BankIdWithdrawal = Constant.defaults.value(forKey: "BankIDW") as? String ?? ""
+                            let ProductIdWithdrawal = Constant.defaults.value(forKey: "ProductIDW") as? String ?? ""
                             
-                            /*
-                             map.put("bankId", getbank.getId());
-                                             map.put("emailUser", Session.getEmail());
-                                             map.put("accountBank", getaccountBank);
-                                             map.put("amountWithdrawal", getAmountRecharge);
-                                             map.put("productId", getproduct.getId());
-                                             map.put("conceptTransaction", getDescrip);
-                             */
-                            retiroManual.cpBankId = "1"
-                            retiroManual.cpEmailUser = ""
+                            retiroManual.cpBankId = BankIdWithdrawal
+                            retiroManual.cpEmailUser = Constant.defaults.value(forKey: "emailUser") as! String
                             retiroManual.cpAmountWithdrawal = amount
-                            retiroManual.cpProductId = "1"
+                            retiroManual.cpProductId = ProductIdWithdrawal
                             retiroManual.cpConceptTransaction = description
+                            retiroManual.cpDocumentTypeId = "8"
+                            retiroManual.cpOriginApplicationId = "1"
                         }
                         
                         withdrawalControler.getManualWithdrawals(retirosManuales: retiroManual){ (res,error) in
-                            if res != nil {
-                                print("+++++++++++ OBJETO +++++++++++++++++")
-                                print(res)
+                            print("EN LA VISTA DEL RETIRO!!!!")
+                            if res != nil  {
+                                print(res as Any)
+                                let retiro: ObjectManualWithdrawals
+                                retiro = res! as ObjectManualWithdrawals
+                                print(retiro.envelope.body.ManualWithdrawalsResponse._return.fechaHora)
+                                //loading.loadingDismiss()
+
+                                stepNex()
                             }
+                            
                             if error != nil {
                                 let alert = ShowAlert()
                                 alert.showPaymentModeActionSheet(title: "error", message: withdrawalControler.getMessageError(code: error!))
                                 print(error!)
+                                //loading.loadingDismiss()
                             }
 
                             stepNex()
