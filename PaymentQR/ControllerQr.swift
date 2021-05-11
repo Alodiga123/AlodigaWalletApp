@@ -42,7 +42,7 @@ public class QrController{
     }
     
     
-    func savePaymentShop(datos : AL_SavePaymentShop ,completion: @escaping (_ res:ObjectQR?, String?) -> Void){
+    func savePaymentShop(datos : AL_SavePaymentShop ,completion: @escaping (_ res:ObjectProcessQR?, String?) -> Void){
         
         let client_AC = AlodigaClient()
         
@@ -55,7 +55,7 @@ public class QrController{
             }
             
             do{
-                var objetResponse: ObjectQR
+                var objetResponse: ObjectProcessQR
                 var objetResponseError: ObjectErrorQr
 
                 let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
@@ -67,7 +67,9 @@ public class QrController{
                 
                 if datastring.contains("<codigoRespuesta>00</codigoRespuesta>") || jsonStr.contains("<codigoRespuesta>0</codigoRespuesta>")
                 {
-                    objetResponse = try JSONDecoder().decode(ObjectQR.self, from: jsonStr.data(using: .utf8)!)
+                    objetResponse = try JSONDecoder().decode(ObjectProcessQR.self, from: jsonStr.data(using: .utf8)!)
+                    let util = Utils()
+                    util.updateProducts(listProduct: objetResponse.envelope.body.cambiar._return.products)
                     completion(objetResponse, nil)
                 }else{
                     objetResponseError = try JSONDecoder().decode(ObjectErrorQr.self, from: jsonStr.data(using: .utf8)!)

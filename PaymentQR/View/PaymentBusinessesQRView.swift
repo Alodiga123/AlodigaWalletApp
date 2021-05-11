@@ -30,8 +30,10 @@ struct PaymentBusinessesQRViewAccess: View {
     var loading = Loading()
     
     func IsQrIn(){
-        DispatchQueue.main.asyncAfter(deadline: .now() ){
+        DispatchQueue.main.async {
             self.isQrIn = true
+            loading.loadingDismiss()
+           
         }
     }
     
@@ -59,7 +61,7 @@ struct PaymentBusinessesQRViewAccess: View {
                     TextLabelCodeQR()
                     
                     Button(action: {
-                        //loading.loadindView()
+                       // loading.loadindView()
 
                         let qr = "h1/jrRjF47U="
                         Constant.defaults.setValue(qr, forKey: "qr")
@@ -77,7 +79,6 @@ struct PaymentBusinessesQRViewAccess: View {
                                 Constant.defaults.setValue(datos.envelope.body.tokenResponse._return.address, forKey: "businessAddress")
                                 Constant.defaults.setValue(datos.envelope.body.tokenResponse._return.phoneNumber, forKey: "businessPhoneNumber")
                                 
-                                //loading.loadingDismiss()
                                 self.IsQrIn()
                             }
                             
@@ -94,10 +95,11 @@ struct PaymentBusinessesQRViewAccess: View {
                         ScannerQRButtonContent()
                     })
                     
-                    
                     NavigationLink(destination: TargetCustomerQRView(), isActive:self.$isQrIn){
+
                         EmptyView()
                     }
+                  
                 
                     NavigationLink(destination: MainViewLogged()) {
                         PaymentBackButtonContent()

@@ -28,6 +28,7 @@ struct ConfirmationQRViewAccess: View {
     let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Monto", "Concepto", "Origen"]
     let currencySelect = Constant.defaults.object(forKey: "currencySelectedQr") as? [String: String] ?? [String: String]()
     @State var isSuccesKey: Bool = false
+    var loading = Loading()
 
     
     func isSuccesKeyIn(){
@@ -56,22 +57,24 @@ struct ConfirmationQRViewAccess: View {
                             .font(.caption)
                         Spacer()
 
-                        TextField(Constant.defaults.value(forKey: "businessName") as! String ?? "Name", text: self.$text)
+                        Text(Constant.defaults.value(forKey: "businessName") as! String ?? "Name")
                             .font(.caption)
                     
                     }
-                
+                        Spacer()
+
                 HStack {
                     Text("Phone")
                         .frame(width: 70, alignment: .leading)
                         .font(.caption)
                     Spacer()
 
-                    TextField(Constant.defaults.value(forKey: "businessPhoneNumber") as! String ?? "Phone", text: self.$text)
+                    Text(Constant.defaults.value(forKey: "businessPhoneNumber") as! String ?? "Phone")
                         .font(.caption)
                 }
                 
-                
+                        Spacer()
+
                 HStack {
                     Text("Origin")
                         .frame(width: 70, alignment: .leading)
@@ -79,25 +82,29 @@ struct ConfirmationQRViewAccess: View {
                     Spacer()
                     
 
-                    TextField(currencySelect["nombreProducto"] ?? "" , text: self.$text)
+                    Text(currencySelect["nombreProducto"] ?? "")
                         .font(.caption)
                 }
                     
                 
-                
+                        Spacer()
+
                         HStack {
                             Text("Monto")
-                                .frame(width: 80, alignment: .leading)
+                                .frame(width: 70, alignment: .leading)
                                 .font(.caption)
-                            TextField( Constant.defaults.value(forKey: "amountQr") as! String, text: self.$text)
+                            Spacer()
+                            Text( Constant.defaults.value(forKey: "amountQr") as! String)
                                 .font(.caption)
                         }
-                        
+                        Spacer()
+
                         HStack {
                             Text("Concepto")
-                                .frame(width: 80, alignment: .leading)
+                                .frame(width: 70, alignment: .leading)
                                 .font(.caption)
-                            TextField(Constant.defaults.value(forKey: "conceptQr") as! String, text: self.$text)
+                            Spacer()
+                            Text(Constant.defaults.value(forKey: "conceptQr") as! String)
                                 .font(.caption)
                         }
                         
@@ -108,7 +115,7 @@ struct ConfirmationQRViewAccess: View {
                     
                     Button(action: {
                         
-                        //loading.loadindView()
+                        loading.loadindView()
 
                         let datos = AL_SavePaymentShop()
                         let qrController = QrController()
@@ -129,18 +136,18 @@ struct ConfirmationQRViewAccess: View {
                             
 
                             if(data != nil){
-                                let datos : ObjectQR = data as! ObjectQR
+                                let datos : ObjectProcessQR = data as! ObjectProcessQR
                                 
-                                Constant.defaults.setValue(datos.envelope.body.tokenResponse._return.businessName, forKey: "businessName")
-                                Constant.defaults.setValue(datos.envelope.body.tokenResponse._return.address, forKey: "businessAddress")
-                                Constant.defaults.setValue(datos.envelope.body.tokenResponse._return.phoneNumber, forKey: "businessPhoneNumber")
+                                Constant.defaults.setValue(datos.envelope.body.cambiar._return.idTransaction, forKey: "idTransactionQr")
+                                Constant.defaults.setValue(datos.envelope.body.cambiar._return.fechaHora, forKey: "fechaHoraQr")
+                            
                                 
-                                //loading.loadingDismiss()
+                                loading.loadingDismiss()
                                 self.isSuccesKeyIn()
                             }
                             
                             if error != nil {
-                                //loading.loadingDismiss()
+                                loading.loadingDismiss()
                                 let alert = ShowAlert()
                                 alert.showPaymentModeActionSheet(title: "error", message: qrController.getMessageError(code: error!))
                                 print(error!)

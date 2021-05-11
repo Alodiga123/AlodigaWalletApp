@@ -99,7 +99,7 @@ struct OperationsKeyViewAccessQR: View {
                                     var claveencip = reskey! as String
                                     util.getCodeOperation(data: claveencip.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (res, error) in
                                         if(res != nil){
-                                           // loading.loadingDismiss()
+                                            //loading.loadingDismiss()
                                             let clave : String
                                             clave = res! as String
                                             
@@ -114,7 +114,7 @@ struct OperationsKeyViewAccessQR: View {
                                             
                                         }
                                         if error != nil {
-                                           // loading.loadingDismiss()
+                                            //loading.loadingDismiss()
                                             let alert = ShowAlert()
                                             fail = true
                                             count_aux = count_aux - 1

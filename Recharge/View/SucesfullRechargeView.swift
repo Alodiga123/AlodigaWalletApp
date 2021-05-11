@@ -18,7 +18,7 @@ struct SucesfullRechargeView: View {
                 VStack() {
                     SucesfullRechargeViewAccess()
                 }
-            }.navigationBarTitle("Summary", displayMode: .inline)
+            }.navigationBarTitle("Summary", displayMode: .inline).navigationBarBackButtonHidden(true)
         }
     }
 }

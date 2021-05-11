@@ -63,22 +63,24 @@ struct TargetCustomerQRViewAccess: View {
                                 .font(.caption)
                             Spacer()
 
-                            TextField(Constant.defaults.value(forKey: "businessName") as! String ?? "Name", text: self.$text)
+                            Text(Constant.defaults.value(forKey: "businessName") as! String ?? "Name")
                                 .font(.caption)
                         
                         }
-                    
+                        Spacer()
+
                     HStack {
                         Text("Phone")
                             .frame(width: 70, alignment: .leading)
                             .font(.caption)
                         Spacer()
 
-                        TextField(Constant.defaults.value(forKey: "businessPhoneNumber") as! String ?? "Phone", text: self.$text)
+                        Text(Constant.defaults.value(forKey: "businessPhoneNumber") as! String ?? "Phone")
                             .font(.caption)
                     }
                     
-                    
+                        Spacer()
+
                     HStack {
                         Text("Origin")
                             .frame(width: 70, alignment: .leading)
@@ -86,7 +88,7 @@ struct TargetCustomerQRViewAccess: View {
                         Spacer()
                         
 
-                        TextField(currencySelect["nombreProducto"] ?? "" , text: self.$text)
+                        Text(currencySelect["nombreProducto"] ?? "" )
                             .font(.caption)
                     }
                         

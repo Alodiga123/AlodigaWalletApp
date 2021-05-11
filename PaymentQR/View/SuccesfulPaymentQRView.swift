@@ -18,7 +18,7 @@ struct SuccesfulPaymentQRView: View {
                 VStack() {
                     SuccesfulPaymentQRViewAccess()
                 }
-            }.navigationBarTitle("SuccessfulPayment", displayMode: .inline)
+            }.navigationBarTitle("SuccessfulPayment", displayMode: .inline).navigationBarBackButtonHidden(true)
         }
     }
 }
@@ -26,7 +26,14 @@ struct SuccesfulPaymentQRView: View {
 struct SuccesfulPaymentQRViewAccess: View {
     @State var text = ""
     let labels = ["Nombre", "Apellido", "Telefono", "Destino", "Monto", "Concepto", "Origen", "Fecha", "Transaccion"]
+    let currencySelect = Constant.defaults.object(forKey: "currencySelectedQr") as? [String: String] ?? [String: String]()
+    @State var isTransfereceProcess: Bool = false
     
+    func isTransfereceProcessIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isTransfereceProcess = true
+        }
+    }
     var body: some View {
         GeometryReader { geometry in
             ZStack{
@@ -41,23 +48,141 @@ struct SuccesfulPaymentQRViewAccess: View {
                     }.padding(.leading,20)
                         .padding(.trailing,20)
                     PaymentCheckImagine()
-                    ForEach(self.labels, id: \.self) { label in
+                    VStack{
+                        
                         HStack {
-                            Text(label)
-                                .frame(width: 80, alignment: .leading)
+                            Text("Name")
+                                .frame(width: 70, alignment: .leading)
                                 .font(.caption)
-                            TextField(label, text: self.$text)
+                            Spacer()
+
+                            Text(Constant.defaults.value(forKey: "businessName") as! String ?? "Name")
+                                .font(.caption)
+                        
+                        }
+                        Spacer()
+                    
+                    HStack {
+                        Text("Phone")
+                            .frame(width: 70, alignment: .leading)
+                            .font(.caption)
+                        Spacer()
+
+                        Text(Constant.defaults.value(forKey: "businessPhoneNumber") as! String ?? "Phone")
+                            .font(.caption)
+                    }
+                    
+                        Spacer()
+                    HStack {
+                        Text("Origin")
+                            .frame(width: 70, alignment: .leading)
+                            .font(.caption)
+                        Spacer()
+                        
+
+                        Text(currencySelect["nombreProducto"] ?? "" )
+                            .font(.caption)
+                    }
+                        
+                        Spacer()
+                    
+                            HStack {
+                                Text("Monto")
+                                    .frame(width: 70, alignment: .leading)
+                                    .font(.caption)
+                                Spacer()
+                                Text( Constant.defaults.value(forKey: "amountQr") as! String)
+                                    .font(.caption)
+                            }
+                    }.padding(.horizontal)
+                    .fixedSize(horizontal: false, vertical: true)
+                        
+                    VStack{
+                        Spacer()
+                            HStack {
+                                Text("Concepto")
+                                    .frame(width: 70, alignment: .leading)
+                                    .font(.caption)
+                                Spacer()
+                                Text(Constant.defaults.value(forKey: "conceptQr") as! String)
+                                    .font(.caption)
+                            }
+                        
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Text("Transaction")
+                                .frame(width: 70, alignment: .leading)
+                                .font(.caption)
+                            Spacer()
+                            Text( Constant.defaults.value(forKey: "idTransactionQr") as! String)
                                 .font(.caption)
                         }
+                        Spacer()
+
+                        HStack {
+                            Text("Date")
+                                .frame(width: 70, alignment: .leading)
+                                .font(.caption)
+                            Spacer()
+                            Text( Constant.defaults.value(forKey: "fechaHoraQr") as! String)
+                                .font(.caption)
+                        }
+                   
+                                  
                     }
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    NavigationLink(destination: MainViewLogged()) {
+                    
+                    
+                    Button {
+                        Constant.defaults.removeObject(forKey: "optionTransference")
+                        Constant.defaults.removeObject(forKey: "currencySelected")
+                        Constant.defaults.removeObject(forKey: "optionSelected")
+                        Constant.defaults.removeObject(forKey: "jsonUserByEmail")
+                        Constant.defaults.removeObject(forKey: "jsonUserByMovil")
+                        Constant.defaults.removeObject(forKey: "amount")
+                        Constant.defaults.removeObject(forKey: "concept")
+                        Constant.defaults.removeObject(forKey: "countKey")
+                        isTransfereceProcessIn()
+
+                    } label: {
                         PaymentEndButtonContent()
                     }
-                    NavigationLink(destination: MainViewLogged()) {
-                        PaymentShareButtonContent()
+
+                    
+                    NavigationLink(destination: MainViewLogged(), isActive:self.$isTransfereceProcess){
+                        EmptyView()
+                    }
+                    
+                    
+                    
+    
+               
+                    Button(action: {
+      
+                        let util = Utils()
+                        let name = Constant.defaults.value(forKey: "businessName") as! String
+                        let phone = Constant.defaults.value(forKey: "businessPhoneNumber") as! String ?? "Phone"
+                        let amount =  Constant.defaults.value(forKey: "amountQr") as! String
+                        let concept = Constant.defaults.value(forKey: "conceptQr") as! String
+                        let date = Constant.defaults.value(forKey: "fechaHoraQr") as! String
+                        let id = Constant.defaults.value(forKey: "idTransactionQr") as! String
+                        let product = currencySelect["nombreProducto"] ?? ""
+                        
+                        let shared  =
+                            NSLocalizedString("confirmation_title_successfull_alodiga", comment: "") + "\n" + NSLocalizedString("Name", comment: "") + " " + name +
+                        "\n" + NSLocalizedString("Phone", comment: "") + " " + phone + "\n" +  NSLocalizedString("Monto", comment: "") + " " + amount
+                            + "\n" + NSLocalizedString("Concepto", comment: "") + " " + concept
+                            + "\n" + NSLocalizedString("Origin", comment: "") + " " + product
+                                + "\n" + NSLocalizedString("Date", comment: "") + " " + date
+                                + "\n" + NSLocalizedString("Transaction", comment: "") + " " + id
+                        
+                        share(items: [shared])
+                    }) {
+                        ShareButtonContents()
                     }
                 }.background(Color.cardButtonViewGray)
                     .cornerRadius(25)
