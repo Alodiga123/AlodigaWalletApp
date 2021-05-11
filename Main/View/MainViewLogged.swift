@@ -74,10 +74,10 @@ struct mainHead : View {
     @State var isRechage: Bool = false
     @State var isTransferece: Bool = false
     @State var isWithdrawal: Bool = false
-
+    
     var line: some View {
         VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,5)
-       }
+    }
     
     func isPaymentIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -102,7 +102,7 @@ struct mainHead : View {
             self.isWithdrawal = true
         }
     }
-
+    
     var body : some View {
         ZStack{
             VStack{
@@ -110,23 +110,23 @@ struct mainHead : View {
                     .frame(width:50, height: 6, alignment: .center)
                     .cornerRadius(3.0)
                     .opacity(0.3)
-            HStack{
-                VStack{
-                    Image("logo_alodiga")
-                        .resizable()
-                        .clipShape(Rectangle())
-                        .shadow(radius: 5)
-                        .frame(width: 80, height: 80, alignment: Alignment.top)
-                }.transition(.move(edge: .top))
-                VStack (alignment: .leading, spacing: 6){
-                    Text(Constant.defaults.value(forKey: "user") as! String).foregroundColor(Color.gray)
-                    Text(Constant.defaults.value(forKey: "movil") as! String ).foregroundColor(Color.gray)
-                    Text(Constant.defaults.value(forKey: "email") as! String).foregroundColor(Color.gray)
+                HStack{
+                    VStack{
+                        Image("logo_alodiga")
+                            .resizable()
+                            .clipShape(Rectangle())
+                            .shadow(radius: 5)
+                            .frame(width: 80, height: 80, alignment: Alignment.top)
+                    }.transition(.move(edge: .top))
+                    VStack (alignment: .leading, spacing: 6){
+                        Text(Constant.defaults.value(forKey: "user") as! String).foregroundColor(Color.gray)
+                        Text(Constant.defaults.value(forKey: "movil") as! String ).foregroundColor(Color.gray)
+                        Text(Constant.defaults.value(forKey: "email") as! String).foregroundColor(Color.gray)
+                    }
                 }
-            }
             }}.padding(.top,20)
         line
-   
+        
         ZStack{
             HStack{
                 
@@ -177,18 +177,18 @@ struct mainHead : View {
                 NavigationLink(destination: WithdrawalView(), isActive:self.$isWithdrawal){
                     EmptyView()
                 }
-               
- 
+                
+                
             }
         }
-       
+        
     }
 }
 
 struct icon_qrView : View {
     
     @State var isQrButton: Bool = false
-
+    
     
     func isQrButtonIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -197,27 +197,27 @@ struct icon_qrView : View {
     }
     var body: some View{
         VStack {
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                self.isQrButtonIn()
-                            }, label: {
-                                Image("icon_qr")
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .shadow(radius: 5)
-                                    .frame(width: 70, height: 70, alignment: Alignment.top)
-                            })
-                            .background(Color.blue)
-                            .cornerRadius(38.5)
-                            .padding(.trailing, 7)
-                            .padding(.top, 1)
-                            .padding(.bottom, 2)
-                            .shadow(color: Color.black.opacity(0.3),
-                                    radius: 3,
-                                    x: 3,
-                                    y: 3)
-                        }
+            HStack {
+                Spacer()
+                Button(action: {
+                    self.isQrButtonIn()
+                }, label: {
+                    Image("icon_qr")
+                        .resizable()
+                        .clipShape(Circle())
+                        .shadow(radius: 5)
+                        .frame(width: 70, height: 70, alignment: Alignment.top)
+                })
+                .background(Color.blue)
+                .cornerRadius(38.5)
+                .padding(.trailing, 7)
+                .padding(.top, 1)
+                .padding(.bottom, 2)
+                .shadow(color: Color.black.opacity(0.3),
+                        radius: 3,
+                        x: 3,
+                        y: 3)
+            }
             
         }
         NavigationLink(destination: PaymentBusinessesQRView(), isActive:self.$isQrButton){
@@ -304,8 +304,35 @@ struct lista: View{
     @State var products : [ListadoProductos] = []
     var loginController = LoginController()
     @State var jsonLogin : ObjectLogin?
+    @State var isPayment: Bool = false
+    @State var isRechage: Bool = false
+    @State var isTransferece: Bool = false
+    @State var isWithdrawal: Bool = false
     
-
+    func isPaymentIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isPayment = true
+        }
+    }
+    
+    func isRechargeIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isRechage = true
+        }
+    }
+    
+    func isTransfereceIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isTransferece = true
+        }
+    }
+    
+    func isWithdrawalIn(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.isWithdrawal = true
+        }
+    }
+    
     var body: some View{
         ZStack{
             
@@ -315,14 +342,94 @@ struct lista: View{
             }else{
                 
                 List(products){product in
+                    
                     Button(action: {
                         let alert = ShowAlert()
-                        alert.showAlert(title: "", message: "En proceso")
+                        
+                        DispatchQueue.main.async {
+                            
+                            // create an actionSheet
+                            let actionSheetController: UIAlertController = UIAlertController(title: NSLocalizedString("title_operations", comment: "") + " " + product.nombreProducto, message: nil, preferredStyle: .alert)
+                            
+                            if(product.isUsePrepaidCard != "true" ){
+                                // create an action
+                                let firstAction: UIAlertAction = UIAlertAction(title: NSLocalizedString("Recharge", comment: ""), style: .default) { action -> Void in
+                                    self.isRechargeIn()
+                                }
+                                
+                                let secondAction: UIAlertAction = UIAlertAction(title: NSLocalizedString("Withdrawal", comment: ""), style: .default) { action -> Void in
+                                    self.isWithdrawalIn()
+                                }
+                                
+                                let thirdAction: UIAlertAction = UIAlertAction(title: NSLocalizedString("Transference", comment: ""), style: .default) { action -> Void in
+                                    self.isTransfereceIn()
+                                }
+                                
+                                let fourthAction: UIAlertAction = UIAlertAction(title: NSLocalizedString("PaymentBusinessesQR", comment: ""), style: .default) { action -> Void in
+                                    self.isPaymentIn()
+                                }
+                                
+                            
+                                let cancelAction: UIAlertAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { action -> Void in }
+                                
+                                // add actions
+                                actionSheetController.addAction(firstAction)
+                                actionSheetController.addAction(secondAction)
+                                actionSheetController.addAction(thirdAction)
+                                actionSheetController.addAction(fourthAction)
+
+                                actionSheetController.addAction(cancelAction)
+                                
+                                
+                                UIApplication.shared.windows.first?.rootViewController?.present(actionSheetController, animated: true) {
+                                    print("option menu presented")
+                                }
+                                
+                            }else{
+                                
+                                /*let firstAction: UIAlertAction = UIAlertAction(title: "En proceso", style: .default) { action -> Void in
+                                 self.isWithdrawalIn()
+                                 print("First Action pressed")
+                                 }
+                                 let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+                                 
+                                 actionSheetController.addAction(firstAction)
+                                 actionSheetController.addAction(cancelAction)*/
+                                alert.showAlert(title: "", message: "En proceso")
+                            }
+                            
+                            // present an actionSheet...
+                            // present(actionSheetController, animated: true, completion: nil)   // doesn't work for iPad
+                            
+                            //actionSheetController.popoverPresentationController?.sourceView = "yourSourceViewName" // works for both iPhone & iPad
+                            
+                            
+                            
+                        }
+                        
+                        
+                        
                     }) {
                         rowView(user: product)
                     }
                 }
-
+                NavigationLink(destination: PaymentBusinessesQRView(), isActive:self.$isPayment){
+                    EmptyView()
+                }
+        
+                
+                NavigationLink(destination: RechargeView(), isActive:self.$isRechage){
+                    EmptyView()
+                }
+                
+                NavigationLink(destination: TransferenceView(), isActive:self.$isTransferece){
+                    EmptyView()
+                }
+   
+                
+                NavigationLink(destination: WithdrawalView(), isActive:self.$isWithdrawal){
+                    EmptyView()
+                }
                 
             }
         }
@@ -333,7 +440,7 @@ struct lista: View{
     }
     
     func getProduct()  {
-     let util = Utils()
+        let util = Utils()
         self.products = util.getProductSession()
     }
     
@@ -344,7 +451,7 @@ struct lista: View{
             objetResponse = try JSONDecoder().decode(ObjectLogin.self, from: str.data(using: .utf8)!)
             print("OBJETO DECODE")
             print(objetResponse)
-
+            
             self.jsonLogin = objetResponse
             self.products = objetResponse.envelope.body.aplicacionMovilResponse._return.datosRespuesta.respuestaListadoProductos!
         } catch  {
@@ -357,7 +464,7 @@ struct rowView : View{
     var user : ListadoProductos
     var imageURL:UIImageView!
     let util = Utils()
-
+    
     var body: some View {
         HStack{
             VStack(alignment: .leading){
@@ -375,14 +482,14 @@ struct rowView : View{
                         Text(user.nombreProducto).foregroundColor(Color.gray)
                         
                         if (user.nombreProducto == "Tarjeta Prepagada" || user.nombreProducto == "Prepaid Card") {
-                       
+                            
                             Text(util.getCuenta(cuenta: Constant.defaults.value(forKey: "numberCard") as! String)).foregroundColor(Color.gray).font(.caption)
                         }else{
-                      
-
+                            
+                            
                             Text(util.getCuenta(cuenta: Constant.defaults.value(forKey: "numeroCuenta") as! String)).foregroundColor(Color.gray).font(.caption)
                         }
-                     
+                        
                         
                     })
                     
@@ -391,26 +498,26 @@ struct rowView : View{
                         if (user.nombreProducto == "Tarjeta Prepagada" || user.nombreProducto == "Prepaid Card") {
                             Spacer()
                             Spacer()
-
+                            
                         }else{
                             Text(user.simbolo + " " + user.saldoActual).foregroundColor(Color.gray)
                             Text("Alodiga").foregroundColor(Color.gray).font(.caption)
                         }
                     })
                 }
-            
-            }
-           
                 
-          
+            }
+            
+            
+            
         }.frame(width: UIScreen.main.bounds.size.width - 40, height: 70).background(Color.white).cornerRadius(10)
         
     }
-
-   /* func getCuenta(cuenta : String) -> String {
+    
+    /* func getCuenta(cuenta : String) -> String {
      
-        return cuenta.prefix(4) + "*********" + String(cuenta.dropFirst(cuenta.count - 4))
-    }*/
+     return cuenta.prefix(4) + "*********" + String(cuenta.dropFirst(cuenta.count - 4))
+     }*/
     
     func getImage(){
         let url = NSURL(string:"http://cdn.businessoffashion.com/site/uploads/2014/09/Karl-Lagerfeld-Self-Portrait-Courtesy.jpg")
@@ -425,12 +532,12 @@ struct rowView : View{
 struct ShowMainView: View {
     @Binding var showMenu: Bool
     var json : ObjectLogin? = nil
-
+    
     var body: some View {
         VStack{
             mainHead().padding(.top, 5)
         }
-   }
+    }
 }
 
 
