@@ -45,7 +45,7 @@ public class QrController{
     func savePaymentShop(datos : AL_SavePaymentShop ,completion: @escaping (_ res:ObjectProcessQR?, String?) -> Void){
         
         let client_AC = AlodigaClient()
-        
+       
         client_AC.opSavePaymentShop(savePaymentShop: datos) {(data,error) in
             
             if error != nil {
@@ -56,7 +56,7 @@ public class QrController{
             
             do{
                 var objetResponse: ObjectProcessQR
-                var objetResponseError: ObjectErrorQr
+                var objetResponseError: ObjectQrSaveError
 
                 let datastring = NSString(data: data!, encoding:String.Encoding.utf8.rawValue)! as String
                 //print("datastring " + datastring)
@@ -72,7 +72,7 @@ public class QrController{
                     util.updateProducts(listProduct: objetResponse.envelope.body.cambiar._return.products)
                     completion(objetResponse, nil)
                 }else{
-                    objetResponseError = try JSONDecoder().decode(ObjectErrorQr.self, from: jsonStr.data(using: .utf8)!)
+                    objetResponseError = try JSONDecoder().decode(ObjectQrSaveError.self, from: jsonStr.data(using: .utf8)!)
                     completion(nil, objetResponseError.envelope.body.cambiar._return.codigoRespuesta)
                 }
                 

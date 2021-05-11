@@ -65,7 +65,7 @@ struct OperationsKeyViewAccessQR: View {
                         .opacity(0.3)
                         .padding(.top,16)
                     VStack(alignment: .leading) {
-                        TextLabelTransference()
+                        TextLabelPayment()
                     }.padding(.leading,20)
                     .padding(.trailing,20)
                     
