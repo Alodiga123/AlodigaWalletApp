@@ -127,7 +127,7 @@ struct RecoverPasswordViewAccess: View {
                             EmptyView()
                         }
                         //TODO: actualmente se solapan los navigationView. Acomodarlo
-                        NavigationLink(destination: MainViewLogged()) {
+                        NavigationLink(destination: LoginView()) {
                             CancelRecorButtonContent()
                         }
                     }.background(Color.cardButtonViewGray)
