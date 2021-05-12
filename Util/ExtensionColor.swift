@@ -33,6 +33,9 @@ extension Color {
   static let greenMenu = Color("greenMenu")
 
   static let colorMain = Color("colorMain")
+    
+    static let product = Color("product")
+    static let fondo = Color("fondo")
 
     
 

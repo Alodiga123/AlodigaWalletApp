@@ -23,12 +23,12 @@ struct MainViewLogged: View {
                     .disabled(self.showMenu ? true : false)
                     
                     lista( jsonLogin: json).frame(width: geometry.size.width, height: geometry.size.height/2.4).offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                        .disabled(self.showMenu ? true : false).padding(.top,10).background(Color.colorMain)
+                        .disabled(self.showMenu ? true : false).padding(.top,10).background(Color.fondo)
                     
                     icon_qrView().frame(width: geometry.size.width, height: geometry.size.height/9.5).offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
                     
-                }.background(Color.cardButtonViewGray)
+                }.background(Color.fondo)
                 if self.showMenu {
                     MenuView()
                         .frame(width: geometry.size.width/2)
@@ -63,7 +63,7 @@ struct MainViewLogged: View {
                 }
             ).navigationBarBackButtonHidden(true)
             .navigationViewStyle(StackNavigationViewStyle())
-        }.background(Color.cardButtonViewGray)
+        }.background(Color.fondo)
     }
 }
 
@@ -510,7 +510,7 @@ struct rowView : View{
             
             
             
-        }.frame(width: UIScreen.main.bounds.size.width - 40, height: 70).background(Color.white).cornerRadius(10)
+        }.frame(width: UIScreen.main.bounds.size.width - 40, height: 70).background(Color.product).cornerRadius(10)
         
     }
     
