@@ -129,7 +129,11 @@ struct OperationsKeyViewAccessQR: View {
                                 
                                 if errorkey != nil {
                                     let alert = ShowAlert()
-                                    alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: errorkey!))
+                                    fail = true
+                                    count_aux = count_aux - 1
+                                    count = count + 1
+                                    Constant.defaults.setValue(count, forKey: "countKeyQr")
+                                    //alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: errorkey!))
                                     print(errorkey!)
                                 }
                             }

@@ -479,15 +479,15 @@ struct rowView : View{
                 HStack{
                     Spacer().overlay(VStack(alignment: .leading){
                         
-                        Text(user.nombreProducto).foregroundColor(Color.gray)
+                        Text(user.nombreProducto).foregroundColor(Color.gray).font(.footnote).bold()
                         
                         if (user.nombreProducto == "Tarjeta Prepagada" || user.nombreProducto == "Prepaid Card") {
                             
-                            Text(util.getCuenta(cuenta: Constant.defaults.value(forKey: "numberCard") as! String)).foregroundColor(Color.gray).font(.caption)
+                            Text(util.getCuenta(cuenta: Constant.defaults.value(forKey: "numberCard") as! String)).foregroundColor(Color.gray).font(.footnote)
                         }else{
                             
                             
-                            Text(util.getCuenta(cuenta: Constant.defaults.value(forKey: "numeroCuenta") as! String)).foregroundColor(Color.gray).font(.caption)
+                            Text(util.getCuenta(cuenta: Constant.defaults.value(forKey: "numeroCuenta") as! String)).foregroundColor(Color.gray).font(.footnote)
                         }
                         
                         
@@ -500,8 +500,8 @@ struct rowView : View{
                             Spacer()
                             
                         }else{
-                            Text(user.simbolo + " " + user.saldoActual).foregroundColor(Color.gray)
-                            Text("Alodiga").foregroundColor(Color.gray).font(.caption)
+                            Text(user.simbolo + " " + user.saldoActual).foregroundColor(Color.gray).font(.footnote)
+                            Text("Alodiga").foregroundColor(Color.gray).font(.footnote)
                         }
                     })
                 }

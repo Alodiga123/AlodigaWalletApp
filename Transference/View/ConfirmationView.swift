@@ -107,40 +107,47 @@ struct ConfirmationViewAccess: View {
                                 Text("Name")
                                     .frame(width: 80, alignment: .leading)
                                     .font(.caption)
-                                
+                                Spacer()
+
                                 if (option == "0"){
                                     
-                                    TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.nombre ??  "Name"), text: self.$text)
+                                    Text((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.nombre ??  "Name"))
                                         .font(.caption)
                                 }else{
-                                    TextField((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.nombre ??  "Name"), text: self.$text)
+                                    Text((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.nombre ??  "Name"))
                                         .font(.caption)
                                 }
                             }
                             
-                            
+                            Spacer()
+
                             HStack {
                                 Text("LastName")
                                     .frame(width: 80, alignment: .leading)
                                     .font(.caption)
+                                Spacer()
+
                                 if (option == "0"){
-                                    TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.apellido ?? "LastName"), text: self.$text)
+                                    Text((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.apellido ?? "LastName"))
                                         .font(.caption)
                                 }else{
-                                    TextField((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.apellido ?? "LastName"), text: self.$text)
+                                    Text((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.apellido ?? "LastName"))
                                         .font(.caption)
                                 }
                             }
-                            
+                            Spacer()
+
                             HStack {
                                 Text("Phone")
                                     .frame(width: 80, alignment: .leading)
                                     .font(.caption)
+                                Spacer()
+
                                 if (option == "0"){
-                                    TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.movil ?? "Phone"), text: self.$text)
+                                    Text((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.movil ?? "Phone"))
                                         .font(.caption)
                                 }else{
-                                    TextField((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.movil ?? "Phone"), text: self.$text)
+                                    Text((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.movil ?? "Phone"))
                                         .font(.caption)
                                 }
                             }
@@ -150,59 +157,73 @@ struct ConfirmationViewAccess: View {
                                     Loader()
                                 }//.background(Color.white.opacity(10))
                             }*/
-                            
+                            Spacer()
+
                           
                             HStack {
                                 let util = Utils()
                                 Text("Destination")
                                     .frame(width: 80, alignment: .leading)
                                     .font(.caption)
+                                Spacer()
+
                                 if (option == "0"){
                                     
                                     if(jsonUserByEmail != nil){
-                                        TextField(util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta?.numeroCuenta)!), text: self.$text)
+                                        Text(util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta?.numeroCuenta)!))
                                             .font(.caption)
                                     }else{
-                                        TextField("Destination", text: self.$text)
+                                        Text("Destination")
                                             .font(.caption)
                                     }
                                     
                                     
                                 }else{
                                     if(jsonUserByMovil != nil){
-                                        TextField(util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta?.numeroCuenta)!), text: self.$text)
+                                        Text(util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta?.numeroCuenta)!))
                                             .font(.caption)
                                     }else{
-                                        TextField("Destination", text: self.$text)
+                                        Text("Destination")
                                             .font(.caption)
                                     }
                                 }
                             }
-                            
+                            VStack{
+                                
+                                Spacer()
+
                             HStack {
                                 Text("Monto")
                                     .frame(width: 80, alignment: .leading)
                                     .font(.caption)
-                                TextField( Constant.defaults.value(forKey: "amount") as! String, text: self.$text)
+                                Spacer()
+
+                                Text( Constant.defaults.value(forKey: "amount") as! String)
                                     .font(.caption)
                             }
-                            
+                                Spacer()
+
                             HStack {
                                 Text("Concepto")
                                     .frame(width: 80, alignment: .leading)
                                     .font(.caption)
-                                TextField(Constant.defaults.value(forKey: "concept") as! String, text: self.$text)
+                                Spacer()
+
+                                Text(Constant.defaults.value(forKey: "concept") as! String)
                                     .font(.caption)
                             }
-                            
+                                Spacer()
+
                        
                             HStack {
                                 Text("Origin")
                                     .frame(width: 80, alignment: .leading)
                                     .font(.caption)
-                                TextField(currencySelect["nombreProducto"]!, text: self.$text)
+                                Spacer()
+
+                                Text(currencySelect["nombreProducto"]!)
                                     .font(.caption)
-                            }
+                            }}
                         }.onAppear(
                             perform: getJSONUser
                         )

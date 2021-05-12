@@ -85,14 +85,14 @@ struct OperationsKeyViewAccess: View {
                             
                         }else{
                             let util = Utils()
-                            //loading.loadindView()
+                            loading.loadindView()
                             util.getKeyEncript(key: key.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (reskey, errorkey) in
                                
                                 if(reskey != nil){
                                     var claveencip = reskey! as String
                                     util.getCodeOperation(data: claveencip.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (res, error) in
                                         if(res != nil){
-                                           // loading.loadingDismiss()
+                                            loading.loadingDismiss()
                                             let clave : String
                                             clave = res! as String
                                             
@@ -107,9 +107,13 @@ struct OperationsKeyViewAccess: View {
                                             
                                         }
                                         if error != nil {
-                                           // loading.loadingDismiss()
+                                            loading.loadingDismiss()
                                             let alert = ShowAlert()
-                                            alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
+                                            fail = true
+                                            count_aux = count_aux - 1
+                                            count = count + 1
+                                            Constant.defaults.setValue(count, forKey: "countKey")
+                                            //alert.showPaymentModeActionSheet(title: "error", message: util.getMessageErrorCodeOperation(code: error!))
                                             print(error!)
                                         }
                                         
@@ -128,7 +132,7 @@ struct OperationsKeyViewAccess: View {
                             }
                         }
                         
-                        self.isSuccesKeyIn()
+                        //self.isSuccesKeyIn()
                         
                     }) {
                         

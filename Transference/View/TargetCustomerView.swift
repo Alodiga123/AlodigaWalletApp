@@ -84,7 +84,7 @@ struct TargetCustomerViewAccess: View {
                     VStack (alignment: .center, spacing: 5) {
                     
                         Rectangle()
-                            .frame(width:50, height: 6)
+                            .frame(width:70, height: 6)
                             .cornerRadius(3.0)
                             .opacity(0.3)
                             .padding(.top,30)
@@ -97,85 +97,97 @@ struct TargetCustomerViewAccess: View {
                         VStack{
                             HStack {
                                 Text("Name")
-                                    .frame(width: 50, alignment: .leading)
+                                    .frame(width: 70, alignment: .leading)
                                     .font(.caption)
-                                
+                                Spacer()
                                 if (option == "0"){
                                     
-                                    TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.nombre ??  "Name"), text: self.$text)
+                                    Text((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.nombre ??  "Name"))
                                         .font(.caption)
                                 }else{
-                                    TextField((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.nombre ??  "Name"), text: self.$text)
+                                    Text((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.nombre ??  "Name"))
                                         .font(.caption)
                                 }
                             }
                             
-                            
+                            Spacer()
+
                         HStack {
                             Text("LastName")
-                                .frame(width: 50, alignment: .leading)
+                                .frame(width: 70, alignment: .leading)
                                 .font(.caption)
+                            Spacer()
+
                             if (option == "0"){
-                                TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.apellido ?? "LastName"), text: self.$text)
+                                Text((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.apellido ?? "LastName"))
                                     .font(.caption)
                             }else{
-                                TextField((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.apellido ?? "LastName"), text: self.$text)
+                                Text((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.apellido ?? "LastName"))
                                     .font(.caption)
                             }
                         }
-                        
+                            Spacer()
+
                         HStack {
                             Text("Phone")
-                                .frame(width: 50, alignment: .leading)
+                                .frame(width: 70, alignment: .leading)
                                 .font(.caption)
+                            Spacer()
+
                             if (option == "0"){
-                                TextField((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.movil ?? "Phone"), text: self.$text)
+                                Text((jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.movil ?? "Phone"))
                                     .font(.caption)
                             }else{
-                                TextField((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.movil ?? "Phone"), text: self.$text)
+                                Text((jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.movil ?? "Phone"))
                                     .font(.caption)
                             }
                         }
-                        
+                            Spacer()
+
                         HStack {
                             let util = Utils()
                             Text("Destination")
-                                .frame(width: 50, alignment: .leading)
+                                .frame(width: 70, alignment: .leading)
                                 .font(.caption)
+                            Spacer()
+
                             if (option == "0"){
                                 
                                 if(jsonUserByEmail != nil){
-                                    TextField(util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta?.numeroCuenta)!), text: self.$text)
+                                    Text(util.getCuenta(cuenta: (jsonUserByEmail?.envelope.body.getUsuarioByEmailResponse._return.datosRespuesta.cuenta?.numeroCuenta)!))
                                         .font(.caption)
                                 }else{
-                                    TextField("Destination", text: self.$text)
+                                    Text("Destination")
                                         .font(.caption)
                                 }
                                 
                               
                             }else{
                                 if(jsonUserByMovil != nil){
-                                    TextField(util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta?.numeroCuenta)!), text: self.$text)
+                                    Text(util.getCuenta(cuenta: (jsonUserByMovil?.envelope.body.getUsuarioByMovilResponse._return.datosRespuesta.cuenta?.numeroCuenta)!))
                                         .font(.caption)
                                 }else{
-                                    TextField("Destination", text: self.$text)
+                                    Text("Destination")
                                         .font(.caption)
                                 }
                             }
                         }
-                        
+                            Spacer()
+
                         HStack {
                             Text("Origin")
-                                .frame(width: 50, alignment: .leading)
+                                .frame(width: 70, alignment: .leading)
                                 .font(.caption)
-                            TextField(currencySelect["nombreProducto"] ?? "", text: self.$text)
+                            Spacer()
+
+                            Text(currencySelect["nombreProducto"] ?? "")
                                 .font(.caption)
                         }
                         }.onAppear(
                             perform: getJSONUser
-                        )
-                        .padding(.horizontal)
+                        ).padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
+                     
                         TextLabelInfomationPaymen()
                         TransferenceAmountTextField(amount: self.$amount)
                         TransferenceConceptTextField(concept: self.$concept)
