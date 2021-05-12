@@ -18,15 +18,15 @@ struct RechargeView: View {
                 VStack() {
                     RechargeViewAccess()
                 }
-            }.navigationBarTitle("Recharge", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }
 
 struct RechargeViewAccess: View {
-    @State var conceptRecharge: String = "prueba"
-    @State var transferNumber: String = "123456"
-    @State var amountRecharge: String = "1"
+    @State var conceptRecharge: String = ""
+    @State var transferNumber: String = ""
+    @State var amountRecharge: String = ""
     @State var steptwo: Bool = false
     var loading = Loading()
 

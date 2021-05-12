@@ -18,7 +18,7 @@ struct RechargeConfirmationView: View {
                 VStack() {
                     RechargeConfirmationViewAccess()
                 }
-            }.navigationBarTitle("Confirmation", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

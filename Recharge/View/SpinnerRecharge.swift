@@ -49,7 +49,9 @@ struct FirstViewCountryRecharge: View {
 
     @State var selectText : String =  NSLocalizedString("selectoption", comment: "")
 
-
+    var line: some View {
+        VStack { Divider().background(Color.fontBlackColor).border(Color.black, width: 5) }.padding(.bottom,5).frame(width: UIScreen.main.bounds.size.width - 50, alignment: .center)
+    }
     let loading = Loading()
     var body: some View {
 
@@ -68,11 +70,11 @@ struct FirstViewCountryRecharge: View {
                 if(selectedCountry.name.isEmpty){
                     Text("\(selectText)").fontWeight(.bold)
                             .foregroundColor(.gray).font(.callout)
-                        .frame(width: 340, alignment: .leading)
+                        .frame(width: 290, alignment: .leading)
                 }else{
                     Text("\(selectedCountry.alternativeName3)").fontWeight(.bold)
                             .foregroundColor(.gray).font(.callout)
-                        .frame(width: 340, alignment: .leading)
+                        .frame(width: 290, alignment: .leading)
                 }
                 
               
@@ -95,7 +97,7 @@ struct FirstViewCountryRecharge: View {
                 SheetCountryRecharge(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountries: self.$selectedCountry)
             }
             
-            
+            line
             
             BankRechargeTextField()
 
@@ -108,11 +110,11 @@ struct FirstViewCountryRecharge: View {
                 if(selectedBank.name.isEmpty){
                     Text("\(selectText)").fontWeight(.bold)
                             .foregroundColor(.gray).font(.callout)
-                        .frame(width: 340, alignment: .leading)
+                        .frame(width: 290, alignment: .leading)
                 }else{
                     Text("\(selectedBank.name)").fontWeight(.bold)
                     .foregroundColor(.gray).font(.callout)
-                .frame(width: 340, alignment: .leading)
+                .frame(width: 290, alignment: .leading)
                     
                 }
               
@@ -135,6 +137,7 @@ struct FirstViewCountryRecharge: View {
                 SheetbankRechargeCountry(banks: self.banks, isSheetOpened: self.isSheetOpened, selectedbank: self.$selectedBank)
             }
             
+            line
             
             ProductRechargeTextField()
 
@@ -147,11 +150,11 @@ struct FirstViewCountryRecharge: View {
                 if(selectedProducts.name.isEmpty){
                     Text("\(selectText)").fontWeight(.bold)
                             .foregroundColor(.gray).font(.callout)
-                        .frame(width: 340, alignment: .leading)
+                        .frame(width: 290, alignment: .leading)
                 }else{
                     Text("\(selectedProducts.name + " " + selectedProducts.symbol + "  " + selectedProducts.currentBalance)").fontWeight(.bold)
                             .foregroundColor(.gray).font(.callout)
-                        .frame(width: 340, alignment: .leading)
+                        .frame(width: 290, alignment: .leading)
                     
                 }
                 
@@ -174,7 +177,7 @@ struct FirstViewCountryRecharge: View {
                 
                 SheetproductsRecharge(products: self.products, isSheetOpened: self.isSheetOpened, selectedproduct:  self.$selectedProducts)
             }
-            
+            line
  
         }.onAppear(
             perform: getJSONCountry)
