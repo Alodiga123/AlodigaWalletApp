@@ -12,7 +12,7 @@ struct MenuView: View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading){
                 HStack {
-                    Image(systemName: "arrowtriangle.right.square.fill")
+                    Image(systemName: "cart.badge.plus")
                         .foregroundColor(.gray)
                         .imageScale(.large)
                     NavigationLink(destination: RechargeView()) {
@@ -24,7 +24,7 @@ struct MenuView: View {
                 }
                 .padding(.top, 100)
                 HStack {
-                    Image(systemName: "gear")
+                    Image(systemName: "wallet.pass")
                         .foregroundColor(.gray)
                         .imageScale(.large)
                     NavigationLink(destination: WithdrawalView()) {
@@ -48,7 +48,7 @@ struct MenuView: View {
 //                }
 //                .padding(.top, 10)
                 HStack {
-                    Image(systemName: "person")
+                    Image(systemName: "gear")
                         .foregroundColor(.gray)
                         .imageScale(.large)
                     NavigationLink(destination: TransferenceView()) {
@@ -87,7 +87,7 @@ struct MenuView: View {
             }
             
             HStack {
-                Image(systemName: "person")
+                Image(systemName: "qrcode")
                     .foregroundColor(.gray)
                     .imageScale(.large)
                 NavigationLink(destination: PaymentBusinessesQRView()) {
@@ -136,7 +136,7 @@ struct MenuView: View {
             
             VStack(alignment: .leading){
                 HStack {
-                    Image(systemName: "faceid")
+                    Image(systemName: "lock")
                         .foregroundColor(.gray)
                         .imageScale(.large)
                     NavigationLink(destination: ChangePasswordView()) {
@@ -148,7 +148,7 @@ struct MenuView: View {
                 .padding(.top, 10)
                 
                 HStack {
-                    Image(systemName: "faceid")
+                    Image(systemName: "person.crop.circle.badge.checkmark")
                         .foregroundColor(.gray)
                         .imageScale(.large)
                     NavigationLink(destination: ValidateAccountFirstView()) {
@@ -160,7 +160,7 @@ struct MenuView: View {
                 .padding(.top, 10)
                 
                 HStack {
-                    Image(systemName: "faceid")
+                    Image(systemName: "pip.remove")
                         .foregroundColor(.gray)
                         .imageScale(.large)
                     cerrarSesión()
@@ -189,8 +189,6 @@ struct cerrarSesión: View {
         }
     }
     
-   
-    
     var alert: Alert {
         Alert(
             title: Text("Cerrar Sesión"),
@@ -204,9 +202,6 @@ struct cerrarSesión: View {
             secondaryButton: .cancel()
             
         )
-        
-     
-      
     }
     
     var body: some View {
