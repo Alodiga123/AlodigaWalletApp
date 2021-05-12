@@ -877,6 +877,38 @@
             endingLineNumber = "188"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0437F27F-1A19-486F-B934-E5ED3FFB66F0 - b4522d30ac0ac3b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, AlodigaWalletApp.TextLabelInformation, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.fixedSize(horizontal: Swift.Bool, vertical: Swift.Bool) -&gt; some&gt;&gt;.0, AlodigaWalletApp.TextLabelInfomationPaymen, AlodigaWalletApp.TransferenceAmountTextField, AlodigaWalletApp.TransferenceConceptTextField, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.OperationsKeyView&gt;, SwiftUI.NavigationLink&lt;AlodigaWalletApp.TransferenceBackButtonContent, AlodigaWalletApp.TransferenceView&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in AlodigaWalletApp.TargetCustomerViewAccess.body.getter : some"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Transference/View/TargetCustomerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "9644">
+               </Location>
+               <Location
+                  uuid = "0437F27F-1A19-486F-B934-E5ED3FFB66F0 - 8c4d6a74d836248f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, AlodigaWalletApp.TextLabelInformation, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.fixedSize(horizontal: Swift.Bool, vertical: Swift.Bool) -&gt; some&gt;&gt;.0, AlodigaWalletApp.TextLabelInfomationPaymen, AlodigaWalletApp.TransferenceAmountTextField, AlodigaWalletApp.TransferenceConceptTextField, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.OperationsKeyView&gt;, SwiftUI.NavigationLink&lt;AlodigaWalletApp.TransferenceBackButtonContent, AlodigaWalletApp.TransferenceView&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in AlodigaWalletApp.TargetCustomerViewAccess.body.getter : some"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Transference/View/TargetCustomerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -989,6 +1021,38 @@
             endingLineNumber = "268"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "84B9DF21-AA05-47BB-B2BC-971E04A08626 - 32deca1c05381d57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlodigaWalletApp.TransferenceAmountTextField.body.getter : some"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Transference/View/TargetCustomerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "867">
+               </Location>
+               <Location
+                  uuid = "84B9DF21-AA05-47BB-B2BC-971E04A08626 - 749c257c5787802"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; SwiftUI.Image in AlodigaWalletApp.TransferenceAmountTextField.body.getter : some"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Transference/View/TargetCustomerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1023,11 +1087,11 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "CAEF3F07-C0E4-4D0F-8735-15850572B4B5 - b3b1b55113789378"
+                  uuid = "CAEF3F07-C0E4-4D0F-8735-15850572B4B5 - dd809aadcc21532e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, AlodigaWalletApp.TextLabelRecover, AlodigaWalletApp.EmailRecorTextField, SwiftUI.Button&lt;AlodigaWalletApp.ContinueRecoButtonContent&gt;, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.RecoverPasswordByTokenView&gt;, SwiftUI.NavigationLink&lt;AlodigaWalletApp.CancelRecorButtonContent, AlodigaWalletApp.MainViewLogged&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in AlodigaWalletApp.RecoverPasswordViewAccess.body.getter : some"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, AlodigaWalletApp.TextLabelRecover, AlodigaWalletApp.EmailRecorTextField, SwiftUI.Button&lt;AlodigaWalletApp.ContinueRecoButtonContent&gt;, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.RecoverPasswordByTokenView&gt;, SwiftUI.NavigationLink&lt;AlodigaWalletApp.CancelRecorButtonContent, AlodigaWalletApp.LoginView&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in AlodigaWalletApp.RecoverPasswordViewAccess.body.getter : some"
                   moduleName = "AlodigaWalletApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/RecoverPassword/View/RecoverPasswordView.swift"
@@ -1038,11 +1102,11 @@
                   offsetFromSymbolStart = "3945">
                </Location>
                <Location
-                  uuid = "CAEF3F07-C0E4-4D0F-8735-15850572B4B5 - f947f46fff4c8576"
+                  uuid = "CAEF3F07-C0E4-4D0F-8735-15850572B4B5 - 78ebdaf2515c0500"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;AlodigaWalletApp.ObjectTokenAplication&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, AlodigaWalletApp.TextLabelRecover, AlodigaWalletApp.EmailRecorTextField, SwiftUI.Button&lt;AlodigaWalletApp.ContinueRecoButtonContent&gt;, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.RecoverPasswordByTokenView&gt;, SwiftUI.NavigationLink&lt;AlodigaWalletApp.CancelRecorButtonContent, AlodigaWalletApp.MainViewLogged&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in AlodigaWalletApp.RecoverPasswordViewAccess.body.getter : some"
+                  symbolName = "closure #1 (Swift.Optional&lt;AlodigaWalletApp.ObjectTokenAplication&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, AlodigaWalletApp.TextLabelRecover, AlodigaWalletApp.EmailRecorTextField, SwiftUI.Button&lt;AlodigaWalletApp.ContinueRecoButtonContent&gt;, SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, AlodigaWalletApp.RecoverPasswordByTokenView&gt;, SwiftUI.NavigationLink&lt;AlodigaWalletApp.CancelRecorButtonContent, AlodigaWalletApp.LoginView&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in AlodigaWalletApp.RecoverPasswordViewAccess.body.getter : some"
                   moduleName = "AlodigaWalletApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/RecoverPassword/View/RecoverPasswordView.swift"
@@ -1386,7 +1450,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "101"
                   endingLineNumber = "101"
-                  offsetFromSymbolStart = "295">
+                  offsetFromSymbolStart = "252">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1405,6 +1469,54 @@
             endingLineNumber = "103"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "095424F6-7DD7-4448-B705-E86C9F68E3EC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Login/View/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "095424F6-7DD7-4448-B705-E86C9F68E3EC - 260806ebc387de88"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlodigaWalletApp.LoginView.body.getter : some"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Login/View/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  uuid = "095424F6-7DD7-4448-B705-E86C9F68E3EC - 9de51f3c660a9296"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.navigationBarHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in AlodigaWalletApp.LoginView.body.getter : some"
+                  moduleName = "AlodigaWalletApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adiraquintero/Documents/Repo/AlodigaWalletApp/Login/View/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "549">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

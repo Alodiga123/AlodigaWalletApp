@@ -20,6 +20,7 @@ struct LoginView: View {
         .makeConnectable()
         .autoconnect()
     var body: some View {
+
         GeometryReader{ geo in
             //if (UIDevice.current.userInterfaceIdiom == .pad){
                 Color.screemWhiteColor
@@ -28,9 +29,9 @@ struct LoginView: View {
                         Color.screemWhiteColor
                         VStack {
                             VStack{
-                                    BackgroundImageAlodiga()
+                                BackgroundImageAlodiga().background(Color.white).frame(width: geo.size.width, height: geo.size.height/3).padding(.top,-80)
                                     Spacer()
-                                    CardButtonViewAccess().frame(width: geo.size.width, height: geo.size.height/2.2)}
+                                CardButtonViewAccess().frame(width: geo.size.width, height: geo.size.height/1.5)}
                                 
                             }
                         }
@@ -38,6 +39,7 @@ struct LoginView: View {
                 }.frame(alignment: .center).navigationViewStyle(StackNavigationViewStyle())
                     .padding(.leading, geo.size.width < geo.size.height ? 0.25 : 0)
                 .navigationBarHidden(true)
+                .navigationBarTitle("")
                 
             //}
             /*}else{
@@ -83,13 +85,16 @@ struct LoginView: View {
 struct BackgroundImageAlodiga: View {
     var body: some View {
         GeometryReader { geo in
+            Color.screemWhiteColor
             VStack{
-            Image("logo_alodiga").padding(.top,5).padding(.bottom,-10).frame(alignment: .trailing)
+          
+                Image("logo_alodiga-1").resizable().scaledToFit()
+                    .frame(width: 80.0,height:80).padding(.top,5).padding(.bottom,-5)
                                                                        
-            Spacer()
+            
             Image("back_login")
-                .resizable().padding(.top,20).padding(.bottom
-            ,-20).frame(alignment: .trailing)}
+                .resizable().padding(.top,-10).padding(.bottom
+                                                      ,-20).frame(alignment: .trailing)}
         }
     }
 }
