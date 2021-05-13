@@ -41,7 +41,12 @@ struct FirstViewBank: View {
                 self.banks = res!.envelope.body.AccountBankByUserResponse._return.accountBanks!
                 self.selectedBank = banks[0]
                 self.accountNumber = selectedBank.accountNumber!
+                self.accountType = selectedBank.accountTypeBankId.description
                 Constant.defaults.set(banks[0].id, forKey: "BankIDW")
+                
+                print("Num Cuenta: " + accountNumber)
+                print("Tipo Cuenta: " + accountType)
+
             }
             
             if error != nil {
@@ -62,7 +67,7 @@ struct FirstViewBank: View {
         let withdrawalControler = WithdrawalControler()
         let productsByBank = AL_GetProductsByBankId()
         
-        productsByBank.cpBankId = Constant.defaults.value(forKey: "BankIDW") as? String ?? ""
+        productsByBank.cpBankId = self.selectedBank.bankId.id //Constant.defaults.value(forKey: "BankIDW") as? String ?? ""
         productsByBank.cpUserId = Constant.defaults.value(forKey: "usuarioID") as! String
             
         if(productsByBank.cpBankId != nil){
@@ -127,6 +132,7 @@ struct FirstViewBank: View {
             AccountTypeText (accountType: self.$accountType)
             
             ProductWTextField()
+            
             Button(action: {
                 getJSONProducts()
                 self.isSheetOpened.toggle()
