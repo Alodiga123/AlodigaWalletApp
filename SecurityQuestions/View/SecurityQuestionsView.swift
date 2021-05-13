@@ -72,7 +72,7 @@ struct SecurityQuestionsViewAccess: View {
                         }else{
                             preguntaSeguridad.cpUsuarioApi = Constant.WEB_SERVICES_USUARIOWS
                             preguntaSeguridad.cpPasswordApi = Constant.WEB_SERVICES_PASSWORDWS
-                            preguntaSeguridad.cpUsuarioId = "379"//Int(Constant.defaults.value(forKey: "usuarioID") as! String)
+                            preguntaSeguridad.cpUsuarioId = Constant.defaults.value(forKey: "usuarioID") as! String
                             preguntaSeguridad.cpPreguntaId1 = Constant.defaults.value(forKey: "question1ID") as? String
                             preguntaSeguridad.cpRepuestaId1 = question1
                             preguntaSeguridad.cpPreguntaId2 = Constant.defaults.value(forKey: "question2ID") as? String
