@@ -45,7 +45,7 @@ struct MainViewLogged: View {
                             }
                         }
                 )
-            .navigationBarTitle(NSLocalizedString("Menu_Principal", comment: ""))
+            .navigationBarTitle(Text(NSLocalizedString("Menu_Principal", comment: "")), displayMode: .inline)
             .navigationBarItems(leading:
                 HStack {
                     Text("")

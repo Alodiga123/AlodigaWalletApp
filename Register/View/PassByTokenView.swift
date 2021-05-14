@@ -24,7 +24,7 @@ struct PassByTokenView: View {
 }
 
 struct PassByTokenViewAccess: View {
-    @State var token: String = "123456"
+    @State var token: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @State var restCountIntent : Int = 3
