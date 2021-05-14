@@ -18,7 +18,7 @@ struct OperationKeyTopUpView: View {
                 VStack() {
                     OperationKeyTopUpViewAccess()
                 }
-            }.navigationBarTitle("Return", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

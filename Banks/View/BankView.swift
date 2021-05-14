@@ -18,7 +18,7 @@ struct BankView: View {
                 VStack() {
                     BankViewAccess()
                 }
-            }.navigationBarTitle("Bank", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }
@@ -70,6 +70,7 @@ struct BankViewAccess: View {
                             guardarBanco.cpAccountNumber = accountNumber
                             guardarBanco.cpAccountTypeBankId = Constant.defaults.value(forKey: "accountTypeId") as! String
                             
+                           
                             bankController.getGuardarBanco(guardarBancoUsuario: guardarBanco) { (res, error) in
                                 //loading.loadingDismiss()
                                 print("GUARDANDO BANCO!!!!")

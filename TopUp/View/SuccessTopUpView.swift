@@ -18,7 +18,7 @@ struct SuccessTopUpView: View {
                 VStack() {
                     SuccessTopUpViewAccess()
                 }
-            }.navigationBarTitle("Success", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

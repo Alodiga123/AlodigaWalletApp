@@ -18,7 +18,7 @@ struct CommissionView: View {
                 VStack() {
                     CommissionViewAccess()
                 }
-            }.navigationBarTitle("Commission", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

@@ -18,7 +18,7 @@ struct SuccesfulPaymentQRView: View {
                 VStack() {
                     SuccesfulPaymentQRViewAccess()
                 }
-            }.navigationBarTitle("SuccessfulPayment", displayMode: .inline).navigationBarBackButtonHidden(true)
+            }.navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden(true)
         }
     }
 }

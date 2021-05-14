@@ -19,7 +19,7 @@ struct SecurityQuestionsView: View {
                 VStack() {
                     SecurityQuestionsViewAccess()
                 }
-            }.navigationBarTitle("SecurityQuestions", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }
@@ -106,7 +106,7 @@ struct SecurityQuestionsViewAccess: View {
                     }
                     
                     
-                    NavigationLink(destination: MainViewLogged()) {
+                    NavigationLink(destination: LoginView()) {
                         QuestionsBackButtonContent()
                     }
                     

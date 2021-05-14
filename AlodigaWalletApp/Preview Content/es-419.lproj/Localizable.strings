@@ -254,4 +254,6 @@
 "selectproduct" = "Seleccione un producto";
 "selectcountry" = "Seleccione un pais";
 "title_operations" = "Operaciones";
+"not_associated_products" = "Here are not associated products";
+"Menu_Principal" = "Menu Principal";
 

@@ -18,7 +18,7 @@ struct ConfirmationQRView: View {
                 VStack() {
                     ConfirmationQRViewAccess()
                 }
-            }.navigationBarTitle("Confirmation", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

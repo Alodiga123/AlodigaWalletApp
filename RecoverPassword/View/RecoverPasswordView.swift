@@ -20,7 +20,7 @@ struct RecoverPasswordView: View {
                 VStack() {
                     RecoverPasswordViewAccess()
                 }
-            }.navigationBarTitle("RecoverPassword", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

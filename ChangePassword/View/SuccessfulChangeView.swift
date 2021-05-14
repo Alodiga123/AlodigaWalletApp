@@ -18,7 +18,7 @@ struct SuccessfulChangeView: View {
                 VStack() {
                     SuccessfulChangeViewAccess()
                 }
-            }.navigationBarTitle("ChangePass", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

@@ -18,7 +18,7 @@ struct SuccesfullValidateView: View {
                 VStack() {
                     SuccesfullValidateViewAccess()
                 }
-            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

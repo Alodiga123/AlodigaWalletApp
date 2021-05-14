@@ -175,14 +175,14 @@ public class RegisterController{
         let client_RU = RegistroUnificadoClient()    
         let util = Utils()
         
-        util.getKeyEncript(key: generarRegistro.cpCredencial ?? "") { (res, error) in
+        util.getKeyEncript(key: generarRegistro.cpCredencial!.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (res, error) in
             if(res != nil){
                 var clave : String
                 clave = res! as String
                 //print(clave)
                 generarRegistro.cpCredencial = clave.trimmingCharacters(in: NSCharacterSet.whitespaces)
         
-                util.getKeyEncript(key: generarRegistro.cpPin ?? "") { (respin, errorpin) in
+                util.getKeyEncript(key: generarRegistro.cpPin!.trimmingCharacters(in: NSCharacterSet.whitespaces)) { (respin, errorpin) in
                     if(respin != nil){
                         var pin : String
                         pin = respin! as String
@@ -191,7 +191,7 @@ public class RegisterController{
                 
                         
                         //print("DATOS ------------------")
-                        //print(generarRegistro.cpPin)
+                        print(generarRegistro.cpPin)
                         
                         //print("DATOS CRECENCIAL ------------------")
                         //print(generarRegistro.cpCredencial)

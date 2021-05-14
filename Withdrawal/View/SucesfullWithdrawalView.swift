@@ -18,7 +18,7 @@ struct SucesfullWithdrawalView: View {
                 VStack() {
                     SucesfullWithdrawalViewAccess()
                 }
-            }.navigationBarTitle("Summary", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

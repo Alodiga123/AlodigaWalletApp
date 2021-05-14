@@ -18,7 +18,7 @@ struct PhotoViewStepTwoView: View {
                 VStack() {
                     PhotoViewStepTwoViewAccess()
                 }
-            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

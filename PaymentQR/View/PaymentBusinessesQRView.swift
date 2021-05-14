@@ -18,7 +18,7 @@ struct PaymentBusinessesQRView: View {
                 VStack() {
                     PaymentBusinessesQRViewAccess()
                 }
-            }.navigationBarTitle("PaymentBusinesses", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

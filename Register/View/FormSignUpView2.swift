@@ -119,7 +119,7 @@ struct FormSignUpViewAccess2: View {
                                     registraUsuario.cpUsuarioId = ""
                                     registraUsuario.cpNombre = Constant.defaults.value(forKey: "nameR") as! String;
                                     registraUsuario.cpApellido = Constant.defaults.value(forKey: "lastNameR") as! String;
-                                    registraUsuario.cpCredencial = password
+                                    registraUsuario.cpCredencial = password.trimmingCharacters(in: NSCharacterSet.whitespaces)
                                     registraUsuario.cpEmail = Constant.defaults.value(forKey: "emailR") as! String;
                                     registraUsuario.cpMovil = Constant.defaults.value(forKey: "Rphone") as! String //"584126157526";
                                     registraUsuario.cpFechaNacimiento = "21-03-2000";
@@ -133,7 +133,7 @@ struct FormSignUpViewAccess2: View {
                                     registraUsuario.cpNombreImagen = "AloCash App Android";
                                     registraUsuario.cpImagenBytes = "null"
                                     registraUsuario.cpLink = "AloCash App Android";
-                                    registraUsuario.cpPin = operationsKey
+                                    registraUsuario.cpPin = operationsKey.trimmingCharacters(in: NSCharacterSet.whitespaces)
                                     // TODO: valores nuevos rellenar
                                     registraUsuario.cpNumeroDocumento = Constant.defaults.value(forKey: "numberDocumentR") as! String
                                     registraUsuario.cpTipoDocumentoId = Constant.defaults.value(forKey: "idDocumentR") as! String

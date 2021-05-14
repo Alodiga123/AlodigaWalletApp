@@ -18,7 +18,7 @@ struct ConvertView: View {
                 VStack() {
                     ConvertViewAccess()
                 }
-            }.navigationBarTitle("Convert", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

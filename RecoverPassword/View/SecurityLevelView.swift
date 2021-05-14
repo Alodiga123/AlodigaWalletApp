@@ -18,7 +18,7 @@ struct SecurityLevelView: View {
                 VStack() {
                     SecurityLevelViewAccess()
                 }
-            }.navigationBarTitle("RecoverPassword", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

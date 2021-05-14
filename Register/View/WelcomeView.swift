@@ -45,7 +45,7 @@ struct WelcomeViewViewAccess: View {
                     
                     RegisterCheckImagine()
                     TextLabelStart()
-                    NavigationLink(destination: MainViewLogged()) {
+                    NavigationLink(destination: LoginView()) {
                         MainButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)
@@ -88,7 +88,7 @@ struct TextLabelStart: View {
 struct MainButtonContent: View {
     let co = Color.black.opacity(0.7)
     var body: some View {
-        Text("Enter")
+        Text("Finalize")
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 220, height: 60)

@@ -18,7 +18,7 @@ struct TargetCustomerQRView: View {
                 VStack() {
                     TargetCustomerQRViewAccess()
                 }
-            }.navigationBarTitle("PaymentDetails", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

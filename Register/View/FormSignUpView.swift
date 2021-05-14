@@ -24,10 +24,10 @@ struct FormSignUpView: View {
 }
 
 struct FormSignUpViewAccess: View {
-    @State var name: String = "prueba"
-    @State var lastName: String = "ios"
-    @State var email: String = "pruebaios1@gmail.com"
-    @State var numberDocument: String = "123456"
+    @State var name: String = ""
+    @State var lastName: String = ""
+    @State var email: String = ""
+    @State var numberDocument: String = ""
     @State var isLoggedIn: Bool = false
     @State var stepFour: Bool = false
     

@@ -12,7 +12,7 @@ struct FailCodeOperationView: View {
                 VStack() {
                     SuccesfulRecoverFailViewAccess()
                 }
-            }.navigationBarTitle("Fail_code_title", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

@@ -289,7 +289,7 @@ public class Utils{
     
     func getProductSession() -> [ListadoProductos] {
         var dictionary : [Dictionary<String, String>]
-        dictionary = Constant.defaults.value(forKey: "ListadoProductos") as! [Dictionary<String, String>]
+        dictionary = Constant.defaults.value(forKey: "ListadoProductos") as? [Dictionary<String, String>] ?? []
         var productArray : [ListadoProductos] = []
         
         for product in dictionary {

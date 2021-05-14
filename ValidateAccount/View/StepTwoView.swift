@@ -18,7 +18,7 @@ struct StepTwoView: View {
                 VStack() {
                     StepTwoViewAccess()
                 }
-            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

@@ -18,7 +18,7 @@ struct WithdrawalView: View {
                 VStack() {
                     WithdrawalViewAccess()
                 }
-            }.navigationBarTitle("Retirement", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

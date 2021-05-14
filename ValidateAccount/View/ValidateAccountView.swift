@@ -18,7 +18,7 @@ struct ValidateAccountView: View {
                 VStack() {
                     ValidateAccountViewAccess()
                 }
-            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

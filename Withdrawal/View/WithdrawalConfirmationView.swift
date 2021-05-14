@@ -18,7 +18,7 @@ struct WithdrawalConfirmationView: View {
                 VStack() {
                     WithdrawalConfirmationViewAccess()
                 }
-            }.navigationBarTitle("Confirmation", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

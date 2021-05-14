@@ -18,7 +18,7 @@ struct ProductTopUpView: View {
                 VStack() {
                     ProductTopUpViewAccess()
                 }
-            }.navigationBarTitle("Product", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

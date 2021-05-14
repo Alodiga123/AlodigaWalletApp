@@ -255,3 +255,5 @@
 "selectproduct" = "Select a product";
 "selectcountry" = "Select a country";
 "title_operations" = "Operations";
+"not_associated_products" = "No existen productos asociados";
+"Menu_Principal" = "Main Menu";

@@ -45,7 +45,7 @@ struct MainViewLogged: View {
                             }
                         }
                 )
-            .navigationBarTitle("Menu Principal", displayMode: .inline)
+            .navigationBarTitle(NSLocalizedString("Menu_Principal", comment: ""))
             .navigationBarItems(leading:
                 HStack {
                     Text("")
@@ -338,7 +338,7 @@ struct lista: View{
             
             if (products.isEmpty){
                 EmptyView()
-                Text("Esta vacia llamar al cargando")
+                Text(NSLocalizedString("not_associated_products", comment: ""))
             }else{
                 
                 List(products){product in

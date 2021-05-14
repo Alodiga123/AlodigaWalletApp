@@ -18,7 +18,7 @@ struct ConfirmationConvertView: View {
                 VStack() {
                     ConfirmationConvertAccess()
                 }
-            }.navigationBarTitle("Confirmation", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

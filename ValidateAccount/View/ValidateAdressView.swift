@@ -18,7 +18,7 @@ struct ValidateAdressView: View {
                 VStack() {
                     ValidateAdressViewAccess()
                 }
-            }.navigationBarTitle("Return", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

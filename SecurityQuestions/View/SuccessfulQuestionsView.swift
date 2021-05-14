@@ -18,7 +18,7 @@ struct SuccessfulQuestionsView: View {
                 VStack() {
                     SuccessfulQuestionsViewAccess()
                 }
-            }.navigationBarTitle("SuccessfulRecovery", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }
@@ -79,7 +79,19 @@ struct SuccessfulQuestionsViewAccess: View {
         }
     }
 }
-
+struct QuestionsBackButtonContent2: View {
+    let co = Color.black.opacity(0.1)
+    var body: some View {
+        Text("Finalize")
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(width: 220, height: 60)
+            .background(co)
+            .cornerRadius(35.0)
+            .padding(.top,5)
+            .padding(.bottom)
+    }
+}
 struct TextLabelSuccesfulQ: View {
     var body: some View {
         Text("SuccesfulQuestions")

@@ -18,7 +18,7 @@ struct AccountExpiredView: View {
                 VStack() {
                     AccountExpiredViewAccess()
                 }
-            }.navigationBarTitle("OverdueAccount", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

@@ -18,7 +18,7 @@ struct SuccesfulRecoverView: View {
                 VStack() {
                     SuccesfulRecoverViewAccess()
                 }
-            }.navigationBarTitle("SuccessfulRecovery", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

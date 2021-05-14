@@ -39,7 +39,7 @@ struct ChangePasswordView: View {
                 VStack() {
                     ChangePasswordViewAccess()
                 }
-            }.navigationBarTitle("ChangePass", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

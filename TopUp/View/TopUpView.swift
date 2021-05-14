@@ -18,7 +18,7 @@ struct TopUpView: View {
                 VStack() {
                     TopUpViewAccess()
                 }
-            }.navigationBarTitle("MobileRecharge", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

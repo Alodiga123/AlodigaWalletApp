@@ -18,7 +18,7 @@ struct PhotoView: View {
                 VStack() {
                     PhotoViewAccess()
                 }
-            }.navigationBarTitle("ValidateAccount", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }

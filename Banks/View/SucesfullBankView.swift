@@ -18,7 +18,7 @@ struct SucesfullBankView: View {
                 VStack() {
                     SucesfullBankViewAccess()
                 }
-            }.navigationBarTitle("Bank", displayMode: .inline)
+            }.navigationBarTitle("", displayMode: .inline)
         }
     }
 }
