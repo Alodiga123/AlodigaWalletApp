@@ -308,6 +308,10 @@ struct lista: View{
     @State var isRechage: Bool = false
     @State var isTransferece: Bool = false
     @State var isWithdrawal: Bool = false
+    @State var steptwo: Bool = false
+    @State var banks : [AccountBanks] = []
+    @State var jsonBank : ObjectAccountBankByUser?
+    @State var bank = 0
     
     func isPaymentIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
@@ -326,7 +330,11 @@ struct lista: View{
             self.isTransferece = true
         }
     }
-    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.steptwo = true
+        }
+    }
     func isWithdrawalIn(){
         DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.isWithdrawal = true
@@ -358,7 +366,27 @@ struct lista: View{
                                 }
                                 
                                 let secondAction: UIAlertAction = UIAlertAction(title: NSLocalizedString("Withdrawal", comment: ""), style: .default) { action -> Void in
-                                    self.isWithdrawalIn()
+                                    let withdrawalControler = WithdrawalControler()
+                                    withdrawalControler.getAccountBankByUser(){ (res,error) in
+                                        if res != nil {
+                                            self.jsonBank = res! as ObjectAccountBankByUser
+                                            self.banks = res!.envelope.body.AccountBankByUserResponse._return.accountBanks!
+                                        }
+                                        
+                                        if error != nil {
+                                            print ("El ERROR DEL MENU!!!!")
+                                            print(error!)
+                                            
+                                            if (error == "304"){
+                                                print ("En el ERROR 304 DEL MENU!!!!")
+                                                self.bank = 1
+                                            }
+                                        }
+                                        self.stepNex()
+                                    }
+                                    
+                                    
+                                   // self.isWithdrawalIn()
                                 }
                                 
                                 let thirdAction: UIAlertAction = UIAlertAction(title: NSLocalizedString("Transference", comment: ""), style: .default) { action -> Void in
@@ -427,9 +455,20 @@ struct lista: View{
                 }
    
                 
-                NavigationLink(destination: WithdrawalView(), isActive:self.$isWithdrawal){
-                    EmptyView()
+                if (self.bank == 1) {
+                    NavigationLink(destination: BankView(), isActive: self.$steptwo ){
+                        EmptyView()
+                    }
+                }else{
+                    NavigationLink(destination: WithdrawalView(), isActive: self.$steptwo ) {
+                        EmptyView()
+                    }
                 }
+                
+                
+               // NavigationLink(destination: WithdrawalView(), isActive:self.$isWithdrawal){
+               //     EmptyView()
+                //}
                 
             }
         }
