@@ -46,7 +46,7 @@ struct SucesfullBankViewAccess: View {
                     Spacer()
                     
                     BankCheckImagine()
-                    NavigationLink(destination: WithdrawalView()) {
+                    NavigationLink(destination: MainViewLogged()) {
                         BanksButtonContent()
                     }
                 }.background(Color.cardButtonViewGray)

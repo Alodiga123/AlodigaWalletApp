@@ -44,7 +44,7 @@ struct MenuView: View {
                 }
                 .padding(.top, 10)
                 
-                /*HStack {
+                HStack {
                     Image(systemName: "bahtsign.square.fill")
                         .foregroundColor(.gray)
                         .imageScale(.large)
@@ -54,7 +54,7 @@ struct MenuView: View {
                             .font(.headline)
                     }
                 }
-                .padding(.top, 10)*/
+                .padding(.top, 10)
             }
             
             HStack {
