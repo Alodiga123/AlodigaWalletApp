@@ -67,6 +67,7 @@ struct CountryHasBankList: View {
     }
     
     func getJSONCountry() {
+        
         let countryHasBankController = BankController()
         let countryHasBankMovil = AL_GetCountriesHasBank()
         

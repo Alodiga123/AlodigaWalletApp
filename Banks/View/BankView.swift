@@ -49,13 +49,19 @@ struct BankViewAccess: View {
                      .padding(.trailing,20)
                     CountryTextField()
                     FirstViewCountryBank()
+                    line
                     AccountTypeBankTextField()
+                    
+                    line
                     AccountNumberTextField(accountNumber: self.$accountNumber)
                     Button(action: {
                         let alert = ShowAlert()
                         let bankController = BankController()
                         let accountNumber_aux : Int = Int(accountNumber) ?? 0
                         let guardarBanco = AL_SaveAccountBankUser()
+                        //Cargando
+                        //let loading = Loading()
+                        //loading.loadindView()
                         
                         if(accountNumber.isEmpty){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
@@ -75,12 +81,15 @@ struct BankViewAccess: View {
                                 //loading.loadingDismiss()
                                 print("GUARDANDO BANCO!!!!")
                                 if(res != nil){
+                                   
+                                    //loading.loadingDismiss()
                                     stepNex()
                                 }
                                 
                                 if error != nil {
                                     //loading.loadingDismiss()
                                     let alert = ShowAlert()
+                                    //loading.loadingDismiss()
                                     alert.showPaymentModeActionSheet(title: "error", message: bankController.getMessageError(code: error!))
                                     print(error!)
                                 }
@@ -126,10 +135,23 @@ struct TextLabelBank: View {
     }
 }
 
+struct accounttextTextField: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text(NSLocalizedString("AccountNumber", comment: ""))
+                .font(.callout)
+                .frame(width: 340, alignment: .leading)
+                .foregroundColor(.gray)
+                .padding()
+        }
+    }
+}
 struct AccountNumberTextField: View {
     @Binding var accountNumber: String
     var body: some View {
-        FloatingLabelTextField($accountNumber, placeholder: "Número de Cuenta", editingChanged: { (isChanged) in
+        
+        accounttextTextField()
+        FloatingLabelTextField($accountNumber, placeholder: "", editingChanged: { (isChanged) in
         }) {
         }
             .leftView({ // Add left view.

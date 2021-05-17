@@ -44,13 +44,13 @@ struct FirstViewCountryBank: View {
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
                         .font(.callout)
-                        .frame(width: 340, alignment: .leading)
+                        .frame(width: 290, alignment: .leading)
                 }else{
                     Text("\(selectedCountry.alternativeName3)")
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
                         .font(.callout)
-                        .frame(width: 340, alignment: .leading)
+                        .frame(width: 290, alignment: .leading)
                 }
                 Spacer()
                 Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
@@ -67,6 +67,7 @@ struct FirstViewCountryBank: View {
             }) {
                 SheetCountryBank(countries: self.countries, isSheetOpened: self.isSheetOpened, selectedCountries: self.$selectedCountry)
             }
+            line
             SelectBankTextField()
 
             Button(action: {
@@ -78,13 +79,13 @@ struct FirstViewCountryBank: View {
                             .fontWeight(.bold)
                             .foregroundColor(.gray)
                             .font(.callout)
-                            .frame(width: 340, alignment: .leading)
+                            .frame(width: 290, alignment: .leading)
                     }else{
                         Text("\(selectedBank.name)")
                             .fontWeight(.bold)
                             .foregroundColor(.gray)
                             .font(.callout)
-                            .frame(width: 340, alignment: .leading)
+                            .frame(width: 290, alignment: .leading)
                     }
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
@@ -121,6 +122,9 @@ struct FirstViewCountryBank: View {
  
     func getJSONCountry() {
         let bankController = BankController()
+        //Cargando
+        let loading = Loading()
+        loading.loadindView()
         bankController.getCountryHasBank() { (res,error) in
             
             if res != nil {
@@ -129,6 +133,8 @@ struct FirstViewCountryBank: View {
 
                 self.selectedCountry = countries[0]
                 Constant.defaults.setValue(countries[0].id, forKey: "CountryIDBank")
+                //Cargando
+                loading.loadingDismiss()
             }
             
             if error != nil {
@@ -136,6 +142,7 @@ struct FirstViewCountryBank: View {
                 self.selectedBank.name = ""
                 Constant.defaults.removeObject(forKey: "CountryIDBank")
                 Constant.defaults.removeObject(forKey: "BankIDbank")
+                loading.loadingDismiss()
                 print(error!)
             }
         }
@@ -144,7 +151,6 @@ struct FirstViewCountryBank: View {
     func getJSONBank() {
         let controler = BankController()
         let bankByCountry = AL_GetBankByCountryApp()
-        
         bankByCountry.cpCountryId =  Constant.defaults.value(forKey: "CountryIDBank") as? String ?? ""
         if(bankByCountry.cpCountryId != nil){
             controler.getBankByCountry(bancosPorPais: bankByCountry){ (res,error) in

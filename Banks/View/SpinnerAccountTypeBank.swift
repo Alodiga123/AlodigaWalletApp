@@ -39,8 +39,10 @@ struct AccountTypeBankList: View {
                 
             }) {
                 Text("\(selectedAccountTypeBank.description)")
+                    .fontWeight(.bold)
                     .foregroundColor(.gray)
                     .font(.callout)
+                    .frame(width: 290, alignment: .leading)
                     Spacer()
                     Image(systemName: isSheetOpened ? "chevron.up" : "chevron.down")
                         .resizable()

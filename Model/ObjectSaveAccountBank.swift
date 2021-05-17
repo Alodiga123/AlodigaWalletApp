@@ -32,7 +32,7 @@ struct BodySaveAccountBank : Decodable{
     var saveAccountBankResponse: SaveAccountBankResponse
     
     enum CodingKeys: String, CodingKey {
-         case saveAccountBankResponse = "ns2:saveAccountBankUserResponse "
+         case saveAccountBankResponse = "ns2:saveAccountBankUserResponse"
      }
 }
 
