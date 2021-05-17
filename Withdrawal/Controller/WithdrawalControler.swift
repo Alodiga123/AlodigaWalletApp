@@ -115,6 +115,7 @@ public class WithdrawalControler{
                 }else{
                     objetResponseAccountBankByUserError = try JSONDecoder().decode(ObjectErrorAccountBankByUser.self, from: jsonStr.data(using: .utf8)!)
                     completion(nil, objetResponseAccountBankByUserError.envelope.body.cambiar._return.codigoRespuesta)
+                    
                 }
             }catch{
                 print("Error: ")

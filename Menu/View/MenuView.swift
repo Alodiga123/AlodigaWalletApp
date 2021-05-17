@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
+    
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading){
@@ -20,33 +21,17 @@ struct MenuView: View {
                             .foregroundColor(.gray)
                             .font(.headline)
                     }
-                    
                 }
                 .padding(.top, 100)
+                
                 HStack {
                     Image(systemName: "wallet.pass")
                         .foregroundColor(.gray)
                         .imageScale(.large)
-                    NavigationLink(destination: WithdrawalView()) {
-                        Text("Withdrawal")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                    }
-                    
+                    bancoRetiro()
                 }
                 .padding(.top, 10)
-//                HStack {
-//                    Image(systemName: "gear")
-//                        .foregroundColor(.gray)
-//                        .imageScale(.large)
-//                    NavigationLink(destination: ConvertView()) {
-//                        Text("Convert")
-//                            .foregroundColor(.gray)
-//                            .font(.headline)
-//                    }
-//
-//                }
-//                .padding(.top, 10)
+                
                 HStack {
                     Image(systemName: "gear")
                         .foregroundColor(.gray)
@@ -59,7 +44,7 @@ struct MenuView: View {
                 }
                 .padding(.top, 10)
                 
-                HStack {
+                /*HStack {
                     Image(systemName: "bahtsign.square.fill")
                         .foregroundColor(.gray)
                         .imageScale(.large)
@@ -68,22 +53,8 @@ struct MenuView: View {
                             .foregroundColor(.gray)
                             .font(.headline)
                     }
-                    
                 }
-                .padding(.top, 10)
-                
-//                HStack {
-//                    Image(systemName: "person")
-//                        .foregroundColor(.gray)
-//                        .imageScale(.large)
-//                    NavigationLink(destination: TopUpView()) {
-//                        Text("TopUp")
-//                            .foregroundColor(.gray)
-//                            .font(.headline)
-//                    }
-//                }
-//                .padding(.top, 10)
-               // Spacer()
+                .padding(.top, 10)*/
             }
             
             HStack {
@@ -109,30 +80,6 @@ struct MenuView: View {
                 }
             }
             .padding(.top, 10)*/
-            
-//            HStack {
-//                Image(systemName: "envelope")
-//                    .foregroundColor(.gray)
-//                    .imageScale(.large)
-//                Text("Pagar")
-//                    .foregroundColor(.gray)
-//                    .font(.headline)
-//            }
-//            .padding(.top, 20)
-            
-//            HStack {
-//                Image(systemName: "faceid")
-//                    .foregroundColor(.gray)
-//                    .imageScale(.large)
-//                NavigationLink(destination: SignUpView()) {
-//                    Text("Registrate")
-//                        .foregroundColor(.gray)
-//                        .font(.headline)
-//                }
-//            }
-            //.padding(.top, 20)
-            
-            //Spacer()
             
             VStack(alignment: .leading){
                 HStack {
@@ -173,8 +120,6 @@ struct MenuView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(red: 32/255, green: 32/255, blue: 32/255))
         .edgesIgnoringSafeArea(.all)
-        
-        
     }
 }
 
@@ -214,6 +159,55 @@ struct cerrarSesión: View {
         
         NavigationLink(destination: LoginView(), isActive:self.$isLoggedIn){
             EmptyView()
+        }
+    }
+}
+
+struct bancoRetiro: View{
+    @State var steptwo: Bool = false
+    @State var banks : [AccountBanks] = []
+    @State var jsonBank : ObjectAccountBankByUser?
+    @State var bank = 0
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.steptwo = true
+        }
+    }
+    
+    var body: some View {
+        Button(action: {
+            let withdrawalControler = WithdrawalControler()
+            withdrawalControler.getAccountBankByUser(){ (res,error) in
+                if res != nil {
+                    self.jsonBank = res! as ObjectAccountBankByUser
+                    self.banks = res!.envelope.body.AccountBankByUserResponse._return.accountBanks!
+                }
+                
+                if error != nil {
+                    print ("El ERROR DEL MENU!!!!")
+                    print(error!)
+                    
+                    if (error == "304"){
+                        print ("En el ERROR 304 DEL MENU!!!!")
+                        self.bank = 1
+                    }
+                }
+                stepNex()
+            }
+        }) {
+            Text("Withdrawal")
+                .foregroundColor(.gray)
+                .font(.headline)
+        
+            if (self.bank == 1) {
+                NavigationLink(destination: BankView(), isActive: self.$steptwo ){
+                    EmptyView()
+                }
+            }else{
+                NavigationLink(destination: WithdrawalView(), isActive: self.$steptwo ) {
+                    EmptyView()
+                }
+            }
         }
     }
 }

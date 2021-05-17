@@ -61,11 +61,14 @@ struct WithdrawalViewAccess: View {
                         let retiroManual = AL_ManualWithdrawals()
                         let alert = ShowAlert()
                         let amount_aux: Float = Float(amount) ?? 0
-                        //let saldo1 = productSelected["saldoActual"]! as String
-                        //let saldo: Float = Float(saldo1) ?? 0
+                        let BankIdWithdrawal = Constant.defaults.value(forKey: "BankIDW") as? String ?? ""
+                        let ProductIdWithdrawal = Constant.defaults.value(forKey: "ProductIDW") as? String ?? ""
+                        /*let saldo1 = productSelected["saldoActual"]! as String
+                        let saldo: Float = Float(saldo1) ?? 0*/
                         //loading.loadindView()
-                        
-                        if(amount.isEmpty || amount.count == 0 || description.isEmpty || description.count == 0 ){
+                        if(ProductIdWithdrawal.isEmpty || amount.isEmpty || description.isEmpty){
+                            alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("EmptyFields", comment: ""))
+                        }else if(amount.count == 0 || description.count == 0 ){
                             alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("ValidationInvalidLong", comment: ""))
                         }else if(amount.count < 3){
                             alert.showPaymentModeActionSheet(title: "error", message: NSLocalizedString("invalidAmount", comment: ""))
@@ -74,9 +77,6 @@ struct WithdrawalViewAccess: View {
                         /*}else if(saldo < amount_aux ){
                             alert.showPaymentModeActionSheet(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("web_services_response_33", comment: "") )*/
                         }else{
-                            let BankIdWithdrawal = Constant.defaults.value(forKey: "BankIDW") as? String ?? ""
-                            let ProductIdWithdrawal = Constant.defaults.value(forKey: "ProductIDW") as? String ?? ""
-                            
                             retiroManual.cpBankId = BankIdWithdrawal
                             retiroManual.cpEmailUser = Constant.defaults.value(forKey: "emailUser") as! String
                             retiroManual.cpAmountWithdrawal = amount
@@ -107,7 +107,6 @@ struct WithdrawalViewAccess: View {
 
                             stepNex()
                          }
-                        //stepNex()
                  
                     }) {
                         WithdrawalButtonContent()

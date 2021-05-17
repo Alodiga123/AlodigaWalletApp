@@ -28,8 +28,17 @@ struct FirstViewBank: View {
     @State var products : [ProductsByBank] = []
     @State var jsonProducts : ObjectProductsByBank?
     @State var selectText : String =  NSLocalizedString("selectoption", comment: "")
+    
+    @State var steptwo: Bool = false
+    var loading = Loading()
+    
+    func stepNex(){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
+            self.steptwo = true
+        }
+    }
 
-    let loading = Loading()
+    //let loading = Loading()
     
     func getJSONBank() {
         let controler = WithdrawalControler()
@@ -46,7 +55,6 @@ struct FirstViewBank: View {
                 
                 print("Num Cuenta: " + accountNumber)
                 print("Tipo Cuenta: " + accountType)
-
             }
             
             if error != nil {
@@ -55,10 +63,24 @@ struct FirstViewBank: View {
                 self.selectedProducts.name = ""
                 Constant.defaults.removeObject(forKey: "BankIDW")
                 Constant.defaults.removeObject(forKey: "ProductIDW")
+                //stepNex()
 
                 //let alert = ShowAlert()
                 //alert.showPaymentModeActionSheet(title: "error", message: controler.getMessageError(code: error!))
+                //print ("El ERROR!!!!")
                 print(error!)
+                
+                /*if (error == "304"){
+                    print ("En el ERROR 304!!!!")
+                    Button("Present") {
+                        steptwo = true
+                    }
+                    NavigationLink(destination: Color.red, isActive: $steptwo) { }
+                    
+                    NavigationLink(destination: BankView(), isActive: self.$steptwo ) {
+                       Spacer().fixedSize()
+                    }
+                }*/
             }
         }
     }
@@ -78,6 +100,7 @@ struct FirstViewBank: View {
                     self.products = res!.envelope.body.productsByBankResponse._return.products
                     self.selectedProducts = products[0]
                     Constant.defaults.set(products[0].id, forKey: "ProductIDW")
+                    
                 }
                 
                 if error != nil {
@@ -90,7 +113,6 @@ struct FirstViewBank: View {
             }
         }
     }
-    
     
     var body: some View {
         VStack {
@@ -136,6 +158,7 @@ struct FirstViewBank: View {
             Button(action: {
                 getJSONProducts()
                 self.isSheetOpened.toggle()
+                Constant.defaults.set(selectedProducts.id, forKey: "ProductIDW")
                 }) {
                 
                 if(selectedProducts.name.isEmpty){
@@ -191,7 +214,6 @@ struct FirstViewBank: View {
             }
         }
     }
-    
 }
 
 struct AccountNumberText: View {
@@ -289,7 +311,6 @@ struct SheetbankWCountry: View {
                         
                         print("Num Cuenta: " + index.accountNumber!)
                         print("Tipo Cuenta: " + index.accountTypeBankId.description)
-
 
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
